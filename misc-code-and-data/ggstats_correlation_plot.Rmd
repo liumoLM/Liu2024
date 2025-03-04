@@ -1,0 +1,33 @@
+---
+title: "ggstats_correlation_plot"
+output: html_document
+date: "2025-02-05"
+---
+
+```{r setup, include=FALSE}
+library(ggplot2)
+library(ggsci)
+```
+
+
+
+```{r cars}
+signature.assignment <- readRDS("./signature.assignment.df.rds") ##signature assignment result
+metainfo <- readRDS("./metainfo.rds")
+metainfo <- metainfo[metainfo$new_sample_ID %in% colnames(signature.assignment),]
+
+signature <- "C_ID5"
+
+metainfo$sig.activity <- as.numeric(signature.assignment[signature,match(metainfo$new_sample_ID,
+                                                                     colnames(signature.assignment))])
+
+ggscatter(
+    metainfo[metainfo$sig.activity>10,], x = "Age", 
+    y = "sig.activity", color="cohort",
+    
+    cor.coef = T, 
+    cor.method = "spearman",title = signature,size = 0.5,facet.by = "cohort")  + stat_smooth(method = "lm", formula = y~x)+scale_y_log10()+scale_color_nejm()
+
+```
+
+
