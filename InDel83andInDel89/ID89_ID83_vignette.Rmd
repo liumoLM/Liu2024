@@ -3,7 +3,7 @@ title: "ID89 and ID83 vignette"
 output:
   html_document: default
   pdf_document: default
-date: "2025-06-06"
+date: "`r Sys.Date()`"
 ---
 
 ```{r setup, include=FALSE}
@@ -20,7 +20,7 @@ library(ICAMS)
 #' @return A 89-channel indel profile plot
 #' @export
 
-xplot89 <- function(ID89.catalog, text_size = 3, plot_title = "ID89",setyaxis=NULL) {
+xplot89 <- function(ID89.catalog, text_size = 3, plot_title = "ID89",setyaxis=NULL,ylabel="Counts") {
   # === 1. Define Indel Type Labels and Categories ===
   indel_type_4_figurelabel <- structure(
     list(
@@ -189,7 +189,7 @@ xplot89 <- function(ID89.catalog, text_size = 3, plot_title = "ID89",setyaxis=NU
   p <- ggplot2::ggplot(data = muts_basis_melt, ggplot2::aes(x = IndelType, y = freq, fill = Indel)) +
     ggplot2::geom_bar(stat = "identity", position = "dodge", width = .7) +
     ggplot2::xlab("Indel Types") +
-    ggplot2::ylab("Count") +
+    ggplot2::ylab(ylabel) +
     ggplot2::scale_x_discrete(limits = indel_positions, labels = indel_positions_labels) +
     ggplot2::ggtitle(plot_title) +
     ggplot2::scale_fill_manual(values = indel_mypalette_fill_all) +
@@ -269,10 +269,10 @@ for (i in c(1:42)) {
   if(ID83signature %in% c("C_ID7","H_ID33","C_ID10","H_ID37","H_ID38")){
     cat(paste0("\n\n### ", ID89signature, " \n\n  Indel83 Signature: ", 
                ID83signature,
-               " \n  Supporting Catalog (deletion and insertions in long poly T tracts were removed from the Indel83 spectrum): ", catalog, "\n\n"))
+               " \n\n  Supporting spectrum (deletion and insertions in long poly T tracts were removed from the Indel83 spectrum): ", catalog, "\n\n"))
   }else{
-    cat(paste0("\n\n###  Indel89 Signature: ", ID89signature, " \n\n  Indel83 Signature: ", 
-               ID83signature," \n  Supporting spectrum: ", catalog, "\n\n"))
+    cat(paste0("\n\n### ", ID89signature, " \n\n  Indel83 Signature: ", 
+               ID83signature," \n\n  Supporting spectrum: ", catalog, "\n\n"))
   }
   
   ID89.assignment.this.catalog <- ID89.mSigAct.assignment[,catalog,drop=F]
@@ -291,21 +291,23 @@ for (i in c(1:42)) {
   cosine2 <- round(lsa::cosine(as.numeric(to.plot.all.ID89.signatures.final[,ID89signature]),as.numeric(as.matrix(diff.catalog))),3)
   
   
-  p1 <- xplot89(to.plot.all.ID89.signatures.final[,ID89signature,drop=F],text_size = 3,plot_title = ID89signature)
+  p1 <- xplot89(to.plot.all.ID89.signatures.final[,ID89signature,drop=F],text_size = 3,plot_title = ID89signature,ylabel="Props")
   p2 <- xplot89(to.plot.all.ID89.catalogs[,catalog,drop=F],
                 text_size = 3,
-                plot_title = paste0("Mutational spectrum of ",
+                plot_title = paste0("Spectrum A: Mutational spectrum of ",
                                     catalog,
                                     " | Cosine Similarity to ",
                                     ID89signature, " = ", cosine1))
   
   p3 <- xplot89(reconstructed.ID89.catalog,text_size = 3,
-                plot_title = paste0("Spectrum of ",
-                                    catalog, " less mutations due to ",ID89signature),
+                plot_title = paste0("Spectrum B: Partial mutational spectrum of ",
+                                  catalog, " not using ",ID89signature),
                 setyaxis = max(diff.catalog))
   
-  p4 <- xplot89(diff.catalog,text_size = 3,plot_title = paste0("Mutations in ", catalog,
-  " due to ", ID89signature, " | Cosine similarity to :", ID89signature, " = ", cosine2))
+  p4 <- xplot89(diff.catalog,text_size = 3,plot_title = paste0("Mutations due to ", ID89signature, " (A minus B)| Cosine similarity to ", ID89signature, " = :", cosine2))
+  
+
+
   
   grid.arrange(p1, p2,nrow = 1, ncol = 2)
   
@@ -330,8 +332,7 @@ par(mfrow = c(1, 2))
 ID89signature <- ID89_ID83_connection_example$ID89_signature[i]
 catalog <- ID89_ID83_connection_example$example_catalog[i]
 
-cat(paste0("\n\n### ", ID89signature, " \n InsDel89 has no corresponding Indel83 signature \n  Supporting Catalog (with and without polyT peaks): ", catalog, "\n\n"))
-cat("XXXXXXXXXXXXXXXXXX check the red peak in the spectrum put not in catalog B or A minus B XXXX")
+cat(paste0("\n\n### ", ID89signature, " \n InsDel39 has no corresponding Indel83 signature \n\n  Supporting spectrum (two Indel83 spectrum show with and without deletion and insertions in long poly T tracts w): ", catalog, "\n\n"))
 
 
 ID89.assignment.this.catalog <- ID89.mSigAct.assignment[,catalog,drop=F]
@@ -349,22 +350,22 @@ cosine1 <- round(lsa::cosine(as.numeric(to.plot.all.ID89.signatures.final[,ID89s
 cosine2 <- round(lsa::cosine(as.numeric(to.plot.all.ID89.signatures.final[,ID89signature]),as.numeric(as.matrix(diff.catalog))),3)
 
 
-p1 <- xplot89(to.plot.all.ID89.signatures.final[,ID89signature,drop=F],text_size = 3,plot_title = ID89signature)
+p1 <- xplot89(to.plot.all.ID89.signatures.final[,ID89signature,drop=F],text_size = 3,plot_title = ID89signature,ylabel="Props")
 p2 <- xplot89(to.plot.all.ID89.catalogs[,catalog,drop=F],
               text_size = 3,
-              plot_title = paste0("Mutations in ", catalog,
-                                  " due to ", ID89signature, " | Cosine similarity to :",
-                                  ID89signature, " = ", cosine2))
+              plot_title = paste0("Spectrum A: Mutational spectrum of ",
+                                    catalog,
+                                    " | Cosine Similarity to ",
+                                    ID89signature, " = ", cosine1))
 
 p3 <- xplot89(reconstructed.ID89.catalog,text_size = 3,
-              plot_title = paste0("Spectrum of ",
-                                  catalog, " less mutations due to ",ID89signature),
-              setyaxis = max(diff.catalog))
+              plot_title = paste0("Spectrum B: Partial mutational spectrum of ",
+                                  catalog, " not using ",ID89signature),
+              setyaxis = max(reconstructed.ID89.catalog))
 
 p4 <- xplot89(diff.catalog,text_size = 3,
-              plot_title = paste0("Mutations in ", catalog,
-                                  " due to ", ID89signature, " | Cosine similarity to :",
-                                  ID89signature, " = ", cosine2))", cosine2))
+              plot_title = paste0("Mutations due to ", ID89signature, " (A minus B)| Cosine similarity to ",
+                                  ID89signature, ":= ", cosine2))
 
 grid.arrange(p1, p2,nrow = 1, ncol = 2)
 grid.arrange(p3,p4,nrow = 1, ncol = 2)
