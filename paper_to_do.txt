@@ -1,9 +1,5 @@
 ﻿# Friday Evening
 
-### Check w/ Mo that we only need fastq's for HEK293T_RNAseH2b_cl{12,2,4}, then steve email willie to look for tape
-
-### Get the new RMD for the new vignette
-
 ### Fig 9, put legend in same order as bars; gene order is different between A and B; why do the bars for the same gene in A and B look totally different,
 especially in A we say slippage, but in B we say deficient MMR.  But they are same mutations so this is just distracting -- regarding mechanism.
 In any case we need to talk about ID1 and ID2 not distinguishing MMR deficient from ordinary slippage.
@@ -14,11 +10,17 @@ Review table 1 column E --> need to write something about every entry
 
 Review the file correspondence_476_to_89_and_note.xlsx
 
+Check vignette RMD / HTML
+
 # Mo before Friday evening
 
 respond on must up to date file for final 476 signatures
 
 respond on RMD for new vignettes and provide access to the emailed HTML
+
+# Waiting
+
+Willie reply regarding fastq's or BAMs for HEK293T_RNAseH2b_cl{12,2,4}; email sent by steve Jan 8
 
 # Lower priority presentation issues
 
