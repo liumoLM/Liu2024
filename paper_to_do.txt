@@ -1,9 +1,5 @@
 ﻿# Friday Evening
 
-### Fig 9, put legend in same order as bars; gene order is different between A and B; why do the bars for the same gene in A and B look totally different,
-especially in A we say slippage, but in B we say deficient MMR.  But they are same mutations so this is just distracting -- regarding mechanism.
-In any case we need to talk about ID1 and ID2 not distinguishing MMR deficient from ordinary slippage.
-
 Review table 1 column E --> need to write something about every entry
 
 # Steve before Friday evening
@@ -12,15 +8,31 @@ Review the file correspondence_476_to_89_and_note.xlsx
 
 Check vignette RMD / HTML
 
-# Mo before Friday evening
+# Mo to do
 
-respond on must up to date file for final 476 signatures
+Drop Fig 9, draft a table with the information just 89-type
 
-respond on RMD for new vignettes and provide access to the emailed HTML
+Email willie about wild type 293t cell data
+
+
+# Steve to do
+
+
+Wait for fastqs from 293t cells to get to rozenlab, then upload to SRA
+
+Re-diff vignette .rmd / spelling examplar -> exe... / suppress x axis labels (use new mSigPlot code)
+
+Review ID10/C_ID10 -- our extraction got big green T/polyT insertion peak; ID10 has none, or 89/476 has some
+
+Add to vignette
+
+* Insdel4b The 89 type and 476 type extractions detect co-occurence of T insertions in long poly-T. This is a theme ....
+
+* Insdel5b <same text as 4b>
+
+
 
 # Waiting
-
-Willie reply regarding fastq's or BAMs for HEK293T_RNAseH2b_cl{12,2,4}; email sent by steve Jan 8
 
 # Lower priority presentation issues
 
