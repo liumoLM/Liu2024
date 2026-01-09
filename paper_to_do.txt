@@ -37,8 +37,6 @@ Discordant exemplars for 89
 
 e.g. 1c, 1d
 
-Get the sequence file we need from the duke nus server
-
 fix decimal points in 89 plots, get rid of top bar by default
 
 
