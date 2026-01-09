@@ -1,4 +1,11 @@
-﻿Paper to do list:
+﻿## Friday Evening
+
+### Check w/ Mo that we only need fastq's for HEK293T_RNAseH2b_cl{12,2,4}, then steve email willie to look for tape
+
+
+
+
+Paper to do list:
 
 Fig 3. get rid of all top colored bars in thumbnails
 
