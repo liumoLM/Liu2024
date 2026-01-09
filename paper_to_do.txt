@@ -1,15 +1,36 @@
-﻿## Friday Evening
+﻿# Friday Evening
 
 ### Check w/ Mo that we only need fastq's for HEK293T_RNAseH2b_cl{12,2,4}, then steve email willie to look for tape
 
+### Get the new RMD for the new vignette
 
+### Fig 9, put legend in same order as bars; gene order is different between A and B; why do the bars for the same gene in A and B look totally different,
+especially in A we say slippage, but in B we say deficient MMR.  But they are same mutations so this is just distracting -- regarding mechanism.
+In any case we need to talk about ID1 and ID2 not distinguishing MMR deficient from ordinary slippage.
 
+Review table 1 column E --> need to write something about every entry
 
-Paper to do list:
+# Steve before Friday evening
+
+Review the file correspondence_476_to_89_and_note.xlsx
+
+# Mo before Friday evening
+
+respond on must up to date file for final 476 signatures
+
+respond on RMD for new vignettes and provide access to the emailed HTML
+
+# Lower priority presentation issues
+
+Fig 6, legend and figure text
 
 Fig 3. get rid of all top colored bars in thumbnails
 
 Fig 2, get rid of top colored bars in thumbnails
+
+Fig 8 label highest peaks in panel A left side (83-type signatures)
+
+# Below here not organized
 
 drive shiny and vignettes off of same underlying data repository
 
