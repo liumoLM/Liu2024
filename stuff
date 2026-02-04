@@ -1,0 +1,8 @@
+pwd
+git rev-parse --show-toplevel
+git status -sb
+git ls-files -- README.md
+git status -- README.md
+git log -n 3 --oneline --all -- README.md
+git rev-parse --is-shallow-repository
+
