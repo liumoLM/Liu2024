@@ -1,0 +1,112 @@
+
+	ISMB 2026 (author)	banner	User guide/Log out
+New Submission	Help	Conference	News	EasyChair
+Select a Track
+ISMB 2026 Submission Instructions
+This conference has its own instructions for authors. Press the button below to read these instructions.
+
+Read instructions
+Select a track relevant for your submission and click "Continue".
+
+Track:*	
+Abstracts - 3DSIG: Structural Bioinformatics and Computational Biophysics
+Abstracts - BOKR: Bio-Ontologies and Knowledge Representation
+Abstracts - Bioinfo-core
+Abstracts - Bioinformatics in the USA
+Abstracts - BOSC: Bioinformatics Open Source Conference
+Abstracts - BioVis: Biological Data Visualization
+Abstracts - CAMDA: Critical Assessment of Massive Data Analysis
+Abstracts - Computational and Systems Immunology (CSI)
+Abstracts - CompMS: Computational Mass Spectrometry
+Abstract: DREAM Challenges: Benchmarking AI and Agents across biological domains
+Abstracts - Education: Computational Biology Education
+Abstracts - Equity and Diversity in Computational Biology Research
+Abstracts - EvolCompGen: Evolution and Comparative Genomics
+Abstracts - Function: Gene and Protein Function Annotation
+Abstracts - General Computational Biology
+Abstracts - HitSeq: High-throughput Sequencing
+Abstracts - iRNA: Integrative RNA Biology
+Abstracts - Microbiome
+Abstracts - MLCSB: Machine Learning in Computational and Systems Biology
+Abstracts - NetBio: Network Biology
+Abstracts - RegSys: Regulatory and Systems Genomics
+Abstracts - SysMod: Computational Modeling of Biological Systems
+Abstracts - Text Mining: Text Mining for Healthcare and Biology
+Abstracts - TransMed: Translational Medical Informatics
+Abstracts - VarI: Variant Interpretation
+Student Council Symposium 2026
+Technology Track
+Copyright © 2002 – 2026 EasyChair
+ISMB 2026 Submission Instructions
+
+ISMB 2026 Submission Instructions:
+Proceedings:
+
+All submissions MUST select at least one corresponding author. Papers must be submitted by following the template for author submission to the OUP journal Bioinformatics; no other formats will be accepted. Using the OUP template, the paper length must not exceed nine pages. EasyChair will not allow uploading of papers that exceed 9 pages in length. The page count should include any required author information (submissions are not double-blind), abstract, figures, tables, and bibliography. Note that alt text is required for any image used in the paper. Papers must be submitted as a PDF. The paper must contain a structured abstract whose length does not exceed 250 words, divided into sub-sections under the following five headings: Motivation, Results, Availability and Implementation, Contact, and Supplementary Information (the latter only if applicable). The order and titles of the remaining paper sections can be chosen by the authors to best match their work. Violations of paper formatting, including changes to the font size or spaces in the OUP template, and violations of length rules will be grounds for rejection.
+
+Authors of submissions will need to select 1st choice and 2nd choice areas most suitable for their paper (this is relevant for which Area Chairs/reviewers will review the paper). During submission, authors will be able to identify up to three COSIs most relevant to the topic of their submission (this is relevant for which COSI, i.e. conference track the talk will be presented at if the paper is accepted). During the review process, three reviews will be sought. Papers may be moved between areas as appropriate—this is often necessary for load balance and fit between areas during the review process.
+
+If absolutely necessary, submissions can be accompanied by supplementary material, similar to submissions to scientific journals. The supplementary material must be collected in a separate file that is appropriately marked and uploaded as an attachment on the paper submission page in EasyChair. However, we advise against adding supplementary material in general. Supplementary material will be published on the proceedings site alongside the online version of the conference paper. We do not support supplementary material presented at any site other than the publisher's site. Additionally, OUP does not edit or typeset supplementary data—it is uploaded online exactly as it is received. Authors must ensure its accuracy before submitting.
+
+Papers should be submitted in their final form since the evaluation procedure does not allow for additional rounds of refinement/modification in response to referee criticisms. Poor quality submissions or insufficiently prepared papers are very often rejected. Paper presenters must register and pay to attend and present at the conference.
+
+All submitted Proceedings papers that use code must include a link to publicly accessible source code (e.g., a GitHub repository) in the manuscript and ensure reproducibility of the results presented in the paper, and wherever possible, links to data. The link ot the repository must be given in the "Availability and Implementation" subsection of the Abstract of the paper. The repository must be sufficiently complete by the submission deadline for reviewers to examine, including detailed enough and clear documentation. Lack of code or reproducibility will be grounds for rejection.
+
+ISMB does not accept previously published works through peer-reviewed publications. Please note that conference presentations, posting on recognized preprint servers (such as arXiv, bioRxiv, and PeerJ preprints), or posting on a personal or employer's website do not constitute prior publication. In case of doubt, please contact proceedings@iscb.org
+
+As stated above, papers will have to be formatted according to the layout style required by the OUP Bioinformatics journal and will be limited to 9 pages. Formatting requirements can be found at: https://academic.oup.com/pages/authoring/journals/preparing_your_manuscript?login=trueTemplates are available on OUP’s site for direct download:http://static.primary.prod.gcms.the-infra.com/static/site/journals/document/oup-authoring-template.zip?node=7987de40f2eea956bc39Note: the zip file may not download on some browsers/extensions. If you encounter this issue, please attempt on an unrelated browser (i.e., not Chrome and Edge, as both are built off the Chromium kernel).
+
+Papers not conforming to guidelines will not be reviewed
+
+Papers submitted for review should represent original, previously unpublished work. At the time the paper is submitted to ISMB 2026, and for the entire review period, the paper should not be under review by any other conference or scientific journal.
+
+Papers will be accepted electronically via the submission system, as a PDF, until January 20, 2026, 11:59 PM in the time zone of your choice. *No extension will be granted*
+
+Full instructions on submitting a presentation can be found on this page: https://www.iscb.org/ismb2026/call-for-submissions/proceedings 
+
+ 
+
+Abstract Talks and Posters:
+
+All submissions MUST select a presenting author. The presenting author MUST be marked as a corresponding author. Presenters of accepted abstracts are required to make the presentation themselves and must register and pay to attend the conference. Submitters may choose to have their submission reviewed for: 'talk', 'talk or poster', or 'poster only'. If you select 'talk' and your submission is not selected for a talk, it will be rejected. If you select 'talk or poster' and are unsuccessful for a talk, your abstract will automatically be considered for a poster presentation. Submission deadlines are posted in the key dates section or on the key dates page.
+
+During the submission process, you will submit to the COSI or open session track that most reflects your research area. You will have the option to identify two other tracks that may also be suited to your research area during your submission. The abstract is submitted through the EasyChair submission system.
+
+All abstracts must be submitted using the conference submission site by the abstract deadlines, posted in the key dates section or on the key dates page. (You have until 11:59 p.m. Any Time Zone).
+A 250-word short abstract (text only) is required for ALL submissions (talk and/or poster). Accepted abstracts will be posted on the conference website. This short abstract should summarize the background/motivation for the study, method, and result(s), and conclusion/statement of significance.
+For authors requesting a talk, you MUST also upload a long abstract of up to two (2) pages in PDF format during the submission process. *Do not submit more than two pages.*  Figures are welcome as long as the total length is 2 pages or less. It is best to check individual COSI websites for specific information regarding COSI topics and guidelines.NOTE: CAMDA submitters should include a 3-5 page long abstract PDF
+Your abstract must not contain your title/position or any personal information (e.g. affiliation). These details will be collected through the EasyChair submission system.
+Abstracts that are chosen for talks will be presented in tracks (COSIs) that run in parallel at the conference. The length of a talk is determined by individual tracks (COSIs). Oral presentation schedules for abstracts will be available several weeks after acceptance notifications are sent. Notifications are sent directly by the track (COSI) organizers.
+
+Full instructions on submitting a presentation can be found on this page: https://www.iscb.org/ismb2026/call-for-submissions/abstracts
+
+ 
+
+Technology Track:
+
+To conduct a Technology Track presentation, organizations must complete the on-line sign-up form (accessed via the blue submission button). This form requires a brief description (50 words maximum) of the talk and a one (1) page Technology Track presentation overview (PDF), which will provide delegates with additional details about the technology being presented. A one (1) page CV of the presenter must also be included, outlining experience as related to the topic. The presenter of the Technology Track must be a registered and paid delegate of the conference.
+
+Prior to submitting please review the ISCB Exhibitor and Technology Track guidelines for presentations available here.
+
+The Technology Track allows organizations to showcase their software and/or hardware relevant to the bioinformatics/molecular biology community.
+
+ISCB strongly prefers that submissions accepted for oral presentation be presented in-person at the conference venue. We understand that some presenters will have good reasons to avoid in-person attendance. ISCB will grant remote presentation options for reasons associated to maternity/paternity leave, care for a family member, personal/medical disability, sickness, or visa problems. Presenters are expected to attend in person unless genuine barriers exist. Inability implies circumstance, not choice. If unable to participate in-person you will need to request a waiver by writing presentationwaiver@iscb.org at the earliest opportunity.
+
+Full instructions on submitting a presentation can be found on this page: https://www.iscb.org/ismb2026/call-for-submissions/tech-track
+
+ 
+
+Tutorials:
+
+Tutorials may include any form of presentation, such as brief talks or panel discussions, but should include hands-on exercises. Tutorials serve an educational function and are expected to provide a balanced perspective on a field of research. They should not focus on the presenters' own research or software, unless balanced with other tools in the same realm. However, tutorials on broadly used bioinformatics tools will be considered. Please note that if you wish to focus your talk on a demo of a specific software package, your proposal should be submitted to the Technology Track.
+
+The tutorial speakers agree to provide participants with teaching materials that include:
+
+Copies of the final slides in PowerPoint or PDF format for posting online.
+Copies of relevant articles/book chapters published by the presenters are provided as Supplementary
+Information. Presenters will have to obtain copyright permission from their publishers, as required.
+Links to repositories containing training materials.
+Make your training materials FAIR (Findable, Accessible, Interoperable, and Reusable) as much as possible.
+Full instructions on submitting a presentation can be found on this page: https://www.iscb.org/ismb2026/call-for-submissions/tutorials
+
+
