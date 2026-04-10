@@ -1,8 +1,5 @@
-## Interpreting indel mutational signatures in 6,975 tumors based on 
-more informative indel classification schemes
+## Interpreting indel mutational signatures in 6,975 tumors based on more informative indel classification schemes
 
-Mo Liu, Mi Ni Huang, Xue Ming Wu, Qi Zheng, Runtian Yao, Ying Yang, 
-Runxi Shen, Steven G. Rozen
 
 ### Background
 
@@ -15,7 +12,7 @@ are important for variant interpretation in cancer. They can reveal
 exposures to exogenous carcinogens (e.g., tobacco smoke, aristolochic 
 acid) or endogenous mutagenic processes (e.g., defective mismatch 
 repair, defective homologous recombination, activation of
-APOBEC cytidiine deaminases). They can guide treatment decisions (e.g., identifying 
+APOBEC cytidine deaminases). They can guide treatment decisions (e.g., identifying 
 homologous recombination deficiency). They can help distinguish 
 elevated mutation rates from selection by estimating the rates of 
 different mutation types.
@@ -28,7 +25,7 @@ under-studied, with only 25 indel signatures in COSMIC. This gap is
 significant because indel signatures carry important information for 
 cancer classification, epidemiology, and understanding DNA repair 
 mechanisms. Until recently, only one indel classification scheme was 
-widely used. This classification scheme recognizing 83 types of 
+widely used. This classification scheme recognizes 83 types of 
 indel based on the number of bases 
 affected, the identity of the inserted or deleted base, flanking repeat 
 context, and the presence of microhomology. Koh, Nanda, and colleagues 
@@ -67,13 +64,13 @@ the 89-type system, 18 corresponded to previously described signatures.
 
 The new classification schemes proved superior in most cases. Several 
 signatures that were merged in the 83-type system could be resolved in 
-the 89/476-type systems. For instance, the 83-type ID1 corresponded to 
-four distinct 89-type signatures (InsDel1a–d), each displaying 
-different cancer-type-specific activity patterns and distinct 
-correlation profiles with SBS signatures. Conversely, in two cases the 
-83/476-type systems distinguished signature pairs that were conflated 
+the 89/476-type systems. For instance, the 83-type ID3 corresponded to 
+two distinct 89-type signatures (InsDel3a and InsDel3b), which display 
+different cancer-type-specific activity patterns. Conversely, in two cases the 
+83-type and 476-type systems distinguished signature pairs that were conflated 
 in the 89-type system, illustrating that the three schemes provide 
-complementary information.
+complementary information but suggesting greater utility overall for the
+476-type system.
 
 A key finding was the identification of a new signature, InsDel_F, 
 which more accurately captures the mutational footprint of RNase H2 
@@ -105,7 +102,7 @@ scrutiny as potential drivers. Second, signatures serve as biomarkers
 for clinically actionable mutagenic states. For example, the mismatch 
 repair deficiency signatures can flag tumors likely to respond to immune checkpoint 
 inhibitors. Similarly, the homologous recombination deficiency signatures 
-(C_ID6, InsDel6) identify candidates for PARP inhibitor therapy. Third, 
+can help identify candidates for PARP inhibitor therapy. Third, 
 indel signatures can reveal carcinogen exposures—such as the 
 aristolochic acid signatures that show distinctive flanking-base 
 preferences in the new classification schemes—informing cancer 
@@ -123,9 +120,10 @@ signatures' relationships to genomic topography, correlations with SBS
 signatures, and cancer-type-specific activity patterns. 
 
 At the time
-of submission of this absract we present offer overview of the indel mutational
-signatures repertoire at https://doi.org/10.5281/zenodo.18451842. This
-page will point to a more dynamic web site when it is ready as well as
+of submission of this abstract, we offer an overview of the indel mutational
+signatures repertoire as a static HTML file
+at https://doi.org/10.5281/zenodo.18451842. When ready, this
+page will point to a more dynamic web site as well as
 repositories of the analysis code.
 
 
