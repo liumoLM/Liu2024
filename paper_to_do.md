@@ -1,3 +1,20 @@
+# To do
+
+Paper shiny app url: simplify https://indelsignaturebrowser.shinyapps.io/indel-signature-browser/ to justhttps://indelsignaturebrowser.shinyapps.io/ or https://indelsignaturebrowser.shinyapps.io/main/
+
+make a reference for the zenodo site of the vignette: How it works: If your app is hosted on GitHub, you can link your repository to Zenodo. Every time you create a "Release" on GitHub, Zenodo automatically archives a copy and mints a new DOI for that version.Why use it: It ensures that even if your shinyapps.io link goes down, the specific version of the tool remains citable and accessible. (try to shorten URL first)
+
+Sup Fig 1 legend
+
+KIV figure 4 -- and the signature H proplem. Do a test on proportions?  
+
+KIV where to put "New sigs are rarer." or skip it?
+
+Steve in after writeup 1a/b/c 2/a/b/c go to N (mostly nb -- sigpro, hdp, X 83, 89, 476 + Koh ID21) incorporate text currently on page 9
+
+# From here down old
+
+
 # To Do Mo
 
 - Check sigs classified as pol e or pol d / are the 'linking tumors" / tumors highly similar to the
