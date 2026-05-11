@@ -2,7 +2,9 @@
 
 ## Critical
 
-- On two test files, did not complete building 476-type matrix before server disconnected
+- On two test files, did not complete building 476-type matrix before server disconnected; not sure if this because there was a problem processing the 
+  the test files or if thing just timed out.
+  
   - test file 1 (hg38): https://raw.githubusercontent.com/steverozen/mSigSpectra/refs/heads/main/inst/reijns_cell_data/reijns_cell_AKO1_4.vcf
   - test file 2 (hg37): https://raw.githubusercontent.com/steverozen/mSigSpectra/refs/heads/main/inst/extdata/Strelka-ID-GRCh37/Strelka.ID.GRCh37.s1.vcf
 
