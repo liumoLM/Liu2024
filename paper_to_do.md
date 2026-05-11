@@ -2,9 +2,13 @@
 
 Decide on Table 1 context
 
-Paper shiny app url: simplify https://indelsignaturebrowser.shinyapps.io/indel-signature-browser/ to justhttps://indelsignaturebrowser.shinyapps.io/ or https://indelsignaturebrowser.shinyapps.io/main/
+Paper shiny app url: 
+
+https://indelsigbrowser.shinyapps.io/main/
 
 make a reference for the zenodo site of the vignette: How it works: If your app is hosted on GitHub, you can link your repository to Zenodo. Every time you create a "Release" on GitHub, Zenodo automatically archives a copy and mints a new DOI for that version.Why use it: It ensures that even if your shinyapps.io link goes down, the specific version of the tool remains citable and accessible. (try to shorten URL first)
+
+Make sure the shiny app is using mSigSpectra and mSigPlot
 
 Sup Fig 1 legend
 
