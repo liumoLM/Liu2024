@@ -1,5 +1,7 @@
 # To do
 
+Decide on Table 1 context
+
 Paper shiny app url: simplify https://indelsignaturebrowser.shinyapps.io/indel-signature-browser/ to justhttps://indelsignaturebrowser.shinyapps.io/ or https://indelsignaturebrowser.shinyapps.io/main/
 
 make a reference for the zenodo site of the vignette: How it works: If your app is hosted on GitHub, you can link your repository to Zenodo. Every time you create a "Release" on GitHub, Zenodo automatically archives a copy and mints a new DOI for that version.Why use it: It ensures that even if your shinyapps.io link goes down, the specific version of the tool remains citable and accessible. (try to shorten URL first)
@@ -10,7 +12,10 @@ KIV figure 4 -- and the signature H proplem. Do a test on proportions?
 
 KIV where to put "New sigs are rarer." or skip it?
 
-Steve in after writeup 1a/b/c 2/a/b/c go to N (mostly nb -- sigpro, hdp, X 83, 89, 476 + Koh ID21) incorporate text currently on page 9
+Steve writeup N (mostly nb -- sigpro, hdp, X 83, 89, 476 + Koh ID21) incorporate text currently on page 9
+
+Resubmit mSigPlot to CRAN
+Submit mSigSpectra to CRAN
 
 # From here down old
 
@@ -26,8 +31,6 @@ Steve in after writeup 1a/b/c 2/a/b/c go to N (mostly nb -- sigpro, hdp, X 83, 8
 
 # To do steve
 
-- which "splits" of 83-type are interesting.  
-
 - Look at fig 5 (? indel vs SBS associations) and write up
 
 - Look at Fig 6 and corresponding section of the MS.
@@ -36,11 +39,8 @@ Steve in after writeup 1a/b/c 2/a/b/c go to N (mostly nb -- sigpro, hdp, X 83, 8
 
 - consider info on assignments below and review that section of the ms
 
-- add additional catalog row orders to mSigPlot
-
 - H -- how common are the 2 deletions that make up H across all tumors? how constant is the ratio in skin tumors? Scatter plot?
 
-- Time permitting, close the open intervals eg L(2,) -> L(2,9)
 
 # Decisions
 
