@@ -1,10 +1,14 @@
 # To do
 
-Decide on Table 1 context
+Steve find bug (?) in mSigPlot; titles and colored bars on top not geting printed in vignette; also for subtraced plot, make max Y the same in the linking tumor spectrum (both part due to signature and residual)
 
-Paper shiny app url: 
+Mo Sup Fig S1A and and S1B add one peak label for the 83 and 89-type plots; insdel 11 left hand side diagonal lines from 89 to 476; needs to go a bit more to the left in the 89 type plot
 
-https://indelsigbrowser.shinyapps.io/main/
+Steve reivew subsection "Associations between indel signatures and SBS signatures"
+
+Steve Review subsection "Demographic Associations with Gender and Age"
+
+Paper shiny app url: https://indelsigbrowser.shinyapps.io/main/
 
 make a reference for the zenodo site of the vignette: How it works: If your app is hosted on GitHub, you can link your repository to Zenodo. Every time you create a "Release" on GitHub, Zenodo automatically archives a copy and mints a new DOI for that version.Why use it: It ensures that even if your shinyapps.io link goes down, the specific version of the tool remains citable and accessible. (try to shorten URL first)
 
