@@ -2,7 +2,7 @@
 
 Steve find bug (?) in mSigPlot; titles and colored bars on top not geting printed in vignette; also for subtraced plot, make max Y the same in the linking tumor spectrum (both part due to signature and residual)
 
-Mo Sup Fig S1A and and S1B add one peak label for the 83 and 89-type plots; insdel 11 left hand side diagonal lines from 89 to 476; needs to go a bit more to the left in the 89 type plot
+Mo Sup Fig S1A and and S1B add one peak label for the 83 and 89-type plots; insdel 11 left hand side diagonal lines from 89 to 476; needs to go a bit more to the left in the 89 type plot - done
 
 Steve reivew subsection "Associations between indel signatures and SBS signatures"
 
