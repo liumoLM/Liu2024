@@ -1,19 +1,23 @@
 # To do
 
+xm: read vcf.gz
 
-Mo Sup Fig S1A and and S1B add one peak label for the 83 and 89-type plots; insdel 11 left hand side diagonal lines from 89 to 476; needs to go a bit more to the left in the 89 type plot - done
+Steve CHROM -> #CHROM in functions that create annotated vcf
+
+Steve submit updated mSigPlot to CRAN
 
 Steve reivew subsection "Associations between indel signatures and SBS signatures"
 
 Steve Review subsection "Demographic Associations with Gender and Age"
 
 Paper shiny app url: https://indelsigbrowser.shinyapps.io/main/
+Shiny app persistent doi: 200~10.5281/zenodo.20092288
 
-make a reference for the zenodo site of the vignette: How it works: If your app is hosted on GitHub, you can link your repository to Zenodo. Every time you create a "Release" on GitHub, Zenodo automatically archives a copy and mints a new DOI for that version.Why use it: It ensures that even if your shinyapps.io link goes down, the specific version of the tool remains citable and accessible. (try to shorten URL first)
+Steve: check "self" referencing from web page to shiny app doi
 
-Make sure the shiny app is using mSigSpectra and mSigPlot
+Steve **DO FIRST** generate single-signature separate vignette htmls plus a page for the overview table.
 
-Sup Fig 1 legend
+stepve check: Sup Fig 1 legend
 
 KIV figure 4 -- and the signature H proplem. Do a test on proportions?  
 
@@ -26,15 +30,6 @@ Submit mSigSpectra to CRAN
 
 # From here down old
 
-
-# To Do Mo
-
-- Check sigs classified as pol e or pol d / are the 'linking tumors" / tumors highly similar to the
-  sig mutated for pol e / pol d?
-
-- re-do sex association
-
-- Check if methods are up to date  
 
 # To do steve
 
