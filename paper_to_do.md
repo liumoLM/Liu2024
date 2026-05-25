@@ -1,5 +1,6 @@
 # To do
 
+
 xm: read vcf.gz
 
 Steve CHROM -> #CHROM in functions that create annotated vcf
@@ -11,7 +12,9 @@ Steve reivew subsection "Associations between indel signatures and SBS signature
 Steve Review subsection "Demographic Associations with Gender and Age"
 
 Paper shiny app url: https://indelsigbrowser.shinyapps.io/main/
-Shiny app persistent doi: 200~10.5281/zenodo.20092288
+Shiny app persistent doi: 10.5281/zenodo.20092288
+XmWU123 Github name
+
 
 Steve: check "self" referencing from web page to shiny app doi
 
