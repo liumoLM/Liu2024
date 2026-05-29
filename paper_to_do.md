@@ -1,11 +1,10 @@
 # To do
 
-
-xm: read vcf.gz
-
-Steve CHROM -> #CHROM in functions that create annotated vcf
-
 Steve submit updated mSigPlot to CRAN
+
+Steve submit mSigSpectra to CRAN
+
+Steve review Mini's method
 
 Steve reivew subsection "Associations between indel signatures and SBS signatures"
 
