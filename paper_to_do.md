@@ -10,6 +10,8 @@ Steve reivew subsection "Associations between indel signatures and SBS signature
 
 Steve Review subsection "Demographic Associations with Gender and Age"
 
+Xueming -- shiny app navigation issues; also, maybe add e.g. "loading..." or something
+
 Paper shiny app url: https://indelsigbrowser.shinyapps.io/main/
 Shiny app persistent doi: 10.5281/zenodo.20092288
 XmWU123 Github name
@@ -17,9 +19,7 @@ XmWU123 Github name
 
 Steve: check "self" referencing from web page to shiny app doi
 
-Steve **DO FIRST** generate single-signature separate vignette htmls plus a page for the overview table.
-
-stepve check: Sup Fig 1 legend
+steve check: Sup Fig 1 legend
 
 KIV figure 4 -- and the signature H proplem. Do a test on proportions?  
 
