@@ -50,12 +50,13 @@ this_dir <- local({
   dirname(normalizePath(f))
 })
 
+sup_dir <- file.path(this_dir, "..", "Sup Tables")
 assignment_file <- file.path(
-  this_dir,
+  sup_dir,
   "Table S10 83-type and 89-type signature assignment.tsv"
 )
 metadata_file <- file.path(
-  this_dir,
+  sup_dir,
   "Table S17 metadata of 6975 samples.xlsx"
 )
 output_file <- file.path(
@@ -78,7 +79,7 @@ params <- list(
   base_size = 12,
   point_size = 1.2,
   point_alpha = 0.6,
-  min_samples = 3,
+  min_samples = 1,
   genome_size_mb = NULL
 )
 
