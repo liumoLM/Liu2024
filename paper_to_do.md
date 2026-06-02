@@ -4,7 +4,9 @@ Steve submit updated mSigPlot to CRAN
 
 Steve submit mSigSpectra to CRAN
 
-Steve review Mini's method
+Steve review Mini's methods -
+
+Steve ask mo how we do transcription strand bias
 
 Steve reivew subsection "Associations between indel signatures and SBS signatures"
 
@@ -51,6 +53,21 @@ Submit mSigSpectra to CRAN
 # Status: 
 
 
+# Under consideration / nice to have
+
+Electronically (via link) Examples of mutations in the different (somewhat obscure) classification
+
+The Sig F / Reijn annotated VCFs need to be redone with "cap 9"
+
+Review SBS / indel associations
+
+# Data sources for Degaspari SBS data
+  https://zenodo.org/records/5571551/files/SBS_v2.03.zip?download=1                                                                                                                        
+                                                                                                                                                                                            
+  (From Zenodo record https://zenodo.org/records/5571551)
+  https://doi.org/10.5281/zenodo.5571551 
+
+The following is unreliable:
 # Assignments
 
 - 1a everywhere
@@ -94,18 +111,3 @@ Submit mSigSpectra to CRAN
 - M super rare, high MIS assoc, only lung breast colon protate
 - N alpha, somwhat rare, slightly more in stomach?
 - N beta, everywhere except thymus kindey liver *** look for complimentary signature 
-
-# Under consideration / nice to have
-
-Electronically (via link) Examples of mutations in the different (somewhat obscure) classification
-
-The Sig F / Reijn annotated VCFs need to be redone with "cap 9"
-
-Review SBS / indel associations
-
-# Data sources for Degaspari SBS data
-  https://zenodo.org/records/5571551/files/SBS_v2.03.zip?download=1                                                                                                                        
-                                                                                                                                                                                            
-  (From Zenodo record https://zenodo.org/records/5571551)
-  https://doi.org/10.5281/zenodo.5571551 
-
