@@ -1,0 +1,22 @@
+"major","MSS non-hypermutated","MSS hypermutated","MSI-H"
+"Biliary",114,6,0
+"Bladder",187,8,3
+"Bone.SoftTissue",290,2,0
+"Breast",933,14,6
+"CNS",365,2,5
+"Colon",470,158,24
+"Esophagus",196,51,0
+"Head",119,2,1
+"Kidney",303,1,2
+"Liver",377,2,0
+"Lung",454,120,2
+"Lymphoid",217,10,1
+"Myeloid",72,0,0
+"Other",322,28,3
+"Ovary",262,2,0
+"Pancreas",403,6,1
+"Prostate",658,24,19
+"Skin",413,17,2
+"Stomach",97,16,6
+"Thymus",56,1,0
+"Uterus",100,6,16
