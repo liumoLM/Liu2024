@@ -1,3 +1,12 @@
+# Journal requirements (cell resources)
+
+- 7 display items allowed (We will have 1 table and 6 main figures)
+- Word Count: The main text should be under 7,000 words. This count includes the figure legends but excludes the STAR Methods, supplemental legends, and references.
+- Supplemental Items: You may include additional display items as supplemental information at the editor's discretion. For Cell Research Articles, this is often up to 7 supplemental figures.
+- Mandatory Items: You must also include a Graphical Abstract (exactly 1,200 x 1,200 pixels) and 3–4 Highlights (each 85 characters or fewer). [1, 2, 3, 4]
+http://8.138.15.71/
+
+
 # To do
 
 Steve submit updated mSigPlot to CRAN
