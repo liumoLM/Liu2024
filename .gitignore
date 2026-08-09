@@ -1,2 +1,2 @@
-snowflake.log
+^snowflake.log$
 .~lock.*
