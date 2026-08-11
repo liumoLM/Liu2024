@@ -509,6 +509,96 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><strong>Co-occurrence is lopsided but that is not the interesting part.</strong> Of the 2,635 N_beta tumours, 1,192 carry neither directional family, 1,317 carry the 1 family only, 124 the 2 family only, and just 2 carry both. The 1 and 2 families are near mutually exclusive. The 10:1 skew toward the 1 family mostly reflects how common that family is: among the 4,141 MSS tumours <strong>without</strong> N_beta, 3,095 carry the 1 family only, 91 the 2 family only, 62 both, and 893 neither.</p>
 <p><strong>Why this matters here.</strong> The report above frames the problem as a conflict between deletion-biased enzymology and insertion-biased human data. N_beta suggests the human data contain a component that is neither. If N_beta is the underlying slippage process and 1a and 2a are what happens when something biases it, then the quantity to explain is not “why are human indels insertion-biased” but “what tips a balanced process one way or the other”. MMR status is one such tipping factor and is visible in the tables above, but N_beta tumours are almost all MMR proficient, so it cannot be the only one.</p>
 </section>
+<section id="signature-prevalence-by-mmr-status" class="level3">
+<h3 class="anchored" data-anchor-id="signature-prevalence-by-mmr-status">Signature prevalence by MMR status</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Signature</th>
+<th>MSI-H n (182)</th>
+<th>MSI-H %</th>
+<th>MSS n (6,767)</th>
+<th>MSS %</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>InsDel1a</td>
+<td>39</td>
+<td><strong>21.4</strong></td>
+<td>3,782</td>
+<td><strong>55.9</strong></td>
+</tr>
+<tr class="even">
+<td>InsDel1b</td>
+<td>4</td>
+<td>2.2</td>
+<td>141</td>
+<td>2.1</td>
+</tr>
+<tr class="odd">
+<td>InsDel1c</td>
+<td>18</td>
+<td>9.9</td>
+<td>553</td>
+<td>8.2</td>
+</tr>
+<tr class="even">
+<td>any 1 family</td>
+<td>60</td>
+<td>33.0</td>
+<td>4,473</td>
+<td>66.1</td>
+</tr>
+<tr class="odd">
+<td>InsDel2a</td>
+<td>54</td>
+<td>29.7</td>
+<td>182</td>
+<td>2.7</td>
+</tr>
+<tr class="even">
+<td>InsDel2b</td>
+<td>47</td>
+<td>25.8</td>
+<td>41</td>
+<td>0.6</td>
+</tr>
+<tr class="odd">
+<td>InsDel2c</td>
+<td>43</td>
+<td>23.6</td>
+<td>52</td>
+<td>0.8</td>
+</tr>
+<tr class="even">
+<td>any 2 family</td>
+<td>126</td>
+<td><strong>69.2</strong></td>
+<td>274</td>
+<td><strong>4.0</strong></td>
+</tr>
+<tr class="odd">
+<td>neither 1 nor 2</td>
+<td>37</td>
+<td>20.3</td>
+<td>2,082</td>
+<td>30.8</td>
+</tr>
+<tr class="even">
+<td>InsDel_N_beta</td>
+<td>9</td>
+<td><strong>4.9</strong></td>
+<td>2,626</td>
+<td><strong>38.8</strong></td>
+</tr>
+</tbody>
+</table>
+<p>The 1 family is depleted under MMR deficiency but not absent, a third of MSI-H tumours carry one (Fisher p = 3.6e-19, odds ratio 4.0 toward MSS). The depletion is driven entirely by <code>InsDel1a</code>, 55.9% down to 21.4%. <code>InsDel1b</code> and <code>InsDel1c</code> are not depleted at all and run slightly higher in MSI-H. The signature that really is near-absent under MMR deficiency is <code>InsDel_N_beta</code>, 38.8% down to 4.9%, an 8-fold drop.</p>
+<p>The mirror image is the 2 family at 4.0% to 69.2%, a 17-fold enrichment, which is ID2 behaving as expected in microsatellite-unstable tumours.</p>
+<p>The <code>neither 1 nor 2</code> row records tumours with no long-poly-T directional signature at all: 37 MSI-H tumours (20.3%), of which only 3 carry N_beta, so their poly-T indels are attributed elsewhere.</p>
+<p>Caveat on every row. Presence is thresholded at exposure above zero, and MSI-H tumours carry roughly ten times the indel burden, which makes any signature easier to detect at a given true proportion. That bias runs against the depletions reported here, so the <code>InsDel1a</code> and <code>InsDel_N_beta</code> drops are if anything understated, while the 2-family enrichment is inflated.</p>
+</section>
 <section id="the-1-family-broken-out-by-subtype" class="level3">
 <h3 class="anchored" data-anchor-id="the-1-family-broken-out-by-subtype">The 1 family broken out by subtype</h3>
 <p>Among MSS tumours the three 1-family signatures are close to mutually exclusive: 3,780 carry <code>InsDel1a</code> only, 552 <code>InsDel1c</code> only, 138 <code>InsDel1b</code> only, 3 carry more than one, and 2,294 carry none. Broken out that way, grouped first by whether the tumour also carries <code>InsDel_N_beta</code>, on the coarse bins:</p>

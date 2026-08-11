@@ -406,6 +406,40 @@ is not "why are human indels insertion-biased" but "what tips a balanced process
 way or the other". MMR status is one such tipping factor and is visible in the tables
 above, but N_beta tumours are almost all MMR proficient, so it cannot be the only one.
 
+### Signature prevalence by MMR status
+
+| Signature | MSI-H n (182) | MSI-H % | MSS n (6,767) | MSS % |
+|---|---|---|---|---|
+| InsDel1a | 39 | **21.4** | 3,782 | **55.9** |
+| InsDel1b | 4 | 2.2 | 141 | 2.1 |
+| InsDel1c | 18 | 9.9 | 553 | 8.2 |
+| any 1 family | 60 | 33.0 | 4,473 | 66.1 |
+| InsDel2a | 54 | 29.7 | 182 | 2.7 |
+| InsDel2b | 47 | 25.8 | 41 | 0.6 |
+| InsDel2c | 43 | 23.6 | 52 | 0.8 |
+| any 2 family | 126 | **69.2** | 274 | **4.0** |
+| neither 1 nor 2 | 37 | 20.3 | 2,082 | 30.8 |
+| InsDel_N_beta | 9 | **4.9** | 2,626 | **38.8** |
+
+The 1 family is depleted under MMR deficiency but not absent, a third of MSI-H tumours
+carry one (Fisher p = 3.6e-19, odds ratio 4.0 toward MSS). The depletion is driven
+entirely by `InsDel1a`, 55.9% down to 21.4%. `InsDel1b` and `InsDel1c` are not depleted
+at all and run slightly higher in MSI-H. The signature that really is near-absent under
+MMR deficiency is `InsDel_N_beta`, 38.8% down to 4.9%, an 8-fold drop.
+
+The mirror image is the 2 family at 4.0% to 69.2%, a 17-fold enrichment, which is ID2
+behaving as expected in microsatellite-unstable tumours.
+
+The `neither 1 nor 2` row records tumours with no long-poly-T directional signature at
+all: 37 MSI-H tumours (20.3%), of which only 3 carry N_beta, so their poly-T indels are
+attributed elsewhere.
+
+Caveat on every row. Presence is thresholded at exposure above zero, and MSI-H tumours
+carry roughly ten times the indel burden, which makes any signature easier to detect at
+a given true proportion. That bias runs against the depletions reported here, so the
+`InsDel1a` and `InsDel_N_beta` drops are if anything understated, while the 2-family
+enrichment is inflated.
+
 ### The 1 family broken out by subtype
 
 Among MSS tumours the three 1-family signatures are close to mutually exclusive: 3,780
