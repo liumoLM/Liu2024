@@ -221,15 +221,50 @@ ul.task-list li input[type="checkbox"] {
 </table>
 <p>“The number of deletions far exceeds the number of insertions, and the number of deletions and insertions is much higher for A/T as compared to G/C base pairs.” The ratio is strongly length-dependent, reaching about <strong>100-fold</strong> deletion bias at 12 bp A/T runs. Their proposed reason is thermodynamic, that forming the insertion-type misaligned intermediate requires disrupting more hydrogen bonds than the deletion-type one. Note these counts are from MMR-deficient backgrounds, so they measure the polymerase error spectrum minus whatever MMR would have caught.</p>
 </section>
-<section id="an-unresolved-discordance-worth-flagging" class="level3">
-<h3 class="anchored" data-anchor-id="an-unresolved-discordance-worth-flagging">An unresolved discordance worth flagging</h3>
-<p>The polymerase data above are strongly <strong>deletion</strong>-biased. Several human in vivo observations are <strong>insertion</strong>-biased:</p>
+<section id="does-mmr-repair-1-bp-deletions-more-efficiently-than-1-bp-insertions" class="level3">
+<h3 class="anchored" data-anchor-id="does-mmr-repair-1-bp-deletions-more-efficiently-than-1-bp-insertions">Does MMR repair 1 bp deletions more efficiently than 1 bp insertions?</h3>
+<p>Short answer: no, and where an asymmetry exists it runs the other way for the complex that handles most single-nucleotide loops.</p>
+<p>Terminology, since it is easy to invert. In the MMR literature an <strong>insertion loop</strong> is an extra nucleotide extrahelical on the <strong>primer/nascent</strong> strand, which if unrepaired becomes an insertion mutation. A <strong>deletion loop</strong> is an extra nucleotide on the <strong>template</strong> strand, which if unrepaired becomes a deletion.</p>
+<ul>
+<li><p>Romanova NV, Crouse GF (2013) “Different roles of eukaryotic MutS and MutL complexes in repair of small insertion and deletion loops in yeast,” <em>PLoS Genetics</em> 9:e1003920. doi:10.1371/journal.pgen.1003920 https://journals.plos.org/plosgenetics/article?id=10.1371/journal.pgen.1003920 There <strong>is</strong> an asymmetry, and it is complex-dependent. Median repair ratios for 1-nt loops (their Table 4):</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>MutS complex</th>
+<th>1-nt insertion loops</th>
+<th>1-nt deletion loops</th>
+<th>P</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>MutS-alpha (Msh2-Msh6, msh3 strains)</td>
+<td>190</td>
+<td>73</td>
+<td>0.017</td>
+</tr>
+<tr class="even">
+<td>MutS-beta (Msh2-Msh3, msh6 strains)</td>
+<td>3</td>
+<td>22</td>
+<td>0.029</td>
+</tr>
+</tbody>
+</table>
+<p>“MutSalpha has a consistently greater activity toward 1-nt insertion mismatches, whereas the MutSbeta activity is the reverse.” They argue the pattern likely holds in mammalian cells. Since MutS-alpha is the main complex acting on single-nucleotide loops, the net effect of MMR should be to remove <strong>insertion</strong>-type errors somewhat preferentially, which would <em>deepen</em> rather than offset the polymerase deletion bias.</p></li>
+<li><p>Lujan SA, Clark AB, Kunkel TA (2015) <em>NAR</em> 43:4067-4074, doi:10.1093/nar/gkv271 At the genome scale they see no evidence of differential MMR efficiency. The deletion-to-insertion ratio is similar in MMR-proficient and MMR-deficient strains, single-base deletion rates exceed insertion rates across genotypes, and “a high deletion to insertion ratio is also observed during synthesis <em>in vitro</em> by DNA polymerases.” They attribute the bias to the polymerase step, specifically that “base-base hydrogen bonding must be disrupted for one more base pair in order to create an insertion mismatch…as compared to a deletion mismatch.”</p></li>
+</ul>
+<p><strong>Correction to an earlier note in this file.</strong> I had suggested that MMR might preferentially remove deletion-type intermediates, leaving an insertion-biased spectrum in MMR-proficient cells. Both papers above contradict that. Lujan et al.&nbsp;find no differential MMR efficiency at all, and Romanova and Crouse find MutS-alpha favouring insertion loops, the opposite direction.</p>
+</section>
+<section id="the-discordance-that-remains" class="level3">
+<h3 class="anchored" data-anchor-id="the-discordance-that-remains">The discordance that remains</h3>
+<p>So the insertion-biased human observations are still unexplained by differential MMR:</p>
 <ul>
 <li>Happ et al.&nbsp;2026 germline de novo homopolymer mutations favour expansions (P = 1.4e-8).</li>
 <li>Koh et al.&nbsp;2025 polymerase-dysfunction cell lines gave <em>exclusively</em> 1 bp T insertions at poly-T5+.</li>
 <li>COSMIC ID1 (insertion) is near-universal and clock-like, while ID2 (deletion) is the one that explodes in MMR deficiency.</li>
 </ul>
-<p>A plausible reconciliation, and this is my inference rather than something any of these papers states: the polymerase intrinsically makes more deletion-type slippage intermediates, MMR removes those preferentially or more efficiently, and what survives in an MMR-proficient cell is insertion-biased. Consistent with this, Lujan’s deletion-heavy counts come from MMR-deficient strains, and ID2 is the MSI signature. Worth checking against the indel paper’s own data, since a direct test would be the del:ins ratio at matched homopolymer length in MMR-proficient versus MMR-deficient tumours.</p>
+<p>Against in vitro and yeast in vivo data that are deletion-biased at every genotype tested. Candidate explanations not yet checked here: the yeast reporter and genome assays sample much shorter homopolymers than the human loci in question, short-read alignment is known to call insertions and deletions at homopolymers with different sensitivity, and the human germline number comes from a specific long-allele locus set (&gt;=10 bp). A direct test in our data would be the del:ins ratio stratified by homopolymer length in MMR-proficient versus MMR-deficient tumours, which would show whether the human insertion bias is real, length-specific, or a calling artefact.</p>
 </section>
 </section>
 <section id="bottom-line" class="level2">
@@ -239,11 +274,11 @@ ul.task-list li input[type="checkbox"] {
 <li>There is <strong>no good evidence that A:T base pairs slip more readily than G:C at matched tract length.</strong> The genome-wide poly-A/poly-T dominance is driven by tract length and tract abundance. Anyone claiming an intrinsic A/T slippage preference should be pointed at Lujan et al.&nbsp;2015 and Happ et al.&nbsp;2026.</li>
 </ol>
 </section>
-<section id="related-ea-material" class="level2">
-<h2 class="anchored" data-anchor-id="related-ea-material">Related EA material</h2>
+<section id="related-material-in-this-folder" class="level2">
+<h2 class="anchored" data-anchor-id="related-material-in-this-folder">Related material in this folder</h2>
 <ul>
-<li><a href="../indel_paper/"><code>../indel_paper/</code></a> — the indel signature classification paper. Relevant to that work: the ID1/ID2 nascent-vs-template split, the tract-length dependence of insertion vs deletion excess (Koh et al.&nbsp;2025), and the point that A/T dominance is a target-abundance effect, which bears on opportunity normalization for any new indel classification.</li>
-<li><a href="../indel_paper/comparison-with-koh-2025.md"><code>../indel_paper/comparison-with-koh-2025.md</code></a></li>
+<li>The indel signature classification paper (<code>README.md</code>, <code>long-abst.md</code>, <code>abstract-150.md</code>). Relevant to that work: the ID1/ID2 nascent-vs-template split, the tract-length dependence of insertion vs deletion excess (Koh et al.&nbsp;2025), and the point that A/T dominance is a target-abundance effect, which bears on opportunity normalization for any new indel classification.</li>
+<li><a href="comparison-with-koh-2025.md"><code>comparison-with-koh-2025.md</code></a></li>
 </ul>
 </section>
 </section>

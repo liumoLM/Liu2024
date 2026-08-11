@@ -215,10 +215,52 @@ misaligned intermediate requires disrupting more hydrogen bonds than the deletio
 one. Note these counts are from MMR-deficient backgrounds, so they measure the
 polymerase error spectrum minus whatever MMR would have caught.
 
-### An unresolved discordance worth flagging
+### Does MMR repair 1 bp deletions more efficiently than 1 bp insertions?
 
-The polymerase data above are strongly **deletion**-biased. Several human in vivo
-observations are **insertion**-biased:
+Short answer: no, and where an asymmetry exists it runs the other way for the complex
+that handles most single-nucleotide loops.
+
+Terminology, since it is easy to invert. In the MMR literature an **insertion loop** is
+an extra nucleotide extrahelical on the **primer/nascent** strand, which if unrepaired
+becomes an insertion mutation. A **deletion loop** is an extra nucleotide on the
+**template** strand, which if unrepaired becomes a deletion.
+
+- Romanova NV, Crouse GF (2013) "Different roles of eukaryotic MutS and MutL complexes
+  in repair of small insertion and deletion loops in yeast," *PLoS Genetics* 9:e1003920.
+  doi:10.1371/journal.pgen.1003920
+  https://journals.plos.org/plosgenetics/article?id=10.1371/journal.pgen.1003920
+  There **is** an asymmetry, and it is complex-dependent. Median repair ratios for 1-nt
+  loops (their Table 4):
+
+  | MutS complex | 1-nt insertion loops | 1-nt deletion loops | P |
+  |---|---|---|---|
+  | MutS-alpha (Msh2-Msh6, msh3 strains) | 190 | 73 | 0.017 |
+  | MutS-beta (Msh2-Msh3, msh6 strains) | 3 | 22 | 0.029 |
+
+  "MutSalpha has a consistently greater activity toward 1-nt insertion mismatches,
+  whereas the MutSbeta activity is the reverse." They argue the pattern likely holds in
+  mammalian cells. Since MutS-alpha is the main complex acting on single-nucleotide
+  loops, the net effect of MMR should be to remove **insertion**-type errors somewhat
+  preferentially, which would *deepen* rather than offset the polymerase deletion bias.
+
+- Lujan SA, Clark AB, Kunkel TA (2015) *NAR* 43:4067-4074, doi:10.1093/nar/gkv271
+  At the genome scale they see no evidence of differential MMR efficiency. The
+  deletion-to-insertion ratio is similar in MMR-proficient and MMR-deficient strains,
+  single-base deletion rates exceed insertion rates across genotypes, and "a high
+  deletion to insertion ratio is also observed during synthesis *in vitro* by DNA
+  polymerases." They attribute the bias to the polymerase step, specifically that
+  "base-base hydrogen bonding must be disrupted for one more base pair in order to
+  create an insertion mismatch...as compared to a deletion mismatch."
+
+**Correction to an earlier note in this file.** I had suggested that MMR might
+preferentially remove deletion-type intermediates, leaving an insertion-biased spectrum
+in MMR-proficient cells. Both papers above contradict that. Lujan et al. find no
+differential MMR efficiency at all, and Romanova and Crouse find MutS-alpha favouring
+insertion loops, the opposite direction.
+
+### The discordance that remains
+
+So the insertion-biased human observations are still unexplained by differential MMR:
 
 - Happ et al. 2026 germline de novo homopolymer mutations favour expansions
   (P = 1.4e-8).
@@ -227,14 +269,14 @@ observations are **insertion**-biased:
 - COSMIC ID1 (insertion) is near-universal and clock-like, while ID2 (deletion) is the
   one that explodes in MMR deficiency.
 
-A plausible reconciliation, and this is my inference rather than something any of these
-papers states: the polymerase intrinsically makes more deletion-type slippage
-intermediates, MMR removes those preferentially or more efficiently, and what survives
-in an MMR-proficient cell is insertion-biased. Consistent with this, Lujan's
-deletion-heavy counts come from MMR-deficient strains, and ID2 is the MSI signature.
-Worth checking against the indel paper's own data, since a direct test would be the
-del:ins ratio at matched homopolymer length in MMR-proficient versus MMR-deficient
-tumours.
+Against in vitro and yeast in vivo data that are deletion-biased at every genotype
+tested. Candidate explanations not yet checked here: the yeast reporter and genome
+assays sample much shorter homopolymers than the human loci in question, short-read
+alignment is known to call insertions and deletions at homopolymers with different
+sensitivity, and the human germline number comes from a specific long-allele locus set
+(>=10 bp). A direct test in our data would be the del:ins ratio stratified by
+homopolymer length in MMR-proficient versus MMR-deficient tumours, which would show
+whether the human insertion bias is real, length-specific, or a calling artefact.
 
 ## Bottom line
 
