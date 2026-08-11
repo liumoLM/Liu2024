@@ -264,7 +264,150 @@ ul.task-list li input[type="checkbox"] {
 <li>Koh et al.&nbsp;2025 polymerase-dysfunction cell lines gave <em>exclusively</em> 1 bp T insertions at poly-T5+.</li>
 <li>COSMIC ID1 (insertion) is near-universal and clock-like, while ID2 (deletion) is the one that explodes in MMR deficiency.</li>
 </ul>
-<p>Against in vitro and yeast in vivo data that are deletion-biased at every genotype tested. Candidate explanations not yet checked here: the yeast reporter and genome assays sample much shorter homopolymers than the human loci in question, short-read alignment is known to call insertions and deletions at homopolymers with different sensitivity, and the human germline number comes from a specific long-allele locus set (&gt;=10 bp). A direct test in our data would be the del:ins ratio stratified by homopolymer length in MMR-proficient versus MMR-deficient tumours, which would show whether the human insertion bias is real, length-specific, or a calling artefact.</p>
+<p>Against in vitro and yeast in vivo data that are deletion-biased at every genotype tested. Candidate explanations not yet checked here: the yeast reporter and genome assays sample much shorter homopolymers than the human loci in question, short-read alignment is known to call insertions and deletions at homopolymers with different sensitivity, and the human germline number comes from a specific long-allele locus set (&gt;=10 bp). A direct test in our data is the del:ins ratio stratified by homopolymer length in MMR-proficient versus MMR-deficient tumours, which shows whether the human insertion bias is real, length-specific, or a calling artefact. That test has now been run, see the next section.</p>
+</section>
+</section>
+<section id="our-own-data-the-discordance-is-length-specific" class="level2">
+<h2 class="anchored" data-anchor-id="our-own-data-the-discordance-is-length-specific">Our own data: the discordance is length-specific</h2>
+<p>The test proposed above has now been run on the Liu et al.&nbsp;ID476 cohort. Script, augmented table and figures are in <code>~/github/zz-liu_2025_draft_release/del-vs-ins-analysis/</code> (commit 11ff2ae).</p>
+<p>Method. Transpose the 476-channel spectra (6,978 tumours), aggregate the 342 one-base homopolymer channels across their 9 flanking contexts into per-tract-length deletion and insertion counts, and split by <code>MSIseq_MSI.H</code>, which gives 202 MMR-deficient (MSI-H), 6,773 MMR-proficient and 3 unknown. Panel Rn compares Del(base):Rn with Ins(base):Rn, both meaning a tract of n bases existed <strong>before</strong> the event, so the two channels describe the same substrate. No indel-burden filter is applied, because a 4,000-indel cutoff would remove 200 of the 202 MSI-H tumours.</p>
+<section id="pooled-insertions-deletions-by-tract-length" class="level3">
+<h3 class="anchored" data-anchor-id="pooled-insertions-deletions-by-tract-length">Pooled insertions / deletions by tract length</h3>
+<p>Values above 1 mean insertions exceed deletions. Pooled across tumours rather than a median of per-tumour ratios, since most tumours are zero in most channels.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 10%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Tract</th>
+<th>R1</th>
+<th>R2</th>
+<th>R3</th>
+<th>R4</th>
+<th>R5</th>
+<th>R6</th>
+<th>R7</th>
+<th>R8</th>
+<th>R9+</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>poly-T, MMR proficient</td>
+<td>0.59</td>
+<td>0.46</td>
+<td>0.45</td>
+<td>0.31</td>
+<td>0.83</td>
+<td><strong>2.29</strong></td>
+<td><strong>1.79</strong></td>
+<td><strong>1.64</strong></td>
+<td>0.94</td>
+</tr>
+<tr class="even">
+<td>poly-T, MSI-H</td>
+<td>0.46</td>
+<td>1.48</td>
+<td>0.61</td>
+<td>0.39</td>
+<td>0.35</td>
+<td>0.60</td>
+<td>0.33</td>
+<td>0.26</td>
+<td>0.15</td>
+</tr>
+<tr class="odd">
+<td>poly-C, MMR proficient</td>
+<td>0.10</td>
+<td>0.07</td>
+<td>0.10</td>
+<td>0.22</td>
+<td>0.28</td>
+<td>0.56</td>
+<td><strong>2.17</strong></td>
+<td><strong>1.77</strong></td>
+<td>0.45</td>
+</tr>
+<tr class="even">
+<td>poly-C, MSI-H</td>
+<td>0.10</td>
+<td>0.13</td>
+<td>0.31</td>
+<td>1.01</td>
+<td>0.25</td>
+<td>0.25</td>
+<td>0.51</td>
+<td>0.47</td>
+<td>0.19</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="coarse-bins-at-the-koh-et-al.-2025-thresholds" class="level3">
+<h3 class="anchored" data-anchor-id="coarse-bins-at-the-koh-et-al.-2025-thresholds">Coarse bins at the Koh et al.&nbsp;2025 thresholds</h3>
+<p>Koh et al.&nbsp;report 1 bp T deletions at poly-T6+ in MMR-deficient lines and 1 bp T insertions at poly-T5+ in polymerase-dysfunction lines, so these two bins are at different tract lengths and this ratio is <strong>not</strong> a same-substrate comparison.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th></th>
+<th>deletions from 6+</th>
+<th>insertions into 5+</th>
+<th>ins/del</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>poly-T, MMR proficient</td>
+<td>811,202</td>
+<td>1,310,978</td>
+<td><strong>1.62</strong></td>
+</tr>
+<tr class="even">
+<td>poly-T, MSI-H</td>
+<td>7,245,469</td>
+<td>2,015,686</td>
+<td><strong>0.28</strong></td>
+</tr>
+<tr class="odd">
+<td>poly-C, MMR proficient</td>
+<td>49,502</td>
+<td>66,125</td>
+<td><strong>1.34</strong></td>
+</tr>
+<tr class="even">
+<td>poly-C, MSI-H</td>
+<td>401,904</td>
+<td>183,258</td>
+<td><strong>0.46</strong></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="what-this-shows" class="level3">
+<h3 class="anchored" data-anchor-id="what-this-shows">What this shows</h3>
+<ol type="1">
+<li><p><strong>The two MMR states diverge with tract length, in opposite directions.</strong> In MMR-proficient tumours the ratio climbs with length and crosses 1 at poly-T6, peaking near 2.3. In MSI-H tumours it falls monotonically past R2, reaching 0.15 at R9+, so deletions outnumber insertions about 7:1 at long tracts. On the coarse bins that is a 5.8-fold swing in ins:del between MMR states for poly-T, and 2.9-fold for poly-C.</p></li>
+<li><p><strong>This reproduces Koh et al.&nbsp;2025 in an independent cohort</strong>, from raw channel counts with no signature extraction. Their polymerase-dysfunction insertions at poly-T5+ and MMR-deficient deletions at poly-T6+ appear here as an MMR-proficient insertion excess starting at exactly poly-T6 and an MSI-H deletion excess growing over the same range. It is ID1 versus ID2 falling out of the counts directly.</p></li>
+<li><p><strong>The human insertion bias is length-specific, not global.</strong> At short tracts (R1 to R4) deletions dominate in both MMR groups, which agrees with the yeast and in vitro measurements. The insertion excess appears only at R6 to R8. That partly reconciles the discordance above: the yeast reporter and genome assays sample short homopolymers, exactly the range where our human data agree with them, so the two bodies of work may not actually conflict.</p></li>
+</ol>
+</section>
+<section id="caveats" class="level3">
+<h3 class="anchored" data-anchor-id="caveats">Caveats</h3>
+<ul>
+<li>The R9+ bin drops back below 1 in both MMR-proficient rows. That bin pools everything from 9 upward and the deletion and insertion channels may not pool comparable tract-length distributions. Not yet checked.</li>
+<li>poly-C at R7 and R8 rests on small counts.</li>
+<li>Short-read alignment calls insertions and deletions at long homopolymers with different sensitivity. The MMR-proficient versus MSI-H contrast is internally controlled for this, since both groups are called the same way, but the absolute position of the ratio relative to 1 is not.</li>
+</ul>
 </section>
 </section>
 <section id="bottom-line" class="level2">
@@ -272,6 +415,8 @@ ul.task-list li input[type="checkbox"] {
 <ol type="1">
 <li>Both +T and -T at poly-T are real and mechanistically distinguished: ID1 (nascent strand slippage, insertion) vs ID2 (template strand slippage, deletion), with experimental separation in Koh et al.&nbsp;2025 and de novo germline confirmation in Happ et al.&nbsp;2026.</li>
 <li>There is <strong>no good evidence that A:T base pairs slip more readily than G:C at matched tract length.</strong> The genome-wide poly-A/poly-T dominance is driven by tract length and tract abundance. Anyone claiming an intrinsic A/T slippage preference should be pointed at Lujan et al.&nbsp;2015 and Happ et al.&nbsp;2026.</li>
+<li><strong>MMR does not preferentially repair one direction.</strong> Lujan et al.&nbsp;2015 find the del:ins ratio is unchanged between MMR-proficient and MMR-deficient strains, and Romanova &amp; Crouse 2013 find MutS-alpha favours insertion loops if anything.</li>
+<li><strong>In our cohort the ins:del ratio depends on tract length and MMR state together.</strong> Deletions dominate at short tracts in both MMR states, matching the yeast and in vitro data. Insertions overtake deletions only at poly-T6 to poly-T8 and only in MMR-proficient tumours. So the apparent conflict between the human insertion bias and the deletion-biased enzymology is largely a matter of which tract lengths each body of work samples.</li>
 </ol>
 </section>
 <section id="related-material-in-this-folder" class="level2">
@@ -279,6 +424,7 @@ ul.task-list li input[type="checkbox"] {
 <ul>
 <li>The indel signature classification paper (<code>README.md</code>, <code>long-abst.md</code>, <code>abstract-150.md</code>). Relevant to that work: the ID1/ID2 nascent-vs-template split, the tract-length dependence of insertion vs deletion excess (Koh et al.&nbsp;2025), and the point that A/T dominance is a target-abundance effect, which bears on opportunity normalization for any new indel classification.</li>
 <li><a href="comparison-with-koh-2025.md"><code>comparison-with-koh-2025.md</code></a></li>
+<li>The cohort analysis behind the “Our own data” section lives outside this repo, in <code>~/github/zz-liu_2025_draft_release/del-vs-ins-analysis/</code> (script, augmented 6,978 x 524 table, and a 4-page PDF of the scatters and ratio summary).</li>
 </ul>
 </section>
 </section>

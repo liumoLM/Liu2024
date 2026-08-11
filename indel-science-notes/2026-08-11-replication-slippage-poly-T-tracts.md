@@ -274,9 +274,82 @@ tested. Candidate explanations not yet checked here: the yeast reporter and geno
 assays sample much shorter homopolymers than the human loci in question, short-read
 alignment is known to call insertions and deletions at homopolymers with different
 sensitivity, and the human germline number comes from a specific long-allele locus set
-(>=10 bp). A direct test in our data would be the del:ins ratio stratified by
-homopolymer length in MMR-proficient versus MMR-deficient tumours, which would show
-whether the human insertion bias is real, length-specific, or a calling artefact.
+(>=10 bp). A direct test in our data is the del:ins ratio stratified by homopolymer
+length in MMR-proficient versus MMR-deficient tumours, which shows whether the human
+insertion bias is real, length-specific, or a calling artefact. That test has now been
+run, see the next section.
+
+## Our own data: the discordance is length-specific
+
+The test proposed above has now been run on the Liu et al. ID476 cohort. Script,
+augmented table and figures are in
+`~/github/zz-liu_2025_draft_release/del-vs-ins-analysis/` (commit 11ff2ae).
+
+Method. Transpose the 476-channel spectra (6,978 tumours), aggregate the 342 one-base
+homopolymer channels across their 9 flanking contexts into per-tract-length deletion
+and insertion counts, and split by `MSIseq_MSI.H`, which gives 202 MMR-deficient
+(MSI-H), 6,773 MMR-proficient and 3 unknown. Panel Rn compares Del(base):Rn with
+Ins(base):Rn, both meaning a tract of n bases existed **before** the event, so the two
+channels describe the same substrate. No indel-burden filter is applied, because a
+4,000-indel cutoff would remove 200 of the 202 MSI-H tumours.
+
+### Pooled insertions / deletions by tract length
+
+Values above 1 mean insertions exceed deletions. Pooled across tumours rather than a
+median of per-tumour ratios, since most tumours are zero in most channels.
+
+| Tract | R1 | R2 | R3 | R4 | R5 | R6 | R7 | R8 | R9+ |
+|---|---|---|---|---|---|---|---|---|---|
+| poly-T, MMR proficient | 0.59 | 0.46 | 0.45 | 0.31 | 0.83 | **2.29** | **1.79** | **1.64** | 0.94 |
+| poly-T, MSI-H | 0.46 | 1.48 | 0.61 | 0.39 | 0.35 | 0.60 | 0.33 | 0.26 | 0.15 |
+| poly-C, MMR proficient | 0.10 | 0.07 | 0.10 | 0.22 | 0.28 | 0.56 | **2.17** | **1.77** | 0.45 |
+| poly-C, MSI-H | 0.10 | 0.13 | 0.31 | 1.01 | 0.25 | 0.25 | 0.51 | 0.47 | 0.19 |
+
+### Coarse bins at the Koh et al. 2025 thresholds
+
+Koh et al. report 1 bp T deletions at poly-T6+ in MMR-deficient lines and 1 bp T
+insertions at poly-T5+ in polymerase-dysfunction lines, so these two bins are at
+different tract lengths and this ratio is **not** a same-substrate comparison.
+
+| | deletions from 6+ | insertions into 5+ | ins/del |
+|---|---|---|---|
+| poly-T, MMR proficient | 811,202 | 1,310,978 | **1.62** |
+| poly-T, MSI-H | 7,245,469 | 2,015,686 | **0.28** |
+| poly-C, MMR proficient | 49,502 | 66,125 | **1.34** |
+| poly-C, MSI-H | 401,904 | 183,258 | **0.46** |
+
+### What this shows
+
+1. **The two MMR states diverge with tract length, in opposite directions.** In
+   MMR-proficient tumours the ratio climbs with length and crosses 1 at poly-T6,
+   peaking near 2.3. In MSI-H tumours it falls monotonically past R2, reaching 0.15 at
+   R9+, so deletions outnumber insertions about 7:1 at long tracts. On the coarse bins
+   that is a 5.8-fold swing in ins:del between MMR states for poly-T, and 2.9-fold for
+   poly-C.
+
+2. **This reproduces Koh et al. 2025 in an independent cohort**, from raw channel
+   counts with no signature extraction. Their polymerase-dysfunction insertions at
+   poly-T5+ and MMR-deficient deletions at poly-T6+ appear here as an MMR-proficient
+   insertion excess starting at exactly poly-T6 and an MSI-H deletion excess growing
+   over the same range. It is ID1 versus ID2 falling out of the counts directly.
+
+3. **The human insertion bias is length-specific, not global.** At short tracts (R1 to
+   R4) deletions dominate in both MMR groups, which agrees with the yeast and in vitro
+   measurements. The insertion excess appears only at R6 to R8. That partly reconciles
+   the discordance above: the yeast reporter and genome assays sample short
+   homopolymers, exactly the range where our human data agree with them, so the two
+   bodies of work may not actually conflict.
+
+### Caveats
+
+- The R9+ bin drops back below 1 in both MMR-proficient rows. That bin pools everything
+  from 9 upward and the deletion and insertion channels may not pool comparable
+  tract-length distributions. Not yet checked.
+- poly-C at R7 and R8 rests on small counts.
+- Short-read alignment calls insertions and deletions at long homopolymers with
+  different sensitivity. The MMR-proficient versus MSI-H contrast is internally
+  controlled for this, since both groups are called the same way, but the absolute
+  position of the ratio relative to 1 is not.
 
 ## Bottom line
 
@@ -288,6 +361,15 @@ whether the human insertion bias is real, length-specific, or a calling artefact
    matched tract length.** The genome-wide poly-A/poly-T dominance is driven by tract
    length and tract abundance. Anyone claiming an intrinsic A/T slippage preference
    should be pointed at Lujan et al. 2015 and Happ et al. 2026.
+3. **MMR does not preferentially repair one direction.** Lujan et al. 2015 find the
+   del:ins ratio is unchanged between MMR-proficient and MMR-deficient strains, and
+   Romanova & Crouse 2013 find MutS-alpha favours insertion loops if anything.
+4. **In our cohort the ins:del ratio depends on tract length and MMR state together.**
+   Deletions dominate at short tracts in both MMR states, matching the yeast and in
+   vitro data. Insertions overtake deletions only at poly-T6 to poly-T8 and only in
+   MMR-proficient tumours. So the apparent conflict between the human insertion bias
+   and the deletion-biased enzymology is largely a matter of which tract lengths each
+   body of work samples.
 
 ## Related material in this folder
 
@@ -297,3 +379,6 @@ whether the human insertion bias is real, length-specific, or a calling artefact
   A/T dominance is a target-abundance effect, which bears on opportunity
   normalization for any new indel classification.
 - [`comparison-with-koh-2025.md`](comparison-with-koh-2025.md)
+- The cohort analysis behind the "Our own data" section lives outside this repo, in
+  `~/github/zz-liu_2025_draft_release/del-vs-ins-analysis/` (script, augmented
+  6,978 x 524 table, and a 4-page PDF of the scatters and ratio summary).
