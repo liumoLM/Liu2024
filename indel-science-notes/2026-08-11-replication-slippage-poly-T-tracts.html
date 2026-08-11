@@ -304,8 +304,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="our-own-data-the-discordance-is-length-specific" class="level2">
 <h2 class="anchored" data-anchor-id="our-own-data-the-discordance-is-length-specific">Our own data: the discordance is length-specific</h2>
-<p>The test proposed above has now been run on the Liu et al.&nbsp;ID476 cohort. Script, augmented table and figures are in <code>~/github/zz-liu_2025_draft_release/del-vs-ins-analysis/</code> (commit 11ff2ae).</p>
-<p>Method. Transpose the 476-channel spectra (6,978 tumours), aggregate the 342 one-base homopolymer channels across their 9 flanking contexts into per-tract-length deletion and insertion counts, and split by <code>MSIseq_MSI.H</code>, which gives 202 MMR-deficient (MSI-H), 6,773 MMR-proficient and 3 unknown. Panel Rn compares Del(base):Rn with Ins(base):Rn, both meaning a tract of n bases existed <strong>before</strong> the event, so the two channels describe the same substrate, which is confirmed by the ICAMS classifier: <code>R</code> is the tract length before the mutation for insertions as well as deletions (see the caveats below). No indel-burden filter is applied, because a 4,000-indel cutoff would remove 200 of the 202 MSI-H tumours.</p>
+<p>The test proposed above has now been run on the Liu et al.&nbsp;ID476 cohort. Script, augmented table and figures are in <code>~/github/zz-liu_2025_draft_release/del-vs-ins-analysis/</code>.</p>
+<p>Method. Transpose the 476-channel spectra, aggregate the 342 one-base homopolymer channels across their 9 flanking contexts into per-tract-length deletion and insertion counts, and split by <code>MSIseq_MSI.H</code>. <strong>Tumours carrying a POLD1 or POLE proofreading variant in Table S9 are excluded up front</strong>, 26 of them, since polymerase proofreading deficiency is the perturbation under study and would otherwise sit inside the comparison groups. That leaves 6,952 tumours: 182 MMR-deficient (MSI-H), 6,767 MMR-proficient and 3 unknown. The excluded tumours are heavily hypermutated (median 18,070 indels against 680 for those kept) and 20 of the 26 are MSI-H, so the exclusion bites hardest on the MSI-H pooled counts. Panel Rn compares Del(base):Rn with Ins(base):Rn, both meaning a tract of n bases existed <strong>before</strong> the event, so the two channels describe the same substrate, which is confirmed by the ICAMS classifier: <code>R</code> is the tract length before the mutation for insertions as well as deletions (see the caveats below). No indel-burden filter is applied, because a 4,000-indel cutoff would remove 200 of the 202 MSI-H tumours.</p>
 <section id="pooled-insertions-deletions-by-tract-length" class="level3">
 <h3 class="anchored" data-anchor-id="pooled-insertions-deletions-by-tract-length">Pooled insertions / deletions by tract length</h3>
 <p>Values above 1 mean insertions exceed deletions. Pooled across tumours rather than a median of per-tumour ratios, since most tumours are zero in most channels.</p>
@@ -351,15 +351,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 <tr class="even">
 <td>poly-T, MSI-H</td>
-<td>0.46</td>
-<td>1.48</td>
-<td>0.61</td>
+<td>0.45</td>
+<td>1.53</td>
+<td>0.68</td>
 <td>0.39</td>
-<td>0.35</td>
-<td>0.60</td>
-<td>0.33</td>
-<td>0.26</td>
-<td>0.15</td>
+<td>0.32</td>
+<td>0.57</td>
+<td>0.32</td>
+<td>0.25</td>
+<td>0.14</td>
 </tr>
 <tr class="odd">
 <td>poly-C, MMR proficient</td>
@@ -370,7 +370,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>0.28</td>
 <td>0.56</td>
 <td><strong>2.17</strong></td>
-<td><strong>1.77</strong></td>
+<td><strong>1.78</strong></td>
 <td>0.45</td>
 </tr>
 <tr class="even">
@@ -378,10 +378,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>0.10</td>
 <td>0.13</td>
 <td>0.31</td>
-<td>1.01</td>
-<td>0.25</td>
-<td>0.25</td>
-<td>0.51</td>
+<td>1.06</td>
+<td>0.26</td>
+<td>0.26</td>
+<td>0.52</td>
 <td>0.47</td>
 <td>0.19</td>
 </tr>
@@ -403,26 +403,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <tbody>
 <tr class="odd">
 <td>poly-T, MMR proficient</td>
-<td>811,202</td>
-<td>1,310,978</td>
+<td>806,980</td>
+<td>1,304,237</td>
 <td><strong>1.62</strong></td>
 </tr>
 <tr class="even">
 <td>poly-T, MSI-H</td>
-<td>7,245,469</td>
-<td>2,015,686</td>
-<td><strong>0.28</strong></td>
+<td>6,687,129</td>
+<td>1,772,878</td>
+<td><strong>0.27</strong></td>
 </tr>
 <tr class="odd">
 <td>poly-C, MMR proficient</td>
-<td>49,502</td>
-<td>66,125</td>
+<td>49,249</td>
+<td>65,857</td>
 <td><strong>1.34</strong></td>
 </tr>
 <tr class="even">
 <td>poly-C, MSI-H</td>
-<td>401,904</td>
-<td>183,258</td>
+<td>371,072</td>
+<td>171,521</td>
 <td><strong>0.46</strong></td>
 </tr>
 </tbody>
@@ -431,7 +431,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="what-this-shows" class="level3">
 <h3 class="anchored" data-anchor-id="what-this-shows">What this shows</h3>
 <ol type="1">
-<li><p><strong>The two MMR states diverge with tract length, in opposite directions.</strong> In MMR-proficient tumours the ratio climbs with length and crosses 1 at poly-T6, peaking near 2.3. In MSI-H tumours it falls monotonically past R2, reaching 0.15 at R9+, so deletions outnumber insertions about 7:1 at long tracts. On the coarse bins that is a 5.8-fold swing in ins:del between MMR states for poly-T, and 2.9-fold for poly-C.</p></li>
+<li><p><strong>The two MMR states diverge with tract length, in opposite directions.</strong> In MMR-proficient tumours the ratio climbs with length and crosses 1 at poly-T6, peaking near 2.3. In MSI-H tumours it falls monotonically past R2, reaching 0.15 at R9+, so deletions outnumber insertions about 7:1 at long tracts. On the coarse bins that is a 6.1-fold swing in ins:del between MMR states for poly-T, and 2.9-fold for poly-C.</p></li>
 <li><p><strong>This reproduces Koh et al.&nbsp;2025 in an independent cohort</strong>, from raw channel counts with no signature extraction. Their polymerase-dysfunction insertions at poly-T5+ and MMR-deficient deletions at poly-T6+ appear here as an MMR-proficient insertion excess starting at exactly poly-T6 and an MSI-H deletion excess growing over the same range. It is ID1 versus ID2 falling out of the counts directly.</p></li>
 <li><p><strong>The human insertion bias is length-specific, not global.</strong> At short tracts (R1 to R4) deletions dominate in both MMR groups, which agrees with the yeast and in vitro measurements. The insertion excess appears only at R6 to R8. That partly reconciles the discordance above: the yeast reporter and genome assays sample short homopolymers, exactly the range where our human data agree with them, so the two bodies of work may not actually conflict.</p></li>
 </ol>
@@ -480,20 +480,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <tbody>
 <tr class="odd">
 <td>no N_beta</td>
-<td>4,143</td>
+<td>4,141</td>
 <td>494</td>
-<td>3.05</td>
+<td>3.06</td>
 </tr>
 <tr class="even">
 <td>N_beta + 1 family only</td>
-<td>1,318</td>
-<td>966</td>
-<td>1.82</td>
+<td>1,316</td>
+<td>964</td>
+<td>1.81</td>
 </tr>
 <tr class="odd">
 <td>N_beta alone</td>
-<td>1,191</td>
-<td>1,096</td>
+<td>1,189</td>
+<td>1,092</td>
 <td>1.00</td>
 </tr>
 <tr class="even">
@@ -505,8 +505,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tbody>
 </table>
 <p>The third row is the consistency check. Tumours carrying N_beta and neither directional family land at 1.00, exactly what a 43/57 signature predicts. Adding the insertion family pushes to 1.82, adding the deletion family pulls to 0.56.</p>
-<p><strong>N_beta is MMR proficient.</strong> Only 10 of 2,640 N_beta tumours are MSI-H (0.4%), against 4.4% of tumours without it.</p>
-<p><strong>Co-occurrence is lopsided but that is not the interesting part.</strong> Of the 2,640 N_beta tumours, 1,195 carry neither directional family, 1,319 carry the 1 family only, 124 the 2 family only, and just 2 carry both. The 1 and 2 families are near mutually exclusive. The 10:1 skew toward the 1 family mostly reflects how common that family is: among the 4,143 MSS tumours <strong>without</strong> N_beta, 3,096 carry the 1 family only, 91 the 2 family only, 62 both, and 894 neither.</p>
+<p><strong>N_beta is MMR proficient.</strong> Only 9 of 2,635 N_beta tumours are MSI-H (0.34%), against 4.0% of tumours without it.</p>
+<p><strong>Co-occurrence is lopsided but that is not the interesting part.</strong> Of the 2,635 N_beta tumours, 1,192 carry neither directional family, 1,317 carry the 1 family only, 124 the 2 family only, and just 2 carry both. The 1 and 2 families are near mutually exclusive. The 10:1 skew toward the 1 family mostly reflects how common that family is: among the 4,141 MSS tumours <strong>without</strong> N_beta, 3,095 carry the 1 family only, 91 the 2 family only, 62 both, and 893 neither.</p>
 <p><strong>Why this matters here.</strong> The report above frames the problem as a conflict between deletion-biased enzymology and insertion-biased human data. N_beta suggests the human data contain a component that is neither. If N_beta is the underlying slippage process and 1a and 2a are what happens when something biases it, then the quantity to explain is not “why are human indels insertion-biased” but “what tips a balanced process one way or the other”. MMR status is one such tipping factor and is visible in the tables above, but N_beta tumours are almost all MMR proficient, so it cannot be the only one.</p>
 </section>
 <section id="caveats" class="level3">
@@ -521,7 +521,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="co"># indel_str_count_in_ref to reflect the repeat count prior to the insertion</span></span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>So both channels draw on the same set of genomic tracts of length &gt;= 9 and the bins are symmetric.</p>
-<p><em>Not pipeline-specific.</em> Splitting the MMR-proficient tumours by cohort gives nearly identical curves for HMF (n = 4,038) and PCAWG (n = 2,735), poly-T ins/del:</p>
+<p><em>Not pipeline-specific.</em> Splitting the MMR-proficient tumours by cohort gives nearly identical curves for HMF (n = 4,034) and PCAWG (n = 2,733), poly-T ins/del:</p>
 <table class="caption-top table">
 <thead>
 <tr class="header">
@@ -537,21 +537,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <tbody>
 <tr class="odd">
 <td>HMF</td>
-<td>0.316</td>
-<td>0.835</td>
-<td>2.262</td>
-<td>1.753</td>
-<td>1.607</td>
-<td>0.939</td>
+<td>0.315</td>
+<td>0.834</td>
+<td>2.261</td>
+<td>1.754</td>
+<td>1.608</td>
+<td>0.940</td>
 </tr>
 <tr class="even">
 <td>PCAWG</td>
-<td>0.312</td>
-<td>0.819</td>
-<td>2.362</td>
-<td>1.867</td>
-<td>1.762</td>
-<td>0.964</td>
+<td>0.309</td>
+<td>0.810</td>
+<td>2.357</td>
+<td>1.869</td>
+<td>1.763</td>
+<td>0.962</td>
 </tr>
 </tbody>
 </table>
@@ -559,7 +559,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><em>What is left.</em> Either the ins/del ratio genuinely declines above tract length 9, making the MMR-proficient curve unimodal with a peak at poly-T6, or short-read sequencing loses 1 bp insertions faster than 1 bp deletions once the tract exceeds what a read can span. The cohort check cannot separate these, since HMF and PCAWG are both Illumina short-read and would share any technology-wide limitation. That is the same <code>k</code> problem as below, concentrated at the longest tracts, and it needs long-read or duplex data to settle.</p></li>
 <li><p>poly-C at R7 and R8 rests on small counts.</p></li>
 <li><p><strong>Calling sensitivity, and which of our claims it threatens.</strong> Short-read calling need not detect 1 bp insertions and 1 bp deletions at long homopolymers equally well. Write <code>k</code> for the ratio of insertion sensitivity to deletion sensitivity. Every ins/del value in the tables above is then the true ratio multiplied by <code>k</code>.</p>
-<p>The <strong>between-group comparison survives any value of <code>k</code>.</strong> Both groups pass through the same pipeline, so <code>k</code> cancels when the two ratios are divided: 1.62 / 0.28 = 5.8 for poly-T regardless of <code>k</code>. The 5.8-fold swing between MMR states is the robust result.</p>
+<p>The <strong>between-group comparison survives any value of <code>k</code>.</strong> Both groups pass through the same pipeline, so <code>k</code> cancels when the two ratios are divided: 1.62 / 0.27 = 6.1 for poly-T regardless of <code>k</code>. The 6.1-fold swing between MMR states is the robust result.</p>
 <p>The <strong>absolute position of the curve does not survive.</strong> “Insertions exceed deletions at poly-T6 in MMR-proficient tumours” compares an observed ratio against the fixed threshold of 1, and <code>k</code> does not cancel against a constant. At k = 0.5 the true poly-T6 ratio would be 4.6 rather than 2.29, at k = 2 it would be 1.15, and the tract length at which the curve crosses 1 slides accordingly. So the crossing point landing at exactly poly-T6, which is what makes the agreement with Koh et al.&nbsp;2025 look tidy, is the weaker of the two claims.</p>
 <p>Two limits on this argument itself. We have not established which direction <code>k</code> runs, only that there is no reason for it to be 1. And “internally controlled” assumes calling behaves the same way in both groups, which is imperfect here, since MSI-H tumours carry roughly an order of magnitude more indels and may pass through burden-dependent filters differently. Settling this would need a truth set, for example long-read or duplex-sequenced homopolymer calls in a few samples from each group.</p></li>
 </ul>
@@ -579,7 +579,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ul>
 <li>The indel signature classification paper (<code>README.md</code>, <code>long-abst.md</code>, <code>abstract-150.md</code>). Relevant to that work: the ID1/ID2 nascent-vs-template split, the tract-length dependence of insertion vs deletion excess (Koh et al.&nbsp;2025), and the point that A/T dominance is a target-abundance effect, which bears on opportunity normalization for any new indel classification.</li>
 <li><a href="comparison-with-koh-2025.md"><code>comparison-with-koh-2025.md</code></a></li>
-<li>The cohort analysis behind the “Our own data” section lives outside this repo, in <code>~/github/zz-liu_2025_draft_release/del-vs-ins-analysis/</code> (script, augmented 6,978 x 524 table, and a 4-page PDF of the scatters and ratio summary).</li>
+<li>The cohort analysis behind the “Our own data” section lives outside this repo, in <code>~/github/zz-liu_2025_draft_release/del-vs-ins-analysis/</code> (script, augmented 6,952 x 524 table, the list of POLD1/POLE tumours excluded, a 4-page PDF of the scatters and ratio summary, and <code>n_beta_ins_del.qmd</code> with the code for every table).</li>
 </ul>
 </section>
 </section>

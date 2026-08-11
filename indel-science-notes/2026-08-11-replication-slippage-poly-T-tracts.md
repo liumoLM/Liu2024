@@ -283,12 +283,17 @@ run, see the next section.
 
 The test proposed above has now been run on the Liu et al. ID476 cohort. Script,
 augmented table and figures are in
-`~/github/zz-liu_2025_draft_release/del-vs-ins-analysis/` (commit 11ff2ae).
+`~/github/zz-liu_2025_draft_release/del-vs-ins-analysis/`.
 
-Method. Transpose the 476-channel spectra (6,978 tumours), aggregate the 342 one-base
-homopolymer channels across their 9 flanking contexts into per-tract-length deletion
-and insertion counts, and split by `MSIseq_MSI.H`, which gives 202 MMR-deficient
-(MSI-H), 6,773 MMR-proficient and 3 unknown. Panel Rn compares Del(base):Rn with
+Method. Transpose the 476-channel spectra, aggregate the 342 one-base homopolymer
+channels across their 9 flanking contexts into per-tract-length deletion and insertion
+counts, and split by `MSIseq_MSI.H`. **Tumours carrying a POLD1 or POLE proofreading
+variant in Table S9 are excluded up front**, 26 of them, since polymerase proofreading
+deficiency is the perturbation under study and would otherwise sit inside the
+comparison groups. That leaves 6,952 tumours: 182 MMR-deficient (MSI-H),
+6,767 MMR-proficient and 3 unknown. The excluded tumours are heavily hypermutated
+(median 18,070 indels against 680 for those kept) and 20 of the 26 are MSI-H, so the
+exclusion bites hardest on the MSI-H pooled counts. Panel Rn compares Del(base):Rn with
 Ins(base):Rn, both meaning a tract of n bases existed **before** the event, so the two
 channels describe the same substrate, which is confirmed by the ICAMS classifier: `R`
 is the tract length before the mutation for insertions as well as deletions (see the
@@ -303,9 +308,9 @@ median of per-tumour ratios, since most tumours are zero in most channels.
 | Tract | R1 | R2 | R3 | R4 | R5 | R6 | R7 | R8 | R9+ |
 |---|---|---|---|---|---|---|---|---|---|
 | poly-T, MMR proficient | 0.59 | 0.46 | 0.45 | 0.31 | 0.83 | **2.29** | **1.79** | **1.64** | 0.94 |
-| poly-T, MSI-H | 0.46 | 1.48 | 0.61 | 0.39 | 0.35 | 0.60 | 0.33 | 0.26 | 0.15 |
-| poly-C, MMR proficient | 0.10 | 0.07 | 0.10 | 0.22 | 0.28 | 0.56 | **2.17** | **1.77** | 0.45 |
-| poly-C, MSI-H | 0.10 | 0.13 | 0.31 | 1.01 | 0.25 | 0.25 | 0.51 | 0.47 | 0.19 |
+| poly-T, MSI-H | 0.45 | 1.53 | 0.68 | 0.39 | 0.32 | 0.57 | 0.32 | 0.25 | 0.14 |
+| poly-C, MMR proficient | 0.10 | 0.07 | 0.10 | 0.22 | 0.28 | 0.56 | **2.17** | **1.78** | 0.45 |
+| poly-C, MSI-H | 0.10 | 0.13 | 0.31 | 1.06 | 0.26 | 0.26 | 0.52 | 0.47 | 0.19 |
 
 ### Coarse bins at the Koh et al. 2025 thresholds
 
@@ -315,10 +320,10 @@ different tract lengths and this ratio is **not** a same-substrate comparison.
 
 | | deletions from 6+ | insertions into 5+ | ins/del |
 |---|---|---|---|
-| poly-T, MMR proficient | 811,202 | 1,310,978 | **1.62** |
-| poly-T, MSI-H | 7,245,469 | 2,015,686 | **0.28** |
-| poly-C, MMR proficient | 49,502 | 66,125 | **1.34** |
-| poly-C, MSI-H | 401,904 | 183,258 | **0.46** |
+| poly-T, MMR proficient | 806,980 | 1,304,237 | **1.62** |
+| poly-T, MSI-H | 6,687,129 | 1,772,878 | **0.27** |
+| poly-C, MMR proficient | 49,249 | 65,857 | **1.34** |
+| poly-C, MSI-H | 371,072 | 171,521 | **0.46** |
 
 ### What this shows
 
@@ -326,7 +331,7 @@ different tract lengths and this ratio is **not** a same-substrate comparison.
    MMR-proficient tumours the ratio climbs with length and crosses 1 at poly-T6,
    peaking near 2.3. In MSI-H tumours it falls monotonically past R2, reaching 0.15 at
    R9+, so deletions outnumber insertions about 7:1 at long tracts. On the coarse bins
-   that is a 5.8-fold swing in ins:del between MMR states for poly-T, and 2.9-fold for
+   that is a 6.1-fold swing in ins:del between MMR states for poly-T, and 2.9-fold for
    poly-C.
 
 2. **This reproduces Koh et al. 2025 in an independent cohort**, from raw channel
@@ -369,24 +374,24 @@ burden and MSI status do not drive the contrast, and using the coarse bins
 
 | Group | n | median indel burden | poly-T ins/del |
 |---|---|---|---|
-| no N_beta | 4,143 | 494 | 3.05 |
-| N_beta + 1 family only | 1,318 | 966 | 1.82 |
-| N_beta alone | 1,191 | 1,096 | 1.00 |
+| no N_beta | 4,141 | 494 | 3.06 |
+| N_beta + 1 family only | 1,316 | 964 | 1.81 |
+| N_beta alone | 1,189 | 1,092 | 1.00 |
 | N_beta + 2 family only | 121 | 1,848 | 0.56 |
 
 The third row is the consistency check. Tumours carrying N_beta and neither directional
 family land at 1.00, exactly what a 43/57 signature predicts. Adding the insertion
 family pushes to 1.82, adding the deletion family pulls to 0.56.
 
-**N_beta is MMR proficient.** Only 10 of 2,640 N_beta tumours are MSI-H (0.4%),
-against 4.4% of tumours without it.
+**N_beta is MMR proficient.** Only 9 of 2,635 N_beta tumours are MSI-H (0.34%),
+against 4.0% of tumours without it.
 
-**Co-occurrence is lopsided but that is not the interesting part.** Of the 2,640 N_beta
-tumours, 1,195 carry neither directional family, 1,319 carry the 1 family only, 124 the
+**Co-occurrence is lopsided but that is not the interesting part.** Of the 2,635 N_beta
+tumours, 1,192 carry neither directional family, 1,317 carry the 1 family only, 124 the
 2 family only, and just 2 carry both. The 1 and 2 families are near mutually exclusive.
 The 10:1 skew toward the 1 family mostly reflects how common that family is: among the
-4,143 MSS tumours **without** N_beta, 3,096 carry the 1 family only, 91 the 2 family
-only, 62 both, and 894 neither.
+4,141 MSS tumours **without** N_beta, 3,095 carry the 1 family only, 91 the 2 family
+only, 62 both, and 893 neither.
 
 **Why this matters here.** The report above frames the problem as a conflict between
 deletion-biased enzymology and insertion-biased human data. N_beta suggests the human
@@ -420,12 +425,12 @@ above, but N_beta tumours are almost all MMR proficient, so it cannot be the onl
   are symmetric.
 
   *Not pipeline-specific.* Splitting the MMR-proficient tumours by cohort gives nearly
-  identical curves for HMF (n = 4,038) and PCAWG (n = 2,735), poly-T ins/del:
+  identical curves for HMF (n = 4,034) and PCAWG (n = 2,733), poly-T ins/del:
 
   | Cohort | R4 | R5 | R6 | R7 | R8 | R9+ |
   |---|---|---|---|---|---|---|
-  | HMF | 0.316 | 0.835 | 2.262 | 1.753 | 1.607 | 0.939 |
-  | PCAWG | 0.312 | 0.819 | 2.362 | 1.867 | 1.762 | 0.964 |
+  | HMF | 0.315 | 0.834 | 2.261 | 1.754 | 1.608 | 0.940 |
+  | PCAWG | 0.309 | 0.810 | 2.357 | 1.869 | 1.763 | 0.962 |
 
   Two cohorts with different sequencing and calling pipelines agree to within about 3%
   at every bin, including the drop. The MSI-H split behaves the same way.
@@ -445,7 +450,7 @@ above, but N_beta tumours are almost all MMR proficient, so it cannot be the onl
 
   The **between-group comparison survives any value of `k`.** Both groups pass through
   the same pipeline, so `k` cancels when the two ratios are divided:
-  1.62 / 0.28 = 5.8 for poly-T regardless of `k`. The 5.8-fold swing between MMR states
+  1.62 / 0.27 = 6.1 for poly-T regardless of `k`. The 6.1-fold swing between MMR states
   is the robust result.
 
   The **absolute position of the curve does not survive.** "Insertions exceed deletions
@@ -494,4 +499,5 @@ above, but N_beta tumours are almost all MMR proficient, so it cannot be the onl
 - [`comparison-with-koh-2025.md`](comparison-with-koh-2025.md)
 - The cohort analysis behind the "Our own data" section lives outside this repo, in
   `~/github/zz-liu_2025_draft_release/del-vs-ins-analysis/` (script, augmented
-  6,978 x 524 table, and a 4-page PDF of the scatters and ratio summary).
+  6,952 x 524 table, the list of POLD1/POLE tumours excluded, a 4-page PDF of the
+  scatters and ratio summary, and `n_beta_ins_del.qmd` with the code for every table).
