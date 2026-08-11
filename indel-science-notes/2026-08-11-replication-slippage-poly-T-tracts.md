@@ -346,10 +346,31 @@ different tract lengths and this ratio is **not** a same-substrate comparison.
   from 9 upward and the deletion and insertion channels may not pool comparable
   tract-length distributions. Not yet checked.
 - poly-C at R7 and R8 rests on small counts.
-- Short-read alignment calls insertions and deletions at long homopolymers with
-  different sensitivity. The MMR-proficient versus MSI-H contrast is internally
-  controlled for this, since both groups are called the same way, but the absolute
-  position of the ratio relative to 1 is not.
+- **Calling sensitivity, and which of our claims it threatens.** Short-read calling
+  need not detect 1 bp insertions and 1 bp deletions at long homopolymers equally well.
+  Write `k` for the ratio of insertion sensitivity to deletion sensitivity. Every
+  ins/del value in the tables above is then the true ratio multiplied by `k`.
+
+  The **between-group comparison survives any value of `k`.** Both groups pass through
+  the same pipeline, so `k` cancels when the two ratios are divided:
+  1.62 / 0.28 = 5.8 for poly-T regardless of `k`. The 5.8-fold swing between MMR states
+  is the robust result.
+
+  The **absolute position of the curve does not survive.** "Insertions exceed deletions
+  at poly-T6 in MMR-proficient tumours" compares an observed ratio against the fixed
+  threshold of 1, and `k` does not cancel against a constant. At k = 0.5 the true
+  poly-T6 ratio would be 4.6 rather than 2.29, at k = 2 it would be 1.15, and the
+  tract length at which the curve crosses 1 slides accordingly. So the crossing point
+  landing at exactly poly-T6, which is what makes the agreement with Koh et al. 2025
+  look tidy, is the weaker of the two claims.
+
+  Two limits on this argument itself. We have not established which direction `k` runs,
+  only that there is no reason for it to be 1. And "internally controlled" assumes
+  calling behaves the same way in both groups, which is imperfect here, since MSI-H
+  tumours carry roughly an order of magnitude more indels and may pass through
+  burden-dependent filters differently. Settling this would need a truth set, for
+  example long-read or duplex-sequenced homopolymer calls in a few samples from each
+  group.
 
 ## Bottom line
 

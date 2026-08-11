@@ -404,9 +404,12 @@ ul.task-list li input[type="checkbox"] {
 <section id="caveats" class="level3">
 <h3 class="anchored" data-anchor-id="caveats">Caveats</h3>
 <ul>
-<li>The R9+ bin drops back below 1 in both MMR-proficient rows. That bin pools everything from 9 upward and the deletion and insertion channels may not pool comparable tract-length distributions. Not yet checked.</li>
-<li>poly-C at R7 and R8 rests on small counts.</li>
-<li>Short-read alignment calls insertions and deletions at long homopolymers with different sensitivity. The MMR-proficient versus MSI-H contrast is internally controlled for this, since both groups are called the same way, but the absolute position of the ratio relative to 1 is not.</li>
+<li><p>The R9+ bin drops back below 1 in both MMR-proficient rows. That bin pools everything from 9 upward and the deletion and insertion channels may not pool comparable tract-length distributions. Not yet checked.</p></li>
+<li><p>poly-C at R7 and R8 rests on small counts.</p></li>
+<li><p><strong>Calling sensitivity, and which of our claims it threatens.</strong> Short-read calling need not detect 1 bp insertions and 1 bp deletions at long homopolymers equally well. Write <code>k</code> for the ratio of insertion sensitivity to deletion sensitivity. Every ins/del value in the tables above is then the true ratio multiplied by <code>k</code>.</p>
+<p>The <strong>between-group comparison survives any value of <code>k</code>.</strong> Both groups pass through the same pipeline, so <code>k</code> cancels when the two ratios are divided: 1.62 / 0.28 = 5.8 for poly-T regardless of <code>k</code>. The 5.8-fold swing between MMR states is the robust result.</p>
+<p>The <strong>absolute position of the curve does not survive.</strong> “Insertions exceed deletions at poly-T6 in MMR-proficient tumours” compares an observed ratio against the fixed threshold of 1, and <code>k</code> does not cancel against a constant. At k = 0.5 the true poly-T6 ratio would be 4.6 rather than 2.29, at k = 2 it would be 1.15, and the tract length at which the curve crosses 1 slides accordingly. So the crossing point landing at exactly poly-T6, which is what makes the agreement with Koh et al.&nbsp;2025 look tidy, is the weaker of the two claims.</p>
+<p>Two limits on this argument itself. We have not established which direction <code>k</code> runs, only that there is no reason for it to be 1. And “internally controlled” assumes calling behaves the same way in both groups, which is imperfect here, since MSI-H tumours carry roughly an order of magnitude more indels and may pass through burden-dependent filters differently. Settling this would need a truth set, for example long-read or duplex-sequenced homopolymer calls in a few samples from each group.</p></li>
 </ul>
 </section>
 </section>
