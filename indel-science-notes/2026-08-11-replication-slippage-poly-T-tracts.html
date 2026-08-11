@@ -596,8 +596,109 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </table>
 <p>The 1 family is depleted under MMR deficiency but not absent, a third of MSI-H tumours carry one (Fisher p = 3.6e-19, odds ratio 4.0 toward MSS). The depletion is driven entirely by <code>InsDel1a</code>, 55.9% down to 21.4%. <code>InsDel1b</code> and <code>InsDel1c</code> are not depleted at all and run slightly higher in MSI-H. The signature that really is near-absent under MMR deficiency is <code>InsDel_N_beta</code>, 38.8% down to 4.9%, an 8-fold drop.</p>
 <p>The mirror image is the 2 family at 4.0% to 69.2%, a 17-fold enrichment, which is ID2 behaving as expected in microsatellite-unstable tumours.</p>
-<p>The <code>neither 1 nor 2</code> row records tumours with no long-poly-T directional signature at all: 37 MSI-H tumours (20.3%), of which only 3 carry N_beta, so their poly-T indels are attributed elsewhere.</p>
+<section id="joint-membership-and-what-the-neither-tumours-attribute-to" class="level4">
+<h4 class="anchored" data-anchor-id="joint-membership-and-what-the-neither-tumours-attribute-to">Joint membership, and what the “neither” tumours attribute to</h4>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Category</th>
+<th>MSI-H</th>
+<th>MSI-H %</th>
+<th>MSS</th>
+<th>MSS %</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>both 1 and 2 family</td>
+<td>41</td>
+<td>22.5</td>
+<td>62</td>
+<td>0.9</td>
+</tr>
+<tr class="even">
+<td>1 family only</td>
+<td>19</td>
+<td>10.4</td>
+<td>4,411</td>
+<td>65.2</td>
+</tr>
+<tr class="odd">
+<td>2 family only</td>
+<td>85</td>
+<td>46.7</td>
+<td>212</td>
+<td>3.1</td>
+</tr>
+<tr class="even">
+<td>neither</td>
+<td>37</td>
+<td>20.3</td>
+<td>2,082</td>
+<td>30.8</td>
+</tr>
+</tbody>
+</table>
+<p>Carrying <strong>both</strong> families is common under MMR deficiency (41 of 182) and rare otherwise (62 of 6,767), a 25-fold difference. The near mutual-exclusivity noted earlier is a property of MMR-proficient tumours, not a general one.</p>
+<p>The 37 MSI-H tumours with neither family are not missing an attribution. Weighting each signature’s exposure in those tumours by the fraction of that signature sitting in intermediate and long poly-T channels:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Signature</th>
+<th>tumours with it</th>
+<th>poly-T fraction</th>
+<th>poly-T indels attributed</th>
+<th>% of poly-T</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>InsDel7</td>
+<td>32</td>
+<td>0.850</td>
+<td>1,671,102</td>
+<td><strong>82.1</strong></td>
+</tr>
+<tr class="even">
+<td>InsDel_D</td>
+<td>24</td>
+<td>0.797</td>
+<td>174,467</td>
+<td>8.6</td>
+</tr>
+<tr class="odd">
+<td>InsDel_J</td>
+<td>23</td>
+<td>0.383</td>
+<td>105,365</td>
+<td>5.2</td>
+</tr>
+<tr class="even">
+<td>InsDel_L</td>
+<td>1</td>
+<td>0.388</td>
+<td>71,321</td>
+<td>3.5</td>
+</tr>
+<tr class="odd">
+<td>InsDel_N_beta</td>
+<td>3</td>
+<td>0.775</td>
+<td>7,735</td>
+<td>0.4</td>
+</tr>
+</tbody>
+</table>
+<p><code>InsDel7</code> takes 82% and is present in 32 of the 37. It is <strong>84.8% deletions</strong>, with top channels <code>A[Del(T):R(8,)]A</code>, <code>C[Del(T):R(8,)]G</code>, <code>C[Del(T):R(8,)]C</code>, so it is a long poly-T deletion signature much like <code>InsDel2a</code> (74.8% deletions, same leading channel). These tumours are therefore not an exception to the MMR-deficient deletion bias, they route it through <code>InsDel7</code> instead of the 2 family.</p>
 <p>Caveat on every row. Presence is thresholded at exposure above zero, and MSI-H tumours carry roughly ten times the indel burden, which makes any signature easier to detect at a given true proportion. That bias runs against the depletions reported here, so the <code>InsDel1a</code> and <code>InsDel_N_beta</code> drops are if anything understated, while the 2-family enrichment is inflated.</p>
+</section>
 </section>
 <section id="the-1-family-broken-out-by-subtype" class="level3">
 <h3 class="anchored" data-anchor-id="the-1-family-broken-out-by-subtype">The 1 family broken out by subtype</h3>

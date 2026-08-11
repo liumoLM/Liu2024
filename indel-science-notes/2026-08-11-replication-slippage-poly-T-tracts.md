@@ -430,9 +430,36 @@ MMR deficiency is `InsDel_N_beta`, 38.8% down to 4.9%, an 8-fold drop.
 The mirror image is the 2 family at 4.0% to 69.2%, a 17-fold enrichment, which is ID2
 behaving as expected in microsatellite-unstable tumours.
 
-The `neither 1 nor 2` row records tumours with no long-poly-T directional signature at
-all: 37 MSI-H tumours (20.3%), of which only 3 carry N_beta, so their poly-T indels are
-attributed elsewhere.
+#### Joint membership, and what the "neither" tumours attribute to
+
+| Category | MSI-H | MSI-H % | MSS | MSS % |
+|---|---|---|---|---|
+| both 1 and 2 family | 41 | 22.5 | 62 | 0.9 |
+| 1 family only | 19 | 10.4 | 4,411 | 65.2 |
+| 2 family only | 85 | 46.7 | 212 | 3.1 |
+| neither | 37 | 20.3 | 2,082 | 30.8 |
+
+Carrying **both** families is common under MMR deficiency (41 of 182) and rare otherwise
+(62 of 6,767), a 25-fold difference. The near mutual-exclusivity noted earlier is a
+property of MMR-proficient tumours, not a general one.
+
+The 37 MSI-H tumours with neither family are not missing an attribution. Weighting each
+signature's exposure in those tumours by the fraction of that signature sitting in
+intermediate and long poly-T channels:
+
+| Signature | tumours with it | poly-T fraction | poly-T indels attributed | % of poly-T |
+|---|---|---|---|---|
+| InsDel7 | 32 | 0.850 | 1,671,102 | **82.1** |
+| InsDel_D | 24 | 0.797 | 174,467 | 8.6 |
+| InsDel_J | 23 | 0.383 | 105,365 | 5.2 |
+| InsDel_L | 1 | 0.388 | 71,321 | 3.5 |
+| InsDel_N_beta | 3 | 0.775 | 7,735 | 0.4 |
+
+`InsDel7` takes 82% and is present in 32 of the 37. It is **84.8% deletions**, with top
+channels `A[Del(T):R(8,)]A`, `C[Del(T):R(8,)]G`, `C[Del(T):R(8,)]C`, so it is a long
+poly-T deletion signature much like `InsDel2a` (74.8% deletions, same leading channel).
+These tumours are therefore not an exception to the MMR-deficient deletion bias, they
+route it through `InsDel7` instead of the 2 family.
 
 Caveat on every row. Presence is thresholded at exposure above zero, and MSI-H tumours
 carry roughly ten times the indel burden, which makes any signature easier to detect at
