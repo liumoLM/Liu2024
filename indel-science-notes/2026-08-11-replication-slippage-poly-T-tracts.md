@@ -433,6 +433,48 @@ column, which is 0.0 in every N_beta row carrying a 1-family signature. That is 
 near-exclusivity noted above, only 2 tumours in the whole cohort carry N_beta with both
 families.
 
+#### Is the N_beta shift just a burden difference?
+
+N_beta carriers have about twice the indel burden of non-carriers in every subtype, so
+the shift could be a burden effect in disguise. It is not. Splitting `InsDel1a` MSS
+tumours into burden quintiles and comparing carriers with non-carriers inside each:
+
+| Quintile | Burden range | n without | ins/del without | n with | ins/del with | fold |
+|---|---|---|---|---|---|---|
+| Q1 | 3-336 | 698 | 4.26 | 59 | 2.13 | 2.00 |
+| Q2 | 337-539 | 614 | 4.08 | 141 | 2.11 | 1.93 |
+| Q3 | 540-782 | 526 | 4.00 | 230 | 2.15 | 1.86 |
+| Q4 | 783-1,234 | 448 | 4.03 | 308 | 1.98 | 2.04 |
+| Q5 | 1,237-8,311 | 308 | 3.23 | 448 | 1.73 | 1.87 |
+
+The fold difference is flat at about 1.9 across the whole burden range. A quasibinomial
+model of insertions against deletions agrees: the N_beta odds ratio is 0.479 unadjusted,
+0.514 after adding `log10(burden)`, and 0.513 after also adding subtype. Burden accounts
+for roughly a tenth of the effect on the log-odds scale. Burden does have its own
+independent effect in the same direction (higher burden, lower insertion fraction,
+visible in the falling `ins/del without` column), it simply does not explain N_beta.
+
+#### Burden does differ across the subtypes, which qualifies the claim above
+
+| Signature | n | median | Q1 | Q3 |
+|---|---|---|---|---|
+| InsDel1a | 3,780 | 647 | 385 | 1,073 |
+| InsDel1b | 138 | 207 | 66 | 390 |
+| InsDel1c | 552 | 353 | 164 | 595 |
+
+Kruskal-Wallis chi-squared 366.5 on 2 df, p < 2e-16, with all three pairwise Wilcoxon
+comparisons significant after Holm adjustment (1a vs 1b and 1a vs 1c both < 2e-16,
+1b vs 1c 6.7e-08). It holds inside both N_beta strata (p = 2.7e-14 among carriers,
+p < 2e-16 among non-carriers), so it is not an artefact of the uneven N_beta split.
+
+This qualifies the "indistinguishable" claim. The **raw pooled ratios** are
+indistinguishable, but partly because two effects cancel. 1b and 1c sit in lower-burden
+tumours, lower burden goes with a higher insertion fraction, and once burden is adjusted
+for both fall slightly below 1a (odds ratios 0.81 and 0.89). The difference is real but
+small, 10 to 20% on the odds scale against the 2-fold N_beta effect, so the substantive
+point stands: the subtypes are far more similar to each other than either is to the
+N_beta contrast.
+
 ### Caveats
 
 - **The R9+ drop, checked.** The ratio falls back below 1 at R9+ in both MMR-proficient

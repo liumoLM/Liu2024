@@ -630,6 +630,119 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </table>
 <p>Pooling over N_beta status the three subtypes are indistinguishable, 2.39 / 2.36 / 2.38, across a 27-fold range in tumour count. That holds even though <code>InsDel1b</code> carries noticeably more deletions than the other two (21.8% against 6.3% for 1a and 7.4% for 1c). Whatever separates 1a, 1b and 1c from each other, it is not the insertion/deletion balance at long poly-T tracts, which is consistent with all three being variants of the same directional process.</p>
 <p>Reading down the table, N_beta roughly halves the ratio within every subtype: 3.81 to 1.83 for 1a, 2.97 to 1.63 for 1b, 3.78 to 1.62 for 1c. Note also the <code>% with 2 family</code> column, which is 0.0 in every N_beta row carrying a 1-family signature. That is the near-exclusivity noted above, only 2 tumours in the whole cohort carry N_beta with both families.</p>
+<section id="is-the-n_beta-shift-just-a-burden-difference" class="level4">
+<h4 class="anchored" data-anchor-id="is-the-n_beta-shift-just-a-burden-difference">Is the N_beta shift just a burden difference?</h4>
+<p>N_beta carriers have about twice the indel burden of non-carriers in every subtype, so the shift could be a burden effect in disguise. It is not. Splitting <code>InsDel1a</code> MSS tumours into burden quintiles and comparing carriers with non-carriers inside each:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Quintile</th>
+<th>Burden range</th>
+<th>n without</th>
+<th>ins/del without</th>
+<th>n with</th>
+<th>ins/del with</th>
+<th>fold</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Q1</td>
+<td>3-336</td>
+<td>698</td>
+<td>4.26</td>
+<td>59</td>
+<td>2.13</td>
+<td>2.00</td>
+</tr>
+<tr class="even">
+<td>Q2</td>
+<td>337-539</td>
+<td>614</td>
+<td>4.08</td>
+<td>141</td>
+<td>2.11</td>
+<td>1.93</td>
+</tr>
+<tr class="odd">
+<td>Q3</td>
+<td>540-782</td>
+<td>526</td>
+<td>4.00</td>
+<td>230</td>
+<td>2.15</td>
+<td>1.86</td>
+</tr>
+<tr class="even">
+<td>Q4</td>
+<td>783-1,234</td>
+<td>448</td>
+<td>4.03</td>
+<td>308</td>
+<td>1.98</td>
+<td>2.04</td>
+</tr>
+<tr class="odd">
+<td>Q5</td>
+<td>1,237-8,311</td>
+<td>308</td>
+<td>3.23</td>
+<td>448</td>
+<td>1.73</td>
+<td>1.87</td>
+</tr>
+</tbody>
+</table>
+<p>The fold difference is flat at about 1.9 across the whole burden range. A quasibinomial model of insertions against deletions agrees: the N_beta odds ratio is 0.479 unadjusted, 0.514 after adding <code>log10(burden)</code>, and 0.513 after also adding subtype. Burden accounts for roughly a tenth of the effect on the log-odds scale. Burden does have its own independent effect in the same direction (higher burden, lower insertion fraction, visible in the falling <code>ins/del without</code> column), it simply does not explain N_beta.</p>
+</section>
+<section id="burden-does-differ-across-the-subtypes-which-qualifies-the-claim-above" class="level4">
+<h4 class="anchored" data-anchor-id="burden-does-differ-across-the-subtypes-which-qualifies-the-claim-above">Burden does differ across the subtypes, which qualifies the claim above</h4>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Signature</th>
+<th>n</th>
+<th>median</th>
+<th>Q1</th>
+<th>Q3</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>InsDel1a</td>
+<td>3,780</td>
+<td>647</td>
+<td>385</td>
+<td>1,073</td>
+</tr>
+<tr class="even">
+<td>InsDel1b</td>
+<td>138</td>
+<td>207</td>
+<td>66</td>
+<td>390</td>
+</tr>
+<tr class="odd">
+<td>InsDel1c</td>
+<td>552</td>
+<td>353</td>
+<td>164</td>
+<td>595</td>
+</tr>
+</tbody>
+</table>
+<p>Kruskal-Wallis chi-squared 366.5 on 2 df, p &lt; 2e-16, with all three pairwise Wilcoxon comparisons significant after Holm adjustment (1a vs 1b and 1a vs 1c both &lt; 2e-16, 1b vs 1c 6.7e-08). It holds inside both N_beta strata (p = 2.7e-14 among carriers, p &lt; 2e-16 among non-carriers), so it is not an artefact of the uneven N_beta split.</p>
+<p>This qualifies the “indistinguishable” claim. The <strong>raw pooled ratios</strong> are indistinguishable, but partly because two effects cancel. 1b and 1c sit in lower-burden tumours, lower burden goes with a higher insertion fraction, and once burden is adjusted for both fall slightly below 1a (odds ratios 0.81 and 0.89). The difference is real but small, 10 to 20% on the odds scale against the 2-fold N_beta effect, so the substantive point stands: the subtypes are far more similar to each other than either is to the N_beta contrast.</p>
+</section>
 </section>
 <section id="caveats" class="level3">
 <h3 class="anchored" data-anchor-id="caveats">Caveats</h3>
