@@ -290,8 +290,10 @@ homopolymer channels across their 9 flanking contexts into per-tract-length dele
 and insertion counts, and split by `MSIseq_MSI.H`, which gives 202 MMR-deficient
 (MSI-H), 6,773 MMR-proficient and 3 unknown. Panel Rn compares Del(base):Rn with
 Ins(base):Rn, both meaning a tract of n bases existed **before** the event, so the two
-channels describe the same substrate. No indel-burden filter is applied, because a
-4,000-indel cutoff would remove 200 of the 202 MSI-H tumours.
+channels describe the same substrate, which is confirmed by the ICAMS classifier: `R`
+is the tract length before the mutation for insertions as well as deletions (see the
+caveats below). No indel-burden filter is applied, because a 4,000-indel cutoff would
+remove 200 of the 202 MSI-H tumours.
 
 ### Pooled insertions / deletions by tract length
 
@@ -342,9 +344,45 @@ different tract lengths and this ratio is **not** a same-substrate comparison.
 
 ### Caveats
 
-- The R9+ bin drops back below 1 in both MMR-proficient rows. That bin pools everything
-  from 9 upward and the deletion and insertion channels may not pool comparable
-  tract-length distributions. Not yet checked.
+- **The R9+ drop, checked.** The ratio falls back below 1 at R9+ in both MMR-proficient
+  rows. Two candidate explanations were tested and one survives.
+
+  *Not a binning artefact.* The concern was that `Del:R(9,)` and `Ins:R(9,)` might pool
+  different tract-length distributions. They do not. In ICAMS
+  `categorize_1_justified_indel()` the repeat count `R` is the tract length **before**
+  the mutation for insertions as well as deletions, the insertion path explicitly
+  subtracting one because the context it matches against is post-insertion:
+
+  ```r
+  indel_str_count_in_ref = nchar(all_repeated_seq) / ins_or_del_seq_len
+  if (ins_or_del == "i") {
+    indel_str_count_in_ref = indel_str_count_in_ref - 1
+    # x_context was the sequence after the insertion. We want
+    # indel_str_count_in_ref to reflect the repeat count prior to the insertion
+  }
+  ```
+
+  So both channels draw on the same set of genomic tracts of length >= 9 and the bins
+  are symmetric.
+
+  *Not pipeline-specific.* Splitting the MMR-proficient tumours by cohort gives nearly
+  identical curves for HMF (n = 4,038) and PCAWG (n = 2,735), poly-T ins/del:
+
+  | Cohort | R4 | R5 | R6 | R7 | R8 | R9+ |
+  |---|---|---|---|---|---|---|
+  | HMF | 0.316 | 0.835 | 2.262 | 1.753 | 1.607 | 0.939 |
+  | PCAWG | 0.312 | 0.819 | 2.362 | 1.867 | 1.762 | 0.964 |
+
+  Two cohorts with different sequencing and calling pipelines agree to within about 3%
+  at every bin, including the drop. The MSI-H split behaves the same way.
+
+  *What is left.* Either the ins/del ratio genuinely declines above tract length 9,
+  making the MMR-proficient curve unimodal with a peak at poly-T6, or short-read
+  sequencing loses 1 bp insertions faster than 1 bp deletions once the tract exceeds
+  what a read can span. The cohort check cannot separate these, since HMF and PCAWG are
+  both Illumina short-read and would share any technology-wide limitation. That is the
+  same `k` problem as below, concentrated at the longest tracts, and it needs long-read
+  or duplex data to settle.
 - poly-C at R7 and R8 rests on small counts.
 - **Calling sensitivity, and which of our claims it threatens.** Short-read calling
   need not detect 1 bp insertions and 1 bp deletions at long homopolymers equally well.
