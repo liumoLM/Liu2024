@@ -342,6 +342,60 @@ different tract lengths and this ratio is **not** a same-substrate comparison.
    homopolymers, exactly the range where our human data agree with them, so the two
    bodies of work may not actually conflict.
 
+### Where InsDel_N_beta sits on this axis
+
+The ID89 signature `InsDel_N_beta` turns out to be the interesting one for the
+slippage question. Full analysis with code in
+`~/github/zz-liu_2025_draft_release/del-vs-ins-analysis/n_beta_ins_del.qmd`.
+
+**N_beta is the balanced long-poly-T signature.** Taking the insertion and deletion
+content of each ID89 signature profile:
+
+| Signature | % insertions | % deletions |
+|---|---|---|
+| InsDel1a | 93.7 | 6.3 |
+| InsDel2a | 25.2 | 74.8 |
+| **InsDel_N_beta** | **42.8** | **57.2** |
+
+1a is essentially pure insertion and 2a mostly deletion, the two directional extremes.
+N_beta sits between them, and its top channels interleave both directions at the same
+long tracts: `A[Del(T):R(8,)]A`, `A[Del(T):R(5,7)]A`, `A[Ins(T):R(5,7)]C`,
+`A[Ins(T):R(8,)]A`. That is what an undirected slippage process should look like, a
+tract of 8 T's going to 7 about as often as it goes to 9.
+
+**Group ratios follow from mixing.** Restricting to MMR-proficient tumours, so that
+burden and MSI status do not drive the contrast, and using the coarse bins
+(ins into 5+ over del from 6+):
+
+| Group | n | median indel burden | poly-T ins/del |
+|---|---|---|---|
+| no N_beta | 4,143 | 494 | 3.05 |
+| N_beta + 1 family only | 1,318 | 966 | 1.82 |
+| N_beta alone | 1,191 | 1,096 | 1.00 |
+| N_beta + 2 family only | 121 | 1,848 | 0.56 |
+
+The third row is the consistency check. Tumours carrying N_beta and neither directional
+family land at 1.00, exactly what a 43/57 signature predicts. Adding the insertion
+family pushes to 1.82, adding the deletion family pulls to 0.56.
+
+**N_beta is MMR proficient.** Only 10 of 2,640 N_beta tumours are MSI-H (0.4%),
+against 4.4% of tumours without it.
+
+**Co-occurrence is lopsided but that is not the interesting part.** Of the 2,640 N_beta
+tumours, 1,195 carry neither directional family, 1,319 carry the 1 family only, 124 the
+2 family only, and just 2 carry both. The 1 and 2 families are near mutually exclusive.
+The 10:1 skew toward the 1 family mostly reflects how common that family is: among the
+4,143 MSS tumours **without** N_beta, 3,096 carry the 1 family only, 91 the 2 family
+only, 62 both, and 894 neither.
+
+**Why this matters here.** The report above frames the problem as a conflict between
+deletion-biased enzymology and insertion-biased human data. N_beta suggests the human
+data contain a component that is neither. If N_beta is the underlying slippage process
+and 1a and 2a are what happens when something biases it, then the quantity to explain
+is not "why are human indels insertion-biased" but "what tips a balanced process one
+way or the other". MMR status is one such tipping factor and is visible in the tables
+above, but N_beta tumours are almost all MMR proficient, so it cannot be the only one.
+
 ### Caveats
 
 - **The R9+ drop, checked.** The ratio falls back below 1 at R9+ in both MMR-proficient

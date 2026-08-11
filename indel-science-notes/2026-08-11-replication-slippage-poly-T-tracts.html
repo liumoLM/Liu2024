@@ -436,6 +436,79 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p><strong>The human insertion bias is length-specific, not global.</strong> At short tracts (R1 to R4) deletions dominate in both MMR groups, which agrees with the yeast and in vitro measurements. The insertion excess appears only at R6 to R8. That partly reconciles the discordance above: the yeast reporter and genome assays sample short homopolymers, exactly the range where our human data agree with them, so the two bodies of work may not actually conflict.</p></li>
 </ol>
 </section>
+<section id="where-insdel_n_beta-sits-on-this-axis" class="level3">
+<h3 class="anchored" data-anchor-id="where-insdel_n_beta-sits-on-this-axis">Where InsDel_N_beta sits on this axis</h3>
+<p>The ID89 signature <code>InsDel_N_beta</code> turns out to be the interesting one for the slippage question. Full analysis with code in <code>~/github/zz-liu_2025_draft_release/del-vs-ins-analysis/n_beta_ins_del.qmd</code>.</p>
+<p><strong>N_beta is the balanced long-poly-T signature.</strong> Taking the insertion and deletion content of each ID89 signature profile:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Signature</th>
+<th>% insertions</th>
+<th>% deletions</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>InsDel1a</td>
+<td>93.7</td>
+<td>6.3</td>
+</tr>
+<tr class="even">
+<td>InsDel2a</td>
+<td>25.2</td>
+<td>74.8</td>
+</tr>
+<tr class="odd">
+<td><strong>InsDel_N_beta</strong></td>
+<td><strong>42.8</strong></td>
+<td><strong>57.2</strong></td>
+</tr>
+</tbody>
+</table>
+<p>1a is essentially pure insertion and 2a mostly deletion, the two directional extremes. N_beta sits between them, and its top channels interleave both directions at the same long tracts: <code>A[Del(T):R(8,)]A</code>, <code>A[Del(T):R(5,7)]A</code>, <code>A[Ins(T):R(5,7)]C</code>, <code>A[Ins(T):R(8,)]A</code>. That is what an undirected slippage process should look like, a tract of 8 T’s going to 7 about as often as it goes to 9.</p>
+<p><strong>Group ratios follow from mixing.</strong> Restricting to MMR-proficient tumours, so that burden and MSI status do not drive the contrast, and using the coarse bins (ins into 5+ over del from 6+):</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Group</th>
+<th>n</th>
+<th>median indel burden</th>
+<th>poly-T ins/del</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>no N_beta</td>
+<td>4,143</td>
+<td>494</td>
+<td>3.05</td>
+</tr>
+<tr class="even">
+<td>N_beta + 1 family only</td>
+<td>1,318</td>
+<td>966</td>
+<td>1.82</td>
+</tr>
+<tr class="odd">
+<td>N_beta alone</td>
+<td>1,191</td>
+<td>1,096</td>
+<td>1.00</td>
+</tr>
+<tr class="even">
+<td>N_beta + 2 family only</td>
+<td>121</td>
+<td>1,848</td>
+<td>0.56</td>
+</tr>
+</tbody>
+</table>
+<p>The third row is the consistency check. Tumours carrying N_beta and neither directional family land at 1.00, exactly what a 43/57 signature predicts. Adding the insertion family pushes to 1.82, adding the deletion family pulls to 0.56.</p>
+<p><strong>N_beta is MMR proficient.</strong> Only 10 of 2,640 N_beta tumours are MSI-H (0.4%), against 4.4% of tumours without it.</p>
+<p><strong>Co-occurrence is lopsided but that is not the interesting part.</strong> Of the 2,640 N_beta tumours, 1,195 carry neither directional family, 1,319 carry the 1 family only, 124 the 2 family only, and just 2 carry both. The 1 and 2 families are near mutually exclusive. The 10:1 skew toward the 1 family mostly reflects how common that family is: among the 4,143 MSS tumours <strong>without</strong> N_beta, 3,096 carry the 1 family only, 91 the 2 family only, 62 both, and 894 neither.</p>
+<p><strong>Why this matters here.</strong> The report above frames the problem as a conflict between deletion-biased enzymology and insertion-biased human data. N_beta suggests the human data contain a component that is neither. If N_beta is the underlying slippage process and 1a and 2a are what happens when something biases it, then the quantity to explain is not “why are human indels insertion-biased” but “what tips a balanced process one way or the other”. MMR status is one such tipping factor and is visible in the tables above, but N_beta tumours are almost all MMR proficient, so it cannot be the only one.</p>
+</section>
 <section id="caveats" class="level3">
 <h3 class="anchored" data-anchor-id="caveats">Caveats</h3>
 <ul>
