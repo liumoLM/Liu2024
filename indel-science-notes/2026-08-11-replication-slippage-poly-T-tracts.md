@@ -405,33 +405,33 @@ above, but N_beta tumours are almost all MMR proficient, so it cannot be the onl
 
 Among MSS tumours the three 1-family signatures are close to mutually exclusive: 3,780
 carry `InsDel1a` only, 552 `InsDel1c` only, 138 `InsDel1b` only, 3 carry more than one,
-and 2,294 carry none. Broken out that way, on the coarse bins:
+and 2,294 carry none. Broken out that way, grouped first by whether the tumour also carries `InsDel_N_beta`,
+on the coarse bins:
 
-| Group | n | % with N_beta | median burden | poly-T ins/del |
-|---|---|---|---|---|
-| InsDel1a | 3,780 | 31.4 | 647 | **2.39** |
-| InsDel1b | 138 | 11.6 | 207 | **2.36** |
-| InsDel1c | 552 | 20.7 | 353 | **2.38** |
-| no 1 family | 2,294 | 57.1 | 870 | 0.94 |
+| N_beta | Group | n | % with 2 family | median burden | Del from 6+ | Ins into 5+ | ins/del |
+|---|---|---|---|---|---|---|---|
+| with N_beta | InsDel1a | 1,186 | 0.0 | 1,004 | 244,706 | 447,484 | **1.83** |
+| with N_beta | InsDel1b | 16 | 0.0 | 366 | 1,880 | 3,061 | **1.63** |
+| with N_beta | InsDel1c | 114 | 0.0 | 546 | 18,627 | 30,140 | **1.62** |
+| with N_beta | no 1 family | 1,310 | 9.2 | 1,150 | 388,558 | 355,249 | 0.91 |
+| without N_beta | InsDel1a | 2,594 | 1.6 | 534 | 96,503 | 367,538 | **3.81** |
+| without N_beta | InsDel1b | 122 | 2.5 | 172 | 2,284 | 6,772 | **2.97** |
+| without N_beta | InsDel1c | 438 | 3.9 | 296 | 10,231 | 38,621 | **3.78** |
+| without N_beta | multiple 1x | 3 | 33.3 | 730 | 673 | 2,702 | 4.02 |
+| without N_beta | no 1 family | 984 | 9.2 | 548 | 43,518 | 52,670 | 1.21 |
 
-The three are indistinguishable, 2.39 / 2.36 / 2.38, across a 27-fold range in tumour
-count. That holds even though `InsDel1b` carries noticeably more deletions than the
-other two (21.8% against 6.3% for 1a and 7.4% for 1c). Whatever separates 1a, 1b and 1c
-from each other, it is not the insertion/deletion balance at long poly-T tracts, which
-is consistent with all three being variants of the same directional process.
+Pooling over N_beta status the three subtypes are indistinguishable, 2.39 / 2.36 / 2.38,
+across a 27-fold range in tumour count. That holds even though `InsDel1b` carries
+noticeably more deletions than the other two (21.8% against 6.3% for 1a and 7.4% for
+1c). Whatever separates 1a, 1b and 1c from each other, it is not the insertion/deletion
+balance at long poly-T tracts, which is consistent with all three being variants of the
+same directional process.
 
-Splitting each subtype by whether the tumour also carries N_beta reproduces the
-dilution effect within every one of them:
-
-| Group | without N_beta | with N_beta |
-|---|---|---|
-| InsDel1a | 3.81 (n = 2,594) | 1.83 (n = 1,186) |
-| InsDel1b | 2.97 (n = 122) | 1.63 (n = 16) |
-| InsDel1c | 3.78 (n = 438) | 1.62 (n = 114) |
-| no 1 family | 1.21 (n = 984) | 0.91 (n = 1,310) |
-
-Adding N_beta roughly halves the ratio in each case, which is what mixing in a 57%
-deletion signature should do.
+Reading down the table, N_beta roughly halves the ratio within every subtype: 3.81 to
+1.83 for 1a, 2.97 to 1.63 for 1b, 3.78 to 1.62 for 1c. Note also the `% with 2 family`
+column, which is 0.0 in every N_beta row carrying a 1-family signature. That is the
+near-exclusivity noted above, only 2 tumours in the whole cohort carry N_beta with both
+families.
 
 ### Caveats
 

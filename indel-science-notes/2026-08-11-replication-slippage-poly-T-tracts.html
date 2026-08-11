@@ -511,82 +511,125 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="the-1-family-broken-out-by-subtype" class="level3">
 <h3 class="anchored" data-anchor-id="the-1-family-broken-out-by-subtype">The 1 family broken out by subtype</h3>
-<p>Among MSS tumours the three 1-family signatures are close to mutually exclusive: 3,780 carry <code>InsDel1a</code> only, 552 <code>InsDel1c</code> only, 138 <code>InsDel1b</code> only, 3 carry more than one, and 2,294 carry none. Broken out that way, on the coarse bins:</p>
+<p>Among MSS tumours the three 1-family signatures are close to mutually exclusive: 3,780 carry <code>InsDel1a</code> only, 552 <code>InsDel1c</code> only, 138 <code>InsDel1b</code> only, 3 carry more than one, and 2,294 carry none. Broken out that way, grouped first by whether the tumour also carries <code>InsDel_N_beta</code>, on the coarse bins:</p>
 <table class="caption-top table">
+<colgroup>
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+</colgroup>
 <thead>
 <tr class="header">
+<th>N_beta</th>
 <th>Group</th>
 <th>n</th>
-<th>% with N_beta</th>
+<th>% with 2 family</th>
 <th>median burden</th>
-<th>poly-T ins/del</th>
+<th>Del from 6+</th>
+<th>Ins into 5+</th>
+<th>ins/del</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
+<td>with N_beta</td>
 <td>InsDel1a</td>
-<td>3,780</td>
-<td>31.4</td>
-<td>647</td>
-<td><strong>2.39</strong></td>
+<td>1,186</td>
+<td>0.0</td>
+<td>1,004</td>
+<td>244,706</td>
+<td>447,484</td>
+<td><strong>1.83</strong></td>
 </tr>
 <tr class="even">
+<td>with N_beta</td>
 <td>InsDel1b</td>
-<td>138</td>
-<td>11.6</td>
-<td>207</td>
-<td><strong>2.36</strong></td>
+<td>16</td>
+<td>0.0</td>
+<td>366</td>
+<td>1,880</td>
+<td>3,061</td>
+<td><strong>1.63</strong></td>
 </tr>
 <tr class="odd">
+<td>with N_beta</td>
 <td>InsDel1c</td>
-<td>552</td>
-<td>20.7</td>
-<td>353</td>
-<td><strong>2.38</strong></td>
+<td>114</td>
+<td>0.0</td>
+<td>546</td>
+<td>18,627</td>
+<td>30,140</td>
+<td><strong>1.62</strong></td>
 </tr>
 <tr class="even">
+<td>with N_beta</td>
 <td>no 1 family</td>
-<td>2,294</td>
-<td>57.1</td>
-<td>870</td>
-<td>0.94</td>
+<td>1,310</td>
+<td>9.2</td>
+<td>1,150</td>
+<td>388,558</td>
+<td>355,249</td>
+<td>0.91</td>
+</tr>
+<tr class="odd">
+<td>without N_beta</td>
+<td>InsDel1a</td>
+<td>2,594</td>
+<td>1.6</td>
+<td>534</td>
+<td>96,503</td>
+<td>367,538</td>
+<td><strong>3.81</strong></td>
+</tr>
+<tr class="even">
+<td>without N_beta</td>
+<td>InsDel1b</td>
+<td>122</td>
+<td>2.5</td>
+<td>172</td>
+<td>2,284</td>
+<td>6,772</td>
+<td><strong>2.97</strong></td>
+</tr>
+<tr class="odd">
+<td>without N_beta</td>
+<td>InsDel1c</td>
+<td>438</td>
+<td>3.9</td>
+<td>296</td>
+<td>10,231</td>
+<td>38,621</td>
+<td><strong>3.78</strong></td>
+</tr>
+<tr class="even">
+<td>without N_beta</td>
+<td>multiple 1x</td>
+<td>3</td>
+<td>33.3</td>
+<td>730</td>
+<td>673</td>
+<td>2,702</td>
+<td>4.02</td>
+</tr>
+<tr class="odd">
+<td>without N_beta</td>
+<td>no 1 family</td>
+<td>984</td>
+<td>9.2</td>
+<td>548</td>
+<td>43,518</td>
+<td>52,670</td>
+<td>1.21</td>
 </tr>
 </tbody>
 </table>
-<p>The three are indistinguishable, 2.39 / 2.36 / 2.38, across a 27-fold range in tumour count. That holds even though <code>InsDel1b</code> carries noticeably more deletions than the other two (21.8% against 6.3% for 1a and 7.4% for 1c). Whatever separates 1a, 1b and 1c from each other, it is not the insertion/deletion balance at long poly-T tracts, which is consistent with all three being variants of the same directional process.</p>
-<p>Splitting each subtype by whether the tumour also carries N_beta reproduces the dilution effect within every one of them:</p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Group</th>
-<th>without N_beta</th>
-<th>with N_beta</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>InsDel1a</td>
-<td>3.81 (n = 2,594)</td>
-<td>1.83 (n = 1,186)</td>
-</tr>
-<tr class="even">
-<td>InsDel1b</td>
-<td>2.97 (n = 122)</td>
-<td>1.63 (n = 16)</td>
-</tr>
-<tr class="odd">
-<td>InsDel1c</td>
-<td>3.78 (n = 438)</td>
-<td>1.62 (n = 114)</td>
-</tr>
-<tr class="even">
-<td>no 1 family</td>
-<td>1.21 (n = 984)</td>
-<td>0.91 (n = 1,310)</td>
-</tr>
-</tbody>
-</table>
-<p>Adding N_beta roughly halves the ratio in each case, which is what mixing in a 57% deletion signature should do.</p>
+<p>Pooling over N_beta status the three subtypes are indistinguishable, 2.39 / 2.36 / 2.38, across a 27-fold range in tumour count. That holds even though <code>InsDel1b</code> carries noticeably more deletions than the other two (21.8% against 6.3% for 1a and 7.4% for 1c). Whatever separates 1a, 1b and 1c from each other, it is not the insertion/deletion balance at long poly-T tracts, which is consistent with all three being variants of the same directional process.</p>
+<p>Reading down the table, N_beta roughly halves the ratio within every subtype: 3.81 to 1.83 for 1a, 2.97 to 1.63 for 1b, 3.78 to 1.62 for 1c. Note also the <code>% with 2 family</code> column, which is 0.0 in every N_beta row carrying a 1-family signature. That is the near-exclusivity noted above, only 2 tumours in the whole cohort carry N_beta with both families.</p>
 </section>
 <section id="caveats" class="level3">
 <h3 class="anchored" data-anchor-id="caveats">Caveats</h3>
