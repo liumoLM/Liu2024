@@ -509,6 +509,85 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><strong>Co-occurrence is lopsided but that is not the interesting part.</strong> Of the 2,635 N_beta tumours, 1,192 carry neither directional family, 1,317 carry the 1 family only, 124 the 2 family only, and just 2 carry both. The 1 and 2 families are near mutually exclusive. The 10:1 skew toward the 1 family mostly reflects how common that family is: among the 4,141 MSS tumours <strong>without</strong> N_beta, 3,095 carry the 1 family only, 91 the 2 family only, 62 both, and 893 neither.</p>
 <p><strong>Why this matters here.</strong> The report above frames the problem as a conflict between deletion-biased enzymology and insertion-biased human data. N_beta suggests the human data contain a component that is neither. If N_beta is the underlying slippage process and 1a and 2a are what happens when something biases it, then the quantity to explain is not “why are human indels insertion-biased” but “what tips a balanced process one way or the other”. MMR status is one such tipping factor and is visible in the tables above, but N_beta tumours are almost all MMR proficient, so it cannot be the only one.</p>
 </section>
+<section id="the-1-family-broken-out-by-subtype" class="level3">
+<h3 class="anchored" data-anchor-id="the-1-family-broken-out-by-subtype">The 1 family broken out by subtype</h3>
+<p>Among MSS tumours the three 1-family signatures are close to mutually exclusive: 3,780 carry <code>InsDel1a</code> only, 552 <code>InsDel1c</code> only, 138 <code>InsDel1b</code> only, 3 carry more than one, and 2,294 carry none. Broken out that way, on the coarse bins:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Group</th>
+<th>n</th>
+<th>% with N_beta</th>
+<th>median burden</th>
+<th>poly-T ins/del</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>InsDel1a</td>
+<td>3,780</td>
+<td>31.4</td>
+<td>647</td>
+<td><strong>2.39</strong></td>
+</tr>
+<tr class="even">
+<td>InsDel1b</td>
+<td>138</td>
+<td>11.6</td>
+<td>207</td>
+<td><strong>2.36</strong></td>
+</tr>
+<tr class="odd">
+<td>InsDel1c</td>
+<td>552</td>
+<td>20.7</td>
+<td>353</td>
+<td><strong>2.38</strong></td>
+</tr>
+<tr class="even">
+<td>no 1 family</td>
+<td>2,294</td>
+<td>57.1</td>
+<td>870</td>
+<td>0.94</td>
+</tr>
+</tbody>
+</table>
+<p>The three are indistinguishable, 2.39 / 2.36 / 2.38, across a 27-fold range in tumour count. That holds even though <code>InsDel1b</code> carries noticeably more deletions than the other two (21.8% against 6.3% for 1a and 7.4% for 1c). Whatever separates 1a, 1b and 1c from each other, it is not the insertion/deletion balance at long poly-T tracts, which is consistent with all three being variants of the same directional process.</p>
+<p>Splitting each subtype by whether the tumour also carries N_beta reproduces the dilution effect within every one of them:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Group</th>
+<th>without N_beta</th>
+<th>with N_beta</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>InsDel1a</td>
+<td>3.81 (n = 2,594)</td>
+<td>1.83 (n = 1,186)</td>
+</tr>
+<tr class="even">
+<td>InsDel1b</td>
+<td>2.97 (n = 122)</td>
+<td>1.63 (n = 16)</td>
+</tr>
+<tr class="odd">
+<td>InsDel1c</td>
+<td>3.78 (n = 438)</td>
+<td>1.62 (n = 114)</td>
+</tr>
+<tr class="even">
+<td>no 1 family</td>
+<td>1.21 (n = 984)</td>
+<td>0.91 (n = 1,310)</td>
+</tr>
+</tbody>
+</table>
+<p>Adding N_beta roughly halves the ratio in each case, which is what mixing in a 57% deletion signature should do.</p>
+</section>
 <section id="caveats" class="level3">
 <h3 class="anchored" data-anchor-id="caveats">Caveats</h3>
 <ul>

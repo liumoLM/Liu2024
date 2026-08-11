@@ -401,6 +401,38 @@ is not "why are human indels insertion-biased" but "what tips a balanced process
 way or the other". MMR status is one such tipping factor and is visible in the tables
 above, but N_beta tumours are almost all MMR proficient, so it cannot be the only one.
 
+### The 1 family broken out by subtype
+
+Among MSS tumours the three 1-family signatures are close to mutually exclusive: 3,780
+carry `InsDel1a` only, 552 `InsDel1c` only, 138 `InsDel1b` only, 3 carry more than one,
+and 2,294 carry none. Broken out that way, on the coarse bins:
+
+| Group | n | % with N_beta | median burden | poly-T ins/del |
+|---|---|---|---|---|
+| InsDel1a | 3,780 | 31.4 | 647 | **2.39** |
+| InsDel1b | 138 | 11.6 | 207 | **2.36** |
+| InsDel1c | 552 | 20.7 | 353 | **2.38** |
+| no 1 family | 2,294 | 57.1 | 870 | 0.94 |
+
+The three are indistinguishable, 2.39 / 2.36 / 2.38, across a 27-fold range in tumour
+count. That holds even though `InsDel1b` carries noticeably more deletions than the
+other two (21.8% against 6.3% for 1a and 7.4% for 1c). Whatever separates 1a, 1b and 1c
+from each other, it is not the insertion/deletion balance at long poly-T tracts, which
+is consistent with all three being variants of the same directional process.
+
+Splitting each subtype by whether the tumour also carries N_beta reproduces the
+dilution effect within every one of them:
+
+| Group | without N_beta | with N_beta |
+|---|---|---|
+| InsDel1a | 3.81 (n = 2,594) | 1.83 (n = 1,186) |
+| InsDel1b | 2.97 (n = 122) | 1.63 (n = 16) |
+| InsDel1c | 3.78 (n = 438) | 1.62 (n = 114) |
+| no 1 family | 1.21 (n = 984) | 0.91 (n = 1,310) |
+
+Adding N_beta roughly halves the ratio in each case, which is what mixing in a 57%
+deletion signature should do.
+
 ### Caveats
 
 - **The R9+ drop, checked.** The ratio falls back below 1 at R9+ in both MMR-proficient
