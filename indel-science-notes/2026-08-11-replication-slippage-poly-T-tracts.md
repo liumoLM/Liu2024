@@ -293,7 +293,12 @@ deficiency is the perturbation under study and would otherwise sit inside the
 comparison groups. That leaves 6,952 tumours: 182 MMR-deficient (MSI-H),
 6,767 MMR-proficient and 3 unknown. The excluded tumours are heavily hypermutated
 (median 18,070 indels against 680 for those kept) and 20 of the 26 are MSI-H, so the
-exclusion bites hardest on the MSI-H pooled counts. Panel Rn compares Del(base):Rn with
+exclusion bites hardest on the MSI-H pooled counts. **Note what this exclusion is and is
+not.** Table S9 screened only 125 samples, chosen around particular signatures (81 rows
+for `InsDel_N_beta`, 28 for `InsDel1c`, 14 for `InsDel1b`), so POLD1/POLE status is
+unknown for the other 6,853 tumours and screening coverage varies from 0.04% to 9.0%
+across the groups compared later. The exclusion removes known variant carriers, it does
+not equalize proofreading status across groups. Panel Rn compares Del(base):Rn with
 Ins(base):Rn, both meaning a tract of n bases existed **before** the event, so the two
 channels describe the same substrate, which is confirmed by the ICAMS classifier: `R`
 is the tract length before the mutation for insertions as well as deletions (see the
@@ -467,13 +472,34 @@ comparisons significant after Holm adjustment (1a vs 1b and 1a vs 1c both < 2e-1
 1b vs 1c 6.7e-08). It holds inside both N_beta strata (p = 2.7e-14 among carriers,
 p < 2e-16 among non-carriers), so it is not an artefact of the uneven N_beta split.
 
-This qualifies the "indistinguishable" claim. The **raw pooled ratios** are
-indistinguishable, but partly because two effects cancel. 1b and 1c sit in lower-burden
-tumours, lower burden goes with a higher insertion fraction, and once burden is adjusted
-for both fall slightly below 1a (odds ratios 0.81 and 0.89). The difference is real but
-small, 10 to 20% on the odds scale against the 2-fold N_beta effect, so the substantive
-point stands: the subtypes are far more similar to each other than either is to the
-N_beta contrast.
+This complicates the "indistinguishable" claim, but two things say the residual subtype
+terms should not be read as a subtype effect.
+
+First, **the coarse bins conflate tract length with subtype.** The signatures put their
+Ins(T) mass in different places along the tract-length axis:
+
+| Tract length | InsDel1a | InsDel1b | InsDel1c |
+|---|---|---|---|
+| R0-4 | 5.0 | 6.9 | 5.5 |
+| R5-7 | 51.4 | 70.7 | 61.9 |
+| R8+ | **43.6** | 22.4 | 32.6 |
+
+1a is weighted to the longest tracts, 1b and 1c to intermediate ones. Since the ins/del
+ratio varies strongly with tract length, a coarse-bin comparison across subtypes folds
+that composition difference into what looks like a subtype effect. The length-stratified
+table is the one to trust, and there the three track each other closely at matched
+length (at R6: 3.09, 2.52, 3.19).
+
+Second, **the 1b estimate is fragile.** Only 3 MSS 1-family tumours were removed by the
+POLD1/POLE exclusion, one of them an `InsDel1b` tumour, and that single tumour moves the
+1b odds ratio from 0.939 to 0.808. With 138 1b tumours that is not a stable estimate.
+
+1b does differ from the other two in flanking-base preference: its 3' flank is depleted
+of G (14.9% of Ins(T) mass against 34.6% for 1a and 35.7% for 1c) and enriched for A.
+1c is nearly identical to 1a on flanks and differs mainly in tract length. So the three
+are separated by tract-length and flank preferences, not by the insertion/deletion
+balance, and the original statement stands: they are far more similar to each other than
+either is to the N_beta contrast.
 
 ### Caveats
 

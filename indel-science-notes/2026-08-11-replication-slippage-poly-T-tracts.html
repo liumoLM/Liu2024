@@ -305,7 +305,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="our-own-data-the-discordance-is-length-specific" class="level2">
 <h2 class="anchored" data-anchor-id="our-own-data-the-discordance-is-length-specific">Our own data: the discordance is length-specific</h2>
 <p>The test proposed above has now been run on the Liu et al.&nbsp;ID476 cohort. Script, augmented table and figures are in <code>~/github/zz-liu_2025_draft_release/del-vs-ins-analysis/</code>.</p>
-<p>Method. Transpose the 476-channel spectra, aggregate the 342 one-base homopolymer channels across their 9 flanking contexts into per-tract-length deletion and insertion counts, and split by <code>MSIseq_MSI.H</code>. <strong>Tumours carrying a POLD1 or POLE proofreading variant in Table S9 are excluded up front</strong>, 26 of them, since polymerase proofreading deficiency is the perturbation under study and would otherwise sit inside the comparison groups. That leaves 6,952 tumours: 182 MMR-deficient (MSI-H), 6,767 MMR-proficient and 3 unknown. The excluded tumours are heavily hypermutated (median 18,070 indels against 680 for those kept) and 20 of the 26 are MSI-H, so the exclusion bites hardest on the MSI-H pooled counts. Panel Rn compares Del(base):Rn with Ins(base):Rn, both meaning a tract of n bases existed <strong>before</strong> the event, so the two channels describe the same substrate, which is confirmed by the ICAMS classifier: <code>R</code> is the tract length before the mutation for insertions as well as deletions (see the caveats below). No indel-burden filter is applied, because a 4,000-indel cutoff would remove 200 of the 202 MSI-H tumours.</p>
+<p>Method. Transpose the 476-channel spectra, aggregate the 342 one-base homopolymer channels across their 9 flanking contexts into per-tract-length deletion and insertion counts, and split by <code>MSIseq_MSI.H</code>. <strong>Tumours carrying a POLD1 or POLE proofreading variant in Table S9 are excluded up front</strong>, 26 of them, since polymerase proofreading deficiency is the perturbation under study and would otherwise sit inside the comparison groups. That leaves 6,952 tumours: 182 MMR-deficient (MSI-H), 6,767 MMR-proficient and 3 unknown. The excluded tumours are heavily hypermutated (median 18,070 indels against 680 for those kept) and 20 of the 26 are MSI-H, so the exclusion bites hardest on the MSI-H pooled counts. <strong>Note what this exclusion is and is not.</strong> Table S9 screened only 125 samples, chosen around particular signatures (81 rows for <code>InsDel_N_beta</code>, 28 for <code>InsDel1c</code>, 14 for <code>InsDel1b</code>), so POLD1/POLE status is unknown for the other 6,853 tumours and screening coverage varies from 0.04% to 9.0% across the groups compared later. The exclusion removes known variant carriers, it does not equalize proofreading status across groups. Panel Rn compares Del(base):Rn with Ins(base):Rn, both meaning a tract of n bases existed <strong>before</strong> the event, so the two channels describe the same substrate, which is confirmed by the ICAMS classifier: <code>R</code> is the tract length before the mutation for insertions as well as deletions (see the caveats below). No indel-burden filter is applied, because a 4,000-indel cutoff would remove 200 of the 202 MSI-H tumours.</p>
 <section id="pooled-insertions-deletions-by-tract-length" class="level3">
 <h3 class="anchored" data-anchor-id="pooled-insertions-deletions-by-tract-length">Pooled insertions / deletions by tract length</h3>
 <p>Values above 1 mean insertions exceed deletions. Pooled across tumours rather than a median of per-tumour ratios, since most tumours are zero in most channels.</p>
@@ -741,7 +741,41 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tbody>
 </table>
 <p>Kruskal-Wallis chi-squared 366.5 on 2 df, p &lt; 2e-16, with all three pairwise Wilcoxon comparisons significant after Holm adjustment (1a vs 1b and 1a vs 1c both &lt; 2e-16, 1b vs 1c 6.7e-08). It holds inside both N_beta strata (p = 2.7e-14 among carriers, p &lt; 2e-16 among non-carriers), so it is not an artefact of the uneven N_beta split.</p>
-<p>This qualifies the “indistinguishable” claim. The <strong>raw pooled ratios</strong> are indistinguishable, but partly because two effects cancel. 1b and 1c sit in lower-burden tumours, lower burden goes with a higher insertion fraction, and once burden is adjusted for both fall slightly below 1a (odds ratios 0.81 and 0.89). The difference is real but small, 10 to 20% on the odds scale against the 2-fold N_beta effect, so the substantive point stands: the subtypes are far more similar to each other than either is to the N_beta contrast.</p>
+<p>This complicates the “indistinguishable” claim, but two things say the residual subtype terms should not be read as a subtype effect.</p>
+<p>First, <strong>the coarse bins conflate tract length with subtype.</strong> The signatures put their Ins(T) mass in different places along the tract-length axis:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Tract length</th>
+<th>InsDel1a</th>
+<th>InsDel1b</th>
+<th>InsDel1c</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>R0-4</td>
+<td>5.0</td>
+<td>6.9</td>
+<td>5.5</td>
+</tr>
+<tr class="even">
+<td>R5-7</td>
+<td>51.4</td>
+<td>70.7</td>
+<td>61.9</td>
+</tr>
+<tr class="odd">
+<td>R8+</td>
+<td><strong>43.6</strong></td>
+<td>22.4</td>
+<td>32.6</td>
+</tr>
+</tbody>
+</table>
+<p>1a is weighted to the longest tracts, 1b and 1c to intermediate ones. Since the ins/del ratio varies strongly with tract length, a coarse-bin comparison across subtypes folds that composition difference into what looks like a subtype effect. The length-stratified table is the one to trust, and there the three track each other closely at matched length (at R6: 3.09, 2.52, 3.19).</p>
+<p>Second, <strong>the 1b estimate is fragile.</strong> Only 3 MSS 1-family tumours were removed by the POLD1/POLE exclusion, one of them an <code>InsDel1b</code> tumour, and that single tumour moves the 1b odds ratio from 0.939 to 0.808. With 138 1b tumours that is not a stable estimate.</p>
+<p>1b does differ from the other two in flanking-base preference: its 3’ flank is depleted of G (14.9% of Ins(T) mass against 34.6% for 1a and 35.7% for 1c) and enriched for A. 1c is nearly identical to 1a on flanks and differs mainly in tract length. So the three are separated by tract-length and flank preferences, not by the insertion/deletion balance, and the original statement stands: they are far more similar to each other than either is to the N_beta contrast.</p>
 </section>
 </section>
 <section id="caveats" class="level3">
