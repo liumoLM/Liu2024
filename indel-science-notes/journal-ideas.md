@@ -1,0 +1,1 @@
+nat genet abst limit 150, 4000 words 8 display items;  cancer research, 250 words; cancer discovery 150 words; cell genomics, 150 words; genome research 250 words; Elife? Cell / cell genomics resource? 

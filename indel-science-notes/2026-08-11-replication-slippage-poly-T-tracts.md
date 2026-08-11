@@ -1,0 +1,257 @@
+# Replication slippage at homopolymer tracts: insertions vs deletions of T, and A/T vs G/C
+
+Date: 2026-08-11
+
+## Q1. Can slippage produce both insertions and deletions of T in poly-T tracts?
+
+Yes, and this is one of the better-supported facts in the field. The two directions
+are separate signatures with separate proposed mechanisms.
+
+- **COSMIC ID1** = 1 bp **insertion** of T at poly-T. Proposed aetiology: "slippage
+  during DNA replication of the replicated (nascent) DNA strand."
+  https://cancer.sanger.ac.uk/signatures/id/id1/
+- **COSMIC ID2** = 1 bp **deletion** of T at poly-T. Proposed aetiology: "slippage
+  during DNA replication of the template DNA strand."
+  https://cancer.sanger.ac.uk/signatures/id/id2/
+
+  Both were extracted in Alexandrov LB et al. (2020) "The repertoire of mutational
+  signatures in human cancer," *Nature* 578:94-101.
+  https://www.nature.com/articles/s41586-020-1943-3 , doi:10.1038/s41586-020-1943-3
+
+  The mechanistic logic: a loop-out on the **nascent** strand leaves an extra base in
+  the product (insertion), a loop-out on the **template** strand skips a base
+  (deletion). Same slippage event, opposite strand, opposite sign.
+
+- Koh G et al. (2025) "A redefined InDel taxonomy provides insights into mutational
+  signatures," *Nature Genetics* 57:1132-1141.
+  https://www.nature.com/articles/s41588-025-02152-y , doi:10.1038/s41588-025-02152-y
+  Experimentally separates the two directions: MMR-deficient lines are dominated by
+  1 bp T **deletions** at poly-T6+, while polymerase-dysfunction lines give
+  **exclusively** 1 bp T **insertions** at poly-T5+. Note the tract-length split:
+  insertion excess peaks at 5-7 bp, deletion excess grows with longer tracts. They
+  attribute this to proofreading acting only within ~5-7 bp of the active site.
+
+- Germline confirmation in a real pedigree: Happ HC, Sasani TA, Warner D, Neklason DW,
+  Quinlan AR (2026) "AVITI sequencing of a four-generation CEPH/Utah pedigree confirms
+  low mutation rates at homopolymer loci despite their low sequence complexity,"
+  *Genome Biology* 27:215.
+  https://link.springer.com/article/10.1186/s13059-026-04099-7 , doi:10.1186/s13059-026-04099-7
+  "Most mutations are 1 bp expansions or contractions, with a bias toward the former"
+  (P = 1.4e-8), in both maternal and paternal de novo mutations. So both directions
+  occur de novo in humans, with insertions modestly favoured.
+
+- Mechanism at the polymerase level, two distinct routes to a 1 bp indel:
+  Garcia-Diaz M, Kunkel TA (2006) "Mechanism of a genetic glissando: structural
+  biology of indel mutations," *Trends Biochem Sci* 31:206-214.
+  https://www.cell.com/trends/biochemical-sciences/fulltext/S0968-0004(06)00058-2 ,
+  doi:10.1016/j.tibs.2006.02.004
+  Classic Streisinger strand slippage plus **dNTP-stabilized misalignment**, where an
+  incoming dNTP pairs correctly with a downstream template base across a looped-out
+  template base. Evidence that the dNTP-stabilized route dominates at short tracts and
+  gives way to slippage as tract length grows:
+  https://www.sciencedirect.com/science/article/abs/pii/S156878641500052X
+
+## Q2. Why does it hit poly-A/poly-T harder than poly-G/poly-C?
+
+The honest answer: **mostly because of target abundance and tract length, not because
+A:T base pairs are intrinsically more slippage-prone.** The intuitive 2-hydrogen-bond
+explanation is contradicted by the per-locus data.
+
+- Lujan SA, Clark AB, Kunkel TA (2015) "Differences in genome-wide repeat sequence
+  instability conferred by proofreading and mismatch repair defects," *Nucleic Acids
+  Research* 43:4067-4074.
+  https://academic.oup.com/nar/article/43/8/4067/2414528 , doi:10.1093/nar/gkv271
+  Far more indels are seen in A/T sequence genome-wide, but that reflects the greater
+  abundance of A/T runs. Normalized for target size, "indel rates per base pair per
+  generation are similar and sometimes slightly higher in runs of G/C base pairs than
+  in runs of A/T base pairs of corresponding lengths." They note this is
+  counterintuitive under a pure thermodynamic model and conclude slippage is limited
+  "not only thermodynamically, but also kinetically and/or structurally."
+  Also from this paper: indel rates rise **>100,000-fold** with homopolymer run length.
+  Length is by far the dominant variable.
+
+- Happ et al. 2026 (above) makes the same point in the human germline, more strongly:
+  G/C homopolymers are under 1% of homopolymer loci but show an **18-fold higher
+  per-locus mutation rate** than A/T homopolymers (rate ratio 0.056, 95% CI
+  0.042-0.077, P < 2.2e-16). Caveat: their locus set is long homopolymers (>=10 bp),
+  and a >=10 bp G/C run is an unusual sequence, so this is not a clean matched
+  comparison across all lengths.
+
+So the observed poly-A/poly-T dominance in human indel spectra is largely a **supply**
+effect. The human genome is full of long A/T homopolymers, mainly the poly-A tails of
+Alu and L1 insertions, while G/C runs are short and rare. Combine a
+super-exponential length dependence with a length distribution shifted far to the
+right for A/T, and A/T homopolymer indels dominate the genome-wide spectrum even at
+equal or lower per-locus rates.
+
+### Structural/dynamic arguments that are still made
+
+- Bacolla A, Zhu X, Chen H, Howells K, Cooper DN, Vasquez KM (2015) "Local DNA
+  dynamics shape mutational patterns of mononucleotide repeats in human genomes,"
+  *Nucleic Acids Research* 43:5065-5080.
+  https://pmc.ncbi.nlm.nih.gov/articles/PMC4446427 , doi:10.1093/nar/gkv364
+  A-tracts and G-tracts have qualitatively different mutation profiles, not just
+  different rates. A-tract mutations cluster at the first and last base pair of the
+  tract and track local flexibility (peak fluctuation at the 5'-TA-3' junction).
+  G-tract mutations cluster internally at G2-G3 and G5, and are explained by
+  long-range hole transfer after ionization, that is oxidative chemistry, not slippage.
+  Indels are more abundant at flanking base pairs than within tracts, ~10-fold more so
+  for G-tracts. This argues the two tract types have different dominant mutagenic
+  mechanisms, which is a cleaner framing than "A/T slips more."
+
+- Structural: poly(dA).poly(dT) has a narrow, deep minor groove, high propeller twist
+  and cross-strand hydrogen bonding, and is unusually straight and rigid. G-runs
+  instead form G-quadruplex-type secondary structure, which is actively resolved by
+  FANCJ/DOG-1 helicase, and loss of that helicase causes deletions initiating in G/C
+  tracts. See the C. elegans work: https://pmc.ncbi.nlm.nih.gov/articles/PMC2211496/
+  So G/C runs may be protected by a dedicated pathway rather than being intrinsically
+  stable.
+
+- Base stacking, not hydrogen bond count, dominates sequence-dependent duplex
+  stability, which further undercuts the naive "2 vs 3 H-bonds" story.
+
+## Which human polymerases are involved
+
+Humans encode roughly 15 DNA-dependent DNA polymerases, catalogued in
+Lange SS, Takata K, Wood RD (2011) "DNA polymerases and cancer," *Nature Reviews
+Cancer* 11:96-110. https://www.nature.com/articles/nrc2998 , doi:10.1038/nrc2998
+Only a handful carry out bulk synthesis.
+
+### Bulk nuclear replication (B-family)
+
+| Pol | Gene | Role | 3'->5' proofreading |
+|---|---|---|---|
+| Pol alpha | `POLA1` + primase | RNA primer then ~20 nt of DNA, at every origin and every Okazaki fragment | **No** |
+| Pol delta | `POLD1` (+ POLD2/3/4) | Bulk lagging strand, maturation of Pol alpha tracts, most repair resynthesis | Yes |
+| Pol epsilon | `POLE` (+ POLE2/3/4) | Bulk leading strand | Yes |
+
+Division of labour reviewed in Burgers PMJ, Kunkel TA (2017) "Eukaryotic DNA
+Replication Fork," *Annual Review of Biochemistry* 86:417-438.
+https://www.annualreviews.org/doi/abs/10.1146/annurev-biochem-061516-044709 ,
+doi:10.1146/annurev-biochem-061516-044709
+
+**Pol gamma** (`POLG`) is the only polymerase that replicates mitochondrial DNA, so it
+is the relevant enzyme for any mtDNA homopolymer indel analysis. PrimPol and Pol theta
+also act on mtDNA to a minor extent.
+
+### The rest, by job
+
+- Gap filling and base excision repair: Pol beta (`POLB`), Pol lambda (`POLL`)
+- NHEJ and V(D)J: Pol mu (`POLM`), Pol lambda, TdT (`DNTT`)
+- Translesion synthesis: Pol eta (`POLH`), Pol iota (`POLI`), Pol kappa (`POLK`),
+  Pol zeta (`REV3L`/`REV7`), Rev1 (`REV1`), Pol nu (`POLN`)
+- Microhomology-mediated end joining: Pol theta (`POLQ`)
+- Repriming past lesions: PrimPol (`PRIMPOL`)
+
+### Which ones matter for homopolymer slippage
+
+Pol delta and Pol epsilon, and to a lesser extent Pol alpha. Pol alpha is notably
+error-prone and has no proofreading exonuclease, and it lays down a short DNA stretch
+at the start of every Okazaki fragment, which is a plausible source of some
+lagging-strand indels. The "Pol-dys" lines in Koh et al. 2025 that gave exclusively
+1 bp T insertions at poly-T5+ are `POLE`/`POLD1` exonuclease-domain defects, and this
+is the same system that motivates the proofreading-reach argument, that proofreading
+only rescues errors within about 5-7 bp of the active site. The translesion
+polymerases have far lower per-nucleotide fidelity but synthesize a tiny fraction of
+the genome, so they contribute little to the genome-wide indel spectrum.
+
+## Measured 1 bp insertion and deletion rates for Pol delta and Pol epsilon
+
+### In vitro, purified enzyme
+
+| Enzyme | Base substitution | 1 bp deletion | 1 bp insertion | Source |
+|---|---|---|---|---|
+| Yeast Pol delta, WT, 3-subunit | < 1.3e-5 | **3.0e-4** in homopolymeric runs | not reported as a notable class | Fortune 2005 |
+| Yeast Pol epsilon, WT, 4-subunit | <= 2e-5 | **<= 5e-7** | not reported separately | Shcherbakova 2003 |
+| Human Pol epsilon, exo-deficient | 4.4e-5 | **0.71e-5** | **0.16e-5** | Korona 2011 |
+
+- Fortune JM, Pavlov YI, Welch CM, Johansson E, Burgers PMJ, Kunkel TA (2005)
+  "Saccharomyces cerevisiae DNA polymerase delta: high fidelity for base substitutions
+  but lower fidelity for single- and multi-base deletions," *J Biol Chem*
+  280:29980-29987. doi:10.1074/jbc.M505236200
+  https://www.jbc.org/article/S0021-9258(20)56429-6/fulltext
+  Wild-type Pol delta "inefficiently proofreads single nucleotide deletion mismatches
+  in homopolymeric runs, such that the error rate is 30 single nucleotide
+  deletions/100,000 nucleotides polymerized." The paper's own conclusion: "strand
+  slippage during replication by wild type Pol delta may be a primary source of
+  insertion and deletion mutagenesis in eukaryotic genomes."
+
+- Shcherbakova PV, Pavlov YI, Chilkova O, Rogozin IB, Johansson E, Kunkel TA (2003)
+  "Unique error signature of the four-subunit yeast DNA polymerase epsilon,"
+  *J Biol Chem* 278:43770-43780. doi:10.1074/jbc.M306893200
+  https://pubmed.ncbi.nlm.nih.gov/12882968/
+  Wild-type Pol epsilon proofreads at least 92% of base substitution errors and **at
+  least 99% of frameshift errors**.
+
+- Korona DA, LeCompte KG, Pursell ZF (2011) "The high fidelity and unique error
+  signature of human DNA polymerase epsilon," *Nucleic Acids Research* 39:1763-1773.
+  doi:10.1093/nar/gkq1034 https://academic.oup.com/nar/article/39/5/1763/2408989
+  Exonuclease-deficient human Pol epsilon: deletion:insertion ratio about **4.4:1**.
+  Also, human Pol epsilon was "nearly as accurate for 4-5 homonucleotide runs as it was
+  for shorter runs or non-iterated nucleotides," unlike other B-family polymerases.
+
+**The headline contrast:** wild-type Pol delta makes single-base deletions in
+homopolymers at ~3e-4, roughly **600-fold** more often than wild-type Pol epsilon
+(~5e-7). Both have comparable base-substitution fidelity. The difference is entirely
+in frameshift proofreading, which Pol epsilon does well and Pol delta does badly. If
+that in vitro difference holds in vivo, homopolymer indels should be a
+predominantly **lagging-strand** phenomenon.
+
+### In vivo, yeast whole genomes
+
+Lujan SA, Clark AB, Kunkel TA (2015) *NAR* 43:4067-4074, doi:10.1093/nar/gkv271
+(Table 1, MMR-deficient strains):
+
+| Run type | 1 bp deletions | 1 bp insertions | del:ins |
+|---|---|---|---|
+| A/T | 4,686 | 424 | ~11:1 |
+| G/C | 311 | 82 | ~3.8:1 |
+
+"The number of deletions far exceeds the number of insertions, and the number of
+deletions and insertions is much higher for A/T as compared to G/C base pairs." The
+ratio is strongly length-dependent, reaching about **100-fold** deletion bias at 12 bp
+A/T runs. Their proposed reason is thermodynamic, that forming the insertion-type
+misaligned intermediate requires disrupting more hydrogen bonds than the deletion-type
+one. Note these counts are from MMR-deficient backgrounds, so they measure the
+polymerase error spectrum minus whatever MMR would have caught.
+
+### An unresolved discordance worth flagging
+
+The polymerase data above are strongly **deletion**-biased. Several human in vivo
+observations are **insertion**-biased:
+
+- Happ et al. 2026 germline de novo homopolymer mutations favour expansions
+  (P = 1.4e-8).
+- Koh et al. 2025 polymerase-dysfunction cell lines gave *exclusively* 1 bp T
+  insertions at poly-T5+.
+- COSMIC ID1 (insertion) is near-universal and clock-like, while ID2 (deletion) is the
+  one that explodes in MMR deficiency.
+
+A plausible reconciliation, and this is my inference rather than something any of these
+papers states: the polymerase intrinsically makes more deletion-type slippage
+intermediates, MMR removes those preferentially or more efficiently, and what survives
+in an MMR-proficient cell is insertion-biased. Consistent with this, Lujan's
+deletion-heavy counts come from MMR-deficient strains, and ID2 is the MSI signature.
+Worth checking against the indel paper's own data, since a direct test would be the
+del:ins ratio at matched homopolymer length in MMR-proficient versus MMR-deficient
+tumours.
+
+## Bottom line
+
+1. Both +T and -T at poly-T are real and mechanistically distinguished: ID1 (nascent
+   strand slippage, insertion) vs ID2 (template strand slippage, deletion), with
+   experimental separation in Koh et al. 2025 and de novo germline confirmation in
+   Happ et al. 2026.
+2. There is **no good evidence that A:T base pairs slip more readily than G:C at
+   matched tract length.** The genome-wide poly-A/poly-T dominance is driven by tract
+   length and tract abundance. Anyone claiming an intrinsic A/T slippage preference
+   should be pointed at Lujan et al. 2015 and Happ et al. 2026.
+
+## Related material in this folder
+
+- The indel signature classification paper (`README.md`, `long-abst.md`, `abstract-150.md`).
+  Relevant to that work: the ID1/ID2 nascent-vs-template split, the tract-length
+  dependence of insertion vs deletion excess (Koh et al. 2025), and the point that
+  A/T dominance is a target-abundance effect, which bears on opportunity
+  normalization for any new indel classification.
+- [`comparison-with-koh-2025.md`](comparison-with-koh-2025.md)
