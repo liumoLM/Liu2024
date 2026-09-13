@@ -2,11 +2,11 @@
 # tables in this folder.
 #
 # Inputs (in the same folder as this script):
-#   Table S10 83-type and 89-type signature assignment.tsv
+#   Table S11 83-type and 89-type signature assignment.tsv
 #       Tab-separated matrix; first column is the signature name (e.g.
 #       "ID_K/InsDel_K"), remaining columns are bare sample IDs with mutation
 #       counts attributed to that signature.
-#   Table S17 metadata of 6975 samples.xlsx
+#   Table S18 metadata of 6975 samples.xlsx
 #       Sheet "Sheet1" with columns including "Patient", "Cancer Type", and
 #       "MSIseq" ("MSI-H"/"Non-MSI-H").
 #
@@ -53,11 +53,11 @@ this_dir <- local({
 sup_dir <- file.path(this_dir, "..", "Sup Tables")
 assignment_file <- file.path(
   sup_dir,
-  "Table S10 83-type and 89-type signature assignment.tsv"
+  "Table S11 83-type and 89-type signature assignment.tsv"
 )
 metadata_file <- file.path(
   sup_dir,
-  "Table S17 metadata of 6975 samples.xlsx"
+  "Table S18 metadata of 6975 samples.xlsx"
 )
 output_file <- file.path(
   this_dir,

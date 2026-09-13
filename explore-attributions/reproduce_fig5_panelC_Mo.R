@@ -20,9 +20,9 @@ OR_MIN  <- 5
 FDR_MAX <- 1e-3
 N_MIN   <- 25
 
-meta <- read_excel("Sup Tables/Table S17 metadata of 6975 samples.xlsx")
+meta <- read_excel("Sup Tables/Table S18 metadata of 6975 samples.xlsx")
 exp  <- read.delim(
-  "Sup Tables/Table S10 83-type and 89-type signature assignment.tsv",
+  "Sup Tables/Table S11 83-type and 89-type signature assignment.tsv",
   check.names = FALSE
 )
 sig_names <- sub(".*/", "", exp$Signature)

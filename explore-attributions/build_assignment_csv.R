@@ -1,8 +1,8 @@
-# Build a wide-format CSV joining sample metadata (Table S17) to the
-# per-sample signature assignment matrix (Table S10).
+# Build a wide-format CSV joining sample metadata (Table S18) to the
+# per-sample signature assignment matrix (Table S11).
 #
 # Steps:
-#   1. Read Table S17 metadata (.xlsx) and Table S10 assignments (.tsv).
+#   1. Read Table S18 metadata (.xlsx) and Table S11 assignments (.tsv).
 #   2. Force both column names (sample IDs) and row names (signature names)
 #      to syntactically valid R names with make.names(unique = TRUE), so that
 #      the same transformation can be applied to the metadata Patient column
@@ -34,11 +34,11 @@ this_dir <- local({
 sup_dir <- file.path(this_dir, "..", "Sup Tables")
 assignment_file <- file.path(
   sup_dir,
-  "Table S10 83-type and 89-type signature assignment.tsv"
+  "Table S11 83-type and 89-type signature assignment.tsv"
 )
 metadata_file <- file.path(
   sup_dir,
-  "Table S17 metadata of 6975 samples.xlsx"
+  "Table S18 metadata of 6975 samples.xlsx"
 )
 output_file <- file.path(this_dir, "Table_S10_S17_joined_wide.csv")
 

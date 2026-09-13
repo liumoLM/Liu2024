@@ -2,7 +2,7 @@
 
 This note summarizes the most strongly supported claims about the 89-type
 subdivisions of COSMIC ID1, ID2, and ID_N that can be made from per-sample
-attributions in Table S10 joined to Table S17 metadata
+attributions in Table S11 joined to Table S18 metadata
 (`Table_S10_S17_joined_wide.csv`, 6,975 samples).
 
 The supporting analysis script is `analyze_id1_id2_idN.R`. Outputs:

@@ -28,7 +28,7 @@ sup_dir <- file.path(this_dir, "..", "Sup Tables")
 HYPER_CUT <- 5000
 
 meta <- as.data.frame(read_excel(
-  file.path(sup_dir, "Table S17 metadata of 6975 samples.xlsx"),
+  file.path(sup_dir, "Table S18 metadata of 6975 samples.xlsx"),
   sheet = "Sheet1"
 ))
 meta$major <- meta[["Major Cancer Type"]]
@@ -38,7 +38,7 @@ meta$msi <- ifelse(
 )
 
 assign_mat <- read.delim(
-  file.path(sup_dir, "Table S10 83-type and 89-type signature assignment.tsv"),
+  file.path(sup_dir, "Table S11 83-type and 89-type signature assignment.tsv"),
   row.names = 1,
   check.names = FALSE
 )
