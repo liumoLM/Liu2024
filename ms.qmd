@@ -438,12 +438,10 @@ tobacco smoking (Figure [-@fig-assoc]B, “Tobacco Smoking”)
 tumors (SBS17, SBS18, SBS1, SBS88, and SBS93), we observed that
 C_ID18/InsDel18, ID_N/InsDel_Nβ were associated with SBS signatures
 typically seen in the GI tract. 
-[SBS93, in particular, was found almost exclusively
-in stomach tumors, and shows some
-transcriptional strand bias suggesting pyrimidine
-damage nearly specific to those tumors <cite DOI: 10.1016/j.xgen.2022.100179> here>,
-suggesting its association with specific DNA adducts in the GI tract
-and highly correlated with C_ID14/InsDel14.]{.blue} 
+[SBS93, which was previously found almost exclusively
+in stomach and esophageal tumors with transcriptional strand bias suggesting thymine
+damage [@islamUncoveringNovelMutational2022; @moodyMutationalSignaturesEsophageal2021],
+was highly correlated with C_ID14/InsDel14.]{.blue} 
 In addition C_ID1 and
 InsDel1a had stronger correlations with SBS1 and SBS18, [supporting
 their association with mutagenesis driven by reactive oxygen species]{.blue}
