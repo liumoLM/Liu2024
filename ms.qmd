@@ -96,7 +96,7 @@ herbal medicines [@alexandrovMutationalSignaturesAssociated2016;
 @bootCharacterizationColibactinassociatedMutational2020]. Mutational
 signature analysis provides insights into cancer etiology, prognosis,
 prevention, evolution, and mutational signatures can also serve as
-biomarkers for mutagenic exposures
+biomarkers for mutagenic exposures.
 
 By “mutational signatures” we mean distinctive patterns of mutations
 left on genomes by mutagenic processes or exposures. They can be
@@ -141,7 +141,7 @@ phenotype due to a mutation in topoisomerase 2 alpha
 [@bootRecurrentMutationsTopoisomerase2022].
 
 The first widely used classification of indels recognized 83 indel
-types, [@alexandrovRepertoireMutationalSignatures2020], and recently
+types [@alexandrovRepertoireMutationalSignatures2020]. Recently,
 @kohRedefinedInDelTaxonomy2025 proposed two classification schemes,
 one with 89 types of indel and one with 476 types (Figure [-@fig-aa]).
 
@@ -166,8 +166,8 @@ mutation types in the 476-type classification into coarser-grained
 mutation types [@kohRedefinedInDelTaxonomy2025] (Figure [-@fig-aa],
 Table S1). A prominent distinction is that, unlike the 83-type
 classification scheme, both the new classifications distinguish
-different types indels of a single T or C according to the non-T
-(respectively, non-C) flaking bases. This dramatically improves
+different types of indels of a single T or C according to the non-T
+(respectively, non-C) flanking bases. This dramatically improves
 discrimination between mutational spectra and signatures containing
 single-base indels, which are present in most signatures.
 
@@ -177,11 +177,11 @@ single Ts only by the number of T’s at the site of the deletion: 1, 2,
 classification distinguishes among deletions of T according to bases
 preceding or following the sequence of Ts at the site of the deletion.
 However, it groups together deletions of T from sequences of 1, 2, 3,
-or 4 T, and groups together deletions of sequences of 5, 6, 7, ,8 and
+or 4 T, and groups together deletions of sequences of 5, 6, 7, 8, or more
 Ts. Thus, for example, deletions of ATA→AA or ATTA→ATA are
 distinguished from deletions of CTA→CA or CTTA→CTA, but the deletions
 CTA→CA and CTTTTA→CTTTA have the same classification. The 476-type
-classification scheme provides fined-grained distinctions among
+classification scheme provides fine-grained distinctions among
 deletions of a single C or T that combine the distinctions in the 83
 and 89-type system. The 476-type classification scheme shows, for
 example, that in the signature in Figure [-@fig-aa] (InsDel23), the
@@ -236,7 +236,7 @@ there were tumor spectra with similarity \> 0.90 (Table [-@tbl-corr]).
 Of the 44 signatures identified in the 89-type classification, similar
 signatures were previously described for 18
 [@kohRedefinedInDelTaxonomy2025] and 26 were not previously described
-to our knowlege (Table [-@tbl-corr]). We also carried out signature
+to our knowledge (Table [-@tbl-corr]). We also carried out signature
 discovery in spectra in the 83-type classification, and discovered 34
 signatures, of which 20 were similar to signatures in the COSMIC
 reference set, and 3 additional signatures were similar to signatures
@@ -258,10 +258,10 @@ total. The COSMIC reference signature ID2 in the older, 83-type
 classification, consists exclusively of these deletions. The new indel
 classifications divide ID2 into three signatures. Among these,
 InsDel2b is dominated by deletions of T from tracts of 5 to 7 Ts.
-InsDel2a and InsDel2c are both dominated by deletions of single Ts’
+InsDel2a and InsDel2c are both dominated by deletions of single Ts
 from stretches of ≥ 8 Ts. However, they are distinguished by
-InsDel2a’s preference for flanking A bases and InsDel1c’s preference
-for flanking C bases. Mutations attributed to Insdel2b and InsDel2c
+InsDel2a’s preference for flanking A bases and InsDel2c’s preference
+for flanking C bases. Mutations attributed to InsDel2b and InsDel2c
 are strongly enriched among MSI-H tumors. Furthermore, the counts of
 mutations attributed to these signatures are correlated with the
 counts of mutations attributed to the MSI-H-associated SBS signatures
@@ -281,7 +281,7 @@ proportion, while InsDel1c has an intermediate proportion. Compared to
 InsDel1b, InsDel1a and InsDel1c have larger proportions of A to the
 left of the poly-T tract and G to the right, and smaller proportions
 of C to the left of the poly-T tract with C or A to the right.
-InsDel1b is further distinguished from InsDel1a and 1b in that several
+InsDel1b is further distinguished from InsDel1a and 1c in that several
 tumors with high proportions of InsDel1b (\> 0.4) have mutations in
 the proofreading domain of polymerase epsilon (Table S9).
 
@@ -310,8 +310,8 @@ do.
 InsDel23 is caused by aristolochic acid (AA) exposure and the 476-type
 signatures shows that most AA deletions involve 5’TA3’/3’AT5’ → A/T
 (Figure [-@fig-aa], and see https://indelsig.net). This pattern is not
-visible in either the 83-type or 89-type classification XXXXXX Do the
-detailed spectrum of the exemplar XXXX One might speculate that this
+visible in either the 83-type or 89-type classification. 
+One might speculate that this
 pattern is related to the adenine adducts caused by AA, which are also
 thought to be responsible for the predominance of A→T single base
 substitutions in the AA SBS signature and for the frequent involvement
@@ -335,7 +335,7 @@ single thymines, while ID_A and InsDel_Aβ in the 89-type and 476-type
 classifications lack these (Figure S2C). In addition, the InsDel9
 476-type signature also has many deletions of a single C following A
 or G, while InsDel_Aβ has almost exclusively deletions of a single C
-following T. This signature was was also noted in
+following T. This signature was also noted in
 @kohRedefinedInDelTaxonomy2025, who denoted it InD9a. We propose that
 this signature is distinct enough from InsDel9 in the 476-type
 classification to warrant an identifier.
@@ -368,7 +368,7 @@ only 55 of 6,770 MSS tumors and 2 of 175 MSI-H tumors.
 ***Indels in poly-T tracts and microsatellite contraction in MSI-H
 tumors***
 
-In addition to enrichment for InsDel2a, 2b, and 2b, which represent
+In addition to enrichment for InsDel2a, 2b, and 2c, which represent
 single-thymine deletions from poly-T tracts, MSI-H tumors were notably
 enriched for signatures InsDel7, D, and J (Figure [-@fig-assoc]a).
 InsDel7, like InsDel2a/b/c, is dominated by single-thymine deletions
@@ -456,7 +456,7 @@ associated with SBS liver cancer signatures SBS12 and SBS16.
 
 These correlation patterns provide insight into the possible origins
 of previously uncharacterized SBS signatures. For example, SBS92
-closely mirrored the correlation profile of SBS4, withstrong
+closely mirrored the correlation profile of SBS4, with strong
 associations with C_ID3 and InsDel3b, further supporting a link with
 tobacco smoking (Figure [-@fig-assoc]B, “Tobacco Smoking”)
 [@lawsonExtensiveHeterogeneitySomatic2020]. In the gastrointestinal
@@ -486,10 +486,10 @@ smoking exposure), C_ID14 (correlated with SBS93) and C_ID18
 (colibactin exposure), showed consistent transcription strand bias
 with mutations enriched in the transcribed strand. Another exogenous
 mutational signature C_ID13, which is attributed to UV exposure,
-showed enrichment in the un-transcribed strand. This is due to the
-damage caused by UV happened on cytosine instead of guanine. In
+showed enrichment in the untranscribed strand. This is because UV
+damage occurs on cytosine rather than guanine. In
 83-type signatures associated with defective endogenous mutational
-processes, enriched mutations on the un-transcribed strand were
+processes, enriched mutations on the untranscribed strand were
 observed for C_ID1 (slippage during DNA replication) and C_ID5
 (clock-like signature), while enriched mutations on the transcribed
 strand were observed for ID_F (topoisomerase-1 \[TOP1\] associated
@@ -497,7 +497,7 @@ mutagenesis stemming from RNase H2 deficiency). Interestingly, 3
 defective MMR signatures also showed transcription strand asymmetries
 in different directions, with two of them (C_ID7 and ID_K) having
 enriched mutations on the transcribed strand, and one of them (ID_N)
-having enriched mutations mainly on the un-transcribed strand.
+having enriched mutations mainly on the untranscribed strand.
 Replication strand asymmetries were observed in 12 out of 33 83-type
 signatures (Figure [-@fig-topo]B, Figure S3B, Table S13). Analogous to
 transcription strand asymmetries, the majority of signatures
@@ -506,8 +506,8 @@ repair processes exhibited pronounced replication strand bias,
 manifesting preferentially on either the leading or lagging strand.
 ID_K, which is enriched for mutations causing POLE proofreading
 defects, was consistently enriched for leading strand mutations. This
-is consistent with SBS signatures SBS10a and SBS10b, which are are
-also, driven by POLE proofreading defects, thus further supporting a
+is consistent with SBS signatures SBS10a and SBS10b, which are also
+driven by POLE proofreading defects, thus further supporting a
 link between POLE proofreading defects and leading-strand mutagenesis.
 
 We also examined the mutation enrichment of 83-type signatures in
@@ -530,7 +530,7 @@ early-replicating regions. Four signatures were unaffected by
 replication timing in the majority of cancers presenting this
 signature, including C_ID1 (Slippage during DNA replication), C_ID5
 (Clock-like signature), C_ID18 (Colibactin exposure), and two
-defective MMR signatures (ID_7 and ID_K). Interestingly, several
+defective MMR signatures (C_ID7 and ID_K). Interestingly, several
 signatures showed cancer-specific enrichment in replication timing,
 including C_ID8 (Repair of DNA double strand breaks by NHEJ) and ID_F
 (TOP1-mediated mutagenesis). For example, ID_F showed enriched
@@ -627,8 +627,8 @@ The recently developed 89-type taxonomy by Koh et al. provided a new
 framework for classifying indels, particularly facilitating finer
 resolution of 1 bp T insertions and deletions in different contexts,
 and enabled more nuanced exploration of the genetic consequences of
-MMR defects. Koh et al., built a 37-signature indel database was
-derived from 4,775 genomes across seven cancer types. However,
+MMR defects. Koh et al. derived a 37-signature indel database
+from 4,775 genomes across seven cancer types. However,
 challenges remain in connecting the nomenclature of the 89-type
 signatures to the established 83-type system, as well as in
 translating between these classification schemes.
@@ -770,7 +770,7 @@ Clinical traits such as cancer type, age and gender of the Hartwig
 genomes were found from supplementary files of
 @priestleyPancancerWholegenomeAnalyses2019. \<we can duplicate this in
 the code but we don’t need to re-present the Priestly table\> These
-data was also provided are available in Table S16 in
+data are also available in Table S16 in
 @priestleyPancancerWholegenomeAnalyses2019.
 
 ## De novo Mutational signature extraction
@@ -809,7 +809,7 @@ signatures were extracted at the “Optimal Solution” identified by
 SigProfilerExtractor, although several rare signatures were identified
 in alternative solutions.
 
-## Match 83-type and 83-type signatures into reference signatures
+## Match 83-type and 89-type signatures into reference signatures
 
 For 83-type signatures, the signatures were matched to previously
 identified COSMIC signatures (v3.5,
@@ -854,7 +854,7 @@ We generated synthetic cancer datasets in 83-type indels using
 SigProfilerSimulator
 (<https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-020-03772-3>).
 
-## Annotating somatic indels based on transcribed versus un-transcribed strand
+## Annotating somatic indels based on transcribed versus untranscribed strand
 
 We followed the method in
 (<https://doi.org/10.1016/j.celrep.2023.112930>). Briefly, somatic
@@ -866,7 +866,7 @@ annotated as – strand mutations. The remaining indels were not
 included in the analysis. Next, + strand indels in protein coding
 genes were further subclassified as transcribed (template) if the
 gene’s sense strand was on the + strand of the genome, or else
-un-transcribed (sense). The logic was inverted for – strand indels.
+untranscribed (sense). The logic was inverted for – strand indels.
 Indels in bidirectionally transcribed regions were ignored.
 
 ## Annotating somatic indels based on leading versus lagging replication strand
@@ -879,7 +879,7 @@ zones)
 Valleys and peaks were sorted by the genomic coordinate in ascending
 order. In regard to + strand of the reference genome, replication
 timing signals were examined for consecutive stretches of the genome
-(from valley to peak or form peak to valley), with positive slope
+(from valley to peak or from peak to valley), with positive slope
 corresponded to leading strand regions and negative slope corresponded
 to lagging strand regions. Then for the - strand of the reference
 genome, leading regions (- slope) and lagging regions (+slope) were
@@ -904,19 +904,19 @@ For each strand asymmetry analyses (genic and intergenic region
 asymmetry, transcription strand asymmetry, replication strand
 asymmetry), indel mutations were split into two types and counted
 (genic vs intergenic mutation, leading strand vs lagging strand
-mutation, un-transcribed strand vs transcribed strand mutation). The
-two types were denoted as +/- strand mutations strand mutations in all
+mutation, untranscribed strand vs transcribed strand mutation). The
+two types were denoted as +/- strand mutations in all
 three cases. The ratio of real somatic indels and the ratio of
 simulated somatic indels was calculated separately:
 
 strand ratio = (+ strand_mutation_counts)·(- strand_mutation_counts)^-1^
 
-We calculated the osdds ratio between the strand ratio of real somatic
+We calculated the odds ratio between the strand ratio of real somatic
 indels and the strand ratio of simulated somatic indels.
 
-We then calculated p values calculated for the odds ratio using
-Fisher’s exact test. Only strand asymmetries with p value \> 0.05 were
-considered showing strand asymmetries.
+We then calculated p values for the odds ratio using
+Fisher’s exact test. Only strand asymmetries with p value \< 0.05 were
+considered to show strand asymmetries.
 
 For a given cancer type, for e.g. genic vs non-in a sup table
 
@@ -979,9 +979,9 @@ evaluated by the PCAWG working group and obtained from the synapse
 repository (<https://www.synapse.org/#!Synapse:syn8016399>, the data
 was downloaded on May 2022). For Hartwig genomes, the MSI status was
 downloaded from the supplementary data of Priestley et al., 2019. The
-genomes with \>5,000 IDs were labelled as high TMB tumors. The
+genomes with \>5,000 IDs were labeled as high TMB tumors. The
 thresholds were selected based on the minimum number of mutations of
-the pre-defined MSI tumors. We then used MSI-seq to predict the MSI
+the pre-defined MSI tumors. We then used MSIseq to predict the MSI
 status of high TMB tumors.
 
 ## Extended sequence context analysis
@@ -1062,7 +1062,7 @@ if (knitr::is_latex_output()) {
 }
 ```
 
-\* This is the signature with the best match to the given type-89
+\* This is the signature with the best match to the given 89-type
 signature.
 
 \*\* indicates that in the linking tumor's spectrum, insertions of
@@ -1096,7 +1096,7 @@ CTA→CA, and GTA→GA.
 **(B)** Further to the left in the 83-type classification there are
 three light orange bars, with the highest labeled “e.g. TATA→TA, e.g.
 TGTG→TG” these bars represent 2-base deletions, with the highest bar
-representing a the deletion of a 2-base unit from the 2-base unit
+representing the deletion of a 2-base unit from the 2-base unit
 duplicated (e.g. a 2-base unit TA, in the duplicated 2-base unit TATA,
 with the deletion being TATA→TA). The classification does not capture
 information on the bases involved. In the 89-type classification,
@@ -1105,7 +1105,7 @@ which represents a wide range of deletions, up to deletions such as
 ATATATAT→AT, which are essentially absent in this signature. The
 tallest of the corresponding bars in the 476-type classification is
 labeled “e.g. TATA→TA, e.g. TGTG→TG”, in one-to-one correspondence
-with the the light orange bar in the 83-type classification with the
+with the light orange bar in the 83-type classification with the
 same label. Like the 83-type classification, the 476-classification
 does not capture the identity of the bases involved for these
 deletions.
@@ -1176,7 +1176,7 @@ and cancer types**
 **(A)** Enrichment for presence of 89-type signatures across cancer
 types, plus hypermutated (\> 4,000 indels) microsatellite stable (MSS)
 tumors and MSI-high (MSI-H) tumors. Only cancer types with odds ratios
-.\> 6 are shown. Benjamini-Hochberg false discovery rates based on p
+\> 6 are shown. Benjamini-Hochberg false discovery rates based on p
 values from Fisher’s exact test of number of tumors with the signature
 versus the number without in a given tumor type versus all other
 tumors.
@@ -1201,7 +1201,7 @@ timing and DNA regions.**
 83-type signatures. Each row represents one 83-type signature, where n
 reflects the number of cancer types in which the signature was found.
 Signatures consistently enriched in genic and intergenic regions with
-p values \> 0.05 (Fisher’s exact test) are shown in circles with
+p values \< 0.05 (Fisher’s exact test) are shown in circles with
 yellow and light blue colors, respectively. Grey colors indicate
 inconsistent enrichments in different cancer types. Columns display
 the odds ratio between the ratio of real mutations and the ratio of
@@ -1227,10 +1227,10 @@ mutations are shown as red dashed lines. As shown on top of each plot,
 green bars indicate signatures consistently associated with late
 replication timing across cancer types (e.g., C_ID3); yellow bars
 indicate signatures consistently associated with early replication
-timing across cancer types(e.g., C_ID17); purple bars indicate
+timing across cancer types (e.g., C_ID17); purple bars indicate
 signatures not affected by replication timing across cancer
-types(e.g., ID_K); blue bars indicate signatures showing inconsistent
-trend across cancer types(e.g., ID_F)..
+types (e.g., ID_K); blue bars indicate signatures showing inconsistent
+trend across cancer types (e.g., ID_F).
 
 {{< pagebreak >}}
 
