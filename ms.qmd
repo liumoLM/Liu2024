@@ -7,6 +7,7 @@ filters:
 format:
   pdf:
     papersize: letter
+    mainfont: TeX Gyre Pagella
     fig-pos: H
     geometry:
       - margin=1in
@@ -436,10 +437,14 @@ tobacco smoking (Figure [-@fig-assoc]B, “Tobacco Smoking”)
 [@lawsonExtensiveHeterogeneitySomatic2020]. In the [GI]{.pink} cluster, which includes signatures common in gastrointestinal
 tumors (SBS17, SBS18, SBS1, SBS88, and SBS93), we observed that
 C_ID18/InsDel18, ID_N/InsDel_Nβ were associated with SBS signatures
-typically seen in the GI tract. [SBS93, in particular, shows a strong
-transcriptional strand bias \<what is the reference for this\>,
+typically seen in the GI tract. 
+[SBS93, in particular, was found almost exclusively
+in stomach tumors, and shows some
+transcriptional strand bias suggesting pyrimidine
+damage nearly specific to those tumors <cite DOI: 10.1016/j.xgen.2022.100179> here>,
 suggesting its association with specific DNA adducts in the GI tract
-and a possible connection to C_ID14/InsDel14.]{.blue} In addition C_ID1 and
+and highly correlated with C_ID14/InsDel14.]{.blue} 
+In addition C_ID1 and
 InsDel1a had stronger correlations with SBS1 and SBS18, [supporting
 their association with mutagenesis driven by reactive oxygen species]{.blue}
 (Figure [-@fig-assoc]).
@@ -1257,8 +1262,8 @@ previously identified mutational signature (InsDel4, C_ID4).
 **(B)** Deletions of ≥ 2 bases in the 476-type classification scheme
 in InsDel_F compared to InsDel4. InsDel4 has substantial proportions
 of deletions of 3 and 4 bases (Del3:U2:R2, Del4:U4:R2, Del3:M2,
-Del4:M2, Del4:M3) that are essentially absent in InsDel_F. Refer to
-panel **B** for additional explanations of the mutation labels.
+Del4:M2, Del4:M3) that are essentially absent in InsDel_F. 
+Panel **C** shows Del2:U2:R2 and Del2:M1 examples.
 
 **(C)** Logos of the sequence contexts of 2-base deletions in 5
 samples with the highest InsDel_F activity (left) compared to 5
