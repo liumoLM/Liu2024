@@ -359,7 +359,7 @@ In addition, the InsDel9
 or G, while InsDel_Aβ has almost exclusively deletions of a single C
 following T. This signature was also noted in
 @kohRedefinedInDelTaxonomy2025, who denoted it InD9a. We propose that
-this signature dominated by TCA→TA and TCT→TT is distinct enough from InsDel9to warrant the new identifiers ID_F/InsDel_F.
+this signature dominated by TCA→TA and TCT→TT is distinct enough from InsDel9to warrant the new identifiers ID_A/InsDel_Aβ.
 
 ***MSS tumors: single-thymine indels in poly-T tracts***
 
@@ -409,16 +409,19 @@ S1\].
 [InsDel1a (mainly single-thymine insertions into poly-T tracts)
 occurred without InsDel_Nβ in `r ms_num$s10$pct_msi_1a_no_Nbeta`% of MSI-H tumors compared with `r ms_num$s10$pct_mss_1a_no_Nbeta`% of MSS tumors (Table S10).]{.pink}
 
-## The new indel classifications reveal an accurate signature of RNase H2 deficiency
+## The new indel classifications reveal a more specific signature of RNase H2 deficiency
 
 Cells with RNase H2 deficiency cannot efficiently remove
 ribonucleotides that had previously been incorporated into genomic
 DNA, and this sets the stage for topoisomerase-1 (TOP1) associated
-mutagenesis. This was previously proposed to generate indel signature
+mutagenesis. This was previously thought to generate indel signature
 ID4 [@reijnsSignaturesTOP1Transcriptionassociated2022;
 @kohRedefinedInDelTaxonomy2025; @jinAccurateSensitiveMutational2024].
-[However, we detected a new indel signature, InsDel_F,]{.blue} which [corresponds better to experimental RNase H2 deficiency data than does ID4/InsDel4]{.pink} (Figure
-[-@fig-rnaseh2], Figure S5). The profile of deletions of ≥2 bases is
+However, we detected a new indel signature, InsDel_F 
+that corresponds better to experimental RNase H2 deficiency
+data than ID4/InsDel4
+(Figures [-@fig-rnaseh2], S5). 
+The profile of deletions of ≥2 bases is
 very different between InsDel_F and [InsDel4]{.pink}: InsDel_F has distinctively
 high proportions of (i) 2-base deletions with microhomology (almost
 all TCT → T or TGT → T) and (ii) 2-base deletions from paired 2-base
@@ -436,36 +439,33 @@ of InsDel_F (Figure S5). Like InsDel_F, these cell-line spectra have
 deletions present in InsDel4. Similarly, RNase H2 deficient mouse
 tumors have high proportions of the 2-base deletions characteristic of
 InsDel_F and lack the 3 and 4 base deletions present in InsDel4.
-
-::: {.callout-note title="Reviewer note"}
-[Problem: The section heading says "an accurate signature of RNase H2 deficiency", but the support is cell lines and mouse tumors. Proposed: Heading: "The new indel classifications reveal a refined signature of RNase H2 deficiency".]{.blue}
-:::
+Thus, InsDel_F is clearly distinct from InsDel4 (cosine similairy in [XXXX; was F extracted in 83, 89, 476?]{.mark}), and all available
+evidence indicates that it much more accuratly reflects
+the mutational consequences of RNase H2 deficiency. 
 
 ### *Associations between indel signatures and SBS signatures*
 
 We further analyzed the correlations between the indel signature
 activities we derived and the SBS signature activities from
 @degasperiSubstitutionMutationalSignatures2022 (Tables S11, S12). We
-first computed a matrix of [correlations between the numbers of mutations attributed to each SBS signature and to each indel signature, for all SBS-indel signature pairs.]{.pink}
+first computed a matrix of 
+correlations between the numbers of mutations
+attributed to each SBS signature and to each indel signature over all SBS-indel signature pairs.
 Agglomerative hierarchical clustering on the rows and columns of this
 matrix using 1 – the Pearson correlation coefficient as distance
 identified several clusters (Figure [-@fig-assoc]B). The
 APOBEC-related cluster includes SBS2 and SBS13 and showed moderate
 correlations with ID_A and InsDel_Aβ. The homologous recombination
-deficiency [(HRD)]{.pink} cluster, consisting of SBS3 and SBS8, was strongly
+deficiency[(HRD) cluster, consisting of SBS3 and SBS8, was strongly
 associated with InsDel6 and InsDel9 (Figure [-@fig-assoc]B, “HR
 defects”). UV-related signatures, such as SBS7a, SBS38, InsDel13, and
-InsDel_H, also clustered together, [consistent with]{.yellow} their shared etiology.
+InsDel_H, also clustered together.
 The cluster related to mutations in the proofreading domain of the
-polymerase epsilon (*POLE*) gene [linked SBS10a with InsDel1b and InsDel_K.]{.pink} [Additional
+polymerase epsilon (*POLE*) gene linked SBS10a with InsDel1b and InsDel_K.
+Additional
 analysis of tumor somatic mutations confirmed that these signatures
 are associated with dysfunctional *POLE* proofreading plus, in some
-tumors, mismatch repair deficiency]{.blue} (Table S9 \<add hypermutator info
-to legend\>).
-
-::: {.callout-note title="Reviewer note"}
-[Problem: "Confirmed" overstates a supplementary table. Proposed: "Tumors with high InsDel1b or InsDel_K activity frequently carried POLE proofreading domain mutations and, in some cases, mismatch repair deficiency".]{.blue}
-:::
+tumors, mismatch repair deficiency (Table S9).
 
 Within the mismatch repair deficiency (MMR) cluster, we observed a
 strong network of correlations between SBS6, SBS26, SBS44, and a group
@@ -1231,17 +1231,17 @@ InD).
 {{< pagebreak >}}
 
 ::: {#fig-assoc}
-![](main_figures/cropped/fig4.pdf){height=6.4in}
+![](main_figures/cropped/fig4.pdf){width=6in}
 
 **Association of indel signatures with cancer types and SBS signatures
 and cancer types**
 :::
 
 **(A)** Enrichment for presence of 89-type signatures across cancer
-types, plus hypermutated (\> 4,000 indels) microsatellite stable (MSS)
-tumors and MSI-high (MSI-H) tumors. Only cancer types with odds ratios
-\> 6 are shown. Benjamini-Hochberg false discovery rates based on p
-values from Fisher’s exact test of number of tumors with the signature
+types, plus MSI-high MSI-H) and hypermutated (\> 4,000 indels) microsatellite stable (MSS)
+tumors. Only cancer types with odds ratios
+\> 6 are shown. FDR is the Benjamini-Hochberg false discovery rate based on p
+values from Fisher’s exact tests of he number of tumors with the signature
 versus the number without in a given tumor type versus all other
 tumors.
 
