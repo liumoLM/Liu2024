@@ -342,8 +342,7 @@ substitutions, APOBEC3A induces indels, mainly TC→T
 [@deweerdProspectivelyDefinedPatterns2022]. 
 In parallel, we discovered
 the corresponding 83-type indel signature, ID_A, which
-is more similar to the experimental indel spectrum in
-@deweerdProspectivelyDefinedPatterns2022 than
+is more similar to the experimental spectrum than
 C_ID9.
 Notably, C_ID9/InsDel9 in all three classification systems has many deletions 
 of single thymines, which are absent in ID_A/InsDel_Aβ (Figure S2C).
