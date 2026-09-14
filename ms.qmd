@@ -27,6 +27,14 @@ format:
     embed-resources: true
 ---
 
+```{r}
+#| label: setup
+#| include: false
+# Numbers quoted inline in the text come from the supplementary tables built
+# in the code repository, via the list ms_num.
+source("~/github/Liu2026_code_and_data/ms_numbers.R")
+```
+
 Mo Liu1\*#, Mi Ni Huang2\*, Xue Ming Wu1\*, Ying Yang1, Runtian Yao2,
 Qi Zheng1, Runxi Shen3, Steven G. Rozen4#
 
@@ -351,8 +359,7 @@ In addition, the InsDel9
 or G, while InsDel_Aβ has almost exclusively deletions of a single C
 following T. This signature was also noted in
 @kohRedefinedInDelTaxonomy2025, who denoted it InD9a. We propose that
-this signature is distinct enough from InsDel9 in the 476-type
-classification to warrant a new identifier.
+this signature dominated by TCA→TA and TCT→TT is distinct enough from InsDel9to warrant the new identifiers ID_F/InsDel_F.
 
 ***MSS tumors: single-thymine indels in poly-T tracts***
 
@@ -366,11 +373,15 @@ allocated insertions and deletions of single thymines in poly-T tracts
 to separate signatures ID1 and ID2, and did not differentiate between
 signature occurrence in MSS versus MSI-H
 [@alexandrovRepertoireMutationalSignatures2020]. We first focus on
-InsDel_Nβ which occurs in 2,629 of 6,770 MSS tumors (39%) in diverse
-cancer types and in only 9 of 175 MSI-H tumors (5%, Table S10).
-Roughly half the tumors with InsDel_Nβ also have InsDel1a, and
-InsDel1a also occurs without InsDel_Nβ in 2,596 MSS tumors (38%) and
-35 MSI-H tumors (20%). Thus, many MSS tumors have roughly equal
+InsDel_Nβ which occurs in `r ms_num$s10$n_mss_Nbeta` of
+`r ms_num$s10$n_mss` MSS tumors (`r ms_num$s10$pct_mss_Nbeta`%) in diverse
+cancer types and in only `r ms_num$s10$n_msi_Nbeta` of
+`r ms_num$s10$n_msi` MSI-H tumors (`r ms_num$s10$pct_msi_Nbeta`%,
+Table S10). Roughly half (`r ms_num$s10$pct_Nbeta_with_1a`%) of the MSS
+tumors with InsDel_Nβ also have InsDel1a, and InsDel1a also occurs
+without InsDel_Nβ in `r ms_num$s10$n_mss_1a_no_Nbeta` MSS tumors
+(`r ms_num$s10$pct_mss_1a_no_Nbeta`%) and `r ms_num$s10$n_msi_1a_no_Nbeta`
+MSI-H tumors (`r ms_num$s10$pct_msi_1a_no_Nbeta`%). Thus, many MSS tumors have roughly equal
 proportions of thymine deletions and insertion in long poly-T tracts
 (InsDel_Nβ), but other tumors have varying proportions of additional
 single-T insertions (InsDel1a), and some tumor spectra are completely
@@ -378,7 +389,8 @@ dominated by these single-T insertions.
 The other signature with approximately
 equal proportions of insertions and deletions of a thymine in a poly-T
 tract, InsDel_Nα, is rare in both MSS and MSI-H tumors, occurring in
-only 55 of 6,770 MSS tumors and 2 of 175 MSI-H tumors.
+only `r ms_num$s10$n_mss_Nalpha` of `r ms_num$s10$n_mss` MSS tumors and
+`r ms_num$s10$n_msi_Nalpha` of `r ms_num$s10$n_msi` MSI-H tumors.
 
 ***Indels in poly-T tracts and microsatellite contraction in MSI-H
 tumors***
@@ -395,7 +407,7 @@ e.g. deletion of CA from (CA)^5^, or deletion of GT from (GT)^8^ \[see
 also entries for the 476-indel-type category Del2:U2:R(5,) in Table
 S1\]. 
 [InsDel1a (mainly single-thymine insertions into poly-T tracts)
-occurred without InsDel_Nβ in 20% of MSI-H tumors compared with 38% of MSS tumors (Table S10).]{.pink}
+occurred without InsDel_Nβ in `r ms_num$s10$pct_msi_1a_no_Nbeta`% of MSI-H tumors compared with `r ms_num$s10$pct_mss_1a_no_Nbeta`% of MSS tumors (Table S10).]{.pink}
 
 ## The new indel classifications reveal an accurate signature of RNase H2 deficiency
 
