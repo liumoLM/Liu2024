@@ -462,7 +462,7 @@ Transcription-coupled nucleotide excision repair [is]{.pink} known to cause
 transcription strand asymmetries, since DNA bulky adducts on the
 transcribed strand will be preferentially repaired in the
 transcription active region across the genome (add cite).
-[Transcription strand asymmetries were shown in 17 out of 33 83-type
+[Transcription strand asymmetries were shown in 17 out of 34 83-type
 signatures]{.blue} (Figure [-@fig-topo]A, Figure S3A, Table S13). Signatures
 attributed to exogenous mutational processes, such as C_ID3 (tobacco
 smoking exposure), C_ID14 (correlated with SBS93) and C_ID18
@@ -480,7 +480,7 @@ defective MMR signatures also showed transcription strand asymmetries
 in different directions, with two of them (C_ID7 and ID_K) having
 enriched mutations on the transcribed strand, and one of them (ID_N)]{.blue}
 having enriched mutations mainly on the untranscribed strand.
-Replication strand asymmetries were observed in 12 out of 33 83-type
+Replication strand asymmetries were observed in 12 out of 34 83-type
 signatures (Figure [-@fig-topo]B, Figure S3B, Table S13). Analogous to
 transcription strand asymmetries, the majority of signatures
 attributable to exogenous mutagenic exposures or defective endogenous
@@ -490,10 +490,6 @@ ID_K, which [is enriched in tumors with POLE proofreading defects]{.yellow}, was
 is consistent with SBS signatures SBS10a and SBS10b, which are also
 driven by POLE proofreading defects, thus further supporting a
 link between POLE proofreading defects and leading-strand mutagenesis.
-
-::: {.callout-note title="Reviewer note"}
-[Problem: 34 83-type signatures were identified in the Results, but 33 are analyzed here. Proposed: State which signature is excluded and why, or fix the count.]{.blue}
-:::
 
 ::: {.callout-note title="Reviewer note"}
 [Problem: Calling ID_N a defective-MMR signature contradicts the Results, which say ID_N occurs almost exclusively in MSS tumors. Proposed: Remove ID_N from the MMR group, e.g. "two defective MMR signatures (C_ID7 and ID_K) showed enrichment on the transcribed strand, whereas ID_N showed enrichment on the untranscribed strand".]{.blue}
@@ -1209,27 +1205,27 @@ GI: Gastrointestinal.
 timing and DNA regions.**
 :::
 
-**(A)** Enrichment of mutations in genic and intergenic regions for
-83-type signatures. Each row represents one 83-type signature, where n
-reflects the number of cancer types in which the signature was found.
-Signatures consistently enriched in genic and intergenic regions with
-p values \< 0.05 (Fisher’s exact test) are shown in circles with
-yellow and light blue colors, respectively. Grey colors indicate
-inconsistent enrichments in different cancer types. Columns display
-the odds ratio between the ratio of real mutations and the ratio of
-simulated mutations (See Methods). Only odds ratios above 1.10 are
-shown. Circle sizes reflect the proportion of cancer types exhibiting
-specific enrichment in DNA regions in a signature.
+**(A)** Transcription strand asymmetries of 83-type signatures. Each
+row represents one 83-type signature, where n reflects the number of
+cancer types in which the signature was found. Signatures consistently
+enriched on the transcribed and untranscribed strands with p values
+\< 0.05 (Fisher’s exact test) are shown in circles with red and dark
+blue colors, respectively. Grey colors indicate inconsistent
+enrichments in different cancer types. Columns display the odds ratio
+between the ratio of real mutations and the ratio of simulated
+mutations (See Methods). Only odds ratios above 1.10 are shown. Circle
+sizes reflect the proportion of cancer types exhibiting the asymmetry
+in a signature.
 
 **(B)** Replication strand asymmetries of 83-type signatures. Data are
 presented in a format similar to the one in panel (A), with green and
 orange colors indicating replication strand asymmetries on the lagging
 and leading strands, respectively.
 
-**(C)** Transcription strand asymmetries of 83-type signatures. Data
-are presented in a format similar to the one in panel (A), with red
-and dark blue colors indicating transcription strand asymmetries on
-the transcribed and untranscribed strands, respectively.
+**(C)** Enrichment of mutations in genic and intergenic regions for
+83-type signatures. Data are presented in a format similar to the one
+in panel (A), with yellow and light blue colors indicating consistent
+enrichment in genic and intergenic regions, respectively.
 
 **(D)** 83-type signatures associated with early and late replication
 timing. Mutation densities of 83-type signatures per decile (y axes)

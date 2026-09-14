@@ -32,3 +32,13 @@ displayed as their own column but still contribute to the "remaining"
 pool of each Fisher's exact test.
 
 Reference script: `explore-attributions/reproduce_fig5_panelC_with_MSS_hyper.R`.
+
+## Source of truth for numbers in ms.qmd
+
+All numbers quoted in `ms.qmd` (signature counts, proportions, sample counts,
+etc.) must come from the code and data in `~/github/Liu2026_code_and_data/`,
+not from memory or from earlier drafts. Locate the script or input file for
+the relevant figure or table there (for example `build_fig5/` for Figure 5,
+`ID83_topography_analysis_code/` for the topography pipeline behind Table S13)
+and derive the number from it. When a number in `ms.qmd` disagrees with that
+repo, the repo wins and the manuscript is corrected.
