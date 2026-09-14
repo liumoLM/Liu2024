@@ -99,7 +99,7 @@ herbal medicines [@alexandrovMutationalSignaturesAssociated2016;
 @dziubanska-kusibabColibactinDNAdamageSignature2020;
 @bootCharacterizationColibactinassociatedMutational2020]. Mutational
 signature analysis provides insights into cancer etiology, prognosis,
-prevention, [and evolution. Mutational]{.pink} signatures can also serve as biomarkers for mutagenic exposures.
+prevention, and evolution. Mutational signatures can also serve as biomarkers for mutagenic exposures.
 
 By “mutational signatures” we mean distinctive patterns of mutations
 left on genomes by mutagenic processes or exposures. They can be
@@ -131,7 +131,8 @@ that AA also generates double-base-substitution (DBS) signatures and,
 relevant to the current study, small insertion-and-deletion (indel)
 signatures (Figure [-@fig-aa]) [@chenDeepWholegenomeAnalysis2024].
 
-Mutational signature research [has focused less on indel than on SBS signatures. Symptomatic of this, COSMIC v3.6 catalogs only]{.pink}
+Mutational signature research has focused less on indel than on SBS signatures. 
+Symptomatic of this, COSMIC v3.6 catalogs only
 25 indel signatures compared to 78 SBS signatures. Nevertheless, indel
 signatures can yield important information for cancer classification,
 epidemiology, and treatment and for understanding DNA repair and
@@ -145,7 +146,18 @@ phenotype due to a mutation in topoisomerase 2 alpha
 The first widely used classification of indels recognized 83 indel
 types [@alexandrovRepertoireMutationalSignatures2020]. Recently,
 @kohRedefinedInDelTaxonomy2025 proposed two classification schemes,
-one with 89 types of indel and one with 476 types (Figure [-@fig-aa]). [The 89-type scheme mainly consolidates similar mutation types in the 476-type classification into coarser-grained types (Table S1).]{.pink} [@kohRedefinedInDelTaxonomy2025 derived 37 indel signatures in the 89-type classification from 4,775 genomes across seven cancer types, and showed that the finer resolution of 1 bp T insertions and deletions enables more nuanced exploration of the consequences of MMR defects. However, challenges remain in connecting the nomenclature of the 89-type signatures to the established 83-type system and in translating between the classification schemes.]{.pink}
+one with 89 types of indel and one with 476 types (Figure [-@fig-aa]). 
+The 89-type scheme mainly grouped similar mutation types in the 476-type classification 
+into coarser-grained types (Table S1).
+@kohRedefinedInDelTaxonomy2025 derived 37 indel signatures in the 89-type 
+classification from 4,775 genomes across seven cancer types.
+This showed that the finer resolution of 1 bp T indels 
+in the 89-type classificaton made it possible to
+distinguish clear different signatures that were indistiguishable
+in the older, 83-type system.
+However, challenges remain in connecting and translating between 
+signatures in 83-type classification system and 
+the new 89- and 476-type type  schemes.
 
 The older, 83-type scheme primarily categorizes indels based on the
 number of bases inserted or deleted, and for single-base insertions
@@ -156,16 +168,18 @@ T residues (Figure [-@fig-aa]A). Indels longer than 1 base are further
 classified by their occurrence within repetitive sequences (i.e.
 microsatellites, simple tandem repeats). For deletions of ≥2 bases the
 83-type system classification also encodes the presence of
-microhomology. [(Microhomology is a hallmark of error-prone repair by non-homologous end-joining, notably in BRCA-deficient tumors.)]{.pink} For example, the 3-base deletion
+microhomology. 
+(Microhomology is a hallmark of error-prone repair by non-homologous end-joining, notably in BRCA-deficient tumors. <cite the HR detect paper> )
+ For example, the 3-base deletion
 (A**CA**\|T**CA**\|GG→A**CA**GG) exhibits a 2-base microhomology (CA).
 
-[A prominent distinction is that, unlike the 83-type classification scheme, both new classifications distinguish]{.pink}
+A prominent distinction is that, unlike the 83-type classification scheme,
+both new classifications distinguish
 different types of indels of a single T or C according to the non-T
-(respectively, non-C) flanking bases. This [substantially]{.yellow} improves
-discrimination between mutational spectra and signatures containing
-single-base indels, which are present in most signatures.
-
-For example, the 83-type classification distinguishes deletions of
+(respectively, non-C) flanking bases. This substantially improves
+discrimination among mutational spectra and signatures containing
+single-base indels, which are present in most spectra and signatures.
+In more detail, the 83-type classification distinguishes deletions of
 single Ts only by the number of T’s at the site of the deletion: 1, 2,
 3, 4, 5, or ≥ 6 Ts (Figure [-@fig-aa]A). By contrast, the 89-type
 classification distinguishes among deletions of T according to bases
@@ -179,8 +193,10 @@ classification scheme provides fine-grained distinctions among
 deletions of a single C or T that combine the distinctions in the 83
 and 89-type system. The 476-type classification scheme shows, for
 example, that in the signature in Figure [-@fig-aa] (InsDel23), the
-most prominent deletions are ATA→AA, CTA→CA, and GTA→GA. The
-classifications of indels of 2 or more bases are less intuitive. Table
+most prominent deletions are ATA→AA, CTA→CA, and GTA→GA. 
+In the new classifications, the
+classifications of indels of 2 or more bases are substantially more
+complex than the single-base indels. Table
 S1 provides a mapping from the 476-type classification to the 89 and
 83-type classifications, as well as multiple examples of each category
 of deletion.
@@ -194,10 +210,13 @@ by collapsing the 476-type signatures to 89-type signatures and
 comparing the collapsed signatures to signatures identified in the
 89-type classification. We used tumor samples with spectra dominated
 by single signatures to map signatures in the 83-type classification
-to signatures in the other two classifications. We further profiled [signatures’ replication timing, transcription strand asymmetry, replication strand asymmetry, and asymmetry between genic and intergenic regions]{.pink}, providing insights into mutational processes underlying the
-signatures. We also [tallied their associations with SBS signatures and with sex]{.pink}
+to signatures in the other two classifications. We further profiled
+signatures’ association with DNA replication timing, 
+transcription and replication strand, and genic versus intergenic regions of 
+the genome.
+We also assessed their associations with SBS signatures and with sex
 within individual cancer types. Finally, in addition to the
-supplementary information provided here, we also provide a web site to
+supplementary information provided here, we provide a web site to
 facilitate exploration of these signatures (https://indelsig.net)[.]{.pink}
 
 # Results
@@ -212,21 +231,25 @@ non-negative matrix factorization
 [@islamUncoveringNovelMutational2022]. The extracted signatures were
 broadly consistent between the two methods (Table [-@tbl-corr], Tables
 S2-S8). We identified 44 mutational signatures in the new 89-type
-classification and, independently, the 44 corresponding signatures in the [476-type]{.pink} classification. We assessed concordance between
+classification and, independently, the 44 corresponding signatures in the
+476-type classification.
+We assessed concordance between
 signatures identified in two classification systems by collapsing the
 476-type signatures to their 89-type counterparts and comparing them
-to signatures extracted in the 89-type classification. Mean cosine
-similarity was \> 0.989 (median \> 0.994, minimum \> 0.951), [providing
-evidence that these signatures constitute latent factors robust to the
-feature set in which they were discovered]{.blue}. Further evidence of their
+to signatures extracted in the 89-type classification. 
+Signature discovery in the two classifications was highly concordant. 
+Mean cosine
+similarity between 
+corresponidng signatures in the two systems was \> 0.989 (median \> 0.994, minimum \> 0.951). 
+Further evidence of the signtures
 robustness derives from the identification of tumor spectra dominated
-by a single signature. For 35 of the 44 signatures, there were tumor spectra with cosine similarity \> 0.95[,]{.pink} and for 39
+by a single signature. For 35 of the 44 signatures, there were tumor spectra with cosine similarity \> 0.95, and for 39
 there were tumor spectra with similarity \> 0.90 (Table [-@tbl-corr]).
-[Of the 44 89-type signatures, 18 were similar (cosine similarity ≥ 0.85, see Methods) to signatures described by @kohRedefinedInDelTaxonomy2025, and 26 were, to our knowledge, not previously described (Table [-@tbl-corr]). Of the 34 signatures we discovered in the 83-type classification, 20 were similar to COSMIC reference signatures, 3 were similar to signatures described by @jinAccurateSensitiveMutational2024, and 11 were not previously described (Table [-@tbl-corr]).]{.pink}
 
-::: {.callout-note title="Reviewer note"}
-[Problem: High cosine similarity between collapsed 476-type and 89-type signatures shows the two extractions agree, not that the factors are robust to any feature set. Proposed: "indicating that signature discovery in the two classifications yielded consistent results".]{.blue}
-:::
+Of the 44 89-type signatures, 18 were similar (cosine similarity ≥ 0.85, see Methods) 
+to signatures described by @kohRedefinedInDelTaxonomy2025, and 26 were, to our knowledge, 
+not previously described (Table [-@tbl-corr]). 
+Of the 34 signatures we discovered in the 83-type classification, 20 were similar to COSMIC reference signatures, 3 were similar to signatures described by @jinAccurateSensitiveMutational2024, and 11 were not previously described (Table [-@tbl-corr]).
 
 Because lossless translation between signatures in the 83-type and the
 two new classification schemes is impossible (Table S1), we used tumor
@@ -235,9 +258,10 @@ systematically elucidate signature correspondences across
 classification schemes. Table [-@tbl-corr] shows the correspondences,
 with details and discussion in https://indelsig.net/.
 
-In several cases, the new indel classifications systems were able to
+In several cases, the new indel classification systems were able to
 distinguish signatures that the older system merged. This is clearest
-for deletions of single T bases from tracts of ≥ 6 Ts. Our data set
+for deletions of single T bases from tracts of ≥ 6 Ts. 
+The tumors we analyzed
 had \> 8.5 million of these deletions out of 18.4 million deletions in
 total. The COSMIC reference signature ID2 in the older, 83-type
 classification, consists exclusively of these deletions. The new indel
@@ -252,9 +276,13 @@ mutations attributed to these signatures are correlated with the
 counts of mutations attributed to the MSI-H-associated SBS signatures
 SBS6, SBS26, and SBS44 (Figure [-@fig-assoc], Figure S1).
 
-[The same is true for insertions of single T bases into long poly-T tracts.]{.pink} Our data set had 3.3 million
-insertions of single T bases into tracts of ≥ 5 Ts, which in the
-83-type system constitutes a single mutation class, and COSMIC
+The new indel classification systems were also able to
+distinguish insertion signatures that the older system merged.
+The tumors we analayzed had 3.3 million
+insertions of single T bases into tracts of ≥ 5 Ts.
+In the
+83-type system this constitutes a single mutation class, and 
+the COSMIC
 reference signature ID1 consists exclusively of this class of
 insertions. The new indel classifications divide ID1 into three
 signatures. Among these, InsDel1a has the largest proportion of
@@ -267,18 +295,21 @@ InsDel1b is further distinguished from InsDel1a and 1c in that several
 tumors with high proportions of InsDel1b (\> 0.4) have mutations in
 the proofreading domain of polymerase epsilon (Table S9).
 
-***Two signatures in which the 89-type classification misses clear
+***Two cases where the 89-type classification misses clear
 differences***
 
 While the 89-type classification system on the whole better
-discriminates signatures, in two cases the 83-type and [476-type systems clearly differentiated signatures that were almost identical in the 89-type system]{.pink}. One case consisted of InsDel13 and InsDel_C.
+discriminates signatures, in two cases the 83-type and 
+476-type systems clearly differentiated signatures that were almost identical in the 89-type system.
+One case consisted of InsDel13 and InsDel_C.
 These are nearly identical in the 89-type system, which groups
 deletions of single Ts in stretches of 1, 2, 3, or 4 Ts as a single
-deletion type. However[,]{.pink} the 83[-]{.pink} and [476-type]{.pink} systems show that InsDel_C
+deletion type. However, the 83- and 476-type systems show that InsDel_C
 has deletions of 1 T from ATA (ATA→AA), while InsDel13 has deletions
 of T from ATTA (ATTA→ATA, Figure S2A). The other case consisted of
 InsDel11 and InsDel16. InsDel11 has insertions of one C next to an
-isolated C (C with non-Cs on each side, e.g. ACG→ACCG) and insertion of [one]{.pink} T next to an isolated T (e.g. GTG→GTTG). InsDel16 has
+isolated C (C with non-Cs on each side, e.g. ACG→ACCG) and insertion of
+one T next to an isolated T (e.g. GTG→GTTG). InsDel16 has
 insertion of one C between non-Cs (e.g. AT→ACT), and insertion of one
 T between non-Ts (e.g. AG→ATG, Figure S2B). Again, the 89-type system
 does not capture these differences, while the 83 and 476-type systems
@@ -286,7 +317,9 @@ do.
 
 ***Clarified signatures of aristolochic-acid-induced deletions***
 
-InsDel23 is caused by aristolochic acid (AA) exposure and the 476-type [signature shows]{.pink} that most AA deletions involve 5’TA3’/3’AT5’ → A/T
+InsDel23 is caused by aristolochic acid (AA) exposure and the 476-type
+signature shows
+that most AA deletions involve 5’TA3’/3’AT5’ → A/T
 (Figure [-@fig-aa], and see https://indelsig.net). This pattern is not
 visible in either the 83-type or 89-type classification. 
 One might speculate that this
@@ -298,26 +331,34 @@ of adenines in the AA DBS signature.
 ***APOBEC3A activity and InsDel_Aβ***
 
 We identified InsDel_Aβ, an indel signature that in the 476-type
-classification consists primarily of 1 bp C deletions TCA→TA and [TCT→TT (Figure S2C, right sub-panel)]{.pink}. Thus, InsDel_Aβ
+classification consists primarily of the 1-bp C deletions TCA→TA and 
+TCT→TT (Figure S2C, right sub-panel).
+Thus, InsDel_Aβ
 targets the same sequences as the canonical APOBEC SBS signatures SBS2
-(TCA→TTA and TCT→TTT) and SBS13 (TCA→TGA and TCT→TGT). Experiments in
+(TCA→TTA and TCT→TTT) and SBS13 (TCA→TGA and TCT→TGT). 
+Experiments in
 cell culture showed that, in addition to single nucleotide
 substitutions, APOBEC3A induces indels, mainly TC→T
-[@deweerdProspectivelyDefinedPatterns2022]. In parallel, we discovered
-the corresponding 83-type indel signature, ID_A, which, compared to
-C_ID9, is more similar to the experimental indel spectrum in
-@deweerdProspectivelyDefinedPatterns2022. [Notably, ID9 and InsDel9 in all three classifications have many deletions of single thymines, while ID_A and InsDel_Aβ lack these]{.pink} (Figure S2C). In addition, the InsDel9
-476-type signature also has many deletions of a single C following A
+[@deweerdProspectivelyDefinedPatterns2022]. 
+In parallel, we discovered
+the corresponding 83-type indel signature, ID_A, which
+is more similar to the experimental indel spectrum in
+@deweerdProspectivelyDefinedPatterns2022 than
+C_ID9.
+Notably, C_ID9/InsDel9 in all three classification systems has many deletions 
+of single thymines, which are absent in ID_A/InsDel_Aβ (Figure S2C).
+In addition, the InsDel9
+476-type signature has many deletions of a single C following A
 or G, while InsDel_Aβ has almost exclusively deletions of a single C
 following T. This signature was also noted in
 @kohRedefinedInDelTaxonomy2025, who denoted it InD9a. We propose that
 this signature is distinct enough from InsDel9 in the 476-type
-classification to warrant an identifier.
+classification to warrant a new identifier.
 
 ***MSS tumors: single-thymine indels in poly-T tracts***
 
-[De novo signature discovery using both HDP and NMF in all three]{.pink} indel
-signature classifications identified signatures with similar
+De novo signature discovery using both HDP and NMF in all three 
+signature classification systems identified signatures with similar
 proportions of deletions and insertions of a single thymine in poly-T
 tracts. These occur almost exclusively in MSS tumors. We termed these
 ID_N (the 83-type signature) plus InsDel_Nα and InsDel_Nβ (the 89- and
@@ -327,14 +368,15 @@ to separate signatures ID1 and ID2, and did not differentiate between
 signature occurrence in MSS versus MSI-H
 [@alexandrovRepertoireMutationalSignatures2020]. We first focus on
 InsDel_Nβ which occurs in 2,629 of 6,770 MSS tumors (39%) in diverse
-cancer types and in only 9 of [175]{.pink} MSI-H tumors (5%, Table S10).
+cancer types and in only 9 of 175 MSI-H tumors (5%, Table S10).
 Roughly half the tumors with InsDel_Nβ also have InsDel1a, and
-InsDel1a also occurs without InsDel_Nβ in 2,596 MSS tumors ([38%]{.pink}) and
+InsDel1a also occurs without InsDel_Nβ in 2,596 MSS tumors (38%) and
 35 MSI-H tumors (20%). Thus, many MSS tumors have roughly equal
 proportions of thymine deletions and insertion in long poly-T tracts
-(InsDel_Nβ[)]{.pink}, but other tumors have varying proportions of additional
-insertions ([InsDel1a]{.pink}), and some tumor spectra are completely
-dominated by these insertions. The other signature with approximately
+(InsDel_Nβ), but other tumors have varying proportions of additional
+single-T insertions (InsDel1a), and some tumor spectra are completely
+dominated by these single-T insertions. 
+The other signature with approximately
 equal proportions of insertions and deletions of a thymine in a poly-T
 tract, InsDel_Nα, is rare in both MSS and MSI-H tumors, occurring in
 only 55 of 6,770 MSS tumors and 2 of 175 MSI-H tumors.
@@ -342,16 +384,19 @@ only 55 of 6,770 MSS tumors and 2 of 175 MSI-H tumors.
 ***Indels in poly-T tracts and microsatellite contraction in MSI-H
 tumors***
 
-In addition to enrichment for InsDel2a, 2b, and 2c, which represent
-single-thymine deletions from poly-T tracts, MSI-H tumors were notably
-enriched for signatures [InsDel7, InsDel_D, and InsDel_J]{.pink} (Figure [-@fig-assoc][A]{.pink}).
+MSI-H tumors were enriched for InsDel2a, 2b, and 2c, which represent
+single-thymine deletions from poly-T tracts,
+and were also notably 
+enriched for InsDel7, InsDel_D, and InsDel_J (Figure [-@fig-assoc]A).
 InsDel7, like InsDel2a/b/c, is dominated by single-thymine deletions
 from poly-T tracts, but with a distinct distribution of sequences
 flanking the poly-T tract. InsDel_J consists almost entirely of
-deletions of single dinucleotides from [dinucleotide microsatellites]{.pink},
+deletions of single dinucleotides from dinucleotide microsatellites,
 e.g. deletion of CA from (CA)^5^, or deletion of GT from (GT)^8^ \[see
 also entries for the 476-indel-type category Del2:U2:R(5,) in Table
-S1\]. [Another signature, InsDel1a, which is dominated by single-thymine insertions into poly-T tracts, occurred without InsDel_Nβ in 20% of MSI-H tumors compared with 38% of MSS tumors (Table S10).]{.pink}
+S1\]. 
+[InsDel1a (mainly single-thymine insertions into poly-T tracts)
+occurred without InsDel_Nβ in 20% of MSI-H tumors compared with 38% of MSS tumors (Table S10).]{.pink}
 
 ## The new indel classifications reveal an accurate signature of RNase H2 deficiency
 
