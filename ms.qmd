@@ -2,6 +2,8 @@
 title: "A unified repertoire of indel mutational signatures in 6,975 tumors"
 bibliography: ref.bib
 link-citations: true
+filters:
+  - highlight.lua
 format:
   pdf:
     papersize: letter
@@ -11,6 +13,7 @@ format:
       - footskip=0.5in
     include-in-header:
       text: |
+        \usepackage{lua-ul}
         \setcapindent{0pt}
         \setlength{\intextsep}{0pt}
         \setlength{\abovecaptionskip}{4pt}
@@ -76,7 +79,7 @@ files.
 
 4.  Website and software for signature browsing and matrix generation from VCF files
 
-![](media/image1.png){width="6.25in"}
+![](main_figures/cropped/graphical_abstract.pdf){width="6.25in"}
 
 # Introduction
 
@@ -95,8 +98,7 @@ herbal medicines [@alexandrovMutationalSignaturesAssociated2016;
 @dziubanska-kusibabColibactinDNAdamageSignature2020;
 @bootCharacterizationColibactinassociatedMutational2020]. Mutational
 signature analysis provides insights into cancer etiology, prognosis,
-prevention, evolution, and mutational signatures can also serve as
-biomarkers for mutagenic exposures.
+prevention, [and evolution. Mutational]{.pink} signatures can also serve as biomarkers for mutagenic exposures.
 
 By “mutational signatures” we mean distinctive patterns of mutations
 left on genomes by mutagenic processes or exposures. They can be
@@ -128,8 +130,7 @@ that AA also generates double-base-substitution (DBS) signatures and,
 relevant to the current study, small insertion-and-deletion (indel)
 signatures (Figure [-@fig-aa]) [@chenDeepWholegenomeAnalysis2024].
 
-Mutational signature research has tended to focus less on indel rather
-than SBS signatures, and symptomatic of this COSMIC v3.6 catalogs only
+Mutational signature research [has focused less on indel than on SBS signatures. Symptomatic of this, COSMIC v3.6 catalogs only]{.pink}
 25 indel signatures compared to 78 SBS signatures. Nevertheless, indel
 signatures can yield important information for cancer classification,
 epidemiology, and treatment and for understanding DNA repair and
@@ -143,7 +144,7 @@ phenotype due to a mutation in topoisomerase 2 alpha
 The first widely used classification of indels recognized 83 indel
 types [@alexandrovRepertoireMutationalSignatures2020]. Recently,
 @kohRedefinedInDelTaxonomy2025 proposed two classification schemes,
-one with 89 types of indel and one with 476 types (Figure [-@fig-aa]).
+one with 89 types of indel and one with 476 types (Figure [-@fig-aa]). [The 89-type scheme mainly consolidates similar mutation types in the 476-type classification into coarser-grained types (Table S1).]{.pink} [@kohRedefinedInDelTaxonomy2025 derived 37 indel signatures in the 89-type classification from 4,775 genomes across seven cancer types, and showed that the finer resolution of 1 bp T insertions and deletions enables more nuanced exploration of the consequences of MMR defects. However, challenges remain in connecting the nomenclature of the 89-type signatures to the established 83-type system and in translating between the classification schemes.]{.pink}
 
 The older, 83-type scheme primarily categorizes indels based on the
 number of bases inserted or deleted, and for single-base insertions
@@ -154,20 +155,12 @@ T residues (Figure [-@fig-aa]A). Indels longer than 1 base are further
 classified by their occurrence within repetitive sequences (i.e.
 microsatellites, simple tandem repeats). For deletions of ≥2 bases the
 83-type system classification also encodes the presence of
-microhomology. Microhomology is a hallmark of error-prone DNA repair
-by non-homologous end-joining, which operates when repair by
-homologous recombination is not available, notably in BRCA-deficient
-tumors. For example, the 3-base deletion
+microhomology. [(Microhomology is a hallmark of error-prone repair by non-homologous end-joining, notably in BRCA-deficient tumors.)]{.pink} For example, the 3-base deletion
 (A**CA**\|T**CA**\|GG→A**CA**GG) exhibits a 2-base microhomology (CA).
 
-One of the new classification schemes is based on 476 types of indel
-and one is based on 89 types, which mainly consolidates similar
-mutation types in the 476-type classification into coarser-grained
-mutation types [@kohRedefinedInDelTaxonomy2025] (Figure [-@fig-aa],
-Table S1). A prominent distinction is that, unlike the 83-type
-classification scheme, both the new classifications distinguish
+[A prominent distinction is that, unlike the 83-type classification scheme, both new classifications distinguish]{.pink}
 different types of indels of a single T or C according to the non-T
-(respectively, non-C) flanking bases. This dramatically improves
+(respectively, non-C) flanking bases. This [substantially]{.yellow} improves
 discrimination between mutational spectra and signatures containing
 single-base indels, which are present in most signatures.
 
@@ -200,14 +193,11 @@ by collapsing the 476-type signatures to 89-type signatures and
 comparing the collapsed signatures to signatures identified in the
 89-type classification. We used tumor samples with spectra dominated
 by single signatures to map signatures in the 83-type classification
-to signatures in the other two classifications. We further profiled
-signatures’ replication timing, asymmetry between genic and intergenic
-regions and asymmetry between leading and lagging replication strands,
-providing insights into mutational processes underlying the
-signatures. We also tallied their associations to SBSs and to sex
+to signatures in the other two classifications. We further profiled [signatures’ replication timing, transcription strand asymmetry, replication strand asymmetry, and asymmetry between genic and intergenic regions]{.pink}, providing insights into mutational processes underlying the
+signatures. We also [tallied their associations with SBS signatures and with sex]{.pink}
 within individual cancer types. Finally, in addition to the
 supplementary information provided here, we also provide a web site to
-facilitate exploration of these signatures (https://indelsig.net)
+facilitate exploration of these signatures (https://indelsig.net)[.]{.pink}
 
 # Results
 
@@ -221,27 +211,21 @@ non-negative matrix factorization
 [@islamUncoveringNovelMutational2022]. The extracted signatures were
 broadly consistent between the two methods (Table [-@tbl-corr], Tables
 S2-S8). We identified 44 mutational signatures in the new 89-type
-classification and, independently, the 44 corresponding signatures in
-the new 476-type classification. We assessed concordance between
+classification and, independently, the 44 corresponding signatures in the [476-type]{.pink} classification. We assessed concordance between
 signatures identified in two classification systems by collapsing the
 476-type signatures to their 89-type counterparts and comparing them
 to signatures extracted in the 89-type classification. Mean cosine
-similarity was \> 0.989 (median \> 0.994, minimum \> 0.951), providing
+similarity was \> 0.989 (median \> 0.994, minimum \> 0.951), [providing
 evidence that these signatures constitute latent factors robust to the
-feature set in which they were discovered. Further evidence of their
+feature set in which they were discovered]{.blue}. Further evidence of their
 robustness derives from the identification of tumor spectra dominated
-by a single signature. For 35 of the 44 signatures, there were tumor
-spectra with cosine similarity \> 0.95 cosine similarity, and for 39
+by a single signature. For 35 of the 44 signatures, there were tumor spectra with cosine similarity \> 0.95[,]{.pink} and for 39
 there were tumor spectra with similarity \> 0.90 (Table [-@tbl-corr]).
-Of the 44 signatures identified in the 89-type classification, similar
-signatures were previously described for 18
-[@kohRedefinedInDelTaxonomy2025] and 26 were not previously described
-to our knowledge (Table [-@tbl-corr]). We also carried out signature
-discovery in spectra in the 83-type classification, and discovered 34
-signatures, of which 20 were similar to signatures in the COSMIC
-reference set, and 3 additional signatures were similar to signatures
-identified in @jinAccurateSensitiveMutational2024 (Table
-[-@tbl-corr]).
+[Of the 44 89-type signatures, 18 were similar (cosine similarity ≥ 0.85, see Methods) to signatures described by @kohRedefinedInDelTaxonomy2025, and 26 were, to our knowledge, not previously described (Table [-@tbl-corr]). Of the 34 signatures we discovered in the 83-type classification, 20 were similar to COSMIC reference signatures, 3 were similar to signatures described by @jinAccurateSensitiveMutational2024, and 11 were not previously described (Table [-@tbl-corr]).]{.pink}
+
+::: {.callout-note title="Reviewer note"}
+[Problem: High cosine similarity between collapsed 476-type and 89-type signatures shows the two extractions agree, not that the factors are robust to any feature set. Proposed: "indicating that signature discovery in the two classifications yielded consistent results".]{.blue}
+:::
 
 Because lossless translation between signatures in the 83-type and the
 two new classification schemes is impossible (Table S1), we used tumor
@@ -267,10 +251,7 @@ mutations attributed to these signatures are correlated with the
 counts of mutations attributed to the MSI-H-associated SBS signatures
 SBS6, SBS26, and SBS44 (Figure [-@fig-assoc], Figure S1).
 
-In addition to the deletions of single T bases from long poly-T
-tracts, insertions of single T bases into long poly-T tracts also
-showed that the new indel classification systems distinguish
-signatures that the older system merged. Our data set had 3.3 million
+[The same is true for insertions of single T bases into long poly-T tracts.]{.pink} Our data set had 3.3 million
 insertions of single T bases into tracts of ≥ 5 Ts, which in the
 83-type system constitutes a single mutation class, and COSMIC
 reference signature ID1 consists exclusively of this class of
@@ -289,17 +270,14 @@ the proofreading domain of polymerase epsilon (Table S9).
 differences***
 
 While the 89-type classification system on the whole better
-discriminates signatures, in two cases the 83-type and 476 type
-systems clearly differentiated signatures that were almost identical
-to the 89-type system. One case consisted of InsDel13 and InsDel_C.
+discriminates signatures, in two cases the 83-type and [476-type systems clearly differentiated signatures that were almost identical in the 89-type system]{.pink}. One case consisted of InsDel13 and InsDel_C.
 These are nearly identical in the 89-type system, which groups
 deletions of single Ts in stretches of 1, 2, 3, or 4 Ts as a single
-deletion type. However the 83 and 476 type systems show that InsDel_C
+deletion type. However[,]{.pink} the 83[-]{.pink} and [476-type]{.pink} systems show that InsDel_C
 has deletions of 1 T from ATA (ATA→AA), while InsDel13 has deletions
 of T from ATTA (ATTA→ATA, Figure S2A). The other case consisted of
 InsDel11 and InsDel16. InsDel11 has insertions of one C next to an
-isolated C (C with non-Cs on each side, e.g. ACG→ACCG) and insertion
-of a one T next to an isolated T (e.g. GTG→GTTG). InsDel16 has
+isolated C (C with non-Cs on each side, e.g. ACG→ACCG) and insertion of [one]{.pink} T next to an isolated T (e.g. GTG→GTTG). InsDel16 has
 insertion of one C between non-Cs (e.g. AT→ACT), and insertion of one
 T between non-Ts (e.g. AG→ATG, Figure S2B). Again, the 89-type system
 does not capture these differences, while the 83 and 476-type systems
@@ -307,8 +285,7 @@ do.
 
 ***Clarified signatures of aristolochic-acid-induced deletions***
 
-InsDel23 is caused by aristolochic acid (AA) exposure and the 476-type
-signatures shows that most AA deletions involve 5’TA3’/3’AT5’ → A/T
+InsDel23 is caused by aristolochic acid (AA) exposure and the 476-type [signature shows]{.pink} that most AA deletions involve 5’TA3’/3’AT5’ → A/T
 (Figure [-@fig-aa], and see https://indelsig.net). This pattern is not
 visible in either the 83-type or 89-type classification. 
 One might speculate that this
@@ -320,8 +297,7 @@ of adenines in the AA DBS signature.
 ***APOBEC3A activity and InsDel_Aβ***
 
 We identified InsDel_Aβ, an indel signature that in the 476-type
-classification consists primarily of 1 bp C deletions TCA→TA and
-TCT→TT deletions (Figure S2C, right sub-panel). Thus, InsDel_Aβ
+classification consists primarily of 1 bp C deletions TCA→TA and [TCT→TT (Figure S2C, right sub-panel)]{.pink}. Thus, InsDel_Aβ
 targets the same sequences as the canonical APOBEC SBS signatures SBS2
 (TCA→TTA and TCT→TTT) and SBS13 (TCA→TGA and TCT→TGT). Experiments in
 cell culture showed that, in addition to single nucleotide
@@ -329,10 +305,7 @@ substitutions, APOBEC3A induces indels, mainly TC→T
 [@deweerdProspectivelyDefinedPatterns2022]. In parallel, we discovered
 the corresponding 83-type indel signature, ID_A, which, compared to
 C_ID9, is more similar to the experimental indel spectrum in
-@deweerdProspectivelyDefinedPatterns2022. Notably ID9 and InsDel9 in
-both the 89-type and 476-type classifications have many deletions of
-single thymines, while ID_A and InsDel_Aβ in the 89-type and 476-type
-classifications lack these (Figure S2C). In addition, the InsDel9
+@deweerdProspectivelyDefinedPatterns2022. [Notably, ID9 and InsDel9 in all three classifications have many deletions of single thymines, while ID_A and InsDel_Aβ lack these]{.pink} (Figure S2C). In addition, the InsDel9
 476-type signature also has many deletions of a single C following A
 or G, while InsDel_Aβ has almost exclusively deletions of a single C
 following T. This signature was also noted in
@@ -342,7 +315,7 @@ classification to warrant an identifier.
 
 ***MSS tumors: single-thymine indels in poly-T tracts***
 
-De-novo signature discovery using both HDP- and NMF in all 3 indel
+[De novo signature discovery using both HDP and NMF in all three]{.pink} indel
 signature classifications identified signatures with similar
 proportions of deletions and insertions of a single thymine in poly-T
 tracts. These occur almost exclusively in MSS tumors. We termed these
@@ -353,13 +326,13 @@ to separate signatures ID1 and ID2, and did not differentiate between
 signature occurrence in MSS versus MSI-H
 [@alexandrovRepertoireMutationalSignatures2020]. We first focus on
 InsDel_Nβ which occurs in 2,629 of 6,770 MSS tumors (39%) in diverse
-cancer types and in only 9 of 176 MSI-H tumors (5%, Table S10).
+cancer types and in only 9 of [175]{.pink} MSI-H tumors (5%, Table S10).
 Roughly half the tumors with InsDel_Nβ also have InsDel1a, and
-InsDel1a also occurs without InsDel_Nβ in 2,596 MSS tumors (39%) and
+InsDel1a also occurs without InsDel_Nβ in 2,596 MSS tumors ([38%]{.pink}) and
 35 MSI-H tumors (20%). Thus, many MSS tumors have roughly equal
 proportions of thymine deletions and insertion in long poly-T tracts
-(InsDel_Nβ ), but other tumors have varying proportions of additional
-insertions (InsDel_1a), and some tumor spectra are completely
+(InsDel_Nβ[)]{.pink}, but other tumors have varying proportions of additional
+insertions ([InsDel1a]{.pink}), and some tumor spectra are completely
 dominated by these insertions. The other signature with approximately
 equal proportions of insertions and deletions of a thymine in a poly-T
 tract, InsDel_Nα, is rare in both MSS and MSI-H tumors, occurring in
@@ -370,17 +343,14 @@ tumors***
 
 In addition to enrichment for InsDel2a, 2b, and 2c, which represent
 single-thymine deletions from poly-T tracts, MSI-H tumors were notably
-enriched for signatures InsDel7, D, and J (Figure [-@fig-assoc]a).
+enriched for signatures [InsDel7, InsDel_D, and InsDel_J]{.pink} (Figure [-@fig-assoc][A]{.pink}).
 InsDel7, like InsDel2a/b/c, is dominated by single-thymine deletions
 from poly-T tracts, but with a distinct distribution of sequences
 flanking the poly-T tract. InsDel_J consists almost entirely of
-deletions of single dinucleotides from a dinucleotide microsatellites,
+deletions of single dinucleotides from [dinucleotide microsatellites]{.pink},
 e.g. deletion of CA from (CA)^5^, or deletion of GT from (GT)^8^ \[see
 also entries for the 476-indel-type category Del2:U2:R(5,) in Table
-S1\]. Another signature, InsDel1a, which is dominated by
-single-thymine deletions into poly-T tracts occurred in 20% of MSI-H
-tumors. This is a reasonably high frequency, though substantially less
-than the 38% of MSS tumors (Table S10).
+S1\]. [Another signature, InsDel1a, which is dominated by single-thymine insertions into poly-T tracts, occurred without InsDel_Nβ in 20% of MSI-H tumors compared with 38% of MSS tumors (Table S10).]{.pink}
 
 ## The new indel classifications reveal an accurate signature of RNase H2 deficiency
 
@@ -390,10 +360,9 @@ DNA, and this sets the stage for topoisomerase-1 (TOP1) associated
 mutagenesis. This was previously proposed to generate indel signature
 ID4 [@reijnsSignaturesTOP1Transcriptionassociated2022;
 @kohRedefinedInDelTaxonomy2025; @jinAccurateSensitiveMutational2024].
-However, we detected a new indel signature, InsDel_F, which better
-corresponds to RNase H2 deficiency experimental data than ID4 (Figure
+[However, we detected a new indel signature, InsDel_F,]{.blue} which [corresponds better to experimental RNase H2 deficiency data than does ID4/InsDel4]{.pink} (Figure
 [-@fig-rnaseh2], Figure S5). The profile of deletions of ≥2 bases is
-very different between InsDel_F and ID4: InsDel_F has distinctively
+very different between InsDel_F and [InsDel4]{.pink}: InsDel_F has distinctively
 high proportions of (i) 2-base deletions with microhomology (almost
 all TCT → T or TGT → T) and (ii) 2-base deletions from paired 2-base
 doublets (most often CTCT → CT). InsDel4 has much lower proportions of
@@ -411,30 +380,35 @@ deletions present in InsDel4. Similarly, RNase H2 deficient mouse
 tumors have high proportions of the 2-base deletions characteristic of
 InsDel_F and lack the 3 and 4 base deletions present in InsDel4.
 
+::: {.callout-note title="Reviewer note"}
+[Problem: The section heading says "an accurate signature of RNase H2 deficiency", but the support is cell lines and mouse tumors. Proposed: Heading: "The new indel classifications reveal a refined signature of RNase H2 deficiency".]{.blue}
+:::
+
 ### *Associations between indel signatures and SBS signatures*
 
 We further analyzed the correlations between the indel signature
 activities we derived and the SBS signature activities from
 @degasperiSubstitutionMutationalSignatures2022 (Tables S11, S12). We
-first computed a matrix of correlations between the numbers of
-mutations attributed to SBS signatures the numbers attributed to indel
-signatures for all pairs of SBS indel mutational signatures.
+first computed a matrix of [correlations between the numbers of mutations attributed to each SBS signature and to each indel signature, for all SBS-indel signature pairs.]{.pink}
 Agglomerative hierarchical clustering on the rows and columns of this
 matrix using 1 – the Pearson correlation coefficient as distance
 identified several clusters (Figure [-@fig-assoc]B). The
 APOBEC-related cluster includes SBS2 and SBS13 and showed moderate
 correlations with ID_A and InsDel_Aβ. The homologous recombination
-deficiency (dHR) cluster, consisting of SBS3 and SBS8, was strongly
+deficiency [(HRD)]{.pink} cluster, consisting of SBS3 and SBS8, was strongly
 associated with InsDel6 and InsDel9 (Figure [-@fig-assoc]B, “HR
 defects”). UV-related signatures, such as SBS7a, SBS38, InsDel13, and
-InsDel_H, also clustered together, reflecting their shared etiology.
+InsDel_H, also clustered together, [consistent with]{.yellow} their shared etiology.
 The cluster related to mutations in the proofreading domain of the
-polymerase epsilon (*POLE*) gene had strong links between SBS
-signature SBS10a and indel signature InsDel1b and InsDel_K. Additional
+polymerase epsilon (*POLE*) gene [linked SBS10a with InsDel1b and InsDel_K.]{.pink} [Additional
 analysis of tumor somatic mutations confirmed that these signatures
 are associated with dysfunctional *POLE* proofreading plus, in some
-tumors, mismatch repair deficiency (Table S9 \<add hypermutator info
+tumors, mismatch repair deficiency]{.blue} (Table S9 \<add hypermutator info
 to legend\>).
+
+::: {.callout-note title="Reviewer note"}
+[Problem: "Confirmed" overstates a supplementary table. Proposed: "Tumors with high InsDel1b or InsDel_K activity frequently carried POLE proofreading domain mutations and, in some cases, mismatch repair deficiency".]{.blue}
+:::
 
 Within the mismatch repair deficiency (MMR) cluster, we observed a
 strong network of correlations between SBS6, SBS26, SBS44, and a group
@@ -450,7 +424,7 @@ three signatures derived from C_ID1 (InsDel1a, InsDel1b, and InsDel1c)
 each showed distinct patterns of correlation to SBS signatures (Figure
 [-@fig-assoc]B). InsDel1a and the 83-type signature C_ID1 had similar
 correlation profiles and frequently co-occurred with SBS88, SBS17, and
-SBS93, which are prominent in the GI enriched cluster. In contrast,
+SBS93, which are prominent in the [gastrointestinal (GI) cluster]{.pink}. In contrast,
 InsDel1b was linked to *POLE* proofreading errors and InsDel1c was
 associated with SBS liver cancer signatures SBS12 and SBS16.
 
@@ -459,44 +433,49 @@ of previously uncharacterized SBS signatures. For example, SBS92
 closely mirrored the correlation profile of SBS4, with strong
 associations with C_ID3 and InsDel3b, further supporting a link with
 tobacco smoking (Figure [-@fig-assoc]B, “Tobacco Smoking”)
-[@lawsonExtensiveHeterogeneitySomatic2020]. In the gastrointestinal
-(GI) cluster, which includes signatures common in gastrointestinal
+[@lawsonExtensiveHeterogeneitySomatic2020]. In the [GI]{.pink} cluster, which includes signatures common in gastrointestinal
 tumors (SBS17, SBS18, SBS1, SBS88, and SBS93), we observed that
 C_ID18/InsDel18, ID_N/InsDel_Nβ were associated with SBS signatures
-typically seen in the GI tract. SBS93, in particular, shows a strong
+typically seen in the GI tract. [SBS93, in particular, shows a strong
 transcriptional strand bias \<what is the reference for this\>,
 suggesting its association with specific DNA adducts in the GI tract
-and a possible connection to C_ID14/InsDel14. In addition C_ID1 and
-InsDel1a had stronger correlations with SBS1 and SBS18, supporting
-their association with mutagenesis driven by reactive oxygen species
+and a possible connection to C_ID14/InsDel14.]{.blue} In addition C_ID1 and
+InsDel1a had stronger correlations with SBS1 and SBS18, [supporting
+their association with mutagenesis driven by reactive oxygen species]{.blue}
 (Figure [-@fig-assoc]).
+
+::: {.callout-note title="Reviewer note"}
+[Problem: SBS1 is deamination, not ROS. Only SBS18 supports the ROS claim, and correlation with one SBS signature is weak support. Proposed: "consistent with a contribution of reactive oxygen species".]{.blue}
+:::
+
+::: {.callout-note title="Reviewer note"}
+[Problem: No citation, and the chain from strand bias to adducts to C_ID14 is speculation. Proposed: Cite the strand bias and hedge ("might reflect"), or cut the sentence.]{.blue}
+:::
 
 ## Topography of indel mutational signatures \<STEVE REVIEW\>
 
-We evaluated the interplay between our the 83-type signatures that we
-identified and several genomic topographical features.
-Transcription-coupled nucleotide excision repair was known to cause
+We evaluated the interplay between [the 83-type signatures we identified]{.pink} and several genomic topographical features.
+Transcription-coupled nucleotide excision repair [is]{.pink} known to cause
 transcription strand asymmetries, since DNA bulky adducts on the
 transcribed strand will be preferentially repaired in the
 transcription active region across the genome (add cite).
-Transcription strand asymmetries were shown in 17 out of 33 83-type
-signatures (Figure [-@fig-topo]A, Figure S3A, Table S13). Signatures
+[Transcription strand asymmetries were shown in 17 out of 33 83-type
+signatures]{.blue} (Figure [-@fig-topo]A, Figure S3A, Table S13). Signatures
 attributed to exogenous mutational processes, such as C_ID3 (tobacco
 smoking exposure), C_ID14 (correlated with SBS93) and C_ID18
-(colibactin exposure), showed consistent transcription strand bias
-with mutations enriched in the transcribed strand. Another exogenous
+(colibactin exposure), showed consistent transcription strand bias[, with mutations enriched on]{.pink} the transcribed strand. Another exogenous
 mutational signature C_ID13, which is attributed to UV exposure,
-showed enrichment in the untranscribed strand. This is because UV
-damage occurs on cytosine rather than guanine. In
+showed enrichment [on]{.pink} the untranscribed strand. [This is because UV
+damage occurs on cytosine rather than guanine.]{.blue} In
 83-type signatures associated with defective endogenous mutational
 processes, enriched mutations on the untranscribed strand were
 observed for C_ID1 (slippage during DNA replication) and C_ID5
 (clock-like signature), while enriched mutations on the transcribed
 strand were observed for ID_F (topoisomerase-1 \[TOP1\] associated
-mutagenesis stemming from RNase H2 deficiency). Interestingly, 3
+mutagenesis stemming from RNase H2 deficiency). [Interestingly, 3
 defective MMR signatures also showed transcription strand asymmetries
 in different directions, with two of them (C_ID7 and ID_K) having
-enriched mutations on the transcribed strand, and one of them (ID_N)
+enriched mutations on the transcribed strand, and one of them (ID_N)]{.blue}
 having enriched mutations mainly on the untranscribed strand.
 Replication strand asymmetries were observed in 12 out of 33 83-type
 signatures (Figure [-@fig-topo]B, Figure S3B, Table S13). Analogous to
@@ -504,19 +483,30 @@ transcription strand asymmetries, the majority of signatures
 attributable to exogenous mutagenic exposures or defective endogenous
 repair processes exhibited pronounced replication strand bias,
 manifesting preferentially on either the leading or lagging strand.
-ID_K, which is enriched for mutations causing POLE proofreading
-defects, was consistently enriched for leading strand mutations. This
+ID_K, which [is enriched in tumors with POLE proofreading defects]{.yellow}, was consistently enriched for leading strand mutations. This
 is consistent with SBS signatures SBS10a and SBS10b, which are also
 driven by POLE proofreading defects, thus further supporting a
 link between POLE proofreading defects and leading-strand mutagenesis.
+
+::: {.callout-note title="Reviewer note"}
+[Problem: 34 83-type signatures were identified in the Results, but 33 are analyzed here. Proposed: State which signature is excluded and why, or fix the count.]{.blue}
+:::
+
+::: {.callout-note title="Reviewer note"}
+[Problem: Calling ID_N a defective-MMR signature contradicts the Results, which say ID_N occurs almost exclusively in MSS tumors. Proposed: Remove ID_N from the MMR group, e.g. "two defective MMR signatures (C_ID7 and ID_K) showed enrichment on the transcribed strand, whereas ID_N showed enrichment on the untranscribed strand".]{.blue}
+:::
+
+::: {.callout-note title="Reviewer note"}
+[Problem: Stated as fact without citation. Proposed: Add a reference for the SBS7 strand bias mechanism, e.g. the COSMIC SBS7 topography or Alexandrov et al. 2020.]{.blue}
+:::
 
 We also examined the mutation enrichment of 83-type signatures in
 genic and intergenic regions (Figure S3C). Most signatures showed
 mutation bias towards intergenic regions, while 6 signatures showed
 enrichment in genic regions (Figure [-@fig-topo]C). Among the 6
-signatures, 3 of them were associated with defective endogenous
+signatures, [three were]{.pink} associated with defective endogenous
 mutational processes, including C_ID8 (repair of DNA double strand
-breaks by NHEJ), C_ID17(TOP2A K743N mediated mutagenesis) and ID_F
+breaks by NHEJ), [C_ID17 (]{.pink}TOP2A K743N mediated mutagenesis) and ID_F
 (TOP1-mediated mutagenesis). Another 3 signatures with mutations
 enriched in genic regions were of unknown etiology (C_ID4, ID_E and
 ID_L).
@@ -538,25 +528,21 @@ mutations in late replication regions in bladder cancer, while in skin
 cancer it showed the opposite trend. For 89-type signatures, we
 conducted similar analysis without simulation data. The majority of
 signatures showed enrichment in late-replicating regions, which is
-consistent with what we observed 83-type signatures (Figure S4, Table
+consistent with what we observed [for]{.pink} 83-type signatures (Figure S4, Table
 S15). InsDel_L, the corresponding signature of ID_L, showed the same
-stomach cancer specific enrichment in early replication regions, which
-strengthen the correlation between 83-type and 89-type signatures.
+stomach cancer specific enrichment in early replication regions, which [strengthens the correspondence]{.pink} between 83-type and 89-type signatures.
 
-## Demographic Associations with Gender and Age STEVE REVIEW
+## Demographic Associations with Sex and Age STEVE REVIEW
 
-To explore potential gender biases in mutational processes, we
+To explore potential [sex]{.pink} biases in mutational processes, we
 systematically compared signature activities between males and females
 using two-sided Fisher’s exact tests. After applying
-Benjamini–Hochberg adjustment (q \< 0.2), nine significant
-gender-associated signatures were identified, underscoring a striking
-polarity across tumor types (Figure S6A, Table S16). \<parallel
+Benjamini–Hochberg adjustment (q \< 0.2), [nine signature-cancer type associations with sex were identified]{.yellow} (Figure S6A, Table S16). \<parallel
 structure\>Male-enriched mutational processes predominated in lung,
 liver, and "Other" cancer categories. Specifically, lung cancer showed
 significant male association with InsDel3b (OR = 0.367, q = 0.061) and
 C_ID3 (OR = 0.397, q = 0.188), signatures previously linked to tobacco
-exposure, suggesting that higher smoking-related mutational burdens
-contribute to this enrichment among men. In liver cancer, a similar
+exposure, [consistent with higher smoking prevalence among men]{.yellow}. In liver cancer, a similar
 male predominance was observed for InsDel5a (OR = 0.481, q = 0.118;
 clock-like) and InsDel8/C_ID8 (OR = 0.271, q = 0.184; associated with
 DSB repair by NHEJ and age). [\<mentioned anywhere
@@ -568,9 +554,12 @@ lymphoid malignancies, most notably in esophageal cancer for InsDel1a
 InsDel1c (OR = 2.63, q = 0.194) in lymphoid cancers. No additional
 signature–cancer type combinations reached a q-value below 0.2.
 Collectively, these findings suggest that specific mutational
-processes and their underlying biological processes might be modulated
-by gender, shaping distinct patterns of cancer susceptibility and
-progression.
+processes and their underlying biological processes might be modulated by [sex]{.pink}, [shaping distinct patterns of cancer susceptibility and
+progression]{.blue}.
+
+::: {.callout-note title="Reviewer note"}
+[Problem: Nothing on susceptibility or progression was measured. Proposed: End the sentence at "modulated by sex".]{.blue}
+:::
 
 ::: {.callout-note title="Comment 0, Mo Liu, 2026-08-21"}
 The clock-like association was described in the following paragraph.
@@ -581,13 +570,13 @@ age-association part earlier.
 To characterize the "clock-like" behavior of these signatures, we
 examined correlations between signature activity and patient age at
 diagnosis using Spearman correlation analyses (Figure S6B). We found
-that C_ID1, InsDel1a, C_ID5, and InsDel5a showed robust,
-age-associated "clock-like" mutagenesis in multiple cancer types, as
+that C_ID1, InsDel1a, C_ID5, and InsDel5a [showed robust,
+age-associated "clock-like" mutagenesis]{.blue} in multiple cancer types, as
 well as across the overall genome. More specifically, C_ID5 and
 InsDel5a correlated with age in prostate, pancreas, liver, and kidney
 cancers, while C_ID1 and InsDel1a were age-associated in breast,
 prostate, and pancreas cancers. Other clock-like signatures
-demonstrated pronounced tissue specificity; for example, InsDel9
+demonstrated pronounced tissue specificity[. For]{.pink} example, InsDel9
 showed a more attenuated relationship between age and mutational
 accumulation in prostate cancer, while InsDel10 displayed clear
 clock-like properties in pancreatic cancers. Additionally, some
@@ -598,10 +587,18 @@ S17). However, these broad pan-cancer associations likely reflect weak
 or heterogeneous age dependencies spread across multiple tumor types,
 rather than strong, tissue-specific age effects.
 
-Taken together, these analyses reveal a demographic landscape of
+::: {.callout-note title="Reviewer note"}
+[Problem: "Robust" needs the correlation strengths or a q threshold in the text. Proposed: Give rho and q for these four signatures, or write "showed significant age association (q < X)".]{.blue}
+:::
+
+[Taken together, these analyses reveal a demographic landscape of
 mutational mechanisms, indicating that genomic instability is sculpted
 by both sex-specific biological influences and tissue-dependent aging
-processes.
+processes.]{.blue}
+
+::: {.callout-note title="Reviewer note"}
+[Problem: Exposure differences could explain the sex associations entirely, and "sculpted" and "landscape" are rhetorical. Proposed: "Together, these analyses identify sex- and age-associated indel signatures within individual cancer types."]{.blue}
+:::
 
 # Discussion
 
@@ -617,33 +614,33 @@ environments. This expanded framework not only clarifies
 correspondences among previously reported signatures, but also enables
 the identification of novel signatures, including ID_F and InsDel_F,
 which are associated with TOP1-related mutagenesis and RNase H2
-deficiency. In addition, we identified six 89-type and 476-type
+deficiency. [In addition, we identified six 89-type and 476-type
 signatures, together with four 83-type signatures, that are strongly
-enriched in high-mutation-burden tumors, and further refined the
+enriched in high-mutation-burden tumors,]{.blue} and further refined the
 interpretation of indel processes linked to mismatch repair deficiency
-and/or POLE/POLD proofreading dysfunction.
+and/or POLE/POLD proofreading dysfunction. [By analyzing a larger and more diverse cancer genome cohort, we not only expanded the existing indel signature database, but also systematically linked and unified the nomenclature of the 83-type and 89-type signatures.]{.pink}
 
-The recently developed 89-type taxonomy by Koh et al. provided a new
-framework for classifying indels, particularly facilitating finer
-resolution of 1 bp T insertions and deletions in different contexts,
-and enabled more nuanced exploration of the genetic consequences of
-MMR defects. Koh et al. derived a 37-signature indel database
-from 4,775 genomes across seven cancer types. However,
-challenges remain in connecting the nomenclature of the 89-type
-signatures to the established 83-type system, as well as in
-translating between these classification schemes.
+::: {.callout-note title="Reviewer note"}
+[Problem: This result is not reported in the Results section. Proposed: Add the result to Results (with a figure or table reference) or drop the sentence.]{.blue}
+:::
+
+
 
 A major strength of this study is the systematic mapping between the
 conventional 83-type scheme and the newer 89-type and 476-type indel
 taxonomies. Because translation across these classification systems is
 inherently imperfect, direct comparison of signatures is not
 straightforward. By leveraging tumors dominated by single mutational
-processes, we established robust correspondences among signatures
-identified in all three frameworks. This unified mapping not only
+processes, [we established robust correspondences among signatures
+identified in all three frameworks]{.blue}. This unified mapping not only
 improves continuity with legacy studies based on the 83-type
 classification, but also provides a practical reference structure that
 will facilitate future indel signature analyses using the more
 informative 89-type and 476-type schemes.
+
+::: {.callout-note title="Reviewer note"}
+[Problem: Table 1 has 9 of 44 signatures without a tumor at > 0.90 similarity and several matches required zeroing poly-T insertions. Proposed: "we established correspondences for most signatures across the three frameworks".]{.blue}
+:::
 
 The new indel framework also refined the interpretation of several
 biologically important mutational processes. Notably, the new
@@ -656,9 +653,13 @@ we identified multiple signatures strongly associated with
 microsatellite instability, and the finer resolution of the new
 taxonomies allowed us to distinguish MSI-related signatures that were
 previously aggregated or less clearly resolved. Given the clinical
-relevance of MSI and mismatch repair deficiency, this improved
+relevance of MSI and mismatch repair deficiency, [this improved
 annotation may have direct utility for tumor classification and
-therapeutic stratification.
+therapeutic stratification]{.blue}.
+
+::: {.callout-note title="Reviewer note"}
+[Problem: Nothing in the paper tests utility for classification or stratification. Proposed: "this improved annotation may be useful for tumor classification".]{.blue}
+:::
 
 Our integrative analyses also examined the relationships between indel
 signatures and SBS signatures. The clustering of APOBEC-, UV-, HR-,
@@ -673,14 +674,18 @@ We also investigated the genome-wide topographical features associated
 with indel signatures, including transcriptional strand bias,
 replication strand bias, genic distribution, and replication timing.
 Notably, because the COSMIC catalog does not provide such
-topographical annotations for many indel signatures, our analysis in
+topographical annotations for many indel signatures, [our analysis in
 this large cohort helps fill an important gap in the current knowledge
-base. [[[]{.comment-end id="2"}]{.comment-end id="3"}]{.comment-end
-id="4"}The observed associations highlight the influence of DNA repair
+base]{.blue}. 
+The observed associations highlight the influence of DNA repair
 and replication dynamics on indel formation and suggest that genomic
 context contributes to the emergence and distribution of distinct
 indel patterns. Together, these analyses provide a more comprehensive
 view of the biological determinants of indel mutagenesis.
+
+::: {.callout-note title="Reviewer note"}
+[Problem: Vague, and the comment thread below questions it. Mo notes that COSMIC fully annotates only ID6 with all four features. Proposed: "COSMIC provides all four topographical annotations for only one indel signature (ID6), so our analysis substantially extends the available annotations."]{.blue}
+:::
 
 ::: {.callout-note title="Comment 1, Unknown Author, 2026-07-02"}
 *Reply to Mo Liu (05/29/2026, 16:03): "..."*\ Hi Steve,\ I summarized
@@ -710,10 +715,9 @@ This is true. But not sure if this worths mentioning?
 :::
 
 [A potential source of technical variation in our analysis is the use
-of data generated by different variant-calling pipelines used for
-PCAWG and Hartwig cohorts. We observed a higher frequency of indels
+of data generated by different variant-calling pipelines used for [the PCAWG (Pan-Cancer Analysis of Whole Genomes)]{.pink} and Hartwig cohorts. [We observed a higher frequency of indels
 occurring in sequence contexts containing more than nine repeat units
-in the Hartwig data, raising the possibility that differences in
+in the Hartwig data,]{.blue} raising the possibility that differences in
 variant calling, local realignment, or indel representation
 contributed to this discrepancy. To assess and minimize the potential
 impact of this bias, we performed two additional analyses. First, we
@@ -721,14 +725,22 @@ excluded indels associated with more than nine repeat units to improve
 comparability with the PCAWG calling pipeline. Second, for indels
 occurring in repetitive sequence contexts, we normalized their
 representation by moving each indel to the leftmost possible position
-within the sequence context. Thus, we cannot exclude residual caller-
+within the sequence context. [Even so]{.pink}, we cannot exclude residual caller-
 or cohort-specific effects, particularly for indels in highly
 repetitive sequence contexts and for signatures supported by
 relatively few mutations. Nevertheless, the overall consistency of the
-dominant signatures across datasets, together with the robustness of
+dominant signatures across datasets, together with [the robustness of
 the results after filtering and representation normalization, suggests
 that variant-calling bias is unlikely to substantially affect the main
-conclusions of this study.]{.mark}
+conclusions of this study]{.blue}.]{.mark}
+
+::: {.callout-note title="Reviewer note"}
+[Problem: Needs a number or a supplementary reference. Proposed: Give the fraction in each cohort and cite a supplementary figure.]{.blue}
+:::
+
+::: {.callout-note title="Reviewer note"}
+[Problem: The two analyses are described but no result is shown. Proposed: Cite a supplementary figure or table showing the signatures after filtering, or write "we did not observe changes in the dominant signatures".]{.blue}
+:::
 
 ::: {.callout-note title="Comment 5, Mo Liu, 2026-09-06"}
 New paragraph added by Mo to discuss the potential caller batch effects
@@ -742,10 +754,7 @@ patterns that are separated in the 83-type framework. For example, the
 relationships between InsDel_C and InsDel13, as well as between
 InsDel11 and InsDel16, suggest that some signatures with distinct
 sequence preferences in the 83-type system are represented together in
-the 89-type taxonomy. By analyzing a larger and more diverse cancer
-genome cohort, we not only expanded the existing indel signature
-database, but also systematically linked and unified the nomenclature
-of the 83-type and 89-type signatures. Taken together, these results
+the 89-type taxonomy.  Taken together, these results
 suggest that although the 89-type taxonomy represents an important
 advance, further refinement of indel classification will be needed to
 fully capture the diversity of indel mutational processes. The unified
@@ -1072,7 +1081,7 @@ cosine similarity to the 83-type signature.
 {{< pagebreak >}}
 
 ::: {#fig-aa}
-![](media/image2.png){width=6.5in}
+![](main_figures/cropped/fig1.pdf){width=6.5in}
 
 **The aristolochic acid (AA) indel signatures (signature 23) in the
 three classification schemes.**
@@ -1129,7 +1138,7 @@ classifications (Table S1).
 {{< pagebreak >}}
 
 ::: {#fig-sigs83}
-![](media/image3.png){height=7.8in}
+![](main_figures/cropped/fig2.pdf){height=7.8in}
 
 **Profiles of signatures extracted in the 83-type classification
 scheme**
@@ -1145,7 +1154,7 @@ remaining signatures, ID_A through ID_O were not present in COSMIC
 {{< pagebreak >}}
 
 ::: {#fig-sigs89}
-![](media/image4.png){height=7.8in}
+![](main_figures/cropped/fig3.pdf){height=7.8in}
 
 **Profiles of signatures extracted in the 89-type classification
 scheme**
@@ -1167,7 +1176,7 @@ InD).
 {{< pagebreak >}}
 
 ::: {#fig-assoc}
-![](media/image5.png){height=6.4in}
+![](main_figures/cropped/fig4.pdf){height=6.4in}
 
 **Association of indel signatures with cancer types and SBS signatures
 and cancer types**
@@ -1191,7 +1200,7 @@ GI: Gastrointestinal.
 {{< pagebreak >}}
 
 ::: {#fig-topo}
-![](media/image6.png){height=8.2in}
+![](main_figures/cropped/fig5.pdf){height=8.2in}
 
 **83-type mutational signatures asymmetries in strands, replication
 timing and DNA regions.**
@@ -1235,7 +1244,7 @@ trend across cancer types (e.g., ID_F).
 {{< pagebreak >}}
 
 ::: {#fig-rnaseh2}
-![](media/image7.png){height=5.8in}
+![](main_figures/cropped/fig6.pdf){height=5.8in}
 
 **Novel signature caused by RNase H2 deficiency and
 topoisomerase-1-associated mutagenesis (TOP1-TAM)**
