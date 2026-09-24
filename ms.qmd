@@ -1100,6 +1100,8 @@ responsibility for the content of the published article.
 
 {{< pagebreak >}}
 
+# Table 1
+
 ```{r}
 #| label: tbl-corr
 #| tbl-cap: "Summary of the correspondences and cosine similarities between the 89-type indel signatures (i) signatures from the 476-type collapsed set, (ii) the tumor spectra with highest cosine similarities, (iii) the 89-type signatures reported in Koh et al., (iv) and 83-type signatures extracted in this study along with 83-type signatures reported in Jin et al. "
@@ -1134,6 +1136,8 @@ single Ts in long poly-T contexts were set to 0 before calculating
 cosine similarity to the 83-type signature.
 
 {{< pagebreak >}}
+
+# Figures
 
 ::: {#fig-aa}
 ![](main_figures/cropped/fig1.pdf){width=6.5in}
