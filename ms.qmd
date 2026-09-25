@@ -832,8 +832,10 @@ that can be found at
 https://www.hartwigmedicalfoundation.nl/en/appyling-for-data/.
 Clinical traits such as cancer type, age and gender of the Hartwig
 genomes were found from supplementary files of
-@priestleyPancancerWholegenomeAnalyses2019. \<we can duplicate this in
-the code but we don’t need to re-present the Priestly table\> These
+@priestleyPancancerWholegenomeAnalyses2019. [we can duplicate this 
+table in
+the code but we don’t need to re-present the Priestly table;
+are they inthe code repo or the data repo]{.mark} These
 data are also available in Table S16 in
 @priestleyPancancerWholegenomeAnalyses2019.
 
