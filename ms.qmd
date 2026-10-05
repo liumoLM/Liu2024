@@ -831,12 +831,7 @@ Foundation (Hartwig) through standardized procedures and request forms
 that can be found at
 https://www.hartwigmedicalfoundation.nl/en/appyling-for-data/.
 Clinical traits such as cancer type, age and gender of the Hartwig
-genomes were found from supplementary files of
-@priestleyPancancerWholegenomeAnalyses2019. [we can duplicate this 
-table in
-the code but we don’t need to re-present the Priestly table;
-are they inthe code repo or the data repo]{.mark} These
-data are also available in Table S16 in
+genomes were taken from Table S16 in
 @priestleyPancancerWholegenomeAnalyses2019.
 
 ## De novo Mutational signature extraction
@@ -1040,15 +1035,15 @@ decreasing from early to late replicating regions.
 
 ## MSI/MSS status and high/low TMB status
 
-For PCAWG genomes, the MSI (microsatellite instability) status was
+[NEEDS DRASTIC CUTTING]{.pink} [For PCAWG genomes, the MSI (microsatellite instability) status was
 evaluated by the PCAWG working group and obtained from the synapse
 repository (<https://www.synapse.org/#!Synapse:syn8016399>, the data
 was downloaded on May 2022). For Hartwig genomes, the MSI status was
 downloaded from the supplementary data of Priestley et al., 2019. The
-genomes with \>5,000 IDs were labeled as high TMB tumors. The
+genomes with \>4,000 IDs were labeled as high TMB tumors. The
 thresholds were selected based on the minimum number of mutations of
 the pre-defined MSI tumors. We then used MSIseq to predict the MSI
-status of high TMB tumors.
+status of high TMB tumors.[{.mark}]
 
 ## Extended sequence context analysis
 
