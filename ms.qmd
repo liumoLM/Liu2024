@@ -5,6 +5,9 @@ link-citations: true
 filters:
   - highlight.lua
 format:
+  html:
+    toc: true
+    embed-resources: true
   pdf:
     papersize: letter
     mainfont: TeX Gyre Pagella
@@ -22,9 +25,6 @@ format:
   docx:
     toc: false
     number-sections: false
-  html:
-    toc: true
-    embed-resources: true
 ---
 
 ```{r}
@@ -448,11 +448,14 @@ the mutational consequences of RNase H2 deficiency.
 We further analyzed the correlations between the indel signature
 activities we derived and the SBS signature activities from
 @degasperiSubstitutionMutationalSignatures2022 (Tables S11, S12). We
-first computed a matrix of 
+first computed a matrix of Spearman
 correlations between the numbers of mutations
 attributed to each SBS signature and to each indel signature over all SBS-indel signature pairs.
-Agglomerative hierarchical clustering on the rows and columns of this
-matrix using 1 – the Pearson correlation coefficient as distance
+Correlations that were not significant (Benjamini-Hochberg FDR ≥ 0.05)
+were set to 0.
+Agglomerative hierarchical clustering (Ward's method) on the rows and
+columns of this matrix, using as distance 1 – the Pearson correlation
+between the rows (or columns) of the Spearman correlation matrix,
 identified several clusters (Figure [-@fig-assoc]B). The
 APOBEC-related cluster includes SBS2 and SBS13 and showed moderate
 correlations with ID_A and InsDel_Aβ. The homologous recombination
@@ -480,49 +483,51 @@ relationships within previously broader categories. For instance, the
 three signatures derived from C_ID1 (InsDel1a, InsDel1b, and InsDel1c)
 each showed distinct patterns of correlation to SBS signatures (Figure
 [-@fig-assoc]B). InsDel1a and the 83-type signature C_ID1 had similar
-correlation profiles and frequently co-occurred with SBS88, SBS17, and
-SBS93, which are prominent in the [gastrointestinal (GI) cluster]{.pink}. In contrast,
-InsDel1b was linked to *POLE* proofreading errors and InsDel1c was
-associated with SBS liver cancer signatures SBS12 and SBS16.
+correlation profiles, with both having modest correlations (Spearman ρ 0.1–0.2) to
+SBS1, SBS18, SBS2, SBS35, and SBS13.
+Among these, SBS1, SBS18, and SBS35 are in the gastrointestinal (GI) cluster.
+In contrast,
+InsDel1b was correlated only with SBS10a (ρ = 0.30), which is caused by
+*POLE* proofreading errors, and InsDel1c was weakly correlated with
+SBS12 and SBS16 (ρ ≈ 0.12), which are common in liver cancer.
+The correlation of C_ID1 and InsDel1a with SBS18, which was absent for
+InsDel1b and InsDel1c, is consistent with a possible contribution of
+reactive oxygen species to InsDel1a (Figure [-@fig-assoc]B).
 
 These correlation patterns provide insight into the possible origins
 of previously uncharacterized SBS signatures. For example, SBS92
 closely mirrored the correlation profile of SBS4, with strong
 associations with C_ID3 and InsDel3b, further supporting a link with
 tobacco smoking (Figure [-@fig-assoc]B, “Tobacco Smoking”)
-[@lawsonExtensiveHeterogeneitySomatic2020]. In the [GI]{.pink} cluster, which includes signatures common in gastrointestinal
-tumors (SBS17, SBS18, SBS1, SBS88, and SBS93), we observed that
+[@lawsonExtensiveHeterogeneitySomatic2020]. 
+
+In the GI cluster, which includes signatures common in gastrointestinal
+tumors, signatures
 C_ID18/InsDel18, ID_N/InsDel_Nβ were associated with SBS signatures
 typically seen in the GI tract. 
-[SBS93, which was previously found almost exclusively
-in stomach and esophageal tumors with transcriptional strand bias suggesting thymine
-damage [@islamUncoveringNovelMutational2022; @moodyMutationalSignaturesEsophageal2021],
-was highly correlated with C_ID14/InsDel14.]{.blue} 
-In addition C_ID1 and
-InsDel1a had stronger correlations with SBS1 and SBS18, [supporting
-their association with mutagenesis driven by reactive oxygen species]{.blue}
-(Figure [-@fig-assoc]).
+The GI cluster also contained the signatures
+C_ID14/InsDel14.
+These were strongly correlated with SBS93, which has been found almost exclusively
+in stomach and esophageal tumors, and which has transcriptional strand bias suggesting thymine
+damage [@islamUncoveringNovelMutational2022; @moodyMutationalSignaturesEsophageal2021].
 
-::: {.callout-note title="Reviewer note"}
-[Problem: SBS1 is deamination, not ROS. Only SBS18 supports the ROS claim, and correlation with one SBS signature is weak support. Proposed: "consistent with a contribution of reactive oxygen species".]{.blue}
-:::
-
-::: {.callout-note title="Reviewer note"}
-[Problem: No citation, and the chain from strand bias to adducts to C_ID14 is speculation. Proposed: Cite the strand bias and hedge ("might reflect"), or cut the sentence.]{.blue}
-:::
 
 ## Topography of indel mutational signatures \<STEVE REVIEW\>
 
 We evaluated the interplay between [the 83-type signatures we identified]{.pink} and several genomic topographical features.
-Transcription-coupled nucleotide excision repair [is]{.pink} known to cause
+Transcription-coupled nucleotide excision repair is known to cause
 transcription strand asymmetries, since DNA bulky adducts on the
 transcribed strand will be preferentially repaired in the
 transcription active region across the genome (add cite).
 [Transcription strand asymmetries were shown in 17 out of 34 83-type
 signatures]{.blue} (Figure [-@fig-topo]A, Figure S3A, Table S13). Signatures
 attributed to exogenous mutational processes, such as C_ID3 (tobacco
-smoking exposure), C_ID14 (correlated with SBS93) and C_ID18
-(colibactin exposure), showed consistent transcription strand bias[, with mutations enriched on]{.pink} the transcribed strand. Another exogenous
+smoking exposure) and C_ID18
+(colibactin exposure), showed consistent transcription strand bias[, with mutations enriched on]{.pink} the transcribed strand.
+C_ID14, whose etiology is unknown but which is strongly
+correlated with SBS93, showed the same bias, suggesting that it may
+also arise from DNA damage subject to transcription-coupled repair.
+Another exogenous
 mutational signature C_ID13, which is attributed to UV exposure,
 showed enrichment [on]{.pink} the untranscribed strand. [This is because UV
 damage occurs on cytosine rather than guanine.]{.blue} In
@@ -832,7 +837,9 @@ that can be found at
 https://www.hartwigmedicalfoundation.nl/en/appyling-for-data/.
 Clinical traits such as cancer type, age and gender of the Hartwig
 genomes were taken from Table S16 in
-@priestleyPancancerWholegenomeAnalyses2019.
+@priestleyPancancerWholegenomeAnalyses2019 and from the supplementary
+tables of @martinezjimenezPancancerWholegenomeComparison2023. The
+final sample metadata are provided in Table S18.
 
 ## De novo Mutational signature extraction
 
@@ -995,7 +1002,7 @@ The replication time signals were sorted in a descending order and
 subsequently divided into deciles. Somatic indels were counted within
 the corresponding deciles based on their overlap with the replication
 domains in the examined deciles. As with other analyses, for each
-individual indel signature, the reported replication timing analyses
+individual indel signature, the reported replic(ation timing analyses
 included only cancer types with at least 1,000 somatic mutations
 unambiguously attributed to it.
 
@@ -1247,11 +1254,16 @@ versus the number without in a given tumor type versus all other
 tumors.
 
 **(B)** The heatmap of Spearman correlation coefficients between indel
-signatures and various SBS signatures. Signatures were excluded if all
-correlation coefficients were between –0.1 and 0.1. Unsupervised
-hierarchical clustering of both rows and columns based on signature
-proportions identified 8 clusters, boxed and labeled in the figure.
-GI: Gastrointestinal.
+signatures and various SBS signatures. Correlations that were not
+significant (Benjamini-Hochberg FDR ≥ 0.05) were set to 0. Signatures
+were excluded if none of their correlation coefficients was greater
+than 0.1. Unsupervised hierarchical clustering (Ward's method) of both
+rows and columns, using 1 – the Pearson correlation between rows (or
+columns) of the Spearman correlation matrix as distance, identified 8
+clusters, boxed and labeled in the figure. When an 83-type signature
+was not split into several 89-type signatures (for example C_ID14,
+which corresponds only to InsDel14), only the 89-type signature is
+shown. GI: Gastrointestinal.
 
 {{< pagebreak >}}
 
