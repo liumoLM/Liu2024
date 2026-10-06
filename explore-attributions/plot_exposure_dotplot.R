@@ -1,11 +1,11 @@
 # Reproduce the Figure 4a/4b style "active-proportion x median-exposure"
-# dot plot from Table S11 + Table S18, and additionally split samples into
+# dot plot from Table S11 + Table S17, and additionally split samples into
 # (a) MSI, (b) MSS-hypermutated, (c) MSS-non-hypermutated subsets so that
 # rare exposures aren't drowned out by MSI/hypermutator samples.
 #
 # Inputs (same folder):
 #   Table S11 83-type and 89-type signature assignment.tsv
-#   Table S18 metadata of 6975 samples.xlsx
+#   Table S17 metadata of 6975 samples.xlsx
 #
 # Output (same folder):
 #   Figure4_dotplot_panels.pdf
@@ -48,7 +48,7 @@ HYPERMUT_INDEL_THRESHOLD <- 5000  # matches the high-TMB cutoff in Methods
 
 # ---- Load ----
 meta <- as.data.frame(read_excel(
-  file.path(sup_dir, "Table S18 metadata of 6975 samples.xlsx"),
+  file.path(sup_dir, "Table S17 metadata of 6975 samples.xlsx"),
   sheet = "Sheet1"
 ))
 meta$major <- meta[["Major Cancer Type"]]

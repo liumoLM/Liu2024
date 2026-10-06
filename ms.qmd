@@ -458,7 +458,7 @@ the mutational consequences of RNase H2 deficiency than InsDel4.
 
 We further analyzed the correlations between the indel signature
 activities we derived and the SBS signature activities from
-@degasperiSubstitutionMutationalSignatures2022 (Tables S11, S12). We
+@degasperiSubstitutionMutationalSignatures2022 (Table S11). We
 first computed a matrix of Spearman
 correlations between the numbers of mutations
 attributed to each SBS signature and to each indel signature over all SBS-indel signature pairs.
@@ -532,7 +532,7 @@ transcription strand asymmetries, since bulky DNA adducts on the
 transcribed strand of active genes are preferentially removed by this
 pathway [(add cite).]{.blue}
 There was evidence of transcriptional strand asymmetry in 17 out of the 21
-signatures that had sufficient data to assess (Figure [-@fig-topo]A, Figure S3A, Table S13). Signatures
+signatures that had sufficient data to assess (Figure [-@fig-topo]A, Figure S3A, Table S12). Signatures
 attributed to exogenous mutational processes, such as C_ID3 (tobacco
 smoking exposure) and C_ID18
 (colibactin exposure), showed consistent transcription strand bias[, with mutations enriched on]{.pink} the transcribed strand.
@@ -556,7 +556,7 @@ having enriched mutations mainly on the untranscribed strand.
 
 There was evidence of replication strand asymmetry in 12 out of the 26
 signatures that had sufficient data to assess (Figure [-@fig-topo]B, 
-Figure S3B, Table S13). [Replication strand asymmetry was less common
+Figure S3B, Table S12). [Replication strand asymmetry was less common
 than transcription strand asymmetry, and none of the tobacco-, UV-, or
 colibactin-associated signatures (C_ID3, C_ID13, C_ID18) showed it.]{.blue}
 ID_K, which [is enriched in tumors with POLE proofreading defects]{.yellow}, was consistently enriched for leading strand mutations. This
@@ -585,7 +585,7 @@ enriched in genic regions were of unknown etiology (C_ID4, ID_E and
 ID_L).
 
 The effect of DNA replication timing was also observed in many 83-type
-signatures (Figure [-@fig-topo]D, Figure S4, Table S14). Most
+signatures (Figure [-@fig-topo]D, Figure S4, Table S13). Most
 signatures were consistently enriched in late-replicating regions
 across different cancer types, while only two signatures, C_ID10 and
 C_ID17 (TOP2A K743N mediated mutagenesis), showed enrichment in
@@ -602,7 +602,7 @@ cancer it showed the opposite trend. For 89-type signatures, we
 conducted similar analysis without simulation data. The majority of
 signatures showed enrichment in late-replicating regions, which is
 consistent with what we observed [for]{.pink} 83-type signatures (Figure S4, Table
-S15). InsDel_L, the corresponding signature of ID_L, showed the same
+S14). InsDel_L, the corresponding signature of ID_L, showed the same
 stomach cancer specific enrichment in early replication regions, which [strengthens the correspondence]{.pink} between 83-type and 89-type signatures.
 
 ## Demographic Associations with Sex and Age STEVE REVIEW
@@ -610,7 +610,7 @@ stomach cancer specific enrichment in early replication regions, which [strength
 To explore potential [sex]{.pink} biases in mutational processes, we
 systematically compared signature activities between males and females
 using two-sided Fisher’s exact tests. After applying
-Benjamini–Hochberg adjustment (q \< 0.2), [nine signature-cancer type associations with sex were identified]{.yellow} (Figure S6A, Table S16). \<parallel
+Benjamini–Hochberg adjustment (q \< 0.2), [nine signature-cancer type associations with sex were identified]{.yellow} (Figure S6A, Table S15). \<parallel
 structure\>Male-enriched mutational processes predominated in lung,
 liver, and "Other" cancer categories. Specifically, lung cancer showed
 significant male association with InsDel3b (OR = 0.367, q = 0.061) and
@@ -656,7 +656,7 @@ clock-like properties in pancreatic cancers. Additionally, some
 signatures, such as InsDel5b, InsDel5c, and C_ID4/InsDel4, were
 correlated with age when considering all tumor types collectively but
 did not show significant associations in any single cancer type (Table
-S17). However, these broad pan-cancer associations likely reflect weak
+S16). However, these broad pan-cancer associations likely reflect weak
 or heterogeneous age dependencies spread across multiple tumor types,
 rather than strong, tissue-specific age effects.
 
@@ -851,7 +851,7 @@ https://www.hartwigmedicalfoundation.nl/en/appyling-for-data/.
 Clinical traits such as cancer type, age and gender of the Hartwig
 genomes were taken from Table S16 in
 @priestleyPancancerWholegenomeAnalyses2019 and from the supplementary
-tables of @martinezjimenezPancancerWholegenomeComparison2023. Table S18 in
+tables of @martinezjimenezPancancerWholegenomeComparison2023. Table S17 in
 this study present the aggregated metadata used herein.
 
 ## De novo Mutational signature extraction
@@ -917,7 +917,7 @@ applied SigProfilerAssignment to decompose the 172-type spectra in
 low-TMB tumors (indels \< 5,000). In contrast, high-TMB tumors (indels
 ≥ 5,000), as well as tumors where 1-bp T insertions or deletions in at
 least five poly-T tracts account for ≥50% of the mutations (Table
-S18), often exhibited highly sparse spectra. This sparsity further
+S17), often exhibited highly sparse spectra. This sparsity further
 masks other mutational signals. Therefore regarding these cases, we
 employed mSigAct, estimating likelihoods under a multinomial
 distribution. This was performed in a two-step computational

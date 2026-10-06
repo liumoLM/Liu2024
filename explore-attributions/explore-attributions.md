@@ -2,7 +2,7 @@
 
 This folder contains exploratory analyses of the per-sample 83-type / 89-type
 indel signature attributions (`Sup Tables/Table S11 ...tsv`) joined to the
-sample metadata (`Sup Tables/Table S18 ...xlsx`). The goal is to assess how
+sample metadata (`Sup Tables/Table S17 ...xlsx`). The goal is to assess how
 robust the attributions are and to surface hints about the biology behind
 each signature.
 
@@ -19,7 +19,7 @@ outputs alongside themselves.
   exactly, and the 83-type exposures equal the sums of joint rows that share
   the same 83-type prefix (verified across all 6975 samples, zero
   discrepancies).
-- `Sup Tables/Table S18 metadata of 6975 samples.xlsx`. Sample metadata with
+- `Sup Tables/Table S17 metadata of 6975 samples.xlsx`. Sample metadata with
   `Patient`, `Major Cancer Type`, `Cancer Type`, `cohort`, `MSI_status`
   ("MSS", "MSI-H", or a few "MSI"), `mutation_burden`, `MSIseq`, and `Ratio
   of 1bp T insertion/deletion at >=5 polyT tracts` (per-sample fraction of

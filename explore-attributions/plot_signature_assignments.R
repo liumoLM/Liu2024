@@ -6,7 +6,7 @@
 #       Tab-separated matrix; first column is the signature name (e.g.
 #       "ID_K/InsDel_K"), remaining columns are bare sample IDs with mutation
 #       counts attributed to that signature.
-#   Table S18 metadata of 6975 samples.xlsx
+#   Table S17 metadata of 6975 samples.xlsx
 #       Sheet "Sheet1" with columns including "Patient", "Cancer Type", and
 #       "MSIseq" ("MSI-H"/"Non-MSI-H").
 #
@@ -57,7 +57,7 @@ assignment_file <- file.path(
 )
 metadata_file <- file.path(
   sup_dir,
-  "Table S18 metadata of 6975 samples.xlsx"
+  "Table S17 metadata of 6975 samples.xlsx"
 )
 output_file <- file.path(
   this_dir,

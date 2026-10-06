@@ -9,7 +9,7 @@
   - Cell values are exposures (indel counts). Column sums = total indels per sample.
 
 - **Sample metadata (cancer type, MSI status, etc.)**:
-  `Sup Tables/Table S18 metadata of 6975 samples.xlsx`
+  `Sup Tables/Table S17 metadata of 6975 samples.xlsx`
   - Key columns: `Patient`, `Major Cancer Type`, `MSI_status` (values `MSI` / `MSS`),
     `mutation_burden`, `cohort`, `Cancer Type`.
   - All 6975 Patient IDs match the column names in Table S11.
@@ -39,6 +39,6 @@ All numbers quoted in `ms.qmd` (signature counts, proportions, sample counts,
 etc.) must come from the code and data in `~/github/Liu2026_code_and_data/`,
 not from memory or from earlier drafts. Locate the script or input file for
 the relevant figure or table there (for example `build_fig5/` for Figure 5,
-`ID83_topography_analysis_code/` for the topography pipeline behind Table S13)
+`ID83_topography_analysis_code/` for the topography pipeline behind Table S12)
 and derive the number from it. When a number in `ms.qmd` disagrees with that
 repo, the repo wins and the manuscript is corrected.
