@@ -178,7 +178,7 @@ microsatellites, simple tandem repeats). For deletions of ≥2 bases the
 83-type system classification also encodes the presence of
 microhomology. 
 (Microhomology is a hallmark of error-prone repair by non-homologous end-joining, notably in BRCA-deficient tumors. <cite the HR detect paper> )
- For example, the 3-base deletion
+ For example, the 3-base deletion of TCA in
 (A**CA**\|T**CA**\|GG→A**CA**GG) exhibits a 2-base microhomology (CA).
 
 A prominent distinction is that, unlike the 83-type classification scheme,
@@ -392,7 +392,7 @@ tract, InsDel_Nα, is rare in both MSS and MSI-H tumors, occurring in
 only `r ms_num$s10$n_mss_Nalpha` of `r ms_num$s10$n_mss` MSS tumors and
 `r ms_num$s10$n_msi_Nalpha` of `r ms_num$s10$n_msi` MSI-H tumors.
 
-***Indels in poly-T tracts and microsatellite contraction in MSI-H
+***Indels in poly-T tracts and microsatellite mutations in MSI-H
 tumors***
 
 MSI-H tumors were enriched for InsDel2a, 2b, and 2c, which represent
@@ -405,9 +405,16 @@ flanking the poly-T tract. InsDel_J consists almost entirely of
 deletions of single dinucleotides from dinucleotide microsatellites,
 e.g. deletion of CA from (CA)^5^, or deletion of GT from (GT)^8^ \[see
 also entries for the 476-indel-type category Del2:U2:R(5,) in Table
-S1\]. 
-[InsDel1a (mainly single-thymine insertions into poly-T tracts)
-occurred without InsDel_Nβ in `r ms_num$s10$pct_msi_1a_no_Nbeta`% of MSI-H tumors compared with `r ms_num$s10$pct_mss_1a_no_Nbeta`% of MSS tumors (Table S10).]{.pink}
+S1\].
+Unlike the other signatures enriched in MSI-H tumors, InsDel_D consists mainly of insertions. Single-thymine
+insertions into poly-T tracts make up `r ms_num$insdel_D$pct_ins_T`% of
+the signature, mostly into tracts of ≥ 8 Ts. InsDel_D is distinguished
+from InsDel1a/b/c by a larger proportion of insertions of repeat units
+into microsatellites, mostly single dinucleotide insertions into
+dinucleotide microsatellites, e.g. insertion of AC into (AC)^5^, or
+insertion of CA into (CA)^8^, in a tumor with cosine similarity
+`r ms_num$insdel_D$cos_linking` to InsDel_D in the 476-type classification
+(`r ms_num$insdel_D$linking_tumor`).
 
 ## The new indel classifications reveal a more specific signature of RNase H2 deficiency
 
@@ -422,7 +429,7 @@ that corresponds better to experimental RNase H2 deficiency
 data than ID4/InsDel4
 (Figures [-@fig-rnaseh2], S5). 
 The profile of deletions of ≥2 bases is
-very different between InsDel_F and [InsDel4]{.pink}: InsDel_F has distinctively
+very different between InsDel_F and InsDel4: InsDel_F has distinctively
 high proportions of (i) 2-base deletions with microhomology (almost
 all TCT → T or TGT → T) and (ii) 2-base deletions from paired 2-base
 doublets (most often CTCT → CT). InsDel4 has much lower proportions of
@@ -439,9 +446,13 @@ of InsDel_F (Figure S5). Like InsDel_F, these cell-line spectra have
 deletions present in InsDel4. Similarly, RNase H2 deficient mouse
 tumors have high proportions of the 2-base deletions characteristic of
 InsDel_F and lack the 3 and 4 base deletions present in InsDel4.
-Thus, InsDel_F is clearly distinct from InsDel4 (cosine similairy in [XXXX; was F extracted in 83, 89, 476?]{.mark}), and all available
+Thus, ID_F/InsDel_F is clearly distinct from InsDel4 (cosine similairy XXX, XXX and XXXX in 
+the 83- 89- and 476-type classifications, respectively)
+and it was extracted by both the HDP and NMF-based methods
+in all 3 indel classification schemes.
+All available
 evidence indicates that it much more accuratly reflects
-the mutational consequences of RNase H2 deficiency. 
+the mutational consequences of RNase H2 deficiency than InsDel4. 
 
 ### *Associations between indel signatures and SBS signatures*
 
@@ -514,13 +525,14 @@ damage [@islamUncoveringNovelMutational2022; @moodyMutationalSignaturesEsophagea
 
 ## Topography of indel mutational signatures \<STEVE REVIEW\>
 
-We evaluated the interplay between [the 83-type signatures we identified]{.pink} and several genomic topographical features.
+We evaluated the interplay between the 83-type signatures we identified
+and several genomic topographical features.
 Transcription-coupled nucleotide excision repair is known to cause
-transcription strand asymmetries, since DNA bulky adducts on the
-transcribed strand will be preferentially repaired in the
-transcription active region across the genome (add cite).
-[Transcription strand asymmetries were shown in 17 out of 34 83-type
-signatures]{.blue} (Figure [-@fig-topo]A, Figure S3A, Table S13). Signatures
+transcription strand asymmetries, since bulky DNA adducts on the
+transcribed strand of active genes are preferentially removed by this
+pathway [(add cite).]{.blue}
+There was evidence of transcriptional strand asymmetry in 17 out of the 21
+signatures that had sufficient data to assess (Figure [-@fig-topo]A, Figure S3A, Table S13). Signatures
 attributed to exogenous mutational processes, such as C_ID3 (tobacco
 smoking exposure) and C_ID18
 (colibactin exposure), showed consistent transcription strand bias[, with mutations enriched on]{.pink} the transcribed strand.
@@ -541,16 +553,17 @@ defective MMR signatures also showed transcription strand asymmetries
 in different directions, with two of them (C_ID7 and ID_K) having
 enriched mutations on the transcribed strand, and one of them (ID_N)]{.blue}
 having enriched mutations mainly on the untranscribed strand.
-Replication strand asymmetries were observed in 12 out of 34 83-type
-signatures (Figure [-@fig-topo]B, Figure S3B, Table S13). Analogous to
-transcription strand asymmetries, the majority of signatures
-attributable to exogenous mutagenic exposures or defective endogenous
-repair processes exhibited pronounced replication strand bias,
-manifesting preferentially on either the leading or lagging strand.
+
+There was evidence of replication strand asymmetry in 12 out of the 26
+signatures that had sufficient data to assess (Figure [-@fig-topo]B, 
+Figure S3B, Table S13). [Replication strand asymmetry was less common
+than transcription strand asymmetry, and none of the tobacco-, UV-, or
+colibactin-associated signatures (C_ID3, C_ID13, C_ID18) showed it.]{.blue}
 ID_K, which [is enriched in tumors with POLE proofreading defects]{.yellow}, was consistently enriched for leading strand mutations. This
 is consistent with SBS signatures SBS10a and SBS10b, which are also
 driven by POLE proofreading defects, thus further supporting a
 link between POLE proofreading defects and leading-strand mutagenesis.
+[Problem: Figure 5B shows ID_K enriched on the lagging strand, which contradicts this sentence. Figure S3B and the pipeline output (02.repli.strand.odds_type.xlsx) show ID_K on the leading strand, and Figure 5B has Leading and Lagging swapped relative to them for 8 of its 9 non-Mix signatures. We are checking with Mo which labels are correct. Either Figure 5B or this paragraph will need correcting.]{.blue}
 
 ::: {.callout-note title="Reviewer note"}
 [Problem: Calling ID_N a defective-MMR signature contradicts the Results, which say ID_N occurs almost exclusively in MSS tumors. Proposed: Remove ID_N from the MMR group, e.g. "two defective MMR signatures (C_ID7 and ID_K) showed enrichment on the transcribed strand, whereas ID_N showed enrichment on the untranscribed strand".]{.blue}
@@ -825,21 +838,21 @@ future development of an even more informative indel taxonomy.
 # Materials and methods
 
 ## Data sources
-
 Somatic indel calls from the ICGC/TCGA (International Cancer Genome
 Consortium/The Cancer Genome Atlas) Pan-Cancer Analysis of Whole
 Genomes Consortium and associated clinical characteristics were
 obtained from the ICGC data portal
 (<https://dcc.icgc.org/releases/current/Projects/>, which has been
-retired. The data were downloaded on 9 May, 2024). Hartwig Medical
+retired. The data were downloaded on 9 May, 2024). 
+Hartwig Medical can be requested
 Foundation (Hartwig) through standardized procedures and request forms
-that can be found at
+at
 https://www.hartwigmedicalfoundation.nl/en/appyling-for-data/.
 Clinical traits such as cancer type, age and gender of the Hartwig
 genomes were taken from Table S16 in
 @priestleyPancancerWholegenomeAnalyses2019 and from the supplementary
-tables of @martinezjimenezPancancerWholegenomeComparison2023. The
-final sample metadata are provided in Table S18.
+tables of @martinezjimenezPancancerWholegenomeComparison2023. Table S18 in
+this study present the aggregated metadata used herein.
 
 ## De novo Mutational signature extraction
 
