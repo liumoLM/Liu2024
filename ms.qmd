@@ -33,6 +33,30 @@ format:
 # Numbers quoted inline in the text come from the supplementary tables built
 # in the code repository, via the list ms_num.
 source("~/github/Liu2026_code_and_data/ms_numbers.R")
+# Warn at render time if any table in Sup Tables/ no longer matches its
+# source in the code repository (mapping in sup_tables_manifest.tsv).
+source("check_sup_tables.R")
+sup_table_problems <- check_sup_tables()
+if (nrow(sup_table_problems) > 0) {
+  warning(
+    "Sup Tables/ out of sync with the code repo:\n",
+    paste0("  ", sup_table_problems$file, ": ", sup_table_problems$problem,
+           collapse = "\n"),
+    call. = FALSE, immediate. = TRUE
+  )
+}
+# Likewise warn if any figure in Sup Figures/ is older than one of its source
+# plots in the code repository (mapping in sup_figures_manifest.tsv).
+source("check_sup_figures.R")
+sup_figure_problems <- check_sup_figures()
+if (nrow(sup_figure_problems) > 0) {
+  warning(
+    "Sup Figures/ possibly stale relative to the code repo:\n",
+    paste0("  ", sup_figure_problems$file, ": ", sup_figure_problems$problem,
+           collapse = "\n"),
+    call. = FALSE, immediate. = TRUE
+  )
+}
 ```
 
 Mo Liu1\*#, Mi Ni Huang2\*, Xue Ming Wu1\*, Ying Yang1, Runtian Yao2,
@@ -527,10 +551,10 @@ damage [@islamUncoveringNovelMutational2022; @moodyMutationalSignaturesEsophagea
 
 We evaluated the interplay between the 83-type signatures we identified
 and several genomic topographical features.
-Transcription-coupled nucleotide excision repair is known to cause
-transcription strand asymmetries, since bulky DNA adducts on the
-transcribed strand of active genes are preferentially removed by this
-pathway [(add cite).]{.blue}
+Transcription-coupled nucleotide excision repair causes
+transcription strand asymmetries, since this pathway preferentially
+removes bulky DNA adducts on the transcribed strand of active genes
+[@mellonSelectiveRemovalTranscriptionblocking1987].
 There was evidence of transcriptional strand asymmetry in 17 out of the 21
 signatures that had sufficient data to assess (Figure [-@fig-topo]A, Figure S3A, Table S12). Signatures
 attributed to exogenous mutational processes, such as C_ID3 (tobacco
@@ -548,11 +572,9 @@ processes, enriched mutations on the untranscribed strand were
 observed for C_ID1 (slippage during DNA replication) and C_ID5
 (clock-like signature), while enriched mutations on the transcribed
 strand were observed for ID_F (topoisomerase-1 \[TOP1\] associated
-mutagenesis stemming from RNase H2 deficiency). [Interestingly, 3
-defective MMR signatures also showed transcription strand asymmetries
-in different directions, with two of them (C_ID7 and ID_K) having
-enriched mutations on the transcribed strand, and one of them (ID_N)]{.blue}
-having enriched mutations mainly on the untranscribed strand.
+mutagenesis stemming from RNase H2 deficiency). Two
+signatures associated with defective MMR, C_ID7 and ID_K,
+had transcription strand asymmetries.
 
 There was evidence of replication strand asymmetry in 12 out of the 26
 signatures that had sufficient data to assess (Figure [-@fig-topo]B, 
@@ -563,11 +585,7 @@ ID_K, which [is enriched in tumors with POLE proofreading defects]{.yellow}, was
 is consistent with SBS signatures SBS10a and SBS10b, which are also
 driven by POLE proofreading defects, thus further supporting a
 link between POLE proofreading defects and leading-strand mutagenesis.
-[Problem: Figure 5B shows ID_K enriched on the lagging strand, which contradicts this sentence. Figure S3B and the pipeline output (02.repli.strand.odds_type.xlsx) show ID_K on the leading strand, and Figure 5B has Leading and Lagging swapped relative to them for 8 of its 9 non-Mix signatures. We are checking with Mo which labels are correct. Either Figure 5B or this paragraph will need correcting.]{.blue}
-
-::: {.callout-note title="Reviewer note"}
-[Problem: Calling ID_N a defective-MMR signature contradicts the Results, which say ID_N occurs almost exclusively in MSS tumors. Proposed: Remove ID_N from the MMR group, e.g. "two defective MMR signatures (C_ID7 and ID_K) showed enrichment on the transcribed strand, whereas ID_N showed enrichment on the untranscribed strand".]{.blue}
-:::
+[Note: Figure 5 panels A to C are now built from the topography pipeline's labels (build_fig5/assign_asymmetry_type.R in the code repo), which also underlie Figure S3. The current hand-edited Figure 5 (main_figures/Figure5.pdf) agrees with them, including ID_K on the leading strand, except for two signatures. In panel B, ID_L is Leading in the paper figure but Lagging in the pipeline (its only cancer type with P < 0.05 is Pancreas, lagging). In panel C, ID_B is Intergenic in the paper figure but Mix by the labeling rule (8 cancer types with P < 0.05 are intergenic and 1, Breast, is genic). Figure 5 needs to be updated from build_fig5/Figure5ABC.pdf. Still to confirm with Mo: that the pipeline's leading/lagging orientation is correct.]{.blue}
 
 ::: {.callout-note title="Reviewer note"}
 [Problem: Stated as fact without citation. Proposed: Add a reference for the SBS7 strand bias mechanism, e.g. the COSMIC SBS7 topography or Alexandrov et al. 2020.]{.blue}

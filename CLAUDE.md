@@ -42,3 +42,21 @@ the relevant figure or table there (for example `build_fig5/` for Figure 5,
 `ID83_topography_analysis_code/` for the topography pipeline behind Table S12)
 and derive the number from it. When a number in `ms.qmd` disagrees with that
 repo, the repo wins and the manuscript is corrected.
+
+## Supplementary tables vs. the code repo
+
+`sup_tables_manifest.tsv` maps each file in `Sup Tables/` to its source in
+`~/github/Liu2026_code_and_data/` (blank if none). `Rscript check_sup_tables.R`
+compares them by cell contents, and `ms.qmd` runs the same check at render
+time. When a table is added, renamed, or renumbered, update the manifest.
+
+## Supplementary figures vs. the code repo
+
+`sup_figures_manifest.tsv` maps each file in `Sup Figures/` to the plots in
+`~/github/Liu2026_code_and_data/` it is built from, one row per source plot.
+The paper's figures are hand-assembled or edited from those plots, so
+`Rscript check_sup_figures.R` compares change times rather than contents. It
+flags a figure when a source plot's contents changed (git commit time,
+ignoring pure renames) after the paper's copy did. After checking a flagged
+figure and finding it needs no update, set `reviewed_through` to that date in
+the manifest. `ms.qmd` runs the same check at render time.
