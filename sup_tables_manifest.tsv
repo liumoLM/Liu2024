@@ -1,20 +1,20 @@
 paper_file	source_file	note
 table_s1_w_legend_2026_08_13.xlsx	build_sup_table_s1/table_s1_w_legend_2026_08_13.xlsx	Table S1. Built from build_sup_table_s1/sup_table_s1.xlsx plus a legend sheet.
-Table S2 mSigHdp_version_83_type_signatures.xlsx		No source in the code repo.
-Table S3 SigProfiler_version_83_type_signatures.xlsx		No source in the code repo.
-Table S4 mSigHdp_version_89_type_signatures.xlsx		No source in the code repo.
-Table S5 SigProfiler_version_89_type_signatures.xlsx		No source in the code repo.
-Table S6 mSigHdp_version_476_type_signatures.xlsx		No source in the code repo.
-Table S7 SigProfiler_version_476_type_signatures.xlsx		No source in the code repo.
-Table S8 Cosine similarity between mSigHdp and SigProfiler signatures.xlsx		No source in the code repo.
+Table S2 mSigHdp_version_83_type_signatures.xlsx	build_sup_table_s2/sup_table_s2_msighdp_83_type_signatures.xlsx	
+Table S3 SigProfiler_version_83_type_signatures.xlsx	build_sup_table_s3/sup_table_s3_sigprofiler_83_type_signatures.xlsx	
+Table S4 mSigHdp_version_89_type_signatures.xlsx	build_sup_table_s4/sup_table_s4_msighdp_89_type_signatures.xlsx	
+Table S5 SigProfiler_version_89_type_signatures.xlsx	build_sup_table_s5/sup_table_s5_sigprofiler_89_type_signatures.xlsx	
+Table S6 mSigHdp_version_476_type_signatures.xlsx	build_sup_table_s6/sup_table_s6_msighdp_476_type_signatures.xlsx	
+Table S7 SigProfiler_version_476_type_signatures.xlsx	build_sup_table_s7/sup_table_s7_sigprofiler_476_type_signatures.xlsx	
+Table S8 Cosine similarity between mSigHdp and SigProfiler signatures.xlsx	build_sup_table_s8/sup_table_s8_cosine_msighdp_vs_sigprofiler.xlsx	
 Table S9 POLD1 POLE proofreading domain mutations.xlsx	build_sup_table_s9/sup_table_s9_pol_proofreading.xlsx	
 Table S10 InsDel_N burden by MSI status.xlsx	build_sup_table_s10/sup_table_s10_insdel_N_burden.xlsx	
-Table S11 83-type and 89-type signature assignment.tsv		No source in the code repo in this format (build_fig_s1/liu_et_al_8[39]_assignment.tsv are related).
+Table S11 83-type and 89-type signature assignment.tsv	build_sup_table_s11/sup_table_s11_83_89_signature_assignment.tsv	
 Table S12 Assymetry odds ratio and pvalue for topography features in each evaluated cancer type..xlsx	build_sup_table_s12/sup_table_s12_topography_asymmetry.xlsx	
 Table S13 Slopes and P values of linear regression models for replication timing 83-type.xlsx	build_sup_table_s13/sup_table_s13_replication_timing_83.xlsx	Built from build_fig5/09_all_lm_trend.xlsx, whose generating code is not yet in the code repo.
 Table S14 Slopes and P values of linear regression models for replication timing 89-type.xlsx		No source in the code repo.
-Table S15 OR and pvalue of gender bias analysis.xlsx		No source in the code repo in this format (build_fig_s6/gender.bias.txt is related).
-Table S16 Age cancertype correlation table.xlsx		No source in the code repo in this format (build_fig_s6/correlation.between.age.and.signature.activity.txt is related).
+Table S15 OR and pvalue of gender bias analysis.xlsx	build_sup_table_s15/sup_table_s15_sex_bias.xlsx	
+Table S16 Age cancertype correlation table.xlsx	build_sup_table_s16/sup_table_s16_age_correlation.xlsx	
 Table S17 metadata of 6975 samples.xlsx		No source in the code repo.
 COSMICv3.6 ID topographical annotation.xlsx		Not a numbered table. No source in the code repo.
 tissue.DNA.region.Mutation_50cutoff.xlsx		Not a numbered table. No source in the code repo.

@@ -49,9 +49,15 @@ Run `Rscript check_main_figures.R`, `Rscript check_sup_figures.R`, and
    for C_ID13/ID_C, C_ID11/C_ID16, and C_ID9/ID_A), and any notes on how the
    panels were assembled. Put it in a new `build_fig_s2/` in the code repo
    and add it to `sup_figures_manifest.tsv`.
-4. Tables S2 to S8, S11, and S15 to S17 have no source in
-   `sup_tables_manifest.tsv` (S14 is covered by item 1). Go through
-   them and add sources where they exist.
+4. Table S17 (sample metadata) is only partly reproducible. Patient, age,
+   sex, MSI status, major cancer type, and cohort come from
+   `unified_indels_data/sample_info.tsv`, which also has 41 samples not in
+   S17. `mutation_burden` and the polyT ratio do not match the current
+   spectra (mutation_burden equals the spectrum total for only 486 of 6,975
+   tumors and is otherwise larger). They probably come from an earlier,
+   pre-cap-9 version of the data. With the current spectra, 44 tumors would
+   be routed differently between SigProfilerAssignment and mSigAct (methods,
+   "Table S17" paragraph). `MSIseq` and `Cancer Type` have no known source.
 5. Stray files in `Sup Tables/`: `tissue.DNA.region.{Mutation,Simulated}_50cutoff.xlsx`
    are now in the code repo (`ID83_topography_analysis_code/04_create4InfMatrix/`),
    and `COSMICv3.6 ID topographical annotation.xlsx` does not follow the
