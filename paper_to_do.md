@@ -9,22 +9,12 @@ http://8.138.15.71/
 
 # To do
 
-Steve submit updated mSigPlot to CRAN
-
-Steve submit mSigSpectra to CRAN
-
 Steve review Mini's methods -
-
-Steve ask mo how we do transcription strand bias
-
-Steve reivew subsection "Associations between indel signatures and SBS signatures"
 
 Steve Review subsection "Demographic Associations with Gender and Age"
 
-Xueming -- shiny app navigation issues; also, maybe add e.g. "loading..." or something
 
-Paper shiny app url: https://indelsigbrowser.shinyapps.io/main/
-Shiny app persistent doi: 10.5281/zenodo.20092288
+check Shiny app persistent doi: 10.5281/zenodo.20092288
 XmWU123 Github name
 
 
@@ -32,22 +22,19 @@ Steve: check "self" referencing from web page to shiny app doi
 
 steve check: Sup Fig 1 legend
 
-KIV figure 4 -- and the signature H proplem. Do a test on proportions?  
-
-KIV where to put "New sigs are rarer." or skip it?
-
-Steve writeup N (mostly nb -- sigpro, hdp, X 83, 89, 476 + Koh ID21) incorporate text currently on page 9
-
-Resubmit mSigPlot to CRAN
-Submit mSigSpectra to CRAN
-
 # To do: figures, sup figures, and sup tables vs. the code repo (2026-10-07)
 
 Run `Rscript check_main_figures.R`, `Rscript check_sup_figures.R`, and
 `Rscript check_sup_tables.R` to see the current state.
 
-1. Fig 4: `build_fig4/fig4_combined.pdf` changed 2026-08-15, after the paper's
-   copy, and the two files differ. Copy it over or review it.
+1. Ask Mini (email drafted 2026-10-07) for the missing replication-timing code
+   and data. No script in the code repo creates `09_barplot_data.xlsx` and
+   `09_all_lm_trend.xlsx` (inputs to Fig 5D and Fig S4, and probably the
+   source of Table S13), and there is no code for the 89-type
+   replication-timing analysis (Table S14). Also ask for the
+   `tissue.rtGroup.{Mutation,Simulated}_50cutoff.xlsx` matrices from r.04
+   and whether a script builds Table S12. When they arrive, add them to the
+   code repo and to the manifests.
 2. Fig S5: all four `build_fig_s5/F*.pdf` source plots changed 2026-08-15,
    after the paper's copy.
 3. Fig S6: both source plots changed 2026-08-14. The paper's copy is from
