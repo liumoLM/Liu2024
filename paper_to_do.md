@@ -27,14 +27,39 @@ steve check: Sup Fig 1 legend
 Run `Rscript check_main_figures.R`, `Rscript check_sup_figures.R`, and
 `Rscript check_sup_tables.R` to see the current state.
 
-1. Waiting on Mini (email sent 2026-10-07) for the missing replication-timing code
+1. Read Mo's email replies.
+2. Ask Mo how indels were labeled genic or intergenic (the `DNA.region`
+   column, G or I, in the annotated indel file read by r.01_createBed.R),
+   for example protein-coding gene bodies including introns, and from which
+   annotation (GENCODE version?). The code that makes this column is not in
+   the code repo. Then define genic and intergenic in the topography
+   methods in `ms.qmd`. Also ask for the genome build and SigProfilerSimulator
+   settings, to fill the placeholders in the green "Simulating synthetic
+   cancer datasets" paragraph (Mo already gave 10 simulations per tumor and
+   version 1.2.2). Both questions are in the draft email "Topography:
+   indels in genes on both strands". Also decide whether 10 simulations
+   per tumor, rather than the 100 Otlu et al. recommend, is acceptable (Mo
+   asked).
+3. Waiting on Mini (email sent 2026-10-07) for the missing replication-timing code
    and data. No script in the code repo creates `09_barplot_data.xlsx` and
    `09_all_lm_trend.xlsx` (inputs to Fig 5D and Fig S4, and probably the
    source of Table S13), and there is no code for the 89-type
    replication-timing analysis (Table S14). Also asked for the
    `tissue.rtGroup.{Mutation,Simulated}_50cutoff.xlsx` matrices from r.04.
    When they arrive, add them to the code repo and to the manifests.
-2. Waiting on Mo (email sent 2026-10-07) about Fig S5. The 83-type top row
+4. After Mini's replication-timing code arrives (item 3): decide how Fig S4
+   bar colors are assigned. `build_fig_s4/r.09_barplot_final.R` colors
+   signatures from four hand-written lists, not a rule. Options, using the
+   trend counts in `09_all_lm_trend.xlsx`: (A) green/yellow only if
+   increasing/decreasing in every evaluated cancer type, purple if flat in
+   most, blue otherwise (moves C_ID1, C_ID5, C_ID7, C_ID18 to purple,
+   matching the main text). (B) all three by majority (also moves C_ID4,
+   C_ID9, C_ID13, ID_B, ID_D, ID_G, ID_N to green and ID_E to yellow). State
+   the rule and tie-breaking in the Fig S4 legend. Also: add C_ID15, which
+   has a trend but is not plotted. Make purple (#b595bf) and blue (#797bb7)
+   easier to tell apart. Fix the text's "Four signatures were unaffected",
+   which lists five.
+5. Waiting on Mo (email sent 2026-10-07) about Fig S5. The 83-type top row
    is stale. Its category counts (for example
    mouse single-T deletions 370) match `build_fig_s5/F83.pdf` from before
    e6f1c34 (2026-08-14), which switched to
@@ -44,12 +69,12 @@ Run `Rscript check_main_figures.R`, `Rscript check_sup_figures.R`, and
    Asked Mo for any code that assembles Fig S5
    from its constituents, which have different aspect ratios, and which code
    made the top-row panels.
-3. Waiting on Mo (email sent 2026-10-07) for the code that makes the
+6. Waiting on Mo (email sent 2026-10-07) for the code that makes the
    constituent plots of Fig S2 (83-type, 89-type, and 476-type zoom panels
    for C_ID13/ID_C, C_ID11/C_ID16, and C_ID9/ID_A), and any notes on how the
    panels were assembled. Put it in a new `build_fig_s2/` in the code repo
    and add it to `sup_figures_manifest.tsv`.
-4. Table S17 (sample metadata) is only partly reproducible. Patient, age,
+7. Table S17 (sample metadata) is only partly reproducible. Patient, age,
    sex, MSI status, major cancer type, and cohort come from
    `unified_indels_data/sample_info.tsv`, which also has 41 samples not in
    S17. `mutation_burden` and the polyT ratio do not match the current
@@ -58,22 +83,11 @@ Run `Rscript check_main_figures.R`, `Rscript check_sup_figures.R`, and
    pre-cap-9 version of the data. With the current spectra, 44 tumors would
    be routed differently between SigProfilerAssignment and mSigAct (methods,
    "Table S17" paragraph). `MSIseq` and `Cancer Type` have no known source.
-5. Review the STAR Methods for the topography analysis.
-6. Cite Otlu et al. 2023, "Topography of mutational signatures in human
-   cancer", Cell Reports,
-   https://www.cell.com/cell-reports/fulltext/S2211-1247(23)00941-5,
-   DOI 10.1016/j.celrep.2023.112930 (https://doi.org/10.1016/j.celrep.2023.112930).
-7. Check the Otlu et al. code (SigProfilerTopography,
+8. Review the STAR Methods for the topography analysis.
+9. Check the Otlu et al. code (SigProfilerTopography,
    https://github.com/AlexandrovLab/SigProfilerTopography) to see whether
    they normalize indels to the pyrimidine strand, for example GAGAGA->GAGA
    to TCTCTC->TCTC, and compare with what we do.
-8. In the topography methods, cite SigProfilerSimulator for the simulated
-   genomes: Bergstrom et al. 2020, "Generating realistic null hypothesis of
-   cancer mutational landscapes using SigProfilerSimulator", BMC
-   Bioinformatics, https://pubmed.ncbi.nlm.nih.gov/33028213/,
-   DOI 10.1186/s12859-020-03772-3 (https://doi.org/10.1186/s12859-020-03772-3).
-9. In the topography methods, state that the simulated genomes are
-   available on request, or can be deposited in Zenodo on request.
 10. Later: Fig 6 panels A to C are built from `build_fig6/ID4_IDF_signature.pdf`
     and `build_fig6/sequence_logos.pdf` (checked 2026-10-07) and carry the
     same information, but they are not visually identical to the source

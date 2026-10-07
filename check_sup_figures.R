@@ -1,4 +1,4 @@
-# Check that the supplementary figures in "Sup Figures/" are not older than
+# Check that the supplementary figures in "sup_figs/" are not older than
 # their sources in the code repository (~/github/Liu2026_code_and_data).
 #
 # The paper's figures are assembled or edited by hand from the plots the code
@@ -15,7 +15,7 @@
 #   Rscript check_sup_figures.R [--code-repo <path>] [--manifest <path>]
 #
 # Exits with status 1 if any figure is possibly stale, if a file in
-# "Sup Figures/" is missing from the manifest, or if a file named in the
+# "sup_figs/" is missing from the manifest, or if a file named in the
 # manifest is missing. ms.qmd also calls check_sup_figures() at render time
 # and warns about any problem.
 
@@ -64,7 +64,7 @@ file_change_time <- function(repo, path) {
 check_sup_figures <- function(
     code_repo = "~/github/Liu2026_code_and_data",
     manifest = "sup_figures_manifest.tsv",
-    sup_dir = "Sup Figures") {
+    sup_dir = "sup_figs") {
   code_repo <- path.expand(code_repo)
   paper_repo <- system2("git", c("rev-parse", "--show-toplevel"), stdout = TRUE)
   sup_rel <- file.path(
@@ -118,7 +118,7 @@ check_sup_figures <- function(
 
 if (sys.nframe() == 0) {
   p <- argparser::arg_parser(
-    "Check Sup Figures/ against their sources in the code repo"
+    "Check sup_figs/ against their sources in the code repo"
   )
   p <- argparser::add_argument(
     p, "--code-repo", help = "Path to the code repository",

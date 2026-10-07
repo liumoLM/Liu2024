@@ -45,13 +45,13 @@ if (nrow(sup_table_problems) > 0) {
     call. = FALSE, immediate. = TRUE
   )
 }
-# Likewise warn if any figure in Sup Figures/ is older than one of its source
+# Likewise warn if any figure in sup_figs/ is older than one of its source
 # plots in the code repository (mapping in sup_figures_manifest.tsv).
 source("check_sup_figures.R")
 sup_figure_problems <- check_sup_figures()
 if (nrow(sup_figure_problems) > 0) {
   warning(
-    "Sup Figures/ possibly stale relative to the code repo:\n",
+    "sup_figs/ possibly stale relative to the code repo:\n",
     paste0("  ", sup_figure_problems$file, ": ", sup_figure_problems$problem,
            collapse = "\n"),
     call. = FALSE, immediate. = TRUE
@@ -1024,14 +1024,23 @@ tumors and mSigAct for high-TMB tumors.
 
 ## Simulating synthetic cancer datasets
 
-We generated synthetic cancer datasets in 83-type indels using
-SigProfilerSimulator
-(<https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-020-03772-3>).
+[We generated simulated indels for each tumor with SigProfilerSimulator
+version 1.2.2 [@bergstromGeneratingRealisticNull2020] in the 83-type
+classification, with 10 simulations per tumor (69,750 simulated
+genomes in total), on genome build [BUILD] and with [SETTINGS, for
+example which features of each tumor's mutations were preserved]. Each simulated indel was given the signature probabilities
+of the real indels of the same tumor and 83-type indel class. Simulated
+indels in a class that did not occur among the tumor's real indels, and
+simulated indels from tumors without signature probabilities, were
+removed. The simulated indels were then annotated for transcription
+strand, replication strand, and genic versus intergenic region in the
+same way as the real indels. The simulated genomes (about 3 GB
+compressed) are available on request.]{.green}
 
 ## Annotating somatic indels based on transcribed versus untranscribed strand
 
 We followed the method in
-(<https://doi.org/10.1016/j.celrep.2023.112930>). Briefly, somatic
+@otluTopographyMutationalSignatures2023. Briefly, somatic
 indels were called with respect to the + strand of the reference
 genome and further annotated in regard to the pyrimidine base(s) of
 the insertion/deletion. Thus, indels with only C or T bases were
@@ -1071,13 +1080,16 @@ region.
 ## Detecting strand asymmetries across cancer types
 
 Strand asymmetry analyses were based on the assignment of signature
-probabilities to each individual indel mutation. Only indels with the
-probability greater than or equal to 0.50 to a certain indel signature
+probabilities to each individual indel mutation. Only indels with
+probability greater than 0.5 of being due to a given indel signature
 were retained. For each indel signature and for all cancer types
 having this mutational signature, we retrieved the number of indels on
-each strand/region. In strand asymmetries analyses, only cancer types
-with at least 1,000 somatic mutations unambiguously attributed to an
-individual mutational signature were included.
+each strand/region. [For each feature, a cancer type was evaluated
+for a signature only if it had at least 1,000 real indels attributed to
+that signature (probability \> 0.5) that could be assigned to one of
+the two categories of the feature. Figure [-@fig-topo] and Figure S3
+show only evaluated cancer types. Table S12 reports the Fisher's exact
+test results for all cancer types and signatures.]{.green}
 
 For each strand asymmetry analyses (genic and intergenic region
 asymmetry, transcription strand asymmetry, replication strand
@@ -1093,17 +1105,24 @@ strand ratio = (+ strand_mutation_counts)·(- strand_mutation_counts)^-1^
 We calculated the odds ratio between the strand ratio of real somatic
 indels and the strand ratio of simulated somatic indels.
 
-We then calculated p values for the odds ratio using
-Fisher’s exact test. Only strand asymmetries with p value \< 0.05 were
-considered to show strand asymmetries.
+[We tested each cancer type and signature for asymmetry with Fisher's
+exact test on the 2×2 table of real and simulated indel counts (Table
+S12 reports the P values and the conditional maximum-likelihood odds
+ratios from this test). For Figure [-@fig-topo] and Figure S3, the
+magnitude of asymmetry is the ratio of the real strand ratio to the
+simulated strand ratio, inverted when needed so that it is ≥ 1,
+together with the direction of the asymmetry. A cancer type was
+considered to show asymmetry for a signature if P \< 0.05. Figure
+[-@fig-topo] summarizes each signature over the cancer types with
+P \< 0.05: it is labeled with the shared direction if they all agree,
+as "Mix" if they do not, and is not shown if no cancer type has
+P \< 0.05 and an odds ratio ≥ 1.1. P values were not adjusted for
+multiple testing.]{.green}
 
-For a given cancer type, for e.g. genic vs non-in a sup table
-
-genic non-genic
-
-real 100 600
-
-syn 100 300
+For example, for genic versus intergenic regions in one cancer type,
+the 2×2 table holds the numbers of real and of simulated indels
+attributed to the signature that fall in genic and in intergenic
+regions.
 
 ## Analyses of replication timing across cancer types
 
@@ -1113,23 +1132,26 @@ The replication time signals were sorted in a descending order and
 subsequently divided into deciles. Somatic indels were counted within
 the corresponding deciles based on their overlap with the replication
 domains in the examined deciles. As with other analyses, for each
-individual indel signature, the reported replic(ation timing analyses
+individual indel signature, the reported [replication timing analyses
 included only cancer types with at least 1,000 somatic mutations
-unambiguously attributed to it.
+unambiguously attributed to it. Cancer types below this minimum are
+labeled "None" in Table S13 and Figure [-@fig-topo]D.]{.green}
 
 Replication timing mutation counts were generated for both real and
 simulated somatic indels. To classify whether the replication timing
-mutation density was increasing, flat, or decreasing, two linear
-regression models were fitted to the values of the real somatic indels
-count *R* = (*R~1~, R~2~, R~3~, … R~10~*) and the values of simulated
-somatic indel counts S(X~1~, X~2~, X~3~, … X~10~), respectively. The
-two models are *lm(R \~ c )* and *lm(S \~ c)*, where replication
+mutation density was increasing, flat, or decreasing, [up to three
+linear regression models were fitted (lm models 1 to 3 in Table S13).
+The first two were fitted to the real somatic indel counts *R* =
+(*R~1~, R~2~, R~3~, … R~10~*) and to the simulated somatic indel counts
+*S* = (*S~1~, S~2~, S~3~, … S~10~*), respectively. These two models
+are *lm(R \~ c)* and *lm(S \~ c)*]{.green}, where replication
 timing denotes a vector c = (1,2,3 … 10).
 
 The replication timing trend for an 83-type signature was determined
 for both real and simulated data. An indel signature was considered to
 be generally unaffected by replication timing if the slope m was not
-statistically significant from a flat line. Otherwise, with the slope
+statistically significant from a flat line [(P ≥ 0.05; threshold to be
+confirmed against the code)]{.green}. Otherwise, with the slope
 m statistically significant from a flat line, an ID signature was
 considered to be increasing from early to late replicating regions if
 the slope m \> 0, and was considered to be decreasing from early to

@@ -52,7 +52,11 @@ time. When a table is added, renamed, or renumbered, update the manifest.
 
 ## Supplementary figures vs. the code repo
 
-`sup_figures_manifest.tsv` maps each file in `Sup Figures/` to the plots in
+The supplementary figures are in `sup_figs/`. The folder was renamed from
+`Sup Figures/` on 2026-10-07, so older notes, commits, and scripts may still
+use the old name.
+
+`sup_figures_manifest.tsv` maps each file in `sup_figs/` to the plots in
 `~/github/Liu2026_code_and_data/` it is built from, one row per source plot.
 The paper's figures are hand-assembled or edited from those plots, so
 `Rscript check_sup_figures.R` compares change times rather than contents. It

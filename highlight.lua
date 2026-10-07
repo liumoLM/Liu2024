@@ -1,6 +1,6 @@
--- Map span classes pink / yellow / blue to background highlights.
-local latex = { pink = "pink!45", yellow = "yellow!55", blue = "cyan!30" }
-local html  = { pink = "#ffc0cb", yellow = "#ffff99", blue = "#b3ecff" }
+-- Map span classes pink / yellow / blue / green to background highlights.
+local latex = { pink = "pink!45", yellow = "yellow!55", blue = "cyan!30", green = "green!25" }
+local html  = { pink = "#ffc0cb", yellow = "#ffff99", blue = "#b3ecff", green = "#c6efce" }
 function Span(el)
   for cls, col in pairs(latex) do
     if el.classes:includes(cls) then
