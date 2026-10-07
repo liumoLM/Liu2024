@@ -58,22 +58,26 @@ Run `Rscript check_main_figures.R`, `Rscript check_sup_figures.R`, and
    the rule and tie-breaking in the Fig S4 legend. Also: add C_ID15, which
    has a trend but is not plotted. Make purple (#b595bf) and blue (#797bb7)
    easier to tell apart. Fix the text's "Four signatures were unaffected",
-   which lists five.
-5. Waiting on Mo (email sent 2026-10-07) about Fig S5. The 83-type top row
-   is stale. Its category counts (for example
-   mouse single-T deletions 370) match `build_fig_s5/F83.pdf` from before
-   e6f1c34 (2026-08-14), which switched to
-   `mSigSpectra::annot_vcf_to_83_catalog(clip_le_9 = TRUE)`. The current
-   F83.pdf (297) agrees with the 89-type row. The 89-type and 476-type rows
-   match the current plots, which changed only in layout on 2026-08-15.
-   Asked Mo for any code that assembles Fig S5
-   from its constituents, which have different aspect ratios, and which code
-   made the top-row panels.
-6. Waiting on Mo (email sent 2026-10-07) for the code that makes the
-   constituent plots of Fig S2 (83-type, 89-type, and 476-type zoom panels
-   for C_ID13/ID_C, C_ID11/C_ID16, and C_ID9/ID_A), and any notes on how the
-   panels were assembled. Put it in a new `build_fig_s2/` in the code repo
-   and add it to `sup_figures_manifest.tsv`.
+   which lists five. Also: the bars sum all 21 cancer types in
+   `09_barplot_data.xlsx`, including those below the 1,000-mutation minimum
+   (trend "None") that are left out of the trend counts above each panel.
+   This is most of the plotted mutations for C_ID10 (69%), ID_F (62%), and
+   C_ID8 (55%). Sum only the cancer types with a trend, or say in the
+   legend that the bars include all cancer types.
+5. Waiting on Mo (email sent 2026-10-07) about Fig S5. Mo has no
+   assembly code, so we wrote `build_fig_s5/make_figure_s5_layout.R` in
+   the code repo, which builds `figure_s5_draft.pdf` in the paper's layout
+   from the current catalogs. The paper's `sup_figs/figure_s5.pdf` has a
+   stale 83-type top row (e.g. 271 single-T deletions and 253 single-T
+   insertions in the RNase H2 null cells, now 99 and 129). Sent Mo both
+   PDFs and asked Mo either to update the paper version with the correct
+   top row from the draft, or to edit the draft as needed. Replace
+   `sup_figs/figure_s5.pdf` with the result.
+6. Closed (2026-10-07): Fig S2. Mo has no assembly code, so we wrote
+   `build_fig_s2/make_figure_s2_layout.R` in the code repo. It builds
+   `figure_s2_draft.pdf` in the paper's layout from the Table S2, S4, and
+   S6 signatures. The paper's `sup_figs/figure_s2.pdf` is edited by hand
+   from the draft, as recorded in `sup_figures_manifest.tsv`.
 7. Table S17 (sample metadata) is only partly reproducible. Patient, age,
    sex, MSI status, major cancer type, and cohort come from
    `unified_indels_data/sample_info.tsv`, which also has 41 samples not in
@@ -93,6 +97,16 @@ Run `Rscript check_main_figures.R`, `Rscript check_sup_figures.R`, and
     same information, but they are not visually identical to the source
     plots. For example, the panel C logos are rescaled to 0-2 bits and the
     DNA diagrams are drawn by hand. Come back to this.
+11. Steve: add the computation of `dna.region` (G for genic, I for
+    intergenic) to mSigSpectra. ICAMS computes it in
+    `CreateOneColIDMatrix()` (`R/ID_functions.R`, about line 782) as G when
+    `trans.strand` is + or -, else I, and uses it to build the ID166
+    catalog. mSigSpectra only lists the name in `globalVariables()`
+    (`R/data_docs.R`), so it cannot annotate a VCF with `dna.region` or
+    build an ID166 catalog from one. The topography pipeline reads this
+    column ready-made (r.01_createBed.R through r.06_comupteOddsRatio.R,
+    Figure 5C), so this would also let the genic/intergenic labels be
+    regenerated from code in the repo (see item 2).
 
 # From here down old
 
