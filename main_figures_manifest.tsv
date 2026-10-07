@@ -1,0 +1,9 @@
+paper_file	source_file	reviewed_through	note
+fig1.pdf	build_fig1/fig1.pdf		Copy of the source.
+fig2_Cap9_2026.pdf			No source in the code repo.
+fig3_Cap9_2026.pdf			No source in the code repo.
+fig4_combined.pdf	build_fig4/fig4_combined.pdf		Built from the source, not a byte-for-byte copy.
+Figure5.pdf	build_fig5/Figure5.pdf		Copy of the source.
+Figure6-TOP1-TAM.pdf	build_fig6/ID4_IDF_signature.pdf		Assembled by hand from the build_fig6 plots.
+Figure6-TOP1-TAM.pdf	build_fig6/sequence_logos.pdf		Assembled by hand from the build_fig6 plots.
+Graphical abstract.v5.1200px.pdf			No source in the code repo.

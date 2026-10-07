@@ -59,6 +59,7 @@ file_change_time <- function(repo, path) {
 #' @param code_repo Path to the code repository.
 #' @param manifest Path to the manifest that maps paper figures to sources.
 #' @param sup_dir Directory holding the paper's supplementary figures.
+#'   check_main_figures.R calls this function with main_figures/ instead.
 #' @return A data frame with one row per problem found (zero rows if none).
 check_sup_figures <- function(
     code_repo = "~/github/Liu2026_code_and_data",
@@ -82,14 +83,14 @@ check_sup_figures <- function(
   present <- present[!dir.exists(file.path(sup_dir, present)) &
                        !startsWith(present, "~")]
   for (f in setdiff(present, man$paper_file)) {
-    add(f, "in Sup Figures/ but not in the manifest")
+    add(f, paste0("in ", sup_dir, "/ but not in the manifest"))
   }
 
   for (i in seq_len(nrow(man))) {
     paper <- man$paper_file[i]
     src <- man$source_file[i]
     if (!file.exists(file.path(sup_dir, paper))) {
-      add(paper, "in the manifest but missing from Sup Figures/")
+      add(paper, paste0("in the manifest but missing from ", sup_dir, "/"))
     } else if (nzchar(src)) {
       if (!file.exists(file.path(code_repo, src))) {
         add(paper, paste("source missing:", src))

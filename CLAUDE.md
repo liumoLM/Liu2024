@@ -60,3 +60,12 @@ flags a figure when a source plot's contents changed (git commit time,
 ignoring pure renames) after the paper's copy did. After checking a flagged
 figure and finding it needs no update, set `reviewed_through` to that date in
 the manifest. `ms.qmd` runs the same check at render time.
+
+## Main figures vs. the code repo
+
+`main_figures_manifest.tsv` maps each file at the top level of
+`main_figures/` to the plots in `~/github/Liu2026_code_and_data/` it is built
+from, in the same format as `sup_figures_manifest.tsv`.
+`Rscript check_main_figures.R` runs the same change-time comparison as
+`check_sup_figures.R`, and `ms.qmd` runs it at render time. When a main figure
+is added or renamed, update the manifest and `crop_figs.sh`.

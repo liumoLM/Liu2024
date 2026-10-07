@@ -2,7 +2,7 @@ paper_file	source_file	reviewed_through	note
 Figure_S1a.pdf	build_fig_s1/signature.assignment.pdf		Assembled from the source plot.
 Figure_S1b.pdf	build_fig_s1/signature.assignment.pdf		Assembled from the source plot.
 Figure S2.pdf			No source in the code repo.
-Figure S3.pdf	build_fig_s3/FigureS3.pdf		Source plus panel labels, panel titles removed.
+Figure S3.pdf	build_fig_s3/FigureS3.pdf		Copy of the source.
 Figure S4.pdf	build_fig_s4/FigureS4.pdf		Source with panels rearranged.
 Figure S5.pdf	build_fig_s5/F476.pdf		Assembled from the F*.pdf plots.
 Figure S5.pdf	build_fig_s5/F476_right.pdf		Assembled from the F*.pdf plots.
