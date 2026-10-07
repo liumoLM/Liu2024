@@ -94,7 +94,10 @@ Run `Rscript check_main_figures.R`, `Rscript check_sup_figures.R`, and
    Bone-SoftTissue are renamed Colon/Rectum, Head and neck, and Bone/Soft
    tissue (2026-10-07). S17 now has a "legend" sheet. Check its description
    of `mutation_burden` ("Number of somatic indels in the tumor") once the
-   source of that column is known.
+   source of that column is known. Overall, S17 needs a lot of work.
+   Decide whether we need it (probably yes, as an overall description of
+   the data set), and trace where each column's numbers come from,
+   ideally so that S17 can be built by a script in the code repo.
 8. Review the STAR Methods for the topography analysis.
 9. Check the Otlu et al. code (SigProfilerTopography,
    https://github.com/AlexandrovLab/SigProfilerTopography) to see whether
