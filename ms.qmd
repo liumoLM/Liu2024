@@ -1318,12 +1318,13 @@ classifications (Table S1).
 scheme**
 :::
 
-The x-axes represents indel categories and the y-axes indicate the
-proportion of each indel category within each signature. Signatures
-C_ID1 through C_ID23 match reference signatures in COSMIC 3.5 and
-follow the same numbering. For example C_ID1 matches ID1. The
-remaining signatures, ID_A through ID_O were not present in COSMIC
-3.5.
+The x-axes represent indel categories and the y-axes indicate the
+proportion of each indel category within each signature. C_ID1 is shown
+with full axis labels, and the remaining signatures are shown as
+thumbnails on the same scale of categories. Signatures C_ID1 through
+C_ID23 match reference signatures in COSMIC v3.5 and follow the same
+numbering. For example, C_ID1 matches ID1. The remaining signatures,
+ID_A through ID_N, were not present in COSMIC v3.5.
 
 {{< pagebreak >}}
 
@@ -1335,17 +1336,16 @@ scheme**
 :::
 
 The x-axes represent indel categories and the y-axes indicate the
-proportion of
-each indel category within each signature. For signatures that
-correspond to
-reference signatures in we use the same numbering and add suffixes (a,
-b, c, d)
-when a single COSMIC signature maps to multiple signatures in the
-89-type
-classification. The identifier prefix “InsDel” distinguish these
-signatures
-from signatures in COSMIC (prefix “ID”) and Koh et al., 2025 (prefix
-InD).
+proportion of each indel category within each signature. InsDel1a is
+shown with full axis labels, followed by thumbnails of the signatures
+that correspond to COSMIC reference signatures and then the signatures
+that are new. For signatures that correspond to COSMIC reference
+signatures, we use the same numbering and add suffixes (a, b, c) when a
+single COSMIC signature maps to multiple 89-type signatures. New
+signatures are lettered (InsDel_A to InsDel_N), with α and β
+distinguishing two signatures that share a letter. The prefix "InsDel"
+distinguishes these signatures from those in COSMIC (prefix "ID") and in
+@kohRedefinedInDelTaxonomy2025 (prefix "InD").
 
 {{< pagebreak >}}
 

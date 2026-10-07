@@ -69,3 +69,9 @@ from, in the same format as `sup_figures_manifest.tsv`.
 `Rscript check_main_figures.R` runs the same change-time comparison as
 `check_sup_figures.R`, and `ms.qmd` runs it at render time. When a main figure
 is added or renamed, update the manifest and `crop_figs.sh`.
+
+## The older/ folder
+
+Ignore everything under `older/` (and `main_figures/older/`). These are
+superseded files kept only for history. Do not use them as data sources or
+as references when checking figures, tables, or numbers.
