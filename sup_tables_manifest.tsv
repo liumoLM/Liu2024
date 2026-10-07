@@ -11,7 +11,7 @@ Table S9 POLD1 POLE proofreading domain mutations.xlsx	build_sup_table_s9/sup_ta
 Table S10 InsDel_N burden by MSI status.xlsx	build_sup_table_s10/sup_table_s10_insdel_N_burden.xlsx	
 Table S11 83-type and 89-type signature assignment.tsv		No source in the code repo in this format (build_fig_s1/liu_et_al_8[39]_assignment.tsv are related).
 Table S12 Assymetry odds ratio and pvalue for topography features in each evaluated cancer type..xlsx	build_sup_table_s12/sup_table_s12_topography_asymmetry.xlsx	
-Table S13 Slopes and P values of linear regression models for replication timing 83-type.xlsx		No source in the code repo.
+Table S13 Slopes and P values of linear regression models for replication timing 83-type.xlsx	build_sup_table_s13/sup_table_s13_replication_timing_83.xlsx	Built from build_fig5/09_all_lm_trend.xlsx, whose generating code is not yet in the code repo.
 Table S14 Slopes and P values of linear regression models for replication timing 89-type.xlsx		No source in the code repo.
 Table S15 OR and pvalue of gender bias analysis.xlsx		No source in the code repo in this format (build_fig_s6/gender.bias.txt is related).
 Table S16 Age cancertype correlation table.xlsx		No source in the code repo in this format (build_fig_s6/correlation.between.age.and.signature.activity.txt is related).
