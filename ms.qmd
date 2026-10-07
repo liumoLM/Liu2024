@@ -984,7 +984,7 @@ in alternative solutions.
 ## Match 83-type and 89-type signatures into reference signatures
 
 For 83-type signatures, the signatures were matched to previously
-identified COSMIC signatures (v3.5,
+identified COSMIC signatures (v3.6,
 <https://cancer.sanger.ac.uk/signatures/id/>). For 89-type signatures,
 the signatures supported by both mSigHdp and SigProfilerExtractor were
 matched to the signatures reported in Koh et al. A detailed comparison
@@ -1322,9 +1322,9 @@ The x-axes represent indel categories and the y-axes indicate the
 proportion of each indel category within each signature. C_ID1 is shown
 with full axis labels, and the remaining signatures are shown as
 thumbnails on the same scale of categories. Signatures C_ID1 through
-C_ID23 match reference signatures in COSMIC v3.5 and follow the same
+C_ID23 match reference signatures in COSMIC v3.6 and follow the same
 numbering. For example, C_ID1 matches ID1. The remaining signatures,
-ID_A through ID_N, were not present in COSMIC v3.5.
+ID_A through ID_N, were not present in COSMIC v3.6.
 
 {{< pagebreak >}}
 
