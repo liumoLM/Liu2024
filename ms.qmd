@@ -1057,6 +1057,16 @@ Indels in bidirectionally transcribed regions were ignored.
 
 [Note: The previous text said "+ strand indels ... were further subclassified as transcribed (template) if the gene's sense strand was on the + strand of the genome, or else untranscribed (sense)". That is the reverse of the code. In ID83_topography_analysis_code, r.03_mergeInf.R computes new.trans.strand = trans.strand × Strand, where trans.strand is the gene's strand and Strand is the pyrimidine strand (+, -, or Q for mixed), and r.06_comupteOddsRatio.R labels +1 as UnTranscribed and -1 as Transcribed. So a C/T indel on the + strand in a + strand gene is on the sense (untranscribed) strand, which is the standard convention. The code that computes the Strand column (/public/data/Topography_analysis/reference/single.indel.aggregate.strand.added.matrix.txt) is not in the code repo, so the "only C or T bases" rule above cannot be checked there. Confirm it with Mo, including which bases are examined (the inserted or deleted sequence only, or also the repeat unit).]{.blue}
 
+## Annotating somatic indels as genic or intergenic
+
+[Indels were annotated with the R package ICAMS
+(<https://github.com/steverozen/ICAMS>). An indel was labeled genic if
+it fell within the transcribed range (from the start to the end of the
+gene, including introns) of a gene with a Consensus CDS (CCDS) ID in
+GENCODE release 30 [(lifted over to GRCh37, if that is the genome build used)], on either strand. All other
+indels were labeled intergenic. The same gene annotation provides the
+gene strand used for the transcription-strand analysis.]{.green}
+
 ## Annotating somatic indels based on leading versus lagging replication strand
 
 Replication strand was determined by wavelet-smoothed

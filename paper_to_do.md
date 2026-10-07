@@ -28,13 +28,15 @@ Run `Rscript check_main_figures.R`, `Rscript check_sup_figures.R`, and
 `Rscript check_sup_tables.R` to see the current state.
 
 1. Read Mo's email replies.
-2. Ask Mo how indels were labeled genic or intergenic (the `DNA.region`
-   column, G or I, in the annotated indel file read by r.01_createBed.R),
-   for example protein-coding gene bodies including introns, and from which
-   annotation (GENCODE version?). The code that makes this column is not in
-   the code repo. Then define genic and intergenic in the topography
-   methods in `ms.qmd`. Also ask for the genome build and SigProfilerSimulator
-   settings, to fill the placeholders in the green "Simulating synthetic
+2. Ask Mo to confirm that the `dna.region` (G or I) and `trans.strand`
+   columns in the annotated indel file read by r.01_createBed.R came from
+   ICAMS, with which version and which transcript ranges
+   (`trans.ranges.GRCh37`, GENCODE 30 CCDS genes, or GRCh38). ICAMS sets
+   `dna.region` to G when `trans.strand` is + or -, else I
+   (`CreateOneColIDMatrix()`, `R/ID_functions.R`). The green "Annotating
+   somatic indels as genic or intergenic" methods paragraph in `ms.qmd`
+   assumes this and marks the genome build as unconfirmed. Also ask for
+   the genome build and SigProfilerSimulator settings, to fill the placeholders in the green "Simulating synthetic
    cancer datasets" paragraph (Mo already gave 10 simulations per tumor and
    version 1.2.2). Both questions are in the draft email "Topography:
    indels in genes on both strands". Also decide whether 10 simulations
@@ -86,7 +88,13 @@ Run `Rscript check_main_figures.R`, `Rscript check_sup_figures.R`, and
    tumors and is otherwise larger). They probably come from an earlier,
    pre-cap-9 version of the data. With the current spectra, 44 tumors would
    be routed differently between SigProfilerAssignment and mSigAct (methods,
-   "Table S17" paragraph). `MSIseq` and `Cancer Type` have no known source.
+   "Table S17" paragraph). `MSIseq` matches `MSIseq_MSI.H` in
+   `sample_info.tsv` for all 6,975 tumors. `Cancer Type` matches
+   `Original_Cancer_Type` there, except that Colon, Head, and
+   Bone-SoftTissue are renamed Colon/Rectum, Head and neck, and Bone/Soft
+   tissue (2026-10-07). S17 now has a "legend" sheet. Check its description
+   of `mutation_burden` ("Number of somatic indels in the tumor") once the
+   source of that column is known.
 8. Review the STAR Methods for the topography analysis.
 9. Check the Otlu et al. code (SigProfilerTopography,
    https://github.com/AlexandrovLab/SigProfilerTopography) to see whether
@@ -97,16 +105,6 @@ Run `Rscript check_main_figures.R`, `Rscript check_sup_figures.R`, and
     same information, but they are not visually identical to the source
     plots. For example, the panel C logos are rescaled to 0-2 bits and the
     DNA diagrams are drawn by hand. Come back to this.
-11. Steve: add the computation of `dna.region` (G for genic, I for
-    intergenic) to mSigSpectra. ICAMS computes it in
-    `CreateOneColIDMatrix()` (`R/ID_functions.R`, about line 782) as G when
-    `trans.strand` is + or -, else I, and uses it to build the ID166
-    catalog. mSigSpectra only lists the name in `globalVariables()`
-    (`R/data_docs.R`), so it cannot annotate a VCF with `dna.region` or
-    build an ID166 catalog from one. The topography pipeline reads this
-    column ready-made (r.01_createBed.R through r.06_comupteOddsRatio.R,
-    Figure 5C), so this would also let the genic/intergenic labels be
-    regenerated from code in the repo (see item 2).
 
 # From here down old
 
