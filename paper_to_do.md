@@ -45,11 +45,13 @@ Run `Rscript check_main_figures.R`, `Rscript check_sup_figures.R`, and
    Asked Mo for any code that assembles Fig S5
    from its constituents, which have different aspect ratios, and which code
    made the top-row panels.
-3. Fig 6: confirm that `build_fig6/ID4_IDF_signature.pdf` and
-   `build_fig6/sequence_logos.pdf`, which `main_figures_manifest.tsv` lists as
-   its sources, really are the plots the hand-assembled figure is built from.
-4. Figs 2, 3, S2, and the graphical abstract have no source in the code repo.
-   Decide whether they need one.
+3. Waiting on Mo (email sent 2026-10-07) for the code that makes the
+   constituent plots of Fig S2 (83-type, 89-type, and 476-type zoom panels
+   for C_ID13/ID_C, C_ID11/C_ID16, and C_ID9/ID_A), and any notes on how the
+   panels were assembled. Put it in a new `build_fig_s2/` in the code repo
+   and add it to `sup_figures_manifest.tsv`.
+4. Figs 2 and 3 have no source in the code repo. Decide whether they need
+   one.
 5. Table S12 (topography odds ratios and P values) has no source in
    `sup_tables_manifest.tsv`. It should map to the r.05 and r.06 outputs in
    `build_fig_s3/`.
@@ -80,6 +82,11 @@ Run `Rscript check_main_figures.R`, `Rscript check_sup_figures.R`, and
     DOI 10.1186/s12859-020-03772-3 (https://doi.org/10.1186/s12859-020-03772-3).
 14. In the topography methods, state that the simulated genomes are
     available on request, or can be deposited in Zenodo on request.
+15. Later: Fig 6 panels A to C are built from `build_fig6/ID4_IDF_signature.pdf`
+    and `build_fig6/sequence_logos.pdf` (checked 2026-10-07) and carry the
+    same information, but they are not visually identical to the source
+    plots. For example, the panel C logos are rescaled to 0-2 bits and the
+    DNA diagrams are drawn by hand. Come back to this.
 
 # From here down old
 
