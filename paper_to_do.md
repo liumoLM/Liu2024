@@ -49,37 +49,33 @@ Run `Rscript check_main_figures.R`, `Rscript check_sup_figures.R`, and
    for C_ID13/ID_C, C_ID11/C_ID16, and C_ID9/ID_A), and any notes on how the
    panels were assembled. Put it in a new `build_fig_s2/` in the code repo
    and add it to `sup_figures_manifest.tsv`.
-4. Figs 2 and 3 have no source in the code repo. Decide whether they need
-   one.
-5. Table S13 (replication-timing slopes) has no source in the manifest. It
-   probably comes from `build_fig5/09_all_lm_trend.xlsx`. Confirm and add it.
-6. Tables S2 to S8, S11, and S15 to S17 have no source in
-   `sup_tables_manifest.tsv` (S13 and S14 are covered by item 1). Go through
+4. Tables S2 to S8, S11, and S15 to S17 have no source in
+   `sup_tables_manifest.tsv` (S14 is covered by item 1). Go through
    them and add sources where they exist.
-7. Stray files in `Sup Tables/`: `tissue.DNA.region.{Mutation,Simulated}_50cutoff.xlsx`
+5. Stray files in `Sup Tables/`: `tissue.DNA.region.{Mutation,Simulated}_50cutoff.xlsx`
    are now in the code repo (`ID83_topography_analysis_code/04_create4InfMatrix/`),
    and `COSMICv3.6 ID topographical annotation.xlsx` does not follow the
    table naming. Remove or rename them.
-8. Replication strand text in `ms.qmd`: "12 out of the 26 signatures with
+6. Replication strand text in `ms.qmd`: "12 out of the 26 signatures with
    sufficient data". The 12 matches the Fig 5 inputs, but the 26 still needs
    to be derived from the r.06 outputs.
-9. Review the STAR Methods for the topography analysis.
-10. Cite Otlu et al. 2023, "Topography of mutational signatures in human
-    cancer", Cell Reports,
-    https://www.cell.com/cell-reports/fulltext/S2211-1247(23)00941-5,
-    DOI 10.1016/j.celrep.2023.112930 (https://doi.org/10.1016/j.celrep.2023.112930).
-11. Check the Otlu et al. code (SigProfilerTopography,
-    https://github.com/AlexandrovLab/SigProfilerTopography) to see whether
-    they normalize indels to the pyrimidine strand, for example GAGAGA->GAGA
-    to TCTCTC->TCTC, and compare with what we do.
-12. In the topography methods, cite SigProfilerSimulator for the simulated
+7. Review the STAR Methods for the topography analysis.
+8. Cite Otlu et al. 2023, "Topography of mutational signatures in human
+   cancer", Cell Reports,
+   https://www.cell.com/cell-reports/fulltext/S2211-1247(23)00941-5,
+   DOI 10.1016/j.celrep.2023.112930 (https://doi.org/10.1016/j.celrep.2023.112930).
+9. Check the Otlu et al. code (SigProfilerTopography,
+   https://github.com/AlexandrovLab/SigProfilerTopography) to see whether
+   they normalize indels to the pyrimidine strand, for example GAGAGA->GAGA
+   to TCTCTC->TCTC, and compare with what we do.
+10. In the topography methods, cite SigProfilerSimulator for the simulated
     genomes: Bergstrom et al. 2020, "Generating realistic null hypothesis of
     cancer mutational landscapes using SigProfilerSimulator", BMC
     Bioinformatics, https://pubmed.ncbi.nlm.nih.gov/33028213/,
     DOI 10.1186/s12859-020-03772-3 (https://doi.org/10.1186/s12859-020-03772-3).
-13. In the topography methods, state that the simulated genomes are
+11. In the topography methods, state that the simulated genomes are
     available on request, or can be deposited in Zenodo on request.
-14. Later: Fig 6 panels A to C are built from `build_fig6/ID4_IDF_signature.pdf`
+12. Later: Fig 6 panels A to C are built from `build_fig6/ID4_IDF_signature.pdf`
     and `build_fig6/sequence_logos.pdf` (checked 2026-10-07) and carry the
     same information, but they are not visually identical to the source
     plots. For example, the panel C logos are rescaled to 0-2 bits and the
