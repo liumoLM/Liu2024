@@ -556,24 +556,78 @@ transcription strand asymmetries, since this pathway preferentially
 removes bulky DNA adducts on the transcribed strand of active genes
 [@mellonSelectiveRemovalTranscriptionblocking1987].
 There was evidence of transcriptional strand asymmetry in 17 out of the 21
-signatures with sufficient data to assess (Figure [-@fig-topo]A, Figure S3A, Table S12). [Signatures
+signatures with sufficient data to assess (Figure [-@fig-topo]A, Figure S3A, Table S12).
+Signatures
 attributed to exogenous mutational processes, such as C_ID3 (tobacco
 smoking exposure) and C_ID18
 (colibactin exposure), consistently showed transcription strand bias
 that could be explained by transcription-coupled repair of bulky
-adducts on guanines (tobacco) or adenines (colibactin).]{.blue}
-[C_ID14, whose etiology is unknown but which is strongly
+adducts on guanines (tobacco) or adenines (colibactin),
+which accords with the likely mechanisms of the correspoing
+SBS mutational signatures.
+C_ID14, which is of unknown etiology but strongly
 correlated with SBS93 (see *Associations between indel signatures and
 SBS signatures*), also showed transcription strand bias, suggesting
 that it may also arise from DNA damage subject to
-transcription-coupled repair.]{.blue}
-[Note: SBS93 is mostly T>C, T>G, and T>A (69% of the COSMIC v3.4 profile, <https://cancer.sanger.ac.uk/signatures/sbs/sbs93/>). Islam et al. 2022 (<https://doi.org/10.1016/j.xgen.2022.100179>) describe it as "characterized by T>C and T>G mutations with a strand asymmetry consistent with damage on pyrimidines for TpTpA contexts". So the published interpretation is thymine damage, not purine damage. We have not checked this against the SBS93 strand-resolved profile ourselves. C_ID14 itself is 55% INS:C:1:0 (insertion of a single C outside a C tract, Table S2), and the pipeline labels it Transcribed, meaning the inserted C is on the transcribed strand. An inserted base is not the damaged base, so C_ID14's strand bias does not by itself tell us which base was adducted. That is why the sentence above does not name one.]{.blue}
-[Note: Flanking bases of the C insertions in C_ID14. Orientation: in mSigSpectra (categorize_1_justified_indel.R, lines 181-185), a 1-base indel of A or G is reverse complemented and its flanks are swapped, so 476-type contexts are always written 5' to 3' on the strand carrying the C or T. Signature: in InsDel14, the 476-type counterpart of C_ID14 (Table S6), single-C insertions outside a C tract make up 42% of the signature. Within those, A[Ins(C)]A accounts for 61%, A[Ins(C)]T for 31%, and T[Ins(C)]T for 6%. Tumor: CPCT02340014T has all of its indel exposure assigned to C_ID14 in Table S11. Its annotated indel VCF (fmh-unfiltered_vcfs/CPCT02340014T.annotated.indel.vcf.gz, examined with mSigSpectra::build_one_file_rosetta() and its internal .revcomp_single_tc_long_visual()) has 4,029 indels, of which 3,425 are PASS. All 1,600 Ins(C):R0 indels are PASS, so they are 47% of the PASS indels. On the C strand, 91% of these C's are preceded by a run of at least 4 A's (12 C's follow a run of exactly 3 A's, 331 a run of 4, and 534 a run of 5), and 85% are followed by 0 to 2 A's. So the dominant event is insertion of a C at or near the 3' end of a poly-A tract of 4 or more, which on the other strand is insertion of a G at or near the 5' end of a poly-T tract. A[Ins(C)]A and A[Ins(C)]T are the same event, differing only in whether the C lands just before or just after the last A. Interpretation: the event involves a poly-T tract, which is consistent with Islam et al. 2022's reading of SBS93 as thymine damage at TpTpA (<https://doi.org/10.1016/j.xgen.2022.100179>), but it is also consistent with polymerase slippage or misincorporation at a homopolymer boundary. The pipeline labels C_ID14 Transcribed, which puts the inserted C on the transcribed strand and the poly-T tract on the untranscribed strand. If the poly-T tract carries the lesion, that is the strand where damage would persist after transcription-coupled repair. Open points: (1) Table S11 gives CPCT02340014T a C_ID14 exposure of 6,520, but its catalog has 3,260 indels. This is because the exposures were fit to the 172-type catalog (83-type and 89-type stacked), which counts each indel twice. See the note on Table S11 totals. (2) Whether the lesion is on the poly-T strand is speculative.]{.blue}
+transcription-coupled repair.
+
+::: {.callout-note title="Note on C_ID14, 2026-10-06"}
+[Note about C_ID14, probably incorporate into text in simplified form: SBS93 is mostly T>C, T>G, and T>A (69% of the COSMIC v3.4 profile, <https://cancer.sanger.ac.uk/signatures/sbs/sbs93/>). Islam et al. 2022 (<https://doi.org/10.1016/j.xgen.2022.100179>) describe it as "characterized by T>C and T>G mutations with a strand asymmetry consistent with damage on pyrimidines for TpTpA contexts". So the published interpretation is thymine damage, not purine damage.
+C_ID14 itself is 55% INS:C:1:0 (insertion of a single C outside a C tract, Table S2), and the pipeline labels it Transcribed, meaning the inserted C is on the transcribed strand. An inserted base is not the damaged base, so C_ID14's strand bias does not by itself tell us which base was adducted. That is why the sentence above does not name one.]{.blue}
+
+[Note about flanking bases of the C insertions in C_ID14: Orientation: in mSigSpectra (categorize_1_justified_indel.R, lines 181-185), a 1-base indel of A or G is reverse complemented and its flanks are swapped, so 476-type contexts are always written 5' to 3' on the strand carrying the C or T. Signature: in InsDel14, the 476-type counterpart of C_ID14 (Table S6), single-C insertions outside a C tract make up 42% of the signature. Within those, A[Ins(C)]A accounts for 61%, A[Ins(C)]T for 31%, and T[Ins(C)]T for 6%. Tumor: CPCT02340014T has all of its indel exposure assigned to C_ID14 in Table S11. Its annotated indel VCF (fmh-unfiltered_vcfs/CPCT02340014T.annotated.indel.vcf.gz, examined with mSigSpectra::build_one_file_rosetta() and its internal .revcomp_single_tc_long_visual()) has 4,029 indels, of which 3,425 are PASS. All 1,600 Ins(C):R0 indels are PASS, so they are 47% of the PASS indels. **On the C strand, 91% of these C's are preceded by a run of at least 4 A's (12 C's follow a run of exactly 3 A's, 331 a run of 4, and 534 a run of 5), and 85% are followed by 0 to 2 A's.** 
+So the dominant event is insertion of a C at or near the 3' end of a poly-A tract of 4 or more. On the other strand, this is insertion of a G at or near the 5' end of a poly-T tract. A[Ins(C)]A and A[Ins(C)]T are the same kind of event. They differ only in whether the C lands just before or just after the last A.]{.blue}
+
+[The topography pipeline labels C_ID14 Transcribed. This puts the inserted C, and the poly-A tract next to it, on the transcribed strand, and the poly-T tract on the untranscribed strand. There are two possible explanations. One is that the C insertions arise from lesions on the poly-T strand. The other is that they arise from polymerase misincorporation or slippage at the boundaries of poly-T tracts, without DNA damage.]{.blue}
+
+[The transcription strand asymmetry itself favors the first explanation. Transcription-coupled nucleotide excision repair removes lesions from the transcribed strand. Lesions that persist, and the mutations they cause, are therefore enriched on the untranscribed strand, which is where the poly-T tract is. 
+We are unaware of any a reason
+the polymerase errors at homopolymer boundaries would differ between the transcribed and untranscribed strands. 
+
+We note that C_ID14 has the strongest transcription strand asymmetry in Figure 5A, with odds ratios up to 1.5 to 1.75.]{.blue}
+
+[The correlation of C_ID14 with SBS93 is consistent with this. Islam et al. 2022 (<https://doi.org/10.1016/j.xgen.2022.100179>) describe SBS93 as having "a strand asymmetry consistent with damage on pyrimidines for TpTpA contexts". This points to damage on thymines, although they do not identify the lesion or say that it is a bulky adduct. The correlation also does not by itself show that C_ID14 and SBS93 have the same cause.]{.blue}
+
+[If C_ID14 and SBS93 share a lesion, the C insertions occur at the opposite end of the poly-T tract from the TpTpA position that Islam et al. associate with SBS93 damage (see the backup material below).]{.blue}
+
+
+[Backup material, possibly for a supplementary note: where an SBS93-type lesion would be relative to the C_ID14 insertion. Example with a run of 5 and the C inserted just before the last A:]{.blue}
+
+```
+                 left end                      right end
+                    |                              |
+ top     5'-  X  [ A  A  A  A  A ] C  A  ...  -3'   C strand: on the TRANSCRIBED strand
+                    :  :  :  :  :   :  :
+ bottom  3'-  X' [ T  T  T  T  T ] G  T  ...  -5'   poly-T strand: on the UNTRANSCRIBED strand
+                    ^                 ^
+                    |                 |
+     (1) SBS93-type damaged T        (2) where C_ID14 adds the extra base
+         (TpTpA context)                 (C on top, G on bottom)
+```
+
+[The bottom strand runs 5' to 3' from right to left. Read in that direction it is ... T G T T T T T X' ...]{.blue}
+
+
+[(1) Where the SBS93 lesion would be. Islam et al. place the SBS93 damage on the middle T of a TpTpA, which is a T with another T on its 5' side and an A on its 3' side. On the bottom strand, 3' is to the left. So the only T in the run that can have an A on its 3' side is the leftmost one, and only if X' is A. That puts the SBS93-type damaged T at the left end of the run.]{.blue}
+
+[(2) Where C_ID14 adds a base. The extra C (G on the bottom strand) is at the right end of the run.]{.blue}
+
+[If the poly-T strand is the template, the new top strand is made from left to right. The polymerase would pass the SBS93-type position (1) first, copy the rest of the run, and add the extra C at (2), about 5 bases later.]{.blue}
+
+[This matters only if C_ID14 and SBS93 have the same lesion. SBS93's TpTpA context is what places that lesion at the left end. If the lesion behind C_ID14 is a damaged T at or next to position (2), there is no mismatch. Nothing about the strand asymmetry requires the lesion to be at a TpTpA. To check: the bases flanking the poly-T tract in the CPCT02340014T VCF.]{.blue}
+:::
+
+
 Another exogenous
-mutational signature C_ID13, which is attributed to UV exposure,
-showed enrichment [on]{.pink} the untranscribed strand
-[@vrielingDNAStrandSpecificity1989]. [This is because UV
-damage occurs on cytosine rather than guanine.]{.blue} In
+mutational signature C_ID13, 
+which is attributed to UV exposure,
+consistently showed transcription strand bias
+that could be explained by transcription-coupled repair of damaged cytosines,
+which accords with the mechanisms of the correspoing
+SBS mutational signatures
+[@vrielingDNAStrandSpecificity1989]. 
+
+In
 83-type signatures associated with defective endogenous mutational
 processes, enriched mutations on the untranscribed strand were
 observed for C_ID1 (slippage during DNA replication) and C_ID5
