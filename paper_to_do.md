@@ -32,9 +32,8 @@ Run `Rscript check_main_figures.R`, `Rscript check_sup_figures.R`, and
    `09_all_lm_trend.xlsx` (inputs to Fig 5D and Fig S4, and probably the
    source of Table S13), and there is no code for the 89-type
    replication-timing analysis (Table S14). Also asked for the
-   `tissue.rtGroup.{Mutation,Simulated}_50cutoff.xlsx` matrices from r.04
-   and whether a script builds Table S12. When they arrive, add them to the
-   code repo and to the manifests.
+   `tissue.rtGroup.{Mutation,Simulated}_50cutoff.xlsx` matrices from r.04.
+   When they arrive, add them to the code repo and to the manifests.
 2. Waiting on Mo (email sent 2026-10-07) about Fig S5. The 83-type top row
    is stale. Its category counts (for example
    mouse single-T deletions 370) match `build_fig_s5/F83.pdf` from before
@@ -52,37 +51,35 @@ Run `Rscript check_main_figures.R`, `Rscript check_sup_figures.R`, and
    and add it to `sup_figures_manifest.tsv`.
 4. Figs 2 and 3 have no source in the code repo. Decide whether they need
    one.
-5. Table S12 (topography odds ratios and P values) has no source in
-   `sup_tables_manifest.tsv`. It should map to the r.05 and r.06 outputs in
-   `build_fig_s3/`.
-6. Table S13 (replication-timing slopes) has no source in the manifest. It
+5. Table S13 (replication-timing slopes) has no source in the manifest. It
    probably comes from `build_fig5/09_all_lm_trend.xlsx`. Confirm and add it.
-7. 14 more supplementary tables have no source in the manifest. Go through
+6. Tables S2 to S8, S11, and S15 to S17 have no source in
+   `sup_tables_manifest.tsv` (S13 and S14 are covered by item 1). Go through
    them and add sources where they exist.
-8. Stray files in `Sup Tables/`: `tissue.DNA.region.{Mutation,Simulated}_50cutoff.xlsx`
+7. Stray files in `Sup Tables/`: `tissue.DNA.region.{Mutation,Simulated}_50cutoff.xlsx`
    are now in the code repo (`ID83_topography_analysis_code/04_create4InfMatrix/`),
    and `COSMICv3.6 ID topographical annotation.xlsx` does not follow the
    table naming. Remove or rename them.
-9. Replication strand text in `ms.qmd`: "12 out of the 26 signatures with
+8. Replication strand text in `ms.qmd`: "12 out of the 26 signatures with
    sufficient data". The 12 matches the Fig 5 inputs, but the 26 still needs
    to be derived from the r.06 outputs.
-10. Review the STAR Methods for the topography analysis.
-11. Cite Otlu et al. 2023, "Topography of mutational signatures in human
+9. Review the STAR Methods for the topography analysis.
+10. Cite Otlu et al. 2023, "Topography of mutational signatures in human
     cancer", Cell Reports,
     https://www.cell.com/cell-reports/fulltext/S2211-1247(23)00941-5,
     DOI 10.1016/j.celrep.2023.112930 (https://doi.org/10.1016/j.celrep.2023.112930).
-12. Check the Otlu et al. code (SigProfilerTopography,
+11. Check the Otlu et al. code (SigProfilerTopography,
     https://github.com/AlexandrovLab/SigProfilerTopography) to see whether
     they normalize indels to the pyrimidine strand, for example GAGAGA->GAGA
     to TCTCTC->TCTC, and compare with what we do.
-13. In the topography methods, cite SigProfilerSimulator for the simulated
+12. In the topography methods, cite SigProfilerSimulator for the simulated
     genomes: Bergstrom et al. 2020, "Generating realistic null hypothesis of
     cancer mutational landscapes using SigProfilerSimulator", BMC
     Bioinformatics, https://pubmed.ncbi.nlm.nih.gov/33028213/,
     DOI 10.1186/s12859-020-03772-3 (https://doi.org/10.1186/s12859-020-03772-3).
-14. In the topography methods, state that the simulated genomes are
+13. In the topography methods, state that the simulated genomes are
     available on request, or can be deposited in Zenodo on request.
-15. Later: Fig 6 panels A to C are built from `build_fig6/ID4_IDF_signature.pdf`
+14. Later: Fig 6 panels A to C are built from `build_fig6/ID4_IDF_signature.pdf`
     and `build_fig6/sequence_logos.pdf` (checked 2026-10-07) and carry the
     same information, but they are not visually identical to the source
     plots. For example, the panel C logos are rescaled to 0-2 bits and the
