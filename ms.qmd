@@ -567,7 +567,7 @@ Transcription-coupled nucleotide excision repair causes
 transcription strand asymmetries, since this pathway preferentially
 removes bulky DNA adducts on the transcribed strand of active genes
 [@mellonSelectiveRemovalTranscriptionblocking1987].
-There was evidence of transcriptional strand asymmetry in 17 out of the 21
+There was evidence of transcriptional strand asymmetry in `r ms_num$topo$trans_n_asymmetric` out of the `r ms_num$topo$trans_n_sufficient`
 signatures with sufficient data to assess (Figure [-@fig-topo]A, Figure S3A, Table S12).
 Signatures
 attributed to exogenous mutational processes, such as C_ID3 (tobacco
@@ -653,7 +653,7 @@ had transcription strand asymmetries.
 
 [Note: What the strand labels mean in terms of bases for each signature. In ID83 labels, the last number is the length of the homopolymer before the indel minus 1 for deletions, and the length of the homopolymer for insertions (mSigSpectra gen_83_type_string.R). Strand labels come from build_fig5/trans.strand.cancer_proportion.xlsx, and "on strand X" means the C or T bases of the indel are on strand X. C_ID13 (UV, Untranscribed): 46% single-T deletions, mostly DEL:T:1:1 (29%), deletion of one T from a TT. So the TpT, the classic UV dimer site, is on the untranscribed strand. Here the counted pyrimidines are the damaged bases, so this matches damage persisting on the untranscribed strand after transcription-coupled repair. C_ID1 (replication slippage, Untranscribed): 60% single-T insertions, mostly INS:T:1:5+ (56%), a T added to a poly-T tract of 5 or more. So the poly-T tract that gained a T is on the untranscribed strand, and the poly-A tract that gained an A is on the transcribed strand. No DNA damage is implied. C_ID5 (clock-like, Untranscribed): spread out. Single-T deletions are 36% (DEL:T:1:0 to 1:3, i.e. from T runs of 1 to 4), single-C deletions 15%, microhomology deletions 15%, single-T insertions 12%. The microhomology and longer deletions are only counted if they contain only pyrimidines or only purines. ID_F (TOP1/RNase H2, Transcribed): mostly 2-bp deletions, DEL:MH:2:1 (25%) and DEL:repeats:2:0 to 2:2 (32%). A 2-bp deletion is counted only if both bases are pyrimidines or both are purines, so mixed deletions such as TG or CA are excluded from the strand test. We do not yet know what fraction of ID_F indels were counted. C_ID7 (defective MMR, Transcribed): 42% single-C deletions, mostly from C tracts of 6 or more (DEL:C:1:5+, 24%) or 5 (DEL:C:1:4, 10%), plus single-T deletions from T tracts of 5 (DEL:T:1:4, 10%). So the poly-C or poly-T tract that lost a base is on the transcribed strand, and the poly-G or poly-A tract on the untranscribed strand. ID_K (POLE, Transcribed): 80% single-T deletions, mostly from T tracts of 5 (DEL:T:1:4, 48%) or 4 (DEL:T:1:3, 24%). So the poly-T tract that lost a T is on the transcribed strand, and the poly-A tract on the untranscribed strand. For C_ID1, C_ID7, and ID_K, the result is a statement about which strand carries the poly-T (or poly-C) tract, not about damage. Signature compositions are from Table S2.]{.blue}
 
-There was evidence of replication strand asymmetry in 12 out of the 26
+There was evidence of replication strand asymmetry in `r ms_num$topo$repli_n_asymmetric` out of the `r ms_num$topo$repli_n_sufficient`
 signatures with sufficient data to assess (Figure [-@fig-topo]B, 
 Figure S3B, Table S12). [Replication strand asymmetry was less common
 than transcription strand asymmetry, and none of the tobacco-, UV-, or
@@ -666,8 +666,8 @@ link between POLE proofreading defects and leading-strand mutagenesis.
 
 We also examined the mutation enrichment of 83-type signatures in
 genic and intergenic regions (Figure S3C). Most signatures showed
-mutation bias towards intergenic regions, while 6 signatures showed
-enrichment in genic regions (Figure [-@fig-topo]C). Among the 6
+mutation bias towards intergenic regions, while `r ms_num$topo$region_n_genic` signatures showed
+enrichment in genic regions (Figure [-@fig-topo]C). Among the `r ms_num$topo$region_n_genic`
 signatures, [three were]{.pink} associated with defective endogenous
 mutational processes, including C_ID8 (repair of DNA double strand
 breaks by NHEJ), [C_ID17 (]{.pink}TOP2A K743N mediated mutagenesis) and ID_F

@@ -58,26 +58,23 @@ Run `Rscript check_main_figures.R`, `Rscript check_sup_figures.R`, and
    pre-cap-9 version of the data. With the current spectra, 44 tumors would
    be routed differently between SigProfilerAssignment and mSigAct (methods,
    "Table S17" paragraph). `MSIseq` and `Cancer Type` have no known source.
-5. Replication strand text in `ms.qmd`: "12 out of the 26 signatures with
-   sufficient data". The 12 matches the Fig 5 inputs, but the 26 still needs
-   to be derived from the r.06 outputs.
-6. Review the STAR Methods for the topography analysis.
-7. Cite Otlu et al. 2023, "Topography of mutational signatures in human
+5. Review the STAR Methods for the topography analysis.
+6. Cite Otlu et al. 2023, "Topography of mutational signatures in human
    cancer", Cell Reports,
    https://www.cell.com/cell-reports/fulltext/S2211-1247(23)00941-5,
    DOI 10.1016/j.celrep.2023.112930 (https://doi.org/10.1016/j.celrep.2023.112930).
-8. Check the Otlu et al. code (SigProfilerTopography,
+7. Check the Otlu et al. code (SigProfilerTopography,
    https://github.com/AlexandrovLab/SigProfilerTopography) to see whether
    they normalize indels to the pyrimidine strand, for example GAGAGA->GAGA
    to TCTCTC->TCTC, and compare with what we do.
-9. In the topography methods, cite SigProfilerSimulator for the simulated
+8. In the topography methods, cite SigProfilerSimulator for the simulated
    genomes: Bergstrom et al. 2020, "Generating realistic null hypothesis of
    cancer mutational landscapes using SigProfilerSimulator", BMC
    Bioinformatics, https://pubmed.ncbi.nlm.nih.gov/33028213/,
    DOI 10.1186/s12859-020-03772-3 (https://doi.org/10.1186/s12859-020-03772-3).
-10. In the topography methods, state that the simulated genomes are
-    available on request, or can be deposited in Zenodo on request.
-11. Later: Fig 6 panels A to C are built from `build_fig6/ID4_IDF_signature.pdf`
+9. In the topography methods, state that the simulated genomes are
+   available on request, or can be deposited in Zenodo on request.
+10. Later: Fig 6 panels A to C are built from `build_fig6/ID4_IDF_signature.pdf`
     and `build_fig6/sequence_logos.pdf` (checked 2026-10-07) and carry the
     same information, but they are not visually identical to the source
     plots. For example, the panel C logos are rescaled to 0-2 bits and the
