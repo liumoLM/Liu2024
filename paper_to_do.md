@@ -27,16 +27,24 @@ steve check: Sup Fig 1 legend
 Run `Rscript check_main_figures.R`, `Rscript check_sup_figures.R`, and
 `Rscript check_sup_tables.R` to see the current state.
 
-1. Ask Mini (email drafted 2026-10-07) for the missing replication-timing code
+1. Waiting on Mini (email sent 2026-10-07) for the missing replication-timing code
    and data. No script in the code repo creates `09_barplot_data.xlsx` and
    `09_all_lm_trend.xlsx` (inputs to Fig 5D and Fig S4, and probably the
    source of Table S13), and there is no code for the 89-type
-   replication-timing analysis (Table S14). Also ask for the
+   replication-timing analysis (Table S14). Also asked for the
    `tissue.rtGroup.{Mutation,Simulated}_50cutoff.xlsx` matrices from r.04
    and whether a script builds Table S12. When they arrive, add them to the
    code repo and to the manifests.
-2. Fig S5: all four `build_fig_s5/F*.pdf` source plots changed 2026-08-15,
-   after the paper's copy.
+2. Waiting on Mo (email sent 2026-10-07) about Fig S5. The 83-type top row
+   is stale. Its category counts (for example
+   mouse single-T deletions 370) match `build_fig_s5/F83.pdf` from before
+   e6f1c34 (2026-08-14), which switched to
+   `mSigSpectra::annot_vcf_to_83_catalog(clip_le_9 = TRUE)`. The current
+   F83.pdf (297) agrees with the 89-type row. The 89-type and 476-type rows
+   match the current plots, which changed only in layout on 2026-08-15.
+   Asked Mo for any code that assembles Fig S5
+   from its constituents, which have different aspect ratios, and which code
+   made the top-row panels.
 3. Fig S6: both source plots changed 2026-08-14. The paper's copy is from
    2026-05-07.
 4. Fig 6: confirm that `build_fig6/ID4_IDF_signature.pdf` and
