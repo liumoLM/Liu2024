@@ -42,14 +42,20 @@ Run `Rscript check_main_figures.R`, `Rscript check_sup_figures.R`, and
    indels in genes on both strands". Also decide whether 10 simulations
    per tumor, rather than the 100 Otlu et al. recommend, is acceptable (Mo
    asked).
-3. Waiting on Mini (email sent 2026-10-07) for the missing replication-timing code
-   and data. No script in the code repo creates `09_barplot_data.xlsx` and
-   `09_all_lm_trend.xlsx` (inputs to Fig 5D and Fig S4, and probably the
-   source of Table S13), and there is no code for the 89-type
-   replication-timing analysis (Table S14). Also asked for the
-   `tissue.rtGroup.{Mutation,Simulated}_50cutoff.xlsx` matrices from r.04.
-   When they arrive, add them to the code repo and to the manifests.
-4. After Mini's replication-timing code arrives (item 3): decide how Fig S4
+3. Mini replied 2026-10-08. `ID83_topography_analysis_code/r.09_barplot.R`
+   (now in the code repo) creates `09_barplot_data.xlsx` and
+   `09_all_lm_trend.xlsx`, and reproduces all 714 trends in Table S13.
+   Table S13 is confirmed to come from `09_all_lm_trend.xlsx`. The 89-type
+   scripts are in `ID89_topography_analysis_code/`. Still missing: the r.04
+   inputs `tissue.rtGroup.{Mutation,Simulated}_50cutoff.xlsx` (Mini said
+   r.09 uses them but did not attach them), and the 89-type per-indel input
+   `all.indel.ID89.partial.credit.txt` (too big to email; Mini asks whether
+   we already have it). Methods to fix: the replication-timing minimum is
+   500 real indels, not 1,000, and "None" also covers cancer types where
+   neither the real nor the simulated slope is significant. "Flat" means
+   both slopes are significant in the same direction and the decile term in
+   the third model is not.
+4. Now that Mini's replication-timing code has arrived (item 3): decide how Fig S4
    bar colors are assigned. `build_fig_s4/r.09_barplot_final.R` colors
    signatures from four hand-written lists, not a rule. Options, using the
    trend counts in `09_all_lm_trend.xlsx`: (A) green/yellow only if
@@ -60,12 +66,16 @@ Run `Rscript check_main_figures.R`, `Rscript check_sup_figures.R`, and
    the rule and tie-breaking in the Fig S4 legend. Also: add C_ID15, which
    has a trend but is not plotted. Make purple (#b595bf) and blue (#797bb7)
    easier to tell apart. Fix the text's "Four signatures were unaffected",
-   which lists five. Also: the bars sum all 21 cancer types in
-   `09_barplot_data.xlsx`, including those below the 1,000-mutation minimum
-   (trend "None") that are left out of the trend counts above each panel.
-   This is most of the plotted mutations for C_ID10 (69%), ID_F (62%), and
-   C_ID8 (55%). Sum only the cancer types with a trend, or say in the
-   legend that the bars include all cancer types.
+   which lists five. Also: the bars sum every cancer type in
+   `09_barplot_data.xlsx` that has at least 500 real indels for the
+   signature (r.09_barplot.R zeroes the others). This includes 25
+   signature-cancer type pairs with trend "None" because neither the real
+   nor the simulated slope was significant, and these are not in the trend
+   counts above each panel. They are most of the plotted mutations for
+   C_ID10 (69%), ID_F (62%), and C_ID8 (55%). Sum only the cancer types with
+   a trend, or say in the legend which cancer types the bars include.
+   (Corrected 2026-10-08: these were earlier described as cancer types
+   below a 1,000-indel minimum.)
 5. Waiting on Mo (email sent 2026-10-07) about Fig S5. Mo has no
    assembly code, so we wrote `build_fig_s5/make_figure_s5_layout.R` in
    the code repo, which builds `figure_s5_draft.pdf` in the paper's layout
