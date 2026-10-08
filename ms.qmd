@@ -1140,47 +1140,30 @@ Replication timing data were obtained from
 The replication time signals were sorted in a descending order and
 subsequently divided into deciles. Somatic indels were counted within
 the corresponding deciles based on their overlap with the replication
-domains in the examined deciles. As with other analyses, for each
-individual indel signature, the reported [replication timing analyses
-included only cancer types with at least 1,000 somatic mutations
-unambiguously attributed to it. Cancer types below this minimum are
-labeled "None" in Table S13 and Figure [-@fig-topo]D.]{.green}
+domains in the examined deciles. [As in the strand asymmetry analyses,
+only indels with probability greater than 0.5 of being due to a given
+signature were counted. For each signature, only cancer types with at
+least 500 such real indels were analyzed. Counts in the other cancer
+types were set to 0.]{.green}
 
-Replication timing mutation counts were generated for both real and
-simulated somatic indels. To classify whether the replication timing
-mutation density was increasing, flat, or decreasing, [up to three
-linear regression models were fitted (lm models 1 to 3 in Table S13).
-The first two were fitted to the real somatic indel counts *R* =
-(*R~1~, R~2~, R~3~, … R~10~*) and to the simulated somatic indel counts
-*S* = (*S~1~, S~2~, S~3~, … S~10~*), respectively. These two models
-are *lm(R \~ c)* and *lm(S \~ c)*]{.green}, where replication
-timing denotes a vector c = (1,2,3 … 10).
-
-The replication timing trend for an 83-type signature was determined
-for both real and simulated data. An indel signature was considered to
-be generally unaffected by replication timing if the slope m was not
-statistically significant from a flat line [(P ≥ 0.05; threshold to be
-confirmed against the code)]{.green}. Otherwise, with the slope
-m statistically significant from a flat line, an ID signature was
-considered to be increasing from early to late replicating regions if
-the slope m \> 0, and was considered to be decreasing from early to
-late replicating regions if the slope m \< 0.
-
-If the trends of a certain 83-type signature for the two datasets
-(real and simulated data) were different, the relative trend for real
-data comparing the simulated data was the final trend for the 83-type
-signature. Otherwise, if the trends of a certain 83-type signature for
-the two dataset were the same, a third multiple linear regression
-model was fitted: *lm(R \~ S + c)*
-
-Similarly, the final trend of an 83-type signature were determined by
-the significance of the coefficient of replication timing. If it is
-not significant, an 83-type signature was considered to be generally
-unaffected by replication timing. Otherwise, if the coefficient of
-replication timing \> 0, an 83-type signature was considered to be
-increasing from early to late replicating regions; if the coefficient
-of replication timing \< 0, an 83-type signature was considered to be
-decreasing from early to late replicating regions.
+[For each signature and cancer type, three linear regression models were
+fitted across the 10 deciles (lm models 1 to 3 in Table S13), where
+*R* = (*R~1~*, …, *R~10~*) are the real indel counts, *S* =
+(*S~1~*, …, *S~10~*) are the simulated indel counts, and *c* =
+(1, 2, …, 10) is the decile: *lm(R \~ c)*, *lm(S \~ c)*, and
+*lm(R \~ c + S)*. A slope or coefficient was considered significant if
+P \< 0.05. The trend of real indels relative to simulated indels was
+then classified as follows. If only the real slope was significant, the
+trend was increasing or decreasing according to its sign. If only the
+simulated slope was significant, the trend was the opposite of the
+simulated slope's sign. If both were significant with opposite signs,
+the trend followed the real slope. If both were significant with the
+same sign, the trend followed the sign of the decile coefficient in the
+third model, or was flat if that coefficient was not significant. If
+neither slope was significant, or the cancer type had fewer than 500
+real indels for the signature, no trend was assigned ("None" in Table
+S13). "Increasing" means increasing from early to late replicating
+regions.]{.green}
 
 ## MSI/MSS status and high/low TMB status
 
@@ -1441,17 +1424,18 @@ in panel (A), with yellow and light blue colors indicating consistent
 enrichment in genic and intergenic regions, respectively.
 
 **(D)** 83-type signatures associated with early and late replication
-timing. Mutation densities of 83-type signatures per decile (y axes)
+timing. [Relative mutation counts per replication-timing decile (y axes)
 are presented for early (left) to late (right) replication domains.
-Real mutations for signatures are shown as bars, and simulated
-mutations are shown as red dashed lines. As shown on top of each plot,
-green bars indicate signatures consistently associated with late
-replication timing across cancer types (e.g., C_ID3); yellow bars
-indicate signatures consistently associated with early replication
-timing across cancer types (e.g., C_ID17); purple bars indicate
-signatures not affected by replication timing across cancer
-types (e.g., ID_K); blue bars indicate signatures showing inconsistent
-trend across cancer types (e.g., ID_F).
+Real mutations are shown as bars and simulated mutations as red dashed
+lines, each scaled to its own maximum. The first four panels sum the
+cancer types with a trend for the signature, and the numbers above them
+are the numbers of cancer types in which it increases, decreases, or is
+flat. Green indicates a signature that increases from early to late
+replication in every such cancer type (C_ID3). Yellow indicates one that
+decreases in every such cancer type (C_ID17). Purple indicates one that
+is flat in more than half of them (ID_K). Blue indicates inconsistent
+trends (ID_F). The last two panels show ID_F in two single cancer types
+with opposite trends, bladder (increasing) and skin (decreasing).]{.green}
 
 {{< pagebreak >}}
 

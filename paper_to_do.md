@@ -50,11 +50,9 @@ Run `Rscript check_main_figures.R`, `Rscript check_sup_figures.R`, and
    inputs `tissue.rtGroup.{Mutation,Simulated}_50cutoff.xlsx` (Mini said
    r.09 uses them but did not attach them), and the 89-type per-indel input
    `all.indel.ID89.partial.credit.txt` (too big to email; Mini asks whether
-   we already have it). Methods to fix: the replication-timing minimum is
-   500 real indels, not 1,000, and "None" also covers cancer types where
-   neither the real nor the simulated slope is significant. "Flat" means
-   both slopes are significant in the same direction and the decile term in
-   the third model is not.
+   we already have it). The replication-timing methods and the Fig 5D
+   legend now follow r.09_barplot.R (500-indel minimum, trend rule), in
+   green for review (2026-10-08).
 4. Waiting on Mo (email sent 2026-10-07) about Fig S5. Mo has no
    assembly code, so we wrote `build_fig_s5/make_figure_s5_layout.R` in
    the code repo, which builds `figure_s5_draft.pdf` in the paper's layout
