@@ -680,9 +680,8 @@ signatures (Figure [-@fig-topo]D, Figure S4, Table S13). Most
 signatures were consistently enriched in late-replicating regions
 across different cancer types, while only two signatures, C_ID10 and
 C_ID17 (TOP2A K743N mediated mutagenesis), showed enrichment in
-early-replicating regions. Four signatures were unaffected by
-replication timing in the majority of cancers presenting this
-signature, including C_ID1 (Slippage during DNA replication), C_ID5
+early-replicating regions. [Five signatures were unaffected by
+replication timing in the majority of cancers presenting them:]{.green} C_ID1 (Slippage during DNA replication), C_ID5
 (Clock-like signature), C_ID18 (Colibactin exposure), and two
 defective MMR signatures (C_ID7 and ID_K). Interestingly, several
 signatures showed cancer-specific enrichment in replication timing,

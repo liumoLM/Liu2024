@@ -55,28 +55,7 @@ Run `Rscript check_main_figures.R`, `Rscript check_sup_figures.R`, and
    neither the real nor the simulated slope is significant. "Flat" means
    both slopes are significant in the same direction and the decile term in
    the third model is not.
-4. Now that Mini's replication-timing code has arrived (item 3): decide how Fig S4
-   bar colors are assigned. `build_fig_s4/r.09_barplot_final.R` colors
-   signatures from four hand-written lists, not a rule. Options, using the
-   trend counts in `09_all_lm_trend.xlsx`: (A) green/yellow only if
-   increasing/decreasing in every evaluated cancer type, purple if flat in
-   most, blue otherwise (moves C_ID1, C_ID5, C_ID7, C_ID18 to purple,
-   matching the main text). (B) all three by majority (also moves C_ID4,
-   C_ID9, C_ID13, ID_B, ID_D, ID_G, ID_N to green and ID_E to yellow). State
-   the rule and tie-breaking in the Fig S4 legend. Also: add C_ID15, which
-   has a trend but is not plotted. Make purple (#b595bf) and blue (#797bb7)
-   easier to tell apart. Fix the text's "Four signatures were unaffected",
-   which lists five. Also: the bars sum every cancer type in
-   `09_barplot_data.xlsx` that has at least 500 real indels for the
-   signature (r.09_barplot.R zeroes the others). This includes 25
-   signature-cancer type pairs with trend "None" because neither the real
-   nor the simulated slope was significant, and these are not in the trend
-   counts above each panel. They are most of the plotted mutations for
-   C_ID10 (69%), ID_F (62%), and C_ID8 (55%). Sum only the cancer types with
-   a trend, or say in the legend which cancer types the bars include.
-   (Corrected 2026-10-08: these were earlier described as cancer types
-   below a 1,000-indel minimum.)
-5. Waiting on Mo (email sent 2026-10-07) about Fig S5. Mo has no
+4. Waiting on Mo (email sent 2026-10-07) about Fig S5. Mo has no
    assembly code, so we wrote `build_fig_s5/make_figure_s5_layout.R` in
    the code repo, which builds `figure_s5_draft.pdf` in the paper's layout
    from the current catalogs. The paper's `sup_figs/figure_s5.pdf` has a
@@ -85,12 +64,12 @@ Run `Rscript check_main_figures.R`, `Rscript check_sup_figures.R`, and
    PDFs and asked Mo either to update the paper version with the correct
    top row from the draft, or to edit the draft as needed. Replace
    `sup_figs/figure_s5.pdf` with the result.
-6. Closed (2026-10-07): Fig S2. Mo has no assembly code, so we wrote
+5. Closed (2026-10-07): Fig S2. Mo has no assembly code, so we wrote
    `build_fig_s2/make_figure_s2_layout.R` in the code repo. It builds
    `figure_s2_draft.pdf` in the paper's layout from the Table S2, S4, and
    S6 signatures. The paper's `sup_figs/figure_s2.pdf` is edited by hand
    from the draft, as recorded in `sup_figures_manifest.tsv`.
-7. Table S17 (sample metadata) is only partly reproducible. Patient, age,
+6. Table S17 (sample metadata) is only partly reproducible. Patient, age,
    sex, MSI status, major cancer type, and cohort come from
    `unified_indels_data/sample_info.tsv`, which also has 41 samples not in
    S17. `mutation_burden` and the polyT ratio do not match the current
@@ -108,16 +87,16 @@ Run `Rscript check_main_figures.R`, `Rscript check_sup_figures.R`, and
    Decide whether we need it (probably yes, as an overall description of
    the data set), and trace where each column's numbers come from,
    ideally so that S17 can be built by a script in the code repo.
-8. Review the STAR Methods for the topography analysis.
-9. Check the Otlu et al. code (SigProfilerTopography,
+7. Review the STAR Methods for the topography analysis.
+8. Check the Otlu et al. code (SigProfilerTopography,
    https://github.com/AlexandrovLab/SigProfilerTopography) to see whether
    they normalize indels to the pyrimidine strand, for example GAGAGA->GAGA
    to TCTCTC->TCTC, and compare with what we do.
-10. Later: Fig 6 panels A to C are built from `build_fig6/ID4_IDF_signature.pdf`
-    and `build_fig6/sequence_logos.pdf` (checked 2026-10-07) and carry the
-    same information, but they are not visually identical to the source
-    plots. For example, the panel C logos are rescaled to 0-2 bits and the
-    DNA diagrams are drawn by hand. Come back to this.
+9. Later: Fig 6 panels A to C are built from `build_fig6/ID4_IDF_signature.pdf`
+   and `build_fig6/sequence_logos.pdf` (checked 2026-10-07) and carry the
+   same information, but they are not visually identical to the source
+   plots. For example, the panel C logos are rescaled to 0-2 bits and the
+   DNA diagrams are drawn by hand. Come back to this.
 
 # From here down old
 
