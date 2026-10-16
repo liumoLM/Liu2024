@@ -21,16 +21,21 @@ files checked into the code repo that nothing in the repo regenerates.
 
 ## Built only from checked-in intermediates (upstream data missing)
 
-2. **Table S13 and Figure S4.**
+2. **Table S13, Figure S4, and Figure 5D.**
    - `ID83_topography_analysis_code/r.09_barplot.R` (from Mini Huang) makes
-     `all_lm_trend.xlsx`. It reads
-     `04_create4InfMatrix/rtGroup/tissue.rtGroup.{Mutation,Simulated}_50cutoff.xlsx`,
-     and those files are in neither repo.
-   - So `build_fig5/09_all_lm_trend.xlsx` and
-     `build_fig_s4/09_barplot_data.xlsx` are used as given.
-   - Who made the `rtGroup` matrices is not recorded. They come from step
-     r.04 of the ID83 topography pipeline, which the Huang lab uploaded, so
-     Mini Huang is the likely source.
+     `plot_data.xlsx` and `all_lm_trend.xlsx`. It reads
+     `04_create4InfMatrix/rtGroup/tissue.rtGroup.{Mutation,Simulated}_50cutoff.xlsx`.
+     Mini sent these two files, and they were added to the code repo on
+     2026-10-16.
+   - Re-run on 2026-10-16: `plot_data.xlsx` and `all_lm_trend.xlsx` are
+     identical to the copies saved as `09_barplot_data.xlsx` and
+     `09_all_lm_trend.xlsx` in `build_fig5/` and `build_fig_s4/`. Rebuilt from
+     them, `FigureS4.png`, `Figure5D.png`, `Figure5ABC.png`, and `Figure5.png`
+     are pixel-identical to the checked-in copies. Table S13 rebuilt from them
+     matches the paper's copy (labels identical, numbers agree to a relative
+     difference of at most 1e-12).
+   - So steps r.04 onward for replication timing now run from the repo. The
+     data for the steps before r.04 are missing, as for item 3.
 3. **Table S12, Figure S3, and Figure 5 panels A to C.**
    - The 50%-cutoff matrices from step r.04 are checked in at
      `ID83_topography_analysis_code/04_create4InfMatrix/` for `DNA.region`,
@@ -118,8 +123,8 @@ sit under `/public/data/Topography_analysis*/` on the Huang-lab server.
 
 ## What is needed from collaborators
 
-- From Mini Huang (likely): the `rtGroup` matrices (item 2) and the raw
-  topography inputs (item 3).
+- From Mini Huang (likely): the raw topography inputs (items 2 and 3). The
+  `rtGroup` matrices arrived 2026-10-16.
 - The code that made `all.indel.ID83.partial.credit.txt` and the code that
   simulated the background indels (see "ID83 topography steps before r.04").
 - From Mo Liu: `all.indel.ID89.partial.credit.txt` (item 1).

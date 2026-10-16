@@ -46,9 +46,10 @@ Run `Rscript check_main_figures.R`, `Rscript check_sup_figures.R`, and
    (now in the code repo) creates `09_barplot_data.xlsx` and
    `09_all_lm_trend.xlsx`, and reproduces all 714 trends in Table S13.
    Table S13 is confirmed to come from `09_all_lm_trend.xlsx`. The 89-type
-   scripts are in `ID89_topography_analysis_code/`. Still missing: the r.04
-   inputs `tissue.rtGroup.{Mutation,Simulated}_50cutoff.xlsx` (Mini said
-   r.09 uses them but did not attach them), and the 89-type per-indel input
+   scripts are in `ID89_topography_analysis_code/`. Mini later sent the r.04
+   inputs `tissue.rtGroup.{Mutation,Simulated}_50cutoff.xlsx`, now in the
+   code repo. With them, r.09 reproduces Table S13, Figure S4, and Figure 5D
+   exactly (2026-10-16). Still missing: the 89-type per-indel input
    `all.indel.ID89.partial.credit.txt` (too big to email; Mini asks whether
    we already have it). The replication-timing methods and the Fig 5D
    legend now follow r.09_barplot.R (500-indel minimum, trend rule), in

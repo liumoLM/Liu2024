@@ -1,6 +1,20 @@
 # Questions for Mo: indel counts, poly-T ratios, and hypermutation
 
-Compiled 2026-10-15. All counts below are over the 6,975 tumors in Table S17.
+Compiled 2026-10-15. Written so it can be sent to Mo as an email.
+
+Subject: Table S17, mSigAct routing, and the hypermutation threshold
+
+Hi Mo,
+
+I tried to recompute `mutation_burden` and the poly-T ratio in Table S17
+(sample metadata) from the current spectra in `unified_indels_data`, and they
+do not match. I need to know which version of the data the published numbers
+came from. These numbers decide how tumors were routed between
+SigProfilerAssignment and mSigAct, and which tumors count as hypermutated.
+While checking, I also found that different parts of the paper define
+hypermutated differently. The details and my questions are below.
+
+All counts below are over the 6,975 tumors in Table S17.
 "Spectrum total" means the number of indels in a tumor's catalog in
 `unified_indels_data` (`liu_et_al_83_spectra.tsv`). The 83-, 89-, and
 476-type catalogs give the same total for every tumor. These catalogs count
@@ -23,7 +37,9 @@ we may have to recompute them from the VCFs.
 
 Questions:
 
-- What data was `mutation_burden` computed from, and with what code?
+- What data was `mutation_burden` computed from, and with what code? Were
+  the indels counted before capping repeat lengths at R <= 9, or from some
+  other version of the data?
 - Why does it agree with the current catalogs for most PCAWG tumors but
   almost no Hartwig tumors?
 
@@ -70,6 +86,8 @@ Questions:
 
 - Exactly which tumors went to mSigAct, and what rule selected them?
 - Were the routing thresholds applied to pre-cap or post-cap counts?
+- Were the routing and the hypermutation calls made with the same values
+  as S17's `mutation_burden` and poly-T ratio?
 - Is there a list or code for the routing?
 
 ## 4. What defines a hypermutated tumor
@@ -111,3 +129,13 @@ Question:
 
 - Which call should the paper treat as the MSI status, and is that stated
   consistently in the methods and legends?
+
+## 6. Code
+
+If you have the code that computed `mutation_burden` and the poly-T ratio,
+please send it. If those columns are pre-cap counts, we may need to
+recompute them from the VCFs, so that Table S17 can be built by a script in
+the code repo.
+
+Thanks,
+Steve
