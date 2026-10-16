@@ -38,6 +38,23 @@ files checked into the code repo that nothing in the repo regenerates.
      (odds ratio) can be rerun from the repo.
    - The data for the steps before r.04 are missing. See
      "ID83 topography steps before r.04" below.
+   - Re-run of r.05 and r.06 on 2026-10-15, from the checked-in r.04
+     matrices:
+     - r.06: all 9 output files are identical to the copies in
+       `ID83_topography_analysis_code/06_computeOddsRatio/` and
+       `build_fig_s3/06_computeOddsRatio/`.
+     - r.05: all 3 outputs are identical to the copies in
+       `ID83_topography_analysis_code/05_FisherTest/`. Against
+       `build_fig_s3/05_FisherTest/` (the input to Table S12), `repli.strand`
+       and `trans.strand` are identical. `DNA.region` differs only in the
+       `odds_ratio` column, with a mean relative difference of 1e-7.
+     - Table S12 rebuilt from the re-run matches the paper's copy. The
+       cancer-type and signature columns are identical. P values agree to a
+       relative difference of at most 1e-13. Odds ratios agree to at most
+       1e-12, except Colon, ID_J, intergenic/genic, which is 2.893254 in the
+       re-run against 2.893205 in the paper (relative difference 1.7e-5). The
+       cause of that one larger gap was not checked. It does not matter at
+       any precision the paper reports.
 4. **Tables S15 and S16, Figure S6.** `build_fig_s6/gender.bias.txt` and
    `build_fig_s6/correlation.between.age.and.signature.activity.txt` are
    processed inputs with no generating code. The Figure S6 qmd says it only
