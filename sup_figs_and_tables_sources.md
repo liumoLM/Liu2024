@@ -4,22 +4,30 @@ Survey of 2026-10-15 across this repo, `~/github/Liu2026_code_and_data/`
 (the code repo), and `~/github/unified_indels_data/` (the data repo).
 
 Every supplementary table and figure in the paper exists, and
-`check_sup_tables.R` and `check_sup_figures.R` pass. The exception is Table S14,
-which cannot be built yet. Several other items are built from intermediate
-files checked into the code repo that nothing in the repo regenerates.
-
-## Blocking: data not anywhere
-
-1. **Table S14** (89-type replication timing).
-   - The input `all.indel.ID89.partial.credit.txt` (per-indel 89-type
-     signature probabilities, made by Mo Liu) is missing.
-     `ID89_topography_analysis_code/README.md` says it is too large to include.
-   - The downstream intermediate
-     `04_createRTgroupInf/rtGroup/tissue.rtGroup.Mutation_50cutoff.Rds` is
-     also missing.
-   - There is no `build_sup_table_s14/` script yet.
+`check_sup_tables.R` and `check_sup_figures.R` pass. Several items are built
+from intermediate files checked into the code repo that nothing in the repo
+regenerates.
 
 ## Built only from checked-in intermediates (upstream data missing)
+
+1. **Table S14** (89-type replication timing).
+   - Mini sent the r.04 matrix
+     `04_createRTgroupInf/rtGroup/tissue.rtGroup.Mutation_50cutoff.xlsx` on
+     2026-10-16. It is now in `ID89_topography_analysis_code/`, and
+     `r.09_barplot.R` there reads it (changed from the `.Rds` copy that r.04
+     also writes).
+   - Re-run on 2026-10-16: the `trend.xlsx` written by `r.09_barplot.R`
+     reproduces the paper's Table S14 exactly (945 rows, same slopes, P
+     values, and trends). The script then stops in the per-signature plots,
+     which the paper does not use.
+   - `build_sup_table_s14/build_sup_table_s14.R` reformats a copy of that
+     file, `trend_89.xlsx`, into the table. The paper's copy was replaced by
+     the built table, which only corrects the title and names the first
+     column "Signature", as in Table S13.
+   - The data for the steps before r.04 are still missing. The main input is
+     `all.indel.ID89.partial.credit.txt` (per-indel 89-type signature
+     probabilities, made by Mo Liu), which
+     `ID89_topography_analysis_code/README.md` says is too large to include.
 
 2. **Table S13, Figure S4, and Figure 5D.**
    - `ID83_topography_analysis_code/r.09_barplot.R` (from Mini Huang) makes
@@ -127,6 +135,7 @@ sit under `/public/data/Topography_analysis*/` on the Huang-lab server.
   `rtGroup` matrices arrived 2026-10-16.
 - The code that made `all.indel.ID83.partial.credit.txt` and the code that
   simulated the background indels (see "ID83 topography steps before r.04").
-- From Mo Liu: `all.indel.ID89.partial.credit.txt` (item 1).
+- From Mo Liu: `all.indel.ID89.partial.credit.txt` (item 1). This is no
+  longer needed to build Table S14, only to rerun the steps before r.04.
 - Code that generates the Figure S6 inputs (item 4) and the Figure S1 inputs
   (item 5). Whoever produced these files should supply it.

@@ -12,7 +12,7 @@ Table S10 InsDel_N burden by MSI status.xlsx	build_sup_table_s10/sup_table_s10_i
 Table S11 83-type and 89-type signature assignment.tsv	build_sup_table_s11/sup_table_s11_83_89_signature_assignment.tsv	
 Table S12 Assymetry odds ratio and pvalue for topography features in each evaluated cancer type..xlsx	build_sup_table_s12/sup_table_s12_topography_asymmetry.xlsx	
 Table S13 Slopes and P values of linear regression models for replication timing 83-type.xlsx	build_sup_table_s13/sup_table_s13_replication_timing_83.xlsx	Built from build_fig5/09_all_lm_trend.xlsx, written by ID83_topography_analysis_code/r.09_barplot.R. Rerunning that script from its inputs in 04_create4InfMatrix/rtGroup/ reproduces the file exactly (2026-10-16).
-Table S14 Slopes and P values of linear regression models for replication timing 89-type.xlsx		No source in the code repo.
+Table S14 Slopes and P values of linear regression models for replication timing 89-type.xlsx	build_sup_table_s14/sup_table_s14_replication_timing_89.xlsx	Built from build_sup_table_s14/trend_89.xlsx, a copy of the trend.xlsx written by ID89_topography_analysis_code/r.09_barplot.R from its input in 04_createRTgroupInf/rtGroup/ (received 2026-10-16).
 Table S15 OR and pvalue of gender bias analysis.xlsx	build_sup_table_s15/sup_table_s15_sex_bias.xlsx	
 Table S16 Age cancertype correlation table.xlsx	build_sup_table_s16/sup_table_s16_age_correlation.xlsx	
 Table S17 metadata of 6975 samples.xlsx		No source in the code repo.

@@ -49,9 +49,14 @@ Run `Rscript check_main_figures.R`, `Rscript check_sup_figures.R`, and
    scripts are in `ID89_topography_analysis_code/`. Mini later sent the r.04
    inputs `tissue.rtGroup.{Mutation,Simulated}_50cutoff.xlsx`, now in the
    code repo. With them, r.09 reproduces Table S13, Figure S4, and Figure 5D
-   exactly (2026-10-16). Still missing: the 89-type per-indel input
-   `all.indel.ID89.partial.credit.txt` (too big to email; Mini asks whether
-   we already have it). The replication-timing methods and the Fig 5D
+   exactly (2026-10-16). Mini also sent the 89-type r.04 matrix, and the
+   ID89 r.09 reproduces Table S14 exactly. `build_sup_table_s14.R` now
+   builds the table (2026-10-16). Still missing, but only needed to rerun
+   the steps before r.04: the 89-type per-indel input
+   `all.indel.ID89.partial.credit.txt` (too big to email). In `ms.qmd`, the
+   89-type replication-timing result now cites only Table S14, since Figure
+   S4 shows only 83-type signatures (2026-10-16). The
+   replication-timing methods and the Fig 5D
    legend now follow r.09_barplot.R (500-indel minimum, trend rule), in
    green for review (2026-10-08).
 4. Waiting on Mo (email sent 2026-10-07) about Fig S5. Mo has no
