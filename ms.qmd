@@ -487,7 +487,7 @@ the 83- 89- and 476-type classifications, respectively)
 and it was extracted by both the HDP and NMF-based methods
 in all 3 indel classification schemes.
 All available
-evidence indicates that it much more accuratly reflects
+evidence indicates that it more accuratly reflects
 the mutational consequences of RNase H2 deficiency than InsDel4. 
 
 ### *Associations between indel signatures and SBS signatures*
@@ -593,31 +593,43 @@ So the dominant event is insertion of a C at or near the 3' end of a poly-A trac
 [The topography pipeline labels C_ID14 Transcribed. This puts the inserted C, and the poly-A tract next to it, on the transcribed strand, and the poly-T tract on the untranscribed strand. There are two possible explanations. One is that the C insertions arise from lesions on the poly-T strand. The other is that they arise from polymerase misincorporation or slippage at the boundaries of poly-T tracts, without DNA damage.]{.blue}
 
 [The transcription strand asymmetry itself favors the first explanation. Transcription-coupled nucleotide excision repair removes lesions from the transcribed strand. Lesions that persist, and the mutations they cause, are therefore enriched on the untranscribed strand, which is where the poly-T tract is. 
-We are unaware of any a reason
-the polymerase errors at homopolymer boundaries would differ between the transcribed and untranscribed strands. 
+We are unaware of any reason that polymerase
+misincorporation or slippage events at the boundaries
+of poly-T tracts would differ in frequency between the transcribed and untranscribed strands. 
+We note that C_ID14 has the strongest transcription strand asymmetry in Figure 5A, with odds ratios from 1.5 to 1.75.]{.blue}
 
-We note that C_ID14 has the strongest transcription strand asymmetry in Figure 5A, with odds ratios up to 1.5 to 1.75.]{.blue}
-
-[The correlation of C_ID14 with SBS93 is consistent with this. Islam et al. 2022 (<https://doi.org/10.1016/j.xgen.2022.100179>) describe SBS93 as having "a strand asymmetry consistent with damage on pyrimidines for TpTpA contexts". This points to damage on thymines, although they do not identify the lesion or say that it is a bulky adduct. The correlation also does not by itself show that C_ID14 and SBS93 have the same cause.]{.blue}
+[The correlation of C_ID14 with SBS93 is consistent with this. Islam et al. 2022 (<https://doi.org/10.1016/j.xgen.2022.100179>) describe SBS93 as having "a strand asymmetry consistent with damage on pyrimidines for TpTpA contexts". This points to damage on thymines, although they do not identify the lesion or say that it is a bulky adduct. Of course, the correlation does not by itself show that C_ID14 and SBS93 have the same cause.]{.blue}
 
 [If C_ID14 and SBS93 share a lesion, the C insertions occur at the opposite end of the poly-T tract from the TpTpA position that Islam et al. associate with SBS93 damage (see the backup material below).]{.blue}
 
 
 [Backup material, possibly for a supplementary note: where an SBS93-type lesion would be relative to the C_ID14 insertion. Example with a run of 5 and the C inserted just before the last A:]{.blue}
 
+
+[steve note: this diagram seem wrong; the position of the C insertion should be one to the left;
+we need to dig deeper. Is there an A to the left on the bottom strand? how strong is the TTA context
+for the SBS]{.blue}
+
 ```
-                 left end                      right end
-                    |                              |
+                left end                      right end
+                   |                              |
  top     5'-  X  [ A  A  A  A  A ] C  A  ...  -3'   C strand: on the TRANSCRIBED strand
-                    :  :  :  :  :   :  :
+                   :  :  :  :  :   :  :
  bottom  3'-  X' [ T  T  T  T  T ] G  T  ...  -5'   poly-T strand: on the UNTRANSCRIBED strand
-                    ^                 ^
-                    |                 |
+                   ^                 ^
+                   |                 |
      (1) SBS93-type damaged T        (2) where C_ID14 adds the extra base
          (TpTpA context)                 (C on top, G on bottom)
 ```
 
 [The bottom strand runs 5' to 3' from right to left. Read in that direction it is ... T G T T T T T X' ...]{.blue}
+
+```
+AAAA[Ins(C)]A
+
+AAAA[Ins(C)]T
+
+```
 
 
 [(1) Where the SBS93 lesion would be. Islam et al. place the SBS93 damage on the middle T of a TpTpA, which is a T with another T on its 5' side and an A on its 3' side. On the bottom strand, 3' is to the left. So the only T in the run that can have an A on its 3' side is the leftmost one, and only if X' is A. That puts the SBS93-type damaged T at the left end of the run.]{.blue}
@@ -633,6 +645,8 @@ We note that C_ID14 has the strongest transcription strand asymmetry in Figure 5
 Another exogenous
 mutational signature C_ID13, 
 which is attributed to UV exposure,
+[need cite -- is this associatioin with sbs7 in melanoma? does this have
+have the same transcribed strand polarity as CID_14?]{.blue}
 consistently showed transcription strand bias
 that could be explained by transcription-coupled repair of damaged cytosines,
 which accords with the mechanisms of the correspoing
@@ -642,26 +656,41 @@ SBS mutational signatures
 In
 83-type signatures associated with defective endogenous mutational
 processes, enriched mutations on the untranscribed strand were
-observed for C_ID1 (slippage during DNA replication) and C_ID5
-(clock-like signature), while enriched mutations on the transcribed
+observed for C_ID1 (slippage during DNA replication)
+[this contradicts a statment about id14 no slipage difference
+between untranscribed / transcribed strands]{.blue}
+and C_ID5
+(clock-like signature).
+Enrichment for mutations on the transcribed
 strand were observed for ID_F (topoisomerase-1 \[TOP1\] associated
-mutagenesis stemming from RNase H2 deficiency). Two
+mutagenesis stemming from RNase H2 deficiency). 
+In addition, two
 signatures associated with defective MMR, C_ID7 and ID_K,
 had transcription strand asymmetries.
+[what are these, and what direction are these?]{.blue}
 
 [Needs review: The statements in the paragraph above that mutations are "enriched on the transcribed strand" or "on the untranscribed strand" (C_ID13, C_ID1, C_ID5, ID_F) use the pyrimidine-strand shorthand of Otlu et al. 2023 (<https://doi.org/10.1016/j.celrep.2023.112930>) without saying so. The C_ID3/C_ID18 sentence has been rewritten in terms of adducted purines, and the C_ID14 sentence no longer states a direction. Also, "This is because UV damage occurs on cytosine rather than guanine" is not correct as written (UV damages adjacent pyrimidines, C or T) and garbles Otlu et al.'s "consistent with damage from ultraviolet light on cytosine". See the note in the Figure 5 legend.]{.blue}
 
 [Note: What the strand labels mean in terms of bases for each signature. In ID83 labels, the last number is the length of the homopolymer before the indel minus 1 for deletions, and the length of the homopolymer for insertions (mSigSpectra gen_83_type_string.R). Strand labels come from build_fig5/trans.strand.cancer_proportion.xlsx, and "on strand X" means the C or T bases of the indel are on strand X. C_ID13 (UV, Untranscribed): 46% single-T deletions, mostly DEL:T:1:1 (29%), deletion of one T from a TT. So the TpT, the classic UV dimer site, is on the untranscribed strand. Here the counted pyrimidines are the damaged bases, so this matches damage persisting on the untranscribed strand after transcription-coupled repair. C_ID1 (replication slippage, Untranscribed): 60% single-T insertions, mostly INS:T:1:5+ (56%), a T added to a poly-T tract of 5 or more. So the poly-T tract that gained a T is on the untranscribed strand, and the poly-A tract that gained an A is on the transcribed strand. No DNA damage is implied. C_ID5 (clock-like, Untranscribed): spread out. Single-T deletions are 36% (DEL:T:1:0 to 1:3, i.e. from T runs of 1 to 4), single-C deletions 15%, microhomology deletions 15%, single-T insertions 12%. The microhomology and longer deletions are only counted if they contain only pyrimidines or only purines. ID_F (TOP1/RNase H2, Transcribed): mostly 2-bp deletions, DEL:MH:2:1 (25%) and DEL:repeats:2:0 to 2:2 (32%). A 2-bp deletion is counted only if both bases are pyrimidines or both are purines, so mixed deletions such as TG or CA are excluded from the strand test. We do not yet know what fraction of ID_F indels were counted. C_ID7 (defective MMR, Transcribed): 42% single-C deletions, mostly from C tracts of 6 or more (DEL:C:1:5+, 24%) or 5 (DEL:C:1:4, 10%), plus single-T deletions from T tracts of 5 (DEL:T:1:4, 10%). So the poly-C or poly-T tract that lost a base is on the transcribed strand, and the poly-G or poly-A tract on the untranscribed strand. ID_K (POLE, Transcribed): 80% single-T deletions, mostly from T tracts of 5 (DEL:T:1:4, 48%) or 4 (DEL:T:1:3, 24%). So the poly-T tract that lost a T is on the transcribed strand, and the poly-A tract on the untranscribed strand. For C_ID1, C_ID7, and ID_K, the result is a statement about which strand carries the poly-T (or poly-C) tract, not about damage. Signature compositions are from Table S2.]{.blue}
+
+[doublecheck that the above is neutral for skew of polyt vs polya on transcribed /non-transcribed]
 
 There was evidence of replication strand asymmetry in `r ms_num$topo$repli_n_asymmetric` out of the `r ms_num$topo$repli_n_sufficient`
 signatures with sufficient data to assess (Figure [-@fig-topo]B, 
 Figure S3B, Table S12). [Replication strand asymmetry was less common
 than transcription strand asymmetry, and none of the tobacco-, UV-, or
 colibactin-associated signatures (C_ID3, C_ID13, C_ID18) showed it.]{.blue}
+
+[do the corresponidng sbs have replication strand asymmetry?]
+
 ID_K, which [is enriched in tumors with POLE proofreading defects]{.yellow}, was consistently enriched for leading strand mutations. This
 is consistent with SBS signatures SBS10a and SBS10b, which are also
 driven by POLE proofreading defects, thus further supporting a
 link between POLE proofreading defects and leading-strand mutagenesis.
+[sentence not clear do sbs10a/b have repication strand asymmetry; same issue about what 
+the asymmetry means for the indels; is this 1bp T deletions from shorter
+stre]{.blue}
+
 [Note: Figure 5 (main_figures/Figure5.pdf) is now a copy of build_fig5/Figure5.pdf in the code repo. Its panels A to C use the topography pipeline's labels (build_fig5/assign_asymmetry_type.R), which also underlie Figure S3, including ID_K on the leading strand. This changed two signatures relative to the earlier hand-edited Figure 5. In panel B, ID_L is now Lagging (its only cancer type with P < 0.05 is Pancreas, lagging). In panel C, ID_B is now Mix (8 cancer types with P < 0.05 are intergenic and 1, Breast, is genic). Mini confirmed by email on 2026-10-07 that repli.strand = -1 is the lagging strand and that the pipeline's leading/lagging orientation (as in Figure S3B) is correct.]{.blue}
 
 We also examined the mutation enrichment of 83-type signatures in
@@ -934,12 +963,14 @@ Genomes Consortium and associated clinical characteristics were
 obtained from the ICGC data portal
 (<https://dcc.icgc.org/releases/current/Projects/>, which has been
 retired. The data were downloaded on 9 May, 2024). 
-Hartwig Medical can be requested
-Foundation (Hartwig) through standardized procedures and request forms
+Hartwig Medical
+Foundation (Hartwig) data
+can be requested at 
 at
 https://www.hartwigmedicalfoundation.nl/en/appyling-for-data/.
-Clinical traits such as cancer type, age and gender of the Hartwig
-genomes were taken from Table S16 in
+Information such as cancer type, age, and sex
+assoicated with the Hartwig
+data were taken from Table S16 in
 @priestleyPancancerWholegenomeAnalyses2019 and from the supplementary
 tables of @martinezjimenezPancancerWholegenomeComparison2023. Table S17 in
 this study present the aggregated metadata used herein.
