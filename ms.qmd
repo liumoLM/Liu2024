@@ -1411,7 +1411,7 @@ values from Fisher’s exact tests of he number of tumors with the signature
 versus the number without in a given tumor type versus all other
 tumors.
 
-**(B)** The heatmap of Spearman correlation coefficients between indel
+**(B)** Heatmap of Spearman correlation coefficients between indel
 signatures and various SBS signatures. Correlations that were not
 significant (Benjamini-Hochberg FDR ≥ 0.05) were set to 0. Signatures
 were excluded if none of their correlation coefficients was greater
