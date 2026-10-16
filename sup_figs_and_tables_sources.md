@@ -1,0 +1,110 @@
+# Sources of the supplementary tables and figures
+
+Survey of 2026-10-15 across this repo, `~/github/Liu2026_code_and_data/`
+(the code repo), and `~/github/unified_indels_data/` (the data repo).
+
+Every supplementary table and figure in the paper exists, and
+`check_sup_tables.R` and `check_sup_figures.R` pass. The exception is Table S14,
+which cannot be built yet. Several other items are built from intermediate
+files checked into the code repo that nothing in the repo regenerates.
+
+## Blocking: data not anywhere
+
+1. **Table S14** (89-type replication timing).
+   - The input `all.indel.ID89.partial.credit.txt` (per-indel 89-type
+     signature probabilities, made by Mo Liu) is missing.
+     `ID89_topography_analysis_code/README.md` says it is too large to include.
+   - The downstream intermediate
+     `04_createRTgroupInf/rtGroup/tissue.rtGroup.Mutation_50cutoff.Rds` is
+     also missing.
+   - There is no `build_sup_table_s14/` script yet.
+
+## Built only from checked-in intermediates (upstream data missing)
+
+2. **Table S13 and Figure S4.**
+   - `ID83_topography_analysis_code/r.09_barplot.R` (from Mini Huang) makes
+     `all_lm_trend.xlsx`. It reads
+     `04_create4InfMatrix/rtGroup/tissue.rtGroup.{Mutation,Simulated}_50cutoff.xlsx`,
+     and those files are in neither repo.
+   - So `build_fig5/09_all_lm_trend.xlsx` and
+     `build_fig_s4/09_barplot_data.xlsx` are used as given.
+   - Who made the `rtGroup` matrices is not recorded. They come from step
+     r.04 of the ID83 topography pipeline, which the Huang lab uploaded, so
+     Mini Huang is the likely source.
+3. **Table S12, Figure S3, and Figure 5 panels A to C.**
+   - The 50%-cutoff matrices from step r.04 are checked in at
+     `ID83_topography_analysis_code/04_create4InfMatrix/` for `DNA.region`,
+     `repli.strand`, and `trans.strand`. So steps r.05 (Fisher test) and r.06
+     (odds ratio) can be rerun from the repo.
+   - The data for the steps before r.04 are missing. See
+     "ID83 topography steps before r.04" below.
+4. **Tables S15 and S16, Figure S6.** `build_fig_s6/gender.bias.txt` and
+   `build_fig_s6/correlation.between.age.and.signature.activity.txt` are
+   processed inputs with no generating code. The Figure S6 qmd says it only
+   provides the processed data.
+5. **Figure S1.** `build_fig_s1/all.meta.txt` and
+   `build_fig_s1/assignment.high.similarity.samples.txt` (samples with
+   reconstruction cosine similarity above 0.90) have no generating code.
+
+## No build script, but the data probably exist
+
+6. **Table S17.** All 6975 patients are in
+   `unified_indels_data/sample_info.tsv`, which has 7016 rows. The
+   `mutation_burden` column and the ratio of 1-bp T insertions to deletions at
+   poly-T tracts of 5 or more should be computable from the spectra. This has
+   not been checked.
+7. **Supplementary Figure Legend.docx.** This is hand-written, so no source is
+   expected.
+
+## Present locally but not publishable
+
+8. **Table S1.** `build_sup_table_s1/build_sup_table_s1_step1.R` reads about
+   16.7k annotated VCFs from `~/MEGA/important_mut_sig_data/`, which is
+   outside the data repo.
+9. **Table S9.** This table reads controlled-access variant tables in
+   `build_sup_table_s9/DELETE_BEFORE_PUBLISHING/`.
+
+## Complete from the data repo
+
+Tables S2 to S8, S10, and S11, and Figures S2 and S5.
+
+## ID83 topography steps before r.04
+
+There are six steps before r.04. Their scripts are all in
+`ID83_topography_analysis_code/` in the code repo. What is missing is the data
+they read, plus the code that made two of those inputs. All the input files
+sit under `/public/data/Topography_analysis*/` on the Huang-lab server.
+
+1. **`normalize.sh`** rescales each indel's signature probabilities so they
+   sum to 1. It reads `all.indel.ID83.partial.credit.txt`, the per-indel ID83
+   signature probabilities, and writes `all.indel.ID83.normalized.txt`. No
+   code in either repo makes the input file. The 89-type counterpart came from
+   Mo Liu.
+2. **`r.01_createBed.R`** builds the BED files for the real indels. It reads:
+   - the normalized table from step 1
+   - `per_base_territories_20kb.mat` (replication-timing territories)
+   - `single.indel.aggregate.strand.added.matrix.txt` (strand reference)
+   - `all.annotate.ID.vcfs.RData`
+3. **`generate_partialcredit_match_file.R`** makes a lookup table of signature
+   probabilities for each sample and indel class, built from step 2's output.
+4. **`add_partial_credit.R`** gives each simulated indel the probabilities of
+   the matching real sample and indel class. It reads
+   `all_simulated_with_annotation.txt`. No code in either repo makes the
+   simulated indels.
+5. **`r.02.intersect_no_loop.sh`** runs bedtools to overlap the real and
+   simulated indels with the replication-timing and replication-strand BEDs.
+   It also needs `ENCODE/repli_strand_info_new.bed`.
+6. **`r.03_mergeInf.R`** (real) and **`r.03_mergeInf_simulation.R`**
+   (simulated) merge the overlaps with tissue and strand information. They read
+   `all.meta.0528.rds`, which is checked in under
+   `ID89_topography_analysis_code/` but not the ID83 folder.
+
+## What is needed from collaborators
+
+- From Mini Huang (likely): the `rtGroup` matrices (item 2) and the raw
+  topography inputs (item 3).
+- The code that made `all.indel.ID83.partial.credit.txt` and the code that
+  simulated the background indels (see "ID83 topography steps before r.04").
+- From Mo Liu: `all.indel.ID89.partial.credit.txt` (item 1).
+- Code that generates the Figure S6 inputs (item 4) and the Figure S1 inputs
+  (item 5). Whoever produced these files should supply it.
