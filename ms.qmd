@@ -972,9 +972,8 @@ at
 https://www.hartwigmedicalfoundation.nl/en/appyling-for-data/.
 Information such as cancer type, age, and sex
 assoicated with the Hartwig
-data were taken from Table S16 in
-@priestleyPancancerWholegenomeAnalyses2019 and from the supplementary
-tables of @martinezjimenezPancancerWholegenomeComparison2023. Table S17 in
+data were taken from Table S2 in
+@priestleyPancancerWholegenomeAnalyses2019. Table S17 in
 this study present the aggregated metadata used herein.
 
 ## De novo Mutational signature extraction
