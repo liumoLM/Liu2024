@@ -85,12 +85,25 @@ Run `Rscript check_main_figures.R`, `Rscript check_sup_figures.R`, and
    Decide whether we need it (probably yes, as an overall description of
    the data set), and trace where each column's numbers come from,
    ideally so that S17 can be built by a script in the code repo.
-7. Review the STAR Methods for the topography analysis.
-8. Check the Otlu et al. code (SigProfilerTopography,
+   Questions about where `mutation_burden` and the poly-T ratio come from
+   are in `QUESTIONS_FOR_MO.md` (2026-10-15). A recount on 2026-10-15 found
+   43 tumors on different sides of the poly-T cutoff.
+7. Figure 4A MSS-hyper threshold (2026-10-15).
+   `build_fig4/all_cancer_types_enrichment.R` calls a tumor MSS-hyper if it
+   is not MSI-H by MSIseq and its signature exposures sum to > 4000. Those
+   sums count each indel twice for tumors fit with SigProfilerAssignment, so
+   the effective cutoff is about 2,000 indels for most tumors. This gives
+   723 MSS-hyper tumors, against 48 with real indel counts > 4000. The
+   legend says "> 4,000 indels". Decide the intended rule (threshold, and
+   counts before or after capping repeat lengths at R <= 9), recompute
+   Figure 4A, and use one definition of hypermutated throughout the paper.
+   See `QUESTIONS_FOR_MO.md`.
+8. Review the STAR Methods for the topography analysis.
+9. Check the Otlu et al. code (SigProfilerTopography,
    https://github.com/AlexandrovLab/SigProfilerTopography) to see whether
    they normalize indels to the pyrimidine strand, for example GAGAGA->GAGA
    to TCTCTC->TCTC, and compare with what we do.
-9. Later: Fig 6 panels A to C are built from `build_fig6/ID4_IDF_signature.pdf`
+10. Later: Fig 6 panels A to C are built from `build_fig6/ID4_IDF_signature.pdf`
    and `build_fig6/sequence_logos.pdf` (checked 2026-10-07) and carry the
    same information, but they are not visually identical to the source
    plots. For example, the panel C logos are rescaled to 0-2 bits and the

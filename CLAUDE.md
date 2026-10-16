@@ -6,7 +6,13 @@
   `Sup Tables/Table S11 83-type and 89-type signature assignment.tsv`
   - Rows are signatures named `C_ID*/InsDel*` (83-type/89-type pair).
   - Columns are 6975 samples (Patient IDs).
-  - Cell values are exposures (indel counts). Column sums = total indels per sample.
+  - Cell values are exposures (indel counts). Column sums are NOT total
+    indels per sample. For the 6,472 samples fit with SigProfilerAssignment
+    to the 172-type catalog (83-type and 89-type stacked), each indel is
+    counted twice, so the sum is twice the number of indels. For the other
+    503 (presumably fit with mSigAct), the sum is about the number of
+    indels. For indel counts, use the column sums of
+    `unified_indels_data/liu_et_al_83_spectra.tsv`.
 
 - **Sample metadata (cancer type, MSI status, etc.)**:
   `Sup Tables/Table S17 metadata of 6975 samples.xlsx`
@@ -14,15 +20,25 @@
     `mutation_burden`, `cohort`, `Cancer Type`.
   - All 6975 Patient IDs match the column names in Table S11.
 
-## Sample grouping convention for Figure 5 panel C (with MSS-hyper)
+## Sample grouping convention for the MSS-hyper enrichment analysis
 
-When stratifying samples into mutually exclusive groups for the panel C
-Fisher enrichment analysis, assign in this priority order so each sample
-lands in exactly one column:
+The MSS-hyper enrichment analysis is now Figure 4A. The name "Figure 5
+panel C" below and in `explore-attributions/` is an older figure number.
+The current Figure 5C is genic vs. intergenic enrichment. The published
+Figure 4A is built by `build_fig4/all_cancer_types_enrichment.R` in the code
+repo with a different rule: MSI-H by MSIseq, then MSS-hyper if the sum of
+signature exposures is > 4000. Because those sums double-count most samples,
+that is in effect > 2000 indels for most of them. Which threshold and which
+counts are intended is an open question (see `QUESTIONS_FOR_MO.md`).
+
+The exploratory rule, used in the reference script below: when stratifying
+samples into mutually exclusive groups for the Fisher enrichment analysis,
+assign in this priority order so each sample lands in exactly one column:
 
 1. **MSI-H**: `MSI_status == "MSI"`.
 2. **MSS-hyper**: `MSS_status == "MSS"` AND total indels (column sum in
-   Table S11) > 5000.
+   Table S11) > 5000. Table S11 column sums double-count most samples, so
+   this is in effect > 2500 indels for most of them.
 3. **Major cancer type** (`Bladder`, `Colon`, `Esophagus`, `Kidney`,
    `Liver`, `Lung`, `Ovary`, `Prostate`, `Skin`): MSS, total indels <= 5000,
    and `Major Cancer Type` matches.
