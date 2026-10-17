@@ -28,7 +28,8 @@ http://8.138.15.71/
 - Review Mo's replies and act on them. Open questions sent to Mo:
   - 2026-10-16 email on Figures S1 and S6. ID_N and InsDel_N_beta in Table
     S15: answered and done (2026-10-17, Table S15 and Figure S6
-    regenerated). Still open: where `donor.all_projects.tsv.gz` came from.
+    regenerated). `donor.all_projects.tsv.gz` is the ICGC portal download
+    of 9 May 2024 named in the data repo README (Mo, 2026-10-17).
 - Steve: find the Hartwig Medical Foundation Data Transfer Agreement (or
   similar), probably the older one signed in Singapore, and get the
   release version or data request ID for the Hartwig metadata and VCFs.
