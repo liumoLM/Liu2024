@@ -711,8 +711,11 @@ stomach cancer specific enrichment in early replication regions, which [strength
 
 To explore potential [sex]{.pink} biases in mutational processes, we
 systematically compared signature activities between males and females
-using two-sided Fisher’s exact tests. After applying
-Benjamini–Hochberg adjustment (q \< 0.2), [nine signature-cancer type associations with sex were identified]{.yellow} (Figure S6A, Table S15). \<parallel
+using two-sided Fisher’s exact tests. After
+Benjamini–Hochberg adjustment (q \< 0.2), ten signature–cancer type
+combinations were associated with sex, corresponding to six associations
+when each 83-type signature and its 89-type counterpart are counted
+together (Figure S6A, Table S15). \<parallel
 structure\>Male-enriched mutational processes predominated in lung,
 liver, and "Other" cancer categories. Specifically, lung cancer showed
 significant male association with InsDel3b (OR = 0.367, q = 0.061) and
@@ -721,8 +724,8 @@ exposure, [consistent with higher smoking prevalence among men]{.yellow}. In liv
 male predominance was observed for InsDel5a (OR = 0.481, q = 0.118;
 clock-like) and InsDel8/C_ID8 (OR = 0.271, q = 0.184; associated with
 DSB repair by NHEJ and age). [\<mentioned anywhere
-else?\>]{.mark}~~The "Other" tumor group exhibited male bias in C_ID19
-(OR = 0.424, q = 0.188) and InsDel19b (OR = 0.448, q = 0.197).~~ In
+else?\>]{.mark}[The "Other" tumor group exhibited male bias in C_ID19
+(OR = 0.424, q = 0.188) and InsDel19b (OR = 0.448, q = 0.197).]{.yellow} In
 contrast, female-enriched signatures were found in esophageal and
 lymphoid malignancies, most notably in esophageal cancer for InsDel1a
 (OR = 3.85, q = 0.061) and C_ID1 (OR = 3.22, q = 0.188), as well as
