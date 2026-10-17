@@ -128,17 +128,23 @@ children, columns = Major Cancer Type, size = active proportion, color =
 median mutations / Mb on a log scale), in four panels:
 
 1. **All samples (n = 6975).** Matches the published Figure 4 layout.
-2. **MSI samples only (n = 91).** Isolates the MMR-driven exposures so
+2. **MSI-H samples only, by MSIseq (n = 202).** Isolates the MMR-driven exposures so
    they're not diluted by the MSS background.
-3. **MSS hypermutated samples, total indels >= 5000 (n = 476).** Surfaces
+3. **MSS hypermutated samples, not MSI-H by MSIseq and > 4,000 indels
+   (n = 48).** Surfaces
    POLE-proofreading and other non-MSI high-burden processes that would
    otherwise blend with MSI.
-4. **MSS non-hypermutated samples (n = 6408).** The "background" panel,
+4. **MSS non-hypermutated samples (n = 6725).** The "background" panel,
    where clock-like, tissue-specific exogenous, and rare-but-real
    signatures are visible without competition from high-burden samples.
 
-The hypermutation threshold (5000 total indels) matches the high-TMB
-cutoff used in the Methods to route samples to mSigAct.
+As of 2026-10-17, all scripts here use the paper's definitions: MSI-H is
+the MSIseq call (`MSIseq` in Table S17), not the cohort `MSI_status`, and a
+tumor is hypermutated if it has more than 4,000 indels, counted as the
+column sum of the R <= 9 clipped spectra in `unified_indels_data`
+(`liu_et_al_83_spectra.tsv`). Before that date they used `MSI_status` and
+Table S11 column sums >= 5,000, which count most indels twice. The counts
+above are from the regenerated outputs.
 
 ## What this exploration suggests for the manuscript
 

@@ -20,34 +20,37 @@
     `mutation_burden`, `cohort`, `Cancer Type`.
   - All 6975 Patient IDs match the column names in Table S11.
 
-## Sample grouping convention for the MSS-hyper enrichment analysis
+## MSI-H and hypermutation definitions
+
+Decided on 2026-10-16 and 2026-10-17 (with Mo), and used everywhere in the
+paper and in `explore-attributions/`:
+
+- **MSI-H** is the MSIseq call: `MSIseq` in Table S17 (`MSI-H` /
+  `Non-MSI-H`), or `MSIseq_MSI.H` in `unified_indels_data/sample_info.tsv`
+  (202 MSI-H tumors). Never use `MSI_status`, which holds the cohort calls
+  from PCAWG and Hartwig clinical data (91 MSI). Those are not reliable.
+- **Hypermutated (MSS-hyper)**: not MSI-H by MSIseq and > 4,000 indels
+  (48 tumors).
+- **Indel counts** always come from the spectra in `unified_indels_data`,
+  which are clipped to repeat length R <= 9 (column sums of
+  `liu_et_al_83_spectra.tsv`). Never use Table S11 column sums (which count
+  most indels twice) or Table S17 `mutation_burden` as indel counts.
+
+Figure 4A is built with these rules by `build_fig4/all_cancer_types_enrichment.R`
+in the code repo. The routing of tumors to mSigAct in the methods (>= 5,000
+indels) is a separate, still open question (see `paper_to_do.md`).
 
 The MSS-hyper enrichment analysis is now Figure 4A. The name "Figure 5
-panel C" below and in `explore-attributions/` is an older figure number.
-The current Figure 5C is genic vs. intergenic enrichment. The published
-Figure 4A is built by `build_fig4/all_cancer_types_enrichment.R` in the code
-repo with a different rule: MSI-H by MSIseq, then MSS-hyper if the sum of
-signature exposures is > 4000. Because those sums double-count most samples,
-that is in effect > 2000 indels for most of them.
+panel C" in `explore-attributions/` is an older figure number. The current
+Figure 5C is genic vs. intergenic enrichment. In the exploratory version,
+samples are assigned to mutually exclusive groups for the Fisher
+enrichment analysis in this priority order:
 
-Decided with Mo on 2026-10-16: a tumor is hypermutated if it has > 4,000
-indels, and indel counts always come from the spectra in
-`unified_indels_data`, which are clipped to repeat length R <= 9 (column sums
-of `liu_et_al_83_spectra.tsv`). Never use Table S11 column sums or Table S17
-`mutation_burden` as indel counts. The build_fig4 script and the exploratory
-rule below do not follow this yet (see `paper_to_do.md`).
-
-The exploratory rule, used in the reference script below: when stratifying
-samples into mutually exclusive groups for the Fisher enrichment analysis,
-assign in this priority order so each sample lands in exactly one column:
-
-1. **MSI-H**: `MSI_status == "MSI"`.
-2. **MSS-hyper**: `MSS_status == "MSS"` AND total indels (column sum in
-   Table S11) > 5000. Table S11 column sums double-count most samples, so
-   this is in effect > 2500 indels for most of them.
+1. **MSI-H**: MSI-H by MSIseq.
+2. **MSS-hyper**: not MSI-H and > 4,000 indels.
 3. **Major cancer type** (`Bladder`, `Colon`, `Esophagus`, `Kidney`,
-   `Liver`, `Lung`, `Ovary`, `Prostate`, `Skin`): MSS, total indels <= 5000,
-   and `Major Cancer Type` matches.
+   `Liver`, `Lung`, `Ovary`, `Prostate`, `Skin`): not MSI-H, <= 4,000
+   indels, and `Major Cancer Type` matches.
 
 Samples in other cancer types (Breast, Pancreas, CNS, etc.) are not
 displayed as their own column but still contribute to the "remaining"

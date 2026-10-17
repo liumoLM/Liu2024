@@ -1,5 +1,5 @@
-category,Biliary,Bladder,Bone.SoftTissue,Breast,CNS,Colon,Esophagus,Head,Kidney,Liver,Lung,Lymphoid,Myeloid,Other,Ovary,Pancreas,Prostate,Skin,Stomach,Thymus,Uterus,MSI-H,MSS hypermutated,Row total
-N_beta only,11,63,40,162,57,123,93,12,3,2,76,111,6,38,34,25,31,71,44,3,27,0,163,1195
-"N_beta + >=1 InsDel1, 0 InsDel2",30,65,17,136,18,308,52,29,6,7,54,55,3,61,24,174,145,18,16,1,28,0,72,1319
-"N_beta + 0 InsDel1, >=1 InsDel2",3,6,0,7,0,13,25,3,0,0,5,11,0,1,2,2,1,1,13,0,3,0,28,124
-"N_beta + >=1 InsDel1, >=1 InsDel2",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,2
+"category","Biliary","Bladder","Bone.SoftTissue","Breast","CNS","Colon","Esophagus","Head","Kidney","Liver","Lung","Lymphoid","Myeloid","Other","Ovary","Pancreas","Prostate","Skin","Stomach","Thymus","Uterus","MSI-H","MSS hypermutated","Row total"
+"N_beta only",12,65,42,168,57,188,119,12,3,2,100,114,6,49,34,25,33,72,52,3,27,4,8,1195
+"N_beta + >=1 InsDel1, 0 InsDel2",30,65,17,136,18,354,59,29,6,7,59,59,3,63,24,174,149,18,18,1,28,1,1,1319
+"N_beta + 0 InsDel1, >=1 InsDel2",3,6,0,7,1,22,35,3,0,0,5,11,0,1,2,2,1,2,15,1,3,3,1,124
+"N_beta + >=1 InsDel1, >=1 InsDel2",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,2

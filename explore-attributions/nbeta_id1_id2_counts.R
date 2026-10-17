@@ -20,7 +20,7 @@ suppressPackageStartupMessages({
 this_dir <- "/home/steve/github/0Liu2024/explore-attributions"
 sup_dir  <- file.path(this_dir, "..", "Sup Tables")
 
-HYPER_CUT <- 5000
+HYPER_CUT <- 4000
 PRESENCE_FRAC <- 0.01
 
 meta <- as.data.frame(read_excel(
@@ -28,10 +28,9 @@ meta <- as.data.frame(read_excel(
   sheet = "Sheet1"
 ))
 meta$major <- meta[["Major Cancer Type"]]
-meta$msi <- ifelse(
-  meta$MSI_status %in% c("MSI-H", "MSI"), "MSI",
-  ifelse(meta$MSI_status == "MSS", "MSS", NA_character_)
-)
+# MSI-H from MSIseq (the paper's MSI calls), not the cohort MSI_status.
+meta$msi <- ifelse(meta$MSIseq == "MSI-H", "MSI",
+                   ifelse(meta$MSIseq == "Non-MSI-H", "MSS", NA_character_))
 
 assign_mat <- read.delim(
   file.path(sup_dir, "Table S11 83-type and 89-type signature assignment.tsv"),
@@ -40,6 +39,13 @@ assign_mat <- read.delim(
 )
 samples <- colnames(assign_mat)
 totals  <- colSums(assign_mat)
+# Number of indels per tumor for the hypermutation call: column sums of the
+# R <= 9 clipped spectra in the data repo. Table S11 column sums count most
+# indels twice, so they are not used for this.
+n_indels <- colSums(read.delim(
+  file.path(path.expand("~/github/unified_indels_data"), "liu_et_al_83_spectra.tsv"),
+  row.names = 1, check.names = FALSE
+))[samples]
 frac    <- sweep(as.matrix(assign_mat), 2, totals, FUN = "/")
 frac[is.na(frac)] <- 0
 
@@ -48,12 +54,12 @@ samp <- data.frame(
   sample = samples,
   major  = meta$major[ix],
   msi    = meta$msi[ix],
-  total  = totals,
+  total  = n_indels,
   stringsAsFactors = FALSE
 )
 samp$stratum <- with(samp, ifelse(
   msi == "MSI", "MSI-H",
-  ifelse(total >= HYPER_CUT, "MSS hypermutated", "MSS non-hypermutated")
+  ifelse(total > HYPER_CUT, "MSS hypermutated", "MSS non-hypermutated")
 ))
 
 id1_sigs <- c("C_ID1/InsDel1a", "C_ID1/InsDel1b", "C_ID1/InsDel1c")

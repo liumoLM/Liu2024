@@ -1,7 +1,7 @@
 # Focused analysis of the InsDel1a/1b/1c, InsDel2a/2b/2c, and
 # InsDel_Nalpha/InsDel_Nbeta splits in relation to:
 #   - MSI vs MSS
-#   - Hypermutator (total indels >= 5000) vs non-hypermutator
+#   - Hypermutator (> 4,000 indels) vs non-hypermutator
 #   - The MMR block (C_ID7, InsDel_D, InsDel_J)
 #
 # Outputs (all written to this folder):
@@ -37,7 +37,7 @@ this_dir <- local({
 sup_dir <- file.path(this_dir, "..", "Sup Tables")
 
 PRESENCE_FRAC <- 0.05
-HYPER_CUT     <- 5000  # total assigned indels per sample
+HYPER_CUT     <- 4000  # indels per sample (spectrum total)
 
 # ---- Load ----
 message("Loading metadata")
@@ -46,10 +46,9 @@ meta <- as.data.frame(read_excel(
   sheet = "Sheet1"
 ))
 meta$major <- meta[["Major Cancer Type"]]
-meta$msi <- ifelse(
-  meta$MSI_status %in% c("MSI-H", "MSI"), "MSI",
-  ifelse(meta$MSI_status == "MSS", "MSS", NA_character_)
-)
+# MSI-H from MSIseq (the paper's MSI calls), not the cohort MSI_status.
+meta$msi <- ifelse(meta$MSIseq == "MSI-H", "MSI",
+                   ifelse(meta$MSIseq == "Non-MSI-H", "MSS", NA_character_))
 
 message("Loading assignment matrix")
 assign_mat <- read.delim(
@@ -61,6 +60,13 @@ sig_names <- rownames(assign_mat)
 samples   <- colnames(assign_mat)
 
 sample_totals <- colSums(assign_mat)
+# Number of indels per tumor for the hypermutation call: column sums of the
+# R <= 9 clipped spectra in the data repo. Table S11 column sums count most
+# indels twice, so they are not used for this.
+n_indels <- colSums(read.delim(
+  file.path(path.expand("~/github/unified_indels_data"), "liu_et_al_83_spectra.tsv"),
+  row.names = 1, check.names = FALSE
+))[samples]
 frac_mat <- sweep(as.matrix(assign_mat), 2, sample_totals, FUN = "/")
 frac_mat[is.na(frac_mat)] <- 0
 presence <- frac_mat >= PRESENCE_FRAC
@@ -71,12 +77,12 @@ samp <- data.frame(
   sample = samples,
   major  = meta$major[ix],
   msi    = meta$msi[ix],
-  total  = sample_totals,
+  total  = n_indels,
   stringsAsFactors = FALSE
 )
 samp$stratum <- with(samp, ifelse(
   msi == "MSI", "MSI-H",
-  ifelse(total >= HYPER_CUT, "MSS hypermutated", "MSS non-hypermutated")
+  ifelse(total > HYPER_CUT, "MSS hypermutated", "MSS non-hypermutated")
 ))
 samp$stratum <- factor(samp$stratum,
                        levels = c("MSS non-hypermutated", "MSS hypermutated", "MSI-H"))

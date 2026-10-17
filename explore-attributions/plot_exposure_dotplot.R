@@ -11,7 +11,7 @@
 #   Figure4_dotplot_panels.pdf
 #     Page 1: All samples
 #     Page 2: MSI samples only
-#     Page 3: MSS hypermutated samples only (total indels >= 5000, excludes MSI)
+#     Page 3: MSS hypermutated samples only (> 4,000 indels, excludes MSI)
 #     Page 4: MSS non-hypermutated samples (the "background")
 #
 # Visual encoding (matches Figure 4):
@@ -44,7 +44,7 @@ this_dir <- local({
 sup_dir <- file.path(this_dir, "..", "Sup Tables")
 
 GENOME_MB <- 3000
-HYPERMUT_INDEL_THRESHOLD <- 5000  # matches the high-TMB cutoff in Methods
+HYPERMUT_INDEL_THRESHOLD <- 4000  # hypermutation cutoff used in the paper
 
 # ---- Load ----
 meta <- as.data.frame(read_excel(
@@ -52,8 +52,9 @@ meta <- as.data.frame(read_excel(
   sheet = "Sheet1"
 ))
 meta$major <- meta[["Major Cancer Type"]]
-meta$msi <- ifelse(meta$MSI_status %in% c("MSI", "MSI-H"), "MSI",
-                   ifelse(meta$MSI_status == "MSS", "MSS", NA_character_))
+# MSI-H from MSIseq (the paper's MSI calls), not the cohort MSI_status.
+meta$msi <- ifelse(meta$MSIseq == "MSI-H", "MSI",
+                   ifelse(meta$MSIseq == "Non-MSI-H", "MSS", NA_character_))
 
 assign_mat <- as.matrix(read.delim(
   file.path(sup_dir, "Table S11 83-type and 89-type signature assignment.tsv"),
@@ -93,8 +94,15 @@ samples <- colnames(plot_mat)
 # Map sample -> major, msi, hypermut
 samp_meta <- meta[match(samples, meta$Patient), c("major", "msi")]
 rownames(samp_meta) <- samples
-samp_meta$total <- colSums(assign_mat)
-samp_meta$hyper <- samp_meta$total >= HYPERMUT_INDEL_THRESHOLD
+# Number of indels per tumor for the hypermutation call: column sums of the
+# R <= 9 clipped spectra in the data repo. Table S11 column sums count most
+# indels twice, so they are not used for this.
+n_indels <- colSums(read.delim(
+  file.path(path.expand("~/github/unified_indels_data"), "liu_et_al_83_spectra.tsv"),
+  row.names = 1, check.names = FALSE
+))[samples]
+samp_meta$total <- n_indels
+samp_meta$hyper <- samp_meta$total > HYPERMUT_INDEL_THRESHOLD
 
 # ---- Plotting helper ----
 build_dotplot_df <- function(plot_mat, samp_meta, sample_subset) {
@@ -179,7 +187,7 @@ subsets <- list(
   list(name = sprintf("MSI samples (n=%d)", length(msi_samples)),
        samp = msi_samples),
   list(name = sprintf(
-    "MSS hypermutated samples, total indels >= %d (n=%d)",
+    "MSS hypermutated samples, > %d indels (n=%d)",
     HYPERMUT_INDEL_THRESHOLD, length(mss_hyper_samples)
   ), samp = mss_hyper_samples),
   list(name = sprintf(

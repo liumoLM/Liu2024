@@ -43,13 +43,11 @@ meta <- as.data.frame(read_excel(
   file.path(sup_dir, "Table S17 metadata of 6975 samples.xlsx"),
   sheet = "Sheet1"
 ))
-stopifnot(all(c("Patient", "Major Cancer Type", "MSI_status") %in% colnames(meta)))
+stopifnot(all(c("Patient", "Major Cancer Type", "MSIseq") %in% colnames(meta)))
 meta$major <- meta[["Major Cancer Type"]]
-# Collapse MSI_status: MSI-H/MSI -> MSI, MSS -> MSS, else NA
-meta$msi <- ifelse(
-  meta$MSI_status %in% c("MSI-H", "MSI"), "MSI",
-  ifelse(meta$MSI_status == "MSS", "MSS", NA_character_)
-)
+# MSI-H from MSIseq (the paper's MSI calls), not the cohort MSI_status.
+meta$msi <- ifelse(meta$MSIseq == "MSI-H", "MSI",
+                   ifelse(meta$MSIseq == "Non-MSI-H", "MSS", NA_character_))
 
 message("Loading assignment matrix")
 assign_mat <- read.delim(

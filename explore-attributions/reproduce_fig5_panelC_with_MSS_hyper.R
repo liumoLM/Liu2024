@@ -1,10 +1,10 @@
 #!/usr/bin/env Rscript
 # Reproduce Figure 5 panel C, adding an "MSS-hyper" column for MSS samples
-# with > 5,000 total indels. Samples are assigned to groups mutually
+# with > 4,000 indels. Samples are assigned to groups mutually
 # exclusively in this order:
-#   1. MSI-H        (MSI_status == "MSI")
-#   2. MSS-hyper    (MSS_status == "MSS" and total indels > 5000)
-#   3. one of the cancer types in CANCERS (MSS, <= 5000 indels)
+#   1. MSI-H        (MSIseq == "MSI-H")
+#   2. MSS-hyper    (not MSI-H by MSIseq and indels > 4000)
+#   3. one of the cancer types in CANCERS (MSS, <= 4000 indels)
 # Samples not matching any group are excluded from the test.
 #
 # For each (89-type signature, group), Fisher's exact test compares the
@@ -38,16 +38,21 @@ rownames(M) <- sig_names
 stopifnot(all(meta$Patient %in% colnames(M)))
 M <- M[, meta$Patient]
 
-total_indels <- colSums(M)
+# Number of indels per tumor: column sums of the R <= 9 clipped spectra in
+# the data repo. Table S11 column sums count most indels twice.
+total_indels <- colSums(read.delim(
+  file.path(path.expand("~/github/unified_indels_data"), "liu_et_al_83_spectra.tsv"),
+  row.names = 1, check.names = FALSE
+))[meta$Patient]
 
 CANCERS <- c("Bladder", "Colon", "Esophagus", "Kidney", "Liver",
              "Lung", "Ovary", "Prostate", "Skin")
 
 group <- rep(NA_character_, nrow(meta))
-group[meta$MSI_status == "MSI"] <- "MSI-H"
-mss_hyper <- meta$MSI_status == "MSS" & total_indels > 5000 & is.na(group)
+group[meta$MSIseq == "MSI-H"] <- "MSI-H"
+mss_hyper <- meta$MSIseq == "Non-MSI-H" & total_indels > 4000 & is.na(group)
 group[mss_hyper] <- "MSS-hyper"
-mss_norm <- meta$MSI_status == "MSS" & total_indels <= 5000 & is.na(group)
+mss_norm <- meta$MSIseq == "Non-MSI-H" & total_indels <= 4000 & is.na(group)
 in_cancer <- mss_norm & meta$`Major Cancer Type` %in% CANCERS
 group[in_cancer] <- meta$`Major Cancer Type`[in_cancer]
 
@@ -118,7 +123,7 @@ p <- ggplot(plot_df, aes(x = group, y = signature)) +
         panel.grid.minor = element_blank()) +
   labs(x = NULL, y = NULL,
        title = "Figure 5C reproduction with mutually-exclusive groups (FDR < 0.05)",
-       subtitle = "MSS-hyper = MSS samples with > 5,000 total indels")
+       subtitle = "MSS-hyper = MSS samples with > 4,000 indels")
 
 ggsave("explore-attributions/fig5_panelC_with_MSS_hyper.pdf",
        p, width = 7, height = 6)

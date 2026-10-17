@@ -12,6 +12,13 @@ The supporting analysis script is `analyze_id1_id2_idN.R`. Outputs:
 `idN_alpha_vs_beta_investigation.csv`,
 `idN_alpha_vs_beta_panels.pdf`.
 
+> **Note (2026-10-17).** The numbers in this note were computed with the
+> old strata (MSI-H from the cohort `MSI_status`, and hypermutated meaning
+> Table S11 column sums >= 5,000). `analyze_id1_id2_idN.R` now uses the
+> paper's definitions (MSI-H by MSIseq, hypermutated meaning > 4,000
+> indels in the clipped spectra), and its outputs were regenerated, so
+> the percentages below need to be rechecked against them before use.
+
 ## Definitions
 
 - **Signature share** for sample s = (indels attributed to that signature
@@ -22,13 +29,14 @@ The supporting analysis script is `analyze_id1_id2_idN.R`. Outputs:
   signatures in MSI-H samples because the MMR block consumes most of
   those samples' indels. See "Attribution displacement" below.
 - **Strata used throughout**:
-  - MSS non-hypermutated: MSI_status = MSS and total assigned indels
-    < 5,000. n = 6,408.
-  - MSS hypermutated: MSI_status = MSS and total assigned indels
-    >= 5,000. n = 476.
-  - MSI-H: MSI_status in {MSI-H, MSI}. n = 91.
-  - The 5,000-indel hypermutator cutoff matches the high-TMB threshold
-    used in the Methods to route samples to mSigAct.
+  - Current definitions (2026-10-17): MSS non-hypermutated, not MSI-H by
+    MSIseq and <= 4,000 indels (n = 6,725). MSS hypermutated, not MSI-H
+    by MSIseq and > 4,000 indels (n = 48). MSI-H, MSI-H by MSIseq
+    (n = 202). Indels are counted from the R <= 9 clipped spectra.
+  - Old definitions, used for the numbers below: MSS non-hypermutated,
+    MSI_status = MSS and Table S11 sum < 5,000 (n = 6,408). MSS
+    hypermutated, MSI_status = MSS and Table S11 sum >= 5,000 (n = 476).
+    MSI-H, MSI_status in {MSI-H, MSI} (n = 91).
 
 ## A. ID1 split: InsDel1a (clock-like), InsDel1b (POLE), InsDel1c (liver)
 
