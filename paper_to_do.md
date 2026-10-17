@@ -79,37 +79,54 @@ Run `Rscript check_main_figures.R`, `Rscript check_sup_figures.R`, and
    S17. `mutation_burden` and the polyT ratio do not match the current
    spectra (mutation_burden equals the spectrum total for only 486 of 6,975
    tumors and is otherwise larger). They probably come from an earlier,
-   pre-cap-9 version of the data. With the current spectra, 44 tumors would
-   be routed differently between SigProfilerAssignment and mSigAct (methods,
-   "Table S17" paragraph). `MSIseq` matches `MSIseq_MSI.H` in
+   pre-cap-9 version of the data. `MSIseq` matches `MSIseq_MSI.H` in
    `sample_info.tsv` for all 6,975 tumors. `Cancer Type` matches
    `Original_Cancer_Type` there, except that Colon, Head, and
    Bone-SoftTissue are renamed Colon/Rectum, Head and neck, and Bone/Soft
-   tissue (2026-10-07). S17 now has a "legend" sheet. Check its description
-   of `mutation_burden` ("Number of somatic indels in the tumor") once the
-   source of that column is known. Overall, S17 needs a lot of work.
-   Decide whether we need it (probably yes, as an overall description of
-   the data set), and trace where each column's numbers come from,
-   ideally so that S17 can be built by a script in the code repo.
-   Questions about where `mutation_burden` and the poly-T ratio come from
-   are in `QUESTIONS_FOR_MO.md` (2026-10-15). A recount on 2026-10-15 found
-   43 tumors on different sides of the poly-T cutoff.
-7. Figure 4A MSS-hyper threshold (2026-10-15).
-   `build_fig4/all_cancer_types_enrichment.R` calls a tumor MSS-hyper if it
-   is not MSI-H by MSIseq and its signature exposures sum to > 4000. Those
-   sums count each indel twice for tumors fit with SigProfilerAssignment, so
-   the effective cutoff is about 2,000 indels for most tumors. This gives
-   723 MSS-hyper tumors, against 48 with real indel counts > 4000. The
-   legend says "> 4,000 indels". Decide the intended rule (threshold, and
-   counts before or after capping repeat lengths at R <= 9), recompute
-   Figure 4A, and use one definition of hypermutated throughout the paper.
-   See `QUESTIONS_FOR_MO.md`.
-8. Review the STAR Methods for the topography analysis.
-9. Check the Otlu et al. code (SigProfilerTopography,
+   tissue (2026-10-07). S17 has a "legend" sheet.
+   Decision (Mo, 2026-10-16): mutation counts come from the spectra in
+   `unified_indels_data`, which are clipped to repeat length R <= 9 (column
+   sums of `liu_et_al_83_spectra.tsv`). So recompute `mutation_burden` and
+   the poly-T ratio from those spectra, ideally with a build script in the
+   code repo. With the current spectra, 43 tumors would be routed
+   differently between SigProfilerAssignment and mSigAct (recount of
+   2026-10-15). Decide whether the routing should be redone with the
+   clipped counts, or whether the methods should say which counts the
+   routing used. The routing threshold in the methods is >= 5,000 indels,
+   not 4,000. Check whether that is intended. Background is in
+   `QUESTIONS_FOR_MO.md`.
+7. Figure 4A MSS-hyper threshold. Decision (Mo, 2026-10-16): a tumor is
+   hypermutated if it has > 4,000 indels, counted from the R <= 9 clipped
+   spectra in `unified_indels_data`. `build_fig4/all_cancer_types_enrichment.R`
+   instead uses signature exposure sums > 4000. Those sums count each indel
+   twice for tumors fit with SigProfilerAssignment, so its effective cutoff
+   is about 2,000 indels for most tumors, giving 723 MSS-hyper tumors
+   against 48 with the decided rule (2026-10-15 count). To do: change the
+   script to use the spectrum totals, recompute Figure 4A, update its
+   legend and text, and use this definition of hypermutated throughout
+   the paper (also `explore-attributions/` and the project CLAUDE.md, which
+   still describe a > 5000 rule on Table S11 sums).
+8. Figures S1 and S6 (2026-10-16). Mo added `build_fig_s6/build_fig_s6_stats.R`
+   and the Figure S1 metadata scripts.
+   - Figure S1 reproduces. It now reads `sample_info.tsv` and the assignment
+     tables from the data repo, and the copies in `build_fig_s1/` were
+     deleted (identical plot data). `build_all_meta.R` moved to the data
+     repo as a record of how `sample_info.tsv` was assembled.
+   - `HMF_metadata.tsv` (controlled-access Hartwig clinical data) was
+     removed from the code repo and its git history, and the repo was
+     force-pushed. Mo, Mini, and Xueming were emailed to reset their clones.
+   - Table S16 reproduces from the script. Table S15 does not: the script
+     adds 26 ID_N and InsDel_N_beta rows, which changes the BH FDRs by up
+     to 16%, but the same 10 groups pass FDR < 0.2.
+   - Emailed Mo (2026-10-16) why ID_N and InsDel_N_beta were left out of
+     Table S15, and where `HMF_metadata.tsv` and the PCAWG donor table came
+     from. Details in `sup_figs_and_tables_sources.md`, items 4 and 5.
+9. Review the STAR Methods for the topography analysis.
+10. Check the Otlu et al. code (SigProfilerTopography,
    https://github.com/AlexandrovLab/SigProfilerTopography) to see whether
    they normalize indels to the pyrimidine strand, for example GAGAGA->GAGA
    to TCTCTC->TCTC, and compare with what we do.
-10. Later: Fig 6 panels A to C are built from `build_fig6/ID4_IDF_signature.pdf`
+11. Later: Fig 6 panels A to C are built from `build_fig6/ID4_IDF_signature.pdf`
    and `build_fig6/sequence_logos.pdf` (checked 2026-10-07) and carry the
    same information, but they are not visually identical to the source
    plots. For example, the panel C logos are rescaled to 0-2 bits and the

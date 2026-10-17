@@ -28,8 +28,14 @@ The current Figure 5C is genic vs. intergenic enrichment. The published
 Figure 4A is built by `build_fig4/all_cancer_types_enrichment.R` in the code
 repo with a different rule: MSI-H by MSIseq, then MSS-hyper if the sum of
 signature exposures is > 4000. Because those sums double-count most samples,
-that is in effect > 2000 indels for most of them. Which threshold and which
-counts are intended is an open question (see `QUESTIONS_FOR_MO.md`).
+that is in effect > 2000 indels for most of them.
+
+Decided with Mo on 2026-10-16: a tumor is hypermutated if it has > 4,000
+indels, and indel counts always come from the spectra in
+`unified_indels_data`, which are clipped to repeat length R <= 9 (column sums
+of `liu_et_al_83_spectra.tsv`). Never use Table S11 column sums or Table S17
+`mutation_burden` as indel counts. The build_fig4 script and the exploratory
+rule below do not follow this yet (see `paper_to_do.md`).
 
 The exploratory rule, used in the reference script below: when stratifying
 samples into mutually exclusive groups for the Fisher enrichment analysis,
