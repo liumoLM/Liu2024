@@ -26,10 +26,17 @@ http://8.138.15.71/
   vs. mSigAct routing changes with the clipped counts, and whether the
   routing threshold should be >= 5,000 (as in the methods) or 4,000.
 - Review Mo's replies and act on them. Open questions sent to Mo:
-  - 2026-10-16 email on Figures S1 and S6: why ID_N and InsDel_N_beta were
-    left out of Table S15, and where `HMF_metadata.tsv` and
-    `donor.all_projects.tsv.gz` came from (to note in `build_all_meta.R` and
-    the data repo README).
+  - 2026-10-16 email on Figures S1 and S6. ID_N and InsDel_N_beta in Table
+    S15: answered and done (2026-10-17, Table S15 and Figure S6
+    regenerated). Still open: where `donor.all_projects.tsv.gz` came from.
+- Steve: find the Hartwig Medical Foundation Data Transfer Agreement (or
+  similar), probably the older one signed in Singapore, and get the
+  release version or data request ID for the Hartwig metadata and VCFs.
+  Mo (2026-10-17): both `HMF_metadata.tsv` and the VCFs came from the
+  Duke-NUS server, where Arnoud had downloaded them, and Mo does not know
+  the release or request ID. Then note the source in the header of
+  `build_all_meta.R` and in the `sample_info.tsv` entry of the data repo
+  README, which now says the source is "to be confirmed with Mo Liu".
   - `QUESTIONS_FOR_MO.md` (Table S17, routing, hypermutation). Mo has
     answered the hypermutation threshold and which counts to use (item 7).
   - Mo's partial-credit table for Table S14 (`all.indel.ID89.partial.credit.txt`),
