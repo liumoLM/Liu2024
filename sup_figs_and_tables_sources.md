@@ -29,7 +29,7 @@ regenerates.
      probabilities, made by Mo Liu), which
      `ID89_topography_analysis_code/README.md` says is too large to include.
 
-2. **Table S13, Figure S4, and Figure 5D.**
+2. **Table S13, Figure S8 (Figure S4 before 2026-10-17), and Figure 5D.**
    - `ID83_topography_analysis_code/r.09_barplot.R` (from Mini Huang) makes
      `plot_data.xlsx` and `all_lm_trend.xlsx`. It reads
      `04_create4InfMatrix/rtGroup/tissue.rtGroup.{Mutation,Simulated}_50cutoff.xlsx`.
@@ -44,7 +44,7 @@ regenerates.
      difference of at most 1e-12).
    - So steps r.04 onward for replication timing now run from the repo. The
      data for the steps before r.04 are missing, as for item 3.
-3. **Table S12, Figure S3, and Figure 5 panels A to C.**
+3. **Table S12, Figures S5 to S7 (panels A to C of Figure S3 before 2026-10-17), and Figure 5 panels A to C.**
    - The 50%-cutoff matrices from step r.04 are checked in at
      `ID83_topography_analysis_code/04_create4InfMatrix/` for `DNA.region`,
      `repli.strand`, and `trans.strand`. So steps r.05 (Fisher test) and r.06
@@ -68,7 +68,7 @@ regenerates.
        re-run against 2.893205 in the paper (relative difference 1.7e-5). The
        cause of that one larger gap was not checked. It does not matter at
        any precision the paper reports.
-4. **Tables S15 and S16, Figure S6.** Mo Liu added
+4. **Tables S15 and S16, Figure S10 (Figure S6 before 2026-10-17).** Mo Liu added
    `build_fig_s6/build_fig_s6_stats.R` on 2026-10-16. It writes
    `gender.bias.txt` and `correlation.between.age.and.signature.activity.txt`
    from the data repo's `sample_info.tsv` and assignment tables. Re-run on
@@ -80,7 +80,7 @@ regenerates.
      have 160. The 26 extra rows are all ID_N and InsDel_N_beta. The 160
      shared rows have identical counts, P values, and odds ratios. The BH
      FDRs differ (by up to 16%), because more tests are corrected. The same 10
-     groups pass FDR < 0.2, so Figure S6a shows the same signatures, with
+     groups pass FDR < 0.2, so Figure S10A shows the same signatures, with
      slightly different color intensities.
    - The `bonev` column needs the Bioconductor-dependent package BonEV,
      which is not installed here. The script then copies the old values.
@@ -127,7 +127,7 @@ regenerates.
 
 ## Complete from the data repo
 
-Tables S2 to S8, S10, and S11, and Figures S2 and S5.
+Tables S2 to S8, S10, and S11, and Figures S2 to S4 (panels A to C of Figure S2 before 2026-10-17) and S9 (Figure S5 before 2026-10-17).
 
 ## ID83 topography steps before r.04
 

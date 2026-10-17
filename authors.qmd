@@ -1,0 +1,22 @@
+<!-- Author list and affiliations, included by ms.qmd and sup_figs/sup_figs.qmd. -->
+
+Mo Liu1\*#, Mi Ni Huang2\*, Xue Ming Wu1\*, Ying Yang1, Runtian Yao2,
+Qi Zheng1, Runxi Shen3, Steven G. Rozen4#
+
+1 Sino-French Hoffmann Institute, School of Basic Medical Sciences,
+The First Affiliated Hospital, Guangzhou Medical University,
+Guangzhou, Guangdong 511436, China
+
+2 Molecular Cancer Research Center, Zhongshan School of Medicine, Sun
+Yat-sen University Shenzhen Campus, Shenzhen, 518107, China
+
+3 Imaging Platform, Broad Institute of Harvard and MIT, Cambridge,
+Massachusetts, United States
+
+4 Department of Biostatistics and Bioinformatics, Duke University
+School of Medicine, Durham, North Carolina, 27710, United States
+
+\# Corresponding authors: E-mails: <mo.liu@gzhmu.edu.cn>,
+<steverozen@pm.me>
+
+\* These authors contributed equally

@@ -1,0 +1,245 @@
+---
+title: "Supplementary Figures"
+subtitle: "A unified repertoire of indel mutational signatures in 6,975 tumors"
+filters:
+  - ../highlight.lua
+  - at: post-render
+    path: ../sup_fig_numbers.lua
+crossref:
+  fig-title: "Figure S"
+  fig-prefix: "Figure S"
+  title-delim: "."
+format:
+  html:
+    toc: true
+    embed-resources: true
+    link-external-newwindow: true
+  pdf:
+    papersize: letter
+    mainfont: TeX Gyre Pagella
+    fig-pos: H
+    geometry:
+      - margin=0.75in
+      - footskip=0.5in
+    include-in-header:
+      text: |
+        \usepackage{lua-ul}
+        \setcapindent{0pt}
+        \setlength{\intextsep}{0pt}
+        \setlength{\abovecaptionskip}{4pt}
+        \setlength{\belowcaptionskip}{0pt}
+    # crossref fig-title gives "Figure S 1" in LaTeX. Number the figures
+    # "S1", "S2", ... instead (Quarto sets \figurename in the preamble, so
+    # this has to come after it).
+    include-before-body:
+      text: |
+        \renewcommand*\figurename{Figure}
+        \renewcommand{\thefigure}{S\arabic{figure}}
+---
+
+```{r}
+#| label: setup
+#| include: false
+# Warn at render time if any figure in sup_figs/ is older than one of its
+# source plots in the code repository (mapping in sup_figures_manifest.tsv).
+# The figures shown below are the cropped copies in sup_figs/cropped/, made
+# by crop_sup_figs.sh at the top of the repository.
+source(here::here("check_sup_figures.R"))
+sup_figure_problems <- check_sup_figures(
+  manifest = here::here("sup_figures_manifest.tsv"),
+  sup_dir = here::here("sup_figs")
+)
+if (nrow(sup_figure_problems) > 0) {
+  warning(
+    "sup_figs/ possibly stale relative to the code repo:\n",
+    paste0("  ", sup_figure_problems$file, ": ", sup_figure_problems$problem,
+           collapse = "\n"),
+    call. = FALSE, immediate. = TRUE
+  )
+}
+```
+
+{{< include ../authors.qmd >}}
+
+{{< pagebreak >}}
+
+::: {#fig-s1}
+![](cropped/fig_s1a.pdf){width=7in}
+
+**Activities of 83- and 89-type mutational signatures across cancer
+types**
+:::
+
+The size of each dot represents the proportion of genomes with
+activities of the signature in the given cancer type. The color
+indicates the median number of mutations due to the exposure per
+megabase of the given signature in the given cancer type. The figure
+continues on the next page.
+
+{{< pagebreak >}}
+
+![](cropped/fig_s1b.pdf){width=7in}
+
+**Figure S1 (continued).**
+
+
+{{< pagebreak >}}
+
+::: {#fig-s2}
+![](cropped/fig_s2.pdf){width=7in}
+
+**Divergent sequence contexts for C_ID13 and ID_C in the 83-, 89-, and
+476-type classifications**
+:::
+
+Top to bottom: 83-type, 89-type, and partial 476-type representations
+(1-bp C and T deletions were displayed). While 89-type profiles exhibit
+high similarity between the two signatures, the 476-type classification
+reveals distinct flanking sequence preferences. Specifically, C_ID13
+(InsDel13) demonstrates a predilection for ATTA and GTTA motifs, whereas
+ID_C (InsDel_C) preferentially occurs at ATA and GTA contexts.
+
+{{< pagebreak >}}
+
+::: {#fig-s3}
+![](cropped/fig_s3.pdf){width=7in}
+
+**Divergent sequence contexts for C_ID11 and C_ID16 in the 83-, 89-,
+and 476-type classifications**
+:::
+
+Top to bottom: 83-type, 89-type, and partial 476-type representations
+(1-bp C and T insertions were displayed). While 89-type profiles exhibit
+high similarity between the two signatures, the 476-type classification
+reveals distinct flanking sequence preferences. Specifically, C_ID11
+(InsDel11) exhibits a specific preference for 1-bp T insertions within
+NTN motifs, while C_ID16 (InsDel16) shows a broader preference for NN
+contexts.
+
+{{< pagebreak >}}
+
+<!-- Keep non-ASCII characters such as β out of caption titles. In a
+caption they make LuaLaTeX report changed labels on every run, so the PDF
+render stops at the maximum number of runs. -->
+
+::: {#fig-s4}
+![](cropped/fig_s4.pdf){width=7in}
+
+**Divergent sequence contexts for C_ID9 and ID_A in the 83-, 89-, and
+476-type classifications**
+:::
+
+Top to bottom: 83-type, 89-type, and partial 476-type representations
+(1-bp C and T deletions were displayed). Compared with C_ID9, ID_A is
+nearly depleted of 1-bp T deletions. Although the 83-channel profiles
+show similar patterns of 1-bp C deletions, the 89- and 476-channel
+classifications reveal distinct preferences for flanking sequences. In
+particular, InsDel_Aβ preferentially exhibits 1-bp C deletions in TCA
+and TCT contexts.
+
+{{< pagebreak >}}
+
+::: {#fig-s5}
+![](cropped/fig_s5.pdf){height=8.2in}
+
+**Transcription strand asymmetries of 83-type mutational signatures
+across cancer types**
+:::
+
+Each row represents an 83-type signature, and each column represents a
+cancer type. Red and dark blue circles indicate enrichment on the
+transcribed and untranscribed strands, respectively. Significance of
+enrichment is shown as stars (Fisher's exact test, \* p \< 0.05, \*\*
+p \< 0.01, \*\*\* p \< 0.001). Color intensities and circle sizes
+represent the odds ratio between the ratio of real mutations and the
+ratio of simulated mutations (see Methods).
+
+{{< pagebreak >}}
+
+::: {#fig-s6}
+![](cropped/fig_s6.pdf){height=8.2in}
+
+**Replication strand asymmetries of 83-type mutational signatures
+across cancer types**
+:::
+
+Data are presented as in Figure S5, with teal and salmon circles
+indicating enrichment on the leading and lagging strands, respectively.
+
+{{< pagebreak >}}
+
+::: {#fig-s7}
+![](cropped/fig_s7.pdf){height=8.2in}
+
+**Enrichment of 83-type mutational signatures in genic and intergenic
+regions across cancer types**
+:::
+
+Data are presented as in Figure S5, with orange and light blue circles
+indicating enrichment in genic and intergenic regions, respectively.
+
+{{< pagebreak >}}
+
+::: {#fig-s8}
+![](cropped/fig_s8.pdf){width=7in}
+
+**Interplay between 83-type signatures and replication time**
+:::
+
+Relative mutation counts of 83-type signatures per replication-timing
+decile (y axes) are presented for early (left) to late (right)
+replication domains. Real mutations are shown as bars, and simulated
+mutations are shown as red dashed lines. Real and simulated counts are
+each scaled to their own maximum, so the y axis shows the count relative
+to the decile with the most mutations. The numbers above each plot are
+the numbers of cancer types in which the signature increases, decreases,
+or is flat from early to late replication. The trends are determined
+separately for each cancer type and relative to the simulated mutations,
+so they can differ from the pooled real counts shown as bars. Bars sum
+the cancer types with a trend, that is, those with at least 500 real
+indels attributed to the signature in which the real or the simulated
+slope was significant. Green bars indicate signatures that increase from
+early to late replication in every such cancer type. Yellow bars
+indicate signatures that decrease in every such cancer type. Purple bars
+indicate signatures that are flat (not affected by replication timing)
+in more than half of them. Blue bars indicate all other signatures,
+whose trends are inconsistent across cancer types.
+
+{{< pagebreak >}}
+
+::: {#fig-s9}
+![](cropped/fig_s9.pdf){width=7in}
+
+**Mutational spectra of RNase H2-deficient murine tumors and RPE1 cell
+clones**
+:::
+
+From top to bottom, spectra are displayed in 83-type, 89-type, and
+partial 476-type representations (specifically highlighting ≥ 2-bp
+deletions, ≥ 2-bp insertions, and deletions with microhomology).
+Predominant peaks for ID_F/InsDel_F are evident in both RNase
+H2-deficient tumors and RPE1 clones, characterized by Del:2bp:Repeats:2
+and Del:2bp:MH:1 (83-type), L(2,8):U(1,2):R(2,4) and L(2,5):M1
+(89-type), and Del2:U2:R2 and Del2:M1 (476-type). Notably, these
+features are nearly absent in wild-type RPE1 control clones.
+
+
+{{< pagebreak >}}
+
+::: {#fig-s10}
+![](cropped/fig_s10.pdf){height=7.6in}
+
+**Demographic associations of indel signatures with sex and age**
+:::
+
+**(A)** Sex association of 83-type and 89-type indel signatures. Bar
+height represents the log₂ odds ratio (log₂OR), with positive values
+indicating enrichment in females (red) and negative values indicating
+enrichment in males (blue). Color shade indicates the significance
+level (−log₁₀FDR, where FDR is the Benjamini-Hochberg false discovery
+rate). Only signatures with FDR \< 0.2 are shown.
+
+**(B)** Age association of 83-type and 89-type indel signatures across
+cancer types. Color shade indicates the Spearman correlation
+coefficient (ρ), and dot size corresponds to the significance level
+(−log₁₀FDR). Only signatures with FDR \< 0.05 and ρ \> 0.1 are shown.
