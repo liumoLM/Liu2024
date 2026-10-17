@@ -25,6 +25,15 @@ http://8.138.15.71/
 - Item 6: decide what to do about the 43 tumors whose SigProfilerAssignment
   vs. mSigAct routing changes with the clipped counts, and whether the
   routing threshold should be >= 5,000 (as in the methods) or 4,000.
+- Review Mo's replies and act on them. Open questions sent to Mo:
+  - 2026-10-16 email on Figures S1 and S6: why ID_N and InsDel_N_beta were
+    left out of Table S15, and where `HMF_metadata.tsv` and
+    `donor.all_projects.tsv.gz` came from (to note in `build_all_meta.R` and
+    the data repo README).
+  - `QUESTIONS_FOR_MO.md` (Table S17, routing, hypermutation). Mo has
+    answered the hypermutation threshold and which counts to use (item 7).
+  - Mo's partial-credit table for Table S14 (`all.indel.ID89.partial.credit.txt`),
+    promised for the weekend.
 
 Steve review Mini's methods -
 
