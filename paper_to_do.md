@@ -25,23 +25,22 @@ http://8.138.15.71/
 - Item 6: decide what to do about the 43 tumors whose SigProfilerAssignment
   vs. mSigAct routing changes with the clipped counts, and whether the
   routing threshold should be >= 5,000 (as in the methods) or 4,000.
-- Review Mo's replies and act on them. Open questions sent to Mo:
-  - 2026-10-16 email on Figures S1 and S6. ID_N and InsDel_N_beta in Table
-    S15: answered and done (2026-10-17, Table S15 and Figure S6
-    regenerated). `donor.all_projects.tsv.gz` is the ICGC portal download
-    of 9 May 2024 named in the data repo README (Mo, 2026-10-17).
+- Review Mo's replies and act on them. Still open with Mo:
+  - `QUESTIONS_FOR_MO.md` (Table S17, routing). Mo has answered the
+    hypermutation threshold and which counts to use (item 7).
+  - Mo's partial-credit table for Table S14 (`all.indel.ID89.partial.credit.txt`),
+    promised for the weekend.
+  - Answered and done (2026-10-17): ID_N and InsDel_N_beta in Table S15
+    (Table S15 and Figure S6 regenerated), and `donor.all_projects.tsv.gz`
+    (the ICGC portal download of 9 May 2024 named in the data repo README).
 - Steve: find the Hartwig Medical Foundation Data Transfer Agreement (or
   similar), probably the older one signed in Singapore, and get the
   release version or data request ID for the Hartwig metadata and VCFs.
   Mo (2026-10-17): both `HMF_metadata.tsv` and the VCFs came from the
-  Duke-NUS server, where Arnoud had downloaded them, and Mo does not know
-  the release or request ID. Then note the source in the header of
-  `build_all_meta.R` and in the `sample_info.tsv` entry of the data repo
-  README, which now says the source is "to be confirmed with Mo Liu".
-  - `QUESTIONS_FOR_MO.md` (Table S17, routing, hypermutation). Mo has
-    answered the hypermutation threshold and which counts to use (item 7).
-  - Mo's partial-credit table for Table S14 (`all.indel.ID89.partial.credit.txt`),
-    promised for the weekend.
+  Duke-NUS server, where Arnoud Boot had downloaded them, and Mo does not
+  know the release or request ID. Then add it to the header of
+  `build_all_meta.R` and to the `sample_info.tsv` entry of the data repo
+  README, which has a "TO DO" in capitals for it.
 
 Steve review Mini's methods -
 
@@ -61,7 +60,8 @@ steve check: Sup Fig 1 legend
 Run `Rscript check_main_figures.R`, `Rscript check_sup_figures.R`, and
 `Rscript check_sup_tables.R` to see the current state.
 
-1. Read Mo's email replies.
+1. Closed (2026-10-17): read Mo's email replies. Follow-ups are in the
+   "Tomorrow" section above.
 2. Ask Mo to confirm that the `dna.region` (G or I) and `trans.strand`
    columns in the annotated indel file read by r.01_createBed.R came from
    ICAMS, with which version and which transcript ranges
@@ -131,30 +131,25 @@ Run `Rscript check_main_figures.R`, `Rscript check_sup_figures.R`, and
    `QUESTIONS_FOR_MO.md`.
 7. Figure 4A MSS-hyper threshold. Decision (Mo, 2026-10-16): a tumor is
    hypermutated if it has > 4,000 indels, counted from the R <= 9 clipped
-   spectra in `unified_indels_data`. `build_fig4/all_cancer_types_enrichment.R`
-   instead uses signature exposure sums > 4000. Those sums count each indel
-   twice for tumors fit with SigProfilerAssignment, so its effective cutoff
-   is about 2,000 indels for most tumors, giving 723 MSS-hyper tumors
-   against 48 with the decided rule (2026-10-15 count). To do: change the
-   script to use the spectrum totals, recompute Figure 4A, update its
-   legend and text, and use this definition of hypermutated throughout
-   the paper (also `explore-attributions/` and the project CLAUDE.md, which
-   still describe a > 5000 rule on Table S11 sums).
-8. Figures S1 and S6 (2026-10-16). Mo added `build_fig_s6/build_fig_s6_stats.R`
-   and the Figure S1 metadata scripts.
-   - Figure S1 reproduces. It now reads `sample_info.tsv` and the assignment
-     tables from the data repo, and the copies in `build_fig_s1/` were
-     deleted (identical plot data). `build_all_meta.R` moved to the data
+   spectra in `unified_indels_data`. Done (2026-10-17): Figure 4A was
+   recomputed with this rule (48 MSS-hyper tumors instead of 723), and the
+   project CLAUDE.md records it. Still to do: use the same definition
+   everywhere else in the paper and in `explore-attributions/`, which
+   still uses a > 5000 rule on Table S11 sums.
+8. Closed (2026-10-17): Figures S1 and S6, and Tables S15 and S16.
+   - Figure S1 reproduces. It reads `sample_info.tsv` and the assignment
+     tables from the data repo, and `build_all_meta.R` moved to the data
      repo as a record of how `sample_info.tsv` was assembled.
    - `HMF_metadata.tsv` (controlled-access Hartwig clinical data) was
      removed from the code repo and its git history, and the repo was
      force-pushed. Mo, Mini, and Xueming were emailed to reset their clones.
-   - Table S16 reproduces from the script. Table S15 does not: the script
-     adds 26 ID_N and InsDel_N_beta rows, which changes the BH FDRs by up
-     to 16%, but the same 10 groups pass FDR < 0.2.
-   - Emailed Mo (2026-10-16) why ID_N and InsDel_N_beta were left out of
-     Table S15, and where `HMF_metadata.tsv` and the PCAWG donor table came
-     from. Details in `sup_figs_and_tables_sources.md`, items 4 and 5.
+   - Table S16 reproduces. Table S15 and Figure S6A were regenerated with
+     ID_N and InsDel_N_beta, which Mo had left out by mistake (186 groups,
+     same 10 at FDR < 0.2).
+   - Figure S6 is now assembled in R by
+     `build_fig_s6/make_figure_s6_layout.R`, replacing the Illustrator
+     version. The sex-bias text in `ms.qmd` was updated to match.
+   Details in `sup_figs_and_tables_sources.md`, items 4 and 5.
 9. Review the STAR Methods for the topography analysis.
 10. Check the Otlu et al. code (SigProfilerTopography,
    https://github.com/AlexandrovLab/SigProfilerTopography) to see whether
