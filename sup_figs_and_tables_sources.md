@@ -91,11 +91,12 @@ regenerates.
    hard-coded `D:/` path and wrote CRLF line endings. After fixing both, its
    output is byte-identical to `all.meta.txt`.
    Duplicated data sources:
-   - `all.meta.txt` repeats the data repo's `sample_info.tsv` (age, sex,
-     cancer type, and cohort agree for all 7,013 of its tumors).
-     `build_all_meta.R` rebuilds it from raw PCAWG and Hartwig metadata, so
-     the code repo and the data repo now each have a way to make the same
-     sample metadata.
+   - `all.meta.txt` repeated the data repo's `sample_info.tsv` (age, sex,
+     cancer type, and cohort agree for all 7,013 of its tumors). On
+     2026-10-16, `Signature Assignment.qmd` was changed to read the cancer
+     types from `sample_info.tsv`, which gives identical plot data, and
+     `all.meta.txt` was removed. `build_all_meta.R` is kept as a record of
+     how the metadata were assembled.
    - `build_fig_s1/liu_et_al_{83,89}_assignment.tsv` are identical copies of
      the data repo files.
    - `build_fig_s1/PCAWG.sample.sheet.txt` is identical to the
