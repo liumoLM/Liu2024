@@ -68,13 +68,41 @@ regenerates.
        re-run against 2.893205 in the paper (relative difference 1.7e-5). The
        cause of that one larger gap was not checked. It does not matter at
        any precision the paper reports.
-4. **Tables S15 and S16, Figure S6.** `build_fig_s6/gender.bias.txt` and
-   `build_fig_s6/correlation.between.age.and.signature.activity.txt` are
-   processed inputs with no generating code. The Figure S6 qmd says it only
-   provides the processed data.
-5. **Figure S1.** `build_fig_s1/all.meta.txt` and
-   `build_fig_s1/assignment.high.similarity.samples.txt` (samples with
-   reconstruction cosine similarity above 0.90) have no generating code.
+4. **Tables S15 and S16, Figure S6.** Mo Liu added
+   `build_fig_s6/build_fig_s6_stats.R` on 2026-10-16. It writes
+   `gender.bias.txt` and `correlation.between.age.and.signature.activity.txt`
+   from the data repo's `sample_info.tsv` and assignment tables. Re-run on
+   2026-10-16:
+   - The age table (Table S16) reproduces exactly. Only the row order of the
+     "Overall" rows differs.
+   - The sex-bias table (Table S15) does not reproduce. The script tests 186
+     cancer-type and signature groups, but the checked-in file and Table S15
+     have 160. The 26 extra rows are all ID_N and InsDel_N_beta. The 160
+     shared rows have identical counts, P values, and odds ratios. The BH
+     FDRs differ (by up to 16%), because more tests are corrected. The same 10
+     groups pass FDR < 0.2, so Figure S6a shows the same signatures, with
+     slightly different color intensities.
+   - The `bonev` column needs the Bioconductor-dependent package BonEV,
+     which is not installed here. The script then copies the old values.
+5. **Figure S1.** Mo Liu added `build_fig_s1/build_all_meta.R` and
+   `build_fig_s1/build_assignment_high_similarity_samples.R` on 2026-10-16.
+   Re-run on 2026-10-16, both reproduce the checked-in `all.meta.txt` and
+   `assignment.high.similarity.samples.txt` (all.meta.txt only after changing
+   the hard-coded `D:/` path, and with CRLF instead of LF line endings).
+   Duplicated data sources:
+   - `all.meta.txt` repeats the data repo's `sample_info.tsv` (age, sex,
+     cancer type, and cohort agree for all 7,013 of its tumors).
+     `build_all_meta.R` rebuilds it from raw PCAWG and Hartwig metadata, so
+     the code repo and the data repo now each have a way to make the same
+     sample metadata.
+   - `build_fig_s1/liu_et_al_{83,89}_assignment.tsv` are identical copies of
+     the data repo files.
+   - `build_fig_s1/PCAWG.sample.sheet.txt` is identical to the
+     `pcawg_sample_sheet.tsv` that `build_sup_table_s9/annotate_pcawg_mmr.R`
+     reads from `~/MEGA/`.
+   - `build_fig_s1/HMF_metadata.tsv` is the Hartwig clinical metadata
+     (patient IDs, biopsy dates and sites). This is probably covered by the
+     Hartwig data access agreement and cannot go in a public repo.
 
 ## No build script, but the data probably exist
 
@@ -137,5 +165,6 @@ sit under `/public/data/Topography_analysis*/` on the Huang-lab server.
   simulated the background indels (see "ID83 topography steps before r.04").
 - From Mo Liu: `all.indel.ID89.partial.credit.txt` (item 1). This is no
   longer needed to build Table S14, only to rerun the steps before r.04.
-- Code that generates the Figure S6 inputs (item 4) and the Figure S1 inputs
-  (item 5). Whoever produced these files should supply it.
+- From Mo Liu: why the checked-in sex-bias table lacks ID_N and
+  InsDel_N_beta (item 4), and whether `HMF_metadata.tsv` can be published
+  (item 5).
