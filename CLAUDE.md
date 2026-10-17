@@ -19,6 +19,8 @@
   - Key columns: `Patient`, `Major Cancer Type`, `MSI_status` (values `MSI` / `MSS`),
     `mutation_burden`, `cohort`, `Cancer Type`.
   - All 6975 Patient IDs match the column names in Table S11.
+  - Built by `build_sup_table_s17/build_sup_table_s17.R` in the code repo
+    from `sample_info.tsv` and `liu_et_al_83_spectra.tsv`.
 
 ## MSI-H and hypermutation definitions
 
@@ -34,7 +36,10 @@ paper and in `explore-attributions/`:
 - **Indel counts** always come from the spectra in `unified_indels_data`,
   which are clipped to repeat length R <= 9 (column sums of
   `liu_et_al_83_spectra.tsv`). Never use Table S11 column sums (which count
-  most indels twice) or Table S17 `mutation_burden` as indel counts.
+  most indels twice) as indel counts. Since 2026-10-17, Table S17
+  `mutation_burden` and the poly-T ratio are computed from these spectra by
+  `build_sup_table_s17/build_sup_table_s17.R` in the code repo. Earlier
+  versions of S17 held larger counts from an older version of the data.
 
 Figure 4A is built with these rules by `build_fig4/all_cancer_types_enrichment.R`
 in the code repo. The routing of tumors to mSigAct in the methods (>= 5,000

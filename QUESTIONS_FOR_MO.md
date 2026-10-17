@@ -67,7 +67,7 @@ Questions:
   more. All other tumors went to SigProfilerAssignment on the 172-type
   catalog.
 - With S17's values, 43 tumors fall on different sides of the poly-T cutoff
-  than with the current catalogs. (`paper_to_do.md` item 6 says 44 for the
+  than with the current catalogs. (`paper_to_do.md` item 5 says 44 for the
   combined routing rule.)
 - With S17's `mutation_burden`, 221 tumors have 5,000 or more indels. With
   the current catalogs, 195 do. So 26 tumors differ, all of them MSS.

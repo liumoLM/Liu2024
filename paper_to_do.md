@@ -11,23 +11,30 @@ http://8.138.15.71/
 
 ## Tomorrow (2026-10-17)
 
-- Done (2026-10-17): Item 7, `build_fig4/all_cancer_types_enrichment.R` now
+- Done (2026-10-17): Item 6, `build_fig4/all_cancer_types_enrichment.R` now
   calls a tumor hypermutated if it has > 4,000 indels in the R <= 9 clipped
   spectra (column sums of `liu_et_al_83_spectra.tsv`). Figure 4A was
   recomputed and copied to `main_figures/`. MSS-hyper now has 48 tumors
   instead of 723, and its only dot is InsDel3b instead of InsDel14. The
   legend already says "> 4,000 indels", and the results text does not
   mention the MSS-hyper column.
-- Item 7: use the same definition everywhere else in the paper, and in
+- Item 6: use the same definition everywhere else in the paper, and in
   `explore-attributions/`.
-- Item 6: recompute Table S17 `mutation_burden` and the poly-T ratio from
-  the clipped spectra, ideally with a build script in the code repo.
-- Item 6: decide what to do about the 43 tumors whose SigProfilerAssignment
+- Done (2026-10-17): Item 5, Table S17 is now built by
+  `build_sup_table_s17/build_sup_table_s17.R` in the code repo.
+  `mutation_burden` and the poly-T ratio are computed from the clipped
+  spectra, and the other columns reproduce exactly. The legend now gives the
+  channels in the poly-T ratio (INS:T:1:5+ and DEL:T:1:5+, so deletions
+  are from runs of 6 or more Ts) and no longer says that tumors with a ratio
+  of 0.5 or more went to mSigAct, since the routing used the older values.
+  The methods text ("1-bp T insertions or deletions in at least five poly-T
+  tracts") should be fixed when the routing question below is settled.
+- Item 5: decide what to do about the 43 tumors whose SigProfilerAssignment
   vs. mSigAct routing changes with the clipped counts, and whether the
   routing threshold should be >= 5,000 (as in the methods) or 4,000.
 - Review Mo's replies and act on them. Still open with Mo:
   - `QUESTIONS_FOR_MO.md` (Table S17, routing). Mo has answered the
-    hypermutation threshold and which counts to use (item 7).
+    hypermutation threshold and which counts to use (item 6).
   - Mo's partial-credit table for Table S14 (`all.indel.ID89.partial.credit.txt`),
     promised for the weekend.
   - Answered and done (2026-10-17): ID_N and InsDel_N_beta in Table S15
@@ -93,21 +100,12 @@ Run `Rscript check_main_figures.R`, `Rscript check_sup_figures.R`, and
    replication-timing methods and the Fig 5D
    legend now follow r.09_barplot.R (500-indel minimum, trend rule), in
    green for review (2026-10-08).
-4. Waiting on Mo (email sent 2026-10-07) about Fig S5. Mo has no
-   assembly code, so we wrote `build_fig_s5/make_figure_s5_layout.R` in
-   the code repo, which builds `figure_s5_draft.pdf` in the paper's layout
-   from the current catalogs. The paper's `sup_figs/figure_s5.pdf` has a
-   stale 83-type top row (e.g. 271 single-T deletions and 253 single-T
-   insertions in the RNase H2 null cells, now 99 and 129). Sent Mo both
-   PDFs and asked Mo either to update the paper version with the correct
-   top row from the draft, or to edit the draft as needed. Replace
-   `sup_figs/figure_s5.pdf` with the result.
-5. Closed (2026-10-07): Fig S2. Mo has no assembly code, so we wrote
+4. Closed (2026-10-07): Fig S2. Mo has no assembly code, so we wrote
    `build_fig_s2/make_figure_s2_layout.R` in the code repo. It builds
    `figure_s2_draft.pdf` in the paper's layout from the Table S2, S4, and
    S6 signatures. The paper's `sup_figs/figure_s2.pdf` is edited by hand
    from the draft, as recorded in `sup_figures_manifest.tsv`.
-6. Table S17 (sample metadata) is only partly reproducible. Patient, age,
+5. Table S17 (sample metadata) is only partly reproducible. Patient, age,
    sex, MSI status, major cancer type, and cohort come from
    `unified_indels_data/sample_info.tsv`, which also has 41 samples not in
    S17. `mutation_burden` and the polyT ratio do not match the current
@@ -120,23 +118,23 @@ Run `Rscript check_main_figures.R`, `Rscript check_sup_figures.R`, and
    tissue (2026-10-07). S17 has a "legend" sheet.
    Decision (Mo, 2026-10-16): mutation counts come from the spectra in
    `unified_indels_data`, which are clipped to repeat length R <= 9 (column
-   sums of `liu_et_al_83_spectra.tsv`). So recompute `mutation_burden` and
-   the poly-T ratio from those spectra, ideally with a build script in the
-   code repo. With the current spectra, 43 tumors would be routed
+   sums of `liu_et_al_83_spectra.tsv`). Done (2026-10-17):
+   `build_sup_table_s17/build_sup_table_s17.R` in the code repo builds S17
+   with `mutation_burden` and the poly-T ratio from those spectra. With the current spectra, 43 tumors would be routed
    differently between SigProfilerAssignment and mSigAct (recount of
    2026-10-15). Decide whether the routing should be redone with the
    clipped counts, or whether the methods should say which counts the
    routing used. The routing threshold in the methods is >= 5,000 indels,
    not 4,000. Check whether that is intended. Background is in
    `QUESTIONS_FOR_MO.md`.
-7. Figure 4A MSS-hyper threshold. Decision (Mo, 2026-10-16): a tumor is
+6. Figure 4A MSS-hyper threshold. Decision (Mo, 2026-10-16): a tumor is
    hypermutated if it has > 4,000 indels, counted from the R <= 9 clipped
    spectra in `unified_indels_data`. Done (2026-10-17): Figure 4A was
    recomputed with this rule (48 MSS-hyper tumors instead of 723), and the
    project CLAUDE.md records it. Still to do: use the same definition
    everywhere else in the paper and in `explore-attributions/`, which
    still uses a > 5000 rule on Table S11 sums.
-8. Closed (2026-10-17): Figures S1 and S6, and Tables S15 and S16.
+7. Closed (2026-10-17): Figures S1 and S6, and Tables S15 and S16.
    - Figure S1 reproduces. It reads `sample_info.tsv` and the assignment
      tables from the data repo, and `build_all_meta.R` moved to the data
      repo as a record of how `sample_info.tsv` was assembled.
@@ -150,17 +148,17 @@ Run `Rscript check_main_figures.R`, `Rscript check_sup_figures.R`, and
      `build_fig_s6/make_figure_s6_layout.R`, replacing the Illustrator
      version. The sex-bias text in `ms.qmd` was updated to match.
    Details in `sup_figs_and_tables_sources.md`, items 4 and 5.
-9. Review the STAR Methods for the topography analysis.
-10. Check the Otlu et al. code (SigProfilerTopography,
+8. Review the STAR Methods for the topography analysis.
+9. Check the Otlu et al. code (SigProfilerTopography,
    https://github.com/AlexandrovLab/SigProfilerTopography) to see whether
    they normalize indels to the pyrimidine strand, for example GAGAGA->GAGA
    to TCTCTC->TCTC, and compare with what we do.
-11. Later: Fig 6 panels A to C are built from `build_fig6/ID4_IDF_signature.pdf`
+10. Later: Fig 6 panels A to C are built from `build_fig6/ID4_IDF_signature.pdf`
    and `build_fig6/sequence_logos.pdf` (checked 2026-10-07) and carry the
    same information, but they are not visually identical to the source
    plots. For example, the panel C logos are rescaled to 0-2 bits and the
    DNA diagrams are drawn by hand. Come back to this.
-12. Review the naming of the figure-generating code and folders. File
+11. Review the naming of the figure-generating code and folders. File
    names in `sup_figs/` mix styles (`Figure S3a.pdf`, `figure_s5.pdf`,
    `Figure_S1a.pdf`), and the code repo names some outputs by figure
    number (`build_fig_s3/FigureS3_*.pdf`, `build_fig_s4/FigureS4.pdf`,

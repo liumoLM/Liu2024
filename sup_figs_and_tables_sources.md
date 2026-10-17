@@ -110,13 +110,18 @@ regenerates.
      data access agreement. It was removed from the code repo and its git
      history on 2026-10-16.
 
-## No build script, but the data probably exist
+## No build script (item 6 now has one)
 
-6. **Table S17.** All 6975 patients are in
-   `unified_indels_data/sample_info.tsv`, which has 7016 rows. The
-   `mutation_burden` column and the ratio of 1-bp T insertions to deletions at
-   poly-T tracts of 5 or more should be computable from the spectra. This has
-   not been checked.
+6. **Table S17.** Now built by `build_sup_table_s17/build_sup_table_s17.R`
+   in the code repo (2026-10-17), from `sample_info.tsv` and
+   `liu_et_al_83_spectra.tsv` in the data repo. The tumors are those in
+   `liu_et_al_83_assignment.tsv` (6,975 of the 7,016 in `sample_info.tsv`).
+   All columns except two reproduce the earlier table exactly.
+   `mutation_burden` is now the spectrum total (R <= 9). The earlier values
+   were larger for 6,489 tumors, by a median of 6% and at most twice. The
+   poly-T ratio is now (INS:T:1:5+ + DEL:T:1:5+) / spectrum total. This
+   numerator reproduced 1,249 of the earlier values exactly, so it is
+   the numerator used before. The two blank Gender cells are now NA.
 7. **Supplementary Figure Legend.docx.** This is hand-written, so no source is
    expected.
 
