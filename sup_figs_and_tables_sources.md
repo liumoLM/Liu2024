@@ -98,8 +98,10 @@ regenerates.
      `all.meta.txt` was removed. `build_all_meta.R` was moved to the data
      repo as a record of how `sample_info.tsv` was assembled, and its inputs
      were deleted from `build_fig_s1/`.
-   - `build_fig_s1/liu_et_al_{83,89}_assignment.tsv` are identical copies of
-     the data repo files.
+   - `build_fig_s1/liu_et_al_{83,89}_assignment.tsv` were identical copies
+     of the data repo files. On 2026-10-16, `Signature Assignment.qmd` was
+     changed to read them from the data repo (identical plot data), and the
+     copies were deleted.
    - `build_fig_s1/HMF_metadata.tsv` was the Hartwig clinical metadata
      (patient IDs, biopsy dates and sites), probably covered by the Hartwig
      data access agreement. It was removed from the code repo and its git
