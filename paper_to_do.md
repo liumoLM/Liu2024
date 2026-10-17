@@ -9,6 +9,20 @@ http://8.138.15.71/
 
 # To do
 
+## Tomorrow (2026-10-17)
+
+- Item 7: change `build_fig4/all_cancer_types_enrichment.R` to call a tumor
+  hypermutated if it has > 4,000 indels in the R <= 9 clipped spectra
+  (column sums of `liu_et_al_83_spectra.tsv`), not exposure sums > 4000.
+  Recompute Figure 4A, and update its legend and the text in `ms.qmd`.
+- Item 7: use the same definition everywhere else in the paper, and in
+  `explore-attributions/`.
+- Item 6: recompute Table S17 `mutation_burden` and the poly-T ratio from
+  the clipped spectra, ideally with a build script in the code repo.
+- Item 6: decide what to do about the 43 tumors whose SigProfilerAssignment
+  vs. mSigAct routing changes with the clipped counts, and whether the
+  routing threshold should be >= 5,000 (as in the methods) or 4,000.
+
 Steve review Mini's methods -
 
 Steve Review subsection "Demographic Associations with Gender and Age"
