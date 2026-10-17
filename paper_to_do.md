@@ -11,10 +11,13 @@ http://8.138.15.71/
 
 ## Tomorrow (2026-10-17)
 
-- Item 7: change `build_fig4/all_cancer_types_enrichment.R` to call a tumor
-  hypermutated if it has > 4,000 indels in the R <= 9 clipped spectra
-  (column sums of `liu_et_al_83_spectra.tsv`), not exposure sums > 4000.
-  Recompute Figure 4A, and update its legend and the text in `ms.qmd`.
+- Done (2026-10-17): Item 7, `build_fig4/all_cancer_types_enrichment.R` now
+  calls a tumor hypermutated if it has > 4,000 indels in the R <= 9 clipped
+  spectra (column sums of `liu_et_al_83_spectra.tsv`). Figure 4A was
+  recomputed and copied to `main_figures/`. MSS-hyper now has 48 tumors
+  instead of 723, and its only dot is InsDel3b instead of InsDel14. The
+  legend already says "> 4,000 indels", and the results text does not
+  mention the MSS-hyper column.
 - Item 7: use the same definition everywhere else in the paper, and in
   `explore-attributions/`.
 - Item 6: recompute Table S17 `mutation_burden` and the poly-T ratio from
