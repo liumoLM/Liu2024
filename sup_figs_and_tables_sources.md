@@ -75,15 +75,18 @@ regenerates.
    2026-10-16:
    - The age table (Table S16) reproduces exactly. Only the row order of the
      "Overall" rows differs.
-   - The sex-bias table (Table S15) does not reproduce. The script tests 186
-     cancer-type and signature groups, but the checked-in file and Table S15
-     have 160. The 26 extra rows are all ID_N and InsDel_N_beta. The 160
-     shared rows have identical counts, P values, and odds ratios. The BH
-     FDRs differ (by up to 16%), because more tests are corrected. The same 10
-     groups pass FDR < 0.2, so Figure S6A shows the same signatures, with
-     slightly different color intensities.
-   - The `bonev` column needs the Bioconductor-dependent package BonEV,
-     which is not installed here. The script then copies the old values.
+   - The sex-bias table (Table S15) did not reproduce. The old
+     `gender.bias.txt` and Table S15 had 160 cancer-type and signature
+     groups, and left out ID_N and InsDel_N_beta by mistake (Mo, 2026-10-17:
+     a signature index list was not updated for the final signatures). On
+     2026-10-17 `gender.bias.txt`, `gender_bias.pdf`, and Table S15 were
+     regenerated with them: 186 groups, BH FDRs up to 16% higher, and the
+     same 10 groups at FDR < 0.2. The q-values in `ms.qmd` already matched
+     the regenerated table.
+   - The paper's `sup_figs/Figure S6.pdf` was assembled in Adobe
+     Illustrator. Its panel A colors (-log10 FDR) are from the old table,
+     but the difference is barely visible.
+
 5. **Figure S1.** Mo Liu added `build_fig_s1/build_all_meta.R` and
    `build_fig_s1/build_assignment_high_similarity_samples.R` on 2026-10-16.
    Re-run on 2026-10-16, both reproduce the checked-in `all.meta.txt` and
