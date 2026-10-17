@@ -95,16 +95,15 @@ regenerates.
      cancer type, and cohort agree for all 7,013 of its tumors). On
      2026-10-16, `Signature Assignment.qmd` was changed to read the cancer
      types from `sample_info.tsv`, which gives identical plot data, and
-     `all.meta.txt` was removed. `build_all_meta.R` is kept as a record of
-     how the metadata were assembled.
+     `all.meta.txt` was removed. `build_all_meta.R` was moved to the data
+     repo as a record of how `sample_info.tsv` was assembled, and its inputs
+     were deleted from `build_fig_s1/`.
    - `build_fig_s1/liu_et_al_{83,89}_assignment.tsv` are identical copies of
      the data repo files.
-   - `build_fig_s1/PCAWG.sample.sheet.txt` is identical to the
-     `pcawg_sample_sheet.tsv` that `build_sup_table_s9/annotate_pcawg_mmr.R`
-     reads from `~/MEGA/`.
-   - `build_fig_s1/HMF_metadata.tsv` is the Hartwig clinical metadata
-     (patient IDs, biopsy dates and sites). This is probably covered by the
-     Hartwig data access agreement and cannot go in a public repo.
+   - `build_fig_s1/HMF_metadata.tsv` was the Hartwig clinical metadata
+     (patient IDs, biopsy dates and sites), probably covered by the Hartwig
+     data access agreement. It was removed from the code repo and its git
+     history on 2026-10-16.
 
 ## No build script, but the data probably exist
 
@@ -168,5 +167,4 @@ sit under `/public/data/Topography_analysis*/` on the Huang-lab server.
 - From Mo Liu: `all.indel.ID89.partial.credit.txt` (item 1). This is no
   longer needed to build Table S14, only to rerun the steps before r.04.
 - From Mo Liu: why the checked-in sex-bias table lacks ID_N and
-  InsDel_N_beta (item 4), and whether `HMF_metadata.tsv` can be published
-  (item 5).
+  InsDel_N_beta (item 4), and where `HMF_metadata.tsv` came from (item 5).
