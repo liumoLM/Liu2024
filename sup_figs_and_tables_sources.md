@@ -87,8 +87,9 @@ regenerates.
 5. **Figure S1.** Mo Liu added `build_fig_s1/build_all_meta.R` and
    `build_fig_s1/build_assignment_high_similarity_samples.R` on 2026-10-16.
    Re-run on 2026-10-16, both reproduce the checked-in `all.meta.txt` and
-   `assignment.high.similarity.samples.txt` (all.meta.txt only after changing
-   the hard-coded `D:/` path, and with CRLF instead of LF line endings).
+   `assignment.high.similarity.samples.txt`. `build_all_meta.R` had a
+   hard-coded `D:/` path and wrote CRLF line endings. After fixing both, its
+   output is byte-identical to `all.meta.txt`.
    Duplicated data sources:
    - `all.meta.txt` repeats the data repo's `sample_info.tsv` (age, sex,
      cancer type, and cohort agree for all 7,013 of its tumors).
