@@ -148,16 +148,13 @@ Run `Rscript check_main_figures.R`, `Rscript check_sup_figures.R`, and
    same information, but they are not visually identical to the source
    plots. For example, the panel C logos are rescaled to 0-2 bits and the
    DNA diagrams are drawn by hand. Come back to this.
-12. Review the naming of the figure-generating code and folders. On
-   2026-10-17 the supplementary figures were renumbered to S1 to S10 (old
-   S2A to S2C are now S2 to S4, old S3A to S3C are now S5 to S7, and old S4
-   to S6 are now S8 to S10). The code repo folders (`build_fig_s2/` to
-   `build_fig_s6/`) and file names (`FigureS3_*.pdf`, `FigureS4.pdf`,
-   `figure_s5_draft.pdf`) still use the old numbers, as do the mixed-style
-   file names in `sup_figs/` (`Figure S5.pdf`, `figure_s9.pdf`,
-   `figure_s2_to_s4.pdf`). `sup_figures_manifest.tsv` maps them correctly.
-   Consider names that describe content rather than figure numbers, so
-   that future renumbering needs no renames.
+12. Review the naming of the figure-generating code and folders. File
+   names in `sup_figs/` mix styles (`Figure S3a.pdf`, `figure_s5.pdf`,
+   `Figure_S1a.pdf`), and the code repo names some outputs by figure
+   number (`build_fig_s3/FigureS3_*.pdf`, `build_fig_s4/FigureS4.pdf`,
+   `build_fig_s5/figure_s5_draft.pdf`). `sup_figures_manifest.tsv` maps
+   them correctly. Consider names that describe content rather than figure
+   numbers, so that future renumbering needs no renames.
 
 # From here down old
 

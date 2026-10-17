@@ -331,12 +331,12 @@ These are nearly identical in the 89-type system, which groups
 deletions of single Ts in stretches of 1, 2, 3, or 4 Ts as a single
 deletion type. However, the 83- and 476-type systems show that InsDel_C
 has deletions of 1 T from ATA (ATA→AA), while InsDel13 has deletions
-of T from ATTA (ATTA→ATA, Figure S2). The other case consisted of
+of T from ATTA (ATTA→ATA, Figure S2A). The other case consisted of
 InsDel11 and InsDel16. InsDel11 has insertions of one C next to an
 isolated C (C with non-Cs on each side, e.g. ACG→ACCG) and insertion of
 one T next to an isolated T (e.g. GTG→GTTG). InsDel16 has
 insertion of one C between non-Cs (e.g. AT→ACT), and insertion of one
-T between non-Ts (e.g. AG→ATG, Figure S3). Again, the 89-type system
+T between non-Ts (e.g. AG→ATG, Figure S2B). Again, the 89-type system
 does not capture these differences, while the 83 and 476-type systems
 do.
 
@@ -357,7 +357,7 @@ of adenines in the AA DBS signature.
 
 We identified InsDel_Aβ, an indel signature that in the 476-type
 classification consists primarily of the 1-bp C deletions TCA→TA and 
-TCT→TT (Figure S4, right sub-panel).
+TCT→TT (Figure S2C, right sub-panel).
 Thus, InsDel_Aβ
 targets the same sequences as the canonical APOBEC SBS signatures SBS2
 (TCA→TTA and TCT→TTT) and SBS13 (TCA→TGA and TCT→TGT). 
@@ -370,7 +370,7 @@ the corresponding 83-type indel signature, ID_A, which
 is more similar to the experimental spectrum than
 C_ID9.
 Notably, C_ID9/InsDel9 in all three classification systems has many deletions 
-of single thymines, which are absent in ID_A/InsDel_Aβ (Figure S4).
+of single thymines, which are absent in ID_A/InsDel_Aβ (Figure S2C).
 In addition, the InsDel9
 476-type signature has many deletions of a single C following A
 or G, while InsDel_Aβ has almost exclusively deletions of a single C
@@ -444,7 +444,7 @@ ID4 [@reijnsSignaturesTOP1Transcriptionassociated2022;
 However, we detected a new indel signature, InsDel_F 
 that corresponds better to experimental RNase H2 deficiency
 data than ID4/InsDel4
-(Figures [-@fig-rnaseh2], S9). 
+(Figures [-@fig-rnaseh2], S5). 
 The profile of deletions of ≥2 bases is
 very different between InsDel_F and InsDel4: InsDel_F has distinctively
 high proportions of (i) 2-base deletions with microhomology (almost
@@ -457,7 +457,7 @@ and deletions of 3 or 4 bases from paired doublets (e.g. TCTTCT → TCT,
 GTTTGTTT → GTTT). The spectra in RNase H2 deficient cell lines consist
 of signatures due to mutational processes intrinsic to the parental
 cell line combined with high proportions of mutations characteristic
-of InsDel_F (Figure S9). Like InsDel_F, these cell-line spectra have
+of InsDel_F (Figure S5). Like InsDel_F, these cell-line spectra have
 2-base deletions with microhomology and 2-base deletions from paired
 2-base doublets. These spectra conspicuously lack the 3- and 4-base
 deletions present in InsDel4. Similarly, RNase H2 deficient mouse
@@ -549,7 +549,7 @@ transcription strand asymmetries, since this pathway preferentially
 removes bulky DNA adducts on the transcribed strand of active genes
 [@mellonSelectiveRemovalTranscriptionblocking1987].
 There was evidence of transcriptional strand asymmetry in `r ms_num$topo$trans_n_asymmetric` out of the `r ms_num$topo$trans_n_sufficient`
-signatures with sufficient data to assess (Figure [-@fig-topo]A, Figure S5, Table S12).
+signatures with sufficient data to assess (Figure [-@fig-topo]A, Figure S3A, Table S12).
 Signatures
 attributed to exogenous mutational processes, such as C_ID3 (tobacco
 smoking exposure) and C_ID18
@@ -658,7 +658,7 @@ had transcription strand asymmetries.
 
 There was evidence of replication strand asymmetry in `r ms_num$topo$repli_n_asymmetric` out of the `r ms_num$topo$repli_n_sufficient`
 signatures with sufficient data to assess (Figure [-@fig-topo]B, 
-Figure S6, Table S12). [Replication strand asymmetry was less common
+Figure S3B, Table S12). [Replication strand asymmetry was less common
 than transcription strand asymmetry, and none of the tobacco-, UV-, or
 colibactin-associated signatures (C_ID3, C_ID13, C_ID18) showed it.]{.blue}
 
@@ -672,10 +672,10 @@ link between POLE proofreading defects and leading-strand mutagenesis.
 the asymmetry means for the indels; is this 1bp T deletions from shorter
 stre]{.blue}
 
-[Note: Figure 5 (main_figures/Figure5.pdf) is now a copy of build_fig5/Figure5.pdf in the code repo. Its panels A to C use the topography pipeline's labels (build_fig5/assign_asymmetry_type.R), which also underlie Figures S5 to S7, including ID_K on the leading strand. This changed two signatures relative to the earlier hand-edited Figure 5. In panel B, ID_L is now Lagging (its only cancer type with P < 0.05 is Pancreas, lagging). In panel C, ID_B is now Mix (8 cancer types with P < 0.05 are intergenic and 1, Breast, is genic). Mini confirmed by email on 2026-10-07 that repli.strand = -1 is the lagging strand and that the pipeline's leading/lagging orientation (as in Figure S6) is correct.]{.blue}
+[Note: Figure 5 (main_figures/Figure5.pdf) is now a copy of build_fig5/Figure5.pdf in the code repo. Its panels A to C use the topography pipeline's labels (build_fig5/assign_asymmetry_type.R), which also underlie Figure S3, including ID_K on the leading strand. This changed two signatures relative to the earlier hand-edited Figure 5. In panel B, ID_L is now Lagging (its only cancer type with P < 0.05 is Pancreas, lagging). In panel C, ID_B is now Mix (8 cancer types with P < 0.05 are intergenic and 1, Breast, is genic). Mini confirmed by email on 2026-10-07 that repli.strand = -1 is the lagging strand and that the pipeline's leading/lagging orientation (as in Figure S3B) is correct.]{.blue}
 
 We also examined the mutation enrichment of 83-type signatures in
-genic and intergenic regions (Figure S7). Most signatures showed
+genic and intergenic regions (Figure S3C). Most signatures showed
 mutation bias towards intergenic regions, while `r ms_num$topo$region_n_genic` signatures showed
 enrichment in genic regions (Figure [-@fig-topo]C). Among the `r ms_num$topo$region_n_genic`
 signatures, [three were]{.pink} associated with defective endogenous
@@ -686,7 +686,7 @@ enriched in genic regions were of unknown etiology (C_ID4, ID_E and
 ID_L).
 
 The effect of DNA replication timing was also observed in many 83-type
-signatures (Figure [-@fig-topo]D, Figure S8, Table S13). Most
+signatures (Figure [-@fig-topo]D, Figure S4, Table S13). Most
 signatures were consistently enriched in late-replicating regions
 across different cancer types, while only two signatures, C_ID10 and
 C_ID17 (TOP2A K743N mediated mutagenesis), showed enrichment in
@@ -712,7 +712,7 @@ stomach cancer specific enrichment in early replication regions, which [strength
 To explore potential [sex]{.pink} biases in mutational processes, we
 systematically compared signature activities between males and females
 using two-sided Fisher’s exact tests. After applying
-Benjamini–Hochberg adjustment (q \< 0.2), [nine signature-cancer type associations with sex were identified]{.yellow} (Figure S10A, Table S15). \<parallel
+Benjamini–Hochberg adjustment (q \< 0.2), [nine signature-cancer type associations with sex were identified]{.yellow} (Figure S6A, Table S15). \<parallel
 structure\>Male-enriched mutational processes predominated in lung,
 liver, and "Other" cancer categories. Specifically, lung cancer showed
 significant male association with InsDel3b (OR = 0.367, q = 0.061) and
@@ -744,7 +744,7 @@ age-association part earlier.
 
 To characterize the "clock-like" behavior of these signatures, we
 examined correlations between signature activity and patient age at
-diagnosis using Spearman correlation analyses (Figure S10B). We found
+diagnosis using Spearman correlation analyses (Figure S6B). We found
 that C_ID1, InsDel1a, C_ID5, and InsDel5a [showed robust,
 age-associated "clock-like" mutagenesis]{.blue} in multiple cancer types, as
 well as across the overall genome. More specifically, C_ID5 and
@@ -1109,7 +1109,7 @@ having this mutational signature, we retrieved the number of indels on
 each strand/region. [For each feature, a cancer type was evaluated
 for a signature only if it had at least 1,000 real indels attributed to
 that signature (probability \> 0.5) that could be assigned to one of
-the two categories of the feature. Figure [-@fig-topo] and Figures S5 to S7
+the two categories of the feature. Figure [-@fig-topo] and Figure S3
 show only evaluated cancer types. Table S12 reports the Fisher's exact
 test results for all cancer types and signatures.]{.green}
 
@@ -1130,7 +1130,7 @@ indels and the strand ratio of simulated somatic indels.
 [We tested each cancer type and signature for asymmetry with Fisher's
 exact test on the 2×2 table of real and simulated indel counts (Table
 S12 reports the P values and the conditional maximum-likelihood odds
-ratios from this test). For Figure [-@fig-topo] and Figures S5 to S7, the
+ratios from this test). For Figure [-@fig-topo] and Figure S3, the
 magnitude of asymmetry is the ratio of the real strand ratio to the
 simulated strand ratio, inverted when needed so that it is ≥ 1,
 together with the direction of the asymmetry. A cancer type was

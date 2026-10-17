@@ -18,15 +18,14 @@ crop() {
 }
 crop Figure_S1a.pdf fig_s1a.pdf
 crop Figure_S1b.pdf fig_s1b.pdf
-# figure_s2_to_s4.pdf holds three panels stacked top to bottom. Each becomes
-# its own figure. The bounding boxes (PDF points, origin at the lower left)
-# leave out the panel letters A to C at the left edge.
-crop figure_s2_to_s4.pdf fig_s2.pdf "22 602 596 804"
-crop figure_s2_to_s4.pdf fig_s3.pdf "22 369 596 580"
-crop figure_s2_to_s4.pdf fig_s4.pdf "22 115 596 342"
-crop "Figure S5.pdf" fig_s5.pdf
+# Figure S2 is shown on two pages, panels A and B on the first and panel C
+# on the second. The bounding boxes are in PDF points, origin at the lower
+# left.
+crop figure_s2.pdf fig_s2ab.pdf "8 369 596 827"
+crop figure_s2.pdf fig_s2c.pdf "8 115 596 358"
+crop "Figure S3a.pdf" fig_s3a.pdf
+crop "Figure S3b.pdf" fig_s3b.pdf
+crop "Figure S3c.pdf" fig_s3c.pdf
+crop "Figure S4.pdf" fig_s4.pdf
+crop figure_s5.pdf fig_s5.pdf
 crop "Figure S6.pdf" fig_s6.pdf
-crop "Figure S7.pdf" fig_s7.pdf
-crop "Figure S8.pdf" fig_s8.pdf
-crop figure_s9.pdf fig_s9.pdf
-crop "Figure S10.pdf" fig_s10.pdf
