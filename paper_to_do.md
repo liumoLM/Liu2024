@@ -71,20 +71,24 @@ Run `Rscript check_main_figures.R`, `Rscript check_sup_figures.R`, and
 
 1. Closed (2026-10-17): read Mo's email replies. Follow-ups are in the
    "Tomorrow" section above.
-2. Ask Mo to confirm that the `dna.region` (G or I) and `trans.strand`
-   columns in the annotated indel file read by r.01_createBed.R came from
-   ICAMS, with which version and which transcript ranges
-   (`trans.ranges.GRCh37`, GENCODE 30 CCDS genes, or GRCh38). ICAMS sets
-   `dna.region` to G when `trans.strand` is + or -, else I
-   (`CreateOneColIDMatrix()`, `R/ID_functions.R`). The green "Annotating
-   somatic indels as genic or intergenic" methods paragraph in `ms.qmd`
-   assumes this and marks the genome build as unconfirmed. Also ask for
-   the genome build and SigProfilerSimulator settings, to fill the placeholders in the green "Simulating synthetic
-   cancer datasets" paragraph (Mo already gave 10 simulations per tumor and
-   version 1.2.2). Both questions are in the draft email "Topography:
-   indels in genes on both strands". Also decide whether 10 simulations
-   per tumor, rather than the 100 Otlu et al. recommend, is acceptable (Mo
-   asked).
+2. Topography annotations and simulations. Answered (Mo, 2026-10-07 and
+   2026-10-08, and Steve, 2026-10-17): `dna.region` and `trans.strand` came
+   from ICAMS with `trans.ranges.GRCh37` (GENCODE 30 CCDS genes), genome
+   build hg19 (GRCh37). SigProfilerSimulator 1.2.2 was run as
+   `sigSim.SigProfilerSimulator("project", "/path/to/project/", "GRCh37",
+   contexts=["ID"], simulations=10)`. The strand column (+, -, Q) is
+   computed by SigProfilerSimulator (`mutational_simulator.py`, lines
+   1134-1151). Decision: 10 simulations per tumor is enough. Mo asked that
+   we cite Otlu et al. 2023 and Bergstrom et al. 2020.
+   Still to do:
+   - Waiting on Mo: the topography code keeps indels in genes on both
+     strands (114,297 indels, 0.6%), although the methods say they were
+     ignored. Mo is probably redoing the simulations and analysis with code
+     that drops them, with Mini. Rerun the downstream topography tables and
+     figures when that arrives.
+   - Fill the placeholders in the green "Simulating synthetic cancer
+     datasets" and "Annotating somatic indels as genic or intergenic"
+     paragraphs in `ms.qmd` with the answers above.
 3. Mini replied 2026-10-08. `ID83_topography_analysis_code/r.09_barplot.R`
    (now in the code repo) creates `09_barplot_data.xlsx` and
    `09_all_lm_trend.xlsx`, and reproduces all 714 trends in Table S13.
