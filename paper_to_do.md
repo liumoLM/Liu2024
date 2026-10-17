@@ -33,6 +33,8 @@ http://8.138.15.71/
   vs. mSigAct routing changes with the clipped counts, and whether the
   routing threshold should be >= 5,000 (as in the methods) or 4,000.
 - Review Mo's replies and act on them. Still open with Mo:
+  - MSIseq: how Mo ran it and how its output was used. Steve emailed Mo
+    (2026-10-17), waiting for the reply.
   - `QUESTIONS_FOR_MO.md` (Table S17, routing). Mo has answered the
     hypermutation threshold and which counts to use (item 6).
   - Mo's partial-credit table for Table S14 (`all.indel.ID89.partial.credit.txt`),
