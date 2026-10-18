@@ -30,7 +30,8 @@ http://8.138.15.71/
   The methods text ("1-bp T insertions or deletions in at least five poly-T
   tracts") should be fixed when the routing question below is settled.
 - Routing between SigProfilerAssignment and mSigAct (item 5): waiting on
-  Mo, then decide. Mo has not yet answered section 3 of
+  Mo, then decide. Steve emailed Mo (2026-10-17, "which tumors went to
+  mSigAct vs. SigProfilerAssignment?") the questions in section 3 of
   `QUESTIONS_FOR_MO.md`: which tumors went to mSigAct and by what rule,
   whether the thresholds used pre- or post-clipping counts, and whether
   there is a list or code. The stated rule (>= 5,000 indels or poly-T
@@ -43,7 +44,7 @@ http://8.138.15.71/
 - Review Mo's replies and act on them. Still open with Mo:
   - MSIseq: how Mo ran it and how its output was used. Steve emailed Mo
     (2026-10-17), waiting for the reply.
-  - Routing (see above). Mo has answered the hypermutation threshold and
+  - Routing (see above). Emailed 2026-10-17, waiting for the reply. Mo has answered the hypermutation threshold and
     which counts to use (item 6).
   - Mo's partial-credit table for Table S14 (`all.indel.ID89.partial.credit.txt`),
     promised for the weekend.
