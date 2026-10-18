@@ -1042,8 +1042,10 @@ tumors and mSigAct for high-TMB tumors.
 [We generated simulated indels for each tumor with SigProfilerSimulator
 version 1.2.2 [@bergstromGeneratingRealisticNull2020] in the 83-type
 classification, with 10 simulations per tumor (69,750 simulated
-genomes in total), on genome build [BUILD] and with [SETTINGS, for
-example which features of each tumor's mutations were preserved]. Each simulated indel was given the signature probabilities
+genomes in total), on genome build GRCh37. Each simulation kept the
+tumor's number of indels in each 83-type class and placed them at random
+across the whole genome, without keeping them on their original
+chromosomes (the default settings). Each simulated indel was given the signature probabilities
 of the real indels of the same tumor and 83-type indel class. Simulated
 indels in a class that did not occur among the tumor's real indels, and
 simulated indels from tumors without signature probabilities, were
@@ -1070,7 +1072,7 @@ gene was on the + strand of the genome, or else transcribed
 (template)]{.blue}. The logic was inverted for – strand indels.
 Indels in bidirectionally transcribed regions were ignored.
 
-[Note: The previous text said "+ strand indels ... were further subclassified as transcribed (template) if the gene's sense strand was on the + strand of the genome, or else untranscribed (sense)". That is the reverse of the code. In ID83_topography_analysis_code, r.03_mergeInf.R computes new.trans.strand = trans.strand × Strand, where trans.strand is the gene's strand and Strand is the pyrimidine strand (+, -, or Q for mixed), and r.06_comupteOddsRatio.R labels +1 as UnTranscribed and -1 as Transcribed. So a C/T indel on the + strand in a + strand gene is on the sense (untranscribed) strand, which is the standard convention. The code that computes the Strand column (/public/data/Topography_analysis/reference/single.indel.aggregate.strand.added.matrix.txt) is not in the code repo, so the "only C or T bases" rule above cannot be checked there. Confirm it with Mo, including which bases are examined (the inserted or deleted sequence only, or also the repeat unit).]{.blue}
+[Note: The previous text said "+ strand indels ... were further subclassified as transcribed (template) if the gene's sense strand was on the + strand of the genome, or else untranscribed (sense)". That is the reverse of the code. In ID83_topography_analysis_code, r.03_mergeInf.R computes new.trans.strand = trans.strand × Strand, where trans.strand is the gene's strand and Strand is the pyrimidine strand (+, -, or Q for mixed), and r.06_comupteOddsRatio.R labels +1 as UnTranscribed and -1 as Transcribed. So a C/T indel on the + strand in a + strand gene is on the sense (untranscribed) strand, which is the standard convention. The code that computes the Strand column (/public/data/Topography_analysis/reference/single.indel.aggregate.strand.added.matrix.txt) is not in the code repo. Mo (2026-10-08) says the Strand column is computed by SigProfilerSimulator (`mutational_simulator.py`, lines 1134-1151): an indel of more than 1 bp is + if the inserted or deleted sequence has only C and T, - if only G and A, and Q otherwise, and a 1-bp indel is + for C or T and - for G or A. So only the inserted or deleted bases are examined, not the repeat unit, which matches the "only C or T bases" rule above. Indels in genes on both strands are currently kept, not ignored. Mo is redoing the analysis to drop them.]{.blue}
 
 ## Annotating somatic indels as genic or intergenic
 
@@ -1078,7 +1080,8 @@ Indels in bidirectionally transcribed regions were ignored.
 (<https://github.com/steverozen/ICAMS>). An indel was labeled genic if
 it fell within the transcribed range (from the start to the end of the
 gene, including introns) of a gene with a Consensus CDS (CCDS) ID in
-GENCODE release 30 [(lifted over to GRCh37, if that is the genome build used)], on either strand. All other
+GENCODE release 30, lifted over to GRCh37 (ICAMS data set
+`trans.ranges.GRCh37`), on either strand. All other
 indels were labeled intergenic. The same gene annotation provides the
 gene strand used for the transcription-strand analysis.]{.green}
 

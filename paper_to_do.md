@@ -86,9 +86,10 @@ Run `Rscript check_main_figures.R`, `Rscript check_sup_figures.R`, and
      ignored. Mo is probably redoing the simulations and analysis with code
      that drops them, with Mini. Rerun the downstream topography tables and
      figures when that arrives.
-   - Fill the placeholders in the green "Simulating synthetic cancer
-     datasets" and "Annotating somatic indels as genic or intergenic"
-     paragraphs in `ms.qmd` with the answers above.
+   - Done (2026-10-17): filled the placeholders in the green "Simulating
+     synthetic cancer datasets" and "Annotating somatic indels as genic or
+     intergenic" paragraphs in `ms.qmd`, and updated the blue strand note
+     with Mo's answer.
 3. Mini replied 2026-10-08. `ID83_topography_analysis_code/r.09_barplot.R`
    (now in the code repo) creates `09_barplot_data.xlsx` and
    `09_all_lm_trend.xlsx`, and reproduces all 714 trends in Table S13.
