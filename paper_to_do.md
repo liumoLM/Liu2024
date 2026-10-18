@@ -57,6 +57,14 @@ http://8.138.15.71/
     annotation, sequence length) and code. Done: the methods no longer say
     that MSIseq was run only on high-TMB tumors or how the 4,000 cutoff
     was chosen.
+  - High-TMB set in the de novo extraction. The methods mention
+    "high-TMB samples" (`ms.qmd:966`) and "genomes with high tumor
+    mutational burden" (`ms.qmd:974`, `:980`, `:988`) but never give the
+    cutoff. Email to Mo drafted 2026-10-18 (not yet sent), asking which
+    cutoff defined the set (Steve's guess: >= 5,000 indels), whether it was
+    counted before or after clipping to R <= 9 (maybe the extraction was
+    redone after clipping), and how many tumors were in it. If the set is
+    the same as > 4,000 clipped indels, the methods can say that.
   - Mo's partial-credit table for Table S14 (`all.indel.ID89.partial.credit.txt`),
     promised for the weekend.
   - Answered and done (2026-10-17): ID_N and InsDel_N_beta in Table S15
