@@ -156,10 +156,16 @@ Run `Rscript check_main_figures.R`, `Rscript check_sup_figures.R`, and
      version. The sex-bias text in `ms.qmd` was updated to match.
    Details in `sup_figs_and_tables_sources.md`, items 4 and 5.
 8. Review the STAR Methods for the topography analysis.
-9. Check the Otlu et al. code (SigProfilerTopography,
-   https://github.com/AlexandrovLab/SigProfilerTopography) to see whether
-   they normalize indels to the pyrimidine strand, for example GAGAGA->GAGA
-   to TCTCTC->TCTC, and compare with what we do.
+9. Closed (2026-10-17): SigProfilerTopography
+   (https://github.com/AlexandrovLab/SigProfilerTopography) uses the same
+   indel strand rule as we do. It reads the strand from the `seqInfo`
+   output of SigProfilerMatrixGenerator (`MutationMatrixGenerator.py`,
+   lines 1427-1443 and 1789-1799 at commit e67c5c4). There, an indel whose
+   bases are only C and T is on the + strand, only G and A on the - strand,
+   and mixed (for example GAGAGA->GAGA) gets strand 0 (Q), which
+   SigProfilerTopography excludes (`ReplicationStrandBiasAnalysis.py`,
+   lines 389-396 at commit bff7a86). Recorded in the blue strand note in
+   `ms.qmd`.
 10. Closed (2026-10-17): file names aligned across the two repos. Each
    paper figure or table has the same name as its source in the code repo,
    number first, then a short description: `main_figures/fig5.pdf` from
