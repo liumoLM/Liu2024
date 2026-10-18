@@ -38,7 +38,7 @@ regenerates.
    - Re-run on 2026-10-16: `plot_data.xlsx` and `all_lm_trend.xlsx` are
      identical to the copies saved as `09_barplot_data.xlsx` and
      `09_all_lm_trend.xlsx` in `build_fig5/` and `build_fig_s4/`. Rebuilt from
-     them, `FigureS4.png`, `Figure5D.png`, `Figure5ABC.png`, and `Figure5.png`
+     them, `sup_fig_s4_replication_timing.png`, `fig5d.png`, `fig5abc.png`, and `fig5.png`
      are pixel-identical to the checked-in copies. Table S13 rebuilt from them
      matches the paper's copy (labels identical, numbers agree to a relative
      difference of at most 1e-12).
@@ -83,7 +83,7 @@ regenerates.
      regenerated with them: 186 groups, BH FDRs up to 16% higher, and the
      same 10 groups at FDR < 0.2. The q-values in `ms.qmd` already matched
      the regenerated table.
-   - The paper's `sup_figs/Figure S6.pdf` was assembled in Adobe
+   - The paper's `sup_figs/sup_fig_s6_sex_age.pdf` was assembled in Adobe
      Illustrator. Its panel A colors (-log10 FDR) are from the old table,
      but the difference is barely visible.
 

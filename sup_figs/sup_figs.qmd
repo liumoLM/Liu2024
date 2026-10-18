@@ -64,7 +64,7 @@ if (nrow(sup_figure_problems) > 0) {
 {{< pagebreak >}}
 
 ::: {#fig-s1}
-![](cropped/fig_s1a.pdf){width=7in}
+![](cropped/sup_fig_s1a.pdf){width=7in}
 
 **Activities of 83- and 89-type mutational signatures across cancer
 types**
@@ -78,7 +78,7 @@ continues on the next page.
 
 {{< pagebreak >}}
 
-![](cropped/fig_s1b.pdf){width=7in fig-align="center"}
+![](cropped/sup_fig_s1b.pdf){width=7in fig-align="center"}
 
 **Figure S1 (continued).**
 
@@ -90,7 +90,7 @@ caption they make LuaLaTeX report changed labels on every run, so the PDF
 render stops at the maximum number of runs. -->
 
 ::: {#fig-s2}
-![](cropped/fig_s2ab.pdf){width=7in}
+![](cropped/sup_fig_s2ab.pdf){width=7in}
 
 **Comparative mutational signatures across 83-, 89-, and 476-channel
 classification of C_ID13 vs ID_C, C_ID11 vs C_ID16, and C_ID9 vs
@@ -116,7 +116,7 @@ contexts. Panel C is on the next page.
 
 {{< pagebreak >}}
 
-![](cropped/fig_s2c.pdf){width=7in fig-align="center"}
+![](cropped/sup_fig_s2c.pdf){width=7in fig-align="center"}
 
 **Figure S2 (continued).**
 
@@ -132,7 +132,7 @@ flanking sequences. In particular, InsDel_Aβ preferentially exhibits
 {{< pagebreak >}}
 
 ::: {#fig-s3}
-![](cropped/fig_s3a.pdf){height=7.4in}
+![](cropped/sup_fig_s3a.pdf){height=7.4in}
 
 **83-type mutational signature asymmetries in transcription strands,
 replication strands, and DNA regions across cancer types**
@@ -150,7 +150,7 @@ next two pages.
 
 {{< pagebreak >}}
 
-![](cropped/fig_s3b.pdf){height=7.4in fig-align="center"}
+![](cropped/sup_fig_s3b.pdf){height=7.4in fig-align="center"}
 
 **Figure S3 (continued).**
 
@@ -160,7 +160,7 @@ enrichment on the leading and lagging strands, respectively.
 
 {{< pagebreak >}}
 
-![](cropped/fig_s3c.pdf){height=7.4in fig-align="center"}
+![](cropped/sup_fig_s3c.pdf){height=7.4in fig-align="center"}
 
 **Figure S3 (continued).**
 
@@ -172,7 +172,7 @@ regions, respectively.
 {{< pagebreak >}}
 
 ::: {#fig-s4}
-![](cropped/fig_s4.pdf){width=7in}
+![](cropped/sup_fig_s4.pdf){width=7in}
 
 **Interplay between 83-type signatures and replication time**
 :::
@@ -199,7 +199,7 @@ whose trends are inconsistent across cancer types.
 {{< pagebreak >}}
 
 ::: {#fig-s5}
-![](cropped/fig_s5.pdf){width=7in}
+![](cropped/sup_fig_s5.pdf){width=7in}
 
 **Mutational spectra of RNase H2-deficient murine tumors and RPE1 cell
 clones**
@@ -218,7 +218,7 @@ features are nearly absent in wild-type RPE1 control clones.
 {{< pagebreak >}}
 
 ::: {#fig-s6}
-![](cropped/fig_s6.pdf){height=7.6in}
+![](cropped/sup_fig_s6.pdf){height=7.6in}
 
 **Demographic associations of indel signatures with sex and age**
 :::

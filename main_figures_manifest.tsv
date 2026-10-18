@@ -1,9 +1,9 @@
 paper_file	source_file	reviewed_through	note
 fig1.pdf	build_fig1/fig1.pdf		Copy of the source.
-fig2_Cap9_2026.pdf	build_fig2/fig2.pdf		Copy of the source.
-fig3_Cap9_2026.pdf	build_fig3/fig3.pdf		Copy of the source.
-fig4_combined.pdf	build_fig4/fig4_combined.pdf		Copy of the source.
-Figure5.pdf	build_fig5/Figure5.pdf		Copy of the source.
-Figure6-TOP1-TAM.pdf	build_fig6/ID4_IDF_signature.pdf		Panels A and B, assembled by hand from pages 1 to 6.
-Figure6-TOP1-TAM.pdf	build_fig6/sequence_logos.pdf		Panel C logos, rescaled to 0-2 bits. The DNA diagrams in panel C are drawn by hand.
-Graphical abstract.v5.1200px.pdf			Built by hand. No source in the code repo.
+fig2.pdf	build_fig2/fig2.pdf		Copy of the source.
+fig3.pdf	build_fig3/fig3.pdf		Copy of the source.
+fig4.pdf	build_fig4/fig4.pdf		Copy of the source.
+fig5.pdf	build_fig5/fig5.pdf		Copy of the source.
+fig6.pdf	build_fig6/fig6_id4_idf_signatures.pdf		Panels A and B, assembled by hand from pages 1 to 6.
+fig6.pdf	build_fig6/fig6_sequence_logos.pdf		Panel C logos, rescaled to 0-2 bits. The DNA diagrams in panel C are drawn by hand.
+graphical_abstract.pdf			Built by hand. No source in the code repo.

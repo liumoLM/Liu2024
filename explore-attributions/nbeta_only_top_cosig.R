@@ -18,12 +18,12 @@ suppressPackageStartupMessages({
 })
 
 this_dir <- "/home/steve/github/0Liu2024/explore-attributions"
-sup_dir  <- file.path(this_dir, "..", "Sup Tables")
+sup_dir  <- file.path(this_dir, "..", "sup_tables")
 
 HYPER_CUT <- 4000
 
 meta <- as.data.frame(read_excel(
-  file.path(sup_dir, "Table S17 metadata of 6975 samples.xlsx"),
+  file.path(sup_dir, "sup_table_s17_sample_metadata.xlsx"),
   sheet = "Sheet1"
 ))
 meta$major <- meta[["Major Cancer Type"]]
@@ -32,7 +32,7 @@ meta$msi <- ifelse(meta$MSIseq == "MSI-H", "MSI",
                    ifelse(meta$MSIseq == "Non-MSI-H", "MSS", NA_character_))
 
 assign_mat <- read.delim(
-  file.path(sup_dir, "Table S11 83-type and 89-type signature assignment.tsv"),
+  file.path(sup_dir, "sup_table_s11_83_89_signature_assignment.tsv"),
   row.names = 1,
   check.names = FALSE
 )

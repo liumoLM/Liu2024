@@ -11,10 +11,10 @@ crop() {
     echo "cropped $1"
   fi
 }
-crop "Graphical abstract.v5.1200px.pdf" graphical_abstract.pdf
+crop "graphical_abstract.pdf" graphical_abstract.pdf
 crop fig1.pdf fig1.pdf
-crop fig2_Cap9_2026.pdf fig2.pdf
-crop fig3_Cap9_2026.pdf fig3.pdf
-crop fig4_combined.pdf fig4.pdf
-crop Figure5.pdf fig5.pdf
-crop Figure6-TOP1-TAM.pdf fig6.pdf
+crop fig2.pdf fig2.pdf
+crop fig3.pdf fig3.pdf
+crop fig4.pdf fig4.pdf
+crop fig5.pdf fig5.pdf
+crop fig6.pdf fig6.pdf

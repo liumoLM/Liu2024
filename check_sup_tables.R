@@ -1,4 +1,4 @@
-# Check that the supplementary tables in "Sup Tables/" match their sources in
+# Check that the supplementary tables in "sup_tables/" match their sources in
 # the code repository (~/github/Liu2026_code_and_data).
 #
 # The mapping from paper file name to source file is in
@@ -10,7 +10,7 @@
 #   Rscript check_sup_tables.R [--code-repo <path>] [--manifest <path>]
 #
 # Exits with status 1 if any table with a source is out of date, if a file
-# in "Sup Tables/" is missing from the manifest, or if a file named in the
+# in "sup_tables/" is missing from the manifest, or if a file named in the
 # manifest is missing. ms.qmd also calls check_sup_tables() at render time
 # and warns about any problem.
 
@@ -44,7 +44,7 @@ read_table_cells <- function(path) {
 check_sup_tables <- function(
     code_repo = "~/github/Liu2026_code_and_data",
     manifest = "sup_tables_manifest.tsv",
-    sup_dir = "Sup Tables") {
+    sup_dir = "sup_tables") {
   man <- utils::read.delim(manifest, colClasses = "character")
   problems <- data.frame(file = character(), problem = character())
   add <- function(file, problem) {
@@ -55,13 +55,13 @@ check_sup_tables <- function(
   present <- list.files(sup_dir)
   present <- present[!dir.exists(file.path(sup_dir, present))]
   for (f in setdiff(present, man$paper_file)) {
-    add(f, "in Sup Tables/ but not in the manifest")
+    add(f, "in sup_tables/ but not in the manifest")
   }
 
   for (i in seq_len(nrow(man))) {
     paper <- file.path(sup_dir, man$paper_file[i])
     if (!file.exists(paper)) {
-      add(man$paper_file[i], "in the manifest but missing from Sup Tables/")
+      add(man$paper_file[i], "in the manifest but missing from sup_tables/")
     } else if (nzchar(man$source_file[i])) {
       src <- file.path(path.expand(code_repo), man$source_file[i])
       if (!file.exists(src)) {
@@ -76,7 +76,7 @@ check_sup_tables <- function(
 
 if (sys.nframe() == 0) {
   p <- argparser::arg_parser(
-    "Check Sup Tables/ against their sources in the code repo"
+    "Check sup_tables/ against their sources in the code repo"
   )
   p <- argparser::add_argument(
     p, "--code-repo", help = "Path to the code repository",

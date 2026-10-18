@@ -109,8 +109,8 @@ Run `Rscript check_main_figures.R`, `Rscript check_sup_figures.R`, and
    green for review (2026-10-08).
 4. Closed (2026-10-07): Fig S2. Mo has no assembly code, so we wrote
    `build_fig_s2/make_figure_s2_layout.R` in the code repo. It builds
-   `figure_s2_draft.pdf` in the paper's layout from the Table S2, S4, and
-   S6 signatures. The paper's `sup_figs/figure_s2.pdf` is edited by hand
+   `sup_fig_s2_msighdp_signatures_draft.pdf` in the paper's layout from the Table S2, S4, and
+   S6 signatures. The paper's `sup_figs/sup_fig_s2_msighdp_signatures.pdf` is edited by hand
    from the draft, as recorded in `sup_figures_manifest.tsv`.
 5. Table S17 (sample metadata) is only partly reproducible. Patient, age,
    sex, MSI status, major cancer type, and cohort come from
@@ -160,18 +160,20 @@ Run `Rscript check_main_figures.R`, `Rscript check_sup_figures.R`, and
    https://github.com/AlexandrovLab/SigProfilerTopography) to see whether
    they normalize indels to the pyrimidine strand, for example GAGAGA->GAGA
    to TCTCTC->TCTC, and compare with what we do.
-10. Later: Fig 6 panels A to C are built from `build_fig6/ID4_IDF_signature.pdf`
-   and `build_fig6/sequence_logos.pdf` (checked 2026-10-07) and carry the
+10. Later: Fig 6 panels A to C are built from `build_fig6/fig6_id4_idf_signatures.pdf`
+   and `build_fig6/fig6_sequence_logos.pdf` (checked 2026-10-07) and carry the
    same information, but they are not visually identical to the source
    plots. For example, the panel C logos are rescaled to 0-2 bits and the
    DNA diagrams are drawn by hand. Come back to this.
-11. Review the naming of the figure-generating code and folders. File
-   names in `sup_figs/` mix styles (`Figure S3a.pdf`, `figure_s5.pdf`,
-   `Figure_S1a.pdf`), and the code repo names some outputs by figure
-   number (`build_fig_s3/FigureS3_*.pdf`, `build_fig_s4/FigureS4.pdf`,
-   `build_fig_s5/figure_s5_draft.pdf`). `sup_figures_manifest.tsv` maps
-   them correctly. Consider names that describe content rather than figure
-   numbers, so that future renumbering needs no renames.
+11. Closed (2026-10-17): file names aligned across the two repos. Each
+   paper figure or table has the same name as its source in the code repo,
+   number first, then a short description: `main_figures/fig5.pdf` from
+   `build_fig5/fig5.pdf`, `sup_figs/sup_fig_s3a_transcription_strand.pdf`
+   from `build_fig_s3/`, and `sup_tables/sup_table_s2_msighdp_83_type_signatures.xlsx`
+   from `build_sup_table_s2/`. Hand-edited figures come from a `_draft`
+   source (for example `sup_fig_s5_rnase_h2_spectra_draft.pdf`).
+   `Sup Tables/` was renamed `sup_tables/`. Renumbering a figure or table
+   now means renaming it in both repos and in the manifests.
 
 # From here down old
 

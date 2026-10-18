@@ -16,16 +16,16 @@ crop() {
     echo "cropped $1"
   fi
 }
-crop Figure_S1a.pdf fig_s1a.pdf
-crop Figure_S1b.pdf fig_s1b.pdf
+crop sup_fig_s1a_signature_assignment.pdf sup_fig_s1a.pdf
+crop sup_fig_s1b_signature_assignment.pdf sup_fig_s1b.pdf
 # Figure S2 is shown on two pages, panels A and B on the first and panel C
 # on the second. The bounding boxes are in PDF points, origin at the lower
 # left.
-crop figure_s2.pdf fig_s2ab.pdf "8 369 596 827"
-crop figure_s2.pdf fig_s2c.pdf "8 115 596 358"
-crop "Figure S3a.pdf" fig_s3a.pdf
-crop "Figure S3b.pdf" fig_s3b.pdf
-crop "Figure S3c.pdf" fig_s3c.pdf
-crop "Figure S4.pdf" fig_s4.pdf
-crop figure_s5.pdf fig_s5.pdf
-crop "Figure S6.pdf" fig_s6.pdf
+crop sup_fig_s2_msighdp_signatures.pdf sup_fig_s2ab.pdf "8 369 596 827"
+crop sup_fig_s2_msighdp_signatures.pdf sup_fig_s2c.pdf "8 115 596 358"
+crop "sup_fig_s3a_transcription_strand.pdf" sup_fig_s3a.pdf
+crop "sup_fig_s3b_replication_strand.pdf" sup_fig_s3b.pdf
+crop "sup_fig_s3c_genic_intergenic.pdf" sup_fig_s3c.pdf
+crop "sup_fig_s4_replication_timing.pdf" sup_fig_s4.pdf
+crop sup_fig_s5_rnase_h2_spectra.pdf sup_fig_s5.pdf
+crop "sup_fig_s6_sex_age.pdf" sup_fig_s6.pdf

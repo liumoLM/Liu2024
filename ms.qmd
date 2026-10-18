@@ -33,13 +33,13 @@ format:
 # Numbers quoted inline in the text come from the supplementary tables built
 # in the code repository, via the list ms_num.
 source("~/github/Liu2026_code_and_data/ms_numbers.R")
-# Warn at render time if any table in Sup Tables/ no longer matches its
+# Warn at render time if any table in sup_tables/ no longer matches its
 # source in the code repository (mapping in sup_tables_manifest.tsv).
 source("check_sup_tables.R")
 sup_table_problems <- check_sup_tables()
 if (nrow(sup_table_problems) > 0) {
   warning(
-    "Sup Tables/ out of sync with the code repo:\n",
+    "sup_tables/ out of sync with the code repo:\n",
     paste0("  ", sup_table_problems$file, ": ", sup_table_problems$problem,
            collapse = "\n"),
     call. = FALSE, immediate. = TRUE
@@ -672,7 +672,7 @@ link between POLE proofreading defects and leading-strand mutagenesis.
 the asymmetry means for the indels; is this 1bp T deletions from shorter
 stre]{.blue}
 
-[Note: Figure 5 (main_figures/Figure5.pdf) is now a copy of build_fig5/Figure5.pdf in the code repo. Its panels A to C use the topography pipeline's labels (build_fig5/assign_asymmetry_type.R), which also underlie Figure S3, including ID_K on the leading strand. This changed two signatures relative to the earlier hand-edited Figure 5. In panel B, ID_L is now Lagging (its only cancer type with P < 0.05 is Pancreas, lagging). In panel C, ID_B is now Mix (8 cancer types with P < 0.05 are intergenic and 1, Breast, is genic). Mini confirmed by email on 2026-10-07 that repli.strand = -1 is the lagging strand and that the pipeline's leading/lagging orientation (as in Figure S3B) is correct.]{.blue}
+[Note: Figure 5 (main_figures/fig5.pdf) is now a copy of build_fig5/fig5.pdf in the code repo. Its panels A to C use the topography pipeline's labels (build_fig5/assign_asymmetry_type.R), which also underlie Figure S3, including ID_K on the leading strand. This changed two signatures relative to the earlier hand-edited Figure 5. In panel B, ID_L is now Lagging (its only cancer type with P < 0.05 is Pancreas, lagging). In panel C, ID_B is now Mix (8 cancer types with P < 0.05 are intergenic and 1, Breast, is genic). Mini confirmed by email on 2026-10-07 that repli.strand = -1 is the lagging strand and that the pipeline's leading/lagging orientation (as in Figure S3B) is correct.]{.blue}
 
 We also examined the mutation enrichment of 83-type signatures in
 genic and intergenic regions (Figure S3C). Most signatures showed

@@ -3,7 +3,7 @@
 ## Key data sources for sample-level analyses
 
 - **89-type / 83-type indel signature exposures per sample**:
-  `Sup Tables/Table S11 83-type and 89-type signature assignment.tsv`
+  `sup_tables/sup_table_s11_83_89_signature_assignment.tsv`
   - Rows are signatures named `C_ID*/InsDel*` (83-type/89-type pair).
   - Columns are 6975 samples (Patient IDs).
   - Cell values are exposures (indel counts). Column sums are NOT total
@@ -15,7 +15,7 @@
     `unified_indels_data/liu_et_al_83_spectra.tsv`.
 
 - **Sample metadata (cancer type, MSI status, etc.)**:
-  `Sup Tables/Table S17 metadata of 6975 samples.xlsx`
+  `sup_tables/sup_table_s17_sample_metadata.xlsx`
   - Key columns: `Patient`, `Major Cancer Type`, `MSI_status` (values `MSI` / `MSS`),
     `mutation_burden`, `cohort`, `Cancer Type`.
   - All 6975 Patient IDs match the column names in Table S11.
@@ -73,9 +73,20 @@ the relevant figure or table there (for example `build_fig5/` for Figure 5,
 and derive the number from it. When a number in `ms.qmd` disagrees with that
 repo, the repo wins and the manuscript is corrected.
 
+## File names for figures and tables
+
+Since 2026-10-17, each figure and table in this repo has the same file name
+as its source in the code repo: number first, then a short description, all
+lower case with underscores. Examples: `main_figures/fig5.pdf` from
+`build_fig5/fig5.pdf`, `sup_figs/sup_fig_s4_replication_timing.pdf` from
+`build_fig_s4/`, and `sup_tables/sup_table_s17_sample_metadata.xlsx` from
+`build_sup_table_s17/`. A figure edited by hand comes from a source with a
+`_draft` suffix. Keep this rule for new or renumbered figures and tables, and
+rename in both repos. `sup_tables/` was `Sup Tables/` before that date.
+
 ## Supplementary tables vs. the code repo
 
-`sup_tables_manifest.tsv` maps each file in `Sup Tables/` to its source in
+`sup_tables_manifest.tsv` maps each file in `sup_tables/` to its source in
 `~/github/Liu2026_code_and_data/` (blank if none). `Rscript check_sup_tables.R`
 compares them by cell contents, and `ms.qmd` runs the same check at render
 time. When a table is added, renamed, or renumbered, update the manifest.

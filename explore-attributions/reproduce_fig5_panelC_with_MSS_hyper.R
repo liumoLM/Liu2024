@@ -23,9 +23,9 @@ suppressPackageStartupMessages({
 
 setwd("/home/steve/github/0Liu2024")
 
-meta <- read_excel("Sup Tables/Table S17 metadata of 6975 samples.xlsx")
+meta <- read_excel("sup_tables/sup_table_s17_sample_metadata.xlsx")
 exp  <- read.delim(
-  "Sup Tables/Table S11 83-type and 89-type signature assignment.tsv",
+  "sup_tables/sup_table_s11_83_89_signature_assignment.tsv",
   check.names = FALSE
 )
 

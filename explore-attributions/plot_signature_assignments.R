@@ -2,11 +2,11 @@
 # tables in this folder.
 #
 # Inputs (in the same folder as this script):
-#   Table S11 83-type and 89-type signature assignment.tsv
+#   sup_table_s11_83_89_signature_assignment.tsv
 #       Tab-separated matrix; first column is the signature name (e.g.
 #       "ID_K/InsDel_K"), remaining columns are bare sample IDs with mutation
 #       counts attributed to that signature.
-#   Table S17 metadata of 6975 samples.xlsx
+#   sup_table_s17_sample_metadata.xlsx
 #       Sheet "Sheet1" with columns including "Patient", "Cancer Type", and
 #       "MSIseq" ("MSI-H"/"Non-MSI-H").
 #
@@ -17,15 +17,15 @@
 #       black circles.
 #
 # Usage (run from the repo root or from this folder):
-#   Rscript "Sup Tables/plot_signature_assignments.R"
-#   Rscript "Sup Tables/plot_signature_assignments.R" --min-fraction 0.05
+#   Rscript "sup_tables/plot_signature_assignments.R"
+#   Rscript "sup_tables/plot_signature_assignments.R" --min-fraction 0.05
 
 library(ggplot2)
 library(scales)
 library(argparser)
 library(readxl)
 
-p <- arg_parser("Hamburger plots from Sup Tables S10 + S17")
+p <- arg_parser("Hamburger plots from sup_tables S10 + S17")
 p <- add_argument(
   p,
   "--min-fraction",
@@ -50,14 +50,14 @@ this_dir <- local({
   dirname(normalizePath(f))
 })
 
-sup_dir <- file.path(this_dir, "..", "Sup Tables")
+sup_dir <- file.path(this_dir, "..", "sup_tables")
 assignment_file <- file.path(
   sup_dir,
-  "Table S11 83-type and 89-type signature assignment.tsv"
+  "sup_table_s11_83_89_signature_assignment.tsv"
 )
 metadata_file <- file.path(
   sup_dir,
-  "Table S17 metadata of 6975 samples.xlsx"
+  "sup_table_s17_sample_metadata.xlsx"
 )
 output_file <- file.path(
   this_dir,

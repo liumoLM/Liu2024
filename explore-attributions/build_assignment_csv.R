@@ -31,14 +31,14 @@ this_dir <- local({
   dirname(normalizePath(f))
 })
 
-sup_dir <- file.path(this_dir, "..", "Sup Tables")
+sup_dir <- file.path(this_dir, "..", "sup_tables")
 assignment_file <- file.path(
   sup_dir,
-  "Table S11 83-type and 89-type signature assignment.tsv"
+  "sup_table_s11_83_89_signature_assignment.tsv"
 )
 metadata_file <- file.path(
   sup_dir,
-  "Table S17 metadata of 6975 samples.xlsx"
+  "sup_table_s17_sample_metadata.xlsx"
 )
 output_file <- file.path(this_dir, "Table_S10_S17_joined_wide.csv")
 
