@@ -92,6 +92,8 @@ Steve: check "self" referencing from web page to shiny app doi
 
 steve check: Sup Fig 1 legend
 
+steve: review all sup fig legends
+
 # To do: figures, sup figures, and sup tables vs. the code repo (2026-10-07)
 
 Run `Rscript check_main_figures.R`, `Rscript check_sup_figures.R`, and
