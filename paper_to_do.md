@@ -29,14 +29,22 @@ http://8.138.15.71/
   of 0.5 or more went to mSigAct, since the routing used the older values.
   The methods text ("1-bp T insertions or deletions in at least five poly-T
   tracts") should be fixed when the routing question below is settled.
-- Item 5: decide what to do about the 43 tumors whose SigProfilerAssignment
-  vs. mSigAct routing changes with the clipped counts, and whether the
-  routing threshold should be >= 5,000 (as in the methods) or 4,000.
+- Routing between SigProfilerAssignment and mSigAct (item 5): waiting on
+  Mo, then decide. Mo has not yet answered section 3 of
+  `QUESTIONS_FOR_MO.md`: which tumors went to mSigAct and by what rule,
+  whether the thresholds used pre- or post-clipping counts, and whether
+  there is a list or code. The stated rule (>= 5,000 indels or poly-T
+  ratio >= 0.5) does not match the 503 tumors with single-counted Table
+  S11 sums (46 of them do not meet the rule, and 1,188 tumors that meet it
+  have double-counted sums). With the clipped counts, 44 tumors would be
+  routed differently. Then decide whether to redo the routing with the
+  clipped counts or state which counts were used, whether the threshold is
+  >= 5,000 or 4,000, and fix the methods wording about poly-T tracts.
 - Review Mo's replies and act on them. Still open with Mo:
   - MSIseq: how Mo ran it and how its output was used. Steve emailed Mo
     (2026-10-17), waiting for the reply.
-  - `QUESTIONS_FOR_MO.md` (Table S17, routing). Mo has answered the
-    hypermutation threshold and which counts to use (item 6).
+  - Routing (see above). Mo has answered the hypermutation threshold and
+    which counts to use (item 6).
   - Mo's partial-credit table for Table S14 (`all.indel.ID89.partial.credit.txt`),
     promised for the weekend.
   - Answered and done (2026-10-17): ID_N and InsDel_N_beta in Table S15
