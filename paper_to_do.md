@@ -26,26 +26,32 @@ http://8.138.15.71/
   spectra, and the other columns reproduce exactly. The legend now gives the
   channels in the poly-T ratio (INS:T:1:5+ and DEL:T:1:5+, so deletions
   are from runs of 6 or more Ts) and no longer says that tumors with a ratio
-  of 0.5 or more went to mSigAct, since the routing used the older values.
-  The methods text ("1-bp T insertions or deletions in at least five poly-T
-  tracts") should be fixed when the routing question below is settled.
-- Routing between SigProfilerAssignment and mSigAct (item 5): waiting on
-  Mo, then decide. Steve emailed Mo (2026-10-17, "which tumors went to
-  mSigAct vs. SigProfilerAssignment?") the questions in section 3 of
-  `QUESTIONS_FOR_MO.md`: which tumors went to mSigAct and by what rule,
-  whether the thresholds used pre- or post-clipping counts, and whether
-  there is a list or code. The stated rule (>= 5,000 indels or poly-T
-  ratio >= 0.5) does not match the 503 tumors with single-counted Table
-  S11 sums (46 of them do not meet the rule, and 1,188 tumors that meet it
-  have double-counted sums). With the clipped counts, 44 tumors would be
-  routed differently. Then decide whether to redo the routing with the
-  clipped counts or state which counts were used, whether the threshold is
-  >= 5,000 or 4,000, and fix the methods wording about poly-T tracts.
+  of 0.5 or more went to mSigAct. The methods wording about poly-T tracts
+  was fixed on 2026-10-18.
+- Routing between SigProfilerAssignment and mSigAct (item 5). Mo replied
+  2026-10-18 and sent `mSigAct.reanalyzed.samples.txt`: 1,535 tumors with
+  `mutation_burden` >= 4,000 or poly-T ratio > 0.5 in Table S17 (clipped
+  counts). The list matches that rule applied to the current S17 exactly
+  (all 202 MSI-H tumors are on it). Done (2026-10-18): the methods now give
+  this rule. Still open:
+  - The list matches the current S17 (built 2026-10-17), not the earlier
+    S17, where the same rule gives 1,517 tumors (39 on the list do not meet
+    it, 21 that meet it are not on the list). Ask Mo whether the list was
+    regenerated from the current S17 or is the set the fits were actually
+    run on.
+  - Table S11 sums. Mo asked for the names of the 503 tumors with
+    single-counted sums. They are in `s11_single_counted_503.tsv` (447 on
+    the mSigAct list, 56 not, and 1,088 tumors on the list have
+    double-counted sums). Steve emailed Mo the list (2026-10-18), asking
+    why these 503 are not doubled. Waiting for the reply.
 - Review Mo's replies and act on them. Still open with Mo:
-  - MSIseq: how Mo ran it and how its output was used. Steve emailed Mo
-    (2026-10-17), waiting for the reply.
-  - Routing (see above). Emailed 2026-10-17, waiting for the reply. Mo has answered the hypermutation threshold and
-    which counts to use (item 6).
+  - MSIseq: Mo replied 2026-10-18. MSIseq was run on all tumors, the
+    `MSIseq` column is MSIseq's own output (the cohort MSI calls are a
+    subset of it), and the 4,000 threshold is after clipping. Mini ran
+    MSIseq. Waiting for Mini's details (inputs, VCFs and filters, repeats
+    annotation, sequence length) and code. Done: the methods no longer say
+    that MSIseq was run only on high-TMB tumors or how the 4,000 cutoff
+    was chosen.
   - Mo's partial-credit table for Table S14 (`all.indel.ID89.partial.credit.txt`),
     promised for the weekend.
   - Answered and done (2026-10-17): ID_N and InsDel_N_beta in Table S15
@@ -136,13 +142,10 @@ Run `Rscript check_main_figures.R`, `Rscript check_sup_figures.R`, and
    `unified_indels_data`, which are clipped to repeat length R <= 9 (column
    sums of `liu_et_al_83_spectra.tsv`). Done (2026-10-17):
    `build_sup_table_s17/build_sup_table_s17.R` in the code repo builds S17
-   with `mutation_burden` and the poly-T ratio from those spectra. With the current spectra, 43 tumors would be routed
-   differently between SigProfilerAssignment and mSigAct (recount of
-   2026-10-15). Decide whether the routing should be redone with the
-   clipped counts, or whether the methods should say which counts the
-   routing used. The routing threshold in the methods is >= 5,000 indels,
-   not 4,000. Check whether that is intended. Background is in
-   `QUESTIONS_FOR_MO.md`.
+   with `mutation_burden` and the poly-T ratio from those spectra.
+   Routing: Mo's list of mSigAct tumors (2026-10-18) follows the 4,000
+   threshold on the clipped counts, and the methods now say so (see the
+   routing entry above).
 6. Figure 4A MSS-hyper threshold. Decision (Mo, 2026-10-16): a tumor is
    hypermutated if it has > 4,000 indels, counted from the R <= 9 clipped
    spectra in `unified_indels_data`. Done (2026-10-17): Figure 4A was
