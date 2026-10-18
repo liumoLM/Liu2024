@@ -160,12 +160,7 @@ Run `Rscript check_main_figures.R`, `Rscript check_sup_figures.R`, and
    https://github.com/AlexandrovLab/SigProfilerTopography) to see whether
    they normalize indels to the pyrimidine strand, for example GAGAGA->GAGA
    to TCTCTC->TCTC, and compare with what we do.
-10. Later: Fig 6 panels A to C are built from `build_fig6/fig6_id4_idf_signatures.pdf`
-   and `build_fig6/fig6_sequence_logos.pdf` (checked 2026-10-07) and carry the
-   same information, but they are not visually identical to the source
-   plots. For example, the panel C logos are rescaled to 0-2 bits and the
-   DNA diagrams are drawn by hand. Come back to this.
-11. Closed (2026-10-17): file names aligned across the two repos. Each
+10. Closed (2026-10-17): file names aligned across the two repos. Each
    paper figure or table has the same name as its source in the code repo,
    number first, then a short description: `main_figures/fig5.pdf` from
    `build_fig5/fig5.pdf`, `sup_figs/sup_fig_s3a_transcription_strand.pdf`
