@@ -37,6 +37,9 @@ GROUPS  <- c(CANCERS, "MSI-H")
 # Build a sample-by-group membership matrix. A sample can belong to
 # more than one group (e.g. an MSI Bladder sample is in both Bladder
 # and MSI-H).
+# MSI-H here is the cohort MSI_status, as in Mo's original figure, so that
+# this script reproduces it. The paper now uses MSIseq (see
+# reproduce_fig5_panelC_with_MSS_hyper.R and build_fig4/ in the code repo).
 membership <- sapply(GROUPS, function(g) {
   if (g == "MSI-H") meta$MSI_status == "MSI"
   else              meta$`Major Cancer Type` == g

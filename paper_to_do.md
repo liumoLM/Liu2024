@@ -18,8 +18,13 @@ http://8.138.15.71/
   instead of 723, and its only dot is InsDel3b instead of InsDel14. The
   legend already says "> 4,000 indels", and the results text does not
   mention the MSS-hyper column.
-- Item 6: use the same definition everywhere else in the paper, and in
-  `explore-attributions/`.
+- Done (2026-10-18): Item 6, the same definitions are used everywhere
+  else. The scripts in `explore-attributions/` were switched on 2026-10-17
+  (ce9a4f3). On 2026-10-18 the numbers in `id1_id2_idN_findings.md` and
+  `more-on-attributions.md` were updated from the regenerated outputs
+  (several findings about MSS hypermutated tumors no longer hold), and the
+  two scripts that reproduce Mo's original figure with `MSI_status` say so
+  in a comment. `ms.qmd` and the code repo already used them.
 - Done (2026-10-17): Item 5, Table S17 is now built by
   `build_sup_table_s17/build_sup_table_s17.R` in the code repo.
   `mutation_burden` and the poly-T ratio are computed from the clipped
@@ -150,9 +155,8 @@ Run `Rscript check_main_figures.R`, `Rscript check_sup_figures.R`, and
    hypermutated if it has > 4,000 indels, counted from the R <= 9 clipped
    spectra in `unified_indels_data`. Done (2026-10-17): Figure 4A was
    recomputed with this rule (48 MSS-hyper tumors instead of 723), and the
-   project CLAUDE.md records it. Still to do: use the same definition
-   everywhere else in the paper and in `explore-attributions/`, which
-   still uses a > 5000 rule on Table S11 sums.
+   project CLAUDE.md records it. Done (2026-10-18): the same definition
+   is used everywhere else (see the "Tomorrow" section).
 7. Closed (2026-10-17): Figures S1 and S6, and Tables S15 and S16.
    - Figure S1 reproduces. It reads `sample_info.tsv` and the assignment
      tables from the data repo, and `build_all_meta.R` moved to the data
@@ -188,82 +192,5 @@ Run `Rscript check_main_figures.R`, `Rscript check_sup_figures.R`, and
    `Sup Tables/` was renamed `sup_tables/`. Renumbering a figure or table
    now means renaming it in both repos and in the manifests.
 
-# From here down old
-
-
-# To do steve
-
-- Look at fig 5 (? indel vs SBS associations) and write up
-
-- Look at Fig 6 and corresponding section of the MS.
-
-- Consider ID14 trans. strand. bias and interaction w/ SBS93 --> potential etiology of id14
-
-- consider info on assignments below and review that section of the ms
-
-- H -- how common are the 2 deletions that make up H across all tumors? how constant is the ratio in skin tumors? Scatter plot?
-
-
-# Decisions
-
-# Status: 
-
-
-# Under consideration / nice to have
-
-Electronically (via link) Examples of mutations in the different (somewhat obscure) classification
-
-The Sig F / Reijn annotated VCFs need to be redone with "cap 9"
-
-Review SBS / indel associations
-
-# Data sources for Degaspari SBS data
+# Data sources for Degaspari SBS data; make sure we cite this
   https://zenodo.org/records/5571551/files/SBS_v2.03.zip?download=1                                                                                                                        
-                                                                                                                                                                                            
-  (From Zenodo record https://zenodo.org/records/5571551)
-  https://doi.org/10.5281/zenodo.5571551 
-
-The following is unreliable:
-# Assignments
-
-- 1a everywhere
-- 1b a bit enriched in breast
-- 1c everywhere 
-- ID* much rarer than in COSMIC -- to partial credit in 476 for the Del T 6+ peak
-- 2a some enrichment in breask lunk eso, colon
-- 2b MSI per Mo, high in uterus, breast,colon
-- 2c MSI per Mo,  high prosate, colon, and no msi lymphoid
-- 3a prevalent in bladder
-- 3b liver and lung
-- 4
-- 5
-- 6
-- 7 MSI per Mo
-- 8
-- 9
-- 10
-- 11 super rare
-- 12 prostate
-- 13 skin (expected)
-- 14 colon and esophagus (and stomach)
-- 17 ** breast, low counts but top2A **** worth revisting in light of our paper / stomach
-- 18 colon (colibactin)
-- 19a rare -- assoc w MSI in colon and esophagus
-- 19b everywhere
-- 23 rare; but should not be in breast or prostate
-- A alpha beast / colon, but not MSI
-- A beta strong breast
-- B everywhere except stomach
-- C super rare -- some very high in Colon, Breast
-- D MSI per Mo, esp prostate and colon
-- E generally rare..
-- F rare; we think we have an explanation
-- G rare
-- H ** skin only, consists of basically of Del(6,9):U(4,):R(2,9) and Del(7,9):M(6,)
-- I super rare - 10 tumors
-- J MSI per Mo in prostate, breask, colon
-- K super rare; 9 tumors nly pancrease, prostate, colon
-- L super rare; about 20 tumors only CNS, SKin, pancrease
-- M super rare, high MIS assoc, only lung breast colon protate
-- N alpha, somwhat rare, slightly more in stomach?
-- N beta, everywhere except thymus kindey liver *** look for complimentary signature 

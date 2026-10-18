@@ -33,6 +33,9 @@ CANCERS <- c("Bladder", "Colon", "Esophagus", "Kidney", "Liver",
              "Lung", "Ovary", "Prostate", "Skin")
 GROUPS  <- c(CANCERS, "MSI-H")
 
+# MSI-H here is the cohort MSI_status, as in Mo's original figure, so that
+# this script reproduces it. The paper now uses MSIseq (see
+# reproduce_fig5_panelC_with_MSS_hyper.R and build_fig4/ in the code repo).
 membership <- sapply(GROUPS, function(g) {
   if (g == "MSI-H") meta$MSI_status == "MSI"
   else              meta$`Major Cancer Type` == g
