@@ -144,6 +144,10 @@ XmWU123 Github name
   (2026-07-13) with no new tag, so the archive is older than the running
   app. `ms.qmd` now cites the DOI after https://indelsig.net. indelsig.net
   and the GitHub README do not give the DOI or the paper.
+- In about a week (around 2026-10-29), once the browser is final: ask
+  Xueming to tag a new GitHub release of XmWU123/indelsig (for example
+  V1.1.0), so that Zenodo archives the current app under the same concept
+  DOI (10.5281/zenodo.20092288).
 - Add the STAR Methods "Resource availability" section (lead contact,
   materials availability, data and code availability), listing the code
   repo, the data repo, and the browser DOI.
