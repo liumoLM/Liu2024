@@ -136,6 +136,17 @@ Steve Review subsection "Demographic Associations with Gender and Age"
 
 check Shiny app persistent doi: 10.5281/zenodo.20092288
 XmWU123 Github name
+- Checked (2026-10-22): 10.5281/zenodo.20092288 is the concept DOI (always
+  the latest version) of the Indel Signature Browser by Xueming Wu, Steven
+  G. Rozen, and Mo Liu. Its only version is V1.0.0 (2026-05-09), archiving
+  GitHub release V1.0.0 of XmWU123/indel-signature-browser, since renamed
+  XmWU123/indelsig (GitHub redirects). The repo was pushed after that
+  (2026-07-13) with no new tag, so the archive is older than the running
+  app. `ms.qmd` now cites the DOI after https://indelsig.net. indelsig.net
+  and the GitHub README do not give the DOI or the paper.
+- Add the STAR Methods "Resource availability" section (lead contact,
+  materials availability, data and code availability), listing the code
+  repo, the data repo, and the browser DOI.
 
 
 Steve: check "self" referencing from web page to shiny app doi

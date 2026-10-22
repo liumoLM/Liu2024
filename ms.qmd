@@ -242,7 +242,8 @@ the genome.
 We also assessed their associations with SBS signatures and with sex
 within individual cancer types. Finally, in addition to the
 supplementary information provided here, we provide a web site to
-facilitate exploration of these signatures (https://indelsig.net)[.]{.pink}
+facilitate exploration of these signatures (https://indelsig.net), whose
+source code is archived at Zenodo [@wuIndelSignatureBrowser2026]<!-- -->[.]{.pink}
 
 # Results
 
