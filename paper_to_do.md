@@ -147,7 +147,8 @@ XmWU123 Github name
 - In about a week (around 2026-10-29), once the browser is final: ask
   Xueming to tag a new GitHub release of XmWU123/indelsig (for example
   V1.1.0), so that Zenodo archives the current app under the same concept
-  DOI (10.5281/zenodo.20092288).
+  DOI (10.5281/zenodo.20092288), and to add a "How to cite" line (this
+  paper and the DOI) to https://indelsig.net and the GitHub README.
 - Add the STAR Methods "Resource availability" section (lead contact,
   materials availability, data and code availability), listing the code
   repo, the data repo, and the browser DOI.
