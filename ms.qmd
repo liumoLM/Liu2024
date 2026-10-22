@@ -511,13 +511,13 @@ relationships within previously broader categories. For instance, the
 three signatures derived from C_ID1 (InsDel1a, InsDel1b, and InsDel1c)
 each showed distinct patterns of correlation to SBS signatures (Figure
 [-@fig-assoc]B). InsDel1a and the 83-type signature C_ID1 had similar
-correlation profiles, with both having modest correlations (Spearman ρ 0.1–0.2) to
+correlation profiles, with both having modest correlations (Spearman ρ `r ms_num$fig4b$rho_1a_range`) to
 SBS1, SBS18, SBS2, SBS35, and SBS13.
 Among these, SBS1, SBS18, and SBS35 are in the gastrointestinal (GI) cluster.
 In contrast,
-InsDel1b was correlated only with SBS10a (ρ = 0.30), which is caused by
+InsDel1b was correlated only with SBS10a (ρ = `r ms_num$fig4b$rho_1b_sbs10a`), which is caused by
 *POLE* proofreading errors, and InsDel1c was weakly correlated with
-SBS12 and SBS16 (ρ ≈ 0.12), which are common in liver cancer.
+SBS12 and SBS16 (ρ ≈ `r ms_num$fig4b$rho_1c_sbs12_16`), which are common in liver cancer.
 The correlation of C_ID1 and InsDel1a with SBS18, which was absent for
 InsDel1b and InsDel1c, is consistent with a possible contribution of
 reactive oxygen species to InsDel1a (Figure [-@fig-assoc]B).
@@ -712,24 +712,24 @@ stomach cancer specific enrichment in early replication regions, which [strength
 To explore potential [sex]{.pink} biases in mutational processes, we
 systematically compared signature activities between males and females
 using two-sided Fisher’s exact tests. After
-Benjamini–Hochberg adjustment (q \< 0.2), ten signature–cancer type
-combinations were associated with sex, corresponding to six associations
+Benjamini–Hochberg adjustment (q \< `r ms_num$s15$q_cutoff`), `r ms_num$s15$n_hits` signature–cancer type
+combinations were associated with sex, corresponding to `r ms_num$s15$n_hits_combined` associations
 when each 83-type signature and its 89-type counterpart are counted
 together (Figure S6A, Table S15). \<parallel
 structure\>Male-enriched mutational processes predominated in lung,
 liver, and "Other" cancer categories. Specifically, lung cancer showed
-significant male association with InsDel3b (OR = 0.367, q = 0.061) and
-C_ID3 (OR = 0.397, q = 0.188), signatures previously linked to tobacco
+significant male association with InsDel3b (`r ms_num$s15$or_q("Lung", "InsDel3b")`) and
+C_ID3 (`r ms_num$s15$or_q("Lung", "C_ID3")`), signatures previously linked to tobacco
 exposure, [consistent with higher smoking prevalence among men]{.yellow}. In liver cancer, a similar
-male predominance was observed for InsDel5a (OR = 0.481, q = 0.118;
-clock-like) and InsDel8/C_ID8 (OR = 0.271, q = 0.184; associated with
+male predominance was observed for InsDel5a (`r ms_num$s15$or_q("Liver", "InsDel5a")`;
+clock-like) and InsDel8/C_ID8 (`r ms_num$s15$or_q("Liver", "InsDel8")`; associated with
 DSB repair by NHEJ and age). [\<mentioned anywhere
 else?\>]{.mark}[The "Other" tumor group exhibited male bias in C_ID19
-(OR = 0.424, q = 0.188) and InsDel19b (OR = 0.448, q = 0.197).]{.yellow} In
+(`r ms_num$s15$or_q("Other", "C_ID19")`) and InsDel19b (`r ms_num$s15$or_q("Other", "InsDel19b")`).]{.yellow} In
 contrast, female-enriched signatures were found in esophageal and
 lymphoid malignancies, most notably in esophageal cancer for InsDel1a
-(OR = 3.85, q = 0.061) and C_ID1 (OR = 3.22, q = 0.188), as well as
-InsDel1c (OR = 2.63, q = 0.194) in lymphoid cancers. No additional
+(`r ms_num$s15$or_q("Esophagus", "InsDel1a")`) and C_ID1 (`r ms_num$s15$or_q("Esophagus", "C_ID1")`), as well as
+InsDel1c (`r ms_num$s15$or_q("Lymphoid", "InsDel1c")`) in lymphoid cancers. No additional
 signature–cancer type combinations reached a q-value below 0.2.
 Collectively, these findings suggest that specific mutational
 processes and their underlying biological processes might be modulated by [sex]{.pink}, [shaping distinct patterns of cancer susceptibility and
