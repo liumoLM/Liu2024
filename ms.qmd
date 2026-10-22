@@ -964,7 +964,9 @@ complementary tools applied to the 83-type, 89-type, and 476-type
 mutational spectra. A stratified strategy was adopted to capture rare
 and cancer-specific signatures, encompassing analyses of all genomes,
 specific cancer types, high-TMB samples, and the PCAWG and Hartwig
-cohorts individually.
+cohorts individually. High-TMB samples were the
+`r ms_num$tmb$n_high` of `r ms_num$tmb$n_all` genomes with
+\> `r ms_num$tmb$cutoff` indels, counted after capping repeat lengths at 9.
 
 For the hierarchical Dirichlet process–based approach, mSigHdp
 (v2.1.2) was used. When analyzing all samples, cancer type was used to
@@ -1194,7 +1196,8 @@ evaluated by the PCAWG working group and obtained from the synapse
 repository (<https://www.synapse.org/#!Synapse:syn8016399>, the data
 was downloaded on May 2022). For Hartwig genomes, the MSI status was
 downloaded from the supplementary data of Priestley et al., 2019. The
-genomes with \>4,000 IDs were labeled as high TMB tumors. We used
+genomes with \> `r ms_num$tmb$cutoff` indels, counted after capping
+repeat lengths at 9, were labeled as high TMB tumors. We used
 MSIseq to predict the MSI status of all tumors.[{.mark}]
 
 ## Extended sequence context analysis

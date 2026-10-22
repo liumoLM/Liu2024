@@ -113,8 +113,9 @@ http://8.138.15.71/
   may change.
 - Answered (Mo, 2026-10-18): the high-TMB set in the de novo extraction
   used > 4,000 indels after clipping to R <= 9, and the extraction was
-  redone after clipping. Still to do: give this cutoff in the methods
-  (`ms.qmd:969`, `:975`, `:981`, `:991`).
+  redone after clipping. Done (2026-10-22): the methods give the cutoff
+  in the de novo extraction section (249 of 6,978 genomes, from
+  `ms_num$tmb`) and in the MSI/TMB section.
 - Earlier items from Mo's replies:
   - Answered and done (2026-10-17): ID_N and InsDel_N_beta in Table S15
     (Table S15 and Figure S6 regenerated), and `donor.all_projects.tsv.gz`
