@@ -9,7 +9,7 @@ http://8.138.15.71/
 
 # To do
 
-## Tomorrow (2026-10-17)
+## Current (updated 2026-10-22)
 
 - Done (2026-10-17): Item 6, `build_fig4/all_cancer_types_enrichment.R` now
   calls a tumor hypermutated if it has > 4,000 indels in the R <= 9 clipped
@@ -33,40 +33,60 @@ http://8.138.15.71/
   are from runs of 6 or more Ts) and no longer says that tumors with a ratio
   of 0.5 or more went to mSigAct. The methods wording about poly-T tracts
   was fixed on 2026-10-18.
-- Routing between SigProfilerAssignment and mSigAct (item 5). Mo replied
-  2026-10-18 and sent `mSigAct.reanalyzed.samples.txt`: 1,535 tumors with
-  `mutation_burden` >= 4,000 or poly-T ratio > 0.5 in Table S17 (clipped
-  counts). The list matches that rule applied to the current S17 exactly
-  (all 202 MSI-H tumors are on it). Done (2026-10-18): the methods now give
-  this rule. Still open:
-  - The list matches the current S17 (built 2026-10-17), not the earlier
-    S17, where the same rule gives 1,517 tumors (39 on the list do not meet
-    it, 21 that meet it are not on the list). Ask Mo whether the list was
-    regenerated from the current S17 or is the set the fits were actually
-    run on.
-  - Table S11 sums. Mo asked for the names of the 503 tumors with
-    single-counted sums. They are in `s11_single_counted_503.tsv` (447 on
-    the mSigAct list, 56 not, and 1,088 tumors on the list have
-    double-counted sums). Steve emailed Mo the list (2026-10-18), asking
-    why these 503 are not doubled. Waiting for the reply.
-- Review Mo's replies and act on them. Still open with Mo:
-  - MSIseq: Mo replied 2026-10-18. MSIseq was run on all tumors, the
-    `MSIseq` column is MSIseq's own output (the cohort MSI calls are a
-    subset of it), and the 4,000 threshold is after clipping. Mini ran
-    MSIseq. Waiting for Mini's details (inputs, VCFs and filters, repeats
-    annotation, sequence length) and code. Done: the methods no longer say
-    that MSIseq was run only on high-TMB tumors or how the 4,000 cutoff
-    was chosen.
-  - High-TMB set in the de novo extraction. The methods mention
-    "high-TMB samples" (`ms.qmd:966`) and "genomes with high tumor
-    mutational burden" (`ms.qmd:974`, `:980`, `:988`) but never give the
-    cutoff. Email to Mo drafted 2026-10-18 (not yet sent), asking which
-    cutoff defined the set (Steve's guess: >= 5,000 indels), whether it was
-    counted before or after clipping to R <= 9 (maybe the extraction was
-    redone after clipping), and how many tumors were in it. If the set is
-    the same as > 4,000 clipped indels, the methods can say that.
-  - Mo's partial-credit table for Table S14 (`all.indel.ID89.partial.credit.txt`),
-    promised for the weekend.
+- New signature assignments (Mo, email "Question about S11",
+  2026-10-19). Mo could not reproduce some of the current assignments
+  (probably because no random seed was set), so the assignments must be
+  redone, some figures regenerated, and the topography analysis redone.
+  Mo reconstructed the original workflow: SigProfilerAssignment on the
+  172-type catalogs, then mSigAct reruns for (1) tumors with > 4,000
+  indels and (2) tumors with poly-T ratio > 0.5 and a SigProfilerAssignment
+  reconstruction cosine similarity < 0.9 in either the 83-type or the
+  89-type fit. That is 731 tumors, and 784 tumors have different
+  attributions than now. Mo thinks the overall effect is limited.
+  - Done (2026-10-22): the four attachments of Mo's 2026-10-19 email are
+    in `unified_indels_data/assignments_2026-10-19/` (not yet committed):
+    `ID83.SPA.assignment.1020.txt`, `ID89.SPA.assignment.1020.txt`,
+    `assignment.high.similarity.samples.for.figureS1.txt` (6,516 tumors),
+    and the new `mSigAct.reanalyzed.samples.txt` (731 tumors). The new
+    assignment tables have the same 6,975 tumors and signatures as
+    `liu_et_al_{83,89}_assignment.tsv`, and 819 tumors have exposures that
+    differ by more than 0.5 (Mo said 784). The list has 248 of the 249
+    tumors with > 4,000 clipped indels. The missing one is the exome tumor
+    `WES::TCGA-EW-A2FV-01A-11D-A17D-09` (4,198 indels). Ask Mo whether
+    leaving it out was deliberate. The copies of
+    `mSigAct.reanalyzed.samples.txt` in this repo and in the code repo
+    (untracked) are the OLD 2026-10-18 list (1,535 tumors, S17
+    `mutation_burden` >= 4,000 or poly-T ratio > 0.5) and should be
+    replaced.
+  - Steve agreed (2026-10-19) to rerun the figure and table pipeline with
+    the new assignments, as an independent check of how much the results
+    change. Mo has not yet pushed them to the code repo (checked
+    2026-10-22).
+  - Then update the methods to the new routing rule (they now give the old
+    1,535-tumor rule).
+  - Mo will redo the topography partial credit (needed for Table S14,
+    `all.indel.ID89.partial.credit.txt`) once Steve says the new
+    attributions are OK.
+  - The Table S11 question (503 tumors with single-counted sums,
+    `s11_single_counted_503.tsv`) should be rechecked against the new
+    assignments.
+- Meeting with Mo: Thursday 2026-10-22, 8 PM US time
+  (https://meet.google.com/gnh-mwye-jgd).
+- MSIseq. Mo said (2026-10-18) that MSIseq was run on all tumors, but Mini
+  wrote (2026-10-19) that it was run on only 220 tumors (probably those
+  above some mutation-load cutoff), with `uniform.seq.len = 3200` and the
+  repeats annotation `Hg19repeats.rda` from the MSIseq package. Mini's code
+  is in the code repo at `msiseq/run-MSIseq.R` (not yet committed). Mo is
+  preparing SBS and indel VCFs so Mini can run MSIseq on all tumors. No
+  news since 2026-10-19. Ask Mo whether the rerun is needed. If it is, the
+  methods must say what MSIseq was run on, and the MSI-H calls
+  (`MSIseq_MSI.H` in `sample_info.tsv`, Table S17, Figure 4A, Table S9)
+  may change.
+- Answered (Mo, 2026-10-18): the high-TMB set in the de novo extraction
+  used > 4,000 indels after clipping to R <= 9, and the extraction was
+  redone after clipping. Still to do: give this cutoff in the methods
+  (`ms.qmd:969`, `:975`, `:981`, `:991`).
+- Earlier items from Mo's replies:
   - Answered and done (2026-10-17): ID_N and InsDel_N_beta in Table S15
     (Table S15 and Figure S6 regenerated), and `donor.all_projects.tsv.gz`
     (the ICGC portal download of 9 May 2024 named in the data repo README).
