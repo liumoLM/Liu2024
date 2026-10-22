@@ -475,7 +475,9 @@ the mutational consequences of RNase H2 deficiency than InsDel4.
 
 We further analyzed the correlations between the indel signature
 activities we derived and the SBS signature activities from
-@degasperiSubstitutionMutationalSignatures2022 (Table S11). We
+@degasperiSubstitutionMutationalSignatures2022 (Table S11), using
+version 2.03 of their reference-signature exposures
+[@degasperiMutationalSignaturesData2022]. We
 first computed a matrix of Spearman
 correlations between the numbers of mutations
 attributed to each SBS signature and to each indel signature over all SBS-indel signature pairs.
