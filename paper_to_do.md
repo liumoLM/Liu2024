@@ -53,11 +53,11 @@ http://8.138.15.71/
     differ by more than 0.5 (Mo said 784). The list has 248 of the 249
     tumors with > 4,000 clipped indels. The missing one is the exome tumor
     `WES::TCGA-EW-A2FV-01A-11D-A17D-09` (4,198 indels). Ask Mo whether
-    leaving it out was deliberate. The copies of
-    `mSigAct.reanalyzed.samples.txt` in this repo and in the code repo
-    (untracked) are the OLD 2026-10-18 list (1,535 tumors, S17
-    `mutation_burden` >= 4,000 or poly-T ratio > 0.5) and should be
-    replaced.
+    leaving it out was deliberate. Done (2026-10-22):
+    `mSigAct.reanalyzed.samples.txt` in this repo now holds the new
+    731-tumor list. The old 2026-10-18 list (1,535 tumors, S17
+    `mutation_burden` >= 4,000 or poly-T ratio > 0.5) is only in the git
+    history.
   - Steve agreed (2026-10-19) to rerun the figure and table pipeline with
     the new assignments, as an independent check of how much the results
     change. Mo has not yet pushed them to the code repo (checked
