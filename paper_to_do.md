@@ -85,6 +85,20 @@ http://8.138.15.71/
   - Resolved (2026-10-22): the Table S11 question (503 tumors with
     single-counted sums). With the new assignments, every column sum is
     twice the indel count.
+- Age analysis adjusted for cancer type (2026-10-22). The pooled
+  "Overall" Spearman correlation in Table S16 and Figure S6B confounded age
+  with cancer type (InsDel5b was significant overall but had no age effect
+  within cancer types). It was replaced by regression models with cancer
+  type as a covariate (`age_glm_table()` in
+  `build_fig_s6/build_fig_s6_stats.R`, Table S16 sheet "Adjusted for cancer
+  type"): negative binomial exposure ~ age + cancer type in tumors with the
+  signature, and logistic presence ~ age + cancer type, with and without
+  log10 total indels. The InsDel5b sentence was deleted, and a green
+  sentence in the age paragraph gives the adjusted effects for C_ID1,
+  InsDel1a, C_ID5, and InsDel5a. Still to do (Steve, possibly with Mo):
+  review the models, add a methods paragraph and the Table S16 legend, and
+  follow up the signatures with a strong age x cancer type interaction
+  (for example ID_N).
 - Meeting with Mo: Thursday 2026-10-22, 8 PM US time
   (https://meet.google.com/gnh-mwye-jgd).
 - MSIseq. Mo said (2026-10-18) that MSIseq was run on all tumors, but Mini

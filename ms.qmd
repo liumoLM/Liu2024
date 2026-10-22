@@ -747,21 +747,20 @@ To characterize the "clock-like" behavior of these signatures, we
 examined correlations between signature activity and patient age at
 diagnosis using Spearman correlation analyses (Figure S6B). We found
 that C_ID1, InsDel1a, C_ID5, and InsDel5a [showed robust,
-age-associated "clock-like" mutagenesis]{.blue} in multiple cancer types, as
-well as across the overall genome. More specifically, C_ID5 and
+age-associated "clock-like" mutagenesis]{.blue} in multiple cancer types.
+[Across all cancer types, with cancer type as a covariate, the exposures
+of C_ID1 and InsDel1a increased by
+`r ms_num$age_glm$pct_pair("C_ID1", "InsDel1a")`% per decade of age and those
+of C_ID5 and InsDel5a by `r ms_num$age_glm$pct_pair("C_ID5", "InsDel5a")`%,
+and older patients were more likely to have
+them (Table S16).]{.green} More specifically, C_ID5 and
 InsDel5a correlated with age in prostate, pancreas, liver, and kidney
 cancers, while C_ID1 and InsDel1a were age-associated in breast,
 prostate, and pancreas cancers. Other clock-like signatures
 demonstrated pronounced tissue specificity[. For]{.pink} example, InsDel9
 showed a more attenuated relationship between age and mutational
 accumulation in prostate cancer, while InsDel10 displayed clear
-clock-like properties in pancreatic cancers. Additionally, some
-signatures, such as InsDel5b, were
-correlated with age when considering all tumor types collectively but
-did not show significant associations in any single cancer type (Table
-S16). However, these broad pan-cancer associations likely reflect weak
-or heterogeneous age dependencies spread across multiple tumor types,
-rather than strong, tissue-specific age effects.
+clock-like properties in pancreatic cancers.
 
 ::: {.callout-note title="Reviewer note"}
 [Problem: "Robust" needs the correlation strengths or a q threshold in the text. Proposed: Give rho and q for these four signatures, or write "showed significant age association (q < X)".]{.blue}
