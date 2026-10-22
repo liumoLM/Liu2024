@@ -94,6 +94,16 @@ steve check: Sup Fig 1 legend
 
 steve: review all sup fig legends
 
+- Done (2026-10-22): Table S9 no longer has `MSI_status` ("MSI status" in
+  the main sheet, "MSI status = MSI" in the summary sheet), following the
+  decision to use only MSIseq. `build_sup_table_s9/build_sup_table_s9_pol_proofreading.R`
+  in the code repo no longer writes them, and its comments and README say
+  not to add them back. It also now spells "tumor". The table was rebuilt
+  and copied to `sup_tables/`. Apart from the dropped columns and the
+  spelling, the contents are unchanged (248 tumors, 200 MSI-H), and
+  `check_sup_tables.R` passes. "Total somatic indels" is the column sum of
+  the clipped 89-type spectra.
+
 # To do: figures, sup figures, and sup tables vs. the code repo (2026-10-07)
 
 Run `Rscript check_main_figures.R`, `Rscript check_sup_figures.R`, and
