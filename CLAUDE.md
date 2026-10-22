@@ -7,12 +7,10 @@
   - Rows are signatures named `C_ID*/InsDel*` (83-type/89-type pair).
   - Columns are 6975 samples (Patient IDs).
   - Cell values are exposures (indel counts). Column sums are NOT total
-    indels per sample. For the 6,472 samples fit with SigProfilerAssignment
-    to the 172-type catalog (83-type and 89-type stacked), each indel is
-    counted twice, so the sum is twice the number of indels. For the other
-    503 (presumably fit with mSigAct), the sum is about the number of
-    indels. For indel counts, use the column sums of
-    `unified_indels_data/liu_et_al_83_spectra.tsv`.
+    indels per sample. Since the assignments of 2026-10-19 were adopted on
+    2026-10-22, each indel is counted twice (83-type and 89-type), so every
+    column sum is about twice the number of indels. For indel counts, use
+    the column sums of `unified_indels_data/liu_et_al_83_spectra.tsv`.
 
 - **Sample metadata (cancer type, MSI status, etc.)**:
   `sup_tables/sup_table_s17_sample_metadata.xlsx`
@@ -42,8 +40,9 @@ paper and in `explore-attributions/`:
   versions of S17 held larger counts from an older version of the data.
 
 Figure 4A is built with these rules by `build_fig4/all_cancer_types_enrichment.R`
-in the code repo. The routing of tumors to mSigAct in the methods (>= 5,000
-indels) is a separate, still open question (see `paper_to_do.md`).
+in the code repo. Tumors were refit with mSigAct if they had > 4,000 indels,
+or a poly-T ratio > 0.5 and a SigProfilerAssignment reconstruction cosine
+similarity < 0.9 (731 tumors, listed in `mSigAct.reanalyzed.samples.txt`).
 
 The MSS-hyper enrichment analysis is now Figure 4A. The name "Figure 5
 panel C" in `explore-attributions/` is an older figure number. The current

@@ -44,7 +44,7 @@ http://8.138.15.71/
   89-type fit. That is 731 tumors, and 784 tumors have different
   attributions than now. Mo thinks the overall effect is limited.
   - Done (2026-10-22): the four attachments of Mo's 2026-10-19 email are
-    in `unified_indels_data/assignments_2026-10-19/` (not yet committed):
+    in `unified_indels_data/assignments_2026-10-19/`:
     `ID83.SPA.assignment.1020.txt`, `ID89.SPA.assignment.1020.txt`,
     `assignment.high.similarity.samples.for.figureS1.txt` (6,516 tumors),
     and the new `mSigAct.reanalyzed.samples.txt` (731 tumors). The new
@@ -52,8 +52,10 @@ http://8.138.15.71/
     `liu_et_al_{83,89}_assignment.tsv`, and 819 tumors have exposures that
     differ by more than 0.5 (Mo said 784). The list has 248 of the 249
     tumors with > 4,000 clipped indels. The missing one is the exome tumor
-    `WES::TCGA-EW-A2FV-01A-11D-A17D-09` (4,198 indels). Ask Mo whether
-    leaving it out was deliberate. Done (2026-10-22):
+    `WES::TCGA-EW-A2FV-01A-11D-A17D-09` (4,198 indels). It has no
+    assignments (one of the 3 exome tumors left out of the 6,975), because
+    it is the only tumor with its signature, which is its own spectrum
+    (Steve, 2026-10-22). Done (2026-10-22):
     `mSigAct.reanalyzed.samples.txt` in this repo now holds the new
     731-tumor list. The old 2026-10-18 list (1,535 tumors, S17
     `mutation_burden` >= 4,000 or poly-T ratio > 0.5) is only in the git
@@ -62,21 +64,34 @@ http://8.138.15.71/
     the new assignments, as an independent check of how much the results
     change. Mo has not yet pushed them to the code repo (checked
     2026-10-22).
-  - Then update the methods to the new routing rule (they now give the old
-    1,535-tumor rule).
+  - Done (2026-10-22): adopted the new assignments. They replace
+    `liu_et_al_{83,89}_assignment.tsv` in the data repo, whose README
+    describes them. Figure 4, Figure S6, and Tables S9, S10, S11, S15, and
+    S16 were rebuilt and copied here. The methods give the new routing rule
+    (731 tumors refit with mSigAct, including 200 of the 202 MSI-H tumors),
+    with the counts from `ms_numbers.R`. The blue Table S11 note was
+    replaced (all column sums are now twice the indel count). The sex-bias
+    paragraph now follows the new Table S15 (lymphoid and "Other" hits
+    gone, Pancreas InsDel12/C_ID12 female-enriched, Liver C_ID5 added), and
+    the age paragraph names only InsDel5b as significant overall but in no
+    single cancer type (C_ID4/InsDel4 and InsDel5c are significant in some
+    cancer types, which was already partly true before).
+  - Steve: reassemble Figures S1a and S1b from the regenerated
+    `build_fig_s1/sup_fig_s1_signature_assignment.pdf` (flagged by
+    `check_sup_figures.R`).
   - Mo will redo the topography partial credit (needed for Table S14,
     `all.indel.ID89.partial.credit.txt`) once Steve says the new
-    attributions are OK.
-  - The Table S11 question (503 tumors with single-counted sums,
-    `s11_single_counted_503.tsv`) should be rechecked against the new
-    assignments.
+    attributions are OK. Steve approved them 2026-10-22. Tell Mo.
+  - Resolved (2026-10-22): the Table S11 question (503 tumors with
+    single-counted sums). With the new assignments, every column sum is
+    twice the indel count.
 - Meeting with Mo: Thursday 2026-10-22, 8 PM US time
   (https://meet.google.com/gnh-mwye-jgd).
 - MSIseq. Mo said (2026-10-18) that MSIseq was run on all tumors, but Mini
   wrote (2026-10-19) that it was run on only 220 tumors (probably those
   above some mutation-load cutoff), with `uniform.seq.len = 3200` and the
   repeats annotation `Hg19repeats.rda` from the MSIseq package. Mini's code
-  is in the code repo at `msiseq/run-MSIseq.R` (not yet committed). Mo is
+  is in the code repo at `msiseq/run-MSIseq.R`. Mo is
   preparing SBS and indel VCFs so Mini can run MSIseq on all tumors. No
   news since 2026-10-19. Ask Mo whether the rerun is needed. If it is, the
   methods must say what MSIseq was run on, and the MSI-H calls
