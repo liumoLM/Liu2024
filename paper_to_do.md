@@ -68,15 +68,26 @@ http://8.138.15.71/
   - whether to follow up ID_N and InsDel_N_beta (strong age x cancer type
     interaction, exposure and presence in opposite directions);
   - who writes the methods paragraph and the Table S16 legend.
-- MSIseq. Mo said (2026-10-18) that MSIseq was run on all tumors, but Mini
-  wrote (2026-10-19) that it was run on only 220 tumors (probably those
-  above some mutation-load cutoff), with `uniform.seq.len = 3200` and the
-  repeats annotation `Hg19repeats.rda` from the MSIseq package. Mini's code
-  is in the code repo at `msiseq/run-MSIseq.R`. Mo is preparing SBS and
-  indel VCFs so Mini can run MSIseq on all tumors. No news since
-  2026-10-19. Ask Mo whether the rerun is needed. If it is, the methods
-  must say what MSIseq was run on, and the MSI-H calls (`MSIseq_MSI.H` in
-  `sample_info.tsv`, Table S17, Figure 4A, Table S9) may change.
+- MSIseq. Mini reran MSIseq on all 6,975 tumors (Mo's email "The new
+  MSIseq result", 2026-10-23). The results, Mini's script
+  (`run_MSIseq_overlap_6975.R`), the earlier 220-tumor script
+  (`prev-run-MSIseq.R`), and the emails are in
+  `unified_indels_data/new-mini-msi-calls/` (not yet committed). The new
+  calls use a rule set by hand, S.ind > 0.4 and T.ind > 1.2: 204 MSI-H
+  (202 before, 195 in both, 7 dropped, 9 added). Checked 2026-10-23: the
+  6,975 tumors are exactly those of Tables S11 and S17, and the indel count
+  per tumor behind T.ind (T.ind x 3,200) equals the cap-9 spectrum total
+  for all of them, so the indel input matches the spectra. Steve emailed
+  Mini and Mo (2026-10-23) asking whether `Hg19repeats.rda` is the MSIseq
+  package file, whether all Hartwig SBS and indel rows are FILTER = PASS,
+  and (most important) why the hand-set rule was used rather than
+  `MSIseq.classify()`, how the two compare, and for
+  `MSI_classified_overlap_6975.tsv`. Waiting for the answer. Then: adopt
+  the new calls in `sample_info.tsv`, rebuild Figure 4A, Tables S9, S10,
+  and S17, update `ms_numbers.R` and `ms.qmd` (202 MSI-H, 200 of 202
+  refit), the project CLAUDE.md, and the MSIseq methods (run on all
+  tumors, the inputs, the classification rule, and Mo's request to drop
+  the sentence on how the 4,000 cutoff was chosen).
 
 ## Open: Mo (and Mini)
 
@@ -99,7 +110,11 @@ http://8.138.15.71/
   Table S14, `all.indel.ID89.partial.credit.txt`). Mo knows the new
   assignments are approved. Steve asked Mo (2026-10-23) whether Mini has the
   partial-credit information, how it is computed, and whether we have the
-  intermediate results. Waiting for the answer. Then Mini reruns r.01 to
+  intermediate results. Waiting for the answer. Mo (2026-10-23): Mini is
+  working on the topography analysis, with results in a few days. The
+  partial-credit code may be `ID83_topography_analysis_code/
+  add_partial_credit.R` and `generate_partialcredit_match_file.R` in the
+  code repo. Then Mini reruns r.01 to
   r.04 (the raw inputs are on the Huang-lab server), and we rerun r.05
   onward (Tables S12 to S14, Figure 5, Figures S3 and S4).
 - The topography code keeps indels in genes on both strands (114,297
