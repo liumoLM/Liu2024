@@ -732,3 +732,4 @@ ext:ID83_topography_analysis_code/09_barplot/plot_data.xlsx	code:build_fig5/09_b
 ext:ID83_topography_analysis_code/09_barplot/all_lm_trend.xlsx	code:build_fig_s4/09_all_lm_trend.xlsx	copied	copied by hand
 ext:ID83_topography_analysis_code/09_barplot/plot_data.xlsx	code:build_fig_s4/09_barplot_data.xlsx	copied	copied by hand
 ext:ID89_topography_analysis_code/09_barplot/trend.xlsx	code:build_sup_table_s14/trend_89.xlsx	copied	copied by hand
+ext:Hartwig annotated indel VCFs of the two linking tumors (DRUP01030028T, CPCT02100089T; controlled access)	code:build_fig6/ID4_IDF_linking_tumor_indel_annotated_vcf.txt	edited by hand	extracted by Mo; script not in either repo

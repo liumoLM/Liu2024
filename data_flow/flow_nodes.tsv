@@ -75,7 +75,7 @@ code:build_fig5/proportion_bubble_plot.Rds	code repo file	code	build_fig5/propor
 code:build_fig5/proportion_bubbleplot_and_rep_timing.R	script	code	build_fig5/proportion_bubbleplot_and_rep_timing.R	proportion_bubbleplot_and_rep_timing.R	yes		
 code:build_fig5/repli.strand.cancer_proportion.xlsx	code repo file	code	build_fig5/repli.strand.cancer_proportion.xlsx	repli.strand.cancer_proportion.xlsx	yes		
 code:build_fig5/trans.strand.cancer_proportion.xlsx	code repo file	code	build_fig5/trans.strand.cancer_proportion.xlsx	trans.strand.cancer_proportion.xlsx	yes		
-code:build_fig6/ID4_IDF_linking_tumor_indel_annotated_vcf.txt	code repo file	code	build_fig6/ID4_IDF_linking_tumor_indel_annotated_vcf.txt	ID4_IDF_linking_tumor_indel_annotated_vcf.txt	yes	no script writes it	no script in either repo writes it
+code:build_fig6/ID4_IDF_linking_tumor_indel_annotated_vcf.txt	code repo file	code	build_fig6/ID4_IDF_linking_tumor_indel_annotated_vcf.txt	ID4_IDF_linking_tumor_indel_annotated_vcf.txt	yes		extracted by Mo from the controlled-access VCFs; mutation information only, no sample column (see data repo linking_tumors/README.md); extraction script not in either repo
 code:build_fig6/Plot signatures and motifs.html	code repo file	code	build_fig6/Plot signatures and motifs.html	Plot signatures and motifs.html	yes	nothing reads it	
 code:build_fig6/Plot signatures and motifs.qmd	script	code	build_fig6/Plot signatures and motifs.qmd	Plot signatures and motifs.qmd	yes		
 code:build_fig6/fig6_id4_idf_signatures.pdf	code repo file	code	build_fig6/fig6_id4_idf_signatures.pdf	fig6_id4_idf_signatures.pdf	yes		
@@ -359,6 +359,7 @@ ext:<out_dir>/<sig>_sankey_other_ins.png	external	ext	<out_dir>/<sig>_sankey_oth
 ext:Example_data/sigprofiler.input.89type.catalog/example.89type.All/	external	ext	Example_data/sigprofiler.input.89type.catalog/example.89type.All/	example.89type.All			
 ext:Example_data/sigprofiler.input.89type.catalog/example.89type.Bladder/	external	ext	Example_data/sigprofiler.input.89type.catalog/example.89type.Bladder/	example.89type.Bladder			
 ext:HMF_metadata.tsv	external	ext	HMF_metadata.tsv	HMF_metadata.tsv			
+ext:Hartwig annotated indel VCFs of the two linking tumors (DRUP01030028T, CPCT02100089T; controlled access)	external	ext	Hartwig annotated indel VCFs of the two linking tumors (DRUP01030028T, CPCT02100089T; controlled access)	Hartwig annotated indel VCFs of the two linking tumors (DRUP01030028T, CPCT02100089T; controlled access)			not redistributed; Hartwig data access agreement
 ext:ID83_topography_analysis_code/09_barplot/all_lm_trend.xlsx	external	ext	ID83_topography_analysis_code/09_barplot/all_lm_trend.xlsx	all_lm_trend.xlsx			
 ext:ID83_topography_analysis_code/09_barplot/plot_data.xlsx	external	ext	ID83_topography_analysis_code/09_barplot/plot_data.xlsx	plot_data.xlsx			
 ext:ID83_topography_analysis_code/09_barplot/rtGroup_barplot.pdf	external	ext	ID83_topography_analysis_code/09_barplot/rtGroup_barplot.pdf	rtGroup_barplot.pdf			

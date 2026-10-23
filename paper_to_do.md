@@ -42,8 +42,10 @@ http://8.138.15.71/
     sequence logos are identical, and the signature plots differ only by
     font, so the committed PDFs were kept.
   - `build_fig6/ID4_IDF_linking_tumor_indel_annotated_vcf.txt` (read by
-    Figure 6) is written by no script in either repo. Ask Mo where it came
-    from.
+    Figure 6) was extracted by Mo from the controlled-access Hartwig VCFs of
+    the two linking tumors (data repo `linking_tumors/README.md`), keeping
+    only mutation information. The extraction script is in neither repo.
+    Optional: ask Mo for it, so the step is recorded.
 
 ## Open: Steve with Mo
 
