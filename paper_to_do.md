@@ -73,14 +73,20 @@ http://8.138.15.71/
 
 ## Open: Mo (and Mini)
 
-- Put the code that produced the assignments of 2026-10-19 in the code
-  repo: SigProfilerAssignment on the 172-type catalogs (with a fixed random
-  seed), the rule that selected the 731 tumors for mSigAct (> 4,000
-  indels, or poly-T ratio > 0.5 and reconstruction cosine similarity < 0.9
-  in the 83-type or 89-type fit), and the mSigAct refits. As of 2026-10-23,
-  `Extraction_and_assignment_code/` was last changed 2026-07-26 and does
-  not have the selection rule. (Asked in `QUESTIONS_FOR_MO.md`, 2026-10-15:
-  "Is there a list or code for the routing?")
+- Mo: update the assignment code for the assignments of 2026-10-19. The
+  code is in the code repo (`Extraction_and_assignment_code/
+  SigProfilerAssignment.py` and `mSigAct.R`, both on the 172-type catalog,
+  run on example data), but:
+  - the comments in both scripts and their README still give the old
+    routing rule (TMB >= 5,000, or Ins:1:T:5+ and Del:1:T:5+ >= 90%), not
+    the new one (> 4,000 indels, or poly-T ratio > 0.5 and reconstruction
+    cosine similarity < 0.9 in the 83-type or 89-type fit);
+  - there is no code for selecting the 731 tumors (`mSigAct.R` says "here
+    only shows an example");
+  - `SigProfilerAssignment.py` sets no random seed, which Mo thinks is why
+    the earlier assignments could not be reproduced.
+  (From `QUESTIONS_FOR_MO.md`, 2026-10-15: "Is there a list or code for the
+  routing?")
 
 - Redo the topography partial credit with the new assignments (needed for
   Table S14, `all.indel.ID89.partial.credit.txt`). Mo knows the new
@@ -109,7 +115,7 @@ http://8.138.15.71/
   `mutation_burden` and poly-T ratio, mSigAct routing, the hypermutation
   definition, and MSI status) was merged into this list and deleted (it is
   in the git history). Everything in it was answered and is recorded
-  below, except the routing code ("Open: Mo") and stating MSI status
+  below, except updating the routing code ("Open: Mo") and stating MSI status
   consistently ("Open: Steve").
 
 - 2026-10-22: meeting with Mo (8 PM US time).
