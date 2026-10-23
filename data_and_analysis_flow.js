@@ -201,10 +201,10 @@ function flowRow(slide, y, inputs, script, output, opts = {}) {
 {
   const s = newSlide(
     "Supplementary figures",
-    "Figures S2 and S5 are edited by hand from a _draft source. sup_figures_manifest.tsv maps each one to its source.",
+    "Figures S2 and S5 are edited by hand from a _draft source. Figure S1 is drawn by its script (2026-10-22). sup_figures_manifest.tsv maps each one to its source.",
     "Figures and tables");
   const h = 0.6, dy = 0.78;
-  flowRow(s, 1.6, "assignments, signatures, spectra, sample_info", "build_fig_s1/Signature Assignment.qmd", "Figure S1", { h, outKind: "stale", note: "colors and dots change", noteColor: HEX.accent2 });
+  flowRow(s, 1.6, "assignments, signatures, spectra, sample_info", "build_fig_s1/make_figure_s1_layout.R", "Figure S1", { h });
   flowRow(s, 1.6 + dy, "Tables S2, S4, S6 signatures", "build_fig_s2/make_figure_s2_layout.R", "Figure S2", { h, outKind: "hand" });
   flowRow(s, 1.6 + 2 * dy, "topography Fisher tests (r.05, r.06)", "build_fig_s3/r.08_bubbleplot.R", "Figure S3", { h, outKind: "stale", note: "needs new partial credit", noteColor: HEX.accent2 });
   flowRow(s, 1.6 + 3 * dy, "replication-timing trends (r.09)", "build_fig_s4/r.09_barplot_final.R", "Figure S4", { h, outKind: "stale", note: "needs new partial credit", noteColor: HEX.accent2 });

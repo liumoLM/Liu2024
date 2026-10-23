@@ -20,7 +20,20 @@ InsDel5b is the example. The manuscript said it was age-associated overall but i
 | C\_ID1 | 0.21 (4e-28) | 0.18 (7e-22) | 15 of 20 |  |
 | InsDel1a | 0.20 (2e-20) | 0.14 (5e-12) | 15 of 20 |  |
 
-Only 59 tumors have InsDel5b, mostly liver, prostate and pancreas, and the per-type correlations point in different directions. The sex analysis (Table S15) is per cancer type and has no pooled row, but it is not adjusted for age.
+Only 62 tumors have InsDel5b, mostly liver, prostate and pancreas, and the per-type correlations point in different directions. These are the per-type correlations for InsDel5b, from the "By cancer type" sheet of Table S16. The within-type rho above combines the types with at least 4 tumors, so Lung and Thymus get weight 0.
+
+| Cancer type | Tumors with InsDel5b | Spearman rho | p | FDR |
+| --- | --- | --- | --- | --- |
+| Liver | 21 | 0.34 | 0.13 | 0.40 |
+| Prostate | 10 | −0.53 | 0.12 | 0.34 |
+| Pancreas | 8 | 0.44 | 0.28 | 0.68 |
+| Lymphoid | 5 | 0.70 | 0.23 | 0.95 |
+| Kidney | 4 | 0.00 | 1.0 | 1.0 |
+| Lung | 3 | −1.00 | 0.33 | 1.0 |
+| Thymus | 3 | 0.50 | 1.0 | 1.0 |
+| 7 other types | 1–2 each | not computed | | |
+
+The sex analysis (Table S15) is per cancer type and has no pooled row, but it is not adjusted for age.
 
 ## Already changed (committed 2026-10-22)
 

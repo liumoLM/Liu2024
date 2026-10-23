@@ -70,8 +70,10 @@ if (nrow(sup_figure_problems) > 0) {
 types**
 :::
 
-The area of each dot represents the proportion of genomes of the given
-cancer type with activity of the signature. The color indicates the mean
+The size (radius) of each dot represents the proportion of genomes of
+the given cancer type with activity of the signature. A dot is omitted
+when 10% or fewer of the genomes have activity of the signature and the
+mean is below 0.03 mutations per megabase. The color indicates the mean
 number of mutations per megabase attributed to the signature, among the
 genomes of that cancer type with activity of the signature. Only genomes
 whose 83-type or 89-type signature assignment reconstructs the spectrum
