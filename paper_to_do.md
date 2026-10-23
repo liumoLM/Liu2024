@@ -72,7 +72,9 @@ http://8.138.15.71/
   MSIseq result", 2026-10-23). The results, Mini's script
   (`run_MSIseq_overlap_6975.R`), the earlier 220-tumor script
   (`prev-run-MSIseq.R`), and the emails are in
-  `unified_indels_data/new-mini-msi-calls/` (not yet committed). The new
+  `unified_indels_data/new-mini-msi-calls/` (committed 2026-10-23 as
+  provisional: if Mini and Mo say these are not the right files, move them
+  and delete the folder). The new
   calls use a rule set by hand, S.ind > 0.4 and T.ind > 1.2: 204 MSI-H
   (202 before, 195 in both, 7 dropped, 9 added). Checked 2026-10-23: the
   6,975 tumors are exactly those of Tables S11 and S17, and the indel count
