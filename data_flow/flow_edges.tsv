@@ -67,9 +67,9 @@ code:build_fig5/proportion_bubbleplot_and_rep_timing.R	code:build_fig5/fig5d.png
 code:build_fig5/proportion_bubbleplot_and_rep_timing.R	code:build_fig5/fig5.pdf	writes	relative path, run from build_fig5/
 code:build_fig5/proportion_bubbleplot_and_rep_timing.R	code:build_fig5/fig5.png	writes	relative path, run from build_fig5/
 code:find_data.R	code:build_fig6/Plot signatures and motifs.qmd	reads	source
-data:external_data/reijns_et_al_2022/liu_et_al_83_signatures.tsv	code:build_fig6/Plot signatures and motifs.qmd	reads	uncertain: path as coded, but this file does not exist (the file is at data root data:liu_et_al_83_signatures.tsv), so render would fail; likely a bug
-data:external_data/reijns_et_al_2022/liu_et_al_89_signatures.tsv	code:build_fig6/Plot signatures and motifs.qmd	reads	uncertain: path as coded, but this file does not exist (real file is data:liu_et_al_89_signatures.tsv); likely a bug
-data:external_data/reijns_et_al_2022/liu_et_al_476_signatures.tsv	code:build_fig6/Plot signatures and motifs.qmd	reads	uncertain: path as coded, but this file does not exist (real file is data:liu_et_al_476_signatures.tsv); likely a bug
+data:liu_et_al_83_signatures.tsv	code:build_fig6/Plot signatures and motifs.qmd	reads	uncertain: path as coded, but this file does not exist (the file is at data root data:liu_et_al_83_signatures.tsv), so render would fail; likely a bug
+data:liu_et_al_89_signatures.tsv	code:build_fig6/Plot signatures and motifs.qmd	reads	uncertain: path as coded, but this file does not exist (real file is data:liu_et_al_89_signatures.tsv); likely a bug
+data:liu_et_al_476_signatures.tsv	code:build_fig6/Plot signatures and motifs.qmd	reads	uncertain: path as coded, but this file does not exist (real file is data:liu_et_al_476_signatures.tsv); likely a bug
 code:build_fig6/ID4_IDF_linking_tumor_indel_annotated_vcf.txt	code:build_fig6/Plot signatures and motifs.qmd	reads	relative ./, qmd dir; no script in either repo writes it
 code:build_fig6/Plot signatures and motifs.qmd	code:build_fig6/fig6_id4_idf_signatures.pdf	writes	relative ./, qmd dir
 code:build_fig6/Plot signatures and motifs.qmd	code:build_fig6/fig6_sequence_logos.pdf	writes	relative, qmd dir

@@ -254,9 +254,6 @@ data:external_data/Koh_signatures.tsv	data repo file	data	external_data/Koh_sign
 data:external_data/jin_2024_sup_tab_1_signatures.tsv	data repo file	data	external_data/jin_2024_sup_tab_1_signatures.tsv	jin_2024_sup_tab_1_signatures.tsv	yes		
 data:external_data/reijns_et_al_2022/Reijn.mouse.vcfs.with.annotation.txt	data repo file	data	external_data/reijns_et_al_2022/Reijn.mouse.vcfs.with.annotation.txt	Reijn.mouse.vcfs.with.annotation.txt	yes		
 data:external_data/reijns_et_al_2022/Reijn.rpe1.vcfs.with.annotation.txt	data repo file	data	external_data/reijns_et_al_2022/Reijn.rpe1.vcfs.with.annotation.txt	Reijn.rpe1.vcfs.with.annotation.txt	yes		
-data:external_data/reijns_et_al_2022/liu_et_al_476_signatures.tsv	data repo file	data	external_data/reijns_et_al_2022/liu_et_al_476_signatures.tsv	liu_et_al_476_signatures.tsv	no	missing on disk	
-data:external_data/reijns_et_al_2022/liu_et_al_83_signatures.tsv	data repo file	data	external_data/reijns_et_al_2022/liu_et_al_83_signatures.tsv	liu_et_al_83_signatures.tsv	no	missing on disk	
-data:external_data/reijns_et_al_2022/liu_et_al_89_signatures.tsv	data repo file	data	external_data/reijns_et_al_2022/liu_et_al_89_signatures.tsv	liu_et_al_89_signatures.tsv	no	missing on disk	
 data:liu_et_al_476_signatures.tsv	data repo file	data	liu_et_al_476_signatures.tsv	liu_et_al_476_signatures.tsv	yes		
 data:liu_et_al_476_spectra.tsv	data repo file	data	liu_et_al_476_spectra.tsv	liu_et_al_476_spectra.tsv	yes		
 data:liu_et_al_83_assignment.tsv	data repo file	data	liu_et_al_83_assignment.tsv	liu_et_al_83_assignment.tsv	yes		
