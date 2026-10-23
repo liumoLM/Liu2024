@@ -9,9 +9,12 @@ which file, across the data repo (`unified_indels_data`), the code repo
 - `flow_edges.tsv`: one row per connection.
 - `build_flow_viewer.R`: builds `data_and_analysis_flow.html` from the two
   TSVs. Run `Rscript data_flow/build_flow_viewer.R` from the repository root.
-- `data_and_analysis_flow.html`: the interactive viewer, self-contained.
-  Click a node, or pick one from the menu, to highlight everything upstream
-  and downstream of it. Hover for the path, flags, and notes.
+- `data_and_analysis_flow.html`: the interactive viewer, built on
+  Cytoscape.js (loaded from a CDN, so it needs an internet connection). Drag
+  nodes to move them, Shift-drag a box to select nodes and zoom to them,
+  find a node by path, highlight the lineage (upstream, downstream, or both)
+  of the selection, hide everything else and lay out what is left, and show
+  or hide each kind of node. Instructions are on the page.
 
 ## Node ids
 
