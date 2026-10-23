@@ -1,0 +1,483 @@
+id	kind	repo	path	label	exists	flags	note
+code:Example_data/assignment.example.data/example.172.type.catalog.txt	code repo file	code	Example_data/assignment.example.data/example.172.type.catalog.txt	example.172.type.catalog.txt	yes	no script writes it	example input, made by Mo
+code:Example_data/assignment.example.data/example.172.type.signatures.txt	code repo file	code	Example_data/assignment.example.data/example.172.type.signatures.txt	example.172.type.signatures.txt	yes	no script writes it	example input, made by Mo
+code:Example_data/mSigHdp.input.89type.catalog/mSigHdp.test.89type.catalog.txt	code repo file	code	Example_data/mSigHdp.input.89type.catalog/mSigHdp.test.89type.catalog.txt	mSigHdp.test.89type.catalog.txt	yes	no script writes it	example input, made by Mo
+code:Example_data/sigprofiler.input.89type.catalog/example.89type.All.txt	code repo file	code	Example_data/sigprofiler.input.89type.catalog/example.89type.All.txt	example.89type.All.txt	yes	no script writes it	example input, made by Mo
+code:Example_data/sigprofiler.input.89type.catalog/example.89type.Bladder.txt	code repo file	code	Example_data/sigprofiler.input.89type.catalog/example.89type.Bladder.txt	example.89type.Bladder.txt	yes	no script writes it	example input, made by Mo
+code:Extraction_and_assignment_code/SigProfilerAssignment.py	script	code	Extraction_and_assignment_code/SigProfilerAssignment.py	SigProfilerAssignment.py	yes		
+code:Extraction_and_assignment_code/SigProfilerExtractor.py	script	code	Extraction_and_assignment_code/SigProfilerExtractor.py	SigProfilerExtractor.py	yes		
+code:Extraction_and_assignment_code/mSigAct.R	script	code	Extraction_and_assignment_code/mSigAct.R	mSigAct.R	yes		
+code:Extraction_and_assignment_code/mSigHdp.R	script	code	Extraction_and_assignment_code/mSigHdp.R	mSigHdp.R	yes		
+code:ID83_topography_analysis_code/04_create4InfMatrix/DNA.region/tissue.DNA.region.Mutation_50cutoff.xlsx	code repo file	code	ID83_topography_analysis_code/04_create4InfMatrix/DNA.region/tissue.DNA.region.Mutation_50cutoff.xlsx	tissue.DNA.region.Mutation_50cutoff.xlsx	yes		
+code:ID83_topography_analysis_code/04_create4InfMatrix/DNA.region/tissue.DNA.region.Simulated_50cutoff.xlsx	code repo file	code	ID83_topography_analysis_code/04_create4InfMatrix/DNA.region/tissue.DNA.region.Simulated_50cutoff.xlsx	tissue.DNA.region.Simulated_50cutoff.xlsx	yes		
+code:ID83_topography_analysis_code/04_create4InfMatrix/repli.strand/tissue.repli.strand.Mutation_50cutoff.xlsx	code repo file	code	ID83_topography_analysis_code/04_create4InfMatrix/repli.strand/tissue.repli.strand.Mutation_50cutoff.xlsx	tissue.repli.strand.Mutation_50cutoff.xlsx	yes		
+code:ID83_topography_analysis_code/04_create4InfMatrix/repli.strand/tissue.repli.strand.Simulated_50cutoff.xlsx	code repo file	code	ID83_topography_analysis_code/04_create4InfMatrix/repli.strand/tissue.repli.strand.Simulated_50cutoff.xlsx	tissue.repli.strand.Simulated_50cutoff.xlsx	yes		
+code:ID83_topography_analysis_code/04_create4InfMatrix/rtGroup/tissue.rtGroup.Mutation_50cutoff.xlsx	code repo file	code	ID83_topography_analysis_code/04_create4InfMatrix/rtGroup/tissue.rtGroup.Mutation_50cutoff.xlsx	tissue.rtGroup.Mutation_50cutoff.xlsx	yes		
+code:ID83_topography_analysis_code/04_create4InfMatrix/rtGroup/tissue.rtGroup.Simulated_50cutoff.xlsx	code repo file	code	ID83_topography_analysis_code/04_create4InfMatrix/rtGroup/tissue.rtGroup.Simulated_50cutoff.xlsx	tissue.rtGroup.Simulated_50cutoff.xlsx	yes		
+code:ID83_topography_analysis_code/04_create4InfMatrix/trans.strand/tissue.trans.strand.Mutation_50cutoff.xlsx	code repo file	code	ID83_topography_analysis_code/04_create4InfMatrix/trans.strand/tissue.trans.strand.Mutation_50cutoff.xlsx	tissue.trans.strand.Mutation_50cutoff.xlsx	yes		
+code:ID83_topography_analysis_code/04_create4InfMatrix/trans.strand/tissue.trans.strand.Simulated_50cutoff.xlsx	code repo file	code	ID83_topography_analysis_code/04_create4InfMatrix/trans.strand/tissue.trans.strand.Simulated_50cutoff.xlsx	tissue.trans.strand.Simulated_50cutoff.xlsx	yes		
+code:ID83_topography_analysis_code/05_FisherTest/DNA.region.fisher_test_50cutoff.xlsx	code repo file	code	ID83_topography_analysis_code/05_FisherTest/DNA.region.fisher_test_50cutoff.xlsx	DNA.region.fisher_test_50cutoff.xlsx	yes		
+code:ID83_topography_analysis_code/05_FisherTest/repli.strand.fisher_test_50cutoff.xlsx	code repo file	code	ID83_topography_analysis_code/05_FisherTest/repli.strand.fisher_test_50cutoff.xlsx	repli.strand.fisher_test_50cutoff.xlsx	yes		
+code:ID83_topography_analysis_code/05_FisherTest/trans.strand.fisher_test_50cutoff.xlsx	code repo file	code	ID83_topography_analysis_code/05_FisherTest/trans.strand.fisher_test_50cutoff.xlsx	trans.strand.fisher_test_50cutoff.xlsx	yes		
+code:ID83_topography_analysis_code/06_computeOddsRatio/DNA.region/01.DNA.region.odds_ratio.xlsx	code repo file	code	ID83_topography_analysis_code/06_computeOddsRatio/DNA.region/01.DNA.region.odds_ratio.xlsx	01.DNA.region.odds_ratio.xlsx	yes		
+code:ID83_topography_analysis_code/06_computeOddsRatio/DNA.region/02.DNA.region.odds_type.xlsx	code repo file	code	ID83_topography_analysis_code/06_computeOddsRatio/DNA.region/02.DNA.region.odds_type.xlsx	02.DNA.region.odds_type.xlsx	yes		
+code:ID83_topography_analysis_code/06_computeOddsRatio/DNA.region/03.DNA.region.cancer_proportion.xlsx	code repo file	code	ID83_topography_analysis_code/06_computeOddsRatio/DNA.region/03.DNA.region.cancer_proportion.xlsx	03.DNA.region.cancer_proportion.xlsx	yes		
+code:ID83_topography_analysis_code/06_computeOddsRatio/repli.strand/01.repli.strand.odds_ratio.xlsx	code repo file	code	ID83_topography_analysis_code/06_computeOddsRatio/repli.strand/01.repli.strand.odds_ratio.xlsx	01.repli.strand.odds_ratio.xlsx	yes		
+code:ID83_topography_analysis_code/06_computeOddsRatio/repli.strand/02.repli.strand.odds_type.xlsx	code repo file	code	ID83_topography_analysis_code/06_computeOddsRatio/repli.strand/02.repli.strand.odds_type.xlsx	02.repli.strand.odds_type.xlsx	yes		
+code:ID83_topography_analysis_code/06_computeOddsRatio/repli.strand/03.repli.strand.cancer_proportion.xlsx	code repo file	code	ID83_topography_analysis_code/06_computeOddsRatio/repli.strand/03.repli.strand.cancer_proportion.xlsx	03.repli.strand.cancer_proportion.xlsx	yes		
+code:ID83_topography_analysis_code/06_computeOddsRatio/trans.strand/01.trans.strand.odds_ratio.xlsx	code repo file	code	ID83_topography_analysis_code/06_computeOddsRatio/trans.strand/01.trans.strand.odds_ratio.xlsx	01.trans.strand.odds_ratio.xlsx	yes		
+code:ID83_topography_analysis_code/06_computeOddsRatio/trans.strand/02.trans.strand.odds_type.xlsx	code repo file	code	ID83_topography_analysis_code/06_computeOddsRatio/trans.strand/02.trans.strand.odds_type.xlsx	02.trans.strand.odds_type.xlsx	yes		
+code:ID83_topography_analysis_code/06_computeOddsRatio/trans.strand/03.trans.strand.cancer_proportion.xlsx	code repo file	code	ID83_topography_analysis_code/06_computeOddsRatio/trans.strand/03.trans.strand.cancer_proportion.xlsx	03.trans.strand.cancer_proportion.xlsx	yes		
+code:ID83_topography_analysis_code/add_partial_credit.R	script	code	ID83_topography_analysis_code/add_partial_credit.R	add_partial_credit.R	yes		
+code:ID83_topography_analysis_code/generate_partialcredit_match_file.R	script	code	ID83_topography_analysis_code/generate_partialcredit_match_file.R	generate_partialcredit_match_file.R	yes		
+code:ID83_topography_analysis_code/normalize.sh	script	code	ID83_topography_analysis_code/normalize.sh	normalize.sh	yes		
+code:ID83_topography_analysis_code/r.01_createBed.R	script	code	ID83_topography_analysis_code/r.01_createBed.R	r.01_createBed.R	yes		
+code:ID83_topography_analysis_code/r.02.intersect_no_loop.sh	script	code	ID83_topography_analysis_code/r.02.intersect_no_loop.sh	r.02.intersect_no_loop.sh	yes		
+code:ID83_topography_analysis_code/r.03_mergeInf.R	script	code	ID83_topography_analysis_code/r.03_mergeInf.R	r.03_mergeInf.R	yes		
+code:ID83_topography_analysis_code/r.03_mergeInf_simulation.R	script	code	ID83_topography_analysis_code/r.03_mergeInf_simulation.R	r.03_mergeInf_simulation.R	yes		
+code:ID83_topography_analysis_code/r.04_create4InfMatrix.R	script	code	ID83_topography_analysis_code/r.04_create4InfMatrix.R	r.04_create4InfMatrix.R	yes		
+code:ID83_topography_analysis_code/r.05_FisherTest.R	script	code	ID83_topography_analysis_code/r.05_FisherTest.R	r.05_FisherTest.R	yes		
+code:ID83_topography_analysis_code/r.06_comupteOddsRatio.R	script	code	ID83_topography_analysis_code/r.06_comupteOddsRatio.R	r.06_comupteOddsRatio.R	yes		
+code:ID83_topography_analysis_code/r.09_barplot.R	script	code	ID83_topography_analysis_code/r.09_barplot.R	r.09_barplot.R	yes		
+code:ID83_topography_analysis_code/r.computeOddsRatioFunctions.R	script	code	ID83_topography_analysis_code/r.computeOddsRatioFunctions.R	r.computeOddsRatioFunctions.R	yes		
+code:ID89_topography_analysis_code/04_createRTgroupInf/rtGroup/tissue.rtGroup.Mutation_50cutoff.xlsx	code repo file	code	ID89_topography_analysis_code/04_createRTgroupInf/rtGroup/tissue.rtGroup.Mutation_50cutoff.xlsx	tissue.rtGroup.Mutation_50cutoff.xlsx	yes		
+code:ID89_topography_analysis_code/all.meta.0528.rds	code repo file	code	ID89_topography_analysis_code/all.meta.0528.rds	all.meta.0528.rds	yes	no script writes it	from the Huang-lab server
+code:ID89_topography_analysis_code/r.01_createBed.R	script	code	ID89_topography_analysis_code/r.01_createBed.R	r.01_createBed.R	yes		
+code:ID89_topography_analysis_code/r.02.intersect_no_loop.sh	script	code	ID89_topography_analysis_code/r.02.intersect_no_loop.sh	r.02.intersect_no_loop.sh	yes		
+code:ID89_topography_analysis_code/r.03_mergeInf.R	script	code	ID89_topography_analysis_code/r.03_mergeInf.R	r.03_mergeInf.R	yes		
+code:ID89_topography_analysis_code/r.04_createRTgroupInf.R	script	code	ID89_topography_analysis_code/r.04_createRTgroupInf.R	r.04_createRTgroupInf.R	yes		
+code:ID89_topography_analysis_code/r.09_barplot.R	script	code	ID89_topography_analysis_code/r.09_barplot.R	r.09_barplot.R	yes		
+code:build_fig1/build_fig1.R	script	code	build_fig1/build_fig1.R	build_fig1.R	yes		
+code:build_fig1/fig1.pdf	code repo file	code	build_fig1/fig1.pdf	fig1.pdf	yes		
+code:build_fig1/one_page_83_89_476.R	script	code	build_fig1/one_page_83_89_476.R	one_page_83_89_476.R	yes		
+code:build_fig2/build_fig2.R	script	code	build_fig2/build_fig2.R	build_fig2.R	yes		
+code:build_fig2/fig2.pdf	code repo file	code	build_fig2/fig2.pdf	fig2.pdf	yes		
+code:build_fig2/fig2.png	code repo file	code	build_fig2/fig2.png	fig2.png	yes	nothing reads it	
+code:build_fig3/build_fig3.R	script	code	build_fig3/build_fig3.R	build_fig3.R	yes		
+code:build_fig3/fig3.pdf	code repo file	code	build_fig3/fig3.pdf	fig3.pdf	yes		
+code:build_fig3/fig3.png	code repo file	code	build_fig3/fig3.png	fig3.png	yes	nothing reads it	
+code:build_fig4/all_cancer_types_enrichment.R	script	code	build_fig4/all_cancer_types_enrichment.R	all_cancer_types_enrichment.R	yes		
+code:build_fig4/fig4.pdf	code repo file	code	build_fig4/fig4.pdf	fig4.pdf	yes		
+code:build_fig4/fig4_combined.R	script	code	build_fig4/fig4_combined.R	fig4_combined.R	yes		
+code:build_fig4/fig4_indel_sbs_clustering.R	script	code	build_fig4/fig4_indel_sbs_clustering.R	fig4_indel_sbs_clustering.R	yes		
+code:build_fig4/fig4b_sbs_id_correlations.tsv	code repo file	code	build_fig4/fig4b_sbs_id_correlations.tsv	fig4b_sbs_id_correlations.tsv	yes		
+code:build_fig5/09_all_lm_trend.xlsx	code repo file	code	build_fig5/09_all_lm_trend.xlsx	09_all_lm_trend.xlsx	yes		
+code:build_fig5/09_barplot_data.xlsx	code repo file	code	build_fig5/09_barplot_data.xlsx	09_barplot_data.xlsx	yes		
+code:build_fig5/DNA.region.cancer_proportion.xlsx	code repo file	code	build_fig5/DNA.region.cancer_proportion.xlsx	DNA.region.cancer_proportion.xlsx	yes		
+code:build_fig5/assign_asymmetry_type.R	script	code	build_fig5/assign_asymmetry_type.R	assign_asymmetry_type.R	yes		
+code:build_fig5/fig5.pdf	code repo file	code	build_fig5/fig5.pdf	fig5.pdf	yes		
+code:build_fig5/fig5.png	code repo file	code	build_fig5/fig5.png	fig5.png	yes	nothing reads it	
+code:build_fig5/fig5abc.pdf	code repo file	code	build_fig5/fig5abc.pdf	fig5abc.pdf	yes	nothing reads it	
+code:build_fig5/fig5abc.png	code repo file	code	build_fig5/fig5abc.png	fig5abc.png	yes	nothing reads it	
+code:build_fig5/fig5d.pdf	code repo file	code	build_fig5/fig5d.pdf	fig5d.pdf	yes	nothing reads it	
+code:build_fig5/fig5d.png	code repo file	code	build_fig5/fig5d.png	fig5d.png	yes	nothing reads it	
+code:build_fig5/proportion_bubble_plot.Rds	code repo file	code	build_fig5/proportion_bubble_plot.Rds	proportion_bubble_plot.Rds	yes	nothing reads it	
+code:build_fig5/proportion_bubbleplot_and_rep_timing.R	script	code	build_fig5/proportion_bubbleplot_and_rep_timing.R	proportion_bubbleplot_and_rep_timing.R	yes		
+code:build_fig5/repli.strand.cancer_proportion.xlsx	code repo file	code	build_fig5/repli.strand.cancer_proportion.xlsx	repli.strand.cancer_proportion.xlsx	yes		
+code:build_fig5/trans.strand.cancer_proportion.xlsx	code repo file	code	build_fig5/trans.strand.cancer_proportion.xlsx	trans.strand.cancer_proportion.xlsx	yes		
+code:build_fig6/ID4_IDF_linking_tumor_indel_annotated_vcf.txt	code repo file	code	build_fig6/ID4_IDF_linking_tumor_indel_annotated_vcf.txt	ID4_IDF_linking_tumor_indel_annotated_vcf.txt	yes	no script writes it	no script in either repo writes it
+code:build_fig6/Plot signatures and motifs.html	code repo file	code	build_fig6/Plot signatures and motifs.html	Plot signatures and motifs.html	yes	nothing reads it	
+code:build_fig6/Plot signatures and motifs.qmd	script	code	build_fig6/Plot signatures and motifs.qmd	Plot signatures and motifs.qmd	yes		
+code:build_fig6/fig6_id4_idf_signatures.pdf	code repo file	code	build_fig6/fig6_id4_idf_signatures.pdf	fig6_id4_idf_signatures.pdf	yes		
+code:build_fig6/fig6_sequence_logos.pdf	code repo file	code	build_fig6/fig6_sequence_logos.pdf	fig6_sequence_logos.pdf	yes		
+code:build_fig_s1/assignment.high.similarity.samples.txt	code repo file	code	build_fig_s1/assignment.high.similarity.samples.txt	assignment.high.similarity.samples.txt	yes		
+code:build_fig_s1/build_assignment_high_similarity_samples.R	script	code	build_fig_s1/build_assignment_high_similarity_samples.R	build_assignment_high_similarity_samples.R	yes		
+code:build_fig_s1/figure_s1_etiologies.tsv	code repo file	code	build_fig_s1/figure_s1_etiologies.tsv	figure_s1_etiologies.tsv	yes	no script writes it	made by hand (transcribed from the Illustrator figure)
+code:build_fig_s1/make_figure_s1_layout.R	script	code	build_fig_s1/make_figure_s1_layout.R	make_figure_s1_layout.R	yes		
+code:build_fig_s1/sup_fig_s1a_signature_assignment.pdf	code repo file	code	build_fig_s1/sup_fig_s1a_signature_assignment.pdf	sup_fig_s1a_signature_assignment.pdf	yes		
+code:build_fig_s1/sup_fig_s1b_signature_assignment.pdf	code repo file	code	build_fig_s1/sup_fig_s1b_signature_assignment.pdf	sup_fig_s1b_signature_assignment.pdf	yes		
+code:build_fig_s2/make_figure_s2_layout.R	script	code	build_fig_s2/make_figure_s2_layout.R	make_figure_s2_layout.R	yes		
+code:build_fig_s2/sup_fig_s2_msighdp_signatures_draft.pdf	code repo file	code	build_fig_s2/sup_fig_s2_msighdp_signatures_draft.pdf	sup_fig_s2_msighdp_signatures_draft.pdf	yes		
+code:build_fig_s3/05_FisherTest/DNA.region.fisher_test_50cutoff.xlsx	code repo file	code	build_fig_s3/05_FisherTest/DNA.region.fisher_test_50cutoff.xlsx	DNA.region.fisher_test_50cutoff.xlsx	yes		
+code:build_fig_s3/05_FisherTest/repli.strand.fisher_test_50cutoff.xlsx	code repo file	code	build_fig_s3/05_FisherTest/repli.strand.fisher_test_50cutoff.xlsx	repli.strand.fisher_test_50cutoff.xlsx	yes		
+code:build_fig_s3/05_FisherTest/trans.strand.fisher_test_50cutoff.xlsx	code repo file	code	build_fig_s3/05_FisherTest/trans.strand.fisher_test_50cutoff.xlsx	trans.strand.fisher_test_50cutoff.xlsx	yes		
+code:build_fig_s3/06_computeOddsRatio/DNA.region/01.DNA.region.odds_ratio.xlsx	code repo file	code	build_fig_s3/06_computeOddsRatio/DNA.region/01.DNA.region.odds_ratio.xlsx	01.DNA.region.odds_ratio.xlsx	yes		
+code:build_fig_s3/06_computeOddsRatio/DNA.region/02.DNA.region.odds_type.xlsx	code repo file	code	build_fig_s3/06_computeOddsRatio/DNA.region/02.DNA.region.odds_type.xlsx	02.DNA.region.odds_type.xlsx	yes		
+code:build_fig_s3/06_computeOddsRatio/DNA.region/03.DNA.region.cancer_proportion.xlsx	code repo file	code	build_fig_s3/06_computeOddsRatio/DNA.region/03.DNA.region.cancer_proportion.xlsx	03.DNA.region.cancer_proportion.xlsx	yes		
+code:build_fig_s3/06_computeOddsRatio/repli.strand/01.repli.strand.odds_ratio.xlsx	code repo file	code	build_fig_s3/06_computeOddsRatio/repli.strand/01.repli.strand.odds_ratio.xlsx	01.repli.strand.odds_ratio.xlsx	yes		
+code:build_fig_s3/06_computeOddsRatio/repli.strand/02.repli.strand.odds_type.xlsx	code repo file	code	build_fig_s3/06_computeOddsRatio/repli.strand/02.repli.strand.odds_type.xlsx	02.repli.strand.odds_type.xlsx	yes		
+code:build_fig_s3/06_computeOddsRatio/repli.strand/03.repli.strand.cancer_proportion.xlsx	code repo file	code	build_fig_s3/06_computeOddsRatio/repli.strand/03.repli.strand.cancer_proportion.xlsx	03.repli.strand.cancer_proportion.xlsx	yes		
+code:build_fig_s3/06_computeOddsRatio/trans.strand/01.trans.strand.odds_ratio.xlsx	code repo file	code	build_fig_s3/06_computeOddsRatio/trans.strand/01.trans.strand.odds_ratio.xlsx	01.trans.strand.odds_ratio.xlsx	yes		
+code:build_fig_s3/06_computeOddsRatio/trans.strand/02.trans.strand.odds_type.xlsx	code repo file	code	build_fig_s3/06_computeOddsRatio/trans.strand/02.trans.strand.odds_type.xlsx	02.trans.strand.odds_type.xlsx	yes		
+code:build_fig_s3/06_computeOddsRatio/trans.strand/03.trans.strand.cancer_proportion.xlsx	code repo file	code	build_fig_s3/06_computeOddsRatio/trans.strand/03.trans.strand.cancer_proportion.xlsx	03.trans.strand.cancer_proportion.xlsx	yes		
+code:build_fig_s3/r.08_bubbleplot.R	script	code	build_fig_s3/r.08_bubbleplot.R	r.08_bubbleplot.R	yes		
+code:build_fig_s3/sup_fig_s3_topography.pdf	code repo file	code	build_fig_s3/sup_fig_s3_topography.pdf	sup_fig_s3_topography.pdf	yes	nothing reads it	
+code:build_fig_s3/sup_fig_s3_topography.png	code repo file	code	build_fig_s3/sup_fig_s3_topography.png	sup_fig_s3_topography.png	yes	nothing reads it	
+code:build_fig_s3/sup_fig_s3a_transcription_strand.pdf	code repo file	code	build_fig_s3/sup_fig_s3a_transcription_strand.pdf	sup_fig_s3a_transcription_strand.pdf	yes		
+code:build_fig_s3/sup_fig_s3b_replication_strand.pdf	code repo file	code	build_fig_s3/sup_fig_s3b_replication_strand.pdf	sup_fig_s3b_replication_strand.pdf	yes		
+code:build_fig_s3/sup_fig_s3c_genic_intergenic.pdf	code repo file	code	build_fig_s3/sup_fig_s3c_genic_intergenic.pdf	sup_fig_s3c_genic_intergenic.pdf	yes		
+code:build_fig_s4/09_all_lm_trend.xlsx	code repo file	code	build_fig_s4/09_all_lm_trend.xlsx	09_all_lm_trend.xlsx	yes		
+code:build_fig_s4/09_barplot_data.xlsx	code repo file	code	build_fig_s4/09_barplot_data.xlsx	09_barplot_data.xlsx	yes		
+code:build_fig_s4/r.09_barplot_final.R	script	code	build_fig_s4/r.09_barplot_final.R	r.09_barplot_final.R	yes		
+code:build_fig_s4/sup_fig_s4_replication_timing.pdf	code repo file	code	build_fig_s4/sup_fig_s4_replication_timing.pdf	sup_fig_s4_replication_timing.pdf	yes		
+code:build_fig_s4/sup_fig_s4_replication_timing.png	code repo file	code	build_fig_s4/sup_fig_s4_replication_timing.png	sup_fig_s4_replication_timing.png	yes	nothing reads it	
+code:build_fig_s5/F476.pdf	code repo file	code	build_fig_s5/F476.pdf	F476.pdf	yes	nothing reads it	
+code:build_fig_s5/F476_right.pdf	code repo file	code	build_fig_s5/F476_right.pdf	F476_right.pdf	yes	nothing reads it	
+code:build_fig_s5/F83.pdf	code repo file	code	build_fig_s5/F83.pdf	F83.pdf	yes	nothing reads it	
+code:build_fig_s5/F89.pdf	code repo file	code	build_fig_s5/F89.pdf	F89.pdf	yes	nothing reads it	
+code:build_fig_s5/make_figure_s5_layout.R	script	code	build_fig_s5/make_figure_s5_layout.R	make_figure_s5_layout.R	yes		
+code:build_fig_s5/make_reijn_spectra_and_plots_Mo.html	code repo file	code	build_fig_s5/make_reijn_spectra_and_plots_Mo.html	make_reijn_spectra_and_plots_Mo.html	yes	nothing reads it	
+code:build_fig_s5/make_reijn_spectra_and_plots_Mo.qmd	script	code	build_fig_s5/make_reijn_spectra_and_plots_Mo.qmd	make_reijn_spectra_and_plots_Mo.qmd	yes		
+code:build_fig_s5/sup_fig_s5_rnase_h2_spectra_draft.pdf	code repo file	code	build_fig_s5/sup_fig_s5_rnase_h2_spectra_draft.pdf	sup_fig_s5_rnase_h2_spectra_draft.pdf	yes		
+code:build_fig_s6/Associations of Mutational Signatures with Sex and Age.html	code repo file	code	build_fig_s6/Associations of Mutational Signatures with Sex and Age.html	Associations of Mutational Signatures with Sex and Age.html	no	missing on disk; nothing reads it	
+code:build_fig_s6/Associations of Mutational Signatures with Sex and Age.qmd	script	code	build_fig_s6/Associations of Mutational Signatures with Sex and Age.qmd	Associations of Mutational Signatures with Sex and Age.qmd	yes		
+code:build_fig_s6/age.glm.adjusted.for.cancer.type.txt	code repo file	code	build_fig_s6/age.glm.adjusted.for.cancer.type.txt	age.glm.adjusted.for.cancer.type.txt	yes		
+code:build_fig_s6/age_correlation_cancertypewise.pdf	code repo file	code	build_fig_s6/age_correlation_cancertypewise.pdf	age_correlation_cancertypewise.pdf	yes	nothing reads it	
+code:build_fig_s6/age_sex_glm_prototype.R	script	code	build_fig_s6/age_sex_glm_prototype.R	age_sex_glm_prototype.R	yes		
+code:build_fig_s6/age_sex_glm_prototype.tsv	code repo file	code	build_fig_s6/age_sex_glm_prototype.tsv	age_sex_glm_prototype.tsv	yes	nothing reads it	
+code:build_fig_s6/build_fig_s6_stats.R	script	code	build_fig_s6/build_fig_s6_stats.R	build_fig_s6_stats.R	yes		
+code:build_fig_s6/correlation.between.age.and.signature.activity.txt	code repo file	code	build_fig_s6/correlation.between.age.and.signature.activity.txt	correlation.between.age.and.signature.activity.txt	yes		
+code:build_fig_s6/gender.bias.txt	code repo file	code	build_fig_s6/gender.bias.txt	gender.bias.txt	yes		
+code:build_fig_s6/gender_bias.pdf	code repo file	code	build_fig_s6/gender_bias.pdf	gender_bias.pdf	yes	nothing reads it	
+code:build_fig_s6/make_figure_s6_layout.R	script	code	build_fig_s6/make_figure_s6_layout.R	make_figure_s6_layout.R	yes		
+code:build_fig_s6/sex_glm_prototype.R	script	code	build_fig_s6/sex_glm_prototype.R	sex_glm_prototype.R	yes		
+code:build_fig_s6/sex_glm_prototype.tsv	code repo file	code	build_fig_s6/sex_glm_prototype.tsv	sex_glm_prototype.tsv	yes	nothing reads it	
+code:build_fig_s6/sup_fig_s6_sex_age.pdf	code repo file	code	build_fig_s6/sup_fig_s6_sex_age.pdf	sup_fig_s6_sex_age.pdf	yes		
+code:build_sup_table_s1/build_sup_table_s1_cap9_filter_step2.R	script	code	build_sup_table_s1/build_sup_table_s1_cap9_filter_step2.R	build_sup_table_s1_cap9_filter_step2.R	yes		
+code:build_sup_table_s1/build_sup_table_s1_step1.R	script	code	build_sup_table_s1/build_sup_table_s1_step1.R	build_sup_table_s1_step1.R	yes		
+code:build_sup_table_s1/build_sup_table_s1_xlsx_step3.R	script	code	build_sup_table_s1/build_sup_table_s1_xlsx_step3.R	build_sup_table_s1_xlsx_step3.R	yes		
+code:build_sup_table_s1/rosetta_stone_476_89.csv	code repo file	code	build_sup_table_s1/rosetta_stone_476_89.csv	rosetta_stone_476_89.csv	yes		
+code:build_sup_table_s1/rosetta_stone_476_89_cap9.csv	code repo file	code	build_sup_table_s1/rosetta_stone_476_89_cap9.csv	rosetta_stone_476_89_cap9.csv	yes		
+code:build_sup_table_s1/rosetta_stone_full.csv	code repo file	code	build_sup_table_s1/rosetta_stone_full.csv	rosetta_stone_full.csv	yes		
+code:build_sup_table_s1/rosetta_stone_full_cap9.csv	code repo file	code	build_sup_table_s1/rosetta_stone_full_cap9.csv	rosetta_stone_full_cap9.csv	yes		
+code:build_sup_table_s1/sup_table_s1.xlsx	code repo file	code	build_sup_table_s1/sup_table_s1.xlsx	sup_table_s1.xlsx	yes	nothing reads it	
+code:build_sup_table_s1/sup_table_s1_476_89_83_type_categories.xlsx	code repo file	code	build_sup_table_s1/sup_table_s1_476_89_83_type_categories.xlsx	sup_table_s1_476_89_83_type_categories.xlsx	yes	no script writes it	edited by hand from sup_table_s1.xlsx
+code:build_sup_table_s10/build_sup_table_s10.R	script	code	build_sup_table_s10/build_sup_table_s10.R	build_sup_table_s10.R	yes		
+code:build_sup_table_s10/sup_table_s10_insdel_N_burden.xlsx	code repo file	code	build_sup_table_s10/sup_table_s10_insdel_N_burden.xlsx	sup_table_s10_insdel_N_burden.xlsx	yes		
+code:build_sup_table_s11/build_sup_table_s11.R	script	code	build_sup_table_s11/build_sup_table_s11.R	build_sup_table_s11.R	yes		
+code:build_sup_table_s11/sup_table_s11_83_89_signature_assignment.tsv	code repo file	code	build_sup_table_s11/sup_table_s11_83_89_signature_assignment.tsv	sup_table_s11_83_89_signature_assignment.tsv	yes		
+code:build_sup_table_s12/build_sup_table_s12.R	script	code	build_sup_table_s12/build_sup_table_s12.R	build_sup_table_s12.R	yes		
+code:build_sup_table_s12/sup_table_s12_topography_asymmetry.xlsx	code repo file	code	build_sup_table_s12/sup_table_s12_topography_asymmetry.xlsx	sup_table_s12_topography_asymmetry.xlsx	yes		
+code:build_sup_table_s13/build_sup_table_s13.R	script	code	build_sup_table_s13/build_sup_table_s13.R	build_sup_table_s13.R	yes		
+code:build_sup_table_s13/sup_table_s13_replication_timing_83.xlsx	code repo file	code	build_sup_table_s13/sup_table_s13_replication_timing_83.xlsx	sup_table_s13_replication_timing_83.xlsx	yes		
+code:build_sup_table_s14/build_sup_table_s14.R	script	code	build_sup_table_s14/build_sup_table_s14.R	build_sup_table_s14.R	yes		
+code:build_sup_table_s14/sup_table_s14_replication_timing_89.xlsx	code repo file	code	build_sup_table_s14/sup_table_s14_replication_timing_89.xlsx	sup_table_s14_replication_timing_89.xlsx	yes		
+code:build_sup_table_s14/trend_89.xlsx	code repo file	code	build_sup_table_s14/trend_89.xlsx	trend_89.xlsx	yes		
+code:build_sup_table_s15/build_sup_table_s15.R	script	code	build_sup_table_s15/build_sup_table_s15.R	build_sup_table_s15.R	yes		
+code:build_sup_table_s15/sup_table_s15_sex_bias.xlsx	code repo file	code	build_sup_table_s15/sup_table_s15_sex_bias.xlsx	sup_table_s15_sex_bias.xlsx	yes		
+code:build_sup_table_s16/build_sup_table_s16.R	script	code	build_sup_table_s16/build_sup_table_s16.R	build_sup_table_s16.R	yes		
+code:build_sup_table_s16/sup_table_s16_age_correlation.xlsx	code repo file	code	build_sup_table_s16/sup_table_s16_age_correlation.xlsx	sup_table_s16_age_correlation.xlsx	yes		
+code:build_sup_table_s17/build_sup_table_s17.R	script	code	build_sup_table_s17/build_sup_table_s17.R	build_sup_table_s17.R	yes		
+code:build_sup_table_s17/sup_table_s17_sample_metadata.xlsx	code repo file	code	build_sup_table_s17/sup_table_s17_sample_metadata.xlsx	sup_table_s17_sample_metadata.xlsx	yes		
+code:build_sup_table_s2/build_sup_table_s2.R	script	code	build_sup_table_s2/build_sup_table_s2.R	build_sup_table_s2.R	yes		
+code:build_sup_table_s2/sup_table_s2_msighdp_83_type_signatures.xlsx	code repo file	code	build_sup_table_s2/sup_table_s2_msighdp_83_type_signatures.xlsx	sup_table_s2_msighdp_83_type_signatures.xlsx	yes		
+code:build_sup_table_s3/build_sup_table_s3.R	script	code	build_sup_table_s3/build_sup_table_s3.R	build_sup_table_s3.R	yes		
+code:build_sup_table_s3/sup_table_s3_sigprofiler_83_type_signatures.xlsx	code repo file	code	build_sup_table_s3/sup_table_s3_sigprofiler_83_type_signatures.xlsx	sup_table_s3_sigprofiler_83_type_signatures.xlsx	yes		
+code:build_sup_table_s4/build_sup_table_s4.R	script	code	build_sup_table_s4/build_sup_table_s4.R	build_sup_table_s4.R	yes		
+code:build_sup_table_s4/sup_table_s4_msighdp_89_type_signatures.xlsx	code repo file	code	build_sup_table_s4/sup_table_s4_msighdp_89_type_signatures.xlsx	sup_table_s4_msighdp_89_type_signatures.xlsx	yes		
+code:build_sup_table_s5/build_sup_table_s5.R	script	code	build_sup_table_s5/build_sup_table_s5.R	build_sup_table_s5.R	yes		
+code:build_sup_table_s5/sup_table_s5_sigprofiler_89_type_signatures.xlsx	code repo file	code	build_sup_table_s5/sup_table_s5_sigprofiler_89_type_signatures.xlsx	sup_table_s5_sigprofiler_89_type_signatures.xlsx	yes		
+code:build_sup_table_s6/build_sup_table_s6.R	script	code	build_sup_table_s6/build_sup_table_s6.R	build_sup_table_s6.R	yes		
+code:build_sup_table_s6/sup_table_s6_msighdp_476_type_signatures.xlsx	code repo file	code	build_sup_table_s6/sup_table_s6_msighdp_476_type_signatures.xlsx	sup_table_s6_msighdp_476_type_signatures.xlsx	yes		
+code:build_sup_table_s7/build_sup_table_s7.R	script	code	build_sup_table_s7/build_sup_table_s7.R	build_sup_table_s7.R	yes		
+code:build_sup_table_s7/sup_table_s7_sigprofiler_476_type_signatures.xlsx	code repo file	code	build_sup_table_s7/sup_table_s7_sigprofiler_476_type_signatures.xlsx	sup_table_s7_sigprofiler_476_type_signatures.xlsx	yes		
+code:build_sup_table_s8/build_sup_table_s8.R	script	code	build_sup_table_s8/build_sup_table_s8.R	build_sup_table_s8.R	yes		
+code:build_sup_table_s8/sup_table_s8_cosine_msighdp_vs_sigprofiler.xlsx	code repo file	code	build_sup_table_s8/sup_table_s8_cosine_msighdp_vs_sigprofiler.xlsx	sup_table_s8_cosine_msighdp_vs_sigprofiler.xlsx	yes		
+code:build_sup_table_s9/DELETE_BEFORE_PUBLISHING/cache/<sample>_mmr.tsv.gz	code repo file	code	build_sup_table_s9/DELETE_BEFORE_PUBLISHING/cache/<sample>_mmr.tsv.gz	<sample>_mmr.tsv.gz	no	missing on disk	
+code:build_sup_table_s9/DELETE_BEFORE_PUBLISHING/mmr_gene_status.tsv	code repo file	code	build_sup_table_s9/DELETE_BEFORE_PUBLISHING/mmr_gene_status.tsv	mmr_gene_status.tsv	no	missing on disk; nothing reads it	
+code:build_sup_table_s9/DELETE_BEFORE_PUBLISHING/mmr_scan_log.tsv	code repo file	code	build_sup_table_s9/DELETE_BEFORE_PUBLISHING/mmr_scan_log.tsv	mmr_scan_log.tsv	no	missing on disk; nothing reads it	
+code:build_sup_table_s9/DELETE_BEFORE_PUBLISHING/mmr_variants_canonical.tsv	code repo file	code	build_sup_table_s9/DELETE_BEFORE_PUBLISHING/mmr_variants_canonical.tsv	mmr_variants_canonical.tsv	no	missing on disk; nothing reads it	
+code:build_sup_table_s9/DELETE_BEFORE_PUBLISHING/mmr_variants_long.tsv.gz	code repo file	code	build_sup_table_s9/DELETE_BEFORE_PUBLISHING/mmr_variants_long.tsv.gz	mmr_variants_long.tsv.gz	yes		
+code:build_sup_table_s9/DELETE_BEFORE_PUBLISHING/mmr_variants_per_sample_gene.tsv	code repo file	code	build_sup_table_s9/DELETE_BEFORE_PUBLISHING/mmr_variants_per_sample_gene.tsv	mmr_variants_per_sample_gene.tsv	no	missing on disk; nothing reads it	
+code:build_sup_table_s9/DELETE_BEFORE_PUBLISHING/pcawg/cache/<uuid>.tsv.gz	code repo file	code	build_sup_table_s9/DELETE_BEFORE_PUBLISHING/pcawg/cache/<uuid>.tsv.gz	<uuid>.tsv.gz	no	missing on disk	
+code:build_sup_table_s9/DELETE_BEFORE_PUBLISHING/pcawg/mmr_genes.bed	code repo file	code	build_sup_table_s9/DELETE_BEFORE_PUBLISHING/pcawg/mmr_genes.bed	mmr_genes.bed	no	missing on disk	
+code:build_sup_table_s9/DELETE_BEFORE_PUBLISHING/pcawg/mmr_regions_padded.bed	code repo file	code	build_sup_table_s9/DELETE_BEFORE_PUBLISHING/pcawg/mmr_regions_padded.bed	mmr_regions_padded.bed	no	missing on disk	
+code:build_sup_table_s9/DELETE_BEFORE_PUBLISHING/pcawg/mmr_sites.vcf	code repo file	code	build_sup_table_s9/DELETE_BEFORE_PUBLISHING/pcawg/mmr_sites.vcf	mmr_sites.vcf	no	missing on disk	
+code:build_sup_table_s9/DELETE_BEFORE_PUBLISHING/pcawg/mmr_sites_snpeff.vcf	code repo file	code	build_sup_table_s9/DELETE_BEFORE_PUBLISHING/pcawg/mmr_sites_snpeff.vcf	mmr_sites_snpeff.vcf	no	missing on disk	
+code:build_sup_table_s9/DELETE_BEFORE_PUBLISHING/pcawg/pcawg_mmr_gene_status.tsv	code repo file	code	build_sup_table_s9/DELETE_BEFORE_PUBLISHING/pcawg/pcawg_mmr_gene_status.tsv	pcawg_mmr_gene_status.tsv	no	missing on disk; nothing reads it	
+code:build_sup_table_s9/DELETE_BEFORE_PUBLISHING/pcawg/pcawg_mmr_variants_canonical.tsv	code repo file	code	build_sup_table_s9/DELETE_BEFORE_PUBLISHING/pcawg/pcawg_mmr_variants_canonical.tsv	pcawg_mmr_variants_canonical.tsv	no	missing on disk; nothing reads it	
+code:build_sup_table_s9/DELETE_BEFORE_PUBLISHING/pcawg/pcawg_mmr_variants_long.tsv.gz	code repo file	code	build_sup_table_s9/DELETE_BEFORE_PUBLISHING/pcawg/pcawg_mmr_variants_long.tsv.gz	pcawg_mmr_variants_long.tsv.gz	yes		
+code:build_sup_table_s9/DELETE_BEFORE_PUBLISHING/pcawg/pcawg_mmr_variants_per_sample_gene.tsv	code repo file	code	build_sup_table_s9/DELETE_BEFORE_PUBLISHING/pcawg/pcawg_mmr_variants_per_sample_gene.tsv	pcawg_mmr_variants_per_sample_gene.tsv	no	missing on disk; nothing reads it	
+code:build_sup_table_s9/DELETE_BEFORE_PUBLISHING/pcawg/pcawg_scan_log.tsv	code repo file	code	build_sup_table_s9/DELETE_BEFORE_PUBLISHING/pcawg/pcawg_scan_log.tsv	pcawg_scan_log.tsv	no	missing on disk; nothing reads it	
+code:build_sup_table_s9/DELETE_BEFORE_PUBLISHING/pcawg/pcawg_uuid_to_sp.tsv	code repo file	code	build_sup_table_s9/DELETE_BEFORE_PUBLISHING/pcawg/pcawg_uuid_to_sp.tsv	pcawg_uuid_to_sp.tsv	no	missing on disk; nothing reads it	
+code:build_sup_table_s9/DELETE_BEFORE_PUBLISHING/pcawg/snpeff.err	code repo file	code	build_sup_table_s9/DELETE_BEFORE_PUBLISHING/pcawg/snpeff.err	snpeff.err	no	missing on disk; nothing reads it	
+code:build_sup_table_s9/DELETE_BEFORE_PUBLISHING/pcawg_graylist/pcawg_mmr_variants_long.tsv.gz	code repo file	code	build_sup_table_s9/DELETE_BEFORE_PUBLISHING/pcawg_graylist/pcawg_mmr_variants_long.tsv.gz	pcawg_mmr_variants_long.tsv.gz	yes		
+code:build_sup_table_s9/annotate_pcawg_mmr.R	script	code	build_sup_table_s9/annotate_pcawg_mmr.R	annotate_pcawg_mmr.R	yes		
+code:build_sup_table_s9/build_sup_table_s9_pol_proofreading.R	script	code	build_sup_table_s9/build_sup_table_s9_pol_proofreading.R	build_sup_table_s9_pol_proofreading.R	yes		
+code:build_sup_table_s9/purple_ann_utils.R	script	code	build_sup_table_s9/purple_ann_utils.R	purple_ann_utils.R	yes		
+code:build_sup_table_s9/summarize_mmr_variants.R	script	code	build_sup_table_s9/summarize_mmr_variants.R	summarize_mmr_variants.R	yes		
+code:build_sup_table_s9/sup_table_s9_pol_proofreading.xlsx	code repo file	code	build_sup_table_s9/sup_table_s9_pol_proofreading.xlsx	sup_table_s9_pol_proofreading.xlsx	yes		
+code:build_sup_table_signatures/signature_table_helpers.R	script	code	build_sup_table_signatures/signature_table_helpers.R	signature_table_helpers.R	yes		
+code:build_sup_table_signatures/sigprofiler_signature_columns.tsv	code repo file	code	build_sup_table_signatures/sigprofiler_signature_columns.tsv	sigprofiler_signature_columns.tsv	yes	no script writes it	made by hand
+code:find_data.R	script	code	find_data.R	find_data.R	yes		
+code:ms_numbers.R	script	code	ms_numbers.R	ms_numbers.R	yes		
+code:msiseq/run-MSIseq.R	script	code	msiseq/run-MSIseq.R	run-MSIseq.R	yes		
+code:vignette/83_mapped_from_476.tsv	code repo file	code	vignette/83_mapped_from_476.tsv	83_mapped_from_476.tsv	no	missing on disk; no script writes it	
+code:vignette/89_mapped_from_476.tsv	code repo file	code	vignette/89_mapped_from_476.tsv	89_mapped_from_476.tsv	no	missing on disk; no script writes it	
+code:vignette/<--output>.html	code repo file	code	vignette/<--output>.html	<--output>.html	no	missing on disk; nothing reads it	
+code:vignette/README.md	script	code	vignette/README.md	README.md	yes		
+code:vignette/assign_for_residual.md	code repo file	code	vignette/assign_for_residual.md	assign_for_residual.md	no	missing on disk; nothing reads it	
+code:vignette/collapse_476_to_83.R	script	code	vignette/collapse_476_to_83.R	collapse_476_to_83.R	yes		
+code:vignette/collapse_476_to_89.R	script	code	vignette/collapse_476_to_89.R	collapse_476_to_89.R	yes		
+code:vignette/cosine.R	script	code	vignette/cosine.R	cosine.R	yes		
+code:vignette/figure/parallel_plots/*.png	code repo file	code	vignette/figure/parallel_plots/*.png	*.png	yes		
+code:vignette/figure/parallel_plots/plot_cache_hash.rds	code repo file	code	vignette/figure/parallel_plots/plot_cache_hash.rds	plot_cache_hash.rds	yes		
+code:vignette/figure/standalone_data/all_plot_paths.rds	code repo file	code	vignette/figure/standalone_data/all_plot_paths.rds	all_plot_paths.rds	yes		
+code:vignette/figure/standalone_data/all_sig_data.rds	code repo file	code	vignette/figure/standalone_data/all_sig_data.rds	all_sig_data.rds	yes		
+code:vignette/find_best_match_spectra.R	script	code	vignette/find_best_match_spectra.R	find_best_match_spectra.R	yes		
+code:vignette/make_connection_table.R	script	code	vignette/make_connection_table.R	make_connection_table.R	yes		
+code:vignette/onesig.qmd	script	code	vignette/onesig.qmd	onesig.qmd	yes		
+code:vignette/onesig_standalone.qmd	script	code	vignette/onesig_standalone.qmd	onesig_standalone.qmd	yes		
+code:vignette/overview_table_standalone.html	code repo file	code	vignette/overview_table_standalone.html	overview_table_standalone.html	yes	nothing reads it	
+code:vignette/overview_table_standalone.qmd	script	code	vignette/overview_table_standalone.qmd	overview_table_standalone.qmd	yes		
+code:vignette/plot_83_w_wout_t.R	script	code	vignette/plot_83_w_wout_t.R	plot_83_w_wout_t.R	yes		
+code:vignette/ppar.R	script	code	vignette/ppar.R	ppar.R	yes		
+code:vignette/preamble.tex	code repo file	code	vignette/preamble.tex	preamble.tex	yes	no script writes it	
+code:vignette/prot_table_1.csv	code repo file	code	vignette/prot_table_1.csv	prot_table_1.csv	yes		
+code:vignette/prot_table_1_to_excel.R	script	code	vignette/prot_table_1_to_excel.R	prot_table_1_to_excel.R	yes		
+code:vignette/render_overview_table.R	script	code	vignette/render_overview_table.R	render_overview_table.R	yes		
+code:vignette/render_separate_pages.R	script	code	vignette/render_separate_pages.R	render_separate_pages.R	yes		
+code:vignette/repertoire_of_indel_mutational_signatures.html	code repo file	code	vignette/repertoire_of_indel_mutational_signatures.html	repertoire_of_indel_mutational_signatures.html	yes	nothing reads it	
+code:vignette/repertoire_of_indel_mutational_signatures.pdf	code repo file	code	vignette/repertoire_of_indel_mutational_signatures.pdf	repertoire_of_indel_mutational_signatures.pdf	yes	nothing reads it	
+code:vignette/separate_pages/*.html	code repo file	code	vignette/separate_pages/*.html	*.html	yes	nothing reads it	
+code:vignette/separate_pages/overview_table.html	code repo file	code	vignette/separate_pages/overview_table.html	overview_table.html	yes	nothing reads it	
+code:vignette/solve_bipartite_match.R	script	code	vignette/solve_bipartite_match.R	solve_bipartite_match.R	yes		
+code:vignette/styles.css	code repo file	code	vignette/styles.css	styles.css	yes	no script writes it	
+code:vignette/table_1_autogenerated.xlsx	code repo file	code	vignette/table_1_autogenerated.xlsx	table_1_autogenerated.xlsx	yes		
+code:vignette/table_1_col_name_mapping.R	script	code	vignette/table_1_col_name_mapping.R	table_1_col_name_mapping.R	yes		
+code:vignette/unique_pairs.tsv	code repo file	code	vignette/unique_pairs.tsv	unique_pairs.tsv	yes	no script writes it	
+code:vignette/vhelpers.R	script	code	vignette/vhelpers.R	vhelpers.R	yes		
+code:vignette/vignette.aux	code repo file	code	vignette/vignette.aux	vignette.aux	yes	nothing reads it	
+code:vignette/vignette.log	code repo file	code	vignette/vignette.log	vignette.log	yes	nothing reads it	
+code:vignette/vignette.qmd	script	code	vignette/vignette.qmd	vignette.qmd	yes		
+code:vignette/vignette.tex	code repo file	code	vignette/vignette.tex	vignette.tex	yes	nothing reads it	
+code:vignette/vignette.toc	code repo file	code	vignette/vignette.toc	vignette.toc	yes	nothing reads it	
+data:ID476_ID89_mapping.txt	data repo file	data	ID476_ID89_mapping.txt	ID476_ID89_mapping.txt	yes		
+data:assignments_2026-10-19/mSigAct.reanalyzed.samples.txt	data repo file	data	assignments_2026-10-19/mSigAct.reanalyzed.samples.txt	mSigAct.reanalyzed.samples.txt	yes		
+data:build_all_meta.R	script	data	build_all_meta.R	build_all_meta.R	yes		
+data:connection_table.tsv	data repo file	data	connection_table.tsv	connection_table.tsv	yes		
+data:external_data/COSMIC_v3.6_ID_GRCh37.txt	data repo file	data	external_data/COSMIC_v3.6_ID_GRCh37.txt	COSMIC_v3.6_ID_GRCh37.txt	yes		
+data:external_data/Degasperi_2022/RefSig_SBS_Exposures_v2.03.tsv	data repo file	data	external_data/Degasperi_2022/RefSig_SBS_Exposures_v2.03.tsv	RefSig_SBS_Exposures_v2.03.tsv	yes		
+data:external_data/Degasperi_2022/degasperi_to_liu_sample_id.tsv	data repo file	data	external_data/Degasperi_2022/degasperi_to_liu_sample_id.tsv	degasperi_to_liu_sample_id.tsv	yes		
+data:external_data/Degasperi_2022/high_quality_samples.txt	data repo file	data	external_data/Degasperi_2022/high_quality_samples.txt	high_quality_samples.txt	yes		
+data:external_data/Koh_signatures.tsv	data repo file	data	external_data/Koh_signatures.tsv	Koh_signatures.tsv	yes		
+data:external_data/jin_2024_sup_tab_1_signatures.tsv	data repo file	data	external_data/jin_2024_sup_tab_1_signatures.tsv	jin_2024_sup_tab_1_signatures.tsv	yes		
+data:external_data/reijns_et_al_2022/Reijn.mouse.vcfs.with.annotation.txt	data repo file	data	external_data/reijns_et_al_2022/Reijn.mouse.vcfs.with.annotation.txt	Reijn.mouse.vcfs.with.annotation.txt	yes		
+data:external_data/reijns_et_al_2022/Reijn.rpe1.vcfs.with.annotation.txt	data repo file	data	external_data/reijns_et_al_2022/Reijn.rpe1.vcfs.with.annotation.txt	Reijn.rpe1.vcfs.with.annotation.txt	yes		
+data:external_data/reijns_et_al_2022/liu_et_al_476_signatures.tsv	data repo file	data	external_data/reijns_et_al_2022/liu_et_al_476_signatures.tsv	liu_et_al_476_signatures.tsv	no	missing on disk	
+data:external_data/reijns_et_al_2022/liu_et_al_83_signatures.tsv	data repo file	data	external_data/reijns_et_al_2022/liu_et_al_83_signatures.tsv	liu_et_al_83_signatures.tsv	no	missing on disk	
+data:external_data/reijns_et_al_2022/liu_et_al_89_signatures.tsv	data repo file	data	external_data/reijns_et_al_2022/liu_et_al_89_signatures.tsv	liu_et_al_89_signatures.tsv	no	missing on disk	
+data:liu_et_al_476_signatures.tsv	data repo file	data	liu_et_al_476_signatures.tsv	liu_et_al_476_signatures.tsv	yes		
+data:liu_et_al_476_spectra.tsv	data repo file	data	liu_et_al_476_spectra.tsv	liu_et_al_476_spectra.tsv	yes		
+data:liu_et_al_83_assignment.tsv	data repo file	data	liu_et_al_83_assignment.tsv	liu_et_al_83_assignment.tsv	yes		
+data:liu_et_al_83_signatures.tsv	data repo file	data	liu_et_al_83_signatures.tsv	liu_et_al_83_signatures.tsv	yes		
+data:liu_et_al_83_spectra.tsv	data repo file	data	liu_et_al_83_spectra.tsv	liu_et_al_83_spectra.tsv	yes		
+data:liu_et_al_89_assignment.tsv	data repo file	data	liu_et_al_89_assignment.tsv	liu_et_al_89_assignment.tsv	yes		
+data:liu_et_al_89_signatures.tsv	data repo file	data	liu_et_al_89_signatures.tsv	liu_et_al_89_signatures.tsv	yes		
+data:liu_et_al_89_spectra.tsv	data repo file	data	liu_et_al_89_spectra.tsv	liu_et_al_89_spectra.tsv	yes		
+data:make_connection_table.R	script	data	make_connection_table.R	make_connection_table.R	yes		
+data:per_sig_txt/*.md	data repo file	data	per_sig_txt/*.md	*.md	yes		
+data:raw_signature_from_all_hdp_SP_runs/SigProfiler.COSMIC83.signatures.all.runs.txt	data repo file	data	raw_signature_from_all_hdp_SP_runs/SigProfiler.COSMIC83.signatures.all.runs.txt	SigProfiler.COSMIC83.signatures.all.runs.txt	yes		
+data:raw_signature_from_all_hdp_SP_runs/SigProfiler.Koh476.signatures.all.runs.txt	data repo file	data	raw_signature_from_all_hdp_SP_runs/SigProfiler.Koh476.signatures.all.runs.txt	SigProfiler.Koh476.signatures.all.runs.txt	yes		
+data:raw_signature_from_all_hdp_SP_runs/SigProfiler.Koh89.signatures.all.runs.txt	data repo file	data	raw_signature_from_all_hdp_SP_runs/SigProfiler.Koh89.signatures.all.runs.txt	SigProfiler.Koh89.signatures.all.runs.txt	yes		
+data:sample_info.tsv	data repo file	data	sample_info.tsv	sample_info.tsv	yes		
+ext:/ID83_0322/09_barplot/ID_L_Stomach_Decreasing.Rds	external	ext	/ID83_0322/09_barplot/ID_L_Stomach_Decreasing.Rds	ID_L_Stomach_Decreasing.Rds			
+ext:/MSIseq_1.0.0/MSIseq/R/MSIseq.classify.R	external	ext	/MSIseq_1.0.0/MSIseq/R/MSIseq.classify.R	MSIseq.classify.R			
+ext:/home/steve/MEGA/important_mut_sig_data/fmh-unfiltered_vcfs/*.annotated.indel.vcf.gz (300 largest)	external	ext	/home/steve/MEGA/important_mut_sig_data/fmh-unfiltered_vcfs/*.annotated.indel.vcf.gz (300 largest)	*.annotated.indel.vcf.gz (300 largest)			
+ext:/home/steve/MEGA/important_mut_sig_data/pcawg_indel_vcfs/*.annotated.indel.vcf.gz (300 largest)	external	ext	/home/steve/MEGA/important_mut_sig_data/pcawg_indel_vcfs/*.annotated.indel.vcf.gz (300 largest)	*.annotated.indel.vcf.gz (300 largest)			
+ext:/public/data/Topography_analysis/cap9.for.topography.20260322/all.indel.ID83.normalized.txt	external	ext	/public/data/Topography_analysis/cap9.for.topography.20260322/all.indel.ID83.normalized.txt	all.indel.ID83.normalized.txt			
+ext:/public/data/Topography_analysis/mutation_data/all.indel.ID83.normalized.txt	external	ext	/public/data/Topography_analysis/mutation_data/all.indel.ID83.normalized.txt	all.indel.ID83.normalized.txt			
+ext:/public/data/Topography_analysis/mutation_data/all.indel.ID83.partial.credit.txt	external	ext	/public/data/Topography_analysis/mutation_data/all.indel.ID83.partial.credit.txt	all.indel.ID83.partial.credit.txt			
+ext:/public/data/Topography_analysis/mutation_data/all.meta.0528.rds	external	ext	/public/data/Topography_analysis/mutation_data/all.meta.0528.rds	all.meta.0528.rds			
+ext:/public/data/Topography_analysis/reference/ENCODE/repli_strand_info_new.bed	external	ext	/public/data/Topography_analysis/reference/ENCODE/repli_strand_info_new.bed	repli_strand_info_new.bed			
+ext:/public/data/Topography_analysis/reference/single.indel.aggregate.strand.added.matrix.txt	external	ext	/public/data/Topography_analysis/reference/single.indel.aggregate.strand.added.matrix.txt	single.indel.aggregate.strand.added.matrix.txt			
+ext:/public/data/Topography_analysis_2026/results/ID83/01_createBed/01.rtGroup.bed	external	ext	/public/data/Topography_analysis_2026/results/ID83/01_createBed/01.rtGroup.bed	01.rtGroup.bed			
+ext:/public/data/Topography_analysis_2026/results/ID83/01_createBed/02.unique.single.indel.aggregate.strand.added.matrix.txt	external	ext	/public/data/Topography_analysis_2026/results/ID83/01_createBed/02.unique.single.indel.aggregate.strand.added.matrix.txt	02.unique.single.indel.aggregate.strand.added.matrix.txt			
+ext:/public/data/Topography_analysis_2026/results/ID83/01_createBed/04.SimulatedData.bed	external	ext	/public/data/Topography_analysis_2026/results/ID83/01_createBed/04.SimulatedData.bed	04.SimulatedData.bed			
+ext:/public/data/Topography_analysis_2026/results/ID83/01_createBed/04.SimulatedData.txt	external	ext	/public/data/Topography_analysis_2026/results/ID83/01_createBed/04.SimulatedData.txt	04.SimulatedData.txt			
+ext:/public/data/Topography_analysis_2026/results0322/ID83/01_createBed/02.unique.single.indel.aggregate.strand.added.matrix.bed	external	ext	/public/data/Topography_analysis_2026/results0322/ID83/01_createBed/02.unique.single.indel.aggregate.strand.added.matrix.bed	02.unique.single.indel.aggregate.strand.added.matrix.bed			
+ext:/public/data/Topography_analysis_2026/results0322/ID83/01_createBed/02.unique.single.indel.aggregate.strand.added.matrix.txt	external	ext	/public/data/Topography_analysis_2026/results0322/ID83/01_createBed/02.unique.single.indel.aggregate.strand.added.matrix.txt	02.unique.single.indel.aggregate.strand.added.matrix.txt			
+ext:/public/data/Topography_analysis_2026/results0322/ID83/01_createBed/03.signature.bed	external	ext	/public/data/Topography_analysis_2026/results0322/ID83/01_createBed/03.signature.bed	03.signature.bed			
+ext:/public/data/Topography_analysis_2026/results0322/ID83/01_createBed/03.signature.txt	external	ext	/public/data/Topography_analysis_2026/results0322/ID83/01_createBed/03.signature.txt	03.signature.txt			
+ext:/public/data/Topography_analysis_2026/results0322/ID83/01_createBed/04.SimulatedData.bed	external	ext	/public/data/Topography_analysis_2026/results0322/ID83/01_createBed/04.SimulatedData.bed	04.SimulatedData.bed			
+ext:/public/data/Topography_analysis_2026/results0322/ID83/02_intersectBed/01.RelicateTime.TransStrand.DNA_Region.intersect_res.txt	external	ext	/public/data/Topography_analysis_2026/results0322/ID83/02_intersectBed/01.RelicateTime.TransStrand.DNA_Region.intersect_res.txt	01.RelicateTime.TransStrand.DNA_Region.intersect_res.txt			
+ext:/public/data/Topography_analysis_2026/results0322/ID83/02_intersectBed/02.RepliStrand.intersect_res.txt	external	ext	/public/data/Topography_analysis_2026/results0322/ID83/02_intersectBed/02.RepliStrand.intersect_res.txt	02.RepliStrand.intersect_res.txt			
+ext:/public/data/Topography_analysis_2026/results0322/ID83/02_intersectBed/03.RelicateTime.simulated.intersect_res.txt	external	ext	/public/data/Topography_analysis_2026/results0322/ID83/02_intersectBed/03.RelicateTime.simulated.intersect_res.txt	03.RelicateTime.simulated.intersect_res.txt			
+ext:/public/data/Topography_analysis_2026/results0322/ID83/02_intersectBed/04.RepliStrand.simulated.intersect_res.txt	external	ext	/public/data/Topography_analysis_2026/results0322/ID83/02_intersectBed/04.RepliStrand.simulated.intersect_res.txt	04.RepliStrand.simulated.intersect_res.txt			
+ext:/public/data/Topography_analysis_2026/results0322/ID83/03_mergeInf/01.allInf.single.indel.Rds	external	ext	/public/data/Topography_analysis_2026/results0322/ID83/03_mergeInf/01.allInf.single.indel.Rds	01.allInf.single.indel.Rds			
+ext:/public/data/Topography_analysis_2026/results0322/ID83/03_mergeInf/01.allInf.single.indel.txt	external	ext	/public/data/Topography_analysis_2026/results0322/ID83/03_mergeInf/01.allInf.single.indel.txt	01.allInf.single.indel.txt			
+ext:/public/data/Topography_analysis_2026/results0322/ID83/03_mergeInf/02.allInf.simulated.Rds	external	ext	/public/data/Topography_analysis_2026/results0322/ID83/03_mergeInf/02.allInf.simulated.Rds	02.allInf.simulated.Rds			
+ext:/public/data/Topography_analysis_2026/results0322/ID83/03_mergeInf/02.allInf.simulated.txt	external	ext	/public/data/Topography_analysis_2026/results0322/ID83/03_mergeInf/02.allInf.simulated.txt	02.allInf.simulated.txt			
+ext:/public/data/Topography_analysis_2026/results0322/ID83/04_create4InfMatrix/01.Tissue_count.xlsx	external	ext	/public/data/Topography_analysis_2026/results0322/ID83/04_create4InfMatrix/01.Tissue_count.xlsx	01.Tissue_count.xlsx			
+ext:/public/data/Topography_analysis_2026/results0322/ID83/04_create4InfMatrix/02.Saimulated_Tissue_count.xlsx	external	ext	/public/data/Topography_analysis_2026/results0322/ID83/04_create4InfMatrix/02.Saimulated_Tissue_count.xlsx	02.Saimulated_Tissue_count.xlsx			
+ext:/public/data/Topography_analysis_2026/results0322/ID83/04_create4InfMatrix/DNA.region/tissue.DNA.region.Mutation_50cutoff.Rds	external	ext	/public/data/Topography_analysis_2026/results0322/ID83/04_create4InfMatrix/DNA.region/tissue.DNA.region.Mutation_50cutoff.Rds	tissue.DNA.region.Mutation_50cutoff.Rds			
+ext:/public/data/Topography_analysis_2026/results0322/ID83/04_create4InfMatrix/DNA.region/tissue.DNA.region.Mutation_75cutoff.Rds	external	ext	/public/data/Topography_analysis_2026/results0322/ID83/04_create4InfMatrix/DNA.region/tissue.DNA.region.Mutation_75cutoff.Rds	tissue.DNA.region.Mutation_75cutoff.Rds			
+ext:/public/data/Topography_analysis_2026/results0322/ID83/04_create4InfMatrix/DNA.region/tissue.DNA.region.Mutation_75cutoff.xlsx	external	ext	/public/data/Topography_analysis_2026/results0322/ID83/04_create4InfMatrix/DNA.region/tissue.DNA.region.Mutation_75cutoff.xlsx	tissue.DNA.region.Mutation_75cutoff.xlsx			
+ext:/public/data/Topography_analysis_2026/results0322/ID83/04_create4InfMatrix/DNA.region/tissue.DNA.region.Mutation_nocutoff.Rds	external	ext	/public/data/Topography_analysis_2026/results0322/ID83/04_create4InfMatrix/DNA.region/tissue.DNA.region.Mutation_nocutoff.Rds	tissue.DNA.region.Mutation_nocutoff.Rds			
+ext:/public/data/Topography_analysis_2026/results0322/ID83/04_create4InfMatrix/DNA.region/tissue.DNA.region.Mutation_nocutoff.xlsx	external	ext	/public/data/Topography_analysis_2026/results0322/ID83/04_create4InfMatrix/DNA.region/tissue.DNA.region.Mutation_nocutoff.xlsx	tissue.DNA.region.Mutation_nocutoff.xlsx			
+ext:/public/data/Topography_analysis_2026/results0322/ID83/04_create4InfMatrix/DNA.region/tissue.DNA.region.Simulated_50cutoff.Rds	external	ext	/public/data/Topography_analysis_2026/results0322/ID83/04_create4InfMatrix/DNA.region/tissue.DNA.region.Simulated_50cutoff.Rds	tissue.DNA.region.Simulated_50cutoff.Rds			
+ext:/public/data/Topography_analysis_2026/results0322/ID83/04_create4InfMatrix/DNA.region/tissue.DNA.region.Simulated_75cutoff.Rds	external	ext	/public/data/Topography_analysis_2026/results0322/ID83/04_create4InfMatrix/DNA.region/tissue.DNA.region.Simulated_75cutoff.Rds	tissue.DNA.region.Simulated_75cutoff.Rds			
+ext:/public/data/Topography_analysis_2026/results0322/ID83/04_create4InfMatrix/DNA.region/tissue.DNA.region.Simulated_75cutoff.xlsx	external	ext	/public/data/Topography_analysis_2026/results0322/ID83/04_create4InfMatrix/DNA.region/tissue.DNA.region.Simulated_75cutoff.xlsx	tissue.DNA.region.Simulated_75cutoff.xlsx			
+ext:/public/data/Topography_analysis_2026/results0322/ID83/04_create4InfMatrix/DNA.region/tissue.DNA.region.Simulated_nocutoff.Rds	external	ext	/public/data/Topography_analysis_2026/results0322/ID83/04_create4InfMatrix/DNA.region/tissue.DNA.region.Simulated_nocutoff.Rds	tissue.DNA.region.Simulated_nocutoff.Rds			
+ext:/public/data/Topography_analysis_2026/results0322/ID83/04_create4InfMatrix/DNA.region/tissue.DNA.region.Simulated_nocutoff.xlsx	external	ext	/public/data/Topography_analysis_2026/results0322/ID83/04_create4InfMatrix/DNA.region/tissue.DNA.region.Simulated_nocutoff.xlsx	tissue.DNA.region.Simulated_nocutoff.xlsx			
+ext:/public/data/Topography_analysis_2026/results0322/ID83/04_create4InfMatrix/repli.strand/tissue.repli.strand.Mutation_50cutoff.Rds	external	ext	/public/data/Topography_analysis_2026/results0322/ID83/04_create4InfMatrix/repli.strand/tissue.repli.strand.Mutation_50cutoff.Rds	tissue.repli.strand.Mutation_50cutoff.Rds			
+ext:/public/data/Topography_analysis_2026/results0322/ID83/04_create4InfMatrix/repli.strand/tissue.repli.strand.Mutation_75cutoff.Rds	external	ext	/public/data/Topography_analysis_2026/results0322/ID83/04_create4InfMatrix/repli.strand/tissue.repli.strand.Mutation_75cutoff.Rds	tissue.repli.strand.Mutation_75cutoff.Rds			
+ext:/public/data/Topography_analysis_2026/results0322/ID83/04_create4InfMatrix/repli.strand/tissue.repli.strand.Mutation_75cutoff.xlsx	external	ext	/public/data/Topography_analysis_2026/results0322/ID83/04_create4InfMatrix/repli.strand/tissue.repli.strand.Mutation_75cutoff.xlsx	tissue.repli.strand.Mutation_75cutoff.xlsx			
+ext:/public/data/Topography_analysis_2026/results0322/ID83/04_create4InfMatrix/repli.strand/tissue.repli.strand.Mutation_nocutoff.Rds	external	ext	/public/data/Topography_analysis_2026/results0322/ID83/04_create4InfMatrix/repli.strand/tissue.repli.strand.Mutation_nocutoff.Rds	tissue.repli.strand.Mutation_nocutoff.Rds			
+ext:/public/data/Topography_analysis_2026/results0322/ID83/04_create4InfMatrix/repli.strand/tissue.repli.strand.Mutation_nocutoff.xlsx	external	ext	/public/data/Topography_analysis_2026/results0322/ID83/04_create4InfMatrix/repli.strand/tissue.repli.strand.Mutation_nocutoff.xlsx	tissue.repli.strand.Mutation_nocutoff.xlsx			
+ext:/public/data/Topography_analysis_2026/results0322/ID83/04_create4InfMatrix/repli.strand/tissue.repli.strand.Simulated_50cutoff.Rds	external	ext	/public/data/Topography_analysis_2026/results0322/ID83/04_create4InfMatrix/repli.strand/tissue.repli.strand.Simulated_50cutoff.Rds	tissue.repli.strand.Simulated_50cutoff.Rds			
+ext:/public/data/Topography_analysis_2026/results0322/ID83/04_create4InfMatrix/repli.strand/tissue.repli.strand.Simulated_75cutoff.Rds	external	ext	/public/data/Topography_analysis_2026/results0322/ID83/04_create4InfMatrix/repli.strand/tissue.repli.strand.Simulated_75cutoff.Rds	tissue.repli.strand.Simulated_75cutoff.Rds			
+ext:/public/data/Topography_analysis_2026/results0322/ID83/04_create4InfMatrix/repli.strand/tissue.repli.strand.Simulated_75cutoff.xlsx	external	ext	/public/data/Topography_analysis_2026/results0322/ID83/04_create4InfMatrix/repli.strand/tissue.repli.strand.Simulated_75cutoff.xlsx	tissue.repli.strand.Simulated_75cutoff.xlsx			
+ext:/public/data/Topography_analysis_2026/results0322/ID83/04_create4InfMatrix/repli.strand/tissue.repli.strand.Simulated_nocutoff.Rds	external	ext	/public/data/Topography_analysis_2026/results0322/ID83/04_create4InfMatrix/repli.strand/tissue.repli.strand.Simulated_nocutoff.Rds	tissue.repli.strand.Simulated_nocutoff.Rds			
+ext:/public/data/Topography_analysis_2026/results0322/ID83/04_create4InfMatrix/repli.strand/tissue.repli.strand.Simulated_nocutoff.xlsx	external	ext	/public/data/Topography_analysis_2026/results0322/ID83/04_create4InfMatrix/repli.strand/tissue.repli.strand.Simulated_nocutoff.xlsx	tissue.repli.strand.Simulated_nocutoff.xlsx			
+ext:/public/data/Topography_analysis_2026/results0322/ID83/04_create4InfMatrix/rtGroup/tissue.rtGroup.Mutation_50cutoff.Rds	external	ext	/public/data/Topography_analysis_2026/results0322/ID83/04_create4InfMatrix/rtGroup/tissue.rtGroup.Mutation_50cutoff.Rds	tissue.rtGroup.Mutation_50cutoff.Rds			
+ext:/public/data/Topography_analysis_2026/results0322/ID83/04_create4InfMatrix/rtGroup/tissue.rtGroup.Mutation_75cutoff.Rds	external	ext	/public/data/Topography_analysis_2026/results0322/ID83/04_create4InfMatrix/rtGroup/tissue.rtGroup.Mutation_75cutoff.Rds	tissue.rtGroup.Mutation_75cutoff.Rds			
+ext:/public/data/Topography_analysis_2026/results0322/ID83/04_create4InfMatrix/rtGroup/tissue.rtGroup.Mutation_75cutoff.xlsx	external	ext	/public/data/Topography_analysis_2026/results0322/ID83/04_create4InfMatrix/rtGroup/tissue.rtGroup.Mutation_75cutoff.xlsx	tissue.rtGroup.Mutation_75cutoff.xlsx			
+ext:/public/data/Topography_analysis_2026/results0322/ID83/04_create4InfMatrix/rtGroup/tissue.rtGroup.Mutation_nocutoff.Rds	external	ext	/public/data/Topography_analysis_2026/results0322/ID83/04_create4InfMatrix/rtGroup/tissue.rtGroup.Mutation_nocutoff.Rds	tissue.rtGroup.Mutation_nocutoff.Rds			
+ext:/public/data/Topography_analysis_2026/results0322/ID83/04_create4InfMatrix/rtGroup/tissue.rtGroup.Mutation_nocutoff.xlsx	external	ext	/public/data/Topography_analysis_2026/results0322/ID83/04_create4InfMatrix/rtGroup/tissue.rtGroup.Mutation_nocutoff.xlsx	tissue.rtGroup.Mutation_nocutoff.xlsx			
+ext:/public/data/Topography_analysis_2026/results0322/ID83/04_create4InfMatrix/rtGroup/tissue.rtGroup.Simulated_50cutoff.Rds	external	ext	/public/data/Topography_analysis_2026/results0322/ID83/04_create4InfMatrix/rtGroup/tissue.rtGroup.Simulated_50cutoff.Rds	tissue.rtGroup.Simulated_50cutoff.Rds			
+ext:/public/data/Topography_analysis_2026/results0322/ID83/04_create4InfMatrix/rtGroup/tissue.rtGroup.Simulated_75cutoff.Rds	external	ext	/public/data/Topography_analysis_2026/results0322/ID83/04_create4InfMatrix/rtGroup/tissue.rtGroup.Simulated_75cutoff.Rds	tissue.rtGroup.Simulated_75cutoff.Rds			
+ext:/public/data/Topography_analysis_2026/results0322/ID83/04_create4InfMatrix/rtGroup/tissue.rtGroup.Simulated_75cutoff.xlsx	external	ext	/public/data/Topography_analysis_2026/results0322/ID83/04_create4InfMatrix/rtGroup/tissue.rtGroup.Simulated_75cutoff.xlsx	tissue.rtGroup.Simulated_75cutoff.xlsx			
+ext:/public/data/Topography_analysis_2026/results0322/ID83/04_create4InfMatrix/rtGroup/tissue.rtGroup.Simulated_nocutoff.Rds	external	ext	/public/data/Topography_analysis_2026/results0322/ID83/04_create4InfMatrix/rtGroup/tissue.rtGroup.Simulated_nocutoff.Rds	tissue.rtGroup.Simulated_nocutoff.Rds			
+ext:/public/data/Topography_analysis_2026/results0322/ID83/04_create4InfMatrix/rtGroup/tissue.rtGroup.Simulated_nocutoff.xlsx	external	ext	/public/data/Topography_analysis_2026/results0322/ID83/04_create4InfMatrix/rtGroup/tissue.rtGroup.Simulated_nocutoff.xlsx	tissue.rtGroup.Simulated_nocutoff.xlsx			
+ext:/public/data/Topography_analysis_2026/results0322/ID83/04_create4InfMatrix/trans.strand/tissue.trans.strand.Mutation_50cutoff.Rds	external	ext	/public/data/Topography_analysis_2026/results0322/ID83/04_create4InfMatrix/trans.strand/tissue.trans.strand.Mutation_50cutoff.Rds	tissue.trans.strand.Mutation_50cutoff.Rds			
+ext:/public/data/Topography_analysis_2026/results0322/ID83/04_create4InfMatrix/trans.strand/tissue.trans.strand.Mutation_75cutoff.Rds	external	ext	/public/data/Topography_analysis_2026/results0322/ID83/04_create4InfMatrix/trans.strand/tissue.trans.strand.Mutation_75cutoff.Rds	tissue.trans.strand.Mutation_75cutoff.Rds			
+ext:/public/data/Topography_analysis_2026/results0322/ID83/04_create4InfMatrix/trans.strand/tissue.trans.strand.Mutation_75cutoff.xlsx	external	ext	/public/data/Topography_analysis_2026/results0322/ID83/04_create4InfMatrix/trans.strand/tissue.trans.strand.Mutation_75cutoff.xlsx	tissue.trans.strand.Mutation_75cutoff.xlsx			
+ext:/public/data/Topography_analysis_2026/results0322/ID83/04_create4InfMatrix/trans.strand/tissue.trans.strand.Mutation_nocutoff.Rds	external	ext	/public/data/Topography_analysis_2026/results0322/ID83/04_create4InfMatrix/trans.strand/tissue.trans.strand.Mutation_nocutoff.Rds	tissue.trans.strand.Mutation_nocutoff.Rds			
+ext:/public/data/Topography_analysis_2026/results0322/ID83/04_create4InfMatrix/trans.strand/tissue.trans.strand.Mutation_nocutoff.xlsx	external	ext	/public/data/Topography_analysis_2026/results0322/ID83/04_create4InfMatrix/trans.strand/tissue.trans.strand.Mutation_nocutoff.xlsx	tissue.trans.strand.Mutation_nocutoff.xlsx			
+ext:/public/data/Topography_analysis_2026/results0322/ID83/04_create4InfMatrix/trans.strand/tissue.trans.strand.Simulated_50cutoff.Rds	external	ext	/public/data/Topography_analysis_2026/results0322/ID83/04_create4InfMatrix/trans.strand/tissue.trans.strand.Simulated_50cutoff.Rds	tissue.trans.strand.Simulated_50cutoff.Rds			
+ext:/public/data/Topography_analysis_2026/results0322/ID83/04_create4InfMatrix/trans.strand/tissue.trans.strand.Simulated_75cutoff.Rds	external	ext	/public/data/Topography_analysis_2026/results0322/ID83/04_create4InfMatrix/trans.strand/tissue.trans.strand.Simulated_75cutoff.Rds	tissue.trans.strand.Simulated_75cutoff.Rds			
+ext:/public/data/Topography_analysis_2026/results0322/ID83/04_create4InfMatrix/trans.strand/tissue.trans.strand.Simulated_75cutoff.xlsx	external	ext	/public/data/Topography_analysis_2026/results0322/ID83/04_create4InfMatrix/trans.strand/tissue.trans.strand.Simulated_75cutoff.xlsx	tissue.trans.strand.Simulated_75cutoff.xlsx			
+ext:/public/data/Topography_analysis_2026/results0322/ID83/04_create4InfMatrix/trans.strand/tissue.trans.strand.Simulated_nocutoff.Rds	external	ext	/public/data/Topography_analysis_2026/results0322/ID83/04_create4InfMatrix/trans.strand/tissue.trans.strand.Simulated_nocutoff.Rds	tissue.trans.strand.Simulated_nocutoff.Rds			
+ext:/public/data/Topography_analysis_2026/results0322/ID83/04_create4InfMatrix/trans.strand/tissue.trans.strand.Simulated_nocutoff.xlsx	external	ext	/public/data/Topography_analysis_2026/results0322/ID83/04_create4InfMatrix/trans.strand/tissue.trans.strand.Simulated_nocutoff.xlsx	tissue.trans.strand.Simulated_nocutoff.xlsx			
+ext:/public/data/Topography_analysis_2026/results0322/ID89/01_createBed/02.unique.single.indel.aggregate.strand.added.matrix.bed	external	ext	/public/data/Topography_analysis_2026/results0322/ID89/01_createBed/02.unique.single.indel.aggregate.strand.added.matrix.bed	02.unique.single.indel.aggregate.strand.added.matrix.bed			
+ext:/public/data/Topography_analysis_2026/results0322/ID89/01_createBed/02.unique.single.indel.aggregate.strand.added.matrix.txt	external	ext	/public/data/Topography_analysis_2026/results0322/ID89/01_createBed/02.unique.single.indel.aggregate.strand.added.matrix.txt	02.unique.single.indel.aggregate.strand.added.matrix.txt			
+ext:/public/data/Topography_analysis_2026/results0322/ID89/01_createBed/03.signature.bed	external	ext	/public/data/Topography_analysis_2026/results0322/ID89/01_createBed/03.signature.bed	03.signature.bed			
+ext:/public/data/Topography_analysis_2026/results0322/ID89/01_createBed/03.signature.txt	external	ext	/public/data/Topography_analysis_2026/results0322/ID89/01_createBed/03.signature.txt	03.signature.txt			
+ext:/public/data/Topography_analysis_2026/results0322/ID89/01_createBed/all.indel.ID89.partial.credit.txt	external	ext	/public/data/Topography_analysis_2026/results0322/ID89/01_createBed/all.indel.ID89.partial.credit.txt	all.indel.ID89.partial.credit.txt			
+ext:/public/data/Topography_analysis_2026/results0322/ID89/02_intersectBed/01.RelicateTime.TransStrand.DNA_Region.intersect_res.txt	external	ext	/public/data/Topography_analysis_2026/results0322/ID89/02_intersectBed/01.RelicateTime.TransStrand.DNA_Region.intersect_res.txt	01.RelicateTime.TransStrand.DNA_Region.intersect_res.txt			
+ext:/public/data/Topography_analysis_2026/results0322/ID89/03_mergeInf/01.allInf.single.indel.Rds	external	ext	/public/data/Topography_analysis_2026/results0322/ID89/03_mergeInf/01.allInf.single.indel.Rds	01.allInf.single.indel.Rds			
+ext:/public/data/Topography_analysis_2026/results0322/ID89/03_mergeInf/01.allInf.single.indel.txt	external	ext	/public/data/Topography_analysis_2026/results0322/ID89/03_mergeInf/01.allInf.single.indel.txt	01.allInf.single.indel.txt			
+ext:/public/data/Topography_analysis_2026/results0322/ID89/04_createRTgroupInf/01.Tissue_count.xlsx	external	ext	/public/data/Topography_analysis_2026/results0322/ID89/04_createRTgroupInf/01.Tissue_count.xlsx	01.Tissue_count.xlsx			
+ext:/public/data/Topography_analysis_2026/results0322/ID89/04_createRTgroupInf/rtGroup/tissue.rtGroup.Mutation_50cutoff.Rds	external	ext	/public/data/Topography_analysis_2026/results0322/ID89/04_createRTgroupInf/rtGroup/tissue.rtGroup.Mutation_50cutoff.Rds	tissue.rtGroup.Mutation_50cutoff.Rds			
+ext:/public/data/Topography_analysis_2026/results0322/ID89/04_createRTgroupInf/rtGroup/tissue.rtGroup.Mutation_75cutoff.Rds	external	ext	/public/data/Topography_analysis_2026/results0322/ID89/04_createRTgroupInf/rtGroup/tissue.rtGroup.Mutation_75cutoff.Rds	tissue.rtGroup.Mutation_75cutoff.Rds			
+ext:/public/data/Topography_analysis_2026/results0322/ID89/04_createRTgroupInf/rtGroup/tissue.rtGroup.Mutation_75cutoff.xlsx	external	ext	/public/data/Topography_analysis_2026/results0322/ID89/04_createRTgroupInf/rtGroup/tissue.rtGroup.Mutation_75cutoff.xlsx	tissue.rtGroup.Mutation_75cutoff.xlsx			
+ext:/public/data/Topography_analysis_2026/results0322/ID89/04_createRTgroupInf/rtGroup/tissue.rtGroup.Mutation_nocutoff.Rds	external	ext	/public/data/Topography_analysis_2026/results0322/ID89/04_createRTgroupInf/rtGroup/tissue.rtGroup.Mutation_nocutoff.Rds	tissue.rtGroup.Mutation_nocutoff.Rds			
+ext:/public/data/Topography_analysis_2026/results0322/ID89/04_createRTgroupInf/rtGroup/tissue.rtGroup.Mutation_nocutoff.xlsx	external	ext	/public/data/Topography_analysis_2026/results0322/ID89/04_createRTgroupInf/rtGroup/tissue.rtGroup.Mutation_nocutoff.xlsx	tissue.rtGroup.Mutation_nocutoff.xlsx			
+ext:/public/data/Topography_analysis_2026/simulation_data/ID83_partialcredit_for_match.txt	external	ext	/public/data/Topography_analysis_2026/simulation_data/ID83_partialcredit_for_match.txt	ID83_partialcredit_for_match.txt			
+ext:/public/data/Topography_analysis_2026/simulation_data/all_simulated_with_annotation.txt	external	ext	/public/data/Topography_analysis_2026/simulation_data/all_simulated_with_annotation.txt	all_simulated_with_annotation.txt			
+ext:/public/data/Topography_analysis_2026/simulation_data/new.ID83.simualted.partialcredit.annotated.txt	external	ext	/public/data/Topography_analysis_2026/simulation_data/new.ID83.simualted.partialcredit.annotated.txt	new.ID83.simualted.partialcredit.annotated.txt			
+ext:<out_dir>/<sig>_sankey_other_del.png	external	ext	<out_dir>/<sig>_sankey_other_del.png	<sig>_sankey_other_del.png			
+ext:<out_dir>/<sig>_sankey_other_ins.png	external	ext	<out_dir>/<sig>_sankey_other_ins.png	<sig>_sankey_other_ins.png			
+ext:Example_data/sigprofiler.input.89type.catalog/example.89type.All/	external	ext	Example_data/sigprofiler.input.89type.catalog/example.89type.All/	example.89type.All			
+ext:Example_data/sigprofiler.input.89type.catalog/example.89type.Bladder/	external	ext	Example_data/sigprofiler.input.89type.catalog/example.89type.Bladder/	example.89type.Bladder			
+ext:HMF_metadata.tsv	external	ext	HMF_metadata.tsv	HMF_metadata.tsv			
+ext:ID83_topography_analysis_code/09_barplot/all_lm_trend.xlsx	external	ext	ID83_topography_analysis_code/09_barplot/all_lm_trend.xlsx	all_lm_trend.xlsx			
+ext:ID83_topography_analysis_code/09_barplot/plot_data.xlsx	external	ext	ID83_topography_analysis_code/09_barplot/plot_data.xlsx	plot_data.xlsx			
+ext:ID83_topography_analysis_code/09_barplot/rtGroup_barplot.pdf	external	ext	ID83_topography_analysis_code/09_barplot/rtGroup_barplot.pdf	rtGroup_barplot.pdf			
+ext:ID83_topography_analysis_code/09_barplot/rtGroup_barplot_proportion.pdf	external	ext	ID83_topography_analysis_code/09_barplot/rtGroup_barplot_proportion.pdf	rtGroup_barplot_proportion.pdf			
+ext:ID89_topography_analysis_code/09_barplot/ID89_InsDel_L_Stomach.Rds	external	ext	ID89_topography_analysis_code/09_barplot/ID89_InsDel_L_Stomach.Rds	ID89_InsDel_L_Stomach.Rds			
+ext:ID89_topography_analysis_code/09_barplot/ID89_InsDel_L_Stomach.pdf	external	ext	ID89_topography_analysis_code/09_barplot/ID89_InsDel_L_Stomach.pdf	ID89_InsDel_L_Stomach.pdf			
+ext:ID89_topography_analysis_code/09_barplot/ID89_InsDel_L_Stomach.png	external	ext	ID89_topography_analysis_code/09_barplot/ID89_InsDel_L_Stomach.png	ID89_InsDel_L_Stomach.png			
+ext:ID89_topography_analysis_code/09_barplot/ID89_barplot.pdf	external	ext	ID89_topography_analysis_code/09_barplot/ID89_barplot.pdf	ID89_barplot.pdf			
+ext:ID89_topography_analysis_code/09_barplot/ID89_barplot.png	external	ext	ID89_topography_analysis_code/09_barplot/ID89_barplot.png	ID89_barplot.png			
+ext:ID89_topography_analysis_code/09_barplot/ID89_rtGroup_barplot.pdf	external	ext	ID89_topography_analysis_code/09_barplot/ID89_rtGroup_barplot.pdf	ID89_rtGroup_barplot.pdf			
+ext:ID89_topography_analysis_code/09_barplot/barplot_list.Rds	external	ext	ID89_topography_analysis_code/09_barplot/barplot_list.Rds	barplot_list.Rds			
+ext:ID89_topography_analysis_code/09_barplot/decreasing/<signature>.Rds	external	ext	ID89_topography_analysis_code/09_barplot/decreasing/<signature>.Rds	<signature>.Rds			
+ext:ID89_topography_analysis_code/09_barplot/decreasing/<signature>.single.indel.barplot.pdf	external	ext	ID89_topography_analysis_code/09_barplot/decreasing/<signature>.single.indel.barplot.pdf	<signature>.single.indel.barplot.pdf			
+ext:ID89_topography_analysis_code/09_barplot/decreasing/<signature>.single.indel.barplot.png	external	ext	ID89_topography_analysis_code/09_barplot/decreasing/<signature>.single.indel.barplot.png	<signature>.single.indel.barplot.png			
+ext:ID89_topography_analysis_code/09_barplot/flat/<signature>.Rds	external	ext	ID89_topography_analysis_code/09_barplot/flat/<signature>.Rds	<signature>.Rds			
+ext:ID89_topography_analysis_code/09_barplot/flat/<signature>.single.indel.barplot.pdf	external	ext	ID89_topography_analysis_code/09_barplot/flat/<signature>.single.indel.barplot.pdf	<signature>.single.indel.barplot.pdf			
+ext:ID89_topography_analysis_code/09_barplot/flat/<signature>.single.indel.barplot.png	external	ext	ID89_topography_analysis_code/09_barplot/flat/<signature>.single.indel.barplot.png	<signature>.single.indel.barplot.png			
+ext:ID89_topography_analysis_code/09_barplot/increasing/<signature>.Rds	external	ext	ID89_topography_analysis_code/09_barplot/increasing/<signature>.Rds	<signature>.Rds			
+ext:ID89_topography_analysis_code/09_barplot/increasing/<signature>.single.indel.barplot.pdf	external	ext	ID89_topography_analysis_code/09_barplot/increasing/<signature>.single.indel.barplot.pdf	<signature>.single.indel.barplot.pdf			
+ext:ID89_topography_analysis_code/09_barplot/increasing/<signature>.single.indel.barplot.png	external	ext	ID89_topography_analysis_code/09_barplot/increasing/<signature>.single.indel.barplot.png	<signature>.single.indel.barplot.png			
+ext:ID89_topography_analysis_code/09_barplot/lm3_signature_barplot.pdf	external	ext	ID89_topography_analysis_code/09_barplot/lm3_signature_barplot.pdf	lm3_signature_barplot.pdf			
+ext:ID89_topography_analysis_code/09_barplot/lm3_signature_barplot.png	external	ext	ID89_topography_analysis_code/09_barplot/lm3_signature_barplot.png	lm3_signature_barplot.png			
+ext:ID89_topography_analysis_code/09_barplot/mix/<signature>.Rds	external	ext	ID89_topography_analysis_code/09_barplot/mix/<signature>.Rds	<signature>.Rds			
+ext:ID89_topography_analysis_code/09_barplot/mix/<signature>.single.indel.barplot.pdf	external	ext	ID89_topography_analysis_code/09_barplot/mix/<signature>.single.indel.barplot.pdf	<signature>.single.indel.barplot.pdf			
+ext:ID89_topography_analysis_code/09_barplot/mix/<signature>.single.indel.barplot.png	external	ext	ID89_topography_analysis_code/09_barplot/mix/<signature>.single.indel.barplot.png	<signature>.single.indel.barplot.png			
+ext:ID89_topography_analysis_code/09_barplot/plot_data.xlsx	external	ext	ID89_topography_analysis_code/09_barplot/plot_data.xlsx	plot_data.xlsx			
+ext:ID89_topography_analysis_code/09_barplot/signature_barplot_proportion.pdf	external	ext	ID89_topography_analysis_code/09_barplot/signature_barplot_proportion.pdf	signature_barplot_proportion.pdf			
+ext:ID89_topography_analysis_code/09_barplot/signature_barplot_proportion.png	external	ext	ID89_topography_analysis_code/09_barplot/signature_barplot_proportion.png	signature_barplot_proportion.png			
+ext:ID89_topography_analysis_code/09_barplot/trend.xlsx	external	ext	ID89_topography_analysis_code/09_barplot/trend.xlsx	trend.xlsx			
+ext:MSIseq/Classify.txt	external	ext	MSIseq/Classify.txt	Classify.txt			
+ext:MSIseq/Hg19repeats.rda	external	ext	MSIseq/Hg19repeats.rda	Hg19repeats.rda			
+ext:MSIseq/MSI_classified_res.xlsx	external	ext	MSIseq/MSI_classified_res.xlsx	MSI_classified_res.xlsx			
+ext:MSIseq/MSIseq_1.0.0/MSIseq/R/Compute.input.variables.R	external	ext	MSIseq/MSIseq_1.0.0/MSIseq/R/Compute.input.variables.R	Compute.input.variables.R			
+ext:MSIseq/MSIseq_1.0.0/MSIseq/R/sysdata.rda	external	ext	MSIseq/MSIseq_1.0.0/MSIseq/R/sysdata.rda	sysdata.rda			
+ext:MSIseq/all.data.SNV.rds	external	ext	MSIseq/all.data.SNV.rds	all.data.SNV.rds			
+ext:MSIseq/all.data.indel.rds	external	ext	MSIseq/all.data.indel.rds	all.data.indel.rds			
+ext:MSIseq/mafInf/<sample>_mafInf.xlsx	external	ext	MSIseq/mafInf/<sample>_mafInf.xlsx	<sample>_mafInf.xlsx			
+ext:MSIseq/mutationNum.txt	external	ext	MSIseq/mutationNum.txt	mutationNum.txt			
+ext:MSIseq/mutationNum.xlsx	external	ext	MSIseq/mutationNum.xlsx	mutationNum.xlsx			
+ext:Manuscript_data/Liu_et_al_final_476_type_signatures.tsv	external	ext	Manuscript_data/Liu_et_al_final_476_type_signatures.tsv	Liu_et_al_final_476_type_signatures.tsv			
+ext:Manuscript_data/Liu_et_al_final_83_type_signatures.tsv	external	ext	Manuscript_data/Liu_et_al_final_83_type_signatures.tsv	Liu_et_al_final_83_type_signatures.tsv			
+ext:PCAWG.sample.sheet.txt	external	ext	PCAWG.sample.sheet.txt	PCAWG.sample.sheet.txt			
+ext:PCAWG7.sample.id.txt	external	ext	PCAWG7.sample.id.txt	PCAWG7.sample.id.txt			
+ext:Priestley.TableS2.xlsx	external	ext	Priestley.TableS2.xlsx	Priestley.TableS2.xlsx			
+ext:all.meta.txt	external	ext	all.meta.txt	all.meta.txt			
+ext:donor.all_projects.tsv.gz	external	ext	donor.all_projects.tsv.gz	donor.all_projects.tsv.gz			
+ext:example.mSigHdp.extraction.output/	external	ext	example.mSigHdp.extraction.output/	example.mSigHdp.extraction.output			
+ext:new_result_list.rds	external	ext	new_result_list.rds	new_result_list.rds			
+ext:output/	external	ext	output/	output			
+ext:output/collapse_<sig476>_to_<sig83>.pdf	external	ext	output/collapse_<sig476>_to_<sig83>.pdf	collapse_<sig476>_to_<sig83>.pdf			
+ext:temp/	external	ext	temp/	temp			
+ext:~/MEGA/important_mut_sig_data/ICGC-Pan-Can-PCAWG7-2016-08-12-rawdata/final_consensus_12aug_passonly/indel/*.consensus.indel.vcf.gz	external	ext	~/MEGA/important_mut_sig_data/ICGC-Pan-Can-PCAWG7-2016-08-12-rawdata/final_consensus_12aug_passonly/indel/*.consensus.indel.vcf.gz	*.consensus.indel.vcf.gz			
+ext:~/MEGA/important_mut_sig_data/ICGC-Pan-Can-PCAWG7-2016-08-12-rawdata/final_consensus_12aug_passonly/snv_mnv/*.consensus.snv_mnv.vcf.gz	external	ext	~/MEGA/important_mut_sig_data/ICGC-Pan-Can-PCAWG7-2016-08-12-rawdata/final_consensus_12aug_passonly/snv_mnv/*.consensus.snv_mnv.vcf.gz	*.consensus.snv_mnv.vcf.gz			
+ext:~/MEGA/important_mut_sig_data/ICGC-Pan-Can-PCAWG7-2016-08-12-rawdata/pcawg_sample_sheet.tsv	external	ext	~/MEGA/important_mut_sig_data/ICGC-Pan-Can-PCAWG7-2016-08-12-rawdata/pcawg_sample_sheet.tsv	pcawg_sample_sheet.tsv			
+ext:~/MEGA/important_mut_sig_data/fmh-unfiltered_vcfs/*.purple.somatic.vcf.gz	external	ext	~/MEGA/important_mut_sig_data/fmh-unfiltered_vcfs/*.purple.somatic.vcf.gz	*.purple.somatic.vcf.gz			
+ext:~/opt/snpEff-4.3s/data/GRCh37.75	external	ext	~/opt/snpEff-4.3s/data/GRCh37.75	GRCh37.75			
+ext:~/opt/snpEff-4.3s/snpEff.config	external	ext	~/opt/snpEff-4.3s/snpEff.config	snpEff.config			
+ext:~/opt/snpEff-4.3s/snpEff.jar	external	ext	~/opt/snpEff-4.3s/snpEff.jar	snpEff.jar			
+paper:authors.qmd	script	paper	authors.qmd	authors.qmd	yes		
+paper:crop_figs.sh	script	paper	crop_figs.sh	crop_figs.sh	yes		
+paper:crop_sup_figs.sh	script	paper	crop_sup_figs.sh	crop_sup_figs.sh	yes		
+paper:main_figures/cropped/fig1.pdf	paper file	paper	main_figures/cropped/fig1.pdf	fig1.pdf	yes		
+paper:main_figures/cropped/fig2.pdf	paper file	paper	main_figures/cropped/fig2.pdf	fig2.pdf	yes		
+paper:main_figures/cropped/fig3.pdf	paper file	paper	main_figures/cropped/fig3.pdf	fig3.pdf	yes		
+paper:main_figures/cropped/fig4.pdf	paper file	paper	main_figures/cropped/fig4.pdf	fig4.pdf	yes		
+paper:main_figures/cropped/fig5.pdf	paper file	paper	main_figures/cropped/fig5.pdf	fig5.pdf	yes		
+paper:main_figures/cropped/fig6.pdf	paper file	paper	main_figures/cropped/fig6.pdf	fig6.pdf	yes		
+paper:main_figures/cropped/graphical_abstract.pdf	paper file	paper	main_figures/cropped/graphical_abstract.pdf	graphical_abstract.pdf	yes		
+paper:main_figures/fig1.pdf	paper file	paper	main_figures/fig1.pdf	fig1.pdf	yes		
+paper:main_figures/fig2.pdf	paper file	paper	main_figures/fig2.pdf	fig2.pdf	yes		
+paper:main_figures/fig3.pdf	paper file	paper	main_figures/fig3.pdf	fig3.pdf	yes		
+paper:main_figures/fig4.pdf	paper file	paper	main_figures/fig4.pdf	fig4.pdf	yes		
+paper:main_figures/fig5.pdf	paper file	paper	main_figures/fig5.pdf	fig5.pdf	yes		
+paper:main_figures/fig6.pdf	paper file	paper	main_figures/fig6.pdf	fig6.pdf	yes		
+paper:main_figures/graphical_abstract.pdf	paper file	paper	main_figures/graphical_abstract.pdf	graphical_abstract.pdf	yes	no script writes it	made by hand
+paper:ms.pdf	paper file	paper	ms.pdf	ms.pdf	yes		
+paper:ms.qmd	script	paper	ms.qmd	ms.qmd	yes		
+paper:ref.bib	paper file	paper	ref.bib	ref.bib	yes	no script writes it	edited by hand
+paper:sup_figs/cropped/sup_fig_s1a.pdf	paper file	paper	sup_figs/cropped/sup_fig_s1a.pdf	sup_fig_s1a.pdf	yes		
+paper:sup_figs/cropped/sup_fig_s1b.pdf	paper file	paper	sup_figs/cropped/sup_fig_s1b.pdf	sup_fig_s1b.pdf	yes		
+paper:sup_figs/cropped/sup_fig_s2ab.pdf	paper file	paper	sup_figs/cropped/sup_fig_s2ab.pdf	sup_fig_s2ab.pdf	yes		
+paper:sup_figs/cropped/sup_fig_s2c.pdf	paper file	paper	sup_figs/cropped/sup_fig_s2c.pdf	sup_fig_s2c.pdf	yes		
+paper:sup_figs/cropped/sup_fig_s3a.pdf	paper file	paper	sup_figs/cropped/sup_fig_s3a.pdf	sup_fig_s3a.pdf	yes		
+paper:sup_figs/cropped/sup_fig_s3b.pdf	paper file	paper	sup_figs/cropped/sup_fig_s3b.pdf	sup_fig_s3b.pdf	yes		
+paper:sup_figs/cropped/sup_fig_s3c.pdf	paper file	paper	sup_figs/cropped/sup_fig_s3c.pdf	sup_fig_s3c.pdf	yes		
+paper:sup_figs/cropped/sup_fig_s4.pdf	paper file	paper	sup_figs/cropped/sup_fig_s4.pdf	sup_fig_s4.pdf	yes		
+paper:sup_figs/cropped/sup_fig_s5.pdf	paper file	paper	sup_figs/cropped/sup_fig_s5.pdf	sup_fig_s5.pdf	yes		
+paper:sup_figs/cropped/sup_fig_s6.pdf	paper file	paper	sup_figs/cropped/sup_fig_s6.pdf	sup_fig_s6.pdf	yes		
+paper:sup_figs/sup_fig_s1a_signature_assignment.pdf	paper file	paper	sup_figs/sup_fig_s1a_signature_assignment.pdf	sup_fig_s1a_signature_assignment.pdf	yes		
+paper:sup_figs/sup_fig_s1b_signature_assignment.pdf	paper file	paper	sup_figs/sup_fig_s1b_signature_assignment.pdf	sup_fig_s1b_signature_assignment.pdf	yes		
+paper:sup_figs/sup_fig_s2_msighdp_signatures.pdf	paper file	paper	sup_figs/sup_fig_s2_msighdp_signatures.pdf	sup_fig_s2_msighdp_signatures.pdf	yes		
+paper:sup_figs/sup_fig_s3a_transcription_strand.pdf	paper file	paper	sup_figs/sup_fig_s3a_transcription_strand.pdf	sup_fig_s3a_transcription_strand.pdf	yes		
+paper:sup_figs/sup_fig_s3b_replication_strand.pdf	paper file	paper	sup_figs/sup_fig_s3b_replication_strand.pdf	sup_fig_s3b_replication_strand.pdf	yes		
+paper:sup_figs/sup_fig_s3c_genic_intergenic.pdf	paper file	paper	sup_figs/sup_fig_s3c_genic_intergenic.pdf	sup_fig_s3c_genic_intergenic.pdf	yes		
+paper:sup_figs/sup_fig_s4_replication_timing.pdf	paper file	paper	sup_figs/sup_fig_s4_replication_timing.pdf	sup_fig_s4_replication_timing.pdf	yes		
+paper:sup_figs/sup_fig_s5_rnase_h2_spectra.pdf	paper file	paper	sup_figs/sup_fig_s5_rnase_h2_spectra.pdf	sup_fig_s5_rnase_h2_spectra.pdf	yes		
+paper:sup_figs/sup_fig_s6_sex_age.pdf	paper file	paper	sup_figs/sup_fig_s6_sex_age.pdf	sup_fig_s6_sex_age.pdf	yes		
+paper:sup_figs/sup_figs.html	paper file	paper	sup_figs/sup_figs.html	sup_figs.html	yes		
+paper:sup_figs/sup_figs.pdf	paper file	paper	sup_figs/sup_figs.pdf	sup_figs.pdf	yes		
+paper:sup_figs/sup_figs.qmd	script	paper	sup_figs/sup_figs.qmd	sup_figs.qmd	yes		
+paper:sup_tables/sup_table_s10_insdel_N_burden.xlsx	paper file	paper	sup_tables/sup_table_s10_insdel_N_burden.xlsx	sup_table_s10_insdel_N_burden.xlsx	yes		
+paper:sup_tables/sup_table_s11_83_89_signature_assignment.tsv	paper file	paper	sup_tables/sup_table_s11_83_89_signature_assignment.tsv	sup_table_s11_83_89_signature_assignment.tsv	yes		
+paper:sup_tables/sup_table_s12_topography_asymmetry.xlsx	paper file	paper	sup_tables/sup_table_s12_topography_asymmetry.xlsx	sup_table_s12_topography_asymmetry.xlsx	yes		
+paper:sup_tables/sup_table_s13_replication_timing_83.xlsx	paper file	paper	sup_tables/sup_table_s13_replication_timing_83.xlsx	sup_table_s13_replication_timing_83.xlsx	yes		
+paper:sup_tables/sup_table_s14_replication_timing_89.xlsx	paper file	paper	sup_tables/sup_table_s14_replication_timing_89.xlsx	sup_table_s14_replication_timing_89.xlsx	yes		
+paper:sup_tables/sup_table_s15_sex_bias.xlsx	paper file	paper	sup_tables/sup_table_s15_sex_bias.xlsx	sup_table_s15_sex_bias.xlsx	yes		
+paper:sup_tables/sup_table_s16_age_correlation.xlsx	paper file	paper	sup_tables/sup_table_s16_age_correlation.xlsx	sup_table_s16_age_correlation.xlsx	yes		
+paper:sup_tables/sup_table_s17_sample_metadata.xlsx	paper file	paper	sup_tables/sup_table_s17_sample_metadata.xlsx	sup_table_s17_sample_metadata.xlsx	yes		
+paper:sup_tables/sup_table_s1_476_89_83_type_categories.xlsx	paper file	paper	sup_tables/sup_table_s1_476_89_83_type_categories.xlsx	sup_table_s1_476_89_83_type_categories.xlsx	yes		
+paper:sup_tables/sup_table_s2_msighdp_83_type_signatures.xlsx	paper file	paper	sup_tables/sup_table_s2_msighdp_83_type_signatures.xlsx	sup_table_s2_msighdp_83_type_signatures.xlsx	yes		
+paper:sup_tables/sup_table_s3_sigprofiler_83_type_signatures.xlsx	paper file	paper	sup_tables/sup_table_s3_sigprofiler_83_type_signatures.xlsx	sup_table_s3_sigprofiler_83_type_signatures.xlsx	yes		
+paper:sup_tables/sup_table_s4_msighdp_89_type_signatures.xlsx	paper file	paper	sup_tables/sup_table_s4_msighdp_89_type_signatures.xlsx	sup_table_s4_msighdp_89_type_signatures.xlsx	yes		
+paper:sup_tables/sup_table_s5_sigprofiler_89_type_signatures.xlsx	paper file	paper	sup_tables/sup_table_s5_sigprofiler_89_type_signatures.xlsx	sup_table_s5_sigprofiler_89_type_signatures.xlsx	yes		
+paper:sup_tables/sup_table_s6_msighdp_476_type_signatures.xlsx	paper file	paper	sup_tables/sup_table_s6_msighdp_476_type_signatures.xlsx	sup_table_s6_msighdp_476_type_signatures.xlsx	yes		
+paper:sup_tables/sup_table_s7_sigprofiler_476_type_signatures.xlsx	paper file	paper	sup_tables/sup_table_s7_sigprofiler_476_type_signatures.xlsx	sup_table_s7_sigprofiler_476_type_signatures.xlsx	yes		
+paper:sup_tables/sup_table_s8_cosine_msighdp_vs_sigprofiler.xlsx	paper file	paper	sup_tables/sup_table_s8_cosine_msighdp_vs_sigprofiler.xlsx	sup_table_s8_cosine_msighdp_vs_sigprofiler.xlsx	yes		
+paper:sup_tables/sup_table_s9_pol_proofreading.xlsx	paper file	paper	sup_tables/sup_table_s9_pol_proofreading.xlsx	sup_table_s9_pol_proofreading.xlsx	yes		
+paper:table_1_autogenerated.xlsx	paper file	paper	table_1_autogenerated.xlsx	table_1_autogenerated.xlsx	yes		
+paper:table_1_autogenerated_edited.xlsx	paper file	paper	table_1_autogenerated_edited.xlsx	table_1_autogenerated_edited.xlsx	yes		

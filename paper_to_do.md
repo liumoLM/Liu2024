@@ -34,6 +34,15 @@ http://8.138.15.71/
   materials availability, data and code availability), listing the code
   repo, the data repo, and the browser DOI.
 
+- Problems found while building `data_flow/` (2026-10-23):
+  - `build_fig6/Plot signatures and motifs.qmd` reads
+    `liu_et_al_{83,89,476}_signatures.tsv` from
+    `external_data/reijns_et_al_2022/` in the data repo, but they are at
+    the data repo's top level, so the notebook fails as written.
+  - `build_fig6/ID4_IDF_linking_tumor_indel_annotated_vcf.txt` (read by
+    Figure 6) is written by no script in either repo. Ask Mo where it came
+    from.
+
 ## Open: Steve with Mo
 
 - Age and sex analyses (Tables S15 and S16, Figure S6), discussed in the

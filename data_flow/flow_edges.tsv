@@ -1,0 +1,734 @@
+from	to	relation	note
+code:find_data.R	code:build_fig1/build_fig1.R	reads	source
+code:build_fig1/one_page_83_89_476.R	code:build_fig1/build_fig1.R	reads	source
+data:liu_et_al_83_signatures.tsv	code:build_fig1/build_fig1.R	reads	column C_ID23
+data:liu_et_al_89_signatures.tsv	code:build_fig1/build_fig1.R	reads	column InsDel23
+data:liu_et_al_476_signatures.tsv	code:build_fig1/build_fig1.R	reads	column InsDel23
+code:build_fig1/build_fig1.R	code:build_fig1/fig1.pdf	writes	fig1_with_arrows.pdf is mentioned in a comment but the code always writes fig1.pdf
+code:find_data.R	code:build_fig2/build_fig2.R	reads	source
+data:liu_et_al_83_signatures.tsv	code:build_fig2/build_fig2.R	reads	
+code:build_fig2/build_fig2.R	code:build_fig2/fig2.pdf	writes	
+code:build_fig2/build_fig2.R	code:build_fig2/fig2.png	writes	
+code:find_data.R	code:build_fig3/build_fig3.R	reads	source
+data:liu_et_al_89_signatures.tsv	code:build_fig3/build_fig3.R	reads	
+code:build_fig3/build_fig3.R	code:build_fig3/fig3.pdf	writes	
+code:build_fig3/build_fig3.R	code:build_fig3/fig3.png	writes	
+code:build_fig4/all_cancer_types_enrichment.R	code:build_fig4/fig4_combined.R	reads	source
+code:build_fig4/fig4_indel_sbs_clustering.R	code:build_fig4/fig4_combined.R	reads	source
+code:find_data.R	code:build_fig4/fig4_combined.R	reads	source, via both sourced helpers
+data:sample_info.tsv	code:build_fig4/fig4_combined.R	reads	via all_cancer_types_enrichment.R
+data:liu_et_al_83_assignment.tsv	code:build_fig4/fig4_combined.R	reads	via both sourced helpers
+data:liu_et_al_89_assignment.tsv	code:build_fig4/fig4_combined.R	reads	via both sourced helpers
+data:liu_et_al_83_spectra.tsv	code:build_fig4/fig4_combined.R	reads	via all_cancer_types_enrichment.R (indel counts for MSS-hyper)
+data:connection_table.tsv	code:build_fig4/fig4_combined.R	reads	via fig4_indel_sbs_clustering.R
+data:external_data/Degasperi_2022/high_quality_samples.txt	code:build_fig4/fig4_combined.R	reads	via fig4_indel_sbs_clustering.R
+data:external_data/Degasperi_2022/RefSig_SBS_Exposures_v2.03.tsv	code:build_fig4/fig4_combined.R	reads	via fig4_indel_sbs_clustering.R
+data:external_data/Degasperi_2022/degasperi_to_liu_sample_id.tsv	code:build_fig4/fig4_combined.R	reads	via fig4_indel_sbs_clustering.R
+code:build_fig4/fig4_combined.R	code:build_fig4/fig4b_sbs_id_correlations.tsv	writes	via fig4_indel_sbs_clustering.R
+code:build_fig4/fig4_combined.R	code:build_fig4/fig4.pdf	writes	build_fig4/fig4.png exists in the repo but no script in this group writes it
+code:find_data.R	code:build_fig4/all_cancer_types_enrichment.R	reads	source, inside build_all_cancer_types_enrichment(); file only defines the function
+data:sample_info.tsv	code:build_fig4/all_cancer_types_enrichment.R	reads	inside function; uses Cancer_Type and MSIseq_MSI.H
+data:liu_et_al_89_assignment.tsv	code:build_fig4/all_cancer_types_enrichment.R	reads	inside function
+data:liu_et_al_83_assignment.tsv	code:build_fig4/all_cancer_types_enrichment.R	reads	inside function
+data:liu_et_al_83_spectra.tsv	code:build_fig4/all_cancer_types_enrichment.R	reads	inside function; column sums = indel counts
+code:find_data.R	code:build_fig4/fig4_indel_sbs_clustering.R	reads	source, inside build_fig4_sbs_id_heatmap(); file only defines the function
+data:liu_et_al_83_assignment.tsv	code:build_fig4/fig4_indel_sbs_clustering.R	reads	inside function
+data:liu_et_al_89_assignment.tsv	code:build_fig4/fig4_indel_sbs_clustering.R	reads	inside function
+data:connection_table.tsv	code:build_fig4/fig4_indel_sbs_clustering.R	reads	inside function
+data:external_data/Degasperi_2022/high_quality_samples.txt	code:build_fig4/fig4_indel_sbs_clustering.R	reads	inside function
+data:external_data/Degasperi_2022/RefSig_SBS_Exposures_v2.03.tsv	code:build_fig4/fig4_indel_sbs_clustering.R	reads	inside function
+data:external_data/Degasperi_2022/degasperi_to_liu_sample_id.tsv	code:build_fig4/fig4_indel_sbs_clustering.R	reads	inside function
+code:build_fig4/fig4_indel_sbs_clustering.R	code:build_fig4/fig4b_sbs_id_correlations.tsv	writes	inside function; read by ms_numbers.R
+code:build_fig_s3/05_FisherTest/trans.strand.fisher_test_50cutoff.xlsx	code:build_fig5/assign_asymmetry_type.R	reads	argparser default --in-dir build_fig_s3; loop over 3 features
+code:build_fig_s3/05_FisherTest/repli.strand.fisher_test_50cutoff.xlsx	code:build_fig5/assign_asymmetry_type.R	reads	argparser default --in-dir build_fig_s3; loop over 3 features
+code:build_fig_s3/05_FisherTest/DNA.region.fisher_test_50cutoff.xlsx	code:build_fig5/assign_asymmetry_type.R	reads	argparser default --in-dir build_fig_s3; loop over 3 features
+code:build_fig_s3/06_computeOddsRatio/trans.strand/01.trans.strand.odds_ratio.xlsx	code:build_fig5/assign_asymmetry_type.R	reads	argparser default --in-dir; loop over 3 features
+code:build_fig_s3/06_computeOddsRatio/repli.strand/01.repli.strand.odds_ratio.xlsx	code:build_fig5/assign_asymmetry_type.R	reads	argparser default --in-dir; loop over 3 features
+code:build_fig_s3/06_computeOddsRatio/DNA.region/01.DNA.region.odds_ratio.xlsx	code:build_fig5/assign_asymmetry_type.R	reads	argparser default --in-dir; loop over 3 features
+code:build_fig_s3/06_computeOddsRatio/trans.strand/02.trans.strand.odds_type.xlsx	code:build_fig5/assign_asymmetry_type.R	reads	argparser default --in-dir; loop over 3 features
+code:build_fig_s3/06_computeOddsRatio/repli.strand/02.repli.strand.odds_type.xlsx	code:build_fig5/assign_asymmetry_type.R	reads	argparser default --in-dir; loop over 3 features
+code:build_fig_s3/06_computeOddsRatio/DNA.region/02.DNA.region.odds_type.xlsx	code:build_fig5/assign_asymmetry_type.R	reads	argparser default --in-dir; loop over 3 features
+code:build_fig_s3/06_computeOddsRatio/trans.strand/03.trans.strand.cancer_proportion.xlsx	code:build_fig5/assign_asymmetry_type.R	reads	argparser default --in-dir; loop over 3 features
+code:build_fig_s3/06_computeOddsRatio/repli.strand/03.repli.strand.cancer_proportion.xlsx	code:build_fig5/assign_asymmetry_type.R	reads	argparser default --in-dir; loop over 3 features
+code:build_fig_s3/06_computeOddsRatio/DNA.region/03.DNA.region.cancer_proportion.xlsx	code:build_fig5/assign_asymmetry_type.R	reads	argparser default --in-dir; loop over 3 features
+code:build_fig5/assign_asymmetry_type.R	code:build_fig5/trans.strand.cancer_proportion.xlsx	writes	argparser default --out-dir build_fig5; loop over 3 features
+code:build_fig5/assign_asymmetry_type.R	code:build_fig5/repli.strand.cancer_proportion.xlsx	writes	argparser default --out-dir build_fig5; loop over 3 features
+code:build_fig5/assign_asymmetry_type.R	code:build_fig5/DNA.region.cancer_proportion.xlsx	writes	argparser default --out-dir build_fig5; loop over 3 features
+code:build_fig5/DNA.region.cancer_proportion.xlsx	code:build_fig5/proportion_bubbleplot_and_rep_timing.R	reads	relative path ./, must run from build_fig5/
+code:build_fig5/repli.strand.cancer_proportion.xlsx	code:build_fig5/proportion_bubbleplot_and_rep_timing.R	reads	relative path ./, must run from build_fig5/
+code:build_fig5/trans.strand.cancer_proportion.xlsx	code:build_fig5/proportion_bubbleplot_and_rep_timing.R	reads	relative path ./, must run from build_fig5/
+code:build_fig5/09_barplot_data.xlsx	code:build_fig5/proportion_bubbleplot_and_rep_timing.R	reads	relative path, run from build_fig5/; no script in this group writes it (README says saved from ID83_topography_analysis_code output)
+code:build_fig5/09_all_lm_trend.xlsx	code:build_fig5/proportion_bubbleplot_and_rep_timing.R	reads	relative path, run from build_fig5/; no script in this group writes it (README says saved from ID83_topography_analysis_code output)
+code:build_fig5/proportion_bubbleplot_and_rep_timing.R	code:build_fig5/fig5abc.pdf	writes	relative path, run from build_fig5/
+code:build_fig5/proportion_bubbleplot_and_rep_timing.R	code:build_fig5/fig5abc.png	writes	relative path, run from build_fig5/
+code:build_fig5/proportion_bubbleplot_and_rep_timing.R	code:build_fig5/proportion_bubble_plot.Rds	writes	relative path; written but not used downstream?
+code:build_fig5/proportion_bubbleplot_and_rep_timing.R	code:build_fig5/fig5d.pdf	writes	relative path, run from build_fig5/
+code:build_fig5/proportion_bubbleplot_and_rep_timing.R	code:build_fig5/fig5d.png	writes	relative path, run from build_fig5/
+code:build_fig5/proportion_bubbleplot_and_rep_timing.R	code:build_fig5/fig5.pdf	writes	relative path, run from build_fig5/
+code:build_fig5/proportion_bubbleplot_and_rep_timing.R	code:build_fig5/fig5.png	writes	relative path, run from build_fig5/
+code:find_data.R	code:build_fig6/Plot signatures and motifs.qmd	reads	source
+data:external_data/reijns_et_al_2022/liu_et_al_83_signatures.tsv	code:build_fig6/Plot signatures and motifs.qmd	reads	uncertain: path as coded, but this file does not exist (the file is at data root data:liu_et_al_83_signatures.tsv), so render would fail; likely a bug
+data:external_data/reijns_et_al_2022/liu_et_al_89_signatures.tsv	code:build_fig6/Plot signatures and motifs.qmd	reads	uncertain: path as coded, but this file does not exist (real file is data:liu_et_al_89_signatures.tsv); likely a bug
+data:external_data/reijns_et_al_2022/liu_et_al_476_signatures.tsv	code:build_fig6/Plot signatures and motifs.qmd	reads	uncertain: path as coded, but this file does not exist (real file is data:liu_et_al_476_signatures.tsv); likely a bug
+code:build_fig6/ID4_IDF_linking_tumor_indel_annotated_vcf.txt	code:build_fig6/Plot signatures and motifs.qmd	reads	relative ./, qmd dir; no script in either repo writes it
+code:build_fig6/Plot signatures and motifs.qmd	code:build_fig6/fig6_id4_idf_signatures.pdf	writes	relative ./, qmd dir
+code:build_fig6/Plot signatures and motifs.qmd	code:build_fig6/fig6_sequence_logos.pdf	writes	relative, qmd dir
+code:build_fig6/Plot signatures and motifs.qmd	code:build_fig6/Plot signatures and motifs.html	writes	quarto render output
+code:find_data.R	code:build_fig_s1/build_assignment_high_similarity_samples.R	reads	source
+data:liu_et_al_83_assignment.tsv	code:build_fig_s1/build_assignment_high_similarity_samples.R	reads	
+data:liu_et_al_89_assignment.tsv	code:build_fig_s1/build_assignment_high_similarity_samples.R	reads	
+data:liu_et_al_83_signatures.tsv	code:build_fig_s1/build_assignment_high_similarity_samples.R	reads	
+data:liu_et_al_89_signatures.tsv	code:build_fig_s1/build_assignment_high_similarity_samples.R	reads	
+data:liu_et_al_83_spectra.tsv	code:build_fig_s1/build_assignment_high_similarity_samples.R	reads	
+data:liu_et_al_89_spectra.tsv	code:build_fig_s1/build_assignment_high_similarity_samples.R	reads	
+code:build_fig_s1/build_assignment_high_similarity_samples.R	code:build_fig_s1/assignment.high.similarity.samples.txt	writes	default out dir; first positional commandArgs overrides
+code:find_data.R	code:build_fig_s1/make_figure_s1_layout.R	reads	source
+data:liu_et_al_83_assignment.tsv	code:build_fig_s1/make_figure_s1_layout.R	reads	
+data:liu_et_al_89_assignment.tsv	code:build_fig_s1/make_figure_s1_layout.R	reads	
+code:build_fig_s1/assignment.high.similarity.samples.txt	code:build_fig_s1/make_figure_s1_layout.R	reads	fixed here::here path, not affected by --out-dir
+data:sample_info.tsv	code:build_fig_s1/make_figure_s1_layout.R	reads	
+data:connection_table.tsv	code:build_fig_s1/make_figure_s1_layout.R	reads	
+code:build_fig_s1/figure_s1_etiologies.tsv	code:build_fig_s1/make_figure_s1_layout.R	reads	no script writes it (hand-made input?)
+code:build_fig_s1/make_figure_s1_layout.R	code:build_fig_s1/sup_fig_s1a_signature_assignment.pdf	writes	argparser default --out-dir build_fig_s1; loop over pages a, b
+code:build_fig_s1/make_figure_s1_layout.R	code:build_fig_s1/sup_fig_s1b_signature_assignment.pdf	writes	argparser default --out-dir build_fig_s1; loop over pages a, b
+code:build_sup_table_s2/sup_table_s2_msighdp_83_type_signatures.xlsx	code:build_fig_s2/make_figure_s2_layout.R	reads	
+code:build_sup_table_s4/sup_table_s4_msighdp_89_type_signatures.xlsx	code:build_fig_s2/make_figure_s2_layout.R	reads	
+code:build_sup_table_s6/sup_table_s6_msighdp_476_type_signatures.xlsx	code:build_fig_s2/make_figure_s2_layout.R	reads	
+code:build_fig_s2/make_figure_s2_layout.R	code:build_fig_s2/sup_fig_s2_msighdp_signatures_draft.pdf	writes	argparser default --out, relative path; lands in build_fig_s2/ only if run from there
+code:build_fig_s3/05_FisherTest/trans.strand.fisher_test_50cutoff.xlsx	code:build_fig_s3/r.08_bubbleplot.R	reads	relative ./, run from build_fig_s3/; 3 features
+code:build_fig_s3/05_FisherTest/repli.strand.fisher_test_50cutoff.xlsx	code:build_fig_s3/r.08_bubbleplot.R	reads	relative ./, run from build_fig_s3/; 3 features
+code:build_fig_s3/05_FisherTest/DNA.region.fisher_test_50cutoff.xlsx	code:build_fig_s3/r.08_bubbleplot.R	reads	relative ./, run from build_fig_s3/; 3 features
+code:build_fig_s3/06_computeOddsRatio/trans.strand/01.trans.strand.odds_ratio.xlsx	code:build_fig_s3/r.08_bubbleplot.R	reads	relative ./, run from build_fig_s3/; 3 features
+code:build_fig_s3/06_computeOddsRatio/repli.strand/01.repli.strand.odds_ratio.xlsx	code:build_fig_s3/r.08_bubbleplot.R	reads	relative ./, run from build_fig_s3/; 3 features
+code:build_fig_s3/06_computeOddsRatio/DNA.region/01.DNA.region.odds_ratio.xlsx	code:build_fig_s3/r.08_bubbleplot.R	reads	relative ./, run from build_fig_s3/; 3 features
+code:build_fig_s3/06_computeOddsRatio/trans.strand/02.trans.strand.odds_type.xlsx	code:build_fig_s3/r.08_bubbleplot.R	reads	relative ./, run from build_fig_s3/; 3 features
+code:build_fig_s3/06_computeOddsRatio/repli.strand/02.repli.strand.odds_type.xlsx	code:build_fig_s3/r.08_bubbleplot.R	reads	relative ./, run from build_fig_s3/; 3 features
+code:build_fig_s3/06_computeOddsRatio/DNA.region/02.DNA.region.odds_type.xlsx	code:build_fig_s3/r.08_bubbleplot.R	reads	relative ./, run from build_fig_s3/; 3 features
+code:build_fig_s3/r.08_bubbleplot.R	code:build_fig_s3/sup_fig_s3_topography.pdf	writes	relative, run from build_fig_s3/
+code:build_fig_s3/r.08_bubbleplot.R	code:build_fig_s3/sup_fig_s3_topography.png	writes	relative, run from build_fig_s3/
+code:build_fig_s3/r.08_bubbleplot.R	code:build_fig_s3/sup_fig_s3a_transcription_strand.pdf	writes	relative; loop over 3 panels
+code:build_fig_s3/r.08_bubbleplot.R	code:build_fig_s3/sup_fig_s3b_replication_strand.pdf	writes	relative; loop over 3 panels
+code:build_fig_s3/r.08_bubbleplot.R	code:build_fig_s3/sup_fig_s3c_genic_intergenic.pdf	writes	relative; loop over 3 panels
+code:build_fig_s4/09_barplot_data.xlsx	code:build_fig_s4/r.09_barplot_final.R	reads	relative ./, run from build_fig_s4/; separate copy of build_fig5/09_barplot_data.xlsx, no script writes it
+code:build_fig_s4/09_all_lm_trend.xlsx	code:build_fig_s4/r.09_barplot_final.R	reads	relative ./, run from build_fig_s4/; separate copy of build_fig5/09_all_lm_trend.xlsx, no script writes it
+code:build_fig_s4/r.09_barplot_final.R	code:build_fig_s4/sup_fig_s4_replication_timing.pdf	writes	relative, run from build_fig_s4/
+code:build_fig_s4/r.09_barplot_final.R	code:build_fig_s4/sup_fig_s4_replication_timing.png	writes	relative, run from build_fig_s4/
+code:find_data.R	code:build_fig_s5/make_figure_s5_layout.R	reads	source
+data:external_data/reijns_et_al_2022/Reijn.mouse.vcfs.with.annotation.txt	code:build_fig_s5/make_figure_s5_layout.R	reads	
+data:external_data/reijns_et_al_2022/Reijn.rpe1.vcfs.with.annotation.txt	code:build_fig_s5/make_figure_s5_layout.R	reads	
+code:build_fig_s5/make_figure_s5_layout.R	code:build_fig_s5/sup_fig_s5_rnase_h2_spectra_draft.pdf	writes	argparser default --out, relative path; lands in build_fig_s5/ only if run from there
+code:find_data.R	code:build_fig_s5/make_reijn_spectra_and_plots_Mo.qmd	reads	source
+data:external_data/reijns_et_al_2022/Reijn.mouse.vcfs.with.annotation.txt	code:build_fig_s5/make_reijn_spectra_and_plots_Mo.qmd	reads	
+data:external_data/reijns_et_al_2022/Reijn.rpe1.vcfs.with.annotation.txt	code:build_fig_s5/make_reijn_spectra_and_plots_Mo.qmd	reads	
+code:build_fig_s5/make_reijn_spectra_and_plots_Mo.qmd	code:build_fig_s5/F476.pdf	writes	out_dir ./ (qmd dir)
+code:build_fig_s5/make_reijn_spectra_and_plots_Mo.qmd	code:build_fig_s5/F476_right.pdf	writes	out_dir ./ (qmd dir)
+code:build_fig_s5/make_reijn_spectra_and_plots_Mo.qmd	code:build_fig_s5/F89.pdf	writes	out_dir ./ (qmd dir)
+code:build_fig_s5/make_reijn_spectra_and_plots_Mo.qmd	code:build_fig_s5/F83.pdf	writes	out_dir ./ (qmd dir)
+code:build_fig_s5/make_reijn_spectra_and_plots_Mo.qmd	code:build_fig_s5/make_reijn_spectra_and_plots_Mo.html	writes	quarto render output
+code:find_data.R	code:build_fig_s6/build_fig_s6_stats.R	reads	source
+data:sample_info.tsv	code:build_fig_s6/build_fig_s6_stats.R	reads	
+data:liu_et_al_83_assignment.tsv	code:build_fig_s6/build_fig_s6_stats.R	reads	
+data:liu_et_al_89_assignment.tsv	code:build_fig_s6/build_fig_s6_stats.R	reads	
+data:liu_et_al_83_spectra.tsv	code:build_fig_s6/build_fig_s6_stats.R	reads	column sums = indel burden
+code:build_fig_s6/gender.bias.txt	code:build_fig_s6/build_fig_s6_stats.R	reads	previous version, read if it exists to carry over BonEV values (carry_over_bonev); self-loop
+code:build_fig_s6/build_fig_s6_stats.R	code:build_fig_s6/gender.bias.txt	writes	default out dir; first positional commandArgs overrides
+code:build_fig_s6/build_fig_s6_stats.R	code:build_fig_s6/correlation.between.age.and.signature.activity.txt	writes	default out dir; first positional commandArgs overrides
+code:build_fig_s6/build_fig_s6_stats.R	code:build_fig_s6/age.glm.adjusted.for.cancer.type.txt	writes	default out dir; first positional commandArgs overrides
+code:build_fig_s6/gender.bias.txt	code:build_fig_s6/make_figure_s6_layout.R	reads	argparser default --gender-bias
+code:build_fig_s6/correlation.between.age.and.signature.activity.txt	code:build_fig_s6/make_figure_s6_layout.R	reads	argparser default --age-correlation
+code:build_fig_s6/make_figure_s6_layout.R	code:build_fig_s6/sup_fig_s6_sex_age.pdf	writes	argparser default --out
+code:build_fig_s6/correlation.between.age.and.signature.activity.txt	code:build_fig_s6/Associations of Mutational Signatures with Sex and Age.qmd	reads	relative ./, qmd dir
+code:build_fig_s6/gender.bias.txt	code:build_fig_s6/Associations of Mutational Signatures with Sex and Age.qmd	reads	relative ./, qmd dir
+code:build_fig_s6/Associations of Mutational Signatures with Sex and Age.qmd	code:build_fig_s6/gender_bias.pdf	writes	relative ./, qmd dir; not used downstream? (S6 now from make_figure_s6_layout.R)
+code:build_fig_s6/Associations of Mutational Signatures with Sex and Age.qmd	code:build_fig_s6/age_correlation_cancertypewise.pdf	writes	relative ./, qmd dir; not used downstream? (S6 now from make_figure_s6_layout.R)
+code:build_fig_s6/Associations of Mutational Signatures with Sex and Age.qmd	code:build_fig_s6/Associations of Mutational Signatures with Sex and Age.html	writes	quarto render output (not present in repo)
+code:find_data.R	code:build_fig_s6/sex_glm_prototype.R	reads	source
+data:sample_info.tsv	code:build_fig_s6/sex_glm_prototype.R	reads	
+data:liu_et_al_83_spectra.tsv	code:build_fig_s6/sex_glm_prototype.R	reads	column sums = indel burden
+code:build_fig_s6/gender.bias.txt	code:build_fig_s6/sex_glm_prototype.R	reads	
+data:liu_et_al_83_assignment.tsv	code:build_fig_s6/sex_glm_prototype.R	reads	loop over 83, 89
+data:liu_et_al_89_assignment.tsv	code:build_fig_s6/sex_glm_prototype.R	reads	loop over 83, 89
+code:build_fig_s6/sex_glm_prototype.R	code:build_fig_s6/sex_glm_prototype.tsv	writes	argparser default --out; prototype, not used downstream?
+code:find_data.R	code:build_fig_s6/age_sex_glm_prototype.R	reads	source
+data:sample_info.tsv	code:build_fig_s6/age_sex_glm_prototype.R	reads	
+data:liu_et_al_83_spectra.tsv	code:build_fig_s6/age_sex_glm_prototype.R	reads	column sums = indel burden
+data:liu_et_al_83_assignment.tsv	code:build_fig_s6/age_sex_glm_prototype.R	reads	loop over 83, 89
+data:liu_et_al_89_assignment.tsv	code:build_fig_s6/age_sex_glm_prototype.R	reads	loop over 83, 89
+code:build_fig_s6/age_sex_glm_prototype.R	code:build_fig_s6/age_sex_glm_prototype.tsv	writes	argparser default --out; prototype, not used downstream?
+code:find_data.R	code:ms_numbers.R	reads	source, via code_repo = $LIU2026_CODE_REPO or hardcoded ~/github/Liu2026_code_and_data
+code:build_sup_table_s10/sup_table_s10_insdel_N_burden.xlsx	code:ms_numbers.R	reads	via hardcoded code_repo path
+data:liu_et_al_89_signatures.tsv	code:ms_numbers.R	reads	
+data:liu_et_al_476_signatures.tsv	code:ms_numbers.R	reads	
+data:liu_et_al_476_spectra.tsv	code:ms_numbers.R	reads	
+data:connection_table.tsv	code:ms_numbers.R	reads	
+data:assignments_2026-10-19/mSigAct.reanalyzed.samples.txt	code:ms_numbers.R	reads	
+data:liu_et_al_89_assignment.tsv	code:ms_numbers.R	reads	header line only (sample names)
+data:sample_info.tsv	code:ms_numbers.R	reads	
+data:liu_et_al_83_spectra.tsv	code:ms_numbers.R	reads	
+code:build_fig5/trans.strand.cancer_proportion.xlsx	code:ms_numbers.R	reads	via hardcoded code_repo path; 3 features
+code:build_fig5/repli.strand.cancer_proportion.xlsx	code:ms_numbers.R	reads	via hardcoded code_repo path; 3 features
+code:build_fig5/DNA.region.cancer_proportion.xlsx	code:ms_numbers.R	reads	via hardcoded code_repo path; 3 features
+code:build_fig4/fig4b_sbs_id_correlations.tsv	code:ms_numbers.R	reads	via hardcoded code_repo path
+code:build_fig_s6/age.glm.adjusted.for.cancer.type.txt	code:ms_numbers.R	reads	via hardcoded code_repo path
+code:build_sup_table_s15/sup_table_s15_sex_bias.xlsx	code:ms_numbers.R	reads	via hardcoded code_repo path
+code:find_data.R	code:build_sup_table_signatures/signature_table_helpers.R	reads	source
+data:liu_et_al_83_signatures.tsv	code:build_sup_table_signatures/signature_table_helpers.R	reads	only when read_msighdp_signatures() is called; helper defines functions only
+data:liu_et_al_89_signatures.tsv	code:build_sup_table_signatures/signature_table_helpers.R	reads	only when read_msighdp_signatures() is called; helper defines functions only
+data:liu_et_al_476_signatures.tsv	code:build_sup_table_signatures/signature_table_helpers.R	reads	only when read_msighdp_signatures() is called; helper defines functions only
+data:raw_signature_from_all_hdp_SP_runs/SigProfiler.COSMIC83.signatures.all.runs.txt	code:build_sup_table_signatures/signature_table_helpers.R	reads	only when read_sigprofiler_signatures() is called
+data:raw_signature_from_all_hdp_SP_runs/SigProfiler.Koh89.signatures.all.runs.txt	code:build_sup_table_signatures/signature_table_helpers.R	reads	only when read_sigprofiler_signatures() is called
+data:raw_signature_from_all_hdp_SP_runs/SigProfiler.Koh476.signatures.all.runs.txt	code:build_sup_table_signatures/signature_table_helpers.R	reads	only when read_sigprofiler_signatures() is called
+code:build_sup_table_signatures/sigprofiler_signature_columns.tsv	code:build_sup_table_signatures/signature_table_helpers.R	reads	only when read_sigprofiler_signatures() is called (default mapping_file); hand-made, no script writes it
+ext:/home/steve/MEGA/important_mut_sig_data/fmh-unfiltered_vcfs/*.annotated.indel.vcf.gz (300 largest)	code:build_sup_table_s1/build_sup_table_s1_step1.R	reads	dead code: inside if (FALSE); hardcoded absolute path; restricted data
+ext:/home/steve/MEGA/important_mut_sig_data/pcawg_indel_vcfs/*.annotated.indel.vcf.gz (300 largest)	code:build_sup_table_s1/build_sup_table_s1_step1.R	reads	dead code: inside if (FALSE); hardcoded absolute path; restricted data
+code:build_sup_table_s1/build_sup_table_s1_step1.R	code:build_sup_table_s1/rosetta_stone_full.csv	writes	dead code: inside if (FALSE); file also on Zenodo doi:10.5281/zenodo.22003322
+code:build_sup_table_s1/build_sup_table_s1_step1.R	code:build_sup_table_s1/rosetta_stone_476_89.csv	writes	dead code: inside if (FALSE)
+code:build_sup_table_s1/rosetta_stone_full.csv	code:build_sup_table_s1/build_sup_table_s1_cap9_filter_step2.R	reads	loop over in_files; here::here
+code:build_sup_table_s1/rosetta_stone_476_89.csv	code:build_sup_table_s1/build_sup_table_s1_cap9_filter_step2.R	reads	loop over in_files; here::here
+code:build_sup_table_s1/build_sup_table_s1_cap9_filter_step2.R	code:build_sup_table_s1/rosetta_stone_full_cap9.csv	writes	loop over in_files
+code:build_sup_table_s1/build_sup_table_s1_cap9_filter_step2.R	code:build_sup_table_s1/rosetta_stone_476_89_cap9.csv	writes	loop over in_files
+code:build_sup_table_s1/rosetta_stone_476_89_cap9.csv	code:build_sup_table_s1/build_sup_table_s1_xlsx_step3.R	reads	here::here
+code:build_sup_table_s1/rosetta_stone_full_cap9.csv	code:build_sup_table_s1/build_sup_table_s1_xlsx_step3.R	reads	here::here
+code:build_sup_table_s1/build_sup_table_s1_xlsx_step3.R	code:build_sup_table_s1/sup_table_s1.xlsx	writes	the paper's copy is the hand-edited sup_table_s1_476_89_83_type_categories.xlsx (legend inserted manually, per README)
+code:build_sup_table_signatures/signature_table_helpers.R	code:build_sup_table_s2/build_sup_table_s2.R	reads	source
+code:find_data.R	code:build_sup_table_s2/build_sup_table_s2.R	reads	source, via helper
+data:liu_et_al_83_signatures.tsv	code:build_sup_table_s2/build_sup_table_s2.R	reads	via helper read_msighdp_signatures(); --data-dir default find_data()
+code:build_sup_table_s2/build_sup_table_s2.R	code:build_sup_table_s2/sup_table_s2_msighdp_83_type_signatures.xlsx	writes	argparser default --out
+code:build_sup_table_signatures/signature_table_helpers.R	code:build_sup_table_s3/build_sup_table_s3.R	reads	source
+code:find_data.R	code:build_sup_table_s3/build_sup_table_s3.R	reads	source, via helper
+code:build_sup_table_signatures/sigprofiler_signature_columns.tsv	code:build_sup_table_s3/build_sup_table_s3.R	reads	via helper (default mapping_file)
+data:raw_signature_from_all_hdp_SP_runs/SigProfiler.COSMIC83.signatures.all.runs.txt	code:build_sup_table_s3/build_sup_table_s3.R	reads	via helper read_sigprofiler_signatures()
+data:liu_et_al_83_signatures.tsv	code:build_sup_table_s3/build_sup_table_s3.R	reads	via helper, for row labels only
+code:build_sup_table_s3/build_sup_table_s3.R	code:build_sup_table_s3/sup_table_s3_sigprofiler_83_type_signatures.xlsx	writes	argparser default --out
+code:build_sup_table_signatures/signature_table_helpers.R	code:build_sup_table_s4/build_sup_table_s4.R	reads	source
+code:find_data.R	code:build_sup_table_s4/build_sup_table_s4.R	reads	source, via helper
+data:liu_et_al_89_signatures.tsv	code:build_sup_table_s4/build_sup_table_s4.R	reads	via helper read_msighdp_signatures()
+code:build_sup_table_s4/build_sup_table_s4.R	code:build_sup_table_s4/sup_table_s4_msighdp_89_type_signatures.xlsx	writes	argparser default --out
+code:build_sup_table_signatures/signature_table_helpers.R	code:build_sup_table_s5/build_sup_table_s5.R	reads	source
+code:find_data.R	code:build_sup_table_s5/build_sup_table_s5.R	reads	source, via helper
+code:build_sup_table_signatures/sigprofiler_signature_columns.tsv	code:build_sup_table_s5/build_sup_table_s5.R	reads	via helper (default mapping_file)
+data:raw_signature_from_all_hdp_SP_runs/SigProfiler.Koh89.signatures.all.runs.txt	code:build_sup_table_s5/build_sup_table_s5.R	reads	via helper read_sigprofiler_signatures()
+data:liu_et_al_89_signatures.tsv	code:build_sup_table_s5/build_sup_table_s5.R	reads	via helper, for row labels only
+code:build_sup_table_s5/build_sup_table_s5.R	code:build_sup_table_s5/sup_table_s5_sigprofiler_89_type_signatures.xlsx	writes	argparser default --out
+code:build_sup_table_signatures/signature_table_helpers.R	code:build_sup_table_s6/build_sup_table_s6.R	reads	source
+code:find_data.R	code:build_sup_table_s6/build_sup_table_s6.R	reads	source, via helper
+data:liu_et_al_476_signatures.tsv	code:build_sup_table_s6/build_sup_table_s6.R	reads	via helper read_msighdp_signatures()
+code:build_sup_table_s6/build_sup_table_s6.R	code:build_sup_table_s6/sup_table_s6_msighdp_476_type_signatures.xlsx	writes	argparser default --out
+code:build_sup_table_signatures/signature_table_helpers.R	code:build_sup_table_s7/build_sup_table_s7.R	reads	source
+code:find_data.R	code:build_sup_table_s7/build_sup_table_s7.R	reads	source, via helper
+code:build_sup_table_signatures/sigprofiler_signature_columns.tsv	code:build_sup_table_s7/build_sup_table_s7.R	reads	via helper (default mapping_file)
+data:raw_signature_from_all_hdp_SP_runs/SigProfiler.Koh476.signatures.all.runs.txt	code:build_sup_table_s7/build_sup_table_s7.R	reads	via helper read_sigprofiler_signatures()
+data:liu_et_al_476_signatures.tsv	code:build_sup_table_s7/build_sup_table_s7.R	reads	via helper, for row labels only
+code:build_sup_table_s7/build_sup_table_s7.R	code:build_sup_table_s7/sup_table_s7_sigprofiler_476_type_signatures.xlsx	writes	argparser default --out
+code:build_sup_table_signatures/signature_table_helpers.R	code:build_sup_table_s8/build_sup_table_s8.R	reads	source
+code:find_data.R	code:build_sup_table_s8/build_sup_table_s8.R	reads	source, via helper
+code:build_sup_table_signatures/sigprofiler_signature_columns.tsv	code:build_sup_table_s8/build_sup_table_s8.R	reads	via helper (default mapping_file)
+data:raw_signature_from_all_hdp_SP_runs/SigProfiler.COSMIC83.signatures.all.runs.txt	code:build_sup_table_s8/build_sup_table_s8.R	reads	via helper
+data:raw_signature_from_all_hdp_SP_runs/SigProfiler.Koh89.signatures.all.runs.txt	code:build_sup_table_s8/build_sup_table_s8.R	reads	via helper
+data:raw_signature_from_all_hdp_SP_runs/SigProfiler.Koh476.signatures.all.runs.txt	code:build_sup_table_s8/build_sup_table_s8.R	reads	via helper
+data:liu_et_al_83_signatures.tsv	code:build_sup_table_s8/build_sup_table_s8.R	reads	via helper
+data:liu_et_al_89_signatures.tsv	code:build_sup_table_s8/build_sup_table_s8.R	reads	via helper
+data:liu_et_al_476_signatures.tsv	code:build_sup_table_s8/build_sup_table_s8.R	reads	via helper
+code:build_sup_table_s8/build_sup_table_s8.R	code:build_sup_table_s8/sup_table_s8_cosine_msighdp_vs_sigprofiler.xlsx	writes	argparser default --out
+code:build_sup_table_s9/purple_ann_utils.R	code:build_sup_table_s9/summarize_mmr_variants.R	reads	source (from the script's own directory)
+ext:~/MEGA/important_mut_sig_data/fmh-unfiltered_vcfs/*.purple.somatic.vcf.gz	code:build_sup_table_s9/summarize_mmr_variants.R	reads	argparser default --vcf-dir; Hartwig PURPLE VCFs, restricted data
+code:build_sup_table_s9/DELETE_BEFORE_PUBLISHING/cache/<sample>_mmr.tsv.gz	code:build_sup_table_s9/summarize_mmr_variants.R	reads	"per-sample cache, read back to combine; --outdir default is relative ""DELETE_BEFORE_PUBLISHING"", resolved assuming cwd build_sup_table_s9/ (README); gitignored"
+code:build_sup_table_s9/summarize_mmr_variants.R	code:build_sup_table_s9/DELETE_BEFORE_PUBLISHING/cache/<sample>_mmr.tsv.gz	writes	per-sample cache; relative outdir, assumes cwd build_sup_table_s9/; gitignored
+code:build_sup_table_s9/summarize_mmr_variants.R	code:build_sup_table_s9/DELETE_BEFORE_PUBLISHING/mmr_scan_log.tsv	writes	only if some VCFs needed scanning; relative outdir, assumes cwd build_sup_table_s9/
+code:build_sup_table_s9/summarize_mmr_variants.R	code:build_sup_table_s9/DELETE_BEFORE_PUBLISHING/mmr_variants_long.tsv.gz	writes	relative outdir, assumes cwd build_sup_table_s9/; not distributed
+code:build_sup_table_s9/summarize_mmr_variants.R	code:build_sup_table_s9/DELETE_BEFORE_PUBLISHING/mmr_variants_canonical.tsv	writes	relative outdir; dead output (no reader); file not present now
+code:build_sup_table_s9/summarize_mmr_variants.R	code:build_sup_table_s9/DELETE_BEFORE_PUBLISHING/mmr_variants_per_sample_gene.tsv	writes	relative outdir; dead output (no reader); file not present now
+code:build_sup_table_s9/summarize_mmr_variants.R	code:build_sup_table_s9/DELETE_BEFORE_PUBLISHING/mmr_gene_status.tsv	writes	relative outdir; dead output (no reader); file not present now
+code:build_sup_table_s9/purple_ann_utils.R	code:build_sup_table_s9/annotate_pcawg_mmr.R	reads	source (from the script's own directory)
+ext:~/MEGA/important_mut_sig_data/ICGC-Pan-Can-PCAWG7-2016-08-12-rawdata/final_consensus_12aug_passonly/indel/*.consensus.indel.vcf.gz	code:build_sup_table_s9/annotate_pcawg_mmr.R	reads	argparser default --consensus-dir; PCAWG consensus VCFs, restricted data; second run uses a graylist consensus dir (README)
+ext:~/MEGA/important_mut_sig_data/ICGC-Pan-Can-PCAWG7-2016-08-12-rawdata/final_consensus_12aug_passonly/snv_mnv/*.consensus.snv_mnv.vcf.gz	code:build_sup_table_s9/annotate_pcawg_mmr.R	reads	argparser default --consensus-dir; PCAWG consensus VCFs, restricted data; second run uses a graylist consensus dir (README)
+ext:~/MEGA/important_mut_sig_data/ICGC-Pan-Can-PCAWG7-2016-08-12-rawdata/pcawg_sample_sheet.tsv	code:build_sup_table_s9/annotate_pcawg_mmr.R	reads	argparser default --sample-sheet
+ext:~/opt/snpEff-4.3s/snpEff.jar	code:build_sup_table_s9/annotate_pcawg_mmr.R	reads	argparser default --snpeff-dir; run via system(java ...)
+ext:~/opt/snpEff-4.3s/snpEff.config	code:build_sup_table_s9/annotate_pcawg_mmr.R	reads	argparser default --snpeff-dir; run via system(java ...)
+ext:~/opt/snpEff-4.3s/data/GRCh37.75	code:build_sup_table_s9/annotate_pcawg_mmr.R	reads	argparser default --snpeff-dir; run via system(java ...)
+code:build_sup_table_s9/DELETE_BEFORE_PUBLISHING/pcawg/mmr_genes.bed	code:build_sup_table_s9/annotate_pcawg_mmr.R	reads	"read back after genes2bed; relative --outdir default ""DELETE_BEFORE_PUBLISHING/pcawg"", assumes cwd build_sup_table_s9/; second run uses DELETE_BEFORE_PUBLISHING/pcawg_graylist/"
+code:build_sup_table_s9/DELETE_BEFORE_PUBLISHING/pcawg/mmr_regions_padded.bed	code:build_sup_table_s9/annotate_pcawg_mmr.R	reads	read by awk while scanning VCFs; relative outdir
+code:build_sup_table_s9/DELETE_BEFORE_PUBLISHING/pcawg/cache/<uuid>.tsv.gz	code:build_sup_table_s9/annotate_pcawg_mmr.R	reads	per-sample scan cache, pooled; relative outdir
+code:build_sup_table_s9/DELETE_BEFORE_PUBLISHING/pcawg/mmr_sites.vcf	code:build_sup_table_s9/annotate_pcawg_mmr.R	reads	input to SnpEff; relative outdir
+code:build_sup_table_s9/DELETE_BEFORE_PUBLISHING/pcawg/mmr_sites_snpeff.vcf	code:build_sup_table_s9/annotate_pcawg_mmr.R	reads	SnpEff output parsed; reused if present; relative outdir
+code:build_sup_table_s9/annotate_pcawg_mmr.R	code:build_sup_table_s9/DELETE_BEFORE_PUBLISHING/pcawg/mmr_genes.bed	writes	only if missing or --force; via SnpEff genes2bed; relative outdir
+code:build_sup_table_s9/annotate_pcawg_mmr.R	code:build_sup_table_s9/DELETE_BEFORE_PUBLISHING/pcawg/mmr_regions_padded.bed	writes	relative outdir
+code:build_sup_table_s9/annotate_pcawg_mmr.R	code:build_sup_table_s9/DELETE_BEFORE_PUBLISHING/pcawg/cache/<uuid>.tsv.gz	writes	per-sample scan cache; relative outdir; gitignored
+code:build_sup_table_s9/annotate_pcawg_mmr.R	code:build_sup_table_s9/DELETE_BEFORE_PUBLISHING/pcawg/pcawg_scan_log.tsv	writes	only if some samples needed scanning; relative outdir
+code:build_sup_table_s9/annotate_pcawg_mmr.R	code:build_sup_table_s9/DELETE_BEFORE_PUBLISHING/pcawg/mmr_sites.vcf	writes	only if annotated VCF missing or --force; relative outdir
+code:build_sup_table_s9/annotate_pcawg_mmr.R	code:build_sup_table_s9/DELETE_BEFORE_PUBLISHING/pcawg/mmr_sites_snpeff.vcf	writes	only if missing or --force; SnpEff stdout; relative outdir
+code:build_sup_table_s9/annotate_pcawg_mmr.R	code:build_sup_table_s9/DELETE_BEFORE_PUBLISHING/pcawg/snpeff.err	writes	SnpEff stderr; relative outdir
+code:build_sup_table_s9/annotate_pcawg_mmr.R	code:build_sup_table_s9/DELETE_BEFORE_PUBLISHING/pcawg/pcawg_mmr_variants_long.tsv.gz	writes	relative outdir; with --outdir DELETE_BEFORE_PUBLISHING/pcawg_graylist also writes code:build_sup_table_s9/DELETE_BEFORE_PUBLISHING/pcawg_graylist/pcawg_mmr_variants_long.tsv.gz
+code:build_sup_table_s9/annotate_pcawg_mmr.R	code:build_sup_table_s9/DELETE_BEFORE_PUBLISHING/pcawg_graylist/pcawg_mmr_variants_long.tsv.gz	writes	only with --outdir DELETE_BEFORE_PUBLISHING/pcawg_graylist and graylist --consensus-dir (README); other outputs also go there
+code:build_sup_table_s9/annotate_pcawg_mmr.R	code:build_sup_table_s9/DELETE_BEFORE_PUBLISHING/pcawg/pcawg_mmr_variants_canonical.tsv	writes	relative outdir; dead output (no reader)
+code:build_sup_table_s9/annotate_pcawg_mmr.R	code:build_sup_table_s9/DELETE_BEFORE_PUBLISHING/pcawg/pcawg_mmr_variants_per_sample_gene.tsv	writes	relative outdir; dead output (no reader)
+code:build_sup_table_s9/annotate_pcawg_mmr.R	code:build_sup_table_s9/DELETE_BEFORE_PUBLISHING/pcawg/pcawg_mmr_gene_status.tsv	writes	relative outdir; dead output (no reader)
+code:build_sup_table_s9/annotate_pcawg_mmr.R	code:build_sup_table_s9/DELETE_BEFORE_PUBLISHING/pcawg/pcawg_uuid_to_sp.tsv	writes	relative outdir; dead output (no reader)
+code:find_data.R	code:build_sup_table_s9/build_sup_table_s9_pol_proofreading.R	reads	source
+data:liu_et_al_89_assignment.tsv	code:build_sup_table_s9/build_sup_table_s9_pol_proofreading.R	reads	find_data() (no --data-dir option)
+data:liu_et_al_89_spectra.tsv	code:build_sup_table_s9/build_sup_table_s9_pol_proofreading.R	reads	find_data()
+data:sample_info.tsv	code:build_sup_table_s9/build_sup_table_s9_pol_proofreading.R	reads	find_data()
+code:build_sup_table_s9/DELETE_BEFORE_PUBLISHING/mmr_variants_long.tsv.gz	code:build_sup_table_s9/build_sup_table_s9_pol_proofreading.R	reads	"argparser default --long; resolved against here::here(""build_sup_table_s9""); not distributed"
+code:build_sup_table_s9/DELETE_BEFORE_PUBLISHING/pcawg/pcawg_mmr_variants_long.tsv.gz	code:build_sup_table_s9/build_sup_table_s9_pol_proofreading.R	reads	argparser default --long; not distributed
+code:build_sup_table_s9/DELETE_BEFORE_PUBLISHING/pcawg_graylist/pcawg_mmr_variants_long.tsv.gz	code:build_sup_table_s9/build_sup_table_s9_pol_proofreading.R	reads	argparser default --long; not distributed
+code:build_sup_table_s9/build_sup_table_s9_pol_proofreading.R	code:build_sup_table_s9/sup_table_s9_pol_proofreading.xlsx	writes	argparser default --out
+code:find_data.R	code:build_sup_table_s10/build_sup_table_s10.R	reads	source
+data:liu_et_al_89_assignment.tsv	code:build_sup_table_s10/build_sup_table_s10.R	reads	--data-dir default find_data()
+data:sample_info.tsv	code:build_sup_table_s10/build_sup_table_s10.R	reads	--data-dir default find_data()
+code:build_sup_table_s9/sup_table_s9_pol_proofreading.xlsx	code:build_sup_table_s10/build_sup_table_s10.R	reads	"argparser default --pol-table; sheet ""Table S9"""
+code:build_sup_table_s10/build_sup_table_s10.R	code:build_sup_table_s10/sup_table_s10_insdel_N_burden.xlsx	writes	argparser default --out
+code:find_data.R	code:build_sup_table_s11/build_sup_table_s11.R	reads	source
+data:liu_et_al_89_assignment.tsv	code:build_sup_table_s11/build_sup_table_s11.R	reads	--data-dir default find_data()
+data:connection_table.tsv	code:build_sup_table_s11/build_sup_table_s11.R	reads	--data-dir default find_data()
+code:build_sup_table_s11/build_sup_table_s11.R	code:build_sup_table_s11/sup_table_s11_83_89_signature_assignment.tsv	writes	argparser default --out
+code:build_fig_s3/05_FisherTest/DNA.region.fisher_test_50cutoff.xlsx	code:build_sup_table_s12/build_sup_table_s12.R	reads	argparser default --fisher-dir; read twice
+code:build_fig_s3/05_FisherTest/repli.strand.fisher_test_50cutoff.xlsx	code:build_sup_table_s12/build_sup_table_s12.R	reads	argparser default --fisher-dir
+code:build_fig_s3/05_FisherTest/trans.strand.fisher_test_50cutoff.xlsx	code:build_sup_table_s12/build_sup_table_s12.R	reads	argparser default --fisher-dir
+code:build_sup_table_s12/build_sup_table_s12.R	code:build_sup_table_s12/sup_table_s12_topography_asymmetry.xlsx	writes	argparser default --out
+code:build_fig5/09_all_lm_trend.xlsx	code:build_sup_table_s13/build_sup_table_s13.R	reads	argparser default --in-file
+code:build_sup_table_s13/build_sup_table_s13.R	code:build_sup_table_s13/sup_table_s13_replication_timing_83.xlsx	writes	argparser default --out
+code:build_sup_table_s14/trend_89.xlsx	code:build_sup_table_s14/build_sup_table_s14.R	reads	argparser default --in-file; manual copy of ID89_topography_analysis_code/09_barplot/trend.xlsx (no script writes trend_89.xlsx)
+code:build_sup_table_s14/build_sup_table_s14.R	code:build_sup_table_s14/sup_table_s14_replication_timing_89.xlsx	writes	argparser default --out
+code:build_fig_s6/gender.bias.txt	code:build_sup_table_s15/build_sup_table_s15.R	reads	argparser default --in-file
+code:build_sup_table_s15/build_sup_table_s15.R	code:build_sup_table_s15/sup_table_s15_sex_bias.xlsx	writes	argparser default --out
+code:build_fig_s6/correlation.between.age.and.signature.activity.txt	code:build_sup_table_s16/build_sup_table_s16.R	reads	argparser default --in-file
+code:build_fig_s6/age.glm.adjusted.for.cancer.type.txt	code:build_sup_table_s16/build_sup_table_s16.R	reads	argparser default --glm-file
+code:build_sup_table_s16/build_sup_table_s16.R	code:build_sup_table_s16/sup_table_s16_age_correlation.xlsx	writes	argparser default --out
+code:find_data.R	code:build_sup_table_s17/build_sup_table_s17.R	reads	source
+data:sample_info.tsv	code:build_sup_table_s17/build_sup_table_s17.R	reads	--data-dir default find_data()
+data:liu_et_al_83_spectra.tsv	code:build_sup_table_s17/build_sup_table_s17.R	reads	--data-dir default find_data()
+data:liu_et_al_83_assignment.tsv	code:build_sup_table_s17/build_sup_table_s17.R	reads	--data-dir default find_data(); header row only (sample list)
+code:build_sup_table_s17/build_sup_table_s17.R	code:build_sup_table_s17/sup_table_s17_sample_metadata.xlsx	writes	argparser default --out
+ext:/public/data/Topography_analysis/mutation_data/all.indel.ID83.partial.credit.txt	code:ID83_topography_analysis_code/normalize.sh	reads	per-indel ID83 signature probabilities (partial credit), presumably from Mo Liu like the ID89 file; run on Huang-lab server
+code:ID83_topography_analysis_code/normalize.sh	ext:/public/data/Topography_analysis/mutation_data/all.indel.ID83.normalized.txt	writes	run on Huang-lab server
+ext:/public/data/Topography_analysis/cap9.for.topography.20260322/all.indel.ID83.normalized.txt	code:ID83_topography_analysis_code/r.01_createBed.R	reads	run on Huang-lab server; folder differs from where normalize.sh writes (mutation_data/); rtGroup bed section reading per_base_territories_20kb.mat is commented out
+code:ID83_topography_analysis_code/r.01_createBed.R	ext:/public/data/Topography_analysis_2026/results0322/ID83/01_createBed/02.unique.single.indel.aggregate.strand.added.matrix.txt	writes	relative 01_createBed/; server dir inferred from r.02 paths
+code:ID83_topography_analysis_code/r.01_createBed.R	ext:/public/data/Topography_analysis_2026/results0322/ID83/01_createBed/02.unique.single.indel.aggregate.strand.added.matrix.bed	writes	relative 01_createBed/; server dir inferred from r.02 paths
+code:ID83_topography_analysis_code/r.01_createBed.R	ext:/public/data/Topography_analysis_2026/results0322/ID83/01_createBed/03.signature.txt	writes	relative 01_createBed/; server dir inferred from r.02 paths
+code:ID83_topography_analysis_code/r.01_createBed.R	ext:/public/data/Topography_analysis_2026/results0322/ID83/01_createBed/03.signature.bed	writes	relative 01_createBed/; server dir inferred from r.02 paths
+ext:/public/data/Topography_analysis_2026/results/ID83/01_createBed/02.unique.single.indel.aggregate.strand.added.matrix.txt	code:ID83_topography_analysis_code/generate_partialcredit_match_file.R	reads	run on Huang-lab server; uncertain: results/ not results0322/, and expects an ID.class column that current r.01 does not write (it writes COSMIC_83)
+code:ID83_topography_analysis_code/generate_partialcredit_match_file.R	ext:/public/data/Topography_analysis_2026/simulation_data/ID83_partialcredit_for_match.txt	writes	run on Huang-lab server
+ext:/public/data/Topography_analysis_2026/simulation_data/all_simulated_with_annotation.txt	code:ID83_topography_analysis_code/add_partial_credit.R	reads	simulated indels (README: external input, not shipped); origin of the simulation not documented in code; run on Huang-lab server
+ext:/public/data/Topography_analysis_2026/simulation_data/ID83_partialcredit_for_match.txt	code:ID83_topography_analysis_code/add_partial_credit.R	reads	run on Huang-lab server
+code:ID83_topography_analysis_code/add_partial_credit.R	ext:/public/data/Topography_analysis_2026/simulation_data/new.ID83.simualted.partialcredit.annotated.txt	writes	written then read back in same script; run on Huang-lab server
+ext:/public/data/Topography_analysis_2026/simulation_data/new.ID83.simualted.partialcredit.annotated.txt	code:ID83_topography_analysis_code/add_partial_credit.R	reads	re-read of own output
+code:ID83_topography_analysis_code/add_partial_credit.R	ext:/public/data/Topography_analysis_2026/results/ID83/01_createBed/04.SimulatedData.txt	writes	run on Huang-lab server; uncertain: r.02 reads 04.SimulatedData.bed from results0322/ not results/; also selects ID_O, ID_P columns not in the 34-signature map
+code:ID83_topography_analysis_code/add_partial_credit.R	ext:/public/data/Topography_analysis_2026/results/ID83/01_createBed/04.SimulatedData.bed	writes	run on Huang-lab server; uncertain: r.02 reads 04.SimulatedData.bed from results0322/ not results/; also selects ID_O, ID_P columns not in the 34-signature map
+ext:/public/data/Topography_analysis_2026/results/ID83/01_createBed/01.rtGroup.bed	code:ID83_topography_analysis_code/r.02.intersect_no_loop.sh	reads	replication-timing deciles; made by commented-out section of r.01 from ext per_base_territories_20kb.mat; run on Huang-lab server
+ext:/public/data/Topography_analysis/reference/ENCODE/repli_strand_info_new.bed	code:ID83_topography_analysis_code/r.02.intersect_no_loop.sh	reads	replication-strand genome annotation; run on Huang-lab server
+ext:/public/data/Topography_analysis_2026/results0322/ID83/01_createBed/03.signature.bed	code:ID83_topography_analysis_code/r.02.intersect_no_loop.sh	reads	run on Huang-lab server
+ext:/public/data/Topography_analysis_2026/results0322/ID83/01_createBed/04.SimulatedData.bed	code:ID83_topography_analysis_code/r.02.intersect_no_loop.sh	reads	run on Huang-lab server
+code:ID83_topography_analysis_code/r.02.intersect_no_loop.sh	ext:/public/data/Topography_analysis_2026/results0322/ID83/02_intersectBed/01.RelicateTime.TransStrand.DNA_Region.intersect_res.txt	writes	bedtools intersectBed; run on Huang-lab server
+code:ID83_topography_analysis_code/r.02.intersect_no_loop.sh	ext:/public/data/Topography_analysis_2026/results0322/ID83/02_intersectBed/02.RepliStrand.intersect_res.txt	writes	bedtools intersectBed; run on Huang-lab server
+code:ID83_topography_analysis_code/r.02.intersect_no_loop.sh	ext:/public/data/Topography_analysis_2026/results0322/ID83/02_intersectBed/03.RelicateTime.simulated.intersect_res.txt	writes	bedtools intersectBed; run on Huang-lab server
+code:ID83_topography_analysis_code/r.02.intersect_no_loop.sh	ext:/public/data/Topography_analysis_2026/results0322/ID83/02_intersectBed/04.RepliStrand.simulated.intersect_res.txt	writes	bedtools intersectBed; run on Huang-lab server
+ext:/public/data/Topography_analysis_2026/results0322/ID83/02_intersectBed/01.RelicateTime.TransStrand.DNA_Region.intersect_res.txt	code:ID83_topography_analysis_code/r.03_mergeInf.R	reads	relative ../02_intersectBed/; run on Huang-lab server
+ext:/public/data/Topography_analysis_2026/results0322/ID83/02_intersectBed/02.RepliStrand.intersect_res.txt	code:ID83_topography_analysis_code/r.03_mergeInf.R	reads	relative ../02_intersectBed/; run on Huang-lab server
+ext:/public/data/Topography_analysis/mutation_data/all.meta.0528.rds	code:ID83_topography_analysis_code/r.03_mergeInf.R	reads	sample to tissue metadata; a copy is code:ID89_topography_analysis_code/all.meta.0528.rds
+ext:/public/data/Topography_analysis/reference/single.indel.aggregate.strand.added.matrix.txt	code:ID83_topography_analysis_code/r.03_mergeInf.R	reads	Strand info per indel; run on Huang-lab server
+code:ID83_topography_analysis_code/r.03_mergeInf.R	ext:/public/data/Topography_analysis_2026/results0322/ID83/03_mergeInf/01.allInf.single.indel.txt	writes	relative 03_mergeInf/; run on Huang-lab server
+code:ID83_topography_analysis_code/r.03_mergeInf.R	ext:/public/data/Topography_analysis_2026/results0322/ID83/03_mergeInf/01.allInf.single.indel.Rds	writes	relative 03_mergeInf/; run on Huang-lab server
+ext:/public/data/Topography_analysis_2026/results0322/ID83/02_intersectBed/03.RelicateTime.simulated.intersect_res.txt	code:ID83_topography_analysis_code/r.03_mergeInf_simulation.R	reads	relative ../02_intersectBed/; run on Huang-lab server
+ext:/public/data/Topography_analysis_2026/results0322/ID83/02_intersectBed/04.RepliStrand.simulated.intersect_res.txt	code:ID83_topography_analysis_code/r.03_mergeInf_simulation.R	reads	relative ../02_intersectBed/; run on Huang-lab server
+ext:/public/data/Topography_analysis/mutation_data/all.meta.0528.rds	code:ID83_topography_analysis_code/r.03_mergeInf_simulation.R	reads	a copy is code:ID89_topography_analysis_code/all.meta.0528.rds
+code:ID83_topography_analysis_code/r.03_mergeInf_simulation.R	ext:/public/data/Topography_analysis_2026/results0322/ID83/03_mergeInf/02.allInf.simulated.txt	writes	relative 03_mergeInf/; run on Huang-lab server; last line is a stray shell command (cat ... results/ID83/03_mergeInf/02.allInf.simulated.txt piped to awk), an R syntax error
+code:ID83_topography_analysis_code/r.03_mergeInf_simulation.R	ext:/public/data/Topography_analysis_2026/results0322/ID83/03_mergeInf/02.allInf.simulated.Rds	writes	relative 03_mergeInf/; run on Huang-lab server; last line is a stray shell command (cat ... results/ID83/03_mergeInf/02.allInf.simulated.txt piped to awk), an R syntax error
+ext:/public/data/Topography_analysis_2026/results0322/ID83/03_mergeInf/01.allInf.single.indel.txt	code:ID83_topography_analysis_code/r.04_create4InfMatrix.R	reads	relative ../03_mergeInf/; run on Huang-lab server
+ext:/public/data/Topography_analysis_2026/results0322/ID83/03_mergeInf/02.allInf.simulated.txt	code:ID83_topography_analysis_code/r.04_create4InfMatrix.R	reads	relative ../03_mergeInf/; run on Huang-lab server
+code:ID83_topography_analysis_code/r.04_create4InfMatrix.R	code:ID83_topography_analysis_code/04_create4InfMatrix/DNA.region/tissue.DNA.region.Mutation_50cutoff.xlsx	writes	run on server; copies in code repo
+code:ID83_topography_analysis_code/r.04_create4InfMatrix.R	code:ID83_topography_analysis_code/04_create4InfMatrix/DNA.region/tissue.DNA.region.Simulated_50cutoff.xlsx	writes	run on server; copies in code repo
+code:ID83_topography_analysis_code/r.04_create4InfMatrix.R	code:ID83_topography_analysis_code/04_create4InfMatrix/rtGroup/tissue.rtGroup.Mutation_50cutoff.xlsx	writes	run on server; copies in code repo, received from Mini Huang 2026-10-16 per README
+code:ID83_topography_analysis_code/r.04_create4InfMatrix.R	code:ID83_topography_analysis_code/04_create4InfMatrix/rtGroup/tissue.rtGroup.Simulated_50cutoff.xlsx	writes	run on server; copies in code repo, received from Mini Huang 2026-10-16 per README
+code:ID83_topography_analysis_code/r.04_create4InfMatrix.R	code:ID83_topography_analysis_code/04_create4InfMatrix/repli.strand/tissue.repli.strand.Mutation_50cutoff.xlsx	writes	run on server; copies in code repo
+code:ID83_topography_analysis_code/r.04_create4InfMatrix.R	code:ID83_topography_analysis_code/04_create4InfMatrix/repli.strand/tissue.repli.strand.Simulated_50cutoff.xlsx	writes	run on server; copies in code repo
+code:ID83_topography_analysis_code/r.04_create4InfMatrix.R	code:ID83_topography_analysis_code/04_create4InfMatrix/trans.strand/tissue.trans.strand.Mutation_50cutoff.xlsx	writes	run on server; copies in code repo
+code:ID83_topography_analysis_code/r.04_create4InfMatrix.R	code:ID83_topography_analysis_code/04_create4InfMatrix/trans.strand/tissue.trans.strand.Simulated_50cutoff.xlsx	writes	run on server; copies in code repo
+code:ID83_topography_analysis_code/r.04_create4InfMatrix.R	ext:/public/data/Topography_analysis_2026/results0322/ID83/04_create4InfMatrix/DNA.region/tissue.DNA.region.Mutation_50cutoff.Rds	writes	server only
+code:ID83_topography_analysis_code/r.04_create4InfMatrix.R	ext:/public/data/Topography_analysis_2026/results0322/ID83/04_create4InfMatrix/DNA.region/tissue.DNA.region.Simulated_50cutoff.Rds	writes	server only
+code:ID83_topography_analysis_code/r.04_create4InfMatrix.R	ext:/public/data/Topography_analysis_2026/results0322/ID83/04_create4InfMatrix/rtGroup/tissue.rtGroup.Mutation_50cutoff.Rds	writes	server only
+code:ID83_topography_analysis_code/r.04_create4InfMatrix.R	ext:/public/data/Topography_analysis_2026/results0322/ID83/04_create4InfMatrix/rtGroup/tissue.rtGroup.Simulated_50cutoff.Rds	writes	server only
+code:ID83_topography_analysis_code/r.04_create4InfMatrix.R	ext:/public/data/Topography_analysis_2026/results0322/ID83/04_create4InfMatrix/repli.strand/tissue.repli.strand.Mutation_50cutoff.Rds	writes	server only
+code:ID83_topography_analysis_code/r.04_create4InfMatrix.R	ext:/public/data/Topography_analysis_2026/results0322/ID83/04_create4InfMatrix/repli.strand/tissue.repli.strand.Simulated_50cutoff.Rds	writes	server only
+code:ID83_topography_analysis_code/r.04_create4InfMatrix.R	ext:/public/data/Topography_analysis_2026/results0322/ID83/04_create4InfMatrix/trans.strand/tissue.trans.strand.Mutation_50cutoff.Rds	writes	server only
+code:ID83_topography_analysis_code/r.04_create4InfMatrix.R	ext:/public/data/Topography_analysis_2026/results0322/ID83/04_create4InfMatrix/trans.strand/tissue.trans.strand.Simulated_50cutoff.Rds	writes	server only
+code:ID83_topography_analysis_code/r.04_create4InfMatrix.R	ext:/public/data/Topography_analysis_2026/results0322/ID83/04_create4InfMatrix/DNA.region/tissue.DNA.region.Mutation_nocutoff.xlsx	writes	server only
+code:ID83_topography_analysis_code/r.04_create4InfMatrix.R	ext:/public/data/Topography_analysis_2026/results0322/ID83/04_create4InfMatrix/DNA.region/tissue.DNA.region.Mutation_nocutoff.Rds	writes	server only
+code:ID83_topography_analysis_code/r.04_create4InfMatrix.R	ext:/public/data/Topography_analysis_2026/results0322/ID83/04_create4InfMatrix/DNA.region/tissue.DNA.region.Mutation_75cutoff.xlsx	writes	server only
+code:ID83_topography_analysis_code/r.04_create4InfMatrix.R	ext:/public/data/Topography_analysis_2026/results0322/ID83/04_create4InfMatrix/DNA.region/tissue.DNA.region.Mutation_75cutoff.Rds	writes	server only
+code:ID83_topography_analysis_code/r.04_create4InfMatrix.R	ext:/public/data/Topography_analysis_2026/results0322/ID83/04_create4InfMatrix/DNA.region/tissue.DNA.region.Simulated_nocutoff.xlsx	writes	server only
+code:ID83_topography_analysis_code/r.04_create4InfMatrix.R	ext:/public/data/Topography_analysis_2026/results0322/ID83/04_create4InfMatrix/DNA.region/tissue.DNA.region.Simulated_nocutoff.Rds	writes	server only
+code:ID83_topography_analysis_code/r.04_create4InfMatrix.R	ext:/public/data/Topography_analysis_2026/results0322/ID83/04_create4InfMatrix/DNA.region/tissue.DNA.region.Simulated_75cutoff.xlsx	writes	server only
+code:ID83_topography_analysis_code/r.04_create4InfMatrix.R	ext:/public/data/Topography_analysis_2026/results0322/ID83/04_create4InfMatrix/DNA.region/tissue.DNA.region.Simulated_75cutoff.Rds	writes	server only
+code:ID83_topography_analysis_code/r.04_create4InfMatrix.R	ext:/public/data/Topography_analysis_2026/results0322/ID83/04_create4InfMatrix/rtGroup/tissue.rtGroup.Mutation_nocutoff.xlsx	writes	server only
+code:ID83_topography_analysis_code/r.04_create4InfMatrix.R	ext:/public/data/Topography_analysis_2026/results0322/ID83/04_create4InfMatrix/rtGroup/tissue.rtGroup.Mutation_nocutoff.Rds	writes	server only
+code:ID83_topography_analysis_code/r.04_create4InfMatrix.R	ext:/public/data/Topography_analysis_2026/results0322/ID83/04_create4InfMatrix/rtGroup/tissue.rtGroup.Mutation_75cutoff.xlsx	writes	server only
+code:ID83_topography_analysis_code/r.04_create4InfMatrix.R	ext:/public/data/Topography_analysis_2026/results0322/ID83/04_create4InfMatrix/rtGroup/tissue.rtGroup.Mutation_75cutoff.Rds	writes	server only
+code:ID83_topography_analysis_code/r.04_create4InfMatrix.R	ext:/public/data/Topography_analysis_2026/results0322/ID83/04_create4InfMatrix/rtGroup/tissue.rtGroup.Simulated_nocutoff.xlsx	writes	server only
+code:ID83_topography_analysis_code/r.04_create4InfMatrix.R	ext:/public/data/Topography_analysis_2026/results0322/ID83/04_create4InfMatrix/rtGroup/tissue.rtGroup.Simulated_nocutoff.Rds	writes	server only
+code:ID83_topography_analysis_code/r.04_create4InfMatrix.R	ext:/public/data/Topography_analysis_2026/results0322/ID83/04_create4InfMatrix/rtGroup/tissue.rtGroup.Simulated_75cutoff.xlsx	writes	server only
+code:ID83_topography_analysis_code/r.04_create4InfMatrix.R	ext:/public/data/Topography_analysis_2026/results0322/ID83/04_create4InfMatrix/rtGroup/tissue.rtGroup.Simulated_75cutoff.Rds	writes	server only
+code:ID83_topography_analysis_code/r.04_create4InfMatrix.R	ext:/public/data/Topography_analysis_2026/results0322/ID83/04_create4InfMatrix/repli.strand/tissue.repli.strand.Mutation_nocutoff.xlsx	writes	server only
+code:ID83_topography_analysis_code/r.04_create4InfMatrix.R	ext:/public/data/Topography_analysis_2026/results0322/ID83/04_create4InfMatrix/repli.strand/tissue.repli.strand.Mutation_nocutoff.Rds	writes	server only
+code:ID83_topography_analysis_code/r.04_create4InfMatrix.R	ext:/public/data/Topography_analysis_2026/results0322/ID83/04_create4InfMatrix/repli.strand/tissue.repli.strand.Mutation_75cutoff.xlsx	writes	server only
+code:ID83_topography_analysis_code/r.04_create4InfMatrix.R	ext:/public/data/Topography_analysis_2026/results0322/ID83/04_create4InfMatrix/repli.strand/tissue.repli.strand.Mutation_75cutoff.Rds	writes	server only
+code:ID83_topography_analysis_code/r.04_create4InfMatrix.R	ext:/public/data/Topography_analysis_2026/results0322/ID83/04_create4InfMatrix/repli.strand/tissue.repli.strand.Simulated_nocutoff.xlsx	writes	server only
+code:ID83_topography_analysis_code/r.04_create4InfMatrix.R	ext:/public/data/Topography_analysis_2026/results0322/ID83/04_create4InfMatrix/repli.strand/tissue.repli.strand.Simulated_nocutoff.Rds	writes	server only
+code:ID83_topography_analysis_code/r.04_create4InfMatrix.R	ext:/public/data/Topography_analysis_2026/results0322/ID83/04_create4InfMatrix/repli.strand/tissue.repli.strand.Simulated_75cutoff.xlsx	writes	server only
+code:ID83_topography_analysis_code/r.04_create4InfMatrix.R	ext:/public/data/Topography_analysis_2026/results0322/ID83/04_create4InfMatrix/repli.strand/tissue.repli.strand.Simulated_75cutoff.Rds	writes	server only
+code:ID83_topography_analysis_code/r.04_create4InfMatrix.R	ext:/public/data/Topography_analysis_2026/results0322/ID83/04_create4InfMatrix/trans.strand/tissue.trans.strand.Mutation_nocutoff.xlsx	writes	server only
+code:ID83_topography_analysis_code/r.04_create4InfMatrix.R	ext:/public/data/Topography_analysis_2026/results0322/ID83/04_create4InfMatrix/trans.strand/tissue.trans.strand.Mutation_nocutoff.Rds	writes	server only
+code:ID83_topography_analysis_code/r.04_create4InfMatrix.R	ext:/public/data/Topography_analysis_2026/results0322/ID83/04_create4InfMatrix/trans.strand/tissue.trans.strand.Mutation_75cutoff.xlsx	writes	server only
+code:ID83_topography_analysis_code/r.04_create4InfMatrix.R	ext:/public/data/Topography_analysis_2026/results0322/ID83/04_create4InfMatrix/trans.strand/tissue.trans.strand.Mutation_75cutoff.Rds	writes	server only
+code:ID83_topography_analysis_code/r.04_create4InfMatrix.R	ext:/public/data/Topography_analysis_2026/results0322/ID83/04_create4InfMatrix/trans.strand/tissue.trans.strand.Simulated_nocutoff.xlsx	writes	server only
+code:ID83_topography_analysis_code/r.04_create4InfMatrix.R	ext:/public/data/Topography_analysis_2026/results0322/ID83/04_create4InfMatrix/trans.strand/tissue.trans.strand.Simulated_nocutoff.Rds	writes	server only
+code:ID83_topography_analysis_code/r.04_create4InfMatrix.R	ext:/public/data/Topography_analysis_2026/results0322/ID83/04_create4InfMatrix/trans.strand/tissue.trans.strand.Simulated_75cutoff.xlsx	writes	server only
+code:ID83_topography_analysis_code/r.04_create4InfMatrix.R	ext:/public/data/Topography_analysis_2026/results0322/ID83/04_create4InfMatrix/trans.strand/tissue.trans.strand.Simulated_75cutoff.Rds	writes	server only
+code:ID83_topography_analysis_code/r.04_create4InfMatrix.R	ext:/public/data/Topography_analysis_2026/results0322/ID83/04_create4InfMatrix/01.Tissue_count.xlsx	writes	server only
+code:ID83_topography_analysis_code/r.04_create4InfMatrix.R	ext:/public/data/Topography_analysis_2026/results0322/ID83/04_create4InfMatrix/02.Saimulated_Tissue_count.xlsx	writes	server only
+code:ID83_topography_analysis_code/04_create4InfMatrix/trans.strand/tissue.trans.strand.Mutation_50cutoff.xlsx	code:ID83_topography_analysis_code/r.05_FisherTest.R	reads	
+code:ID83_topography_analysis_code/04_create4InfMatrix/trans.strand/tissue.trans.strand.Simulated_50cutoff.xlsx	code:ID83_topography_analysis_code/r.05_FisherTest.R	reads	
+code:ID83_topography_analysis_code/04_create4InfMatrix/DNA.region/tissue.DNA.region.Mutation_50cutoff.xlsx	code:ID83_topography_analysis_code/r.05_FisherTest.R	reads	
+code:ID83_topography_analysis_code/04_create4InfMatrix/DNA.region/tissue.DNA.region.Simulated_50cutoff.xlsx	code:ID83_topography_analysis_code/r.05_FisherTest.R	reads	
+code:ID83_topography_analysis_code/04_create4InfMatrix/repli.strand/tissue.repli.strand.Mutation_50cutoff.xlsx	code:ID83_topography_analysis_code/r.05_FisherTest.R	reads	
+code:ID83_topography_analysis_code/04_create4InfMatrix/repli.strand/tissue.repli.strand.Simulated_50cutoff.xlsx	code:ID83_topography_analysis_code/r.05_FisherTest.R	reads	
+code:ID83_topography_analysis_code/r.05_FisherTest.R	code:ID83_topography_analysis_code/05_FisherTest/trans.strand.fisher_test_50cutoff.xlsx	writes	75cutoff section commented out
+code:ID83_topography_analysis_code/r.05_FisherTest.R	code:ID83_topography_analysis_code/05_FisherTest/DNA.region.fisher_test_50cutoff.xlsx	writes	75cutoff section commented out
+code:ID83_topography_analysis_code/r.05_FisherTest.R	code:ID83_topography_analysis_code/05_FisherTest/repli.strand.fisher_test_50cutoff.xlsx	writes	75cutoff section commented out
+code:ID83_topography_analysis_code/r.computeOddsRatioFunctions.R	code:ID83_topography_analysis_code/r.06_comupteOddsRatio.R	reads	source
+code:ID83_topography_analysis_code/04_create4InfMatrix/repli.strand/tissue.repli.strand.Mutation_50cutoff.xlsx	code:ID83_topography_analysis_code/r.06_comupteOddsRatio.R	reads	
+code:ID83_topography_analysis_code/04_create4InfMatrix/repli.strand/tissue.repli.strand.Simulated_50cutoff.xlsx	code:ID83_topography_analysis_code/r.06_comupteOddsRatio.R	reads	
+code:ID83_topography_analysis_code/04_create4InfMatrix/trans.strand/tissue.trans.strand.Mutation_50cutoff.xlsx	code:ID83_topography_analysis_code/r.06_comupteOddsRatio.R	reads	
+code:ID83_topography_analysis_code/04_create4InfMatrix/trans.strand/tissue.trans.strand.Simulated_50cutoff.xlsx	code:ID83_topography_analysis_code/r.06_comupteOddsRatio.R	reads	
+code:ID83_topography_analysis_code/04_create4InfMatrix/DNA.region/tissue.DNA.region.Mutation_50cutoff.xlsx	code:ID83_topography_analysis_code/r.06_comupteOddsRatio.R	reads	
+code:ID83_topography_analysis_code/04_create4InfMatrix/DNA.region/tissue.DNA.region.Simulated_50cutoff.xlsx	code:ID83_topography_analysis_code/r.06_comupteOddsRatio.R	reads	
+code:ID83_topography_analysis_code/r.06_comupteOddsRatio.R	code:ID83_topography_analysis_code/06_computeOddsRatio/repli.strand/01.repli.strand.odds_ratio.xlsx	writes	written by createOddsRatioMatrix() from the sourced helper; 9 files
+code:ID83_topography_analysis_code/r.06_comupteOddsRatio.R	code:ID83_topography_analysis_code/06_computeOddsRatio/repli.strand/02.repli.strand.odds_type.xlsx	writes	written by createOddsRatioMatrix() from the sourced helper; 9 files
+code:ID83_topography_analysis_code/r.06_comupteOddsRatio.R	code:ID83_topography_analysis_code/06_computeOddsRatio/repli.strand/03.repli.strand.cancer_proportion.xlsx	writes	written by createOddsRatioMatrix() from the sourced helper; 9 files
+code:ID83_topography_analysis_code/r.06_comupteOddsRatio.R	code:ID83_topography_analysis_code/06_computeOddsRatio/trans.strand/01.trans.strand.odds_ratio.xlsx	writes	written by createOddsRatioMatrix() from the sourced helper; 9 files
+code:ID83_topography_analysis_code/r.06_comupteOddsRatio.R	code:ID83_topography_analysis_code/06_computeOddsRatio/trans.strand/02.trans.strand.odds_type.xlsx	writes	written by createOddsRatioMatrix() from the sourced helper; 9 files
+code:ID83_topography_analysis_code/r.06_comupteOddsRatio.R	code:ID83_topography_analysis_code/06_computeOddsRatio/trans.strand/03.trans.strand.cancer_proportion.xlsx	writes	written by createOddsRatioMatrix() from the sourced helper; 9 files
+code:ID83_topography_analysis_code/r.06_comupteOddsRatio.R	code:ID83_topography_analysis_code/06_computeOddsRatio/DNA.region/01.DNA.region.odds_ratio.xlsx	writes	written by createOddsRatioMatrix() from the sourced helper; 9 files
+code:ID83_topography_analysis_code/r.06_comupteOddsRatio.R	code:ID83_topography_analysis_code/06_computeOddsRatio/DNA.region/02.DNA.region.odds_type.xlsx	writes	written by createOddsRatioMatrix() from the sourced helper; 9 files
+code:ID83_topography_analysis_code/r.06_comupteOddsRatio.R	code:ID83_topography_analysis_code/06_computeOddsRatio/DNA.region/03.DNA.region.cancer_proportion.xlsx	writes	written by createOddsRatioMatrix() from the sourced helper; 9 files
+code:ID83_topography_analysis_code/04_create4InfMatrix/rtGroup/tissue.rtGroup.Mutation_50cutoff.xlsx	code:ID83_topography_analysis_code/r.09_barplot.R	reads	
+code:ID83_topography_analysis_code/04_create4InfMatrix/rtGroup/tissue.rtGroup.Simulated_50cutoff.xlsx	code:ID83_topography_analysis_code/r.09_barplot.R	reads	
+code:ID83_topography_analysis_code/r.09_barplot.R	ext:ID83_topography_analysis_code/09_barplot/plot_data.xlsx	writes	09_barplot/ not in repo; saved copy is code:build_fig5/09_barplot_data.xlsx
+code:ID83_topography_analysis_code/r.09_barplot.R	ext:ID83_topography_analysis_code/09_barplot/all_lm_trend.xlsx	writes	09_barplot/ not in repo; saved copy is code:build_fig5/09_all_lm_trend.xlsx
+ext:ID83_topography_analysis_code/09_barplot/all_lm_trend.xlsx	code:ID83_topography_analysis_code/r.09_barplot.R	reads	re-read of own output
+code:ID83_topography_analysis_code/r.09_barplot.R	ext:ID83_topography_analysis_code/09_barplot/rtGroup_barplot.pdf	writes	per-cancer-type plots, not in repo
+code:ID83_topography_analysis_code/r.09_barplot.R	ext:ID83_topography_analysis_code/09_barplot/rtGroup_barplot_proportion.pdf	writes	per-cancer-type plots, not in repo
+ext:/public/data/Topography_analysis_2026/results0322/ID89/01_createBed/all.indel.ID89.partial.credit.txt	code:ID89_topography_analysis_code/r.01_createBed.R	reads	per-indel ID89 signature probabilities made by Mo Liu, too large for repo (README); relative to 01_createBed/; run on Huang-lab server
+code:ID89_topography_analysis_code/r.01_createBed.R	ext:/public/data/Topography_analysis_2026/results0322/ID89/01_createBed/02.unique.single.indel.aggregate.strand.added.matrix.txt	writes	relative 01_createBed/; server dir inferred from r.03 setwd; run on Huang-lab server
+code:ID89_topography_analysis_code/r.01_createBed.R	ext:/public/data/Topography_analysis_2026/results0322/ID89/01_createBed/02.unique.single.indel.aggregate.strand.added.matrix.bed	writes	relative 01_createBed/; server dir inferred from r.03 setwd; run on Huang-lab server
+code:ID89_topography_analysis_code/r.01_createBed.R	ext:/public/data/Topography_analysis_2026/results0322/ID89/01_createBed/03.signature.txt	writes	relative 01_createBed/; run on Huang-lab server
+code:ID89_topography_analysis_code/r.01_createBed.R	ext:/public/data/Topography_analysis_2026/results0322/ID89/01_createBed/03.signature.bed	writes	relative 01_createBed/; run on Huang-lab server
+ext:/public/data/Topography_analysis_2026/results/ID83/01_createBed/01.rtGroup.bed	code:ID89_topography_analysis_code/r.02.intersect_no_loop.sh	reads	replication-timing deciles (ID83 run); run on Huang-lab server
+ext:/public/data/Topography_analysis/reference/ENCODE/repli_strand_info_new.bed	code:ID89_topography_analysis_code/r.02.intersect_no_loop.sh	reads	run on Huang-lab server
+ext:/public/data/Topography_analysis_2026/results0322/ID83/01_createBed/03.signature.bed	code:ID89_topography_analysis_code/r.02.intersect_no_loop.sh	reads	uncertain: as received points at ID83 dirs (README: leftover from 83-type version); ID89 run presumably used results0322/ID89/
+code:ID89_topography_analysis_code/r.02.intersect_no_loop.sh	ext:/public/data/Topography_analysis_2026/results0322/ID83/02_intersectBed/01.RelicateTime.TransStrand.DNA_Region.intersect_res.txt	writes	uncertain: ID83 path as received; r.03 (ID89) reads results0322/ID89/02_intersectBed/
+code:ID89_topography_analysis_code/r.02.intersect_no_loop.sh	ext:/public/data/Topography_analysis_2026/results0322/ID83/02_intersectBed/02.RepliStrand.intersect_res.txt	writes	uncertain: ID83 path as received; not used by ID89 r.03
+ext:/public/data/Topography_analysis_2026/results0322/ID89/02_intersectBed/01.RelicateTime.TransStrand.DNA_Region.intersect_res.txt	code:ID89_topography_analysis_code/r.03_mergeInf.R	reads	setwd to server ID89 dir; run on Huang-lab server
+ext:/public/data/Topography_analysis_2026/results0322/ID89/01_createBed/02.unique.single.indel.aggregate.strand.added.matrix.txt	code:ID89_topography_analysis_code/r.03_mergeInf.R	reads	read then discarded (only dput colnames); run on Huang-lab server
+code:ID89_topography_analysis_code/all.meta.0528.rds	code:ID89_topography_analysis_code/r.03_mergeInf.R	reads	literal path is relative to server ID89/03_mergeInf/ after setwd; README says this file is what r.03 reads
+code:ID89_topography_analysis_code/r.03_mergeInf.R	ext:/public/data/Topography_analysis_2026/results0322/ID89/03_mergeInf/01.allInf.single.indel.txt	writes	run on Huang-lab server
+code:ID89_topography_analysis_code/r.03_mergeInf.R	ext:/public/data/Topography_analysis_2026/results0322/ID89/03_mergeInf/01.allInf.single.indel.Rds	writes	run on Huang-lab server
+ext:/public/data/Topography_analysis_2026/results0322/ID89/03_mergeInf/01.allInf.single.indel.txt	code:ID89_topography_analysis_code/r.04_createRTgroupInf.R	reads	relative ../03_mergeInf/; run on Huang-lab server
+code:ID89_topography_analysis_code/r.04_createRTgroupInf.R	code:ID89_topography_analysis_code/04_createRTgroupInf/rtGroup/tissue.rtGroup.Mutation_50cutoff.xlsx	writes	run on server; copy in code repo sent by Mini 2026-10-16
+code:ID89_topography_analysis_code/r.04_createRTgroupInf.R	ext:/public/data/Topography_analysis_2026/results0322/ID89/04_createRTgroupInf/rtGroup/tissue.rtGroup.Mutation_nocutoff.xlsx	writes	server only
+code:ID89_topography_analysis_code/r.04_createRTgroupInf.R	ext:/public/data/Topography_analysis_2026/results0322/ID89/04_createRTgroupInf/rtGroup/tissue.rtGroup.Mutation_nocutoff.Rds	writes	server only
+code:ID89_topography_analysis_code/r.04_createRTgroupInf.R	ext:/public/data/Topography_analysis_2026/results0322/ID89/04_createRTgroupInf/rtGroup/tissue.rtGroup.Mutation_75cutoff.xlsx	writes	server only
+code:ID89_topography_analysis_code/r.04_createRTgroupInf.R	ext:/public/data/Topography_analysis_2026/results0322/ID89/04_createRTgroupInf/rtGroup/tissue.rtGroup.Mutation_75cutoff.Rds	writes	server only
+code:ID89_topography_analysis_code/r.04_createRTgroupInf.R	ext:/public/data/Topography_analysis_2026/results0322/ID89/04_createRTgroupInf/rtGroup/tissue.rtGroup.Mutation_50cutoff.Rds	writes	server only
+code:ID89_topography_analysis_code/r.04_createRTgroupInf.R	ext:/public/data/Topography_analysis_2026/results0322/ID89/04_createRTgroupInf/01.Tissue_count.xlsx	writes	server only
+code:ID89_topography_analysis_code/04_createRTgroupInf/rtGroup/tissue.rtGroup.Mutation_50cutoff.xlsx	code:ID89_topography_analysis_code/r.09_barplot.R	reads	no simulated data for ID89
+code:ID89_topography_analysis_code/r.09_barplot.R	ext:ID89_topography_analysis_code/09_barplot/plot_data.xlsx	writes	09_barplot/ not in repo
+code:ID89_topography_analysis_code/r.09_barplot.R	ext:ID89_topography_analysis_code/09_barplot/trend.xlsx	writes	09_barplot/ not in repo; copy is code:build_sup_table_s14/trend_89.xlsx (reproduces Table S14)
+ext:ID89_topography_analysis_code/09_barplot/trend.xlsx	code:ID89_topography_analysis_code/r.09_barplot.R	reads	re-read of own outputs
+ext:ID89_topography_analysis_code/09_barplot/plot_data.xlsx	code:ID89_topography_analysis_code/r.09_barplot.R	reads	re-read of own outputs
+code:ID89_topography_analysis_code/r.09_barplot.R	ext:ID89_topography_analysis_code/09_barplot/signature_barplot_proportion.pdf	writes	plots not used in paper
+code:ID89_topography_analysis_code/r.09_barplot.R	ext:ID89_topography_analysis_code/09_barplot/signature_barplot_proportion.png	writes	plots not used in paper
+code:ID89_topography_analysis_code/r.09_barplot.R	ext:ID89_topography_analysis_code/09_barplot/ID89_rtGroup_barplot.pdf	writes	plots not used in paper
+code:ID89_topography_analysis_code/r.09_barplot.R	ext:ID89_topography_analysis_code/09_barplot/increasing/<signature>.single.indel.barplot.pdf	writes	script stops here: subfolders do not exist (README); later steps not reached
+code:ID89_topography_analysis_code/r.09_barplot.R	ext:ID89_topography_analysis_code/09_barplot/increasing/<signature>.single.indel.barplot.png	writes	script stops here: subfolders do not exist (README); later steps not reached
+code:ID89_topography_analysis_code/r.09_barplot.R	ext:ID89_topography_analysis_code/09_barplot/increasing/<signature>.Rds	writes	script stops here: subfolders do not exist (README); later steps not reached
+code:ID89_topography_analysis_code/r.09_barplot.R	ext:ID89_topography_analysis_code/09_barplot/decreasing/<signature>.single.indel.barplot.pdf	writes	script stops here: subfolders do not exist (README); later steps not reached
+code:ID89_topography_analysis_code/r.09_barplot.R	ext:ID89_topography_analysis_code/09_barplot/decreasing/<signature>.single.indel.barplot.png	writes	script stops here: subfolders do not exist (README); later steps not reached
+code:ID89_topography_analysis_code/r.09_barplot.R	ext:ID89_topography_analysis_code/09_barplot/decreasing/<signature>.Rds	writes	script stops here: subfolders do not exist (README); later steps not reached
+code:ID89_topography_analysis_code/r.09_barplot.R	ext:ID89_topography_analysis_code/09_barplot/flat/<signature>.single.indel.barplot.pdf	writes	script stops here: subfolders do not exist (README); later steps not reached
+code:ID89_topography_analysis_code/r.09_barplot.R	ext:ID89_topography_analysis_code/09_barplot/flat/<signature>.single.indel.barplot.png	writes	script stops here: subfolders do not exist (README); later steps not reached
+code:ID89_topography_analysis_code/r.09_barplot.R	ext:ID89_topography_analysis_code/09_barplot/flat/<signature>.Rds	writes	script stops here: subfolders do not exist (README); later steps not reached
+code:ID89_topography_analysis_code/r.09_barplot.R	ext:ID89_topography_analysis_code/09_barplot/mix/<signature>.single.indel.barplot.pdf	writes	script stops here: subfolders do not exist (README); later steps not reached
+code:ID89_topography_analysis_code/r.09_barplot.R	ext:ID89_topography_analysis_code/09_barplot/mix/<signature>.single.indel.barplot.png	writes	script stops here: subfolders do not exist (README); later steps not reached
+code:ID89_topography_analysis_code/r.09_barplot.R	ext:ID89_topography_analysis_code/09_barplot/mix/<signature>.Rds	writes	script stops here: subfolders do not exist (README); later steps not reached
+code:ID89_topography_analysis_code/r.09_barplot.R	ext:ID89_topography_analysis_code/09_barplot/lm3_signature_barplot.pdf	writes	not reached (after the failing step)
+code:ID89_topography_analysis_code/r.09_barplot.R	ext:ID89_topography_analysis_code/09_barplot/lm3_signature_barplot.png	writes	not reached (after the failing step)
+code:ID89_topography_analysis_code/r.09_barplot.R	ext:ID89_topography_analysis_code/09_barplot/ID89_InsDel_L_Stomach.Rds	writes	not reached (after the failing step)
+code:ID89_topography_analysis_code/r.09_barplot.R	ext:ID89_topography_analysis_code/09_barplot/ID89_InsDel_L_Stomach.pdf	writes	not reached (after the failing step)
+code:ID89_topography_analysis_code/r.09_barplot.R	ext:ID89_topography_analysis_code/09_barplot/ID89_InsDel_L_Stomach.png	writes	not reached (after the failing step)
+code:ID89_topography_analysis_code/r.09_barplot.R	ext:ID89_topography_analysis_code/09_barplot/barplot_list.Rds	writes	not reached (after the failing step)
+code:ID89_topography_analysis_code/r.09_barplot.R	ext:ID89_topography_analysis_code/09_barplot/ID89_barplot.pdf	writes	not reached (after the failing step)
+code:ID89_topography_analysis_code/r.09_barplot.R	ext:ID89_topography_analysis_code/09_barplot/ID89_barplot.png	writes	not reached (after the failing step)
+ext:/ID83_0322/09_barplot/ID_L_Stomach_Decreasing.Rds	code:ID89_topography_analysis_code/r.09_barplot.R	reads	not reached; ID83 example plot from server
+ext:ID89_topography_analysis_code/09_barplot/increasing/<signature>.Rds	code:ID89_topography_analysis_code/r.09_barplot.R	reads	not reached; re-read of own outputs
+ext:ID89_topography_analysis_code/09_barplot/flat/<signature>.Rds	code:ID89_topography_analysis_code/r.09_barplot.R	reads	not reached; re-read of own outputs
+ext:ID89_topography_analysis_code/09_barplot/mix/<signature>.Rds	code:ID89_topography_analysis_code/r.09_barplot.R	reads	not reached; re-read of own outputs
+code:Example_data/sigprofiler.input.89type.catalog/example.89type.Bladder.txt	code:Extraction_and_assignment_code/SigProfilerExtractor.py	reads	example input; uncertain: loop body only does the import (indentation), so only ct=All actually runs
+code:Example_data/sigprofiler.input.89type.catalog/example.89type.All.txt	code:Extraction_and_assignment_code/SigProfilerExtractor.py	reads	example input; uncertain: loop body only does the import (indentation), so only ct=All actually runs
+code:Extraction_and_assignment_code/SigProfilerExtractor.py	ext:Example_data/sigprofiler.input.89type.catalog/example.89type.Bladder/	writes	SigProfilerExtractor output folder; not in repo
+code:Extraction_and_assignment_code/SigProfilerExtractor.py	ext:Example_data/sigprofiler.input.89type.catalog/example.89type.All/	writes	SigProfilerExtractor output folder; not in repo
+code:Example_data/mSigHdp.input.89type.catalog/mSigHdp.test.89type.catalog.txt	code:Extraction_and_assignment_code/mSigHdp.R	reads	example input
+code:Extraction_and_assignment_code/mSigHdp.R	ext:example.mSigHdp.extraction.output/	writes	relative to code repo root; not in repo
+code:Example_data/assignment.example.data/example.172.type.catalog.txt	code:Extraction_and_assignment_code/SigProfilerAssignment.py	reads	example input
+code:Example_data/assignment.example.data/example.172.type.signatures.txt	code:Extraction_and_assignment_code/SigProfilerAssignment.py	reads	example input
+code:Extraction_and_assignment_code/SigProfilerAssignment.py	ext:output/	writes	SigProfilerAssignment output folder relative to code repo root; not in repo
+code:Example_data/assignment.example.data/example.172.type.catalog.txt	code:Extraction_and_assignment_code/mSigAct.R	reads	example input
+code:Example_data/assignment.example.data/example.172.type.signatures.txt	code:Extraction_and_assignment_code/mSigAct.R	reads	example input
+code:Extraction_and_assignment_code/mSigAct.R	ext:new_result_list.rds	writes	working directory; not in repo
+code:Extraction_and_assignment_code/mSigAct.R	ext:temp/	writes	PresenceAttributeSigActivity output.dir
+ext:MSIseq/MSIseq_1.0.0/MSIseq/R/Compute.input.variables.R	code:msiseq/run-MSIseq.R	reads	source; MSIseq 1.0.0 package source, after setwd(MSIseq) (folder not in repo)
+ext:/MSIseq_1.0.0/MSIseq/R/MSIseq.classify.R	code:msiseq/run-MSIseq.R	reads	source; absolute path with leading slash, probably a typo for the relative path
+ext:MSIseq/Hg19repeats.rda	code:msiseq/run-MSIseq.R	reads	MSIseq hg19 repeat annotation
+ext:MSIseq/MSIseq_1.0.0/MSIseq/R/sysdata.rda	code:msiseq/run-MSIseq.R	reads	MSIseq classifier data
+ext:MSIseq/all.data.SNV.rds	code:msiseq/run-MSIseq.R	reads	per-sample SNV lists; origin not documented
+ext:MSIseq/all.data.indel.rds	code:msiseq/run-MSIseq.R	reads	per-sample indel lists; origin not documented
+code:msiseq/run-MSIseq.R	ext:MSIseq/mafInf/<sample>_mafInf.xlsx	writes	per sample; also read back
+ext:MSIseq/mafInf/<sample>_mafInf.xlsx	code:msiseq/run-MSIseq.R	reads	re-read of own output
+code:msiseq/run-MSIseq.R	ext:MSIseq/mutationNum.txt	writes	uncertain: main loop uses undefined SNV_insert_dat / indel83_intersect_dat, so it cannot run as written; final MSIseq calls are in data:sample_info.tsv (MSIseq_MSI.H), and data:new-mini-msi-calls/ has a later run_MSIseq_overlap_6975.R
+code:msiseq/run-MSIseq.R	ext:MSIseq/Classify.txt	writes	uncertain: main loop uses undefined SNV_insert_dat / indel83_intersect_dat, so it cannot run as written; final MSIseq calls are in data:sample_info.tsv (MSIseq_MSI.H), and data:new-mini-msi-calls/ has a later run_MSIseq_overlap_6975.R
+code:msiseq/run-MSIseq.R	ext:MSIseq/mutationNum.xlsx	writes	uncertain: main loop uses undefined SNV_insert_dat / indel83_intersect_dat, so it cannot run as written; final MSIseq calls are in data:sample_info.tsv (MSIseq_MSI.H), and data:new-mini-msi-calls/ has a later run_MSIseq_overlap_6975.R
+code:msiseq/run-MSIseq.R	ext:MSIseq/MSI_classified_res.xlsx	writes	uncertain: main loop uses undefined SNV_insert_dat / indel83_intersect_dat, so it cannot run as written; final MSIseq calls are in data:sample_info.tsv (MSIseq_MSI.H), and data:new-mini-msi-calls/ has a later run_MSIseq_overlap_6975.R
+ext:PCAWG7.sample.id.txt	data:build_all_meta.R	reads	PCAWG7 package; inputs were in code repo build_fig_s1/ at commit 82973f3
+ext:PCAWG.sample.sheet.txt	data:build_all_meta.R	reads	PCAWG7 package; in code repo build_fig_s1/ at commit 82973f3
+ext:donor.all_projects.tsv.gz	data:build_all_meta.R	reads	ICGC donor table; in code repo build_fig_s1/ at commit 82973f3
+ext:HMF_metadata.tsv	data:build_all_meta.R	reads	controlled-access Hartwig clinical data
+ext:Priestley.TableS2.xlsx	data:build_all_meta.R	reads	Priestley et al. 2019 Table S2 (https://doi.org/10.1038/s41586-019-1689-y); found by list.files pattern
+data:build_all_meta.R	ext:all.meta.txt	writes	out_dir (default .); not in data repo; agrees with columns of data:sample_info.tsv per header
+code:vignette/find_best_match_spectra.R	data:make_connection_table.R	reads	"source; uncertain: literal here(""code"",""find_best_match_spectra.R"") exists in neither repo; code:vignette/make_connection_table.R is the same script but sources vignette/"
+code:vignette/vhelpers.R	data:make_connection_table.R	reads	"source; uncertain: here(""vignette"",""vhelpers.R"") only resolves when run from the code repo; vhelpers defines finalized_files via find_data()"
+data:liu_et_al_83_signatures.tsv	data:make_connection_table.R	reads	via read_finalized()
+data:liu_et_al_89_signatures.tsv	data:make_connection_table.R	reads	via read_finalized()
+data:liu_et_al_476_signatures.tsv	data:make_connection_table.R	reads	via read_finalized()
+data:liu_et_al_83_spectra.tsv	data:make_connection_table.R	reads	via find_top_n_match_names()
+data:liu_et_al_89_spectra.tsv	data:make_connection_table.R	reads	via find_top_n_match_names()
+data:liu_et_al_476_spectra.tsv	data:make_connection_table.R	reads	via find_top_n_match_names()
+data:make_connection_table.R	data:connection_table.tsv	writes	"finalized_files[[""connection_table""]]"
+code:vignette/ppar.R	code:vignette/vignette.qmd	reads	source
+code:vignette/vhelpers.R	code:vignette/vignette.qmd	reads	source
+code:vignette/collapse_476_to_89.R	code:vignette/vignette.qmd	reads	source
+code:vignette/collapse_476_to_83.R	code:vignette/vignette.qmd	reads	source (also sourced by vhelpers.R)
+code:vignette/make_connection_table.R	code:vignette/vignette.qmd	reads	source, only if REGENERATE_CONNECTION_TABLE (hard-coded FALSE)
+code:vignette/onesig.qmd	code:vignette/vignette.qmd	reads	knitr child template, once per signature
+code:vignette/table_1_col_name_mapping.R	code:vignette/vignette.qmd	reads	source, inside create_overview_table() (vhelpers.R), path relative to cwd vignette/
+code:vignette/styles.css	code:vignette/vignette.qmd	reads	html css
+code:vignette/preamble.tex	code:vignette/vignette.qmd	reads	pdf include-in-header
+data:connection_table.tsv	code:vignette/vignette.qmd	reads	"read_finalized(""connection_table""), InsDel_J exemplars overridden in code"
+data:liu_et_al_83_spectra.tsv	code:vignette/vignette.qmd	reads	read_finalized
+data:liu_et_al_83_signatures.tsv	code:vignette/vignette.qmd	reads	read_finalized (also re-read inside collapse_476_to_83)
+data:liu_et_al_89_signatures.tsv	code:vignette/vignette.qmd	reads	read_finalized
+data:liu_et_al_89_spectra.tsv	code:vignette/vignette.qmd	reads	read_finalized
+data:liu_et_al_476_signatures.tsv	code:vignette/vignette.qmd	reads	read_finalized (also re-read inside collapse_476_to_83)
+data:liu_et_al_476_spectra.tsv	code:vignette/vignette.qmd	reads	read_finalized
+data:liu_et_al_89_assignment.tsv	code:vignette/vignette.qmd	reads	mtime only, via check_plot_cache/save_plot_cache in vhelpers.R; contents never read
+data:external_data/COSMIC_v3.6_ID_GRCh37.txt	code:vignette/vignette.qmd	reads	read.delim
+data:external_data/jin_2024_sup_tab_1_signatures.tsv	code:vignette/vignette.qmd	reads	read.delim
+data:external_data/Koh_signatures.tsv	code:vignette/vignette.qmd	reads	read.delim
+data:ID476_ID89_mapping.txt	code:vignette/vignette.qmd	reads	via t476_to_89() in collapse_476_to_89.R
+code:vignette/unique_pairs.tsv	code:vignette/vignette.qmd	reads	via collapse_476_to_83() in collapse_476_to_83.R
+data:per_sig_txt/*.md	code:vignette/vignette.qmd	reads	via find_sig_txt() in onesig.qmd, optional per signature (.md, not .txt)
+code:vignette/figure/parallel_plots/plot_cache_hash.rds	code:vignette/vignette.qmd	reads	check_plot_cache(); REGENERATE_PLOTS hard-coded TRUE so cache result is ignored
+code:vignette/figure/parallel_plots/*.png	code:vignette/vignette.qmd	reads	embedded in output by onesig.qmd
+code:vignette/vignette.qmd	code:vignette/prot_table_1.csv	writes	write.csv(sig_table2), relative to cwd vignette/
+code:vignette/vignette.qmd	code:vignette/figure/parallel_plots/*.png	writes	generate_all_plots_parallel() in vhelpers.R (<sig>_id{89,83,476}_*.png, _cosmic_*, _jin_*, _koh_*, _sankey_other_{ins,del})
+code:vignette/vignette.qmd	code:vignette/figure/parallel_plots/plot_cache_hash.rds	writes	save_plot_cache()
+code:vignette/vignette.qmd	code:vignette/figure/standalone_data/all_sig_data.rds	writes	saveRDS
+code:vignette/vignette.qmd	code:vignette/figure/standalone_data/all_plot_paths.rds	writes	saveRDS
+code:vignette/vignette.qmd	code:vignette/assign_for_residual.md	writes	via vhelpers.R (deleted when sourced, appended by compute_sig_data); not tracked in git
+code:vignette/vignette.qmd	code:vignette/repertoire_of_indel_mutational_signatures.html	writes	rendered output (format html)
+code:vignette/vignette.qmd	code:vignette/repertoire_of_indel_mutational_signatures.pdf	writes	rendered output (format pdf); the repertoire PDF
+code:vignette/vignette.qmd	code:vignette/vignette.tex	writes	LaTeX intermediates of pdf render
+code:vignette/vignette.qmd	code:vignette/vignette.aux	writes	LaTeX intermediates of pdf render
+code:vignette/vignette.qmd	code:vignette/vignette.log	writes	LaTeX intermediates of pdf render
+code:vignette/vignette.qmd	code:vignette/vignette.toc	writes	LaTeX intermediates of pdf render
+code:vignette/vignette.qmd	data:connection_table.tsv	writes	via make_connection_table.R, only if REGENERATE_CONNECTION_TABLE (hard-coded FALSE)
+code:vignette/plot_83_w_wout_t.R	code:vignette/vhelpers.R	reads	source
+code:vignette/collapse_476_to_83.R	code:vignette/vhelpers.R	reads	source
+code:find_data.R	code:vignette/vhelpers.R	reads	source
+data:liu_et_al_89_signatures.tsv	code:vignette/vhelpers.R	reads	read_finalized() when caller asks; also mtime in plot cache
+data:liu_et_al_89_spectra.tsv	code:vignette/vhelpers.R	reads	read_finalized() when caller asks; also mtime in plot cache
+data:liu_et_al_83_signatures.tsv	code:vignette/vhelpers.R	reads	read_finalized() when caller asks; also mtime in plot cache
+data:liu_et_al_83_spectra.tsv	code:vignette/vhelpers.R	reads	read_finalized() when caller asks; also mtime in plot cache
+data:liu_et_al_476_signatures.tsv	code:vignette/vhelpers.R	reads	read_finalized() when caller asks; also mtime in plot cache
+data:liu_et_al_476_spectra.tsv	code:vignette/vhelpers.R	reads	read_finalized() when caller asks; also mtime in plot cache
+data:connection_table.tsv	code:vignette/vhelpers.R	reads	read_finalized() when caller asks; also mtime in plot cache
+data:liu_et_al_89_assignment.tsv	code:vignette/vhelpers.R	reads	"mtime only (file.exists + file.mtime in check_plot_cache/save_plot_cache); no read_finalized(""89_assignment"") anywhere"
+data:per_sig_txt/*.md	code:vignette/vhelpers.R	reads	find_sig_txt(), optional
+code:vignette/table_1_col_name_mapping.R	code:vignette/vhelpers.R	reads	source inside create_overview_table(), relative path
+code:vignette/figure/parallel_plots/plot_cache_hash.rds	code:vignette/vhelpers.R	reads	check_plot_cache(), plot_dir supplied by caller
+code:vignette/ppar.R	code:vignette/vhelpers.R	reads	mtime only in plot cache hash, relative path
+code:vignette/89_mapped_from_476.tsv	code:vignette/vhelpers.R	reads	uncertain: mtime only in plot cache hash, file does not exist and nothing writes it
+code:vignette/83_mapped_from_476.tsv	code:vignette/vhelpers.R	reads	uncertain: mtime only in plot cache hash, file does not exist and nothing writes it
+code:vignette/vhelpers.R	code:vignette/assign_for_residual.md	writes	file.remove at source time, appended per signature by compute_sig_data()
+code:vignette/vhelpers.R	code:vignette/figure/parallel_plots/*.png	writes	ggsave in generate_plots_to_files(), plot_dir supplied by caller
+code:vignette/vhelpers.R	code:vignette/figure/parallel_plots/plot_cache_hash.rds	writes	save_plot_cache()
+code:vignette/solve_bipartite_match.R	code:vignette/collapse_476_to_83.R	reads	source
+code:vignette/unique_pairs.tsv	code:vignette/collapse_476_to_83.R	reads	collapse_476_to_83()
+data:liu_et_al_476_signatures.tsv	code:vignette/collapse_476_to_83.R	reads	collapse_476_to_83() via sig_dir=finalized_dir; default arg of collapse_all_476_to_83_matrix
+data:liu_et_al_83_signatures.tsv	code:vignette/collapse_476_to_83.R	reads	collapse_476_to_83() and read_finalized in collapse_all_476_to_83_matrix
+data:connection_table.tsv	code:vignette/collapse_476_to_83.R	reads	read_finalized in get_signature_mapping()
+ext:Manuscript_data/Liu_et_al_final_476_type_signatures.tsv	code:vignette/collapse_476_to_83.R	reads	uncertain: dead code, collapse_and_plot_all_signatures() never called and path does not exist
+ext:Manuscript_data/Liu_et_al_final_83_type_signatures.tsv	code:vignette/collapse_476_to_83.R	reads	uncertain: dead code, collapse_and_plot_all_signatures() never called and path does not exist
+code:vignette/collapse_476_to_83.R	ext:<out_dir>/<sig>_sankey_other_ins.png	writes	uncertain: dead code, generate_sankey_png() never called (vhelpers.R saves sankeys itself)
+code:vignette/collapse_476_to_83.R	ext:<out_dir>/<sig>_sankey_other_del.png	writes	uncertain: dead code, generate_sankey_png() never called (vhelpers.R saves sankeys itself)
+code:vignette/collapse_476_to_83.R	ext:output/collapse_<sig476>_to_<sig83>.pdf	writes	uncertain: dead code, plot_collapse_476_to_83() never called
+code:find_data.R	code:vignette/collapse_476_to_89.R	reads	source
+data:ID476_ID89_mapping.txt	code:vignette/collapse_476_to_89.R	reads	fread in t476_to_89() (and unused do_not_use_t476_to_83())
+code:vignette/find_best_match_spectra.R	code:vignette/make_connection_table.R	reads	source
+code:vignette/vhelpers.R	code:vignette/make_connection_table.R	reads	source
+data:liu_et_al_83_signatures.tsv	code:vignette/make_connection_table.R	reads	read_finalized
+data:liu_et_al_89_signatures.tsv	code:vignette/make_connection_table.R	reads	read_finalized
+data:liu_et_al_476_signatures.tsv	code:vignette/make_connection_table.R	reads	read_finalized
+data:liu_et_al_83_spectra.tsv	code:vignette/make_connection_table.R	reads	via find_top_n_match_names()
+data:liu_et_al_89_spectra.tsv	code:vignette/make_connection_table.R	reads	via find_top_n_match_names()
+data:liu_et_al_476_spectra.tsv	code:vignette/make_connection_table.R	reads	via find_top_n_match_names()
+code:vignette/make_connection_table.R	data:connection_table.tsv	writes	write.table; overwrites the data-repo file (data repo also has its own make_connection_table.R)
+code:vignette/make_connection_table.R	code:vignette/assign_for_residual.md	writes	side effect of sourcing vhelpers.R (file.remove)
+code:vignette/figure/parallel_plots/*.png	code:vignette/onesig.qmd	reads	image links from plot_paths, embedded by parent render
+data:per_sig_txt/*.md	code:vignette/onesig.qmd	reads	find_sig_txt() for 89-type and 83-type IDs, optional
+code:vignette/ppar.R	code:vignette/onesig_standalone.qmd	reads	source
+code:vignette/vhelpers.R	code:vignette/onesig_standalone.qmd	reads	source
+code:vignette/onesig.qmd	code:vignette/onesig_standalone.qmd	reads	knitr child template
+code:vignette/styles.css	code:vignette/onesig_standalone.qmd	reads	html css
+code:vignette/figure/standalone_data/all_sig_data.rds	code:vignette/onesig_standalone.qmd	reads	readRDS
+code:vignette/figure/standalone_data/all_plot_paths.rds	code:vignette/onesig_standalone.qmd	reads	readRDS
+code:vignette/figure/parallel_plots/*.png	code:vignette/onesig_standalone.qmd	reads	embedded via onesig.qmd
+data:per_sig_txt/*.md	code:vignette/onesig_standalone.qmd	reads	via onesig.qmd find_sig_txt()
+code:vignette/onesig_standalone.qmd	code:vignette/<--output>.html	writes	rendered page, name set by caller; render_separate_pages.R moves it to separate_pages/
+code:vignette/onesig_standalone.qmd	code:vignette/assign_for_residual.md	writes	side effect of sourcing vhelpers.R (file.remove)
+code:vignette/figure/standalone_data/all_sig_data.rds	code:vignette/render_separate_pages.R	reads	readRDS
+code:vignette/figure/standalone_data/all_plot_paths.rds	code:vignette/render_separate_pages.R	reads	readRDS
+code:vignette/vhelpers.R	code:vignette/render_separate_pages.R	reads	source
+code:vignette/onesig_standalone.qmd	code:vignette/render_separate_pages.R	reads	renders (quarto CLI, -P sig_index:N, once per signature)
+code:vignette/render_separate_pages.R	code:vignette/separate_pages/*.html	writes	per-signature pages <safe_name>.html (rendered in vignette/ then file.rename)
+code:vignette/render_separate_pages.R	code:vignette/assign_for_residual.md	writes	side effect of sourcing vhelpers.R (file.remove)
+code:vignette/vhelpers.R	code:vignette/overview_table_standalone.qmd	reads	source
+code:vignette/table_1_col_name_mapping.R	code:vignette/overview_table_standalone.qmd	reads	source (also re-sourced in create_overview_table)
+code:vignette/prot_table_1.csv	code:vignette/overview_table_standalone.qmd	reads	read.csv(params$table_csv), default prot_table_1.csv
+code:vignette/styles.css	code:vignette/overview_table_standalone.qmd	reads	html css
+code:vignette/overview_table_standalone.qmd	code:vignette/overview_table_standalone.html	writes	default output when rendered directly; render_overview_table.R passes --output overview_table.html
+code:vignette/overview_table_standalone.qmd	code:vignette/assign_for_residual.md	writes	side effect of sourcing vhelpers.R (file.remove)
+code:vignette/overview_table_standalone.qmd	code:vignette/render_overview_table.R	reads	renders (quarto CLI, -P separate_pages_dir, -P table_csv)
+code:vignette/prot_table_1.csv	code:vignette/render_overview_table.R	reads	passed as --table-csv param (default) to the qmd, not read directly
+code:vignette/render_overview_table.R	code:vignette/separate_pages/overview_table.html	writes	rendered as vignette/overview_table.html then file.rename to --output-dir
+code:vignette/table_1_col_name_mapping.R	code:vignette/prot_table_1_to_excel.R	reads	source
+code:vignette/prot_table_1.csv	code:vignette/prot_table_1_to_excel.R	reads	read.csv
+code:vignette/prot_table_1_to_excel.R	code:vignette/table_1_autogenerated.xlsx	writes	openxlsx saveWorkbook (Table 1)
+paper:main_figures/graphical_abstract.pdf	paper:crop_figs.sh	reads	
+paper:crop_figs.sh	paper:main_figures/cropped/graphical_abstract.pdf	writes	
+paper:main_figures/fig1.pdf	paper:crop_figs.sh	reads	
+paper:crop_figs.sh	paper:main_figures/cropped/fig1.pdf	writes	
+paper:main_figures/fig2.pdf	paper:crop_figs.sh	reads	
+paper:crop_figs.sh	paper:main_figures/cropped/fig2.pdf	writes	
+paper:main_figures/fig3.pdf	paper:crop_figs.sh	reads	
+paper:crop_figs.sh	paper:main_figures/cropped/fig3.pdf	writes	
+paper:main_figures/fig4.pdf	paper:crop_figs.sh	reads	
+paper:crop_figs.sh	paper:main_figures/cropped/fig4.pdf	writes	
+paper:main_figures/fig5.pdf	paper:crop_figs.sh	reads	
+paper:crop_figs.sh	paper:main_figures/cropped/fig5.pdf	writes	
+paper:main_figures/fig6.pdf	paper:crop_figs.sh	reads	
+paper:crop_figs.sh	paper:main_figures/cropped/fig6.pdf	writes	
+paper:sup_figs/sup_fig_s1a_signature_assignment.pdf	paper:crop_sup_figs.sh	reads	
+paper:crop_sup_figs.sh	paper:sup_figs/cropped/sup_fig_s1a.pdf	writes	
+paper:sup_figs/sup_fig_s1b_signature_assignment.pdf	paper:crop_sup_figs.sh	reads	
+paper:crop_sup_figs.sh	paper:sup_figs/cropped/sup_fig_s1b.pdf	writes	
+paper:sup_figs/sup_fig_s2_msighdp_signatures.pdf	paper:crop_sup_figs.sh	reads	
+paper:crop_sup_figs.sh	paper:sup_figs/cropped/sup_fig_s2ab.pdf	writes	
+paper:crop_sup_figs.sh	paper:sup_figs/cropped/sup_fig_s2c.pdf	writes	
+paper:sup_figs/sup_fig_s3a_transcription_strand.pdf	paper:crop_sup_figs.sh	reads	
+paper:crop_sup_figs.sh	paper:sup_figs/cropped/sup_fig_s3a.pdf	writes	
+paper:sup_figs/sup_fig_s3b_replication_strand.pdf	paper:crop_sup_figs.sh	reads	
+paper:crop_sup_figs.sh	paper:sup_figs/cropped/sup_fig_s3b.pdf	writes	
+paper:sup_figs/sup_fig_s3c_genic_intergenic.pdf	paper:crop_sup_figs.sh	reads	
+paper:crop_sup_figs.sh	paper:sup_figs/cropped/sup_fig_s3c.pdf	writes	
+paper:sup_figs/sup_fig_s4_replication_timing.pdf	paper:crop_sup_figs.sh	reads	
+paper:crop_sup_figs.sh	paper:sup_figs/cropped/sup_fig_s4.pdf	writes	
+paper:sup_figs/sup_fig_s5_rnase_h2_spectra.pdf	paper:crop_sup_figs.sh	reads	
+paper:crop_sup_figs.sh	paper:sup_figs/cropped/sup_fig_s5.pdf	writes	
+paper:sup_figs/sup_fig_s6_sex_age.pdf	paper:crop_sup_figs.sh	reads	
+paper:crop_sup_figs.sh	paper:sup_figs/cropped/sup_fig_s6.pdf	writes	
+paper:main_figures/cropped/fig1.pdf	paper:ms.qmd	reads	
+paper:main_figures/cropped/fig2.pdf	paper:ms.qmd	reads	
+paper:main_figures/cropped/fig3.pdf	paper:ms.qmd	reads	
+paper:main_figures/cropped/fig4.pdf	paper:ms.qmd	reads	
+paper:main_figures/cropped/fig5.pdf	paper:ms.qmd	reads	
+paper:main_figures/cropped/fig6.pdf	paper:ms.qmd	reads	
+paper:main_figures/cropped/graphical_abstract.pdf	paper:ms.qmd	reads	
+code:ms_numbers.R	paper:ms.qmd	reads	source; inline numbers
+paper:table_1_autogenerated_edited.xlsx	paper:ms.qmd	reads	Table 1
+paper:ref.bib	paper:ms.qmd	reads	bibliography
+paper:authors.qmd	paper:ms.qmd	reads	include
+paper:ms.qmd	paper:ms.pdf	writes	via render_ms.sh
+paper:sup_figs/cropped/sup_fig_s1a.pdf	paper:sup_figs/sup_figs.qmd	reads	
+paper:sup_figs/cropped/sup_fig_s1b.pdf	paper:sup_figs/sup_figs.qmd	reads	
+paper:sup_figs/cropped/sup_fig_s2ab.pdf	paper:sup_figs/sup_figs.qmd	reads	
+paper:sup_figs/cropped/sup_fig_s2c.pdf	paper:sup_figs/sup_figs.qmd	reads	
+paper:sup_figs/cropped/sup_fig_s3a.pdf	paper:sup_figs/sup_figs.qmd	reads	
+paper:sup_figs/cropped/sup_fig_s3b.pdf	paper:sup_figs/sup_figs.qmd	reads	
+paper:sup_figs/cropped/sup_fig_s3c.pdf	paper:sup_figs/sup_figs.qmd	reads	
+paper:sup_figs/cropped/sup_fig_s4.pdf	paper:sup_figs/sup_figs.qmd	reads	
+paper:sup_figs/cropped/sup_fig_s5.pdf	paper:sup_figs/sup_figs.qmd	reads	
+paper:sup_figs/cropped/sup_fig_s6.pdf	paper:sup_figs/sup_figs.qmd	reads	
+paper:authors.qmd	paper:sup_figs/sup_figs.qmd	reads	include
+paper:sup_figs/sup_figs.qmd	paper:sup_figs/sup_figs.pdf	writes	
+paper:sup_figs/sup_figs.qmd	paper:sup_figs/sup_figs.html	writes	
+code:build_fig1/fig1.pdf	paper:main_figures/fig1.pdf	copied	
+code:build_fig2/fig2.pdf	paper:main_figures/fig2.pdf	copied	
+code:build_fig3/fig3.pdf	paper:main_figures/fig3.pdf	copied	
+code:build_fig4/fig4.pdf	paper:main_figures/fig4.pdf	copied	
+code:build_fig5/fig5.pdf	paper:main_figures/fig5.pdf	copied	
+code:build_fig6/fig6_id4_idf_signatures.pdf	paper:main_figures/fig6.pdf	edited by hand	
+code:build_fig6/fig6_sequence_logos.pdf	paper:main_figures/fig6.pdf	edited by hand	
+code:build_fig_s1/sup_fig_s1a_signature_assignment.pdf	paper:sup_figs/sup_fig_s1a_signature_assignment.pdf	copied	
+code:build_fig_s1/sup_fig_s1b_signature_assignment.pdf	paper:sup_figs/sup_fig_s1b_signature_assignment.pdf	copied	
+code:build_fig_s2/sup_fig_s2_msighdp_signatures_draft.pdf	paper:sup_figs/sup_fig_s2_msighdp_signatures.pdf	edited by hand	
+code:build_fig_s3/sup_fig_s3a_transcription_strand.pdf	paper:sup_figs/sup_fig_s3a_transcription_strand.pdf	copied	
+code:build_fig_s3/sup_fig_s3b_replication_strand.pdf	paper:sup_figs/sup_fig_s3b_replication_strand.pdf	copied	
+code:build_fig_s3/sup_fig_s3c_genic_intergenic.pdf	paper:sup_figs/sup_fig_s3c_genic_intergenic.pdf	copied	
+code:build_fig_s4/sup_fig_s4_replication_timing.pdf	paper:sup_figs/sup_fig_s4_replication_timing.pdf	copied	
+code:build_fig_s5/sup_fig_s5_rnase_h2_spectra_draft.pdf	paper:sup_figs/sup_fig_s5_rnase_h2_spectra.pdf	edited by hand	
+code:build_fig_s6/sup_fig_s6_sex_age.pdf	paper:sup_figs/sup_fig_s6_sex_age.pdf	copied	
+code:build_sup_table_s1/sup_table_s1_476_89_83_type_categories.xlsx	paper:sup_tables/sup_table_s1_476_89_83_type_categories.xlsx	copied	
+code:build_sup_table_s2/sup_table_s2_msighdp_83_type_signatures.xlsx	paper:sup_tables/sup_table_s2_msighdp_83_type_signatures.xlsx	copied	
+code:build_sup_table_s3/sup_table_s3_sigprofiler_83_type_signatures.xlsx	paper:sup_tables/sup_table_s3_sigprofiler_83_type_signatures.xlsx	copied	
+code:build_sup_table_s4/sup_table_s4_msighdp_89_type_signatures.xlsx	paper:sup_tables/sup_table_s4_msighdp_89_type_signatures.xlsx	copied	
+code:build_sup_table_s5/sup_table_s5_sigprofiler_89_type_signatures.xlsx	paper:sup_tables/sup_table_s5_sigprofiler_89_type_signatures.xlsx	copied	
+code:build_sup_table_s6/sup_table_s6_msighdp_476_type_signatures.xlsx	paper:sup_tables/sup_table_s6_msighdp_476_type_signatures.xlsx	copied	
+code:build_sup_table_s7/sup_table_s7_sigprofiler_476_type_signatures.xlsx	paper:sup_tables/sup_table_s7_sigprofiler_476_type_signatures.xlsx	copied	
+code:build_sup_table_s8/sup_table_s8_cosine_msighdp_vs_sigprofiler.xlsx	paper:sup_tables/sup_table_s8_cosine_msighdp_vs_sigprofiler.xlsx	copied	
+code:build_sup_table_s9/sup_table_s9_pol_proofreading.xlsx	paper:sup_tables/sup_table_s9_pol_proofreading.xlsx	copied	
+code:build_sup_table_s10/sup_table_s10_insdel_N_burden.xlsx	paper:sup_tables/sup_table_s10_insdel_N_burden.xlsx	copied	
+code:build_sup_table_s11/sup_table_s11_83_89_signature_assignment.tsv	paper:sup_tables/sup_table_s11_83_89_signature_assignment.tsv	copied	
+code:build_sup_table_s12/sup_table_s12_topography_asymmetry.xlsx	paper:sup_tables/sup_table_s12_topography_asymmetry.xlsx	copied	
+code:build_sup_table_s13/sup_table_s13_replication_timing_83.xlsx	paper:sup_tables/sup_table_s13_replication_timing_83.xlsx	copied	
+code:build_sup_table_s14/sup_table_s14_replication_timing_89.xlsx	paper:sup_tables/sup_table_s14_replication_timing_89.xlsx	copied	
+code:build_sup_table_s15/sup_table_s15_sex_bias.xlsx	paper:sup_tables/sup_table_s15_sex_bias.xlsx	copied	
+code:build_sup_table_s16/sup_table_s16_age_correlation.xlsx	paper:sup_tables/sup_table_s16_age_correlation.xlsx	copied	
+code:build_sup_table_s17/sup_table_s17_sample_metadata.xlsx	paper:sup_tables/sup_table_s17_sample_metadata.xlsx	copied	
+code:vignette/table_1_autogenerated.xlsx	paper:table_1_autogenerated.xlsx	copied	
+paper:table_1_autogenerated.xlsx	paper:table_1_autogenerated_edited.xlsx	edited by hand	
+code:ID83_topography_analysis_code/05_FisherTest/trans.strand.fisher_test_50cutoff.xlsx	code:build_fig_s3/05_FisherTest/trans.strand.fisher_test_50cutoff.xlsx	copied	copied by hand
+code:ID83_topography_analysis_code/06_computeOddsRatio/trans.strand/01.trans.strand.odds_ratio.xlsx	code:build_fig_s3/06_computeOddsRatio/trans.strand/01.trans.strand.odds_ratio.xlsx	copied	copied by hand
+code:ID83_topography_analysis_code/06_computeOddsRatio/trans.strand/02.trans.strand.odds_type.xlsx	code:build_fig_s3/06_computeOddsRatio/trans.strand/02.trans.strand.odds_type.xlsx	copied	copied by hand
+code:ID83_topography_analysis_code/06_computeOddsRatio/trans.strand/03.trans.strand.cancer_proportion.xlsx	code:build_fig_s3/06_computeOddsRatio/trans.strand/03.trans.strand.cancer_proportion.xlsx	copied	copied by hand
+code:ID83_topography_analysis_code/05_FisherTest/repli.strand.fisher_test_50cutoff.xlsx	code:build_fig_s3/05_FisherTest/repli.strand.fisher_test_50cutoff.xlsx	copied	copied by hand
+code:ID83_topography_analysis_code/06_computeOddsRatio/repli.strand/01.repli.strand.odds_ratio.xlsx	code:build_fig_s3/06_computeOddsRatio/repli.strand/01.repli.strand.odds_ratio.xlsx	copied	copied by hand
+code:ID83_topography_analysis_code/06_computeOddsRatio/repli.strand/02.repli.strand.odds_type.xlsx	code:build_fig_s3/06_computeOddsRatio/repli.strand/02.repli.strand.odds_type.xlsx	copied	copied by hand
+code:ID83_topography_analysis_code/06_computeOddsRatio/repli.strand/03.repli.strand.cancer_proportion.xlsx	code:build_fig_s3/06_computeOddsRatio/repli.strand/03.repli.strand.cancer_proportion.xlsx	copied	copied by hand
+code:ID83_topography_analysis_code/05_FisherTest/DNA.region.fisher_test_50cutoff.xlsx	code:build_fig_s3/05_FisherTest/DNA.region.fisher_test_50cutoff.xlsx	copied	copied by hand
+code:ID83_topography_analysis_code/06_computeOddsRatio/DNA.region/01.DNA.region.odds_ratio.xlsx	code:build_fig_s3/06_computeOddsRatio/DNA.region/01.DNA.region.odds_ratio.xlsx	copied	copied by hand
+code:ID83_topography_analysis_code/06_computeOddsRatio/DNA.region/02.DNA.region.odds_type.xlsx	code:build_fig_s3/06_computeOddsRatio/DNA.region/02.DNA.region.odds_type.xlsx	copied	copied by hand
+code:ID83_topography_analysis_code/06_computeOddsRatio/DNA.region/03.DNA.region.cancer_proportion.xlsx	code:build_fig_s3/06_computeOddsRatio/DNA.region/03.DNA.region.cancer_proportion.xlsx	copied	copied by hand
+ext:ID83_topography_analysis_code/09_barplot/all_lm_trend.xlsx	code:build_fig5/09_all_lm_trend.xlsx	copied	copied by hand
+ext:ID83_topography_analysis_code/09_barplot/plot_data.xlsx	code:build_fig5/09_barplot_data.xlsx	copied	copied by hand
+ext:ID83_topography_analysis_code/09_barplot/all_lm_trend.xlsx	code:build_fig_s4/09_all_lm_trend.xlsx	copied	copied by hand
+ext:ID83_topography_analysis_code/09_barplot/plot_data.xlsx	code:build_fig_s4/09_barplot_data.xlsx	copied	copied by hand
+ext:ID89_topography_analysis_code/09_barplot/trend.xlsx	code:build_sup_table_s14/trend_89.xlsx	copied	copied by hand
