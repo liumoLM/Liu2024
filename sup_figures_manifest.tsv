@@ -1,6 +1,6 @@
 paper_file	source_file	reviewed_through	note
-sup_fig_s1a_signature_assignment.pdf	build_fig_s1/sup_fig_s1_signature_assignment.pdf		Assembled from the source plot.
-sup_fig_s1b_signature_assignment.pdf	build_fig_s1/sup_fig_s1_signature_assignment.pdf		Assembled from the source plot.
+sup_fig_s1a_signature_assignment.pdf	build_fig_s1/sup_fig_s1a_signature_assignment.pdf		Copy of the source. Assembled by build_fig_s1/make_figure_s1_layout.R (2026-10-22), replacing the Illustrator version.
+sup_fig_s1b_signature_assignment.pdf	build_fig_s1/sup_fig_s1b_signature_assignment.pdf		Copy of the source. Assembled by build_fig_s1/make_figure_s1_layout.R (2026-10-22), replacing the Illustrator version.
 sup_fig_s2_msighdp_signatures.pdf	build_fig_s2/sup_fig_s2_msighdp_signatures_draft.pdf	2026-10-07	Edited by hand from the draft made by build_fig_s2/make_figure_s2_layout.R, mainly to add labels and adjust label placement. The paper version differs from the draft, and we accept the differences.
 sup_fig_s3a_transcription_strand.pdf	build_fig_s3/sup_fig_s3a_transcription_strand.pdf		Copy of the source, panel A.
 sup_fig_s3b_replication_strand.pdf	build_fig_s3/sup_fig_s3b_replication_strand.pdf		Copy of the source, panel B.

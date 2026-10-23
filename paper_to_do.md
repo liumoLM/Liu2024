@@ -13,9 +13,6 @@ http://8.138.15.71/
 
 - Tell Mo that the new assignments are approved (2026-10-22), so Mo can
   redo the topography partial credit (see "Open: Mo").
-- Reassemble Figures S1a and S1b from the regenerated
-  `build_fig_s1/sup_fig_s1_signature_assignment.pdf` in the code repo
-  (flagged by `check_sup_figures.R`).
 - Share the doc "Age and sex models for Tables S15 and S16"
   (https://claude.ai/artifact/X8iSQz1TiCAw89HgKkwHdM) with Mo. It is
   private until shared.
@@ -86,6 +83,14 @@ http://8.138.15.71/
   paper and the DOI) to https://indelsig.net and the GitHub README.
 
 ## Done
+
+- 2026-10-22: Figures S1a and S1b are built by
+  `build_fig_s1/make_figure_s1_layout.R` in the code repo, replacing the
+  Illustrator assembly, with etiologies from
+  `build_fig_s1/figure_s1_etiologies.tsv`. The color is the mean (not the
+  median) mutations per Mb among tumors with the signature, as the code
+  always computed. The legend and the caption in `sup_figs/sup_figs.qmd` now
+  say so.
 
 - 2026-10-22: new signature assignments adopted. Mo (email "Question about
   S11", 2026-10-19) could not reproduce some of the earlier assignments

@@ -70,11 +70,14 @@ if (nrow(sup_figure_problems) > 0) {
 types**
 :::
 
-The size of each dot represents the proportion of genomes with
-activities of the signature in the given cancer type. The color
-indicates the median number of mutations due to the exposure per
-megabase of the given signature in the given cancer type. The figure
-continues on the next page.
+The area of each dot represents the proportion of genomes of the given
+cancer type with activity of the signature. The color indicates the mean
+number of mutations per megabase attributed to the signature, among the
+genomes of that cancer type with activity of the signature. Only genomes
+whose 83-type or 89-type signature assignment reconstructs the spectrum
+with cosine similarity > 0.90 are included. A row labeled with an 83-type and an
+89-type signature (for example C_ID4 / InsDel4) shows a pair with
+identical activities. The figure continues on the next page.
 
 {{< pagebreak >}}
 
