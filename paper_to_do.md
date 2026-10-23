@@ -22,6 +22,9 @@ http://8.138.15.71/
   signature and the mean is < 0.03 mutations/Mb. The deleted notebook used
   1%. 10% reproduces the earlier Illustrator figure.
 - Review Mini's methods.
+- Get the Hartwig data download date or version (release) number, for the
+  data availability statement and for the header of `build_all_meta.R` and
+  the `sample_info.tsv` entry of the data repo README.
 - MSI status stated consistently (from `QUESTIONS_FOR_MO.md`, 2026-10-15).
   Following the decision to use only MSIseq: drop `MSI_status` from Table
   S17 (as was done for Table S9; `build_sup_table_s17/build_sup_table_s17.R`
