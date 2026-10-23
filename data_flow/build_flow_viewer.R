@@ -41,27 +41,53 @@ nodes <- nodes %>% dplyr::filter(!id %in% hidden)
 edges <- edges %>% dplyr::filter(!from %in% hidden, !to %in% hidden)
 
 ## ---- Initial layout ---------------------------------------------------------
-## Sugiyama layers (igraph), left to right. Each weakly connected part of the
-## graph is laid out on its own and the parts are stacked vertically, largest
-## first, so separate pipelines do not interleave. Nodes can be dragged in
-## the viewer.
+## Sugiyama layers (igraph), left to right, packed densely: within each layer
+## the nodes keep Sugiyama's order but sit on consecutive rows centered on
+## the layer, which drops the empty rows Sugiyama leaves for long edges. The
+## largest connected part of the graph goes on top, and the smaller parts
+## are placed side by side below it. Some labels may overlap; nodes can be
+## dragged, and "Re-layout shown" spreads out any part of the graph.
+col_gap <- 230   # pixels between layers
+row_gap <- 26    # pixels between rows
 g <- igraph::graph_from_data_frame(edges[, c("from", "to")], vertices = nodes$id)
 parts <- igraph::components(g, mode = "weak")
-coords <- matrix(NA_real_, nrow(nodes), 2, dimnames = list(nodes$id, NULL))
-y_offset <- 0
-for (k in order(-parts$csize)) {
-  ids <- names(parts$membership)[parts$membership == k]
+pack_part <- function(ids) {
   sub <- igraph::induced_subgraph(g, ids)
-  lay <- if (length(ids) == 1) {
-    matrix(c(0, 0), 1)
-  } else {
-    igraph::layout_with_sugiyama(sub, hgap = 1, vgap = 1, maxiter = 200)$layout
+  if (length(ids) == 1) {
+    return(matrix(c(0, 0), 1, dimnames = list(ids, NULL)))
   }
-  ## Sugiyama puts layers on y; turn them into columns on x.
-  x <- -lay[, 2]
-  y <- lay[, 1]
-  coords[igraph::V(sub)$name, ] <- cbind(x - min(x), y - min(y) + y_offset)
-  y_offset <- y_offset + max(y) - min(y) + 2
+  lay <- igraph::layout_with_sugiyama(sub, maxiter = 200)$layout
+  layer <- match(-lay[, 2], sort(unique(-lay[, 2]))) - 1
+  y <- numeric(length(layer))
+  for (l in unique(layer)) {
+    i <- which(layer == l)
+    i <- i[order(lay[i, 1])]
+    y[i] <- seq_along(i) - (length(i) + 1) / 2
+  }
+  matrix(c(layer, y), ncol = 2, dimnames = list(igraph::V(sub)$name, NULL))
+}
+packed <- lapply(order(-parts$csize), function(k) {
+  pack_part(names(parts$membership)[parts$membership == k])
+})
+coords <- matrix(NA_real_, nrow(nodes), 2, dimnames = list(nodes$id, NULL))
+main <- packed[[1]]
+coords[rownames(main), ] <- cbind(main[, 1] * col_gap, main[, 2] * row_gap)
+main_width <- (max(main[, 1]) + 1) * col_gap
+x_cursor <- 0
+y_top <- (max(main[, 2]) + 3) * row_gap
+row_height <- 0
+for (m in packed[-1]) {
+  w <- (max(m[, 1]) + 1) * col_gap
+  h <- (max(m[, 2]) - min(m[, 2]) + 1) * row_gap
+  if (x_cursor > 0 && x_cursor + w > main_width) {
+    x_cursor <- 0
+    y_top <- y_top + row_height + 2 * row_gap
+    row_height <- 0
+  }
+  coords[rownames(m), ] <- cbind(x_cursor + m[, 1] * col_gap,
+                                 y_top + (m[, 2] - min(m[, 2])) * row_gap)
+  x_cursor <- x_cursor + w + col_gap / 2
+  row_height <- max(row_height, h)
 }
 
 ## ---- Elements as Cytoscape.js JSON -----------------------------------------
@@ -72,7 +98,7 @@ cy_nodes <- lapply(seq_len(nrow(nodes)), function(i) {
       id = n$id, label = n$label, kind = n$kind, repo = n$repo,
       path = n$path, exists = n$exists, flags = n$flags, note = n$note
     )),
-    position = list(x = coords[n$id, 1] * 420, y = coords[n$id, 2] * 40),
+    position = list(x = coords[n$id, 1], y = coords[n$id, 2]),
     classes = paste(gsub(" ", "-", n$kind), if (!is.na(n$flags)) "flagged")
   )
 })
