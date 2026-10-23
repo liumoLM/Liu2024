@@ -11,8 +11,6 @@ http://8.138.15.71/
 
 ## Open: Steve
 
-- Tell Mo that the new assignments are approved (2026-10-22), so Mo can
-  redo the topography partial credit (see "Open: Mo").
 - Share the doc "Age and sex models for Tables S15 and S16"
   (https://claude.ai/artifact/X8iSQz1TiCAw89HgKkwHdM) with Mo. It is
   private until shared.
@@ -65,7 +63,10 @@ http://8.138.15.71/
 ## Open: Mo (and Mini)
 
 - Redo the topography partial credit with the new assignments (needed for
-  Table S14, `all.indel.ID89.partial.credit.txt`). Then Mini reruns r.01 to
+  Table S14, `all.indel.ID89.partial.credit.txt`). Mo knows the new
+  assignments are approved. Steve asked Mo (2026-10-23) whether Mini has the
+  partial-credit information, how it is computed, and whether we have the
+  intermediate results. Waiting for the answer. Then Mini reruns r.01 to
   r.04 (the raw inputs are on the Huang-lab server), and we rerun r.05
   onward (Tables S12 to S14, Figure 5, Figures S3 and S4).
 - The topography code keeps indels in genes on both strands (114,297
