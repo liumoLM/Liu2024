@@ -7,176 +7,195 @@
 http://8.138.15.71/
 
 
-# To do
+# To do (updated 2026-10-22)
 
-## Current (updated 2026-10-22)
+## Open: Steve
 
-- Done (2026-10-17): Item 6, `build_fig4/all_cancer_types_enrichment.R` now
-  calls a tumor hypermutated if it has > 4,000 indels in the R <= 9 clipped
-  spectra (column sums of `liu_et_al_83_spectra.tsv`). Figure 4A was
-  recomputed and copied to `main_figures/`. MSS-hyper now has 48 tumors
-  instead of 723, and its only dot is InsDel3b instead of InsDel14. The
-  legend already says "> 4,000 indels", and the results text does not
-  mention the MSS-hyper column.
-- Done (2026-10-18): Item 6, the same definitions are used everywhere
-  else. The scripts in `explore-attributions/` were switched on 2026-10-17
-  (ce9a4f3). On 2026-10-18 the numbers in `id1_id2_idN_findings.md` and
-  `more-on-attributions.md` were updated from the regenerated outputs
-  (several findings about MSS hypermutated tumors no longer hold), and the
-  two scripts that reproduce Mo's original figure with `MSI_status` say so
-  in a comment. `ms.qmd` and the code repo already used them.
-- Done (2026-10-17): Item 5, Table S17 is now built by
-  `build_sup_table_s17/build_sup_table_s17.R` in the code repo.
-  `mutation_burden` and the poly-T ratio are computed from the clipped
-  spectra, and the other columns reproduce exactly. The legend now gives the
-  channels in the poly-T ratio (INS:T:1:5+ and DEL:T:1:5+, so deletions
-  are from runs of 6 or more Ts) and no longer says that tumors with a ratio
-  of 0.5 or more went to mSigAct. The methods wording about poly-T tracts
-  was fixed on 2026-10-18.
-- New signature assignments (Mo, email "Question about S11",
-  2026-10-19). Mo could not reproduce some of the current assignments
-  (probably because no random seed was set), so the assignments must be
-  redone, some figures regenerated, and the topography analysis redone.
-  Mo reconstructed the original workflow: SigProfilerAssignment on the
-  172-type catalogs, then mSigAct reruns for (1) tumors with > 4,000
-  indels and (2) tumors with poly-T ratio > 0.5 and a SigProfilerAssignment
-  reconstruction cosine similarity < 0.9 in either the 83-type or the
-  89-type fit. That is 731 tumors, and 784 tumors have different
-  attributions than now. Mo thinks the overall effect is limited.
-  - Done (2026-10-22): the four attachments of Mo's 2026-10-19 email are
-    in `unified_indels_data/assignments_2026-10-19/`:
-    `ID83.SPA.assignment.1020.txt`, `ID89.SPA.assignment.1020.txt`,
-    `assignment.high.similarity.samples.for.figureS1.txt` (6,516 tumors),
-    and the new `mSigAct.reanalyzed.samples.txt` (731 tumors). The new
-    assignment tables have the same 6,975 tumors and signatures as
-    `liu_et_al_{83,89}_assignment.tsv`, and 819 tumors have exposures that
-    differ by more than 0.5 (Mo said 784). The list has 248 of the 249
-    tumors with > 4,000 clipped indels. The missing one is the exome tumor
-    `WES::TCGA-EW-A2FV-01A-11D-A17D-09` (4,198 indels). It has no
-    assignments (one of the 3 exome tumors left out of the 6,975), because
-    it is the only tumor with its signature, which is its own spectrum
-    (Steve, 2026-10-22). Done (2026-10-22):
-    `mSigAct.reanalyzed.samples.txt` in this repo now holds the new
-    731-tumor list. The old 2026-10-18 list (1,535 tumors, S17
-    `mutation_burden` >= 4,000 or poly-T ratio > 0.5) is only in the git
-    history.
-  - Steve agreed (2026-10-19) to rerun the figure and table pipeline with
-    the new assignments, as an independent check of how much the results
-    change. Mo has not yet pushed them to the code repo (checked
-    2026-10-22).
-  - Done (2026-10-22): adopted the new assignments. They replace
-    `liu_et_al_{83,89}_assignment.tsv` in the data repo, whose README
-    describes them. Figure 4, Figure S6, and Tables S9, S10, S11, S15, and
-    S16 were rebuilt and copied here. The methods give the new routing rule
-    (731 tumors refit with mSigAct, including 200 of the 202 MSI-H tumors),
-    with the counts from `ms_numbers.R`. The blue Table S11 note was
-    replaced (all column sums are now twice the indel count). The sex-bias
-    paragraph now follows the new Table S15 (lymphoid and "Other" hits
-    gone, Pancreas InsDel12/C_ID12 female-enriched, Liver C_ID5 added), and
-    the age paragraph names only InsDel5b as significant overall but in no
-    single cancer type (C_ID4/InsDel4 and InsDel5c are significant in some
-    cancer types, which was already partly true before).
-  - Steve: reassemble Figures S1a and S1b from the regenerated
-    `build_fig_s1/sup_fig_s1_signature_assignment.pdf` (flagged by
-    `check_sup_figures.R`).
-  - Mo will redo the topography partial credit (needed for Table S14,
-    `all.indel.ID89.partial.credit.txt`) once Steve says the new
-    attributions are OK. Steve approved them 2026-10-22. Tell Mo.
-  - Resolved (2026-10-22): the Table S11 question (503 tumors with
-    single-counted sums). With the new assignments, every column sum is
-    twice the indel count.
-- Age analysis adjusted for cancer type (2026-10-22). The pooled
-  "Overall" Spearman correlation in Table S16 and Figure S6B confounded age
-  with cancer type (InsDel5b was significant overall but had no age effect
-  within cancer types). It was replaced by regression models with cancer
-  type as a covariate (`age_glm_table()` in
-  `build_fig_s6/build_fig_s6_stats.R`, Table S16 sheet "Adjusted for cancer
-  type"): negative binomial exposure ~ age + cancer type in tumors with the
-  signature, and logistic presence ~ age + cancer type, with and without
-  log10 total indels. The InsDel5b sentence was deleted, and a green
-  sentence in the age paragraph gives the adjusted effects for C_ID1,
-  InsDel1a, C_ID5, and InsDel5a. Still to do (Steve, possibly with Mo):
-  review the models, add a methods paragraph and the Table S16 legend, and
-  follow up the signatures with a strong age x cancer type interaction
-  (for example ID_N).
+- Tell Mo that the new assignments are approved (2026-10-22), so Mo can
+  redo the topography partial credit (see "Open: Mo").
+- Reassemble Figures S1a and S1b from the regenerated
+  `build_fig_s1/sup_fig_s1_signature_assignment.pdf` in the code repo
+  (flagged by `check_sup_figures.R`).
+- Share the doc "Age and sex models for Tables S15 and S16"
+  (https://claude.ai/artifact/X8iSQz1TiCAw89HgKkwHdM) with Mo. It is
+  private until shared.
+- Review Mini's methods.
+- Review the subsection "Demographic Associations with Sex and Age".
+- Check the Figure S1 legend, then review all supplementary figure legends.
+- Review the STAR Methods for the topography analysis.
+- Add the STAR Methods "Resource availability" section (lead contact,
+  materials availability, data and code availability), listing the code
+  repo, the data repo, and the browser DOI.
+- Find the Hartwig Medical Foundation Data Transfer Agreement (or similar),
+  probably the older one signed in Singapore, and get the release version
+  or data request ID for the Hartwig metadata and VCFs. Mo (2026-10-17):
+  both `HMF_metadata.tsv` and the VCFs came from the Duke-NUS server, where
+  Arnoud Boot had downloaded them, and Mo does not know the release or
+  request ID. Then add it to the header of `build_all_meta.R` and to the
+  `sample_info.tsv` entry of the data repo README, which has a "TO DO" in
+  capitals for it.
+
+## Open: Steve with Mo
+
 - Meeting with Mo: Thursday 2026-10-22, 8 PM US time
   (https://meet.google.com/gnh-mwye-jgd).
+- Age and sex analyses (Tables S15 and S16, Figure S6), discussed in the
+  doc above. Decide:
+  - whether to use the joint models (age, sex, cohort, MSI-H, cancer type,
+    `build_fig_s6/age_sex_glm_prototype.R`) for Table S16, or keep the
+    age + cancer type models now in `build_fig_s6_stats.R`;
+  - whether to replace the Table S15 Fisher tests with per-type Firth
+    logistic models adjusted for age, cohort and MSI-H
+    (`build_fig_s6/sex_glm_prototype.R`). The S15 associations at q < 0.2
+    all hold after adjustment;
+  - what to do with sex and age associations in CNS, lymphoid and
+    bone/soft tissue, which mix subtypes that differ in age, sex and
+    signature frequency (drop them, adjust for subtype where known, or
+    report with a caveat);
+  - whether to follow up ID_N and InsDel_N_beta (strong age x cancer type
+    interaction, exposure and presence in opposite directions);
+  - who writes the methods paragraph and the Table S16 legend.
 - MSIseq. Mo said (2026-10-18) that MSIseq was run on all tumors, but Mini
   wrote (2026-10-19) that it was run on only 220 tumors (probably those
   above some mutation-load cutoff), with `uniform.seq.len = 3200` and the
   repeats annotation `Hg19repeats.rda` from the MSIseq package. Mini's code
-  is in the code repo at `msiseq/run-MSIseq.R`. Mo is
-  preparing SBS and indel VCFs so Mini can run MSIseq on all tumors. No
-  news since 2026-10-19. Ask Mo whether the rerun is needed. If it is, the
-  methods must say what MSIseq was run on, and the MSI-H calls
-  (`MSIseq_MSI.H` in `sample_info.tsv`, Table S17, Figure 4A, Table S9)
-  may change.
-- Answered (Mo, 2026-10-18): the high-TMB set in the de novo extraction
-  used > 4,000 indels after clipping to R <= 9, and the extraction was
-  redone after clipping. Done (2026-10-22): the methods give the cutoff
-  in the de novo extraction section (249 of 6,978 genomes, from
-  `ms_num$tmb`) and in the MSI/TMB section.
-- Earlier items from Mo's replies:
-  - Answered and done (2026-10-17): ID_N and InsDel_N_beta in Table S15
-    (Table S15 and Figure S6 regenerated), and `donor.all_projects.tsv.gz`
-    (the ICGC portal download of 9 May 2024 named in the data repo README).
-- Steve: find the Hartwig Medical Foundation Data Transfer Agreement (or
-  similar), probably the older one signed in Singapore, and get the
-  release version or data request ID for the Hartwig metadata and VCFs.
-  Mo (2026-10-17): both `HMF_metadata.tsv` and the VCFs came from the
-  Duke-NUS server, where Arnoud Boot had downloaded them, and Mo does not
-  know the release or request ID. Then add it to the header of
-  `build_all_meta.R` and to the `sample_info.tsv` entry of the data repo
-  README, which has a "TO DO" in capitals for it.
+  is in the code repo at `msiseq/run-MSIseq.R`. Mo is preparing SBS and
+  indel VCFs so Mini can run MSIseq on all tumors. No news since
+  2026-10-19. Ask Mo whether the rerun is needed. If it is, the methods
+  must say what MSIseq was run on, and the MSI-H calls (`MSIseq_MSI.H` in
+  `sample_info.tsv`, Table S17, Figure 4A, Table S9) may change.
 
-Steve review Mini's methods -
+## Open: Mo (and Mini)
 
-Steve Review subsection "Demographic Associations with Gender and Age"
+- Redo the topography partial credit with the new assignments (needed for
+  Table S14, `all.indel.ID89.partial.credit.txt`). Then Mini reruns r.01 to
+  r.04 (the raw inputs are on the Huang-lab server), and we rerun r.05
+  onward (Tables S12 to S14, Figure 5, Figures S3 and S4).
+- The topography code keeps indels in genes on both strands (114,297
+  indels, 0.6%), although the methods say they were ignored. Mo is probably
+  redoing the simulations and analysis with code that drops them, with
+  Mini. Rerun the downstream topography tables and figures when that
+  arrives.
 
+## Open: Xueming
 
-check Shiny app persistent doi: 10.5281/zenodo.20092288
-XmWU123 Github name
-- Checked (2026-10-22): 10.5281/zenodo.20092288 is the concept DOI (always
-  the latest version) of the Indel Signature Browser by Xueming Wu, Steven
-  G. Rozen, and Mo Liu. Its only version is V1.0.0 (2026-05-09), archiving
-  GitHub release V1.0.0 of XmWU123/indel-signature-browser, since renamed
-  XmWU123/indelsig (GitHub redirects). The repo was pushed after that
-  (2026-07-13) with no new tag, so the archive is older than the running
-  app. `ms.qmd` now cites the DOI after https://indelsig.net. indelsig.net
-  and the GitHub README do not give the DOI or the paper.
 - In about a week (around 2026-10-29), once the browser is final: ask
   Xueming to tag a new GitHub release of XmWU123/indelsig (for example
   V1.1.0), so that Zenodo archives the current app under the same concept
   DOI (10.5281/zenodo.20092288), and to add a "How to cite" line (this
   paper and the DOI) to https://indelsig.net and the GitHub README.
-- Add the STAR Methods "Resource availability" section (lead contact,
-  materials availability, data and code availability), listing the code
-  repo, the data repo, and the browser DOI.
 
+## Done
 
-Steve: check "self" referencing from web page to shiny app doi
-
-steve check: Sup Fig 1 legend
-
-steve: review all sup fig legends
-
-- Done (2026-10-22): Table S9 no longer has `MSI_status` ("MSI status" in
-  the main sheet, "MSI status = MSI" in the summary sheet), following the
-  decision to use only MSIseq. `build_sup_table_s9/build_sup_table_s9_pol_proofreading.R`
+- 2026-10-22: new signature assignments adopted. Mo (email "Question about
+  S11", 2026-10-19) could not reproduce some of the earlier assignments
+  (probably because no random seed was set) and reconstructed the original
+  workflow: SigProfilerAssignment on the 172-type catalogs, then mSigAct
+  reruns for (1) tumors with > 4,000 indels and (2) tumors with poly-T
+  ratio > 0.5 and a SigProfilerAssignment reconstruction cosine similarity
+  < 0.9 in either the 83-type or the 89-type fit (731 tumors).
+  - The four attachments of that email are in
+    `unified_indels_data/assignments_2026-10-19/`:
+    `ID83.SPA.assignment.1020.txt`, `ID89.SPA.assignment.1020.txt`,
+    `assignment.high.similarity.samples.for.figureS1.txt` (6,516 tumors),
+    and `mSigAct.reanalyzed.samples.txt` (731 tumors). 819 tumors have
+    exposures that differ from the earlier ones by more than 0.5 (Mo said
+    784).
+  - The list has all 248 assigned tumors with > 4,000 clipped indels. The
+    one other such tumor, the exome tumor
+    `WES::TCGA-EW-A2FV-01A-11D-A17D-09` (4,198 indels), is one of the 3
+    tumors without assignments, because it is the only tumor with its
+    signature, which is its own spectrum (Steve).
+  - `mSigAct.reanalyzed.samples.txt` in this repo holds the 731-tumor list.
+    The old 2026-10-18 list (1,535 tumors) is only in the git history.
+  - The new tables replace `liu_et_al_{83,89}_assignment.tsv` in the data
+    repo, whose README describes them. Figure 4, Figure S6, and Tables S9,
+    S10, S11, S15, and S16 were rebuilt and copied here. Table S17 did not
+    change.
+  - The methods give the new routing rule (731 tumors refit with mSigAct,
+    including 200 of the 202 MSI-H tumors), with the counts from
+    `ms_numbers.R`. The blue Table S11 note was replaced: every column sum
+    is now twice the indel count, which resolves the question of the 503
+    tumors with single-counted sums.
+  - The sex-bias paragraph follows the new Table S15 (lymphoid and "Other"
+    hits gone, Pancreas InsDel12/C_ID12 female-enriched, Liver C_ID5
+    added).
+- 2026-10-22: age analysis adjusted for cancer type. The pooled "Overall"
+  Spearman correlation in Table S16 and Figure S6B confounded age with
+  cancer type (InsDel5b was significant overall but had no age effect
+  within cancer types). It was replaced by regression models with cancer
+  type as a covariate (`age_glm_table()` in
+  `build_fig_s6/build_fig_s6_stats.R`, Table S16 sheet "Adjusted for cancer
+  type"): negative binomial exposure ~ age + cancer type in tumors with the
+  signature, and logistic presence ~ age + cancer type, with and without
+  log10 total indels. The InsDel5b sentences were deleted, and a green
+  sentence in the age paragraph gives the adjusted effects for C_ID1,
+  InsDel1a, C_ID5, and InsDel5a. Prototypes of the joint age/sex models
+  and of the adjusted Table S15 are in `build_fig_s6/` (see "Open: Steve
+  with Mo").
+- 2026-10-22: the methods give the high-TMB cutoff (Mo, 2026-10-18: > 4,000
+  indels after clipping to R <= 9, and the extraction was redone after
+  clipping) in the de novo extraction section (249 of 6,978 genomes, from
+  `ms_num$tmb`) and in the MSI/TMB section.
+- 2026-10-22: Table 1's first column is "89/476-Type Classification
+  Signature ID" in the code repo's `vignette/table_1_autogenerated.xlsx`,
+  its copy here, and the hand-edited `table_1_autogenerated_edited.xlsx`
+  that `ms.qmd` reads.
+- 2026-10-22: the vignette, the single-signature pages and Table 1 were
+  rerendered with the new input data. Nothing substantive changed: the
+  vignette does not read the assignments.
+- 2026-10-22: `ms.qmd` cites the Degasperi et al. Zenodo data record
+  (10.5281/zenodo.5571551, `SBS_v2.03.zip`) for the SBS activities in the
+  Figure 4B methods, and "(Table S11)" now refers to our indel activities.
+- 2026-10-22: the browser DOI was checked. 10.5281/zenodo.20092288 is the
+  concept DOI (always the latest version) of the Indel Signature Browser
+  by Xueming Wu, Steven G. Rozen, and Mo Liu. Its only version is V1.0.0
+  (2026-05-09), archiving GitHub release V1.0.0 of
+  XmWU123/indel-signature-browser, since renamed XmWU123/indelsig (GitHub
+  redirects; XmWU123 is the GitHub name). The repo was pushed after that
+  (2026-07-13) with no new tag, so the archive is older than the running
+  app. `ms.qmd` now cites the DOI after https://indelsig.net. indelsig.net
+  and the GitHub README do not give the DOI or the paper (see "Open:
+  Xueming").
+- 2026-10-22: Table S9 no longer has `MSI_status` ("MSI status" in the main
+  sheet, "MSI status = MSI" in the summary sheet), following the decision
+  to use only MSIseq. `build_sup_table_s9/build_sup_table_s9_pol_proofreading.R`
   in the code repo no longer writes them, and its comments and README say
-  not to add them back. It also now spells "tumor". The table was rebuilt
-  and copied to `sup_tables/`. Apart from the dropped columns and the
-  spelling, the contents are unchanged (248 tumors, 200 MSI-H), and
-  `check_sup_tables.R` passes. "Total somatic indels" is the column sum of
-  the clipped 89-type spectra.
+  not to add them back. It also now spells "tumor". "Total somatic indels"
+  is the column sum of the clipped 89-type spectra.
+- 2026-10-18: the same MSI-H and hypermutation definitions are used
+  everywhere. The scripts in `explore-attributions/` were switched on
+  2026-10-17 (ce9a4f3). On 2026-10-18 the numbers in
+  `id1_id2_idN_findings.md` and `more-on-attributions.md` were updated from
+  the regenerated outputs (several findings about MSS hypermutated tumors
+  no longer hold), and the two scripts that reproduce Mo's original figure
+  with `MSI_status` say so in a comment.
+- 2026-10-17: `build_fig4/all_cancer_types_enrichment.R` calls a tumor
+  hypermutated if it has > 4,000 indels in the R <= 9 clipped spectra
+  (column sums of `liu_et_al_83_spectra.tsv`). Figure 4A was recomputed.
+  MSS-hyper now has 48 tumors instead of 723, and its only dot is InsDel3b
+  instead of InsDel14. The legend already says "> 4,000 indels", and the
+  results text does not mention the MSS-hyper column.
+- 2026-10-17: Table S17 is built by
+  `build_sup_table_s17/build_sup_table_s17.R` in the code repo.
+  `mutation_burden` and the poly-T ratio are computed from the clipped
+  spectra, and the other columns reproduce exactly. The legend gives the
+  channels in the poly-T ratio (INS:T:1:5+ and DEL:T:1:5+, so deletions
+  are from runs of 6 or more Ts) and no longer says that tumors with a
+  ratio of 0.5 or more went to mSigAct. The methods wording about poly-T
+  tracts was fixed on 2026-10-18.
+- 2026-10-17: answered by Mo and done: ID_N and InsDel_N_beta in Table S15
+  (Table S15 and Figure S6 regenerated), and `donor.all_projects.tsv.gz`
+  (the ICGC portal download of 9 May 2024 named in the data repo README).
 
-# To do: figures, sup figures, and sup tables vs. the code repo (2026-10-07)
+# Figures, sup figures, and sup tables vs. the code repo (2026-10-07)
 
 Run `Rscript check_main_figures.R`, `Rscript check_sup_figures.R`, and
-`Rscript check_sup_tables.R` to see the current state.
+`Rscript check_sup_tables.R` to see the current state. Open items from this
+list are in the sections above.
 
 1. Closed (2026-10-17): read Mo's email replies. Follow-ups are in the
-   "Tomorrow" section above.
+   sections above.
 2. Topography annotations and simulations. Answered (Mo, 2026-10-07 and
    2026-10-08, and Steve, 2026-10-17): `dna.region` and `trans.strand` came
    from ICAMS with `trans.ranges.GRCh37` (GENCODE 30 CCDS genes), genome
@@ -185,17 +204,11 @@ Run `Rscript check_main_figures.R`, `Rscript check_sup_figures.R`, and
    contexts=["ID"], simulations=10)`. The strand column (+, -, Q) is
    computed by SigProfilerSimulator (`mutational_simulator.py`, lines
    1134-1151). Decision: 10 simulations per tumor is enough. Mo asked that
-   we cite Otlu et al. 2023 and Bergstrom et al. 2020.
-   Still to do:
-   - Waiting on Mo: the topography code keeps indels in genes on both
-     strands (114,297 indels, 0.6%), although the methods say they were
-     ignored. Mo is probably redoing the simulations and analysis with code
-     that drops them, with Mini. Rerun the downstream topography tables and
-     figures when that arrives.
-   - Done (2026-10-17): filled the placeholders in the green "Simulating
-     synthetic cancer datasets" and "Annotating somatic indels as genic or
-     intergenic" paragraphs in `ms.qmd`, and updated the blue strand note
-     with Mo's answer.
+   we cite Otlu et al. 2023 and Bergstrom et al. 2020. Done (2026-10-17):
+   filled the placeholders in the green "Simulating synthetic cancer
+   datasets" and "Annotating somatic indels as genic or intergenic"
+   paragraphs in `ms.qmd`, and updated the blue strand note with Mo's
+   answer. Still open: indels in genes on both strands (see "Open: Mo").
 3. Mini replied 2026-10-08. `ID83_topography_analysis_code/r.09_barplot.R`
    (now in the code repo) creates `09_barplot_data.xlsx` and
    `09_all_lm_trend.xlsx`, and reproduces all 714 trends in Table S13.
@@ -218,31 +231,18 @@ Run `Rscript check_main_figures.R`, `Rscript check_sup_figures.R`, and
    `sup_fig_s2_msighdp_signatures_draft.pdf` in the paper's layout from the Table S2, S4, and
    S6 signatures. The paper's `sup_figs/sup_fig_s2_msighdp_signatures.pdf` is edited by hand
    from the draft, as recorded in `sup_figures_manifest.tsv`.
-5. Table S17 (sample metadata) is only partly reproducible. Patient, age,
-   sex, MSI status, major cancer type, and cohort come from
+5. Closed (2026-10-17): Table S17 (sample metadata). Patient, age, sex,
+   MSI status, major cancer type, and cohort come from
    `unified_indels_data/sample_info.tsv`, which also has 41 samples not in
-   S17. `mutation_burden` and the polyT ratio do not match the current
-   spectra (mutation_burden equals the spectrum total for only 486 of 6,975
-   tumors and is otherwise larger). They probably come from an earlier,
-   pre-cap-9 version of the data. `MSIseq` matches `MSIseq_MSI.H` in
-   `sample_info.tsv` for all 6,975 tumors. `Cancer Type` matches
-   `Original_Cancer_Type` there, except that Colon, Head, and
-   Bone-SoftTissue are renamed Colon/Rectum, Head and neck, and Bone/Soft
-   tissue (2026-10-07). S17 has a "legend" sheet.
+   S17. `MSIseq` matches `MSIseq_MSI.H` in `sample_info.tsv` for all 6,975
+   tumors. `Cancer Type` matches `Original_Cancer_Type` there, except that
+   Colon, Head, and Bone-SoftTissue are renamed Colon/Rectum, Head and
+   neck, and Bone/Soft tissue (2026-10-07). S17 has a "legend" sheet.
    Decision (Mo, 2026-10-16): mutation counts come from the spectra in
    `unified_indels_data`, which are clipped to repeat length R <= 9 (column
-   sums of `liu_et_al_83_spectra.tsv`). Done (2026-10-17):
-   `build_sup_table_s17/build_sup_table_s17.R` in the code repo builds S17
-   with `mutation_burden` and the poly-T ratio from those spectra.
-   Routing: Mo's list of mSigAct tumors (2026-10-18) follows the 4,000
-   threshold on the clipped counts, and the methods now say so (see the
-   routing entry above).
-6. Figure 4A MSS-hyper threshold. Decision (Mo, 2026-10-16): a tumor is
-   hypermutated if it has > 4,000 indels, counted from the R <= 9 clipped
-   spectra in `unified_indels_data`. Done (2026-10-17): Figure 4A was
-   recomputed with this rule (48 MSS-hyper tumors instead of 723), and the
-   project CLAUDE.md records it. Done (2026-10-18): the same definition
-   is used everywhere else (see the "Tomorrow" section).
+   sums of `liu_et_al_83_spectra.tsv`). The earlier `mutation_burden` and
+   poly-T ratio came from an older, pre-cap-9 version of the data.
+6. Closed (2026-10-18): Figure 4A MSS-hyper threshold (see "Done").
 7. Closed (2026-10-17): Figures S1 and S6, and Tables S15 and S16.
    - Figure S1 reproduces. It reads `sample_info.tsv` and the assignment
      tables from the data repo, and `build_all_meta.R` moved to the data
@@ -257,7 +257,7 @@ Run `Rscript check_main_figures.R`, `Rscript check_sup_figures.R`, and
      `build_fig_s6/make_figure_s6_layout.R`, replacing the Illustrator
      version. The sex-bias text in `ms.qmd` was updated to match.
    Details in `sup_figs_and_tables_sources.md`, items 4 and 5.
-8. Review the STAR Methods for the topography analysis.
+8. Review the STAR Methods for the topography analysis (see "Open: Steve").
 9. Closed (2026-10-17): SigProfilerTopography
    (https://github.com/AlexandrovLab/SigProfilerTopography) uses the same
    indel strand rule as we do. It reads the strand from the `seqInfo`
@@ -277,6 +277,3 @@ Run `Rscript check_main_figures.R`, `Rscript check_sup_figures.R`, and
    source (for example `sup_fig_s5_rnase_h2_spectra_draft.pdf`).
    `Sup Tables/` was renamed `sup_tables/`. Renumbering a figure or table
    now means renaming it in both repos and in the manifests.
-
-# Data sources for Degaspari SBS data; make sure we cite this
-  https://zenodo.org/records/5571551/files/SBS_v2.03.zip?download=1                                                                                                                        
