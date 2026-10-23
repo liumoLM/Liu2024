@@ -22,6 +22,12 @@ http://8.138.15.71/
   signature and the mean is < 0.03 mutations/Mb. The deleted notebook used
   1%. 10% reproduces the earlier Illustrator figure.
 - Review Mini's methods.
+- MSI status stated consistently (from `QUESTIONS_FOR_MO.md`, 2026-10-15).
+  Following the decision to use only MSIseq: drop `MSI_status` from Table
+  S17 (as was done for Table S9; `build_sup_table_s17/build_sup_table_s17.R`
+  in the code repo), and cut the methods section "MSI/MSS status and
+  high/low TMB status" in `ms.qmd`, which still describes the PCAWG and
+  Hartwig cohort MSI calls (it is already marked "NEEDS DRASTIC CUTTING").
 - Check the Figure S1 legend, then review all supplementary figure legends.
 - Review the STAR Methods for the topography analysis.
 - Add the STAR Methods "Resource availability" section (lead contact,
@@ -58,6 +64,15 @@ http://8.138.15.71/
 
 ## Open: Mo (and Mini)
 
+- Put the code that produced the assignments of 2026-10-19 in the code
+  repo: SigProfilerAssignment on the 172-type catalogs (with a fixed random
+  seed), the rule that selected the 731 tumors for mSigAct (> 4,000
+  indels, or poly-T ratio > 0.5 and reconstruction cosine similarity < 0.9
+  in the 83-type or 89-type fit), and the mSigAct refits. As of 2026-10-23,
+  `Extraction_and_assignment_code/` was last changed 2026-07-26 and does
+  not have the selection rule. (Asked in `QUESTIONS_FOR_MO.md`, 2026-10-15:
+  "Is there a list or code for the routing?")
+
 - Redo the topography partial credit with the new assignments (needed for
   Table S14, `all.indel.ID89.partial.credit.txt`). Mo knows the new
   assignments are approved. Steve asked Mo (2026-10-23) whether Mini has the
@@ -80,6 +95,13 @@ http://8.138.15.71/
   paper and the DOI) to https://indelsig.net and the GitHub README.
 
 ## Done
+
+- 2026-10-23: `QUESTIONS_FOR_MO.md` (compiled 2026-10-15: Table S17
+  `mutation_burden` and poly-T ratio, mSigAct routing, the hypermutation
+  definition, and MSI status) was merged into this list and deleted (it is
+  in the git history). Everything in it was answered and is recorded
+  below, except the routing code ("Open: Mo") and stating MSI status
+  consistently ("Open: Steve").
 
 - 2026-10-22: meeting with Mo (8 PM US time).
 
