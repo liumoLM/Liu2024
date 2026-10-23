@@ -7,35 +7,31 @@
 http://8.138.15.71/
 
 
-# To do (updated 2026-10-22)
+# To do (updated 2026-10-23)
 
 ## Open: Steve
 
-- Share the doc "Age and sex models for Tables S15 and S16"
-  (https://claude.ai/artifact/X8iSQz1TiCAw89HgKkwHdM) with Mo. It is
-  private until shared.
+- Dig into the age and sex models in detail (the doc "Age and sex models
+  for Tables S15 and S16", https://claude.ai/artifact/X8iSQz1TiCAw89HgKkwHdM,
+  exported as `age-and-sex-model.md`), and then review and rewrite the
+  subsection "Demographic Associations with Sex and Age" in `ms.qmd` to
+  match.
+- Review the new Figure S1 (now drawn entirely by
+  `build_fig_s1/make_figure_s1_layout.R` in the code repo) and make sure
+  of the 10% dot cutoff: a dot is hidden when <= 10% of tumors have the
+  signature and the mean is < 0.03 mutations/Mb. The deleted notebook used
+  1%. 10% reproduces the earlier Illustrator figure.
 - Review Mini's methods.
-- Review the subsection "Demographic Associations with Sex and Age".
 - Check the Figure S1 legend, then review all supplementary figure legends.
 - Review the STAR Methods for the topography analysis.
 - Add the STAR Methods "Resource availability" section (lead contact,
   materials availability, data and code availability), listing the code
   repo, the data repo, and the browser DOI.
-- Find the Hartwig Medical Foundation Data Transfer Agreement (or similar),
-  probably the older one signed in Singapore, and get the release version
-  or data request ID for the Hartwig metadata and VCFs. Mo (2026-10-17):
-  both `HMF_metadata.tsv` and the VCFs came from the Duke-NUS server, where
-  Arnoud Boot had downloaded them, and Mo does not know the release or
-  request ID. Then add it to the header of `build_all_meta.R` and to the
-  `sample_info.tsv` entry of the data repo README, which has a "TO DO" in
-  capitals for it.
 
 ## Open: Steve with Mo
 
-- Meeting with Mo: Thursday 2026-10-22, 8 PM US time
-  (https://meet.google.com/gnh-mwye-jgd).
 - Age and sex analyses (Tables S15 and S16, Figure S6), discussed in the
-  doc above. Decide:
+  doc (see "Open: Steve"). Decide:
   - whether to use the joint models (age, sex, cohort, MSI-H, cancer type,
     `build_fig_s6/age_sex_glm_prototype.R`) for Table S16, or keep the
     age + cancer type models now in `build_fig_s6_stats.R`;
@@ -84,6 +80,8 @@ http://8.138.15.71/
   paper and the DOI) to https://indelsig.net and the GitHub README.
 
 ## Done
+
+- 2026-10-22: meeting with Mo (8 PM US time).
 
 - 2026-10-22: Figures S1a and S1b are built by
   `build_fig_s1/make_figure_s1_layout.R` in the code repo, replacing the
