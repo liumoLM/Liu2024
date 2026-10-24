@@ -77,12 +77,12 @@ http://8.138.15.71/
   repo, the data repo, and the browser DOI.
 
 - Problems found while building `data_flow/` (2026-10-23):
-  - Open (2026-10-24), waiting on Mini: the ID83 topography steps
+  - Open (2026-10-24), emailed Mini and Mo, waiting on them: the ID83 topography steps
     `normalize.sh` to r.04 ran on the Huang-lab server and disagree on input
     paths, `results/` vs `results0322/`, and columns (`ID.class` vs
     `COSMIC_83`, `ID_O`/`ID_P`). Documented in "Known inconsistencies" in
     `ID83_topography_analysis_code/README.md`, script headers, and
-    `data_flow/`. Fix the paths and columns once Mini confirms which files
+    `data_flow/`. Fix the paths and columns once they confirm which files
     and script versions made the r.04 matrices.
   - Fixed (2026-10-24): Figures 5, S3, and S4 and Tables S12 to S14 read
     hand copies of topography outputs (`build_fig5/09_*.xlsx`,
