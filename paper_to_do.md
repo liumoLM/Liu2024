@@ -50,9 +50,11 @@ http://8.138.15.71/
     re-identifiable. Figure 6 now draws its logos from
     `fig6_logo_counts.tsv` (per-position base counts), written from the
     annotated VCFs by `make_fig6_logo_counts.R`. The file is no longer
-    tracked, but it is still in the code repo's git history (to do: remove
-    it from the history before release, and correct data repo
-    `linking_tumors/README.md`, which says it can be shared). Matching its
+    tracked, but it is still in the code repo's git history. So the code
+    repo itself will not be released. The release will be a new repo made
+    from the tracked files with no history (`git archive HEAD`, then
+    `git init`). Data repo `linking_tumors/README.md` now says the file is
+    not released. Matching its
     rows to the VCFs showed it came from 3 tumors per signature (C_ID4:
     CPCT02100089T, SP48008, SP124364; ID_F: DRUP01030028T, SP103894,
     SP5559), not the two linking tumors, and not the 6 C_ID4 tumors listed
