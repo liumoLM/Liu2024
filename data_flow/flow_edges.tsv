@@ -736,3 +736,7 @@ ext:~/MEGA/important_mut_sig_data/pcawg_indel_vcfs/{SP48008,SP124364,SP103894,SP
 ext:~/github/zz-liu_2025_draft_release/code_for_internal_exploration/read_annotated_vcf.R	code:build_fig6/make_fig6_logo_counts.R	adapted from	VCF file-name logic of read_annotated_vcf()
 code:build_fig6/make_fig6_logo_counts.R	code:build_fig6/fig6_logo_counts.tsv	writes	argparser default --out
 code:build_fig6/fig6_logo_counts.tsv	code:build_fig6/Plot signatures and motifs.qmd	reads	relative ./, qmd dir
+ext:~/MEGA/important_mut_sig_data/fmh-unfiltered_vcfs/*.purple.somatic.vcf.gz	ext:mSigSpectra read_vcf() and annotate_id_vcf() (GitHub steverozen/mSigSpectra)	reads	raw Hartwig PURPLE VCFs of the tumors
+ext:~/MEGA/important_mut_sig_data/pcawg_indel_vcfs/<aliquot>.consensus.indel.vcf.gz	ext:mSigSpectra read_vcf() and annotate_id_vcf() (GitHub steverozen/mSigSpectra)	reads	raw PCAWG consensus indel VCFs of the tumors
+ext:mSigSpectra read_vcf() and annotate_id_vcf() (GitHub steverozen/mSigSpectra)	ext:~/MEGA/important_mut_sig_data/fmh-unfiltered_vcfs/{CPCT02100089T,DRUP01030028T}.annotated.indel.vcf.gz	writes	annotated indel VCFs
+ext:mSigSpectra read_vcf() and annotate_id_vcf() (GitHub steverozen/mSigSpectra)	ext:~/MEGA/important_mut_sig_data/pcawg_indel_vcfs/{SP48008,SP124364,SP103894,SP5559}.annotated.indel.vcf.gz	writes	annotated indel VCFs

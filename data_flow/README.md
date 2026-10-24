@@ -45,7 +45,13 @@ the paper's Figure S2), or `adapted from` (a script whose code was adapted
 from another script, such as `read_annotated_vcf()` in
 `~/github/zz-liu_2025_draft_release/code_for_internal_exploration/`, which
 `build_fig6/make_fig6_logo_counts.R` follows to find the annotated indel
-VCFs in `~/MEGA/important_mut_sig_data/`). A script that sources another script `reads` it.
+VCFs in `~/MEGA/important_mut_sig_data/`). The annotated indel VCFs are not
+raw VCFs. They are made from the raw VCFs (Hartwig `*.purple.somatic.vcf.gz`,
+PCAWG `*.consensus.indel.vcf.gz`) by the indel annotation code of the
+mSigSpectra package (`read_vcf()` then `annotate_id_vcf()`,
+https://github.com/steverozen/mSigSpectra), which adds `seq.context`,
+`COSMIC_83`, `Koh_89`, and `Koh_476`. That step is shown in the graph as an
+`ext:` node, because no script in the three repos runs it. A script that sources another script `reads` it.
 
 ## How the TSVs were made
 

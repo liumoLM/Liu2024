@@ -9,6 +9,35 @@ http://8.138.15.71/
 
 # To do (updated 2026-10-23)
 
+## Before submission and before posting on bioRxiv
+
+- Release the code as a new GitHub repo, not `Liu2026_code_and_data` itself
+  (decided 2026-10-24). The working repo's git history still holds
+  controlled-access per-variant data
+  (`build_fig6/ID4_IDF_linking_tumor_indel_annotated_vcf.txt`, untracked
+  since 2026-10-24), so the working repo stays private and keeps its history
+  for internal use.
+  - Make the new repo from the tracked files only, with no history:
+    ```
+    git -C ~/github/Liu2026_code_and_data archive --prefix=Liu2026_release/ HEAD | tar -x -C ~/github
+    git -C ~/github/Liu2026_release init && git -C ~/github/Liu2026_release add -A && git -C ~/github/Liu2026_release commit -m "Initial release"
+    ```
+  - Use `git archive`, not a copy of the folder without `.git`: it copies only
+    tracked files (278 MB of the folder's 5.5 GB on 2026-10-24), and leaves
+    out untracked and ignored files, such as the old Figure 6 file, scratch
+    output, and renders. The repo has no Git LFS files, so no LFS pointer
+    files are copied.
+  - Not a shallow clone: it keeps the old commit IDs, can be deepened with
+    `git fetch --unshallow`, and GitHub often refuses a push from a shallow
+    clone to a new remote ("shallow update not allowed"). It gives one
+    commit anyway.
+  - Before making it, check `git ls-files` in the working repo for anything
+    else controlled access, because every tracked file is copied.
+  - Fixes made later in the working repo must be copied to the release repo
+    again (rerun `git archive` and commit the differences).
+  - Decide whether the data repo `unified_indels_data` needs the same
+    treatment.
+
 ## Open: Steve
 
 - Dig into the age and sex models in detail (the doc "Age and sex models
