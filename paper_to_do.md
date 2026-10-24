@@ -84,6 +84,11 @@ http://8.138.15.71/
   repo, the data repo, and the browser DOI.
 
 - Problems found while building `data_flow/` (2026-10-23):
+  - Fixed (2026-10-24): the data repo had a copy of
+    `make_connection_table.R` that sourced a `code/` folder that no longer
+    exists. Deleted. The data repo README now points to the code repo's
+    `vignette/make_connection_table.R`, which reproduces
+    `connection_table.tsv` exactly.
   - Fixed (2026-10-24): `msiseq/run-MSIseq.R` was Mini's earlier
     220-tumor script, which cannot run (undefined objects, a `source()` path
     from `/`, inputs not in the repo) and which nothing reads. Moved to

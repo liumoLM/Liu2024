@@ -245,7 +245,6 @@ data:liu_et_al_83_spectra.tsv	data repo file	data	liu_et_al_83_spectra.tsv	liu_e
 data:liu_et_al_89_assignment.tsv	data repo file	data	liu_et_al_89_assignment.tsv	liu_et_al_89_assignment.tsv	yes		
 data:liu_et_al_89_signatures.tsv	data repo file	data	liu_et_al_89_signatures.tsv	liu_et_al_89_signatures.tsv	yes		
 data:liu_et_al_89_spectra.tsv	data repo file	data	liu_et_al_89_spectra.tsv	liu_et_al_89_spectra.tsv	yes		
-data:make_connection_table.R	script	data	make_connection_table.R	make_connection_table.R	yes		
 data:per_sig_txt/*.md	data repo file	data	per_sig_txt/*.md	*.md	yes		
 data:raw_signature_from_all_hdp_SP_runs/SigProfiler.COSMIC83.signatures.all.runs.txt	data repo file	data	raw_signature_from_all_hdp_SP_runs/SigProfiler.COSMIC83.signatures.all.runs.txt	SigProfiler.COSMIC83.signatures.all.runs.txt	yes		
 data:raw_signature_from_all_hdp_SP_runs/SigProfiler.Koh476.signatures.all.runs.txt	data repo file	data	raw_signature_from_all_hdp_SP_runs/SigProfiler.Koh476.signatures.all.runs.txt	SigProfiler.Koh476.signatures.all.runs.txt	yes		

@@ -502,15 +502,6 @@ ext:donor.all_projects.tsv.gz	data:build_all_meta.R	reads	ICGC donor table; in c
 ext:HMF_metadata.tsv	data:build_all_meta.R	reads	controlled-access Hartwig clinical data
 ext:Priestley.TableS2.xlsx	data:build_all_meta.R	reads	Priestley et al. 2019 Table S2 (https://doi.org/10.1038/s41586-019-1689-y); found by list.files pattern
 data:build_all_meta.R	ext:all.meta.txt	writes	out_dir (default .); not in data repo; agrees with columns of data:sample_info.tsv per header
-code:vignette/find_best_match_spectra.R	data:make_connection_table.R	reads	"source; uncertain: literal here(""code"",""find_best_match_spectra.R"") exists in neither repo; code:vignette/make_connection_table.R is the same script but sources vignette/"
-code:vignette/vhelpers.R	data:make_connection_table.R	reads	"source; uncertain: here(""vignette"",""vhelpers.R"") only resolves when run from the code repo; vhelpers defines finalized_files via find_data()"
-data:liu_et_al_83_signatures.tsv	data:make_connection_table.R	reads	via read_finalized()
-data:liu_et_al_89_signatures.tsv	data:make_connection_table.R	reads	via read_finalized()
-data:liu_et_al_476_signatures.tsv	data:make_connection_table.R	reads	via read_finalized()
-data:liu_et_al_83_spectra.tsv	data:make_connection_table.R	reads	via find_top_n_match_names()
-data:liu_et_al_89_spectra.tsv	data:make_connection_table.R	reads	via find_top_n_match_names()
-data:liu_et_al_476_spectra.tsv	data:make_connection_table.R	reads	via find_top_n_match_names()
-data:make_connection_table.R	data:connection_table.tsv	writes	"finalized_files[[""connection_table""]]"
 code:vignette/ppar.R	code:vignette/vignette.qmd	reads	source
 code:vignette/vhelpers.R	code:vignette/vignette.qmd	reads	source
 code:vignette/collapse_476_to_89.R	code:vignette/vignette.qmd	reads	source
@@ -589,7 +580,7 @@ data:liu_et_al_476_signatures.tsv	code:vignette/make_connection_table.R	reads	re
 data:liu_et_al_83_spectra.tsv	code:vignette/make_connection_table.R	reads	via find_top_n_match_names()
 data:liu_et_al_89_spectra.tsv	code:vignette/make_connection_table.R	reads	via find_top_n_match_names()
 data:liu_et_al_476_spectra.tsv	code:vignette/make_connection_table.R	reads	via find_top_n_match_names()
-code:vignette/make_connection_table.R	data:connection_table.tsv	writes	write.table; overwrites the data-repo file (data repo also has its own make_connection_table.R)
+code:vignette/make_connection_table.R	data:connection_table.tsv	writes	write.table; overwrites the data-repo file; reproduces it exactly (checked 2026-10-24)
 code:vignette/make_connection_table.R	code:vignette/assign_for_residual.md	writes	side effect of sourcing vhelpers.R (file.remove)
 code:vignette/figure/parallel_plots/*.png	code:vignette/onesig.qmd	reads	image links from plot_paths, embedded by parent render
 data:per_sig_txt/*.md	code:vignette/onesig.qmd	reads	find_sig_txt() for 89-type and 83-type IDs, optional
