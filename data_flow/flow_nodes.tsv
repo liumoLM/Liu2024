@@ -4,8 +4,8 @@ code:Example_data/assignment.example.data/example.172.type.signatures.txt	code r
 code:Example_data/mSigHdp.input.89type.catalog/mSigHdp.test.89type.catalog.txt	code repo file	code	Example_data/mSigHdp.input.89type.catalog/mSigHdp.test.89type.catalog.txt	mSigHdp.test.89type.catalog.txt	yes	no script writes it	example input, made by Mo
 code:Example_data/sigprofiler.input.89type.catalog/example.89type.All.txt	code repo file	code	Example_data/sigprofiler.input.89type.catalog/example.89type.All.txt	example.89type.All.txt	yes	no script writes it	example input, made by Mo
 code:Example_data/sigprofiler.input.89type.catalog/example.89type.Bladder.txt	code repo file	code	Example_data/sigprofiler.input.89type.catalog/example.89type.Bladder.txt	example.89type.Bladder.txt	yes	no script writes it	example input, made by Mo
-code:Extraction_and_assignment_code/SigProfilerAssignment.py	script	code	Extraction_and_assignment_code/SigProfilerAssignment.py	SigProfilerAssignment.py	yes		
-code:Extraction_and_assignment_code/SigProfilerExtractor.py	script	code	Extraction_and_assignment_code/SigProfilerExtractor.py	SigProfilerExtractor.py	yes		
+code:Extraction_and_assignment_code/run_SigProfilerAssignment.py	script	code	Extraction_and_assignment_code/run_SigProfilerAssignment.py	run_SigProfilerAssignment.py	yes		
+code:Extraction_and_assignment_code/run_SigProfilerExtractor.py	script	code	Extraction_and_assignment_code/run_SigProfilerExtractor.py	run_SigProfilerExtractor.py	yes		
 code:Extraction_and_assignment_code/mSigAct.R	script	code	Extraction_and_assignment_code/mSigAct.R	mSigAct.R	yes		
 code:Extraction_and_assignment_code/mSigHdp.R	script	code	Extraction_and_assignment_code/mSigHdp.R	mSigHdp.R	yes		
 code:ID83_topography_analysis_code/04_create4InfMatrix/DNA.region/tissue.DNA.region.Mutation_50cutoff.xlsx	code repo file	code	ID83_topography_analysis_code/04_create4InfMatrix/DNA.region/tissue.DNA.region.Mutation_50cutoff.xlsx	tissue.DNA.region.Mutation_50cutoff.xlsx	yes		

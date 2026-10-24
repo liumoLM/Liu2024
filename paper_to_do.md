@@ -84,6 +84,15 @@ http://8.138.15.71/
   repo, the data repo, and the browser DOI.
 
 - Problems found while building `data_flow/` (2026-10-23):
+  - Fixed (2026-10-24): the example SigProfiler scripts in
+    `Extraction_and_assignment_code/` could not run. Named
+    `SigProfilerExtractor.py` and `SigProfilerAssignment.py`, they imported
+    themselves instead of the packages. Renamed `run_SigProfilerExtractor.py`
+    and `run_SigProfilerAssignment.py`. In the extractor, only the import was
+    inside the cancer-type loop, so only `All` would have run. Fixed and
+    checked with stub packages. Open: the extractor says v1.2.1 and 20 to 40
+    signatures for all genomes, but the methods say v1.1.24 and 10 to 40.
+    Email to Mo drafted 2026-10-24.
   - Fixed (2026-10-24): the data repo had a copy of
     `make_connection_table.R` that sourced a `code/` folder that no longer
     exists. Deleted. The data repo README now points to the code repo's
