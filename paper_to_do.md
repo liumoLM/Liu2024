@@ -89,8 +89,8 @@ http://8.138.15.71/
     exits cleanly. Its unused plots are in
     `ID89_topography_analysis_code/likely_dead_ID89_topography_code/`. The
     ID89 `r.02.intersect_no_loop.sh` is a copy of the ID83 one with ID83
-    paths. It now has a header saying so. Open: ask Mini for the version
-    that ran for ID89.
+    paths. It now has a header saying so. Open: emailed Mini on
+    2026-10-24 for the version that ran for ID89.
   - Open (2026-10-24), emailed Mini and Mo, waiting on them: the ID83 topography steps
     `normalize.sh` to r.04 ran on the Huang-lab server and disagree on input
     paths, `results/` vs `results0322/`, and columns (`ID.class` vs
