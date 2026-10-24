@@ -442,35 +442,35 @@ code:ID89_topography_analysis_code/r.04_createRTgroupInf.R	ext:/public/data/Topo
 code:ID89_topography_analysis_code/04_createRTgroupInf/rtGroup/tissue.rtGroup.Mutation_50cutoff.xlsx	code:ID89_topography_analysis_code/r.09_barplot.R	reads	no simulated data for ID89
 code:ID89_topography_analysis_code/r.09_barplot.R	code:ID89_topography_analysis_code/09_barplot/plot_data.xlsx	writes	run from its directory; tracked in git
 code:ID89_topography_analysis_code/r.09_barplot.R	code:ID89_topography_analysis_code/09_barplot/trend.xlsx	writes	run from its directory; tracked in git
-code:ID89_topography_analysis_code/09_barplot/trend.xlsx	code:ID89_topography_analysis_code/r.09_barplot.R	reads	re-read of own outputs
-code:ID89_topography_analysis_code/09_barplot/plot_data.xlsx	code:ID89_topography_analysis_code/r.09_barplot.R	reads	re-read of own outputs
-code:ID89_topography_analysis_code/r.09_barplot.R	ext:ID89_topography_analysis_code/09_barplot/signature_barplot_proportion.pdf	writes	plots not used in paper
-code:ID89_topography_analysis_code/r.09_barplot.R	ext:ID89_topography_analysis_code/09_barplot/signature_barplot_proportion.png	writes	plots not used in paper
-code:ID89_topography_analysis_code/r.09_barplot.R	ext:ID89_topography_analysis_code/09_barplot/ID89_rtGroup_barplot.pdf	writes	plots not used in paper
-code:ID89_topography_analysis_code/r.09_barplot.R	ext:ID89_topography_analysis_code/09_barplot/increasing/<signature>.single.indel.barplot.pdf	writes	script stops here: subfolders do not exist (README); later steps not reached
-code:ID89_topography_analysis_code/r.09_barplot.R	ext:ID89_topography_analysis_code/09_barplot/increasing/<signature>.single.indel.barplot.png	writes	script stops here: subfolders do not exist (README); later steps not reached
-code:ID89_topography_analysis_code/r.09_barplot.R	ext:ID89_topography_analysis_code/09_barplot/increasing/<signature>.Rds	writes	script stops here: subfolders do not exist (README); later steps not reached
-code:ID89_topography_analysis_code/r.09_barplot.R	ext:ID89_topography_analysis_code/09_barplot/decreasing/<signature>.single.indel.barplot.pdf	writes	script stops here: subfolders do not exist (README); later steps not reached
-code:ID89_topography_analysis_code/r.09_barplot.R	ext:ID89_topography_analysis_code/09_barplot/decreasing/<signature>.single.indel.barplot.png	writes	script stops here: subfolders do not exist (README); later steps not reached
-code:ID89_topography_analysis_code/r.09_barplot.R	ext:ID89_topography_analysis_code/09_barplot/decreasing/<signature>.Rds	writes	script stops here: subfolders do not exist (README); later steps not reached
-code:ID89_topography_analysis_code/r.09_barplot.R	ext:ID89_topography_analysis_code/09_barplot/flat/<signature>.single.indel.barplot.pdf	writes	script stops here: subfolders do not exist (README); later steps not reached
-code:ID89_topography_analysis_code/r.09_barplot.R	ext:ID89_topography_analysis_code/09_barplot/flat/<signature>.single.indel.barplot.png	writes	script stops here: subfolders do not exist (README); later steps not reached
-code:ID89_topography_analysis_code/r.09_barplot.R	ext:ID89_topography_analysis_code/09_barplot/flat/<signature>.Rds	writes	script stops here: subfolders do not exist (README); later steps not reached
-code:ID89_topography_analysis_code/r.09_barplot.R	ext:ID89_topography_analysis_code/09_barplot/mix/<signature>.single.indel.barplot.pdf	writes	script stops here: subfolders do not exist (README); later steps not reached
-code:ID89_topography_analysis_code/r.09_barplot.R	ext:ID89_topography_analysis_code/09_barplot/mix/<signature>.single.indel.barplot.png	writes	script stops here: subfolders do not exist (README); later steps not reached
-code:ID89_topography_analysis_code/r.09_barplot.R	ext:ID89_topography_analysis_code/09_barplot/mix/<signature>.Rds	writes	script stops here: subfolders do not exist (README); later steps not reached
-code:ID89_topography_analysis_code/r.09_barplot.R	ext:ID89_topography_analysis_code/09_barplot/lm3_signature_barplot.pdf	writes	not reached (after the failing step)
-code:ID89_topography_analysis_code/r.09_barplot.R	ext:ID89_topography_analysis_code/09_barplot/lm3_signature_barplot.png	writes	not reached (after the failing step)
-code:ID89_topography_analysis_code/r.09_barplot.R	ext:ID89_topography_analysis_code/09_barplot/ID89_InsDel_L_Stomach.Rds	writes	not reached (after the failing step)
-code:ID89_topography_analysis_code/r.09_barplot.R	ext:ID89_topography_analysis_code/09_barplot/ID89_InsDel_L_Stomach.pdf	writes	not reached (after the failing step)
-code:ID89_topography_analysis_code/r.09_barplot.R	ext:ID89_topography_analysis_code/09_barplot/ID89_InsDel_L_Stomach.png	writes	not reached (after the failing step)
-code:ID89_topography_analysis_code/r.09_barplot.R	ext:ID89_topography_analysis_code/09_barplot/barplot_list.Rds	writes	not reached (after the failing step)
-code:ID89_topography_analysis_code/r.09_barplot.R	ext:ID89_topography_analysis_code/09_barplot/ID89_barplot.pdf	writes	not reached (after the failing step)
-code:ID89_topography_analysis_code/r.09_barplot.R	ext:ID89_topography_analysis_code/09_barplot/ID89_barplot.png	writes	not reached (after the failing step)
-ext:/ID83_0322/09_barplot/ID_L_Stomach_Decreasing.Rds	code:ID89_topography_analysis_code/r.09_barplot.R	reads	not reached; ID83 example plot from server
-ext:ID89_topography_analysis_code/09_barplot/increasing/<signature>.Rds	code:ID89_topography_analysis_code/r.09_barplot.R	reads	not reached; re-read of own outputs
-ext:ID89_topography_analysis_code/09_barplot/flat/<signature>.Rds	code:ID89_topography_analysis_code/r.09_barplot.R	reads	not reached; re-read of own outputs
-ext:ID89_topography_analysis_code/09_barplot/mix/<signature>.Rds	code:ID89_topography_analysis_code/r.09_barplot.R	reads	not reached; re-read of own outputs
+code:ID89_topography_analysis_code/09_barplot/trend.xlsx	code:ID89_topography_analysis_code/likely_dead_ID89_topography_code/r.09_barplot_plots.R	reads	reads the outputs of r.09_barplot.R
+code:ID89_topography_analysis_code/09_barplot/plot_data.xlsx	code:ID89_topography_analysis_code/likely_dead_ID89_topography_code/r.09_barplot_plots.R	reads	reads the outputs of r.09_barplot.R
+code:ID89_topography_analysis_code/likely_dead_ID89_topography_code/r.09_barplot_plots.R	ext:ID89_topography_analysis_code/09_barplot/signature_barplot_proportion.pdf	writes	plots not used in paper
+code:ID89_topography_analysis_code/likely_dead_ID89_topography_code/r.09_barplot_plots.R	ext:ID89_topography_analysis_code/09_barplot/signature_barplot_proportion.png	writes	plots not used in paper
+code:ID89_topography_analysis_code/likely_dead_ID89_topography_code/r.09_barplot_plots.R	ext:ID89_topography_analysis_code/09_barplot/ID89_rtGroup_barplot.pdf	writes	plots not used in paper
+code:ID89_topography_analysis_code/likely_dead_ID89_topography_code/r.09_barplot_plots.R	ext:ID89_topography_analysis_code/09_barplot/increasing/<signature>.single.indel.barplot.pdf	writes	fails here: subfolders are not created
+code:ID89_topography_analysis_code/likely_dead_ID89_topography_code/r.09_barplot_plots.R	ext:ID89_topography_analysis_code/09_barplot/increasing/<signature>.single.indel.barplot.png	writes	fails here: subfolders are not created
+code:ID89_topography_analysis_code/likely_dead_ID89_topography_code/r.09_barplot_plots.R	ext:ID89_topography_analysis_code/09_barplot/increasing/<signature>.Rds	writes	fails here: subfolders are not created
+code:ID89_topography_analysis_code/likely_dead_ID89_topography_code/r.09_barplot_plots.R	ext:ID89_topography_analysis_code/09_barplot/decreasing/<signature>.single.indel.barplot.pdf	writes	fails here: subfolders are not created
+code:ID89_topography_analysis_code/likely_dead_ID89_topography_code/r.09_barplot_plots.R	ext:ID89_topography_analysis_code/09_barplot/decreasing/<signature>.single.indel.barplot.png	writes	fails here: subfolders are not created
+code:ID89_topography_analysis_code/likely_dead_ID89_topography_code/r.09_barplot_plots.R	ext:ID89_topography_analysis_code/09_barplot/decreasing/<signature>.Rds	writes	fails here: subfolders are not created
+code:ID89_topography_analysis_code/likely_dead_ID89_topography_code/r.09_barplot_plots.R	ext:ID89_topography_analysis_code/09_barplot/flat/<signature>.single.indel.barplot.pdf	writes	fails here: subfolders are not created
+code:ID89_topography_analysis_code/likely_dead_ID89_topography_code/r.09_barplot_plots.R	ext:ID89_topography_analysis_code/09_barplot/flat/<signature>.single.indel.barplot.png	writes	fails here: subfolders are not created
+code:ID89_topography_analysis_code/likely_dead_ID89_topography_code/r.09_barplot_plots.R	ext:ID89_topography_analysis_code/09_barplot/flat/<signature>.Rds	writes	fails here: subfolders are not created
+code:ID89_topography_analysis_code/likely_dead_ID89_topography_code/r.09_barplot_plots.R	ext:ID89_topography_analysis_code/09_barplot/mix/<signature>.single.indel.barplot.pdf	writes	fails here: subfolders are not created
+code:ID89_topography_analysis_code/likely_dead_ID89_topography_code/r.09_barplot_plots.R	ext:ID89_topography_analysis_code/09_barplot/mix/<signature>.single.indel.barplot.png	writes	fails here: subfolders are not created
+code:ID89_topography_analysis_code/likely_dead_ID89_topography_code/r.09_barplot_plots.R	ext:ID89_topography_analysis_code/09_barplot/mix/<signature>.Rds	writes	fails here: subfolders are not created
+code:ID89_topography_analysis_code/likely_dead_ID89_topography_code/r.09_barplot_plots.R	ext:ID89_topography_analysis_code/09_barplot/lm3_signature_barplot.pdf	writes	not reached (after the failing step)
+code:ID89_topography_analysis_code/likely_dead_ID89_topography_code/r.09_barplot_plots.R	ext:ID89_topography_analysis_code/09_barplot/lm3_signature_barplot.png	writes	not reached (after the failing step)
+code:ID89_topography_analysis_code/likely_dead_ID89_topography_code/r.09_barplot_plots.R	ext:ID89_topography_analysis_code/09_barplot/ID89_InsDel_L_Stomach.Rds	writes	not reached (after the failing step)
+code:ID89_topography_analysis_code/likely_dead_ID89_topography_code/r.09_barplot_plots.R	ext:ID89_topography_analysis_code/09_barplot/ID89_InsDel_L_Stomach.pdf	writes	not reached (after the failing step)
+code:ID89_topography_analysis_code/likely_dead_ID89_topography_code/r.09_barplot_plots.R	ext:ID89_topography_analysis_code/09_barplot/ID89_InsDel_L_Stomach.png	writes	not reached (after the failing step)
+code:ID89_topography_analysis_code/likely_dead_ID89_topography_code/r.09_barplot_plots.R	ext:ID89_topography_analysis_code/09_barplot/barplot_list.Rds	writes	not reached (after the failing step)
+code:ID89_topography_analysis_code/likely_dead_ID89_topography_code/r.09_barplot_plots.R	ext:ID89_topography_analysis_code/09_barplot/ID89_barplot.pdf	writes	not reached (after the failing step)
+code:ID89_topography_analysis_code/likely_dead_ID89_topography_code/r.09_barplot_plots.R	ext:ID89_topography_analysis_code/09_barplot/ID89_barplot.png	writes	not reached (after the failing step)
+ext:/ID83_0322/09_barplot/ID_L_Stomach_Decreasing.Rds	code:ID89_topography_analysis_code/likely_dead_ID89_topography_code/r.09_barplot_plots.R	reads	not reached; ID83 example plot from server
+ext:ID89_topography_analysis_code/09_barplot/increasing/<signature>.Rds	code:ID89_topography_analysis_code/likely_dead_ID89_topography_code/r.09_barplot_plots.R	reads	not reached; re-read of own outputs
+ext:ID89_topography_analysis_code/09_barplot/flat/<signature>.Rds	code:ID89_topography_analysis_code/likely_dead_ID89_topography_code/r.09_barplot_plots.R	reads	not reached; re-read of own outputs
+ext:ID89_topography_analysis_code/09_barplot/mix/<signature>.Rds	code:ID89_topography_analysis_code/likely_dead_ID89_topography_code/r.09_barplot_plots.R	reads	not reached; re-read of own outputs
 code:Example_data/sigprofiler.input.89type.catalog/example.89type.Bladder.txt	code:Extraction_and_assignment_code/SigProfilerExtractor.py	reads	example input; uncertain: loop body only does the import (indentation), so only ct=All actually runs
 code:Example_data/sigprofiler.input.89type.catalog/example.89type.All.txt	code:Extraction_and_assignment_code/SigProfilerExtractor.py	reads	example input; uncertain: loop body only does the import (indentation), so only ct=All actually runs
 code:Extraction_and_assignment_code/SigProfilerExtractor.py	ext:Example_data/sigprofiler.input.89type.catalog/example.89type.Bladder/	writes	SigProfilerExtractor output folder; not in repo

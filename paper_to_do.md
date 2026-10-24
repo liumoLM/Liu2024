@@ -40,6 +40,11 @@ http://8.138.15.71/
     the other scripts that hard-code `~/MEGA` paths (`rg -l MEGA` in the
     code repo, for example in `build_sup_table_s9/` and
     `build_sup_table_s1/`).
+  - Leave out `ID89_topography_analysis_code/likely_dead_ID89_topography_code/`
+    (plots from the ID89 r.09 that the paper does not use, moved there on
+    2026-10-24). The code repo's `.gitattributes` marks it `export-ignore`,
+    so `git archive` already skips it. Check that it is absent from the
+    release repo, and treat any other `likely_dead_*` folder the same way.
   - Fixes made later in the working repo must be copied to the release repo
     again (rerun `git archive` and commit the differences).
   - Decide whether the data repo `unified_indels_data` needs the same
@@ -77,6 +82,15 @@ http://8.138.15.71/
   repo, the data repo, and the browser DOI.
 
 - Problems found while building `data_flow/` (2026-10-23):
+  - Fixed (2026-10-24): three topography scripts stopped with errors or
+    pointed at the wrong data. `r.03_mergeInf_simulation.R` (ID83) ended in a
+    shell command, now commented out. The ID89 `r.09_barplot.R` now ends
+    after writing `trend.xlsx` and `plot_data.xlsx` (identical contents) and
+    exits cleanly. Its unused plots are in
+    `ID89_topography_analysis_code/likely_dead_ID89_topography_code/`. The
+    ID89 `r.02.intersect_no_loop.sh` is a copy of the ID83 one with ID83
+    paths. It now has a header saying so. Open: ask Mini for the version
+    that ran for ID89.
   - Open (2026-10-24), emailed Mini and Mo, waiting on them: the ID83 topography steps
     `normalize.sh` to r.04 ran on the Huang-lab server and disagree on input
     paths, `results/` vs `results0322/`, and columns (`ID.class` vs

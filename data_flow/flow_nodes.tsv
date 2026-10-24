@@ -47,6 +47,7 @@ code:ID89_topography_analysis_code/r.02.intersect_no_loop.sh	script	code	ID89_to
 code:ID89_topography_analysis_code/r.03_mergeInf.R	script	code	ID89_topography_analysis_code/r.03_mergeInf.R	r.03_mergeInf.R	yes		
 code:ID89_topography_analysis_code/r.04_createRTgroupInf.R	script	code	ID89_topography_analysis_code/r.04_createRTgroupInf.R	r.04_createRTgroupInf.R	yes		
 code:ID89_topography_analysis_code/r.09_barplot.R	script	code	ID89_topography_analysis_code/r.09_barplot.R	r.09_barplot.R	yes		
+code:ID89_topography_analysis_code/likely_dead_ID89_topography_code/r.09_barplot_plots.R	script	code	ID89_topography_analysis_code/likely_dead_ID89_topography_code/r.09_barplot_plots.R	r.09_barplot_plots.R	yes	likely dead; excluded from release	plots from the original ID89 r.09, not used in the paper; does not run as is
 code:build_fig1/build_fig1.R	script	code	build_fig1/build_fig1.R	build_fig1.R	yes		
 code:build_fig1/fig1.pdf	code repo file	code	build_fig1/fig1.pdf	fig1.pdf	yes		
 code:build_fig1/one_page_83_89_476.R	script	code	build_fig1/one_page_83_89_476.R	one_page_83_89_476.R	yes		
