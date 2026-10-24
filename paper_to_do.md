@@ -77,6 +77,18 @@ http://8.138.15.71/
   repo, the data repo, and the browser DOI.
 
 - Problems found while building `data_flow/` (2026-10-23):
+  - Fixed (2026-10-24): Figures 5, S3, and S4 and Tables S12 to S14 read
+    hand copies of topography outputs (`build_fig5/09_*.xlsx`,
+    `build_fig_s4/09_*.xlsx`, `build_sup_table_s14/trend_89.xlsx`,
+    `build_fig_s3/05_FisherTest/`, `build_fig_s3/06_computeOddsRatio/`).
+    They now read the pipeline outputs in `ID83_topography_analysis_code/`
+    and `ID89_topography_analysis_code/` directly, and the copies are
+    deleted. Both `r.09_barplot.R` scripts were rerun in the repo, and their
+    `09_barplot/*.xlsx` tables are now tracked. The figures are
+    pixel-identical. Tables S12 and S13 differ only in the 13th to 15th
+    significant digit (the copies came from an earlier run), and the paper's
+    copies were updated. After the topography rerun, rerun r.05, r.06, and
+    r.09, then the figure and table scripts.
   - Fixed (2026-10-23): `build_fig6/Plot signatures and motifs.qmd` read
     `liu_et_al_{83,89,476}_signatures.tsv` from
     `external_data/reijns_et_al_2022/` in the data repo, where they are not,

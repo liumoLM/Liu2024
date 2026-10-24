@@ -11,8 +11,8 @@ sup_table_s9_pol_proofreading.xlsx	build_sup_table_s9/sup_table_s9_pol_proofread
 sup_table_s10_insdel_N_burden.xlsx	build_sup_table_s10/sup_table_s10_insdel_N_burden.xlsx	
 sup_table_s11_83_89_signature_assignment.tsv	build_sup_table_s11/sup_table_s11_83_89_signature_assignment.tsv	
 sup_table_s12_topography_asymmetry.xlsx	build_sup_table_s12/sup_table_s12_topography_asymmetry.xlsx	
-sup_table_s13_replication_timing_83.xlsx	build_sup_table_s13/sup_table_s13_replication_timing_83.xlsx	Built from build_fig5/09_all_lm_trend.xlsx, written by ID83_topography_analysis_code/r.09_barplot.R. Rerunning that script from its inputs in 04_create4InfMatrix/rtGroup/ reproduces the file exactly (2026-10-16).
-sup_table_s14_replication_timing_89.xlsx	build_sup_table_s14/sup_table_s14_replication_timing_89.xlsx	Built from build_sup_table_s14/trend_89.xlsx, a copy of the trend.xlsx written by ID89_topography_analysis_code/r.09_barplot.R from its input in 04_createRTgroupInf/rtGroup/ (received 2026-10-16).
+sup_table_s13_replication_timing_83.xlsx	build_sup_table_s13/sup_table_s13_replication_timing_83.xlsx	Built from ID83_topography_analysis_code/09_barplot/all_lm_trend.xlsx, written by ID83_topography_analysis_code/r.09_barplot.R (read directly since 2026-10-24). Rerunning that script from its inputs in 04_create4InfMatrix/rtGroup/ reproduces the file exactly (2026-10-16).
+sup_table_s14_replication_timing_89.xlsx	build_sup_table_s14/sup_table_s14_replication_timing_89.xlsx	Built from ID89_topography_analysis_code/09_barplot/trend.xlsx (read directly since 2026-10-24), written by ID89_topography_analysis_code/r.09_barplot.R from its input in 04_createRTgroupInf/rtGroup/ (received 2026-10-16).
 sup_table_s15_sex_bias.xlsx	build_sup_table_s15/sup_table_s15_sex_bias.xlsx	
 sup_table_s16_age_correlation.xlsx	build_sup_table_s16/sup_table_s16_age_correlation.xlsx	
 sup_table_s17_sample_metadata.xlsx	build_sup_table_s17/sup_table_s17_sample_metadata.xlsx	mutation_burden and the poly-T ratio recomputed from the R <= 9 clipped spectra (2026-10-17).

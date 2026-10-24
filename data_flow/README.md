@@ -61,8 +61,8 @@ was listed, including names built with `paste0()` or `file.path()`, files
 read by sourced helpers, and argparser defaults. The copies into this repo
 come from `main_figures_manifest.tsv`, `sup_figures_manifest.tsv`, and
 `sup_tables_manifest.tsv`. Copies made by hand inside the code repo (for
-example the topography step 05 and 06 tables copied into `build_fig_s3/`,
-which match the pipeline's output to within 4e-13) were added as `copied`
+example the topography step 05 and 06 tables once copied into
+`build_fig_s3/`) were added as `copied`
 edges.
 
 When a script changes what it reads or writes, edit the two TSVs and rerun

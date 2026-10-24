@@ -5,5 +5,5 @@ fig3.pdf	build_fig3/fig3.pdf		Copy of the source.
 fig4.pdf	build_fig4/fig4.pdf		Copy of the source.
 fig5.pdf	build_fig5/fig5.pdf		Copy of the source.
 fig6.pdf	build_fig6/fig6_id4_idf_signatures.pdf		Panels A and B, assembled by hand from pages 1 to 6.
-fig6.pdf	build_fig6/fig6_sequence_logos.pdf		Panel C logos, rescaled to 0-2 bits. The DNA diagrams in panel C are drawn by hand.
+fig6.pdf	build_fig6/fig6_sequence_logos.pdf	2026-10-24	Panel C logos, rescaled to 0-2 bits. The DNA diagrams in panel C are drawn by hand. Since 2026-10-24 drawn from fig6_logo_counts.tsv: letter heights differ by at most 0.008 bits, not visible.
 graphical_abstract.pdf			Built by hand. No source in the code repo.

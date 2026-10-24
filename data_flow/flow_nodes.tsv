@@ -61,8 +61,6 @@ code:build_fig4/fig4.pdf	code repo file	code	build_fig4/fig4.pdf	fig4.pdf	yes
 code:build_fig4/fig4_combined.R	script	code	build_fig4/fig4_combined.R	fig4_combined.R	yes		
 code:build_fig4/fig4_indel_sbs_clustering.R	script	code	build_fig4/fig4_indel_sbs_clustering.R	fig4_indel_sbs_clustering.R	yes		
 code:build_fig4/fig4b_sbs_id_correlations.tsv	code repo file	code	build_fig4/fig4b_sbs_id_correlations.tsv	fig4b_sbs_id_correlations.tsv	yes		
-code:build_fig5/09_all_lm_trend.xlsx	code repo file	code	build_fig5/09_all_lm_trend.xlsx	09_all_lm_trend.xlsx	yes		
-code:build_fig5/09_barplot_data.xlsx	code repo file	code	build_fig5/09_barplot_data.xlsx	09_barplot_data.xlsx	yes		
 code:build_fig5/DNA.region.cancer_proportion.xlsx	code repo file	code	build_fig5/DNA.region.cancer_proportion.xlsx	DNA.region.cancer_proportion.xlsx	yes		
 code:build_fig5/assign_asymmetry_type.R	script	code	build_fig5/assign_asymmetry_type.R	assign_asymmetry_type.R	yes		
 code:build_fig5/fig5.pdf	code repo file	code	build_fig5/fig5.pdf	fig5.pdf	yes		
@@ -87,26 +85,12 @@ code:build_fig_s1/sup_fig_s1a_signature_assignment.pdf	code repo file	code	build
 code:build_fig_s1/sup_fig_s1b_signature_assignment.pdf	code repo file	code	build_fig_s1/sup_fig_s1b_signature_assignment.pdf	sup_fig_s1b_signature_assignment.pdf	yes		
 code:build_fig_s2/make_figure_s2_layout.R	script	code	build_fig_s2/make_figure_s2_layout.R	make_figure_s2_layout.R	yes		
 code:build_fig_s2/sup_fig_s2_msighdp_signatures_draft.pdf	code repo file	code	build_fig_s2/sup_fig_s2_msighdp_signatures_draft.pdf	sup_fig_s2_msighdp_signatures_draft.pdf	yes		
-code:build_fig_s3/05_FisherTest/DNA.region.fisher_test_50cutoff.xlsx	code repo file	code	build_fig_s3/05_FisherTest/DNA.region.fisher_test_50cutoff.xlsx	DNA.region.fisher_test_50cutoff.xlsx	yes		
-code:build_fig_s3/05_FisherTest/repli.strand.fisher_test_50cutoff.xlsx	code repo file	code	build_fig_s3/05_FisherTest/repli.strand.fisher_test_50cutoff.xlsx	repli.strand.fisher_test_50cutoff.xlsx	yes		
-code:build_fig_s3/05_FisherTest/trans.strand.fisher_test_50cutoff.xlsx	code repo file	code	build_fig_s3/05_FisherTest/trans.strand.fisher_test_50cutoff.xlsx	trans.strand.fisher_test_50cutoff.xlsx	yes		
-code:build_fig_s3/06_computeOddsRatio/DNA.region/01.DNA.region.odds_ratio.xlsx	code repo file	code	build_fig_s3/06_computeOddsRatio/DNA.region/01.DNA.region.odds_ratio.xlsx	01.DNA.region.odds_ratio.xlsx	yes		
-code:build_fig_s3/06_computeOddsRatio/DNA.region/02.DNA.region.odds_type.xlsx	code repo file	code	build_fig_s3/06_computeOddsRatio/DNA.region/02.DNA.region.odds_type.xlsx	02.DNA.region.odds_type.xlsx	yes		
-code:build_fig_s3/06_computeOddsRatio/DNA.region/03.DNA.region.cancer_proportion.xlsx	code repo file	code	build_fig_s3/06_computeOddsRatio/DNA.region/03.DNA.region.cancer_proportion.xlsx	03.DNA.region.cancer_proportion.xlsx	yes		
-code:build_fig_s3/06_computeOddsRatio/repli.strand/01.repli.strand.odds_ratio.xlsx	code repo file	code	build_fig_s3/06_computeOddsRatio/repli.strand/01.repli.strand.odds_ratio.xlsx	01.repli.strand.odds_ratio.xlsx	yes		
-code:build_fig_s3/06_computeOddsRatio/repli.strand/02.repli.strand.odds_type.xlsx	code repo file	code	build_fig_s3/06_computeOddsRatio/repli.strand/02.repli.strand.odds_type.xlsx	02.repli.strand.odds_type.xlsx	yes		
-code:build_fig_s3/06_computeOddsRatio/repli.strand/03.repli.strand.cancer_proportion.xlsx	code repo file	code	build_fig_s3/06_computeOddsRatio/repli.strand/03.repli.strand.cancer_proportion.xlsx	03.repli.strand.cancer_proportion.xlsx	yes		
-code:build_fig_s3/06_computeOddsRatio/trans.strand/01.trans.strand.odds_ratio.xlsx	code repo file	code	build_fig_s3/06_computeOddsRatio/trans.strand/01.trans.strand.odds_ratio.xlsx	01.trans.strand.odds_ratio.xlsx	yes		
-code:build_fig_s3/06_computeOddsRatio/trans.strand/02.trans.strand.odds_type.xlsx	code repo file	code	build_fig_s3/06_computeOddsRatio/trans.strand/02.trans.strand.odds_type.xlsx	02.trans.strand.odds_type.xlsx	yes		
-code:build_fig_s3/06_computeOddsRatio/trans.strand/03.trans.strand.cancer_proportion.xlsx	code repo file	code	build_fig_s3/06_computeOddsRatio/trans.strand/03.trans.strand.cancer_proportion.xlsx	03.trans.strand.cancer_proportion.xlsx	yes		
 code:build_fig_s3/r.08_bubbleplot.R	script	code	build_fig_s3/r.08_bubbleplot.R	r.08_bubbleplot.R	yes		
 code:build_fig_s3/sup_fig_s3_topography.pdf	code repo file	code	build_fig_s3/sup_fig_s3_topography.pdf	sup_fig_s3_topography.pdf	yes	nothing reads it	
 code:build_fig_s3/sup_fig_s3_topography.png	code repo file	code	build_fig_s3/sup_fig_s3_topography.png	sup_fig_s3_topography.png	yes	nothing reads it	
 code:build_fig_s3/sup_fig_s3a_transcription_strand.pdf	code repo file	code	build_fig_s3/sup_fig_s3a_transcription_strand.pdf	sup_fig_s3a_transcription_strand.pdf	yes		
 code:build_fig_s3/sup_fig_s3b_replication_strand.pdf	code repo file	code	build_fig_s3/sup_fig_s3b_replication_strand.pdf	sup_fig_s3b_replication_strand.pdf	yes		
 code:build_fig_s3/sup_fig_s3c_genic_intergenic.pdf	code repo file	code	build_fig_s3/sup_fig_s3c_genic_intergenic.pdf	sup_fig_s3c_genic_intergenic.pdf	yes		
-code:build_fig_s4/09_all_lm_trend.xlsx	code repo file	code	build_fig_s4/09_all_lm_trend.xlsx	09_all_lm_trend.xlsx	yes		
-code:build_fig_s4/09_barplot_data.xlsx	code repo file	code	build_fig_s4/09_barplot_data.xlsx	09_barplot_data.xlsx	yes		
 code:build_fig_s4/r.09_barplot_final.R	script	code	build_fig_s4/r.09_barplot_final.R	r.09_barplot_final.R	yes		
 code:build_fig_s4/sup_fig_s4_replication_timing.pdf	code repo file	code	build_fig_s4/sup_fig_s4_replication_timing.pdf	sup_fig_s4_replication_timing.pdf	yes		
 code:build_fig_s4/sup_fig_s4_replication_timing.png	code repo file	code	build_fig_s4/sup_fig_s4_replication_timing.png	sup_fig_s4_replication_timing.png	yes	nothing reads it	
@@ -151,7 +135,6 @@ code:build_sup_table_s13/build_sup_table_s13.R	script	code	build_sup_table_s13/b
 code:build_sup_table_s13/sup_table_s13_replication_timing_83.xlsx	code repo file	code	build_sup_table_s13/sup_table_s13_replication_timing_83.xlsx	sup_table_s13_replication_timing_83.xlsx	yes		
 code:build_sup_table_s14/build_sup_table_s14.R	script	code	build_sup_table_s14/build_sup_table_s14.R	build_sup_table_s14.R	yes		
 code:build_sup_table_s14/sup_table_s14_replication_timing_89.xlsx	code repo file	code	build_sup_table_s14/sup_table_s14_replication_timing_89.xlsx	sup_table_s14_replication_timing_89.xlsx	yes		
-code:build_sup_table_s14/trend_89.xlsx	code repo file	code	build_sup_table_s14/trend_89.xlsx	trend_89.xlsx	yes		
 code:build_sup_table_s15/build_sup_table_s15.R	script	code	build_sup_table_s15/build_sup_table_s15.R	build_sup_table_s15.R	yes		
 code:build_sup_table_s15/sup_table_s15_sex_bias.xlsx	code repo file	code	build_sup_table_s15/sup_table_s15_sex_bias.xlsx	sup_table_s15_sex_bias.xlsx	yes		
 code:build_sup_table_s16/build_sup_table_s16.R	script	code	build_sup_table_s16/build_sup_table_s16.R	build_sup_table_s16.R	yes		
@@ -358,8 +341,8 @@ ext:<out_dir>/<sig>_sankey_other_ins.png	external	ext	<out_dir>/<sig>_sankey_oth
 ext:Example_data/sigprofiler.input.89type.catalog/example.89type.All/	external	ext	Example_data/sigprofiler.input.89type.catalog/example.89type.All/	example.89type.All			
 ext:Example_data/sigprofiler.input.89type.catalog/example.89type.Bladder/	external	ext	Example_data/sigprofiler.input.89type.catalog/example.89type.Bladder/	example.89type.Bladder			
 ext:HMF_metadata.tsv	external	ext	HMF_metadata.tsv	HMF_metadata.tsv			
-ext:ID83_topography_analysis_code/09_barplot/all_lm_trend.xlsx	external	ext	ID83_topography_analysis_code/09_barplot/all_lm_trend.xlsx	all_lm_trend.xlsx			
-ext:ID83_topography_analysis_code/09_barplot/plot_data.xlsx	external	ext	ID83_topography_analysis_code/09_barplot/plot_data.xlsx	plot_data.xlsx			
+code:ID83_topography_analysis_code/09_barplot/all_lm_trend.xlsx	code repo file	code	ID83_topography_analysis_code/09_barplot/all_lm_trend.xlsx	all_lm_trend.xlsx	yes		
+code:ID83_topography_analysis_code/09_barplot/plot_data.xlsx	code repo file	code	ID83_topography_analysis_code/09_barplot/plot_data.xlsx	plot_data.xlsx	yes		
 ext:ID83_topography_analysis_code/09_barplot/rtGroup_barplot.pdf	external	ext	ID83_topography_analysis_code/09_barplot/rtGroup_barplot.pdf	rtGroup_barplot.pdf			
 ext:ID83_topography_analysis_code/09_barplot/rtGroup_barplot_proportion.pdf	external	ext	ID83_topography_analysis_code/09_barplot/rtGroup_barplot_proportion.pdf	rtGroup_barplot_proportion.pdf			
 ext:ID89_topography_analysis_code/09_barplot/ID89_InsDel_L_Stomach.Rds	external	ext	ID89_topography_analysis_code/09_barplot/ID89_InsDel_L_Stomach.Rds	ID89_InsDel_L_Stomach.Rds			
@@ -383,10 +366,10 @@ ext:ID89_topography_analysis_code/09_barplot/lm3_signature_barplot.png	external	
 ext:ID89_topography_analysis_code/09_barplot/mix/<signature>.Rds	external	ext	ID89_topography_analysis_code/09_barplot/mix/<signature>.Rds	<signature>.Rds			
 ext:ID89_topography_analysis_code/09_barplot/mix/<signature>.single.indel.barplot.pdf	external	ext	ID89_topography_analysis_code/09_barplot/mix/<signature>.single.indel.barplot.pdf	<signature>.single.indel.barplot.pdf			
 ext:ID89_topography_analysis_code/09_barplot/mix/<signature>.single.indel.barplot.png	external	ext	ID89_topography_analysis_code/09_barplot/mix/<signature>.single.indel.barplot.png	<signature>.single.indel.barplot.png			
-ext:ID89_topography_analysis_code/09_barplot/plot_data.xlsx	external	ext	ID89_topography_analysis_code/09_barplot/plot_data.xlsx	plot_data.xlsx			
+code:ID89_topography_analysis_code/09_barplot/plot_data.xlsx	code repo file	code	ID89_topography_analysis_code/09_barplot/plot_data.xlsx	plot_data.xlsx	yes		
 ext:ID89_topography_analysis_code/09_barplot/signature_barplot_proportion.pdf	external	ext	ID89_topography_analysis_code/09_barplot/signature_barplot_proportion.pdf	signature_barplot_proportion.pdf			
 ext:ID89_topography_analysis_code/09_barplot/signature_barplot_proportion.png	external	ext	ID89_topography_analysis_code/09_barplot/signature_barplot_proportion.png	signature_barplot_proportion.png			
-ext:ID89_topography_analysis_code/09_barplot/trend.xlsx	external	ext	ID89_topography_analysis_code/09_barplot/trend.xlsx	trend.xlsx			
+code:ID89_topography_analysis_code/09_barplot/trend.xlsx	code repo file	code	ID89_topography_analysis_code/09_barplot/trend.xlsx	trend.xlsx	yes		
 ext:MSIseq/Classify.txt	external	ext	MSIseq/Classify.txt	Classify.txt			
 ext:MSIseq/Hg19repeats.rda	external	ext	MSIseq/Hg19repeats.rda	Hg19repeats.rda			
 ext:MSIseq/MSI_classified_res.xlsx	external	ext	MSIseq/MSI_classified_res.xlsx	MSI_classified_res.xlsx			

@@ -39,26 +39,26 @@ data:external_data/Degasperi_2022/high_quality_samples.txt	code:build_fig4/fig4_
 data:external_data/Degasperi_2022/RefSig_SBS_Exposures_v2.03.tsv	code:build_fig4/fig4_indel_sbs_clustering.R	reads	inside function
 data:external_data/Degasperi_2022/degasperi_to_liu_sample_id.tsv	code:build_fig4/fig4_indel_sbs_clustering.R	reads	inside function
 code:build_fig4/fig4_indel_sbs_clustering.R	code:build_fig4/fig4b_sbs_id_correlations.tsv	writes	inside function; read by ms_numbers.R
-code:build_fig_s3/05_FisherTest/trans.strand.fisher_test_50cutoff.xlsx	code:build_fig5/assign_asymmetry_type.R	reads	argparser default --in-dir build_fig_s3; loop over 3 features
-code:build_fig_s3/05_FisherTest/repli.strand.fisher_test_50cutoff.xlsx	code:build_fig5/assign_asymmetry_type.R	reads	argparser default --in-dir build_fig_s3; loop over 3 features
-code:build_fig_s3/05_FisherTest/DNA.region.fisher_test_50cutoff.xlsx	code:build_fig5/assign_asymmetry_type.R	reads	argparser default --in-dir build_fig_s3; loop over 3 features
-code:build_fig_s3/06_computeOddsRatio/trans.strand/01.trans.strand.odds_ratio.xlsx	code:build_fig5/assign_asymmetry_type.R	reads	argparser default --in-dir; loop over 3 features
-code:build_fig_s3/06_computeOddsRatio/repli.strand/01.repli.strand.odds_ratio.xlsx	code:build_fig5/assign_asymmetry_type.R	reads	argparser default --in-dir; loop over 3 features
-code:build_fig_s3/06_computeOddsRatio/DNA.region/01.DNA.region.odds_ratio.xlsx	code:build_fig5/assign_asymmetry_type.R	reads	argparser default --in-dir; loop over 3 features
-code:build_fig_s3/06_computeOddsRatio/trans.strand/02.trans.strand.odds_type.xlsx	code:build_fig5/assign_asymmetry_type.R	reads	argparser default --in-dir; loop over 3 features
-code:build_fig_s3/06_computeOddsRatio/repli.strand/02.repli.strand.odds_type.xlsx	code:build_fig5/assign_asymmetry_type.R	reads	argparser default --in-dir; loop over 3 features
-code:build_fig_s3/06_computeOddsRatio/DNA.region/02.DNA.region.odds_type.xlsx	code:build_fig5/assign_asymmetry_type.R	reads	argparser default --in-dir; loop over 3 features
-code:build_fig_s3/06_computeOddsRatio/trans.strand/03.trans.strand.cancer_proportion.xlsx	code:build_fig5/assign_asymmetry_type.R	reads	argparser default --in-dir; loop over 3 features
-code:build_fig_s3/06_computeOddsRatio/repli.strand/03.repli.strand.cancer_proportion.xlsx	code:build_fig5/assign_asymmetry_type.R	reads	argparser default --in-dir; loop over 3 features
-code:build_fig_s3/06_computeOddsRatio/DNA.region/03.DNA.region.cancer_proportion.xlsx	code:build_fig5/assign_asymmetry_type.R	reads	argparser default --in-dir; loop over 3 features
+code:ID83_topography_analysis_code/05_FisherTest/trans.strand.fisher_test_50cutoff.xlsx	code:build_fig5/assign_asymmetry_type.R	reads	read directly from the pipeline output since 2026-10-24
+code:ID83_topography_analysis_code/05_FisherTest/repli.strand.fisher_test_50cutoff.xlsx	code:build_fig5/assign_asymmetry_type.R	reads	read directly from the pipeline output since 2026-10-24
+code:ID83_topography_analysis_code/05_FisherTest/DNA.region.fisher_test_50cutoff.xlsx	code:build_fig5/assign_asymmetry_type.R	reads	read directly from the pipeline output since 2026-10-24
+code:ID83_topography_analysis_code/06_computeOddsRatio/trans.strand/01.trans.strand.odds_ratio.xlsx	code:build_fig5/assign_asymmetry_type.R	reads	read directly from the pipeline output since 2026-10-24
+code:ID83_topography_analysis_code/06_computeOddsRatio/repli.strand/01.repli.strand.odds_ratio.xlsx	code:build_fig5/assign_asymmetry_type.R	reads	read directly from the pipeline output since 2026-10-24
+code:ID83_topography_analysis_code/06_computeOddsRatio/DNA.region/01.DNA.region.odds_ratio.xlsx	code:build_fig5/assign_asymmetry_type.R	reads	read directly from the pipeline output since 2026-10-24
+code:ID83_topography_analysis_code/06_computeOddsRatio/trans.strand/02.trans.strand.odds_type.xlsx	code:build_fig5/assign_asymmetry_type.R	reads	read directly from the pipeline output since 2026-10-24
+code:ID83_topography_analysis_code/06_computeOddsRatio/repli.strand/02.repli.strand.odds_type.xlsx	code:build_fig5/assign_asymmetry_type.R	reads	read directly from the pipeline output since 2026-10-24
+code:ID83_topography_analysis_code/06_computeOddsRatio/DNA.region/02.DNA.region.odds_type.xlsx	code:build_fig5/assign_asymmetry_type.R	reads	read directly from the pipeline output since 2026-10-24
+code:ID83_topography_analysis_code/06_computeOddsRatio/trans.strand/03.trans.strand.cancer_proportion.xlsx	code:build_fig5/assign_asymmetry_type.R	reads	read directly from the pipeline output since 2026-10-24
+code:ID83_topography_analysis_code/06_computeOddsRatio/repli.strand/03.repli.strand.cancer_proportion.xlsx	code:build_fig5/assign_asymmetry_type.R	reads	read directly from the pipeline output since 2026-10-24
+code:ID83_topography_analysis_code/06_computeOddsRatio/DNA.region/03.DNA.region.cancer_proportion.xlsx	code:build_fig5/assign_asymmetry_type.R	reads	read directly from the pipeline output since 2026-10-24
 code:build_fig5/assign_asymmetry_type.R	code:build_fig5/trans.strand.cancer_proportion.xlsx	writes	argparser default --out-dir build_fig5; loop over 3 features
 code:build_fig5/assign_asymmetry_type.R	code:build_fig5/repli.strand.cancer_proportion.xlsx	writes	argparser default --out-dir build_fig5; loop over 3 features
 code:build_fig5/assign_asymmetry_type.R	code:build_fig5/DNA.region.cancer_proportion.xlsx	writes	argparser default --out-dir build_fig5; loop over 3 features
 code:build_fig5/DNA.region.cancer_proportion.xlsx	code:build_fig5/proportion_bubbleplot_and_rep_timing.R	reads	relative path ./, must run from build_fig5/
 code:build_fig5/repli.strand.cancer_proportion.xlsx	code:build_fig5/proportion_bubbleplot_and_rep_timing.R	reads	relative path ./, must run from build_fig5/
 code:build_fig5/trans.strand.cancer_proportion.xlsx	code:build_fig5/proportion_bubbleplot_and_rep_timing.R	reads	relative path ./, must run from build_fig5/
-code:build_fig5/09_barplot_data.xlsx	code:build_fig5/proportion_bubbleplot_and_rep_timing.R	reads	relative path, run from build_fig5/; no script in this group writes it (README says saved from ID83_topography_analysis_code output)
-code:build_fig5/09_all_lm_trend.xlsx	code:build_fig5/proportion_bubbleplot_and_rep_timing.R	reads	relative path, run from build_fig5/; no script in this group writes it (README says saved from ID83_topography_analysis_code output)
+code:ID83_topography_analysis_code/09_barplot/plot_data.xlsx	code:build_fig5/proportion_bubbleplot_and_rep_timing.R	reads	read directly from the pipeline output since 2026-10-24
+code:ID83_topography_analysis_code/09_barplot/all_lm_trend.xlsx	code:build_fig5/proportion_bubbleplot_and_rep_timing.R	reads	read directly from the pipeline output since 2026-10-24
 code:build_fig5/proportion_bubbleplot_and_rep_timing.R	code:build_fig5/fig5abc.pdf	writes	relative path, run from build_fig5/
 code:build_fig5/proportion_bubbleplot_and_rep_timing.R	code:build_fig5/fig5abc.png	writes	relative path, run from build_fig5/
 code:build_fig5/proportion_bubbleplot_and_rep_timing.R	code:build_fig5/proportion_bubble_plot.Rds	writes	relative path; written but not used downstream?
@@ -94,22 +94,22 @@ code:build_sup_table_s2/sup_table_s2_msighdp_83_type_signatures.xlsx	code:build_
 code:build_sup_table_s4/sup_table_s4_msighdp_89_type_signatures.xlsx	code:build_fig_s2/make_figure_s2_layout.R	reads	
 code:build_sup_table_s6/sup_table_s6_msighdp_476_type_signatures.xlsx	code:build_fig_s2/make_figure_s2_layout.R	reads	
 code:build_fig_s2/make_figure_s2_layout.R	code:build_fig_s2/sup_fig_s2_msighdp_signatures_draft.pdf	writes	argparser default --out, relative path; lands in build_fig_s2/ only if run from there
-code:build_fig_s3/05_FisherTest/trans.strand.fisher_test_50cutoff.xlsx	code:build_fig_s3/r.08_bubbleplot.R	reads	relative ./, run from build_fig_s3/; 3 features
-code:build_fig_s3/05_FisherTest/repli.strand.fisher_test_50cutoff.xlsx	code:build_fig_s3/r.08_bubbleplot.R	reads	relative ./, run from build_fig_s3/; 3 features
-code:build_fig_s3/05_FisherTest/DNA.region.fisher_test_50cutoff.xlsx	code:build_fig_s3/r.08_bubbleplot.R	reads	relative ./, run from build_fig_s3/; 3 features
-code:build_fig_s3/06_computeOddsRatio/trans.strand/01.trans.strand.odds_ratio.xlsx	code:build_fig_s3/r.08_bubbleplot.R	reads	relative ./, run from build_fig_s3/; 3 features
-code:build_fig_s3/06_computeOddsRatio/repli.strand/01.repli.strand.odds_ratio.xlsx	code:build_fig_s3/r.08_bubbleplot.R	reads	relative ./, run from build_fig_s3/; 3 features
-code:build_fig_s3/06_computeOddsRatio/DNA.region/01.DNA.region.odds_ratio.xlsx	code:build_fig_s3/r.08_bubbleplot.R	reads	relative ./, run from build_fig_s3/; 3 features
-code:build_fig_s3/06_computeOddsRatio/trans.strand/02.trans.strand.odds_type.xlsx	code:build_fig_s3/r.08_bubbleplot.R	reads	relative ./, run from build_fig_s3/; 3 features
-code:build_fig_s3/06_computeOddsRatio/repli.strand/02.repli.strand.odds_type.xlsx	code:build_fig_s3/r.08_bubbleplot.R	reads	relative ./, run from build_fig_s3/; 3 features
-code:build_fig_s3/06_computeOddsRatio/DNA.region/02.DNA.region.odds_type.xlsx	code:build_fig_s3/r.08_bubbleplot.R	reads	relative ./, run from build_fig_s3/; 3 features
+code:ID83_topography_analysis_code/05_FisherTest/trans.strand.fisher_test_50cutoff.xlsx	code:build_fig_s3/r.08_bubbleplot.R	reads	read directly from the pipeline output since 2026-10-24
+code:ID83_topography_analysis_code/05_FisherTest/repli.strand.fisher_test_50cutoff.xlsx	code:build_fig_s3/r.08_bubbleplot.R	reads	read directly from the pipeline output since 2026-10-24
+code:ID83_topography_analysis_code/05_FisherTest/DNA.region.fisher_test_50cutoff.xlsx	code:build_fig_s3/r.08_bubbleplot.R	reads	read directly from the pipeline output since 2026-10-24
+code:ID83_topography_analysis_code/06_computeOddsRatio/trans.strand/01.trans.strand.odds_ratio.xlsx	code:build_fig_s3/r.08_bubbleplot.R	reads	read directly from the pipeline output since 2026-10-24
+code:ID83_topography_analysis_code/06_computeOddsRatio/repli.strand/01.repli.strand.odds_ratio.xlsx	code:build_fig_s3/r.08_bubbleplot.R	reads	read directly from the pipeline output since 2026-10-24
+code:ID83_topography_analysis_code/06_computeOddsRatio/DNA.region/01.DNA.region.odds_ratio.xlsx	code:build_fig_s3/r.08_bubbleplot.R	reads	read directly from the pipeline output since 2026-10-24
+code:ID83_topography_analysis_code/06_computeOddsRatio/trans.strand/02.trans.strand.odds_type.xlsx	code:build_fig_s3/r.08_bubbleplot.R	reads	read directly from the pipeline output since 2026-10-24
+code:ID83_topography_analysis_code/06_computeOddsRatio/repli.strand/02.repli.strand.odds_type.xlsx	code:build_fig_s3/r.08_bubbleplot.R	reads	read directly from the pipeline output since 2026-10-24
+code:ID83_topography_analysis_code/06_computeOddsRatio/DNA.region/02.DNA.region.odds_type.xlsx	code:build_fig_s3/r.08_bubbleplot.R	reads	read directly from the pipeline output since 2026-10-24
 code:build_fig_s3/r.08_bubbleplot.R	code:build_fig_s3/sup_fig_s3_topography.pdf	writes	relative, run from build_fig_s3/
 code:build_fig_s3/r.08_bubbleplot.R	code:build_fig_s3/sup_fig_s3_topography.png	writes	relative, run from build_fig_s3/
 code:build_fig_s3/r.08_bubbleplot.R	code:build_fig_s3/sup_fig_s3a_transcription_strand.pdf	writes	relative; loop over 3 panels
 code:build_fig_s3/r.08_bubbleplot.R	code:build_fig_s3/sup_fig_s3b_replication_strand.pdf	writes	relative; loop over 3 panels
 code:build_fig_s3/r.08_bubbleplot.R	code:build_fig_s3/sup_fig_s3c_genic_intergenic.pdf	writes	relative; loop over 3 panels
-code:build_fig_s4/09_barplot_data.xlsx	code:build_fig_s4/r.09_barplot_final.R	reads	relative ./, run from build_fig_s4/; separate copy of build_fig5/09_barplot_data.xlsx, no script writes it
-code:build_fig_s4/09_all_lm_trend.xlsx	code:build_fig_s4/r.09_barplot_final.R	reads	relative ./, run from build_fig_s4/; separate copy of build_fig5/09_all_lm_trend.xlsx, no script writes it
+code:ID83_topography_analysis_code/09_barplot/plot_data.xlsx	code:build_fig_s4/r.09_barplot_final.R	reads	read directly from the pipeline output since 2026-10-24
+code:ID83_topography_analysis_code/09_barplot/all_lm_trend.xlsx	code:build_fig_s4/r.09_barplot_final.R	reads	read directly from the pipeline output since 2026-10-24
 code:build_fig_s4/r.09_barplot_final.R	code:build_fig_s4/sup_fig_s4_replication_timing.pdf	writes	relative, run from build_fig_s4/
 code:build_fig_s4/r.09_barplot_final.R	code:build_fig_s4/sup_fig_s4_replication_timing.png	writes	relative, run from build_fig_s4/
 code:find_data.R	code:build_fig_s5/make_figure_s5_layout.R	reads	source
@@ -280,13 +280,13 @@ code:find_data.R	code:build_sup_table_s11/build_sup_table_s11.R	reads	source
 data:liu_et_al_89_assignment.tsv	code:build_sup_table_s11/build_sup_table_s11.R	reads	--data-dir default find_data()
 data:connection_table.tsv	code:build_sup_table_s11/build_sup_table_s11.R	reads	--data-dir default find_data()
 code:build_sup_table_s11/build_sup_table_s11.R	code:build_sup_table_s11/sup_table_s11_83_89_signature_assignment.tsv	writes	argparser default --out
-code:build_fig_s3/05_FisherTest/DNA.region.fisher_test_50cutoff.xlsx	code:build_sup_table_s12/build_sup_table_s12.R	reads	argparser default --fisher-dir; read twice
-code:build_fig_s3/05_FisherTest/repli.strand.fisher_test_50cutoff.xlsx	code:build_sup_table_s12/build_sup_table_s12.R	reads	argparser default --fisher-dir
-code:build_fig_s3/05_FisherTest/trans.strand.fisher_test_50cutoff.xlsx	code:build_sup_table_s12/build_sup_table_s12.R	reads	argparser default --fisher-dir
+code:ID83_topography_analysis_code/05_FisherTest/DNA.region.fisher_test_50cutoff.xlsx	code:build_sup_table_s12/build_sup_table_s12.R	reads	read directly from the pipeline output since 2026-10-24
+code:ID83_topography_analysis_code/05_FisherTest/repli.strand.fisher_test_50cutoff.xlsx	code:build_sup_table_s12/build_sup_table_s12.R	reads	read directly from the pipeline output since 2026-10-24
+code:ID83_topography_analysis_code/05_FisherTest/trans.strand.fisher_test_50cutoff.xlsx	code:build_sup_table_s12/build_sup_table_s12.R	reads	read directly from the pipeline output since 2026-10-24
 code:build_sup_table_s12/build_sup_table_s12.R	code:build_sup_table_s12/sup_table_s12_topography_asymmetry.xlsx	writes	argparser default --out
-code:build_fig5/09_all_lm_trend.xlsx	code:build_sup_table_s13/build_sup_table_s13.R	reads	argparser default --in-file
+code:ID83_topography_analysis_code/09_barplot/all_lm_trend.xlsx	code:build_sup_table_s13/build_sup_table_s13.R	reads	read directly from the pipeline output since 2026-10-24
 code:build_sup_table_s13/build_sup_table_s13.R	code:build_sup_table_s13/sup_table_s13_replication_timing_83.xlsx	writes	argparser default --out
-code:build_sup_table_s14/trend_89.xlsx	code:build_sup_table_s14/build_sup_table_s14.R	reads	argparser default --in-file; manual copy of ID89_topography_analysis_code/09_barplot/trend.xlsx (no script writes trend_89.xlsx)
+code:ID89_topography_analysis_code/09_barplot/trend.xlsx	code:build_sup_table_s14/build_sup_table_s14.R	reads	read directly from the pipeline output since 2026-10-24
 code:build_sup_table_s14/build_sup_table_s14.R	code:build_sup_table_s14/sup_table_s14_replication_timing_89.xlsx	writes	argparser default --out
 code:build_fig_s6/gender.bias.txt	code:build_sup_table_s15/build_sup_table_s15.R	reads	argparser default --in-file
 code:build_sup_table_s15/build_sup_table_s15.R	code:build_sup_table_s15/sup_table_s15_sex_bias.xlsx	writes	argparser default --out
@@ -411,9 +411,9 @@ code:ID83_topography_analysis_code/r.06_comupteOddsRatio.R	code:ID83_topography_
 code:ID83_topography_analysis_code/r.06_comupteOddsRatio.R	code:ID83_topography_analysis_code/06_computeOddsRatio/DNA.region/03.DNA.region.cancer_proportion.xlsx	writes	written by createOddsRatioMatrix() from the sourced helper; 9 files
 code:ID83_topography_analysis_code/04_create4InfMatrix/rtGroup/tissue.rtGroup.Mutation_50cutoff.xlsx	code:ID83_topography_analysis_code/r.09_barplot.R	reads	
 code:ID83_topography_analysis_code/04_create4InfMatrix/rtGroup/tissue.rtGroup.Simulated_50cutoff.xlsx	code:ID83_topography_analysis_code/r.09_barplot.R	reads	
-code:ID83_topography_analysis_code/r.09_barplot.R	ext:ID83_topography_analysis_code/09_barplot/plot_data.xlsx	writes	09_barplot/ not in repo; saved copy is code:build_fig5/09_barplot_data.xlsx
-code:ID83_topography_analysis_code/r.09_barplot.R	ext:ID83_topography_analysis_code/09_barplot/all_lm_trend.xlsx	writes	09_barplot/ not in repo; saved copy is code:build_fig5/09_all_lm_trend.xlsx
-ext:ID83_topography_analysis_code/09_barplot/all_lm_trend.xlsx	code:ID83_topography_analysis_code/r.09_barplot.R	reads	re-read of own output
+code:ID83_topography_analysis_code/r.09_barplot.R	code:ID83_topography_analysis_code/09_barplot/plot_data.xlsx	writes	run from its directory; tracked in git
+code:ID83_topography_analysis_code/r.09_barplot.R	code:ID83_topography_analysis_code/09_barplot/all_lm_trend.xlsx	writes	run from its directory; tracked in git
+code:ID83_topography_analysis_code/09_barplot/all_lm_trend.xlsx	code:ID83_topography_analysis_code/r.09_barplot.R	reads	re-read of own output
 code:ID83_topography_analysis_code/r.09_barplot.R	ext:ID83_topography_analysis_code/09_barplot/rtGroup_barplot.pdf	writes	per-cancer-type plots, not in repo
 code:ID83_topography_analysis_code/r.09_barplot.R	ext:ID83_topography_analysis_code/09_barplot/rtGroup_barplot_proportion.pdf	writes	per-cancer-type plots, not in repo
 ext:/public/data/Topography_analysis_2026/results0322/ID89/01_createBed/all.indel.ID89.partial.credit.txt	code:ID89_topography_analysis_code/r.01_createBed.R	reads	per-indel ID89 signature probabilities made by Mo Liu, too large for repo (README); relative to 01_createBed/; run on Huang-lab server
@@ -440,10 +440,10 @@ code:ID89_topography_analysis_code/r.04_createRTgroupInf.R	ext:/public/data/Topo
 code:ID89_topography_analysis_code/r.04_createRTgroupInf.R	ext:/public/data/Topography_analysis_2026/results0322/ID89/04_createRTgroupInf/rtGroup/tissue.rtGroup.Mutation_50cutoff.Rds	writes	server only
 code:ID89_topography_analysis_code/r.04_createRTgroupInf.R	ext:/public/data/Topography_analysis_2026/results0322/ID89/04_createRTgroupInf/01.Tissue_count.xlsx	writes	server only
 code:ID89_topography_analysis_code/04_createRTgroupInf/rtGroup/tissue.rtGroup.Mutation_50cutoff.xlsx	code:ID89_topography_analysis_code/r.09_barplot.R	reads	no simulated data for ID89
-code:ID89_topography_analysis_code/r.09_barplot.R	ext:ID89_topography_analysis_code/09_barplot/plot_data.xlsx	writes	09_barplot/ not in repo
-code:ID89_topography_analysis_code/r.09_barplot.R	ext:ID89_topography_analysis_code/09_barplot/trend.xlsx	writes	09_barplot/ not in repo; copy is code:build_sup_table_s14/trend_89.xlsx (reproduces Table S14)
-ext:ID89_topography_analysis_code/09_barplot/trend.xlsx	code:ID89_topography_analysis_code/r.09_barplot.R	reads	re-read of own outputs
-ext:ID89_topography_analysis_code/09_barplot/plot_data.xlsx	code:ID89_topography_analysis_code/r.09_barplot.R	reads	re-read of own outputs
+code:ID89_topography_analysis_code/r.09_barplot.R	code:ID89_topography_analysis_code/09_barplot/plot_data.xlsx	writes	run from its directory; tracked in git
+code:ID89_topography_analysis_code/r.09_barplot.R	code:ID89_topography_analysis_code/09_barplot/trend.xlsx	writes	run from its directory; tracked in git
+code:ID89_topography_analysis_code/09_barplot/trend.xlsx	code:ID89_topography_analysis_code/r.09_barplot.R	reads	re-read of own outputs
+code:ID89_topography_analysis_code/09_barplot/plot_data.xlsx	code:ID89_topography_analysis_code/r.09_barplot.R	reads	re-read of own outputs
 code:ID89_topography_analysis_code/r.09_barplot.R	ext:ID89_topography_analysis_code/09_barplot/signature_barplot_proportion.pdf	writes	plots not used in paper
 code:ID89_topography_analysis_code/r.09_barplot.R	ext:ID89_topography_analysis_code/09_barplot/signature_barplot_proportion.png	writes	plots not used in paper
 code:ID89_topography_analysis_code/r.09_barplot.R	ext:ID89_topography_analysis_code/09_barplot/ID89_rtGroup_barplot.pdf	writes	plots not used in paper
@@ -714,23 +714,6 @@ code:build_sup_table_s16/sup_table_s16_age_correlation.xlsx	paper:sup_tables/sup
 code:build_sup_table_s17/sup_table_s17_sample_metadata.xlsx	paper:sup_tables/sup_table_s17_sample_metadata.xlsx	copied	
 code:vignette/table_1_autogenerated.xlsx	paper:table_1_autogenerated.xlsx	copied	
 paper:table_1_autogenerated.xlsx	paper:table_1_autogenerated_edited.xlsx	edited by hand	
-code:ID83_topography_analysis_code/05_FisherTest/trans.strand.fisher_test_50cutoff.xlsx	code:build_fig_s3/05_FisherTest/trans.strand.fisher_test_50cutoff.xlsx	copied	copied by hand
-code:ID83_topography_analysis_code/06_computeOddsRatio/trans.strand/01.trans.strand.odds_ratio.xlsx	code:build_fig_s3/06_computeOddsRatio/trans.strand/01.trans.strand.odds_ratio.xlsx	copied	copied by hand
-code:ID83_topography_analysis_code/06_computeOddsRatio/trans.strand/02.trans.strand.odds_type.xlsx	code:build_fig_s3/06_computeOddsRatio/trans.strand/02.trans.strand.odds_type.xlsx	copied	copied by hand
-code:ID83_topography_analysis_code/06_computeOddsRatio/trans.strand/03.trans.strand.cancer_proportion.xlsx	code:build_fig_s3/06_computeOddsRatio/trans.strand/03.trans.strand.cancer_proportion.xlsx	copied	copied by hand
-code:ID83_topography_analysis_code/05_FisherTest/repli.strand.fisher_test_50cutoff.xlsx	code:build_fig_s3/05_FisherTest/repli.strand.fisher_test_50cutoff.xlsx	copied	copied by hand
-code:ID83_topography_analysis_code/06_computeOddsRatio/repli.strand/01.repli.strand.odds_ratio.xlsx	code:build_fig_s3/06_computeOddsRatio/repli.strand/01.repli.strand.odds_ratio.xlsx	copied	copied by hand
-code:ID83_topography_analysis_code/06_computeOddsRatio/repli.strand/02.repli.strand.odds_type.xlsx	code:build_fig_s3/06_computeOddsRatio/repli.strand/02.repli.strand.odds_type.xlsx	copied	copied by hand
-code:ID83_topography_analysis_code/06_computeOddsRatio/repli.strand/03.repli.strand.cancer_proportion.xlsx	code:build_fig_s3/06_computeOddsRatio/repli.strand/03.repli.strand.cancer_proportion.xlsx	copied	copied by hand
-code:ID83_topography_analysis_code/05_FisherTest/DNA.region.fisher_test_50cutoff.xlsx	code:build_fig_s3/05_FisherTest/DNA.region.fisher_test_50cutoff.xlsx	copied	copied by hand
-code:ID83_topography_analysis_code/06_computeOddsRatio/DNA.region/01.DNA.region.odds_ratio.xlsx	code:build_fig_s3/06_computeOddsRatio/DNA.region/01.DNA.region.odds_ratio.xlsx	copied	copied by hand
-code:ID83_topography_analysis_code/06_computeOddsRatio/DNA.region/02.DNA.region.odds_type.xlsx	code:build_fig_s3/06_computeOddsRatio/DNA.region/02.DNA.region.odds_type.xlsx	copied	copied by hand
-code:ID83_topography_analysis_code/06_computeOddsRatio/DNA.region/03.DNA.region.cancer_proportion.xlsx	code:build_fig_s3/06_computeOddsRatio/DNA.region/03.DNA.region.cancer_proportion.xlsx	copied	copied by hand
-ext:ID83_topography_analysis_code/09_barplot/all_lm_trend.xlsx	code:build_fig5/09_all_lm_trend.xlsx	copied	copied by hand
-ext:ID83_topography_analysis_code/09_barplot/plot_data.xlsx	code:build_fig5/09_barplot_data.xlsx	copied	copied by hand
-ext:ID83_topography_analysis_code/09_barplot/all_lm_trend.xlsx	code:build_fig_s4/09_all_lm_trend.xlsx	copied	copied by hand
-ext:ID83_topography_analysis_code/09_barplot/plot_data.xlsx	code:build_fig_s4/09_barplot_data.xlsx	copied	copied by hand
-ext:ID89_topography_analysis_code/09_barplot/trend.xlsx	code:build_sup_table_s14/trend_89.xlsx	copied	copied by hand
 ext:~/MEGA/important_mut_sig_data/fmh-unfiltered_vcfs/{CPCT02100089T,DRUP01030028T}.annotated.indel.vcf.gz	code:build_fig6/make_fig6_logo_counts.R	reads	find_annotated_vcfs() in find_data.R
 ext:~/MEGA/important_mut_sig_data/pcawg_indel_vcfs/{SP48008,SP124364,SP103894,SP5559}.annotated.indel.vcf.gz	code:build_fig6/make_fig6_logo_counts.R	reads	find_annotated_vcfs() in find_data.R
 ext:~/github/zz-liu_2025_draft_release/code_for_internal_exploration/read_annotated_vcf.R	code:build_fig6/make_fig6_logo_counts.R	adapted from	VCF file-name logic of read_annotated_vcf()

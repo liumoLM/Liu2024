@@ -3,6 +3,13 @@
 Survey of 2026-10-15 across this repo, `~/github/Liu2026_code_and_data/`
 (the code repo), and `~/github/unified_indels_data/` (the data repo).
 
+Update 2026-10-24: the hand copies of topography outputs described below
+(`build_fig5/09_*.xlsx`, `build_fig_s4/09_*.xlsx`,
+`build_sup_table_s14/trend_89.xlsx`, `build_fig_s3/05_FisherTest/`, and
+`build_fig_s3/06_computeOddsRatio/`) were deleted. The scripts now read the
+pipeline outputs in `ID83_topography_analysis_code/` and
+`ID89_topography_analysis_code/` directly.
+
 Every supplementary table and figure in the paper exists, and
 `check_sup_tables.R` and `check_sup_figures.R` pass. Several items are built
 from intermediate files checked into the code repo that nothing in the repo
