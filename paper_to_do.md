@@ -52,11 +52,14 @@ http://8.138.15.71/
   exported as `age-and-sex-model.md`), and then review and rewrite the
   subsection "Demographic Associations with Sex and Age" in `ms.qmd` to
   match.
-- Review the new Figure S1 (now drawn entirely by
-  `build_fig_s1/make_figure_s1_layout.R` in the code repo) and make sure
-  of the 10% dot cutoff: a dot is hidden when <= 10% of tumors have the
-  signature and the mean is < 0.03 mutations/Mb. The deleted notebook used
-  1%. 10% reproduces the earlier Illustrator figure.
+- HIGH PRIORITY. Figure S1 with the new assignments: are the many
+  single-tumor dots for rare signatures expected from the mSigAct refits?
+  122 dots were added (923 to 1,029), 86 of them from 1 to 3 tumors, for
+  example ID_L / InsDel_L in 8 cancer types, ID_M / InsDel_M in 6, and
+  C_ID17 in 5. (Doc for Mo, section "Figure S1: now drawn by code".)
+- HIGH PRIORITY. Figure S1 with the new assignments: why did stomach
+  InsDel1a rise more than tenfold (0.13 to 1.60 mean mutations/Mb) in the
+  same 14 tumors? Stomach C_ID1 rose from 0.09 to 0.70 (30 to 35 tumors).
 - Review Mini's methods.
 - Get the Hartwig data download date or version (release) number, for the
   data availability statement and for the header of `build_all_meta.R` and
@@ -181,6 +184,11 @@ http://8.138.15.71/
   paper and the DOI) to https://indelsig.net and the GitHub README.
 
 ## Done
+
+- 2026-10-24: Steve decided on the Figure S1 dot cutoff: a dot is hidden
+  when <= 10% of tumors have the signature and the mean is < 0.03
+  mutations/Mb, as in `build_fig_s1/make_figure_s1_layout.R`. The deleted
+  notebook used 1%. 10% reproduces the earlier Illustrator figure.
 
 - 2026-10-23: `QUESTIONS_FOR_MO.md` (compiled 2026-10-15: Table S17
   `mutation_burden` and poly-T ratio, mSigAct routing, the hypermutation
