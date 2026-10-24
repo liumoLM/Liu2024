@@ -33,10 +33,10 @@ http://8.138.15.71/
     commit anyway.
   - Before making it, check `git ls-files` in the working repo for anything
     else controlled access, because every tracked file is copied.
-  - Before running `git archive`, remove Steve's local paths
-    (`~/MEGA/important_mut_sig_data/...`) from `find_annotated_vcfs()` in
-    `find_data.R`, so only the environment variables
-    `HARTWIG_ANNOTATED_VCFS` and `PCAWG_ANNOTATED_VCFS` remain. Also check
+  - Before running `git archive`, replace Steve's local paths
+    (`~/MEGA/important_mut_sig_data/...`) in `local_dir` in
+    `find_annotated_vcfs()` in `find_data.R` with placeholders, such as
+    `"path/to/hartwig/annotated/vcfs"`. Also check
     the other scripts that hard-code `~/MEGA` paths (`rg -l MEGA` in the
     code repo, for example in `build_sup_table_s9/` and
     `build_sup_table_s1/`).
