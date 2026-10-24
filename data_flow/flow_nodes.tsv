@@ -184,7 +184,7 @@ code:build_sup_table_signatures/signature_table_helpers.R	script	code	build_sup_
 code:build_sup_table_signatures/sigprofiler_signature_columns.tsv	code repo file	code	build_sup_table_signatures/sigprofiler_signature_columns.tsv	sigprofiler_signature_columns.tsv	yes	no script writes it	made by hand
 code:find_data.R	script	code	find_data.R	find_data.R	yes		
 code:ms_numbers.R	script	code	ms_numbers.R	ms_numbers.R	yes		
-code:msiseq/run-MSIseq.R	script	code	msiseq/run-MSIseq.R	run-MSIseq.R	yes		
+code:msiseq/likely_dead_msiseq_code/prev-run-MSIseq.R	script	code	msiseq/likely_dead_msiseq_code/prev-run-MSIseq.R	prev-run-MSIseq.R	yes	likely dead; excluded from release	earlier 220-tumor MSIseq script, moved from msiseq/run-MSIseq.R on 2026-10-24; does not run as is
 code:vignette/83_mapped_from_476.tsv	code repo file	code	vignette/83_mapped_from_476.tsv	83_mapped_from_476.tsv	no	missing on disk; no script writes it	
 code:vignette/89_mapped_from_476.tsv	code repo file	code	vignette/89_mapped_from_476.tsv	89_mapped_from_476.tsv	no	missing on disk; no script writes it	
 code:vignette/<--output>.html	code repo file	code	vignette/<--output>.html	<--output>.html	no	missing on disk; nothing reads it	

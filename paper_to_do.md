@@ -43,8 +43,10 @@ http://8.138.15.71/
   - Leave out `ID89_topography_analysis_code/likely_dead_ID89_topography_code/`
     (plots from the ID89 r.09 that the paper does not use, moved there on
     2026-10-24). The code repo's `.gitattributes` marks it `export-ignore`,
-    so `git archive` already skips it. Check that it is absent from the
-    release repo, and treat any other `likely_dead_*` folder the same way.
+    so `git archive` already skips it. The same holds for
+    `msiseq/likely_dead_msiseq_code/` (the old MSIseq script, moved there on
+    2026-10-24). Check that they are absent from the release repo, and treat
+    any other `likely_dead_*` folder the same way.
   - Fixes made later in the working repo must be copied to the release repo
     again (rerun `git archive` and commit the differences).
   - Decide whether the data repo `unified_indels_data` needs the same
@@ -82,6 +84,12 @@ http://8.138.15.71/
   repo, the data repo, and the browser DOI.
 
 - Problems found while building `data_flow/` (2026-10-23):
+  - Fixed (2026-10-24): `msiseq/run-MSIseq.R` was Mini's earlier
+    220-tumor script, which cannot run (undefined objects, a `source()` path
+    from `/`, inputs not in the repo) and which nothing reads. Moved to
+    `msiseq/likely_dead_msiseq_code/prev-run-MSIseq.R` with a header, and
+    `msiseq/README.md` added. The script behind the adopted calls goes in
+    `msiseq/` after the MSIseq item under "Open: Steve with Mo" is settled.
   - Fixed (2026-10-24): three topography scripts stopped with errors or
     pointed at the wrong data. `r.03_mergeInf_simulation.R` (ID83) ended in a
     shell command, now commented out. The ID89 `r.09_barplot.R` now ends
@@ -172,7 +180,9 @@ http://8.138.15.71/
   and S17, update `ms_numbers.R` and `ms.qmd` (202 MSI-H, 200 of 202
   refit), the project CLAUDE.md, and the MSIseq methods (run on all
   tumors, the inputs, the classification rule, and Mo's request to drop
-  the sentence on how the 4,000 cutoff was chosen).
+  the sentence on how the 4,000 cutoff was chosen). Also copy the script
+  that made the adopted calls into the code repo's `msiseq/`, with its paths
+  set through `find_data.R`, and add it to `data_flow/`.
 
 ## Open: Mo (and Mini)
 

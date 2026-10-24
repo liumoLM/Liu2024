@@ -484,18 +484,18 @@ code:Example_data/assignment.example.data/example.172.type.catalog.txt	code:Extr
 code:Example_data/assignment.example.data/example.172.type.signatures.txt	code:Extraction_and_assignment_code/mSigAct.R	reads	example input
 code:Extraction_and_assignment_code/mSigAct.R	ext:new_result_list.rds	writes	working directory; not in repo
 code:Extraction_and_assignment_code/mSigAct.R	ext:temp/	writes	PresenceAttributeSigActivity output.dir
-ext:MSIseq/MSIseq_1.0.0/MSIseq/R/Compute.input.variables.R	code:msiseq/run-MSIseq.R	reads	source; MSIseq 1.0.0 package source, after setwd(MSIseq) (folder not in repo)
-ext:/MSIseq_1.0.0/MSIseq/R/MSIseq.classify.R	code:msiseq/run-MSIseq.R	reads	source; absolute path with leading slash, probably a typo for the relative path
-ext:MSIseq/Hg19repeats.rda	code:msiseq/run-MSIseq.R	reads	MSIseq hg19 repeat annotation
-ext:MSIseq/MSIseq_1.0.0/MSIseq/R/sysdata.rda	code:msiseq/run-MSIseq.R	reads	MSIseq classifier data
-ext:MSIseq/all.data.SNV.rds	code:msiseq/run-MSIseq.R	reads	per-sample SNV lists; origin not documented
-ext:MSIseq/all.data.indel.rds	code:msiseq/run-MSIseq.R	reads	per-sample indel lists; origin not documented
-code:msiseq/run-MSIseq.R	ext:MSIseq/mafInf/<sample>_mafInf.xlsx	writes	per sample; also read back
-ext:MSIseq/mafInf/<sample>_mafInf.xlsx	code:msiseq/run-MSIseq.R	reads	re-read of own output
-code:msiseq/run-MSIseq.R	ext:MSIseq/mutationNum.txt	writes	uncertain: main loop uses undefined SNV_insert_dat / indel83_intersect_dat, so it cannot run as written; final MSIseq calls are in data:sample_info.tsv (MSIseq_MSI.H), and data:new-mini-msi-calls/ has a later run_MSIseq_overlap_6975.R
-code:msiseq/run-MSIseq.R	ext:MSIseq/Classify.txt	writes	uncertain: main loop uses undefined SNV_insert_dat / indel83_intersect_dat, so it cannot run as written; final MSIseq calls are in data:sample_info.tsv (MSIseq_MSI.H), and data:new-mini-msi-calls/ has a later run_MSIseq_overlap_6975.R
-code:msiseq/run-MSIseq.R	ext:MSIseq/mutationNum.xlsx	writes	uncertain: main loop uses undefined SNV_insert_dat / indel83_intersect_dat, so it cannot run as written; final MSIseq calls are in data:sample_info.tsv (MSIseq_MSI.H), and data:new-mini-msi-calls/ has a later run_MSIseq_overlap_6975.R
-code:msiseq/run-MSIseq.R	ext:MSIseq/MSI_classified_res.xlsx	writes	uncertain: main loop uses undefined SNV_insert_dat / indel83_intersect_dat, so it cannot run as written; final MSIseq calls are in data:sample_info.tsv (MSIseq_MSI.H), and data:new-mini-msi-calls/ has a later run_MSIseq_overlap_6975.R
+ext:MSIseq/MSIseq_1.0.0/MSIseq/R/Compute.input.variables.R	code:msiseq/likely_dead_msiseq_code/prev-run-MSIseq.R	reads	source; MSIseq 1.0.0 package source, after setwd(MSIseq) (folder not in repo)
+ext:/MSIseq_1.0.0/MSIseq/R/MSIseq.classify.R	code:msiseq/likely_dead_msiseq_code/prev-run-MSIseq.R	reads	source; absolute path with leading slash, probably a typo for the relative path
+ext:MSIseq/Hg19repeats.rda	code:msiseq/likely_dead_msiseq_code/prev-run-MSIseq.R	reads	MSIseq hg19 repeat annotation
+ext:MSIseq/MSIseq_1.0.0/MSIseq/R/sysdata.rda	code:msiseq/likely_dead_msiseq_code/prev-run-MSIseq.R	reads	MSIseq classifier data
+ext:MSIseq/all.data.SNV.rds	code:msiseq/likely_dead_msiseq_code/prev-run-MSIseq.R	reads	per-sample SNV lists; origin not documented
+ext:MSIseq/all.data.indel.rds	code:msiseq/likely_dead_msiseq_code/prev-run-MSIseq.R	reads	per-sample indel lists; origin not documented
+code:msiseq/likely_dead_msiseq_code/prev-run-MSIseq.R	ext:MSIseq/mafInf/<sample>_mafInf.xlsx	writes	per sample; also read back
+ext:MSIseq/mafInf/<sample>_mafInf.xlsx	code:msiseq/likely_dead_msiseq_code/prev-run-MSIseq.R	reads	re-read of own output
+code:msiseq/likely_dead_msiseq_code/prev-run-MSIseq.R	ext:MSIseq/mutationNum.txt	writes	uncertain: main loop uses undefined SNV_insert_dat / indel83_intersect_dat, so it cannot run as written; final MSIseq calls are in data:sample_info.tsv (MSIseq_MSI.H), and data:new-mini-msi-calls/ has a later run_MSIseq_overlap_6975.R
+code:msiseq/likely_dead_msiseq_code/prev-run-MSIseq.R	ext:MSIseq/Classify.txt	writes	uncertain: main loop uses undefined SNV_insert_dat / indel83_intersect_dat, so it cannot run as written; final MSIseq calls are in data:sample_info.tsv (MSIseq_MSI.H), and data:new-mini-msi-calls/ has a later run_MSIseq_overlap_6975.R
+code:msiseq/likely_dead_msiseq_code/prev-run-MSIseq.R	ext:MSIseq/mutationNum.xlsx	writes	uncertain: main loop uses undefined SNV_insert_dat / indel83_intersect_dat, so it cannot run as written; final MSIseq calls are in data:sample_info.tsv (MSIseq_MSI.H), and data:new-mini-msi-calls/ has a later run_MSIseq_overlap_6975.R
+code:msiseq/likely_dead_msiseq_code/prev-run-MSIseq.R	ext:MSIseq/MSI_classified_res.xlsx	writes	uncertain: main loop uses undefined SNV_insert_dat / indel83_intersect_dat, so it cannot run as written; final MSIseq calls are in data:sample_info.tsv (MSIseq_MSI.H), and data:new-mini-msi-calls/ has a later run_MSIseq_overlap_6975.R
 ext:PCAWG7.sample.id.txt	data:build_all_meta.R	reads	PCAWG7 package; inputs were in code repo build_fig_s1/ at commit 82973f3
 ext:PCAWG.sample.sheet.txt	data:build_all_meta.R	reads	PCAWG7 package; in code repo build_fig_s1/ at commit 82973f3
 ext:donor.all_projects.tsv.gz	data:build_all_meta.R	reads	ICGC donor table; in code repo build_fig_s1/ at commit 82973f3
