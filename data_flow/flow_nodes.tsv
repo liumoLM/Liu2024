@@ -28,14 +28,14 @@ code:ID83_topography_analysis_code/06_computeOddsRatio/repli.strand/03.repli.str
 code:ID83_topography_analysis_code/06_computeOddsRatio/trans.strand/01.trans.strand.odds_ratio.xlsx	code repo file	code	ID83_topography_analysis_code/06_computeOddsRatio/trans.strand/01.trans.strand.odds_ratio.xlsx	01.trans.strand.odds_ratio.xlsx	yes		
 code:ID83_topography_analysis_code/06_computeOddsRatio/trans.strand/02.trans.strand.odds_type.xlsx	code repo file	code	ID83_topography_analysis_code/06_computeOddsRatio/trans.strand/02.trans.strand.odds_type.xlsx	02.trans.strand.odds_type.xlsx	yes		
 code:ID83_topography_analysis_code/06_computeOddsRatio/trans.strand/03.trans.strand.cancer_proportion.xlsx	code repo file	code	ID83_topography_analysis_code/06_computeOddsRatio/trans.strand/03.trans.strand.cancer_proportion.xlsx	03.trans.strand.cancer_proportion.xlsx	yes		
-code:ID83_topography_analysis_code/add_partial_credit.R	script	code	ID83_topography_analysis_code/add_partial_credit.R	add_partial_credit.R	yes		
-code:ID83_topography_analysis_code/generate_partialcredit_match_file.R	script	code	ID83_topography_analysis_code/generate_partialcredit_match_file.R	generate_partialcredit_match_file.R	yes		
-code:ID83_topography_analysis_code/normalize.sh	script	code	ID83_topography_analysis_code/normalize.sh	normalize.sh	yes		
-code:ID83_topography_analysis_code/r.01_createBed.R	script	code	ID83_topography_analysis_code/r.01_createBed.R	r.01_createBed.R	yes		
-code:ID83_topography_analysis_code/r.02.intersect_no_loop.sh	script	code	ID83_topography_analysis_code/r.02.intersect_no_loop.sh	r.02.intersect_no_loop.sh	yes		
-code:ID83_topography_analysis_code/r.03_mergeInf.R	script	code	ID83_topography_analysis_code/r.03_mergeInf.R	r.03_mergeInf.R	yes		
-code:ID83_topography_analysis_code/r.03_mergeInf_simulation.R	script	code	ID83_topography_analysis_code/r.03_mergeInf_simulation.R	r.03_mergeInf_simulation.R	yes		
-code:ID83_topography_analysis_code/r.04_create4InfMatrix.R	script	code	ID83_topography_analysis_code/r.04_create4InfMatrix.R	r.04_create4InfMatrix.R	yes		
+code:ID83_topography_analysis_code/add_partial_credit.R	script	code	ID83_topography_analysis_code/add_partial_credit.R	add_partial_credit.R	yes	run on Huang-lab server only	paths and columns disagree with other steps, see README Known inconsistencies
+code:ID83_topography_analysis_code/generate_partialcredit_match_file.R	script	code	ID83_topography_analysis_code/generate_partialcredit_match_file.R	generate_partialcredit_match_file.R	yes	run on Huang-lab server only	paths and columns disagree with other steps, see README Known inconsistencies
+code:ID83_topography_analysis_code/normalize.sh	script	code	ID83_topography_analysis_code/normalize.sh	normalize.sh	yes	run on Huang-lab server only	paths and columns disagree with other steps, see README Known inconsistencies
+code:ID83_topography_analysis_code/r.01_createBed.R	script	code	ID83_topography_analysis_code/r.01_createBed.R	r.01_createBed.R	yes	run on Huang-lab server only	paths and columns disagree with other steps, see README Known inconsistencies
+code:ID83_topography_analysis_code/r.02.intersect_no_loop.sh	script	code	ID83_topography_analysis_code/r.02.intersect_no_loop.sh	r.02.intersect_no_loop.sh	yes	run on Huang-lab server only	paths and columns disagree with other steps, see README Known inconsistencies
+code:ID83_topography_analysis_code/r.03_mergeInf.R	script	code	ID83_topography_analysis_code/r.03_mergeInf.R	r.03_mergeInf.R	yes	run on Huang-lab server only	paths and columns disagree with other steps, see README Known inconsistencies
+code:ID83_topography_analysis_code/r.03_mergeInf_simulation.R	script	code	ID83_topography_analysis_code/r.03_mergeInf_simulation.R	r.03_mergeInf_simulation.R	yes	run on Huang-lab server only	paths and columns disagree with other steps, see README Known inconsistencies
+code:ID83_topography_analysis_code/r.04_create4InfMatrix.R	script	code	ID83_topography_analysis_code/r.04_create4InfMatrix.R	r.04_create4InfMatrix.R	yes	run on Huang-lab server only	reads r.03 outputs that exist only on the server
 code:ID83_topography_analysis_code/r.05_FisherTest.R	script	code	ID83_topography_analysis_code/r.05_FisherTest.R	r.05_FisherTest.R	yes		
 code:ID83_topography_analysis_code/r.06_comupteOddsRatio.R	script	code	ID83_topography_analysis_code/r.06_comupteOddsRatio.R	r.06_comupteOddsRatio.R	yes		
 code:ID83_topography_analysis_code/r.09_barplot.R	script	code	ID83_topography_analysis_code/r.09_barplot.R	r.09_barplot.R	yes		
