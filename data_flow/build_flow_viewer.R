@@ -173,6 +173,7 @@ template <- r"--(<!doctype html>
   <div class="legend-row"><svg width="40" height="10"><line x1="0" y1="5" x2="40" y2="5" stroke="#8c979e" stroke-width="2"/></svg> reads or writes</div>
   <div class="legend-row"><svg width="40" height="10"><line x1="0" y1="5" x2="40" y2="5" stroke="#1f63b5" stroke-width="2" stroke-dasharray="6 4"/></svg> copied</div>
   <div class="legend-row"><svg width="40" height="10"><line x1="0" y1="5" x2="40" y2="5" stroke="#c0392b" stroke-width="2" stroke-dasharray="6 4"/></svg> edited by hand</div>
+  <div class="legend-row"><svg width="40" height="10"><line x1="0" y1="5" x2="40" y2="5" stroke="#7d3c98" stroke-width="2" stroke-dasharray="2 3"/></svg> code adapted from</div>
   <div class="legend-row"><span class="sw" style="border:3px solid #c0392b;background:#fff"></span> flagged: missing, no writer, or never read</div>
   <h2>How to use</h2>
   <ul id="help" class="muted">
@@ -207,11 +208,13 @@ const style = [
       "target-arrow-shape": "triangle", "arrow-scale": 0.8, "curve-style": "bezier" } },
   { selector: "edge.copied", style: { "line-style": "dashed", "line-color": "#1f63b5", "target-arrow-color": "#1f63b5" } },
   { selector: "edge.edited-by-hand", style: { "line-style": "dashed", "line-color": "#c0392b", "target-arrow-color": "#c0392b" } },
+  { selector: "edge.adapted-from", style: { "line-style": "dotted", "line-color": "#7d3c98", "target-arrow-color": "#7d3c98" } },
   { selector: ".faded", style: { "opacity": 0.12 } },
   { selector: "node.hl", style: { "border-width": 3 } },
   { selector: "edge.hl", style: { "width": 2.2, "line-color": "#47535a", "target-arrow-color": "#47535a" } },
   { selector: "edge.copied.hl", style: { "line-color": "#1f63b5", "target-arrow-color": "#1f63b5" } },
   { selector: "edge.edited-by-hand.hl", style: { "line-color": "#c0392b", "target-arrow-color": "#c0392b" } },
+  { selector: "edge.adapted-from.hl", style: { "line-color": "#7d3c98", "target-arrow-color": "#7d3c98" } },
   { selector: ":selected", style: { "overlay-color": "#ffbf00", "overlay-opacity": 0.35, "overlay-padding": 5 } }
 ];
 const cy = cytoscape({

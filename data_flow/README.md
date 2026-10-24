@@ -41,7 +41,11 @@ Each id names the repo and the path in it:
 `reads` (file to script), `writes` (script to file), `copied` (a file copied
 unchanged, such as a figure copied from the code repo to this repo), or
 `edited by hand` (for example `sup_fig_s2_msighdp_signatures_draft.pdf` to
-the paper's Figure S2). A script that sources another script `reads` it.
+the paper's Figure S2), or `adapted from` (a script whose code was adapted
+from another script, such as `read_annotated_vcf()` in
+`~/github/zz-liu_2025_draft_release/code_for_internal_exploration/`, which
+`build_fig6/make_fig6_logo_counts.R` follows to find the annotated indel
+VCFs in `~/MEGA/important_mut_sig_data/`). A script that sources another script `reads` it.
 
 ## How the TSVs were made
 

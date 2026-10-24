@@ -44,11 +44,20 @@ http://8.138.15.71/
     so it failed. It now reads them from the top level and renders. The
     sequence logos are identical, and the signature plots differ only by
     font, so the committed PDFs were kept.
-  - `build_fig6/ID4_IDF_linking_tumor_indel_annotated_vcf.txt` (read by
-    Figure 6) was extracted by Mo from the controlled-access Hartwig VCFs of
-    the two linking tumors (data repo `linking_tumors/README.md`), keeping
-    only mutation information. The extraction script is in neither repo.
-    Optional: ask Mo for it, so the step is recorded.
+  - Fixed (2026-10-24): `build_fig6/ID4_IDF_linking_tumor_indel_annotated_vcf.txt`
+    held per-variant indels (with coordinates and sequence context) of
+    controlled-access tumors, labeled by signature, so it may be
+    re-identifiable. Figure 6 now draws its logos from
+    `fig6_logo_counts.tsv` (per-position base counts), written from the
+    annotated VCFs by `make_fig6_logo_counts.R`. The file is no longer
+    tracked, but it is still in the code repo's git history (to do: remove
+    it from the history before release, and correct data repo
+    `linking_tumors/README.md`, which says it can be shared). Matching its
+    rows to the VCFs showed it came from 3 tumors per signature (C_ID4:
+    CPCT02100089T, SP48008, SP124364; ID_F: DRUP01030028T, SP103894,
+    SP5559), not the two linking tumors, and not the 6 C_ID4 tumors listed
+    in the notebook. 6 of its 4,066 logo deletions are not in the current
+    VCFs, so 3 of the 4 logos differ slightly from the paper's panel C.
 
 ## Open: Steve with Mo
 
