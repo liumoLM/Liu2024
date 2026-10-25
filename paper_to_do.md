@@ -45,7 +45,8 @@ http://8.138.15.71/
     2026-10-24). The code repo's `.gitattributes` marks it `export-ignore`,
     so `git archive` already skips it. The same holds for
     `msiseq/likely_dead_msiseq_code/` (the old MSIseq script, moved there on
-    2026-10-24). Check that they are absent from the release repo, and treat
+    2026-10-24) and `build_sup_table_s1/likely_dead_sup_table_s1_files/` (two
+    unread Del3:U1:R1 example files, moved there on 2026-10-25). Check that they are absent from the release repo, and treat
     any other `likely_dead_*` folder the same way.
   - Fixes made later in the working repo must be copied to the release repo
     again (rerun `git archive` and commit the differences).
