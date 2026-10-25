@@ -173,6 +173,17 @@ http://8.138.15.71/
     in the notebook. 6 of its 4,066 logo deletions are not in the current
     VCFs, so 3 of the 4 logos differ slightly from the paper's panel C.
 
+- Steve (2026-10-25): get the inputs for running the ID89 topography steps
+  r.01 to r.04 locally, so we can test them, including Mini's corrected
+  `r.02.intersect_no_loop.sh`.
+  - Ask Mo for `all.indel.ID89.partial.credit.txt`, read by
+    `r.01_createBed.R`. It is too large for the repos, so add a locator
+    for it in `find_data.R` in the code repo, like the one for the annotated
+    indel VCFs.
+  - Ask Mini for `results/ID83/01_createBed/01.rtGroup.bed` and
+    `reference/ENCODE/repli_strand_info_new.bed`, the `-a` inputs of
+    r.02.
+
 ## Open: Steve with Mo
 
 - Age and sex analyses (Tables S15 and S16, Figure S6), discussed in the
