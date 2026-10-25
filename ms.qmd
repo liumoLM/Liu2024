@@ -1010,7 +1010,8 @@ environment in the code repo (`Extraction_and_assignment_code/pixi.toml`)
 leaves them unpinned and gets NumPy 2.2.6 and pandas 2.3.3. Also, the
 comments in `run_SigProfilerExtractor.py` and the code repo READMEs define
 high-TMB genomes as those with at least 5,000 indels, but the methods above
-say more than 4,000. Which cutoff was used for the high-TMB extraction?]{.blue}
+say more than 4,000. Steve is asking Mo which cutoff was used for the
+high-TMB extraction.]{.blue}
 
 ## Match 83-type and 89-type signatures into reference signatures
 
@@ -1043,11 +1044,7 @@ insertions into poly-T tracts of 5 or more Ts plus single-T deletions from
 poly-T tracts of 6 or more Ts make up more than 50% of all indels (Table
 S17) and whose SigProfilerAssignment reconstruction had a cosine
 similarity < 0.9 to the 83-type or the 89-type spectrum. Both counts
-were taken from the spectra with repeat lengths capped at 9.
-[Note (2026-10-25): the example scripts `run_SigProfilerAssignment.py` and
-`mSigAct.R` in the code repo, and its READMEs, give older criteria: mSigAct
-for genomes with at least 5,000 indels or with Ins:1:T:5+ plus Del:1:T:5+ of
-at least 90%. To be updated to the criteria above.]{.blue} For these
+were taken from the spectra with repeat lengths capped at 9. For these
 `r ms_num$assign$n_msigact` tumors, which include
 `r ms_num$assign$n_msi_h_msigact` of the `r ms_num$assign$n_msi_h` MSI-H
 tumors, mSigAct estimated likelihoods under a multinomial

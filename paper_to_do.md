@@ -102,11 +102,13 @@ http://8.138.15.71/
     SigProfiler versions, which require numpy 2, so they are not pinned.
     Email to Mo about this drafted 2026-10-25. Still open (blue notes in the
     methods): the extraction script and code repo READMEs define high-TMB
-    as at least 5,000 indels, but the methods say more than 4,000 (ask Mo
-    which was used for the high-TMB extraction). The example assignment
-    scripts and READMEs give the old mSigAct criteria (at least 5,000 indels,
-    or poly-T at least 90%), not the adopted ones (more than 4,000, or poly-T
-    more than 50% and cosine less than 0.9). Update them.
+    as at least 5,000 indels, but the methods say more than 4,000 (Steve is
+    asking Mo which was used for the high-TMB extraction). Fixed
+    (2026-10-25): the example assignment scripts and READMEs gave the old
+    mSigAct criteria (at least 5,000 indels, or poly-T at least 90%, with SPA
+    skipping those genomes). They now give the adopted ones (SPA on all
+    genomes, then mSigAct for more than 4,000 indels, or poly-T more than 50%
+    and cosine less than 0.9).
   - Fixed (2026-10-24): the data repo had a copy of
     `make_connection_table.R` that sourced a `code/` folder that no longer
     exists. Deleted. The data repo README now points to the code repo's
