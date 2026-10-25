@@ -423,9 +423,9 @@ code:ID89_topography_analysis_code/r.01_createBed.R	ext:/public/data/Topography_
 code:ID89_topography_analysis_code/r.01_createBed.R	ext:/public/data/Topography_analysis_2026/results0322/ID89/01_createBed/03.signature.bed	writes	relative 01_createBed/; run on Huang-lab server
 ext:/public/data/Topography_analysis_2026/results/ID83/01_createBed/01.rtGroup.bed	code:ID89_topography_analysis_code/r.02.intersect_no_loop.sh	reads	replication-timing deciles (ID83 run); run on Huang-lab server
 ext:/public/data/Topography_analysis/reference/ENCODE/repli_strand_info_new.bed	code:ID89_topography_analysis_code/r.02.intersect_no_loop.sh	reads	run on Huang-lab server
-ext:/public/data/Topography_analysis_2026/results0322/ID83/01_createBed/03.signature.bed	code:ID89_topography_analysis_code/r.02.intersect_no_loop.sh	reads	uncertain: as received points at ID83 dirs (README: leftover from 83-type version); ID89 run presumably used results0322/ID89/
-code:ID89_topography_analysis_code/r.02.intersect_no_loop.sh	ext:/public/data/Topography_analysis_2026/results0322/ID83/02_intersectBed/01.RelicateTime.TransStrand.DNA_Region.intersect_res.txt	writes	uncertain: ID83 path as received; r.03 (ID89) reads results0322/ID89/02_intersectBed/
-code:ID89_topography_analysis_code/r.02.intersect_no_loop.sh	ext:/public/data/Topography_analysis_2026/results0322/ID83/02_intersectBed/02.RepliStrand.intersect_res.txt	writes	uncertain: ID83 path as received; not used by ID89 r.03
+ext:/public/data/Topography_analysis_2026/results0322/ID89/01_createBed/03.signature.bed	code:ID89_topography_analysis_code/r.02.intersect_no_loop.sh	reads	corrected script from Mini 2026-10-25; run on Huang-lab server
+code:ID89_topography_analysis_code/r.02.intersect_no_loop.sh	ext:/public/data/Topography_analysis_2026/results0322/ID89/02_intersectBed/01.RelicateTime.TransStrand.DNA_Region.intersect_res.txt	writes	run on Huang-lab server
+code:ID89_topography_analysis_code/r.02.intersect_no_loop.sh	ext:/public/data/Topography_analysis_2026/results0322/ID89/02_intersectBed/02.RepliStrand.intersect_res.txt	writes	not read by ID89 r.03 (its read is commented out); run on Huang-lab server
 ext:/public/data/Topography_analysis_2026/results0322/ID89/02_intersectBed/01.RelicateTime.TransStrand.DNA_Region.intersect_res.txt	code:ID89_topography_analysis_code/r.03_mergeInf.R	reads	setwd to server ID89 dir; run on Huang-lab server
 ext:/public/data/Topography_analysis_2026/results0322/ID89/01_createBed/02.unique.single.indel.aggregate.strand.added.matrix.txt	code:ID89_topography_analysis_code/r.03_mergeInf.R	reads	read then discarded (only dput colnames); run on Huang-lab server
 code:ID89_topography_analysis_code/all.meta.0528.rds	code:ID89_topography_analysis_code/r.03_mergeInf.R	reads	literal path is relative to server ID89/03_mergeInf/ after setwd; README says this file is what r.03 reads
@@ -475,11 +475,7 @@ code:Example_data/sigprofiler.input.89type.catalog/example.89type.Bladder.txt	co
 code:Extraction_and_assignment_code/run_SigProfilerExtractor.py	ext:Example_data/sigprofiler.input.89type.catalog/example.89type.Bladder/	writes	SigProfilerExtractor output folder; not in repo
 code:Example_data/mSigHdp.input.89type.catalog/mSigHdp.test.89type.catalog.txt	code:Extraction_and_assignment_code/mSigHdp.R	reads	example input
 code:Extraction_and_assignment_code/mSigHdp.R	ext:example.mSigHdp.extraction.output/	writes	relative to code repo root; not in repo
-code:Example_data/assignment.example.data/example.172.type.catalog.txt	code:Extraction_and_assignment_code/run_SigProfilerAssignment.py	reads	example input
-code:Example_data/assignment.example.data/example.172.type.signatures.txt	code:Extraction_and_assignment_code/run_SigProfilerAssignment.py	reads	example input
 code:Extraction_and_assignment_code/run_SigProfilerAssignment.py	ext:output/	writes	SigProfilerAssignment output folder relative to code repo root; not in repo
-code:Example_data/assignment.example.data/example.172.type.catalog.txt	code:Extraction_and_assignment_code/mSigAct.R	reads	example input
-code:Example_data/assignment.example.data/example.172.type.signatures.txt	code:Extraction_and_assignment_code/mSigAct.R	reads	example input
 code:Extraction_and_assignment_code/mSigAct.R	ext:new_result_list.rds	writes	working directory; not in repo
 code:Extraction_and_assignment_code/mSigAct.R	ext:temp/	writes	PresenceAttributeSigActivity output.dir
 ext:MSIseq/MSIseq_1.0.0/MSIseq/R/Compute.input.variables.R	code:msiseq/likely_dead_msiseq_code/prev-run-MSIseq.R	reads	source; MSIseq 1.0.0 package source, after setwd(MSIseq) (folder not in repo)
@@ -713,3 +709,15 @@ ext:~/MEGA/important_mut_sig_data/pcawg_indel_vcfs/<aliquot>.consensus.indel.vcf
 ext:mSigSpectra read_vcf() and annotate_id_vcf() (GitHub steverozen/mSigSpectra)	ext:~/MEGA/important_mut_sig_data/fmh-unfiltered_vcfs/{CPCT02100089T,DRUP01030028T}.annotated.indel.vcf.gz	writes	annotated indel VCFs
 ext:mSigSpectra read_vcf() and annotate_id_vcf() (GitHub steverozen/mSigSpectra)	ext:~/MEGA/important_mut_sig_data/pcawg_indel_vcfs/{SP48008,SP124364,SP103894,SP5559}.annotated.indel.vcf.gz	writes	annotated indel VCFs
 code:find_data.R	code:build_fig6/make_fig6_logo_counts.R	reads	source
+code:find_data.R	code:Extraction_and_assignment_code/make_172_type_inputs.R	reads	source
+data:liu_et_al_83_spectra.tsv	code:Extraction_and_assignment_code/make_172_type_inputs.R	reads	
+data:liu_et_al_89_spectra.tsv	code:Extraction_and_assignment_code/make_172_type_inputs.R	reads	
+data:liu_et_al_83_signatures.tsv	code:Extraction_and_assignment_code/make_172_type_inputs.R	reads	
+data:liu_et_al_89_signatures.tsv	code:Extraction_and_assignment_code/make_172_type_inputs.R	reads	
+data:connection_table.tsv	code:Extraction_and_assignment_code/make_172_type_inputs.R	reads	
+code:Extraction_and_assignment_code/make_172_type_inputs.R	ext:Extraction_and_assignment_code/assignment_input/ID172_catalog.tsv	writes	
+code:Extraction_and_assignment_code/make_172_type_inputs.R	ext:Extraction_and_assignment_code/assignment_input/ID172_signatures.tsv	writes	
+ext:Extraction_and_assignment_code/assignment_input/ID172_catalog.tsv	code:Extraction_and_assignment_code/run_SigProfilerAssignment.py	reads	
+ext:Extraction_and_assignment_code/assignment_input/ID172_signatures.tsv	code:Extraction_and_assignment_code/run_SigProfilerAssignment.py	reads	
+ext:Extraction_and_assignment_code/assignment_input/ID172_catalog.tsv	code:Extraction_and_assignment_code/mSigAct.R	reads	
+ext:Extraction_and_assignment_code/assignment_input/ID172_signatures.tsv	code:Extraction_and_assignment_code/mSigAct.R	reads	

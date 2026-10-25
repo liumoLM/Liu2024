@@ -109,6 +109,18 @@ http://8.138.15.71/
     skipping those genomes). They now give the adopted ones (SPA on all
     genomes, then mSigAct for more than 4,000 indels, or poly-T more than 50%
     and cosine less than 0.9).
+    Fixed (2026-10-25): `Example_data/assignment.example.data/` held copies
+    of the full 172-type catalog (all 6,975 tumors) and signatures. The
+    catalog copy had no row names, so SigProfilerAssignment silently dropped
+    CPCT02010349T. Removed. The new
+    `Extraction_and_assignment_code/make_172_type_inputs.R` builds both from
+    the data repo, and both assignment scripts read its output. Rerun:
+    6,243 of the 6,244 tumors not refit with mSigAct match Mo's
+    `ID89.SPA.assignment.1020.txt` exactly. CPCT02010349T (144 indels,
+    cosine 0.47) is InsDel5a in the rerun and InsDel19a in Mo's file. Open:
+    `mSigAct.R` refits all tumors and does not merge results. The code that
+    selected the 731 tumors and merged the refits is not in the code repo.
+    Ask Mo for it, and about CPCT02010349T.
   - Fixed (2026-10-24): the data repo had a copy of
     `make_connection_table.R` that sourced a `code/` folder that no longer
     exists. Deleted. The data repo README now points to the code repo's
