@@ -90,9 +90,15 @@ http://8.138.15.71/
     themselves instead of the packages. Renamed `run_SigProfilerExtractor.py`
     and `run_SigProfilerAssignment.py`. In the extractor, only the import was
     inside the cancer-type loop, so only `All` would have run. Fixed and
-    checked with stub packages. Open: the extractor says v1.2.1 and 20 to 40
-    signatures for all genomes, but the methods say v1.1.24 and 10 to 40.
-    Email to Mo drafted 2026-10-24.
+    checked with stub packages, then with the real packages (2026-10-24).
+    On 2026-10-25 Mo confirmed v1.2.1 and 20 to 40 signatures for all
+    genomes, all PCAWG, and all Hartwig genomes (2 to 20 per cancer type and
+    high-TMB), and the methods were corrected (they said v1.1.24 and 10 to
+    40). The extractor example now uses only the 198 bladder tumors (the
+    6,975-tumor `All` catalog was removed), has a `--quick` option, and
+    `Extraction_and_assignment_code/pixi.toml` pins Mo's versions. Mo's
+    numpy 1.26.4 and pandas 2.0.3 cannot be installed with these
+    SigProfiler versions, which require numpy 2, so they are not pinned.
   - Fixed (2026-10-24): the data repo had a copy of
     `make_connection_table.R` that sourced a `code/` folder that no longer
     exists. Deleted. The data repo README now points to the code repo's

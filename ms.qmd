@@ -986,9 +986,10 @@ burden, an additional downsampling step was applied
 
 In parallel, de novo mutational signatures were extracted using the
 Non-negative matrix factorization based approach (NMF),
-SigProfilerExtractor (v1.1.24). For analyses including all genomes,
-NMF was performed with the number of signatures evaluated between 10
-and 40 (minimum_signatures = 10; maximum_signatures = 40). For
+SigProfilerExtractor (v1.2.1). For analyses of all genomes, all PCAWG
+genomes, or all Hartwig genomes, NMF was performed with the number of
+signatures evaluated between 20 and 40 (minimum_signatures = 20;
+maximum_signatures = 40). For
 analyses restricted to individual cancer types or to genomes with high
 tumor mutational burden, the number of signatures evaluated ranged
 from 2 to 20 (minimum_signatures = 2; maximum_signatures = 20). Each
@@ -1021,7 +1022,7 @@ study.
 
 To leverage the resolution of both the 83-type and 89-type mutational
 signatures, we constructed a unified 172-type reference set and
-applied SigProfilerAssignment to decompose the 172-type spectra of all
+applied SigProfilerAssignment (v0.2.3) to decompose the 172-type spectra of all
 tumors. Two groups of tumors often have very sparse spectra, which
 SigProfilerAssignment may not fit well. We refit these tumors with
 mSigAct: (1) tumors with > 4,000 indels, and (2) tumors in which single-T

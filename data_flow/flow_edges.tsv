@@ -471,10 +471,8 @@ ext:/ID83_0322/09_barplot/ID_L_Stomach_Decreasing.Rds	code:ID89_topography_analy
 ext:ID89_topography_analysis_code/09_barplot/increasing/<signature>.Rds	code:ID89_topography_analysis_code/likely_dead_ID89_topography_code/r.09_barplot_plots.R	reads	not reached; re-read of own outputs
 ext:ID89_topography_analysis_code/09_barplot/flat/<signature>.Rds	code:ID89_topography_analysis_code/likely_dead_ID89_topography_code/r.09_barplot_plots.R	reads	not reached; re-read of own outputs
 ext:ID89_topography_analysis_code/09_barplot/mix/<signature>.Rds	code:ID89_topography_analysis_code/likely_dead_ID89_topography_code/r.09_barplot_plots.R	reads	not reached; re-read of own outputs
-code:Example_data/sigprofiler.input.89type.catalog/example.89type.Bladder.txt	code:Extraction_and_assignment_code/run_SigProfilerExtractor.py	reads	example input; loop fixed 2026-10-24
-code:Example_data/sigprofiler.input.89type.catalog/example.89type.All.txt	code:Extraction_and_assignment_code/run_SigProfilerExtractor.py	reads	example input; loop fixed 2026-10-24
+code:Example_data/sigprofiler.input.89type.catalog/example.89type.Bladder.txt	code:Extraction_and_assignment_code/run_SigProfilerExtractor.py	reads	example input (198 bladder tumors); loop fixed 2026-10-24
 code:Extraction_and_assignment_code/run_SigProfilerExtractor.py	ext:Example_data/sigprofiler.input.89type.catalog/example.89type.Bladder/	writes	SigProfilerExtractor output folder; not in repo
-code:Extraction_and_assignment_code/run_SigProfilerExtractor.py	ext:Example_data/sigprofiler.input.89type.catalog/example.89type.All/	writes	SigProfilerExtractor output folder; not in repo
 code:Example_data/mSigHdp.input.89type.catalog/mSigHdp.test.89type.catalog.txt	code:Extraction_and_assignment_code/mSigHdp.R	reads	example input
 code:Extraction_and_assignment_code/mSigHdp.R	ext:example.mSigHdp.extraction.output/	writes	relative to code repo root; not in repo
 code:Example_data/assignment.example.data/example.172.type.catalog.txt	code:Extraction_and_assignment_code/run_SigProfilerAssignment.py	reads	example input

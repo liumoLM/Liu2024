@@ -2,7 +2,6 @@ id	kind	repo	path	label	exists	flags	note
 code:Example_data/assignment.example.data/example.172.type.catalog.txt	code repo file	code	Example_data/assignment.example.data/example.172.type.catalog.txt	example.172.type.catalog.txt	yes	no script writes it	example input, made by Mo
 code:Example_data/assignment.example.data/example.172.type.signatures.txt	code repo file	code	Example_data/assignment.example.data/example.172.type.signatures.txt	example.172.type.signatures.txt	yes	no script writes it	example input, made by Mo
 code:Example_data/mSigHdp.input.89type.catalog/mSigHdp.test.89type.catalog.txt	code repo file	code	Example_data/mSigHdp.input.89type.catalog/mSigHdp.test.89type.catalog.txt	mSigHdp.test.89type.catalog.txt	yes	no script writes it	example input, made by Mo
-code:Example_data/sigprofiler.input.89type.catalog/example.89type.All.txt	code repo file	code	Example_data/sigprofiler.input.89type.catalog/example.89type.All.txt	example.89type.All.txt	yes	no script writes it	example input, made by Mo
 code:Example_data/sigprofiler.input.89type.catalog/example.89type.Bladder.txt	code repo file	code	Example_data/sigprofiler.input.89type.catalog/example.89type.Bladder.txt	example.89type.Bladder.txt	yes	no script writes it	example input, made by Mo
 code:Extraction_and_assignment_code/run_SigProfilerAssignment.py	script	code	Extraction_and_assignment_code/run_SigProfilerAssignment.py	run_SigProfilerAssignment.py	yes		
 code:Extraction_and_assignment_code/run_SigProfilerExtractor.py	script	code	Extraction_and_assignment_code/run_SigProfilerExtractor.py	run_SigProfilerExtractor.py	yes		
@@ -338,7 +337,6 @@ ext:/public/data/Topography_analysis_2026/simulation_data/all_simulated_with_ann
 ext:/public/data/Topography_analysis_2026/simulation_data/new.ID83.simualted.partialcredit.annotated.txt	external	ext	/public/data/Topography_analysis_2026/simulation_data/new.ID83.simualted.partialcredit.annotated.txt	new.ID83.simualted.partialcredit.annotated.txt			
 ext:<out_dir>/<sig>_sankey_other_del.png	external	ext	<out_dir>/<sig>_sankey_other_del.png	<sig>_sankey_other_del.png			
 ext:<out_dir>/<sig>_sankey_other_ins.png	external	ext	<out_dir>/<sig>_sankey_other_ins.png	<sig>_sankey_other_ins.png			
-ext:Example_data/sigprofiler.input.89type.catalog/example.89type.All/	external	ext	Example_data/sigprofiler.input.89type.catalog/example.89type.All/	example.89type.All			
 ext:Example_data/sigprofiler.input.89type.catalog/example.89type.Bladder/	external	ext	Example_data/sigprofiler.input.89type.catalog/example.89type.Bladder/	example.89type.Bladder			
 ext:HMF_metadata.tsv	external	ext	HMF_metadata.tsv	HMF_metadata.tsv			
 code:ID83_topography_analysis_code/09_barplot/all_lm_trend.xlsx	code repo file	code	ID83_topography_analysis_code/09_barplot/all_lm_trend.xlsx	all_lm_trend.xlsx	yes		
