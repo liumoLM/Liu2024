@@ -1000,14 +1000,21 @@ SigProfilerExtractor, although several rare signatures were identified
 in alternative solutions. SigProfilerExtractor and SigProfilerAssignment
 were run in Python 3.10.16 with SigProfilerMatrixGenerator v1.3.3,
 SigProfilerPlotting v1.4.1, SciPy v1.15.3, and scikit-learn v1.6.1.
+SigProfilerAssignment was run with NumPy v2.2.6 and pandas v2.3.3.
 
-[Note (2026-10-25): Versions and signature ranges from Mo (2026-10-25). Mo
+[Note (2026-10-26): Versions and signature ranges from Mo (2026-10-25). Mo
 also listed NumPy 1.26.4 and pandas 2.0.3, but SigProfilerExtractor 1.2.1,
 SigProfilerAssignment 0.2.3, and SigProfilerMatrixGenerator 1.3.3 require
 NumPy 2.0 or later, and pandas 2.0.3 does not support NumPy 2. So these
-two versions cannot be from the same environment. Asked Mo. The pixi
-environment in the code repo (`Extraction_and_assignment_code/pixi.toml`)
-leaves them unpinned and gets NumPy 2.2.6 and pandas 2.3.3. Also, the
+two versions cannot be the ones used. With NumPy 2.2.6 and pandas 2.3.3
+(the versions the pixi environment in the code repo,
+`Extraction_and_assignment_code/pixi.toml`, resolves to), SigProfilerAssignment
+reproduced Mo's exposures exactly for all 6,244 tumors not refit with
+mSigAct (2026-10-25), so we take these as the versions used for
+assignment. For extraction, the NumPy and pandas versions are unknown beyond
+NumPy 2 or later, and a rerun cannot settle it because the extraction used
+random seeds. So the text gives no NumPy or pandas versions for
+extraction. Also, the
 comments in `run_SigProfilerExtractor.py` and the code repo READMEs define
 high-TMB genomes as those with at least 5,000 indels, but the methods above
 say more than 4,000. Steve is asking Mo which cutoff was used for the

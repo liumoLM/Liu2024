@@ -101,7 +101,10 @@ http://8.138.15.71/
     `Extraction_and_assignment_code/pixi.toml` pins Mo's versions. Mo's
     numpy 1.26.4 and pandas 2.0.3 cannot be installed with these
     SigProfiler versions, which require numpy 2, so they are not pinned.
-    Email to Mo about this drafted 2026-10-25. Still open (blue notes in the
+    Email to Mo about this sent 2026-10-25. Decided 2026-10-26: numpy 2.2.6
+    and pandas 2.3.3 reproduce Mo's SPA exposures exactly, so the methods
+    give them for assignment. For extraction they are unknown (numpy 2 or
+    later), and the methods give no numpy or pandas versions for it. Still open (blue notes in the
     methods): the extraction script and code repo READMEs define high-TMB
     as at least 5,000 indels, but the methods say more than 4,000 (Steve is
     asking Mo which was used for the high-TMB extraction). Fixed
