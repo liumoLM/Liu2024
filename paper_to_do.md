@@ -120,7 +120,7 @@ http://8.138.15.71/
     cosine 0.47) is InsDel5a in the rerun and InsDel19a in Mo's file. Open:
     `mSigAct.R` refits all tumors and does not merge results. The code that
     selected the 731 tumors and merged the refits is not in the code repo.
-    Ask Mo for it, and about CPCT02010349T.
+    See the two items of 2026-10-25 under "Open: Steve with Mo".
   - Fixed (2026-10-24): the data repo had a copy of
     `make_connection_table.R` that sourced a `code/` folder that no longer
     exists. Deleted. The data repo README now points to the code repo's
@@ -198,6 +198,19 @@ http://8.138.15.71/
 
 ## Open: Steve with Mo
 
+- Contact Mo about CPCT02010349T (added 2026-10-25). Rerunning
+  `run_SigProfilerAssignment.py` on the 172-type inputs from the data repo
+  reproduces Mo's `ID89.SPA.assignment.1020.txt` exactly for 6,243 of the
+  6,244 tumors not refit with mSigAct. The exception is CPCT02010349T (144
+  indels, reconstruction cosine 0.47): InsDel5a in the rerun, InsDel19a in
+  Mo's file. The old example catalog had no row names, so SPA dropped this
+  tumor. Ask Mo how his value for it was made.
+- Rerun the mSigAct refit (added 2026-10-25). `mSigAct.R` in
+  `Extraction_and_assignment_code/` refits all tumors and does not merge
+  the refits into the SPA results. Get from Mo the code that selected the
+  731 tumors (`mSigAct.reanalyzed.samples.txt`) and merged the refits, put
+  it in the code repo, rerun it, and check that it reproduces
+  `ID83/ID89.SPA.assignment.1020.txt` for the 731 tumors.
 - Age and sex analyses (Tables S15 and S16, Figure S6), discussed in the
   doc (see "Open: Steve"). Decide:
   - whether to use the joint models (age, sex, cohort, MSI-H, cancer type,
