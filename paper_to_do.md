@@ -119,7 +119,8 @@ http://8.138.15.71/
     assignments (`liu_et_al_89_assignment.tsv`) exactly. CPCT02010349T (144 indels,
     cosine 0.47) is InsDel5a in the rerun and InsDel19a in Mo's assignments. Open:
     `mSigAct.R` refits all tumors and does not merge results. The code that
-    selected the 731 tumors and merged the refits is not in the code repo.
+    merged the refits is not in the code repo (the selection rule
+    reproduces the 731 tumors exactly).
     See the two items of 2026-10-25 under "Open: Steve with Mo".
   - Fixed (2026-10-24): the data repo had a copy of
     `make_connection_table.R` that sourced a `code/` folder that no longer
@@ -205,13 +206,16 @@ http://8.138.15.71/
   indels, reconstruction cosine 0.47): InsDel5a in the rerun, InsDel19a in
   Mo's assignments. The old example catalog had no row names, so SPA dropped this
   tumor. Ask Mo how his value for it was made.
-- Rerun the mSigAct refit (added 2026-10-25). `mSigAct.R` in
-  `Extraction_and_assignment_code/` refits all tumors and does not merge
-  the refits into the SPA results. Get from Mo the code that selected the
-  731 tumors (`mSigAct.reanalyzed.samples.txt`) and merged the refits, put
-  it in the code repo, rerun it, and check that it reproduces
-  `liu_et_al_83_assignment.tsv` and `liu_et_al_89_assignment.tsv` for the
-  731 tumors.
+- Rerun the mSigAct refit (added 2026-10-25). The selection is confirmed:
+  applying the stated rule (> 4,000 indels, or poly-T ratio > 0.5 and SPA
+  reconstruction cosine < 0.9 for the 83-type or the 89-type part) to the
+  SPA rerun selects exactly the 731 tumors in
+  `mSigAct.reanalyzed.samples.txt`. What is missing is the refit-and-merge
+  step: `mSigAct.R` refits all tumors and does not split the 172-type
+  refits into the 83-type and 89-type tables in place of the SPA values.
+  Steve asked Mo for his mSigAct code on 2026-10-25. When it arrives, put
+  it in the code repo and spot check a few of the 731 tumors against
+  `liu_et_al_83_assignment.tsv` and `liu_et_al_89_assignment.tsv`.
 - Age and sex analyses (Tables S15 and S16, Figure S6), discussed in the
   doc (see "Open: Steve"). Decide:
   - whether to use the joint models (age, sex, cohort, MSI-H, cancer type,
