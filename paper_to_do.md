@@ -212,15 +212,14 @@ http://8.138.15.71/
   (2026-10-26) the partial-credit files of 2026-10-26 already have the new
   CPCT02010349T assignment.
 - mSigAct refit (added 2026-10-25, spot checked 2026-10-26). Mo's code
-  (`mSigAct_for_rerun.R`, temporarily untracked in this repo) is cleaned up
+  (`mSigAct_for_rerun.R`, from his email of 2026-10-26) is cleaned up
   as `Extraction_and_assignment_code/run_mSigAct_refit.R` in the code repo,
   replacing `mSigAct.R`. It refits only the 89-type part of the spectrum and
   doubles the exposures. Run on 16 of the 731 refit tumors, it reproduced
   all their exposures in `liu_et_al_8?_assignment.tsv`, except InsDel1b of
   CPCT02340022T (13,340 vs 13,342). Open: confirm with Mo that he used
   mSigAct2 1.0.0 (github.com/Rozen-Lab/mSigAct2, branch v3.0.3-branch,
-  commit b3e11fc) and mSigTools 1.0.8, then fix the methods (blue note),
-  and delete `mSigAct_for_rerun.R` from this repo.
+  commit b3e11fc) and mSigTools 1.0.8, then fix the methods (blue note).
 - Age and sex analyses (Tables S15 and S16, Figure S6), discussed in the
   doc (see "Open: Steve"). Decide:
   - whether to use the joint models (age, sex, cohort, MSI-H, cancer type,
