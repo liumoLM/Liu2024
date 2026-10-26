@@ -35,7 +35,8 @@ http://8.138.15.71/
     else controlled access, because every tracked file is copied.
   - Before running `git archive`, replace Steve's local paths
     (`~/MEGA/important_mut_sig_data/...`) in `local_dir` in
-    `find_annotated_vcfs()` in `find_data.R` with placeholders, such as
+    `find_annotated_vcfs()` and `find_partial_credit()` in `find_data.R`
+    with placeholders, such as
     `"path/to/hartwig/annotated/vcfs"`. Also check
     the other scripts that hard-code `~/MEGA` paths (`rg -l MEGA` in the
     code repo, for example in `build_sup_table_s9/` and
@@ -189,10 +190,10 @@ http://8.138.15.71/
 - Steve (2026-10-25): get the inputs for running the ID89 topography steps
   r.01 to r.04 locally, so we can test them, including Mini's corrected
   `r.02.intersect_no_loop.sh`.
-  - Ask Mo for `all.indel.ID89.partial.credit.txt`, read by
-    `r.01_createBed.R`. It is too large for the repos, so add a locator
-    for it in `find_data.R` in the code repo, like the one for the annotated
-    indel VCFs.
+  - Done (2026-10-26): Mo sent the ID83 and ID89 partial-credit files
+    (version 1026, `all.indel.ID{83,89}.partial.credit.1026.txt.gz`, kept
+    outside the repos because they are controlled access).
+    `find_partial_credit()` in `find_data.R` in the code repo locates them.
   - Ask Mini for `results/ID83/01_createBed/01.rtGroup.bed` and
     `reference/ENCODE/repli_strand_info_new.bed`, the `-a` inputs of
     r.02.
@@ -275,7 +276,9 @@ http://8.138.15.71/
   routing?")
 
 - Redo the topography partial credit with the new assignments (needed for
-  Table S14, `all.indel.ID89.partial.credit.txt`). Mo knows the new
+  Table S14, `all.indel.ID89.partial.credit.txt`). Mo sent version 1026 on
+  2026-10-26 (see the item on running ID89 r.01 to r.04 locally). Check
+  that it uses the new assignments. Mo knows the new
   assignments are approved. Steve asked Mo (2026-10-23) whether Mini has the
   partial-credit information, how it is computed, and whether we have the
   intermediate results. Waiting for the answer. Mo (2026-10-23): Mini is

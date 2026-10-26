@@ -721,3 +721,5 @@ ext:Extraction_and_assignment_code/assignment_input/ID172_catalog.tsv	code:Extra
 ext:Extraction_and_assignment_code/assignment_input/ID172_signatures.tsv	code:Extraction_and_assignment_code/run_SigProfilerAssignment.py	reads	
 ext:Extraction_and_assignment_code/assignment_input/ID172_catalog.tsv	code:Extraction_and_assignment_code/mSigAct.R	reads	
 ext:Extraction_and_assignment_code/assignment_input/ID172_signatures.tsv	code:Extraction_and_assignment_code/mSigAct.R	reads	
+ext:/public/data/Topography_analysis/mutation_data/all.indel.ID83.partial.credit.txt	ext:~/MEGA/important_mut_sig_data/partial-credit-for-indel-paper-2026-10-26/all.indel.ID83.partial.credit.1026.txt.gz	copied	Mo's version 1026 (2026-10-26); identity with the server input not checked
+ext:/public/data/Topography_analysis_2026/results0322/ID89/01_createBed/all.indel.ID89.partial.credit.txt	ext:~/MEGA/important_mut_sig_data/partial-credit-for-indel-paper-2026-10-26/all.indel.ID89.partial.credit.1026.txt.gz	copied	Mo's version 1026 (2026-10-26); identity with the server input not checked
