@@ -118,7 +118,8 @@ http://8.138.15.71/
     the data repo, and both assignment scripts read its output. Rerun:
     6,243 of the 6,244 tumors not refit with mSigAct match Mo's
     assignments (`liu_et_al_89_assignment.tsv`) exactly. CPCT02010349T (144 indels,
-    cosine 0.47) is InsDel5a in the rerun and InsDel19a in Mo's assignments. Open:
+    cosine 0.47) is InsDel5a in the rerun and InsDel19a in Mo's assignments.
+    On Mo's advice the rerun's values were adopted on 2026-10-26. Open:
     `mSigAct.R` refits all tumors and does not merge results. The code that
     merged the refits is not in the code repo (the selection rule
     reproduces the 731 tumors exactly).
@@ -200,13 +201,14 @@ http://8.138.15.71/
 
 ## Open: Steve with Mo
 
-- Contact Mo about CPCT02010349T (added 2026-10-25). Rerunning
-  `run_SigProfilerAssignment.py` on the 172-type inputs from the data repo
-  reproduces Mo's assignments (`liu_et_al_89_assignment.tsv`) exactly for 6,243 of the
-  6,244 tumors not refit with mSigAct. The exception is CPCT02010349T (144
-  indels, reconstruction cosine 0.47): InsDel5a in the rerun, InsDel19a in
-  Mo's assignments. The old example catalog had no row names, so SPA dropped this
-  tumor. Ask Mo how his value for it was made.
+- Rerun the outputs that read the assignment tables (added 2026-10-26).
+  On 2026-10-26, as Mo advised, CPCT02010349T in
+  `liu_et_al_83_assignment.tsv` and `liu_et_al_89_assignment.tsv` was
+  changed to the exposures from the SPA rerun of 2026-10-25 (InsDel5a /
+  C_ID5 = 288, was InsDel19a / C_ID19 = 288; data repo 706124e). It has
+  144 indels and a poly-T ratio of 0.097, so it is not an mSigAct tumor, and
+  it is not in the Figure S1 list. Readers of the tables: Tables S9, S10,
+  S11, and S17, `build_fig4/`, `ms_numbers.R`, and `vignette/`.
 - Rerun the mSigAct refit (added 2026-10-25). The selection is confirmed:
   applying the stated rule (> 4,000 indels, or poly-T ratio > 0.5 and SPA
   reconstruction cosine < 0.9 for the 83-type or the 89-type part) to the
