@@ -116,8 +116,8 @@ http://8.138.15.71/
     `Extraction_and_assignment_code/make_172_type_inputs.R` builds both from
     the data repo, and both assignment scripts read its output. Rerun:
     6,243 of the 6,244 tumors not refit with mSigAct match Mo's
-    `ID89.SPA.assignment.1020.txt` exactly. CPCT02010349T (144 indels,
-    cosine 0.47) is InsDel5a in the rerun and InsDel19a in Mo's file. Open:
+    assignments (`liu_et_al_89_assignment.tsv`) exactly. CPCT02010349T (144 indels,
+    cosine 0.47) is InsDel5a in the rerun and InsDel19a in Mo's assignments. Open:
     `mSigAct.R` refits all tumors and does not merge results. The code that
     selected the 731 tumors and merged the refits is not in the code repo.
     See the two items of 2026-10-25 under "Open: Steve with Mo".
@@ -200,17 +200,18 @@ http://8.138.15.71/
 
 - Contact Mo about CPCT02010349T (added 2026-10-25). Rerunning
   `run_SigProfilerAssignment.py` on the 172-type inputs from the data repo
-  reproduces Mo's `ID89.SPA.assignment.1020.txt` exactly for 6,243 of the
+  reproduces Mo's assignments (`liu_et_al_89_assignment.tsv`) exactly for 6,243 of the
   6,244 tumors not refit with mSigAct. The exception is CPCT02010349T (144
   indels, reconstruction cosine 0.47): InsDel5a in the rerun, InsDel19a in
-  Mo's file. The old example catalog had no row names, so SPA dropped this
+  Mo's assignments. The old example catalog had no row names, so SPA dropped this
   tumor. Ask Mo how his value for it was made.
 - Rerun the mSigAct refit (added 2026-10-25). `mSigAct.R` in
   `Extraction_and_assignment_code/` refits all tumors and does not merge
   the refits into the SPA results. Get from Mo the code that selected the
   731 tumors (`mSigAct.reanalyzed.samples.txt`) and merged the refits, put
   it in the code repo, rerun it, and check that it reproduces
-  `ID83/ID89.SPA.assignment.1020.txt` for the 731 tumors.
+  `liu_et_al_83_assignment.tsv` and `liu_et_al_89_assignment.tsv` for the
+  731 tumors.
 - Age and sex analyses (Tables S15 and S16, Figure S6), discussed in the
   doc (see "Open: Steve"). Decide:
   - whether to use the joint models (age, sex, cohort, MSI-H, cancer type,
@@ -329,7 +330,9 @@ http://8.138.15.71/
     `unified_indels_data/assignments_2026-10-19/`:
     `ID83.SPA.assignment.1020.txt`, `ID89.SPA.assignment.1020.txt`,
     `assignment.high.similarity.samples.for.figureS1.txt` (6,516 tumors),
-    and `mSigAct.reanalyzed.samples.txt` (731 tumors). 819 tumors have
+    and `mSigAct.reanalyzed.samples.txt` (731 tumors). The first two were
+    removed on 2026-10-25 because they are identical to
+    `liu_et_al_83_assignment.tsv` and `liu_et_al_89_assignment.tsv`. 819 tumors have
     exposures that differ from the earlier ones by more than 0.5 (Mo said
     784).
   - The list has all 248 assigned tumors with > 4,000 clipped indels. The
