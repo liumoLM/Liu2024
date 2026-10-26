@@ -1014,11 +1014,9 @@ mSigAct (2026-10-25), so we take these as the versions used for
 assignment. For extraction, the NumPy and pandas versions are unknown beyond
 NumPy 2 or later, and a rerun cannot settle it because the extraction used
 random seeds. So the text gives no NumPy or pandas versions for
-extraction. Also, the
-comments in `run_SigProfilerExtractor.py` and the code repo READMEs define
-high-TMB genomes as those with at least 5,000 indels, but the methods above
-say more than 4,000. Steve is asking Mo which cutoff was used for the
-high-TMB extraction.]{.blue}
+extraction. Mo confirmed on 2026-10-26 that the high-TMB extraction used
+the > 4,000 indel cutoff given above. The code repo comments that said
+5,000 were corrected.]{.blue}
 
 ## Match 83-type and 89-type signatures into reference signatures
 

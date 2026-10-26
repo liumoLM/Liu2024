@@ -106,8 +106,9 @@ http://8.138.15.71/
     give them for assignment. For extraction they are unknown (numpy 2 or
     later), and the methods give no numpy or pandas versions for it. Still open (blue notes in the
     methods): the extraction script and code repo READMEs define high-TMB
-    as at least 5,000 indels, but the methods say more than 4,000 (Steve is
-    asking Mo which was used for the high-TMB extraction). Fixed
+    as at least 5,000 indels, but the methods say more than 4,000. Resolved
+    2026-10-26: Mo confirmed 4,000, and the code repo comments were
+    corrected. Fixed
     (2026-10-25): the example assignment scripts and READMEs gave the old
     mSigAct criteria (at least 5,000 indels, or poly-T at least 90%, with SPA
     skipping those genomes). They now give the adopted ones (SPA on all
