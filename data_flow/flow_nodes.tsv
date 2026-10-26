@@ -1,6 +1,4 @@
 id	kind	repo	path	label	exists	flags	note
-code:Example_data/mSigHdp.input.89type.catalog/mSigHdp.test.89type.catalog.txt	code repo file	code	Example_data/mSigHdp.input.89type.catalog/mSigHdp.test.89type.catalog.txt	mSigHdp.test.89type.catalog.txt	yes	no script writes it	example input, made by Mo
-code:Example_data/sigprofiler.input.89type.catalog/example.89type.Bladder.txt	code repo file	code	Example_data/sigprofiler.input.89type.catalog/example.89type.Bladder.txt	example.89type.Bladder.txt	yes	no script writes it	example input, made by Mo
 code:Extraction_and_assignment_code/run_SigProfilerAssignment.py	script	code	Extraction_and_assignment_code/run_SigProfilerAssignment.py	run_SigProfilerAssignment.py	yes		
 code:Extraction_and_assignment_code/run_SigProfilerExtractor.py	script	code	Extraction_and_assignment_code/run_SigProfilerExtractor.py	run_SigProfilerExtractor.py	yes		
 code:Extraction_and_assignment_code/run_mSigAct_refit.R	script	code	Extraction_and_assignment_code/run_mSigAct_refit.R	run_mSigAct_refit.R	yes		cleaned up from Mo's script of 2026-10-26; replaces mSigAct.R
@@ -335,7 +333,6 @@ ext:/public/data/Topography_analysis_2026/simulation_data/all_simulated_with_ann
 ext:/public/data/Topography_analysis_2026/simulation_data/new.ID83.simualted.partialcredit.annotated.txt	external	ext	/public/data/Topography_analysis_2026/simulation_data/new.ID83.simualted.partialcredit.annotated.txt	new.ID83.simualted.partialcredit.annotated.txt			
 ext:<out_dir>/<sig>_sankey_other_del.png	external	ext	<out_dir>/<sig>_sankey_other_del.png	<sig>_sankey_other_del.png			
 ext:<out_dir>/<sig>_sankey_other_ins.png	external	ext	<out_dir>/<sig>_sankey_other_ins.png	<sig>_sankey_other_ins.png			
-ext:Example_data/sigprofiler.input.89type.catalog/example.89type.Bladder/	external	ext	Example_data/sigprofiler.input.89type.catalog/example.89type.Bladder/	example.89type.Bladder			
 ext:HMF_metadata.tsv	external	ext	HMF_metadata.tsv	HMF_metadata.tsv			
 code:ID83_topography_analysis_code/09_barplot/all_lm_trend.xlsx	code repo file	code	ID83_topography_analysis_code/09_barplot/all_lm_trend.xlsx	all_lm_trend.xlsx	yes		
 code:ID83_topography_analysis_code/09_barplot/plot_data.xlsx	code repo file	code	ID83_topography_analysis_code/09_barplot/plot_data.xlsx	plot_data.xlsx	yes		
@@ -470,3 +467,7 @@ ext:/public/data/Topography_analysis_2026/results0322/ID89/02_intersectBed/02.Re
 ext:~/MEGA/important_mut_sig_data/partial-credit-for-indel-paper-2026-10-26/all.indel.ID83.partial.credit.1026.txt.gz	external	ext	~/MEGA/important_mut_sig_data/partial-credit-for-indel-paper-2026-10-26/all.indel.ID83.partial.credit.1026.txt.gz	all.indel.ID83.partial.credit.1026.txt.gz	yes	controlled access; not in any repo	from Mo 2026-10-26; located by find_partial_credit() in find_data.R
 ext:~/MEGA/important_mut_sig_data/partial-credit-for-indel-paper-2026-10-26/all.indel.ID89.partial.credit.1026.txt.gz	external	ext	~/MEGA/important_mut_sig_data/partial-credit-for-indel-paper-2026-10-26/all.indel.ID89.partial.credit.1026.txt.gz	all.indel.ID89.partial.credit.1026.txt.gz	yes	controlled access; not in any repo	from Mo 2026-10-26; located by find_partial_credit() in find_data.R
 ext:mSigAct_refit_output/	external	ext	mSigAct_refit_output/	mSigAct_refit_output/			merged 89- and 83-type assignments; not in repo
+code:Extraction_and_assignment_code/make_extraction_examples.R	script	code	Extraction_and_assignment_code/make_extraction_examples.R	make_extraction_examples.R	yes		
+ext:Extraction_and_assignment_code/example_input/example.89type.Bladder.txt	external	ext	Extraction_and_assignment_code/example_input/example.89type.Bladder.txt	example.89type.Bladder.txt			not tracked in git
+ext:Extraction_and_assignment_code/example_input/mSigHdp.example.89type.catalog.tsv	external	ext	Extraction_and_assignment_code/example_input/mSigHdp.example.89type.catalog.tsv	mSigHdp.example.89type.catalog.tsv			not tracked in git
+ext:Extraction_and_assignment_code/example_input/example.89type.Bladder/	external	ext	Extraction_and_assignment_code/example_input/example.89type.Bladder/	example.89type.Bladder/			SigProfilerExtractor output; not in repo

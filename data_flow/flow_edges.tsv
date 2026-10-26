@@ -471,9 +471,6 @@ ext:/ID83_0322/09_barplot/ID_L_Stomach_Decreasing.Rds	code:ID89_topography_analy
 ext:ID89_topography_analysis_code/09_barplot/increasing/<signature>.Rds	code:ID89_topography_analysis_code/likely_dead_ID89_topography_code/r.09_barplot_plots.R	reads	not reached; re-read of own outputs
 ext:ID89_topography_analysis_code/09_barplot/flat/<signature>.Rds	code:ID89_topography_analysis_code/likely_dead_ID89_topography_code/r.09_barplot_plots.R	reads	not reached; re-read of own outputs
 ext:ID89_topography_analysis_code/09_barplot/mix/<signature>.Rds	code:ID89_topography_analysis_code/likely_dead_ID89_topography_code/r.09_barplot_plots.R	reads	not reached; re-read of own outputs
-code:Example_data/sigprofiler.input.89type.catalog/example.89type.Bladder.txt	code:Extraction_and_assignment_code/run_SigProfilerExtractor.py	reads	example input (198 bladder tumors); loop fixed 2026-10-24
-code:Extraction_and_assignment_code/run_SigProfilerExtractor.py	ext:Example_data/sigprofiler.input.89type.catalog/example.89type.Bladder/	writes	SigProfilerExtractor output folder; not in repo
-code:Example_data/mSigHdp.input.89type.catalog/mSigHdp.test.89type.catalog.txt	code:Extraction_and_assignment_code/mSigHdp.R	reads	example input
 code:Extraction_and_assignment_code/mSigHdp.R	ext:example.mSigHdp.extraction.output/	writes	relative to code repo root; not in repo
 code:Extraction_and_assignment_code/run_SigProfilerAssignment.py	ext:output/	writes	SigProfilerAssignment output folder relative to code repo root; not in repo
 ext:MSIseq/MSIseq_1.0.0/MSIseq/R/Compute.input.variables.R	code:msiseq/likely_dead_msiseq_code/prev-run-MSIseq.R	reads	source; MSIseq 1.0.0 package source, after setwd(MSIseq) (folder not in repo)
@@ -725,3 +722,11 @@ ext:output/	code:Extraction_and_assignment_code/run_mSigAct_refit.R	reads	SPA ac
 data:connection_table.tsv	code:Extraction_and_assignment_code/run_mSigAct_refit.R	reads	
 code:find_data.R	code:Extraction_and_assignment_code/run_mSigAct_refit.R	reads	source
 code:Extraction_and_assignment_code/run_mSigAct_refit.R	ext:mSigAct_refit_output/	writes	
+code:find_data.R	code:Extraction_and_assignment_code/make_extraction_examples.R	reads	source
+data:liu_et_al_89_spectra.tsv	code:Extraction_and_assignment_code/make_extraction_examples.R	reads	
+data:sample_info.tsv	code:Extraction_and_assignment_code/make_extraction_examples.R	reads	bladder tumors
+code:Extraction_and_assignment_code/make_extraction_examples.R	ext:Extraction_and_assignment_code/example_input/example.89type.Bladder.txt	writes	198 bladder tumors
+code:Extraction_and_assignment_code/make_extraction_examples.R	ext:Extraction_and_assignment_code/example_input/mSigHdp.example.89type.catalog.tsv	writes	every 60th tumor, 100
+ext:Extraction_and_assignment_code/example_input/example.89type.Bladder.txt	code:Extraction_and_assignment_code/run_SigProfilerExtractor.py	reads	
+code:Extraction_and_assignment_code/run_SigProfilerExtractor.py	ext:Extraction_and_assignment_code/example_input/example.89type.Bladder/	writes	
+ext:Extraction_and_assignment_code/example_input/mSigHdp.example.89type.catalog.tsv	code:Extraction_and_assignment_code/mSigHdp.R	reads	

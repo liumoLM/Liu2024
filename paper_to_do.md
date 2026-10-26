@@ -56,6 +56,10 @@ http://8.138.15.71/
 
 ## Open: Steve
 
+- `sample_info.tsv` in the data repo has CPCT02220078T (Hartwig, Bladder),
+  which has no spectrum in `liu_et_al_83_spectra.tsv` or
+  `liu_et_al_89_spectra.tsv` (found 2026-10-26). Decide whether to drop it
+  from `sample_info.tsv` or find out why it has no spectrum.
 - Dig into the age and sex models in detail (the doc "Age and sex models
   for Tables S15 and S16", https://claude.ai/artifact/X8iSQz1TiCAw89HgKkwHdM,
   exported as `age-and-sex-model.md`), and then review and rewrite the
