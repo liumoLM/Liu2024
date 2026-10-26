@@ -1058,6 +1058,17 @@ obtained by integrating results from SigProfilerAssignment for the
 other `r ms_num$assign$n_spa_only` tumors and mSigAct for these
 `r ms_num$assign$n_msigact` tumors.
 
+[Note (2026-10-26): Mo's mSigAct code, cleaned up as
+`Extraction_and_assignment_code/run_mSigAct_refit.R` in the code repo,
+reproduces the assignments of 16 spot-checked refit tumors. It shows that
+mSigAct refit only the 89-type spectrum with the 89-type signatures, and the
+83-type exposures were obtained by summing the 89-type exposures through the
+89-to-83 signature mapping. The text above should say so. The package was
+mSigAct2 1.0.0 (https://github.com/Rozen-Lab/mSigAct2, branch v3.0.3-branch),
+not "the mSigAct R package", and the spot check used mSigTools 1.0.8, not
+v1.0.7 (mSigAct2 requires 1.0.8 or later). Steve is confirming the versions
+with Mo.]{.blue}
+
 [Note on Table S11 totals: Since the assignments of 2026-10-19 (adopted 2026-10-22), the column sum of Table S11 is twice the number of indels in the tumor's clipped 89-type spectrum for all 6,975 tumors (within 3% for 9 tumors), including the tumors refit with mSigAct, because the 83-type and 89-type exposures are both counted. Table S11 column sums must not be used as indel counts. With the earlier assignments, 503 tumors had single-counted sums.]{.blue}
 
 ## Simulating synthetic cancer datasets

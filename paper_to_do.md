@@ -208,17 +208,19 @@ http://8.138.15.71/
   C_ID5 = 288, was InsDel19a / C_ID19 = 288; data repo 706124e). It has
   144 indels and a poly-T ratio of 0.097, so it is not an mSigAct tumor, and
   it is not in the Figure S1 list. Readers of the tables: Tables S9, S10,
-  S11, and S17, `build_fig4/`, `ms_numbers.R`, and `vignette/`.
-- Rerun the mSigAct refit (added 2026-10-25). The selection is confirmed:
-  applying the stated rule (> 4,000 indels, or poly-T ratio > 0.5 and SPA
-  reconstruction cosine < 0.9 for the 83-type or the 89-type part) to the
-  SPA rerun selects exactly the 731 tumors in
-  `mSigAct.reanalyzed.samples.txt`. What is missing is the refit-and-merge
-  step: `mSigAct.R` refits all tumors and does not split the 172-type
-  refits into the 83-type and 89-type tables in place of the SPA values.
-  Steve asked Mo for his mSigAct code on 2026-10-25. When it arrives, put
-  it in the code repo and spot check a few of the 731 tumors against
-  `liu_et_al_83_assignment.tsv` and `liu_et_al_89_assignment.tsv`.
+  S11, and S17, `build_fig4/`, `ms_numbers.R`, and `vignette/`. Mo says
+  (2026-10-26) the partial-credit files of 2026-10-26 already have the new
+  CPCT02010349T assignment.
+- mSigAct refit (added 2026-10-25, spot checked 2026-10-26). Mo's code
+  (`mSigAct_for_rerun.R`, temporarily untracked in this repo) is cleaned up
+  as `Extraction_and_assignment_code/run_mSigAct_refit.R` in the code repo,
+  replacing `mSigAct.R`. It refits only the 89-type part of the spectrum and
+  doubles the exposures. Run on 16 of the 731 refit tumors, it reproduced
+  all their exposures in `liu_et_al_8?_assignment.tsv`, except InsDel1b of
+  CPCT02340022T (13,340 vs 13,342). Open: confirm with Mo that he used
+  mSigAct2 1.0.0 (github.com/Rozen-Lab/mSigAct2, branch v3.0.3-branch,
+  commit b3e11fc) and mSigTools 1.0.8, then fix the methods (blue note),
+  and delete `mSigAct_for_rerun.R` from this repo.
 - Age and sex analyses (Tables S15 and S16, Figure S6), discussed in the
   doc (see "Open: Steve"). Decide:
   - whether to use the joint models (age, sex, cohort, MSI-H, cancer type,

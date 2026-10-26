@@ -476,8 +476,6 @@ code:Extraction_and_assignment_code/run_SigProfilerExtractor.py	ext:Example_data
 code:Example_data/mSigHdp.input.89type.catalog/mSigHdp.test.89type.catalog.txt	code:Extraction_and_assignment_code/mSigHdp.R	reads	example input
 code:Extraction_and_assignment_code/mSigHdp.R	ext:example.mSigHdp.extraction.output/	writes	relative to code repo root; not in repo
 code:Extraction_and_assignment_code/run_SigProfilerAssignment.py	ext:output/	writes	SigProfilerAssignment output folder relative to code repo root; not in repo
-code:Extraction_and_assignment_code/mSigAct.R	ext:new_result_list.rds	writes	working directory; not in repo
-code:Extraction_and_assignment_code/mSigAct.R	ext:temp/	writes	PresenceAttributeSigActivity output.dir
 ext:MSIseq/MSIseq_1.0.0/MSIseq/R/Compute.input.variables.R	code:msiseq/likely_dead_msiseq_code/prev-run-MSIseq.R	reads	source; MSIseq 1.0.0 package source, after setwd(MSIseq) (folder not in repo)
 ext:/MSIseq_1.0.0/MSIseq/R/MSIseq.classify.R	code:msiseq/likely_dead_msiseq_code/prev-run-MSIseq.R	reads	source; absolute path with leading slash, probably a typo for the relative path
 ext:MSIseq/Hg19repeats.rda	code:msiseq/likely_dead_msiseq_code/prev-run-MSIseq.R	reads	MSIseq hg19 repeat annotation
@@ -719,7 +717,11 @@ code:Extraction_and_assignment_code/make_172_type_inputs.R	ext:Extraction_and_as
 code:Extraction_and_assignment_code/make_172_type_inputs.R	ext:Extraction_and_assignment_code/assignment_input/ID172_signatures.tsv	writes	
 ext:Extraction_and_assignment_code/assignment_input/ID172_catalog.tsv	code:Extraction_and_assignment_code/run_SigProfilerAssignment.py	reads	
 ext:Extraction_and_assignment_code/assignment_input/ID172_signatures.tsv	code:Extraction_and_assignment_code/run_SigProfilerAssignment.py	reads	
-ext:Extraction_and_assignment_code/assignment_input/ID172_catalog.tsv	code:Extraction_and_assignment_code/mSigAct.R	reads	
-ext:Extraction_and_assignment_code/assignment_input/ID172_signatures.tsv	code:Extraction_and_assignment_code/mSigAct.R	reads	
+ext:Extraction_and_assignment_code/assignment_input/ID172_catalog.tsv	code:Extraction_and_assignment_code/run_mSigAct_refit.R	reads	
+ext:Extraction_and_assignment_code/assignment_input/ID172_signatures.tsv	code:Extraction_and_assignment_code/run_mSigAct_refit.R	reads	
 ext:/public/data/Topography_analysis/mutation_data/all.indel.ID83.partial.credit.txt	ext:~/MEGA/important_mut_sig_data/partial-credit-for-indel-paper-2026-10-26/all.indel.ID83.partial.credit.1026.txt.gz	copied	Mo's version 1026 (2026-10-26); identity with the server input not checked
 ext:/public/data/Topography_analysis_2026/results0322/ID89/01_createBed/all.indel.ID89.partial.credit.txt	ext:~/MEGA/important_mut_sig_data/partial-credit-for-indel-paper-2026-10-26/all.indel.ID89.partial.credit.1026.txt.gz	copied	Mo's version 1026 (2026-10-26); identity with the server input not checked
+ext:output/	code:Extraction_and_assignment_code/run_mSigAct_refit.R	reads	SPA activities
+data:connection_table.tsv	code:Extraction_and_assignment_code/run_mSigAct_refit.R	reads	
+code:find_data.R	code:Extraction_and_assignment_code/run_mSigAct_refit.R	reads	source
+code:Extraction_and_assignment_code/run_mSigAct_refit.R	ext:mSigAct_refit_output/	writes	
