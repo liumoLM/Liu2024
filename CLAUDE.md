@@ -27,10 +27,11 @@ paper and in `explore-attributions/`:
 
 - **MSI-H** is the MSIseq call: `MSIseq` in Table S16 (`MSI-H` /
   `Non-MSI-H`), or `MSIseq_MSI.H` in `unified_indels_data/sample_info.tsv`
-  (202 MSI-H tumors). Never use `MSI_status`, which holds the cohort calls
+  (204 MSI-H tumors since 2026-10-30, from `msiseq/call_msi_h.R` in the
+  code repo; 202 before). Never use `MSI_status`, which holds the cohort calls
   from PCAWG and Hartwig clinical data (91 MSI). Those are not reliable.
 - **Hypermutated (MSS-hyper)**: not MSI-H by MSIseq and > 4,000 indels
-  (48 tumors).
+  (51 tumors; 48 before 2026-10-30).
 - **Indel counts** always come from the spectra in `unified_indels_data`,
   which are clipped to repeat length R <= 9 (column sums of
   `liu_et_al_83_spectra.tsv`). Never use Table S11 column sums (which count

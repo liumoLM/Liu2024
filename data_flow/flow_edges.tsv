@@ -674,3 +674,4 @@ ext:Extraction_and_assignment_code/example_input/mSigHdp.example.89type.catalog.
 code:find_data.R	code:msiseq/call_msi_h.R	reads	source
 data:new-mini-msi-calls/mutationNum_overlap_6975.tsv	code:msiseq/call_msi_h.R	reads	argparser default --in-file find_data()
 code:msiseq/call_msi_h.R	code:msiseq/msi_h_calls.tsv	writes	argparser default --out
+code:msiseq/msi_h_calls.tsv	data:sample_info.tsv	copied	MSIseq_MSI.H for the 6,975 tumors (2026-10-30)

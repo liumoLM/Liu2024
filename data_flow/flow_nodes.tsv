@@ -419,5 +419,5 @@ ext:Extraction_and_assignment_code/example_input/example.89type.Bladder.txt	exte
 ext:Extraction_and_assignment_code/example_input/mSigHdp.example.89type.catalog.tsv	external	ext	Extraction_and_assignment_code/example_input/mSigHdp.example.89type.catalog.tsv	mSigHdp.example.89type.catalog.tsv			not tracked in git
 ext:Extraction_and_assignment_code/example_input/example.89type.Bladder/	external	ext	Extraction_and_assignment_code/example_input/example.89type.Bladder/	example.89type.Bladder/			SigProfilerExtractor output; not in repo
 code:msiseq/call_msi_h.R	script	code	msiseq/call_msi_h.R	call_msi_h.R	yes		applies S.ind > 0.4 and T.ind > 1.2 (Mo, 2026-10-30)
-code:msiseq/msi_h_calls.tsv	code repo file	code	msiseq/msi_h_calls.tsv	msi_h_calls.tsv	yes	nothing reads it	not yet copied into sample_info.tsv
+code:msiseq/msi_h_calls.tsv	code repo file	code	msiseq/msi_h_calls.tsv	msi_h_calls.tsv	yes		copied into MSIseq_MSI.H in sample_info.tsv on 2026-10-30
 data:new-mini-msi-calls/mutationNum_overlap_6975.tsv	data repo file	data	new-mini-msi-calls/mutationNum_overlap_6975.tsv	mutationNum_overlap_6975.tsv	yes	no script writes it	written by run_MSIseq_overlap_6975.R on the Huang-lab server, plus hand-added columns

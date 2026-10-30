@@ -250,10 +250,14 @@ http://8.138.15.71/
   are FILTER = PASS (answered by Steve 2026-10-29: yes, only FILTER = PASS
   rows are used for SBS and indels), and (most important) why the hand-set rule was used rather than
   `MSIseq.classify()`, how the two compare, and for
-  `MSI_classified_overlap_6975.tsv`. Waiting for the answer. Then: adopt
-  the new calls in `sample_info.tsv`, rebuild Figure 4A, Tables S9, S10,
-  and S16, update `ms_numbers.R` and `ms.qmd` (202 MSI-H, 200 of 202
-  refit), the project CLAUDE.md, and the MSIseq methods (run on all
+  `MSI_classified_overlap_6975.tsv`. Done (2026-10-30): the new calls are
+  in `sample_info.tsv` (16 tumors changed, 204 MSI-H), and Figure 4A and
+  Tables S9, S10, and S16 were rebuilt and copied here. MSI-H refit with
+  mSigAct is now 197 of 204 (was 200 of 202), MSS-hyper 51 tumors (was 48),
+  and Table S10 177 MSI-H and 6,768 MSS (was 175 and 6,770). `ms.qmd` takes
+  these numbers from `ms_numbers.R`, so its text needed no edit. Figure 4A
+  has the same dots, with small changes in FDR and odds ratio. The project
+  CLAUDE.md was updated. Still to do: the MSIseq methods (run on all
   tumors, the inputs, the classification rule, and Mo's request to drop
   the sentence on how the 4,000 cutoff was chosen). Also copy the script
   that made the adopted calls into the code repo's `msiseq/`, with its paths
