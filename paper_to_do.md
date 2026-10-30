@@ -270,7 +270,12 @@ http://8.138.15.71/
   writes `msiseq/msi_h_calls.tsv`, and reproduces the hand-added column
   exactly (204 MSI-H; 195 in both, 7 dropped, 9 added vs. `sample_info.tsv`;
   197 of the 204 are among the 731 mSigAct refits). It is in `data_flow/`.
-  Still open: why T.ind > 1.2 was added and how 1.2 was chosen. `MSIseq.classify()` has no threshold argument. Its built-in
+  Pending (2026-10-30): the MSIseq methods paragraph is in `ms.qmd`
+  (blue note "Confirm the wording of this paragraph with Mo"). Steve
+  emailed Mo `msiseq_methods_for_mo_2026-10-30.md` on 2026-10-30, asking
+  whether the wording is correct, which SBS signatures he checked in the
+  suspected false positives, and how 1.2 was chosen. Waiting for the
+  answer. `MSIseq.classify()` has no threshold argument. Its built-in
   classifier (MSIseq 1.0.0) is the single split S.ind > 0.394737, which gives
   274 MSI-H on our tumors. The rule's 204 are a subset of these, so the added
   T.ind > 1.2 drops 70 borderline tumors. To ask Mo at the meeting of

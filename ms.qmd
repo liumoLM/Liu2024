@@ -1225,15 +1225,28 @@ genomes with \> `r ms_num$tmb$cutoff` indels, counted after capping
 repeat lengths at 9, were labeled as high TMB tumors. We used
 MSIseq to predict the MSI status of all tumors.[{.mark}]
 
-[TO DO (2026-10-29): rewrite this section once Mo explains the MSIseq rule.
-It must give the MSIseq version (1.0.0), the inputs (SBS and indel VCFs of
-all 6,975 tumors, indels capped at repeat length 9, `uniform.seq.len` =
-3,200), and the classification rule with its justification. The current
-calls use S.ind > 0.4 and T.ind > 1.2 (204 MSI-H), applied by
-`msiseq/call_msi_h.R` in the code repo (from Mo, 2026-10-30). MSIseq's
-own classifier, `MSIseq.classify()`, is the single split S.ind > 0.394737
-(274 MSI-H), so the added T.ind > 1.2 drops 70 borderline tumors. See the
-MSIseq item in `paper_to_do.md`.]{.blue}
+MSIseq (v1.0.0) metrics were computed with `Compute.input.variables()`
+on the SBSs and indels of all 6,975 tumors (`uniform.seq.len` = 3,200
+Mb), where S.ind is the number of indels in simple sequence repeats per
+Mb and T.ind is the total number of indels per Mb. We first called tumors
+MSI-H when S.ind \> 0.4 (more than about 1,280 indels in simple repeats).
+Inspection of the spectra of tumors near this threshold revealed likely
+false positives: their indels in simple repeats were mostly single-T
+insertions and deletions in long poly-T tracts (InsDel_N_beta and
+InsDel1a), their total indel burden was low, and they showed no SBS
+signatures typical of mismatch repair deficiency. We therefore
+additionally required T.ind \> 1.2 (more than about 3,840 indels), which
+gave `r ms_num$assign$n_msi_h` MSI-H tumors.
+
+[Confirm the wording of this paragraph with Mo (2026-10-30), in
+particular: which SBS signatures he checked in the suspected false
+positives, and how 1.2 was chosen. The rule is applied by
+`msiseq/call_msi_h.R` in the code repo. The characterization of the tumors
+near the threshold is from a check of 2026-10-30, not from Mo's spot
+checks: S.ind \> 0.4 alone gives 271 MSI-H, and T.ind \> 1.2 removes 67 of
+them (T.ind 0.69 to 1.20). InsDel_N_beta is the largest signature in 53 of
+the 67, InsDel_N_beta plus InsDel1a make up a median of 76% of their
+indels, and 29 are colon and 27 esophagus tumors.]{.blue}
 
 ## Extended sequence context analysis
 
