@@ -350,9 +350,9 @@ http://8.138.15.71/
   (about 10 simulations times that). So the problem seems limited to ID89.
   If the old Table S14 came from unnormalized values, Table S14 and the
   ID89 replication-timing results must be redone. The intermediate files of
-  the local run (about 35 GB, controlled access) are kept in the Claude
-  scratchpad (`/tmp/claude-1000/-home-steve-github-0Liu2024/035c45d5-0cc6-4515-96f8-863b7d89e9a3/scratchpad/id89_run/`)
-  for a rerun. They are lost when `/tmp` is cleared.
+  the local run (about 28 GB, controlled access) are kept in
+  `~/MEGA/important_mut_sig_data/id89_topography_run_2026-10-29/`
+  for a rerun.
 - The topography code keeps indels in genes on both strands (114,297
   indels, 0.6%), although the methods say they were ignored. Mo is probably
   redoing the simulations and analysis with code that drops them, with
