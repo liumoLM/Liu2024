@@ -199,19 +199,6 @@ http://8.138.15.71/
     in the notebook. 6 of its 4,066 logo deletions are not in the current
     VCFs, so 3 of the 4 logos differ slightly from the paper's panel C.
 
-- Steve (2026-10-25): get the inputs for running the ID89 topography steps
-  r.01 to r.04 locally, so we can test them, including Mini's corrected
-  `r.02.intersect_no_loop.sh`.
-  - Done (2026-10-26): Mo sent the ID83 and ID89 partial-credit files
-    (version 1026, `all.indel.ID{83,89}.partial.credit.1026.txt.gz`, kept
-    outside the repos because they are controlled access).
-    `find_partial_credit()` in `find_data.R` in the code repo locates them.
-  - Done (2026-10-29): got `01.rtGroup.bed` and
-    `repli_strand_info_new.bed`, the `-a` inputs of r.02. They are in the
-    code repo under `ID83_topography_analysis_code/01_createBed/` and
-    `ID83_topography_analysis_code/reference/ENCODE/`, and both r.02 scripts
-    read them from there.
-
 ## Open: Steve with Mo
 
 - mSigAct refit (added 2026-10-25, spot checked 2026-10-26). Mo's code
@@ -325,6 +312,19 @@ http://8.138.15.71/
 
 ## Done
 
+- 2026-10-30: closed (Table S14 dropped). Steve (2026-10-25): get the inputs
+  for running the ID89 topography steps
+  r.01 to r.04 locally, so we can test them, including Mini's corrected
+  `r.02.intersect_no_loop.sh`.
+  - Done (2026-10-26): Mo sent the ID83 and ID89 partial-credit files
+    (version 1026, `all.indel.ID{83,89}.partial.credit.1026.txt.gz`, kept
+    outside the repos because they are controlled access).
+    `find_partial_credit()` in `find_data.R` in the code repo locates them.
+  - Done (2026-10-29): got `01.rtGroup.bed` and
+    `repli_strand_info_new.bed`, the `-a` inputs of r.02. They are in the
+    code repo under `ID83_topography_analysis_code/01_createBed/` and
+    `ID83_topography_analysis_code/reference/ENCODE/`, and both r.02 scripts
+    read them from there.
 - 2026-10-30: Table S14 (89-type replication timing) dropped, with the
   89-type replication-timing sentences in `ms.qmd` and
   `ID89_topography_analysis_code/` and `build_sup_table_s14/` in the code
