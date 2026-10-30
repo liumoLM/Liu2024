@@ -174,7 +174,9 @@ sit under `/public/data/Topography_analysis*/` on the Huang-lab server.
    simulated indels.
 5. **`r.02.intersect_no_loop.sh`** runs bedtools to overlap the real and
    simulated indels with the replication-timing and replication-strand BEDs.
-   It also needs `ENCODE/repli_strand_info_new.bed`.
+   Both BEDs (`01_createBed/01.rtGroup.bed` and
+   `reference/ENCODE/repli_strand_info_new.bed`) are in
+   `ID83_topography_analysis_code/` since 2026-10-29.
 6. **`r.03_mergeInf.R`** (real) and **`r.03_mergeInf_simulation.R`**
    (simulated) merge the overlaps with tissue and strand information. They read
    `all.meta.0528.rds`, which is checked in under

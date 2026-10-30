@@ -65,14 +65,17 @@ http://8.138.15.71/
   exported as `age-and-sex-model.md`), and then review and rewrite the
   subsection "Demographic Associations with Sex and Age" in `ms.qmd` to
   match.
-- HIGH PRIORITY. Figure S1 with the new assignments: are the many
-  single-tumor dots for rare signatures expected from the mSigAct refits?
-  122 dots were added (923 to 1,029), 86 of them from 1 to 3 tumors, for
-  example ID_L / InsDel_L in 8 cancer types, ID_M / InsDel_M in 6, and
-  C_ID17 in 5. (Doc for Mo, section "Figure S1: now drawn by code".)
-- HIGH PRIORITY. Figure S1 with the new assignments: why did stomach
-  InsDel1a rise more than tenfold (0.13 to 1.60 mean mutations/Mb) in the
-  same 14 tumors? Stomach C_ID1 rose from 0.09 to 0.70 (30 to 35 tumors).
+- Presence thresholds differ: Figures 4A and S1 count a signature as
+  present above 5% of the tumor's indels, but Tables S15 and S16
+  (`presence_threshold <- 0.01` in `build_fig_s6/build_fig_s6_stats.R`) use
+  1%, and the S16 Spearman correlations use exposure > 0. Checked
+  2026-10-29 with exposures under 5% set to 0: all 10 S15 hits at q < 0.2
+  remain (plus Other / C_ID19), 39 of the 41 S16 by-cancer-type hits remain
+  (Colon C_ID4 / InsDel4 lost), and the age effects in the text are
+  unchanged. In the S16 cancer-type-adjusted models some FDR < 0.05 calls
+  change (exposure 31 to 26, presence 17 to 15, burden-adjusted presence 16
+  to 22), none cited in `ms.qmd`. Decide with the age and sex items whether
+  to use 5% throughout.
 - Review Mini's methods.
 - Get the Hartwig data download date or version (release) number, for the
   data availability statement and for the header of `build_all_meta.R` and
@@ -203,22 +206,14 @@ http://8.138.15.71/
     (version 1026, `all.indel.ID{83,89}.partial.credit.1026.txt.gz`, kept
     outside the repos because they are controlled access).
     `find_partial_credit()` in `find_data.R` in the code repo locates them.
-  - Ask Mini for `results/ID83/01_createBed/01.rtGroup.bed` and
-    `reference/ENCODE/repli_strand_info_new.bed`, the `-a` inputs of
-    r.02.
+  - Done (2026-10-29): got `01.rtGroup.bed` and
+    `repli_strand_info_new.bed`, the `-a` inputs of r.02. They are in the
+    code repo under `ID83_topography_analysis_code/01_createBed/` and
+    `ID83_topography_analysis_code/reference/ENCODE/`, and both r.02 scripts
+    read them from there.
 
 ## Open: Steve with Mo
 
-- Rerun the outputs that read the assignment tables (added 2026-10-26).
-  On 2026-10-26, as Mo advised, CPCT02010349T in
-  `liu_et_al_83_assignment.tsv` and `liu_et_al_89_assignment.tsv` was
-  changed to the exposures from the SPA rerun of 2026-10-25 (InsDel5a /
-  C_ID5 = 288, was InsDel19a / C_ID19 = 288; data repo 706124e). It has
-  144 indels and a poly-T ratio of 0.097, so it is not an mSigAct tumor, and
-  it is not in the Figure S1 list. Readers of the tables: Tables S9, S10,
-  S11, and S17, `build_fig4/`, `ms_numbers.R`, and `vignette/`. Mo says
-  (2026-10-26) the partial-credit files of 2026-10-26 already have the new
-  CPCT02010349T assignment.
 - mSigAct refit (added 2026-10-25, spot checked 2026-10-26). Mo's code
   (`mSigAct_for_rerun.R`, from his email of 2026-10-26) is cleaned up
   as `Extraction_and_assignment_code/run_mSigAct_refit.R` in the code repo,
@@ -257,8 +252,12 @@ http://8.138.15.71/
   per tumor behind T.ind (T.ind x 3,200) equals the cap-9 spectrum total
   for all of them, so the indel input matches the spectra. Steve emailed
   Mini and Mo (2026-10-23) asking whether `Hg19repeats.rda` is the MSIseq
-  package file, whether all Hartwig SBS and indel rows are FILTER = PASS,
-  and (most important) why the hand-set rule was used rather than
+  package file (answered 2026-10-29: the package help points to
+  https://steverozen.net/data/Hg19repeats.rda, and with that file
+  `Compute.input.variables()` reproduces Mini's T.ind and S.ind exactly
+  for 199 tumors, 104 of them near the cutoffs), whether all Hartwig SBS and indel rows
+  are FILTER = PASS (answered by Steve 2026-10-29: yes, only FILTER = PASS
+  rows are used for SBS and indels), and (most important) why the hand-set rule was used rather than
   `MSIseq.classify()`, how the two compare, and for
   `MSI_classified_overlap_6975.tsv`. Waiting for the answer. Then: adopt
   the new calls in `sample_info.tsv`, rebuild Figure 4A, Tables S9, S10,
@@ -268,6 +267,17 @@ http://8.138.15.71/
   the sentence on how the 4,000 cutoff was chosen). Also copy the script
   that made the adopted calls into the code repo's `msiseq/`, with its paths
   set through `find_data.R`, and add it to `data_flow/`.
+  Found 2026-10-29: no code applies the S.ind > 0.4 and T.ind > 1.2 rule.
+  Mini's script calls `MSIseq.classify()`, and the rule column was added by
+  hand. `MSIseq.classify()` has no threshold argument. Its built-in
+  classifier (MSIseq 1.0.0) is the single split S.ind > 0.394737, which gives
+  274 MSI-H on our tumors. The rule's 204 are a subset of these, so the added
+  T.ind > 1.2 drops 70 borderline tumors. To ask Mo at the meeting of
+  2026-10-29 (`questions_for_mo_2026-10-29.md`). Once decided, the methods
+  and the code repo's `msiseq/README.md` must give the rule and its
+  justification, and the rule must be applied in code, not by hand. TO DO
+  stubs are in both (blue note in the `ms.qmd` section "MSI/MSS status and
+  high/low TMB status").
 
 ## Open: Mo (and Mini)
 
@@ -299,6 +309,50 @@ http://8.138.15.71/
   code repo. Then Mini reruns r.01 to
   r.04 (the raw inputs are on the Huang-lab server), and we rerun r.05
   onward (Tables S12 to S14, Figure 5, Figures S3 and S4).
+- Tentative decision (Steve, 2026-10-29): drop Table S14 and the 89-type
+  replication-timing sentences in `ms.qmd` (lines 704 to 709). The analysis
+  has no simulated control, so it cannot separate a signature's trend from
+  the general late-replication enrichment of indels. The alternatives were
+  to compare only the profiles of paired 83-type and 89-type signatures
+  (weak evidence, since the pairs are fitted to largely the same indels), or
+  to add 89-type simulations (SigProfilerSimulator keeps only the 83-type
+  spectrum, and the data are on the Huang-lab server). If adopted, Tables
+  S15 to S17 become S14 to S16 (rename in both repos and the manifests), and
+  the ID89 normalization question below no longer blocks submission.
+- Was the ID89 partial credit normalized? (Found 2026-10-29 running ID89
+  r.01 to r.04 and r.09 locally on the 1026 file.) The 1026 file differs
+  from what r.01 expects: no leading row-number column (r.01 drops column 1,
+  which would drop `Sample`), `region` instead of `dna.region`, 42 signature
+  columns (no InsDel15, InsDel16, or InsDel19c, as in the new assignments),
+  and raw values, not per-indel fractions (sums from 0.12 to 13,178 per
+  indel). The run used local copies adapted for this, with each row
+  normalized as `normalize.sh` does for ID83. Its r.04 matrix
+  (`tissue.rtGroup.Mutation_50cutoff.xlsx`) does not match Mini's: 16.1
+  million counts vs. 56.6 million, cell correlation 0.07. Mini's matrix
+  cannot come from normalized values: with fractions, at most one signature
+  per indel exceeds 0.5 (at most 18.5 million counts), but it has about 3 per
+  indel (InsDel2a alone 12.0 million). So the old Table S14 input seems to
+  have been raw partial credit cut at 0.5, while the methods in `ms.qmd`
+  (lines 1151, 1156, and 1202) say "probability greater than 0.5". Counting
+  raw 1026 values > 0.5 does not match Mini's matrix either (83.8 million,
+  ratios 0.17 to 439 by signature), partly because the assignments changed.
+  Ask Mo and Mini:
+  1. Was the old ID89 partial-credit file (the input to Table S14)
+     normalized per indel? `normalize.sh` exists only for ID83.
+  2. What are the values in the 1026 files (exposure times signature
+     probability, or something else)? They are not per-indel fractions.
+  3. Is "probability > 0.5", as in the methods, what was intended, and does
+     the ID83 pipeline (which normalizes) follow it?
+  The ID83 matrices from Mini (`ID83_topography_analysis_code/
+  04_create4InfMatrix/`) are consistent with normalized values: the
+  observed rtGroup and DNA.region matrices total 17.0 million counts (fewer
+  than the about 18.5 million indels), and the simulated ones 187 million
+  (about 10 simulations times that). So the problem seems limited to ID89.
+  If the old Table S14 came from unnormalized values, Table S14 and the
+  ID89 replication-timing results must be redone. The intermediate files of
+  the local run (about 35 GB, controlled access) are kept in the Claude
+  scratchpad (`/tmp/claude-1000/-home-steve-github-0Liu2024/035c45d5-0cc6-4515-96f8-863b7d89e9a3/scratchpad/id89_run/`)
+  for a rerun. They are lost when `/tmp` is cleared.
 - The topography code keeps indels in genes on both strands (114,297
   indels, 0.6%), although the methods say they were ignored. Mo is probably
   redoing the simulations and analysis with code that drops them, with
@@ -314,6 +368,51 @@ http://8.138.15.71/
   paper and the DOI) to https://indelsig.net and the GitHub README.
 
 ## Done
+
+- 2026-10-29: Figure S1 dots. The mSigAct refits added 118 dots and removed
+  12 (923 to 1,029), 84 of the added from 1 to 3 tumors. 102 of the 119
+  tumor-signature pairs behind them were mSigAct refits (69 MSI-H), with a
+  median exposure of 196 indels, 3.6% of the tumor's indels, which passed
+  the absolute 0.03 mutations/Mb cutoff because the tumors are large.
+  Steve and Mo decided to count a signature in Figure S1 only if it is at
+  least 5% of the tumor's indels, as in Figure 4A (code repo 9a8a2bc, paper
+  896b920, legend updated). Figure 4B is left as is. With the 5% rule it
+  keeps the quoted numbers and the MMR cluster (InsDel7, InsDel_J, InsDel2c,
+  InsDel2b, InsDel_D, C_ID2 with SBS44, SBS6, SBS26), but InsDel11 and
+  InsDel_M drop out, and its hand-placed boxes would need adjusting.
+  Precedent for a share cutoff: deconstructSigs drops signatures under 6%
+  (Rosenthal et al. 2016, https://doi.org/10.1186/s13059-016-0893-4).
+
+- 2026-10-29: Figure S1, stomach InsDel1a rose more than tenfold (0.13 to
+  1.60 mean mutations/Mb) with the new assignments. Almost all of the rise
+  is one tumor, CPCT02450014T (267,486 indels, refit with mSigAct). On the
+  same double-counted scale, InsDel1a went from 0 to 116,852 and InsDel_D
+  fell from 126,822 to 15,520 (InsDel_L 368,017 to 335,958, InsDel7 40,134
+  to 58,926). The 14 tumors are not quite the same: CPCT02130122T (1,230
+  indels) lost InsDel1a and CPCT02450014T gained it. The other 13 have about
+  the same InsDel1a as before. InsDel_D and InsDel1a are similar (cosine
+  0.85, both mostly T insertions into runs of 5 or more), but the tumor's T
+  insertion peaks are A-flanked, as in InsDel1a, and InsDel_L covers its
+  Ins C(4,6) and L(2+)R(5+) peaks. The new fit reconstructs the spectrum
+  better (cosine 0.9992 vs. 0.9919). Steve decided to keep the new fit.
+  Stomach C_ID1 (0.09 to 0.70) probably has the same cause (83-type ID_D
+  fell as C_ID1 rose), not checked per tumor.
+
+- 2026-10-29: reran the outputs that read the assignment tables after
+  CPCT02010349T was changed on 2026-10-26, as Mo advised, to the exposures
+  from the SPA rerun of 2026-10-25 (InsDel5a / C_ID5 = 288, was InsDel19a /
+  C_ID19 = 288; data repo 706124e). It has 144 indels and a poly-T ratio of
+  0.097, so it is not an mSigAct tumor, and it is not in the Figure S1 list.
+  Mo says (2026-10-26) the partial-credit files of 2026-10-26 already have
+  the new assignment. Rerun: Tables S9, S10, S11, S15, S16, and S17,
+  `build_fig4/`, `build_fig_s1/`, `build_fig_s6/` (with the two
+  prototypes), and `ms_numbers.R` (code repo e6de415). `vignette/` reads
+  only the file's modification time, so it was not rerun. Tables S9, S10,
+  and S17 and Figures 4, S1, and S6 are unchanged in content. Table S11
+  changed only in CPCT02010349T. In Tables S15 and S16 the Bone/Soft tissue
+  C_ID19, C_ID5, InsDel5a, and InsDel19a rows, the pooled C_ID5, InsDel5a,
+  C_ID19, and InsDel19a rows, and some FDRs changed slightly. No call at
+  q < 0.2 changed. Tables S11, S15, and S16 were copied to `sup_tables/`.
 
 - 2026-10-24: Steve decided on the Figure S1 dot cutoff: a dot is hidden
   when <= 10% of tumors have the signature and the mean is < 0.03
