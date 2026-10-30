@@ -30,7 +30,7 @@ paper and in `explore-attributions/`:
   (204 MSI-H tumors since 2026-10-30, from `msiseq/call_msi_h.R` in the
   code repo; 202 before). Never use `MSI_status`, which holds the cohort calls
   from PCAWG and Hartwig clinical data (91 MSI). Those are not reliable.
-- **Hypermutated (MSS-hyper)**: not MSI-H by MSIseq and > 4,000 indels
+- **Hypermutated (MSS-hyper)**: not MSI-H by MSIseq and >= 4,000 indels
   (51 tumors; 48 before 2026-10-30).
 - **Indel counts** always come from the spectra in `unified_indels_data`,
   which are clipped to repeat length R <= 9 (column sums of
@@ -41,7 +41,7 @@ paper and in `explore-attributions/`:
   versions of S16 held larger counts from an older version of the data.
 
 Figure 4A is built with these rules by `build_fig4/all_cancer_types_enrichment.R`
-in the code repo. Tumors were refit with mSigAct if they had > 4,000 indels,
+in the code repo. Tumors were refit with mSigAct if they had >= 4,000 indels,
 or a poly-T ratio > 0.5 and a SigProfilerAssignment reconstruction cosine
 similarity < 0.9 (731 tumors, listed in `mSigAct.reanalyzed.samples.txt`).
 
@@ -52,9 +52,9 @@ samples are assigned to mutually exclusive groups for the Fisher
 enrichment analysis in this priority order:
 
 1. **MSI-H**: MSI-H by MSIseq.
-2. **MSS-hyper**: not MSI-H and > 4,000 indels.
+2. **MSS-hyper**: not MSI-H and >= 4,000 indels.
 3. **Major cancer type** (`Bladder`, `Colon`, `Esophagus`, `Kidney`,
-   `Liver`, `Lung`, `Ovary`, `Prostate`, `Skin`): not MSI-H, <= 4,000
+   `Liver`, `Lung`, `Ovary`, `Prostate`, `Skin`): not MSI-H, < 4,000
    indels, and `Major Cancer Type` matches.
 
 Samples in other cancer types (Breast, Pancreas, CNS, etc.) are not

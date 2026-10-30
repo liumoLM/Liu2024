@@ -962,7 +962,7 @@ and cancer-specific signatures, encompassing analyses of all genomes,
 specific cancer types, high-TMB samples, and the PCAWG and Hartwig
 cohorts individually. High-TMB samples were the
 `r ms_num$tmb$n_high` of `r ms_num$tmb$n_all` genomes with
-\> `r ms_num$tmb$cutoff` indels, counted after capping repeat lengths at 9.
+≥ `r ms_num$tmb$cutoff` indels, counted after capping repeat lengths at 9.
 
 For the hierarchical Dirichlet process–based approach, mSigHdp
 (v2.1.2) was used. When analyzing all samples, cancer type was used to
@@ -1008,7 +1008,7 @@ assignment. For extraction, the NumPy and pandas versions are unknown beyond
 NumPy 2 or later, and a rerun cannot settle it because the extraction used
 random seeds. So the text gives no NumPy or pandas versions for
 extraction. Mo confirmed on 2026-10-26 that the high-TMB extraction used
-the > 4,000 indel cutoff given above. The code repo comments that said
+the ≥ 4,000 indel cutoff given above. The code repo comments that said
 5,000 were corrected.]{.blue}
 
 ## Match 83-type and 89-type signatures into reference signatures
@@ -1042,7 +1042,7 @@ receives one exposure per 89-type signature. The 83-type exposure of a tumor
 is the sum of the exposures of the 89-type signatures that map to that
 83-type signature. Two groups of tumors often have very sparse spectra, which
 SigProfilerAssignment may not fit well. We refit these tumors with
-mSigAct: (1) tumors with > 4,000 indels, and (2) tumors in which single-T
+mSigAct: (1) tumors with ≥ 4,000 indels, and (2) tumors in which single-T
 insertions into poly-T tracts of 5 or more Ts plus single-T deletions from
 poly-T tracts of 6 or more Ts make up more than 50% of all indels (Table
 S16) and whose SigProfilerAssignment reconstruction had a cosine
@@ -1221,7 +1221,7 @@ evaluated by the PCAWG working group and obtained from the synapse
 repository (<https://www.synapse.org/#!Synapse:syn8016399>, the data
 was downloaded on May 2022). For Hartwig genomes, the MSI status was
 downloaded from the supplementary data of Priestley et al., 2019. The
-genomes with \> `r ms_num$tmb$cutoff` indels, counted after capping
+genomes with ≥ `r ms_num$tmb$cutoff` indels, counted after capping
 repeat lengths at 9, were labeled as high TMB tumors. We used
 MSIseq to predict the MSI status of all tumors.[{.mark}]
 
@@ -1442,7 +1442,7 @@ and cancer types**
 :::
 
 **(A)** Enrichment for presence of 89-type signatures across cancer
-types, plus MSI-high MSI-H) and hypermutated (\> 4,000 indels) microsatellite stable (MSS)
+types, plus MSI-high MSI-H) and hypermutated (≥ 4,000 indels) microsatellite stable (MSS)
 tumors. Only cancer types with odds ratios
 \> 6 are shown. FDR is the Benjamini-Hochberg false discovery rate based on p
 values from Fisher’s exact tests of he number of tumors with the signature
