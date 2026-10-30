@@ -35,14 +35,6 @@ code:ID83_topography_analysis_code/r.05_FisherTest.R	script	code	ID83_topography
 code:ID83_topography_analysis_code/r.06_comupteOddsRatio.R	script	code	ID83_topography_analysis_code/r.06_comupteOddsRatio.R	r.06_comupteOddsRatio.R	yes		
 code:ID83_topography_analysis_code/r.09_barplot.R	script	code	ID83_topography_analysis_code/r.09_barplot.R	r.09_barplot.R	yes		
 code:ID83_topography_analysis_code/r.computeOddsRatioFunctions.R	script	code	ID83_topography_analysis_code/r.computeOddsRatioFunctions.R	r.computeOddsRatioFunctions.R	yes		
-code:ID89_topography_analysis_code/04_createRTgroupInf/rtGroup/tissue.rtGroup.Mutation_50cutoff.xlsx	code repo file	code	ID89_topography_analysis_code/04_createRTgroupInf/rtGroup/tissue.rtGroup.Mutation_50cutoff.xlsx	tissue.rtGroup.Mutation_50cutoff.xlsx	yes		
-code:ID89_topography_analysis_code/all.meta.0528.rds	code repo file	code	ID89_topography_analysis_code/all.meta.0528.rds	all.meta.0528.rds	yes	no script writes it	from the Huang-lab server
-code:ID89_topography_analysis_code/r.01_createBed.R	script	code	ID89_topography_analysis_code/r.01_createBed.R	r.01_createBed.R	yes		
-code:ID89_topography_analysis_code/r.02.intersect_no_loop.sh	script	code	ID89_topography_analysis_code/r.02.intersect_no_loop.sh	r.02.intersect_no_loop.sh	yes		
-code:ID89_topography_analysis_code/r.03_mergeInf.R	script	code	ID89_topography_analysis_code/r.03_mergeInf.R	r.03_mergeInf.R	yes		
-code:ID89_topography_analysis_code/r.04_createRTgroupInf.R	script	code	ID89_topography_analysis_code/r.04_createRTgroupInf.R	r.04_createRTgroupInf.R	yes		
-code:ID89_topography_analysis_code/r.09_barplot.R	script	code	ID89_topography_analysis_code/r.09_barplot.R	r.09_barplot.R	yes		
-code:ID89_topography_analysis_code/likely_dead_ID89_topography_code/r.09_barplot_plots.R	script	code	ID89_topography_analysis_code/likely_dead_ID89_topography_code/r.09_barplot_plots.R	r.09_barplot_plots.R	yes	likely dead; excluded from release	plots from the original ID89 r.09, not used in the paper; does not run as is
 code:build_fig1/build_fig1.R	script	code	build_fig1/build_fig1.R	build_fig1.R	yes		
 code:build_fig1/fig1.pdf	code repo file	code	build_fig1/fig1.pdf	fig1.pdf	yes		
 code:build_fig1/one_page_83_89_476.R	script	code	build_fig1/one_page_83_89_476.R	one_page_83_89_476.R	yes		
@@ -130,13 +122,11 @@ code:build_sup_table_s12/sup_table_s12_topography_asymmetry.xlsx	code repo file	
 code:build_sup_table_s13/build_sup_table_s13.R	script	code	build_sup_table_s13/build_sup_table_s13.R	build_sup_table_s13.R	yes		
 code:build_sup_table_s13/sup_table_s13_replication_timing_83.xlsx	code repo file	code	build_sup_table_s13/sup_table_s13_replication_timing_83.xlsx	sup_table_s13_replication_timing_83.xlsx	yes		
 code:build_sup_table_s14/build_sup_table_s14.R	script	code	build_sup_table_s14/build_sup_table_s14.R	build_sup_table_s14.R	yes		
-code:build_sup_table_s14/sup_table_s14_replication_timing_89.xlsx	code repo file	code	build_sup_table_s14/sup_table_s14_replication_timing_89.xlsx	sup_table_s14_replication_timing_89.xlsx	yes		
+code:build_sup_table_s14/sup_table_s14_sex_bias.xlsx	code repo file	code	build_sup_table_s14/sup_table_s14_sex_bias.xlsx	sup_table_s14_sex_bias.xlsx	yes		
 code:build_sup_table_s15/build_sup_table_s15.R	script	code	build_sup_table_s15/build_sup_table_s15.R	build_sup_table_s15.R	yes		
-code:build_sup_table_s15/sup_table_s15_sex_bias.xlsx	code repo file	code	build_sup_table_s15/sup_table_s15_sex_bias.xlsx	sup_table_s15_sex_bias.xlsx	yes		
+code:build_sup_table_s15/sup_table_s15_age_correlation.xlsx	code repo file	code	build_sup_table_s15/sup_table_s15_age_correlation.xlsx	sup_table_s15_age_correlation.xlsx	yes		
 code:build_sup_table_s16/build_sup_table_s16.R	script	code	build_sup_table_s16/build_sup_table_s16.R	build_sup_table_s16.R	yes		
-code:build_sup_table_s16/sup_table_s16_age_correlation.xlsx	code repo file	code	build_sup_table_s16/sup_table_s16_age_correlation.xlsx	sup_table_s16_age_correlation.xlsx	yes		
-code:build_sup_table_s17/build_sup_table_s17.R	script	code	build_sup_table_s17/build_sup_table_s17.R	build_sup_table_s17.R	yes		
-code:build_sup_table_s17/sup_table_s17_sample_metadata.xlsx	code repo file	code	build_sup_table_s17/sup_table_s17_sample_metadata.xlsx	sup_table_s17_sample_metadata.xlsx	yes		
+code:build_sup_table_s16/sup_table_s16_sample_metadata.xlsx	code repo file	code	build_sup_table_s16/sup_table_s16_sample_metadata.xlsx	sup_table_s16_sample_metadata.xlsx	yes		
 code:build_sup_table_s2/build_sup_table_s2.R	script	code	build_sup_table_s2/build_sup_table_s2.R	build_sup_table_s2.R	yes		
 code:build_sup_table_s2/sup_table_s2_msighdp_83_type_signatures.xlsx	code repo file	code	build_sup_table_s2/sup_table_s2_msighdp_83_type_signatures.xlsx	sup_table_s2_msighdp_83_type_signatures.xlsx	yes		
 code:build_sup_table_s3/build_sup_table_s3.R	script	code	build_sup_table_s3/build_sup_table_s3.R	build_sup_table_s3.R	yes		
@@ -245,7 +235,6 @@ data:raw_signature_from_all_hdp_SP_runs/SigProfiler.COSMIC83.signatures.all.runs
 data:raw_signature_from_all_hdp_SP_runs/SigProfiler.Koh476.signatures.all.runs.txt	data repo file	data	raw_signature_from_all_hdp_SP_runs/SigProfiler.Koh476.signatures.all.runs.txt	SigProfiler.Koh476.signatures.all.runs.txt	yes		
 data:raw_signature_from_all_hdp_SP_runs/SigProfiler.Koh89.signatures.all.runs.txt	data repo file	data	raw_signature_from_all_hdp_SP_runs/SigProfiler.Koh89.signatures.all.runs.txt	SigProfiler.Koh89.signatures.all.runs.txt	yes		
 data:sample_info.tsv	data repo file	data	sample_info.tsv	sample_info.tsv	yes		
-ext:/ID83_0322/09_barplot/ID_L_Stomach_Decreasing.Rds	external	ext	/ID83_0322/09_barplot/ID_L_Stomach_Decreasing.Rds	ID_L_Stomach_Decreasing.Rds			
 ext:/MSIseq_1.0.0/MSIseq/R/MSIseq.classify.R	external	ext	/MSIseq_1.0.0/MSIseq/R/MSIseq.classify.R	MSIseq.classify.R			
 ext:/home/steve/MEGA/important_mut_sig_data/fmh-unfiltered_vcfs/*.annotated.indel.vcf.gz (300 largest)	external	ext	/home/steve/MEGA/important_mut_sig_data/fmh-unfiltered_vcfs/*.annotated.indel.vcf.gz (300 largest)	*.annotated.indel.vcf.gz (300 largest)			
 ext:/home/steve/MEGA/important_mut_sig_data/pcawg_indel_vcfs/*.annotated.indel.vcf.gz (300 largest)	external	ext	/home/steve/MEGA/important_mut_sig_data/pcawg_indel_vcfs/*.annotated.indel.vcf.gz (300 largest)	*.annotated.indel.vcf.gz (300 largest)			
@@ -314,20 +303,6 @@ ext:/public/data/Topography_analysis_2026/results0322/ID83/04_create4InfMatrix/t
 ext:/public/data/Topography_analysis_2026/results0322/ID83/04_create4InfMatrix/trans.strand/tissue.trans.strand.Simulated_75cutoff.xlsx	external	ext	/public/data/Topography_analysis_2026/results0322/ID83/04_create4InfMatrix/trans.strand/tissue.trans.strand.Simulated_75cutoff.xlsx	tissue.trans.strand.Simulated_75cutoff.xlsx			
 ext:/public/data/Topography_analysis_2026/results0322/ID83/04_create4InfMatrix/trans.strand/tissue.trans.strand.Simulated_nocutoff.Rds	external	ext	/public/data/Topography_analysis_2026/results0322/ID83/04_create4InfMatrix/trans.strand/tissue.trans.strand.Simulated_nocutoff.Rds	tissue.trans.strand.Simulated_nocutoff.Rds			
 ext:/public/data/Topography_analysis_2026/results0322/ID83/04_create4InfMatrix/trans.strand/tissue.trans.strand.Simulated_nocutoff.xlsx	external	ext	/public/data/Topography_analysis_2026/results0322/ID83/04_create4InfMatrix/trans.strand/tissue.trans.strand.Simulated_nocutoff.xlsx	tissue.trans.strand.Simulated_nocutoff.xlsx			
-ext:/public/data/Topography_analysis_2026/results0322/ID89/01_createBed/02.unique.single.indel.aggregate.strand.added.matrix.bed	external	ext	/public/data/Topography_analysis_2026/results0322/ID89/01_createBed/02.unique.single.indel.aggregate.strand.added.matrix.bed	02.unique.single.indel.aggregate.strand.added.matrix.bed			
-ext:/public/data/Topography_analysis_2026/results0322/ID89/01_createBed/02.unique.single.indel.aggregate.strand.added.matrix.txt	external	ext	/public/data/Topography_analysis_2026/results0322/ID89/01_createBed/02.unique.single.indel.aggregate.strand.added.matrix.txt	02.unique.single.indel.aggregate.strand.added.matrix.txt			
-ext:/public/data/Topography_analysis_2026/results0322/ID89/01_createBed/03.signature.bed	external	ext	/public/data/Topography_analysis_2026/results0322/ID89/01_createBed/03.signature.bed	03.signature.bed			
-ext:/public/data/Topography_analysis_2026/results0322/ID89/01_createBed/03.signature.txt	external	ext	/public/data/Topography_analysis_2026/results0322/ID89/01_createBed/03.signature.txt	03.signature.txt			
-ext:/public/data/Topography_analysis_2026/results0322/ID89/01_createBed/all.indel.ID89.partial.credit.txt	external	ext	/public/data/Topography_analysis_2026/results0322/ID89/01_createBed/all.indel.ID89.partial.credit.txt	all.indel.ID89.partial.credit.txt			
-ext:/public/data/Topography_analysis_2026/results0322/ID89/02_intersectBed/01.RelicateTime.TransStrand.DNA_Region.intersect_res.txt	external	ext	/public/data/Topography_analysis_2026/results0322/ID89/02_intersectBed/01.RelicateTime.TransStrand.DNA_Region.intersect_res.txt	01.RelicateTime.TransStrand.DNA_Region.intersect_res.txt			
-ext:/public/data/Topography_analysis_2026/results0322/ID89/03_mergeInf/01.allInf.single.indel.Rds	external	ext	/public/data/Topography_analysis_2026/results0322/ID89/03_mergeInf/01.allInf.single.indel.Rds	01.allInf.single.indel.Rds			
-ext:/public/data/Topography_analysis_2026/results0322/ID89/03_mergeInf/01.allInf.single.indel.txt	external	ext	/public/data/Topography_analysis_2026/results0322/ID89/03_mergeInf/01.allInf.single.indel.txt	01.allInf.single.indel.txt			
-ext:/public/data/Topography_analysis_2026/results0322/ID89/04_createRTgroupInf/01.Tissue_count.xlsx	external	ext	/public/data/Topography_analysis_2026/results0322/ID89/04_createRTgroupInf/01.Tissue_count.xlsx	01.Tissue_count.xlsx			
-ext:/public/data/Topography_analysis_2026/results0322/ID89/04_createRTgroupInf/rtGroup/tissue.rtGroup.Mutation_50cutoff.Rds	external	ext	/public/data/Topography_analysis_2026/results0322/ID89/04_createRTgroupInf/rtGroup/tissue.rtGroup.Mutation_50cutoff.Rds	tissue.rtGroup.Mutation_50cutoff.Rds			
-ext:/public/data/Topography_analysis_2026/results0322/ID89/04_createRTgroupInf/rtGroup/tissue.rtGroup.Mutation_75cutoff.Rds	external	ext	/public/data/Topography_analysis_2026/results0322/ID89/04_createRTgroupInf/rtGroup/tissue.rtGroup.Mutation_75cutoff.Rds	tissue.rtGroup.Mutation_75cutoff.Rds			
-ext:/public/data/Topography_analysis_2026/results0322/ID89/04_createRTgroupInf/rtGroup/tissue.rtGroup.Mutation_75cutoff.xlsx	external	ext	/public/data/Topography_analysis_2026/results0322/ID89/04_createRTgroupInf/rtGroup/tissue.rtGroup.Mutation_75cutoff.xlsx	tissue.rtGroup.Mutation_75cutoff.xlsx			
-ext:/public/data/Topography_analysis_2026/results0322/ID89/04_createRTgroupInf/rtGroup/tissue.rtGroup.Mutation_nocutoff.Rds	external	ext	/public/data/Topography_analysis_2026/results0322/ID89/04_createRTgroupInf/rtGroup/tissue.rtGroup.Mutation_nocutoff.Rds	tissue.rtGroup.Mutation_nocutoff.Rds			
-ext:/public/data/Topography_analysis_2026/results0322/ID89/04_createRTgroupInf/rtGroup/tissue.rtGroup.Mutation_nocutoff.xlsx	external	ext	/public/data/Topography_analysis_2026/results0322/ID89/04_createRTgroupInf/rtGroup/tissue.rtGroup.Mutation_nocutoff.xlsx	tissue.rtGroup.Mutation_nocutoff.xlsx			
 ext:/public/data/Topography_analysis_2026/simulation_data/ID83_partialcredit_for_match.txt	external	ext	/public/data/Topography_analysis_2026/simulation_data/ID83_partialcredit_for_match.txt	ID83_partialcredit_for_match.txt			
 ext:/public/data/Topography_analysis_2026/simulation_data/all_simulated_with_annotation.txt	external	ext	/public/data/Topography_analysis_2026/simulation_data/all_simulated_with_annotation.txt	all_simulated_with_annotation.txt			
 ext:/public/data/Topography_analysis_2026/simulation_data/new.ID83.simualted.partialcredit.annotated.txt	external	ext	/public/data/Topography_analysis_2026/simulation_data/new.ID83.simualted.partialcredit.annotated.txt	new.ID83.simualted.partialcredit.annotated.txt			
@@ -338,31 +313,6 @@ code:ID83_topography_analysis_code/09_barplot/all_lm_trend.xlsx	code repo file	c
 code:ID83_topography_analysis_code/09_barplot/plot_data.xlsx	code repo file	code	ID83_topography_analysis_code/09_barplot/plot_data.xlsx	plot_data.xlsx	yes		
 ext:ID83_topography_analysis_code/09_barplot/rtGroup_barplot.pdf	external	ext	ID83_topography_analysis_code/09_barplot/rtGroup_barplot.pdf	rtGroup_barplot.pdf			
 ext:ID83_topography_analysis_code/09_barplot/rtGroup_barplot_proportion.pdf	external	ext	ID83_topography_analysis_code/09_barplot/rtGroup_barplot_proportion.pdf	rtGroup_barplot_proportion.pdf			
-ext:ID89_topography_analysis_code/09_barplot/ID89_InsDel_L_Stomach.Rds	external	ext	ID89_topography_analysis_code/09_barplot/ID89_InsDel_L_Stomach.Rds	ID89_InsDel_L_Stomach.Rds			
-ext:ID89_topography_analysis_code/09_barplot/ID89_InsDel_L_Stomach.pdf	external	ext	ID89_topography_analysis_code/09_barplot/ID89_InsDel_L_Stomach.pdf	ID89_InsDel_L_Stomach.pdf			
-ext:ID89_topography_analysis_code/09_barplot/ID89_InsDel_L_Stomach.png	external	ext	ID89_topography_analysis_code/09_barplot/ID89_InsDel_L_Stomach.png	ID89_InsDel_L_Stomach.png			
-ext:ID89_topography_analysis_code/09_barplot/ID89_barplot.pdf	external	ext	ID89_topography_analysis_code/09_barplot/ID89_barplot.pdf	ID89_barplot.pdf			
-ext:ID89_topography_analysis_code/09_barplot/ID89_barplot.png	external	ext	ID89_topography_analysis_code/09_barplot/ID89_barplot.png	ID89_barplot.png			
-ext:ID89_topography_analysis_code/09_barplot/ID89_rtGroup_barplot.pdf	external	ext	ID89_topography_analysis_code/09_barplot/ID89_rtGroup_barplot.pdf	ID89_rtGroup_barplot.pdf			
-ext:ID89_topography_analysis_code/09_barplot/barplot_list.Rds	external	ext	ID89_topography_analysis_code/09_barplot/barplot_list.Rds	barplot_list.Rds			
-ext:ID89_topography_analysis_code/09_barplot/decreasing/<signature>.Rds	external	ext	ID89_topography_analysis_code/09_barplot/decreasing/<signature>.Rds	<signature>.Rds			
-ext:ID89_topography_analysis_code/09_barplot/decreasing/<signature>.single.indel.barplot.pdf	external	ext	ID89_topography_analysis_code/09_barplot/decreasing/<signature>.single.indel.barplot.pdf	<signature>.single.indel.barplot.pdf			
-ext:ID89_topography_analysis_code/09_barplot/decreasing/<signature>.single.indel.barplot.png	external	ext	ID89_topography_analysis_code/09_barplot/decreasing/<signature>.single.indel.barplot.png	<signature>.single.indel.barplot.png			
-ext:ID89_topography_analysis_code/09_barplot/flat/<signature>.Rds	external	ext	ID89_topography_analysis_code/09_barplot/flat/<signature>.Rds	<signature>.Rds			
-ext:ID89_topography_analysis_code/09_barplot/flat/<signature>.single.indel.barplot.pdf	external	ext	ID89_topography_analysis_code/09_barplot/flat/<signature>.single.indel.barplot.pdf	<signature>.single.indel.barplot.pdf			
-ext:ID89_topography_analysis_code/09_barplot/flat/<signature>.single.indel.barplot.png	external	ext	ID89_topography_analysis_code/09_barplot/flat/<signature>.single.indel.barplot.png	<signature>.single.indel.barplot.png			
-ext:ID89_topography_analysis_code/09_barplot/increasing/<signature>.Rds	external	ext	ID89_topography_analysis_code/09_barplot/increasing/<signature>.Rds	<signature>.Rds			
-ext:ID89_topography_analysis_code/09_barplot/increasing/<signature>.single.indel.barplot.pdf	external	ext	ID89_topography_analysis_code/09_barplot/increasing/<signature>.single.indel.barplot.pdf	<signature>.single.indel.barplot.pdf			
-ext:ID89_topography_analysis_code/09_barplot/increasing/<signature>.single.indel.barplot.png	external	ext	ID89_topography_analysis_code/09_barplot/increasing/<signature>.single.indel.barplot.png	<signature>.single.indel.barplot.png			
-ext:ID89_topography_analysis_code/09_barplot/lm3_signature_barplot.pdf	external	ext	ID89_topography_analysis_code/09_barplot/lm3_signature_barplot.pdf	lm3_signature_barplot.pdf			
-ext:ID89_topography_analysis_code/09_barplot/lm3_signature_barplot.png	external	ext	ID89_topography_analysis_code/09_barplot/lm3_signature_barplot.png	lm3_signature_barplot.png			
-ext:ID89_topography_analysis_code/09_barplot/mix/<signature>.Rds	external	ext	ID89_topography_analysis_code/09_barplot/mix/<signature>.Rds	<signature>.Rds			
-ext:ID89_topography_analysis_code/09_barplot/mix/<signature>.single.indel.barplot.pdf	external	ext	ID89_topography_analysis_code/09_barplot/mix/<signature>.single.indel.barplot.pdf	<signature>.single.indel.barplot.pdf			
-ext:ID89_topography_analysis_code/09_barplot/mix/<signature>.single.indel.barplot.png	external	ext	ID89_topography_analysis_code/09_barplot/mix/<signature>.single.indel.barplot.png	<signature>.single.indel.barplot.png			
-code:ID89_topography_analysis_code/09_barplot/plot_data.xlsx	code repo file	code	ID89_topography_analysis_code/09_barplot/plot_data.xlsx	plot_data.xlsx	yes		
-ext:ID89_topography_analysis_code/09_barplot/signature_barplot_proportion.pdf	external	ext	ID89_topography_analysis_code/09_barplot/signature_barplot_proportion.pdf	signature_barplot_proportion.pdf			
-ext:ID89_topography_analysis_code/09_barplot/signature_barplot_proportion.png	external	ext	ID89_topography_analysis_code/09_barplot/signature_barplot_proportion.png	signature_barplot_proportion.png			
-code:ID89_topography_analysis_code/09_barplot/trend.xlsx	code repo file	code	ID89_topography_analysis_code/09_barplot/trend.xlsx	trend.xlsx	yes		
 ext:MSIseq/Classify.txt	external	ext	MSIseq/Classify.txt	Classify.txt			
 ext:MSIseq/Hg19repeats.rda	external	ext	MSIseq/Hg19repeats.rda	Hg19repeats.rda			
 ext:MSIseq/MSI_classified_res.xlsx	external	ext	MSIseq/MSI_classified_res.xlsx	MSI_classified_res.xlsx			
@@ -438,10 +388,9 @@ paper:sup_tables/sup_table_s10_insdel_N_burden.xlsx	paper file	paper	sup_tables/
 paper:sup_tables/sup_table_s11_83_89_signature_assignment.tsv	paper file	paper	sup_tables/sup_table_s11_83_89_signature_assignment.tsv	sup_table_s11_83_89_signature_assignment.tsv	yes		
 paper:sup_tables/sup_table_s12_topography_asymmetry.xlsx	paper file	paper	sup_tables/sup_table_s12_topography_asymmetry.xlsx	sup_table_s12_topography_asymmetry.xlsx	yes		
 paper:sup_tables/sup_table_s13_replication_timing_83.xlsx	paper file	paper	sup_tables/sup_table_s13_replication_timing_83.xlsx	sup_table_s13_replication_timing_83.xlsx	yes		
-paper:sup_tables/sup_table_s14_replication_timing_89.xlsx	paper file	paper	sup_tables/sup_table_s14_replication_timing_89.xlsx	sup_table_s14_replication_timing_89.xlsx	yes		
-paper:sup_tables/sup_table_s15_sex_bias.xlsx	paper file	paper	sup_tables/sup_table_s15_sex_bias.xlsx	sup_table_s15_sex_bias.xlsx	yes		
-paper:sup_tables/sup_table_s16_age_correlation.xlsx	paper file	paper	sup_tables/sup_table_s16_age_correlation.xlsx	sup_table_s16_age_correlation.xlsx	yes		
-paper:sup_tables/sup_table_s17_sample_metadata.xlsx	paper file	paper	sup_tables/sup_table_s17_sample_metadata.xlsx	sup_table_s17_sample_metadata.xlsx	yes		
+paper:sup_tables/sup_table_s14_sex_bias.xlsx	paper file	paper	sup_tables/sup_table_s14_sex_bias.xlsx	sup_table_s14_sex_bias.xlsx	yes		
+paper:sup_tables/sup_table_s15_age_correlation.xlsx	paper file	paper	sup_tables/sup_table_s15_age_correlation.xlsx	sup_table_s15_age_correlation.xlsx	yes		
+paper:sup_tables/sup_table_s16_sample_metadata.xlsx	paper file	paper	sup_tables/sup_table_s16_sample_metadata.xlsx	sup_table_s16_sample_metadata.xlsx	yes		
 paper:sup_tables/sup_table_s1_476_89_83_type_categories.xlsx	paper file	paper	sup_tables/sup_table_s1_476_89_83_type_categories.xlsx	sup_table_s1_476_89_83_type_categories.xlsx	yes		
 paper:sup_tables/sup_table_s2_msighdp_83_type_signatures.xlsx	paper file	paper	sup_tables/sup_table_s2_msighdp_83_type_signatures.xlsx	sup_table_s2_msighdp_83_type_signatures.xlsx	yes		
 paper:sup_tables/sup_table_s3_sigprofiler_83_type_signatures.xlsx	paper file	paper	sup_tables/sup_table_s3_sigprofiler_83_type_signatures.xlsx	sup_table_s3_sigprofiler_83_type_signatures.xlsx	yes		
@@ -463,9 +412,7 @@ ext:~/MEGA/important_mut_sig_data/pcawg_indel_vcfs/<aliquot>.consensus.indel.vcf
 code:Extraction_and_assignment_code/make_172_type_inputs.R	script	code	Extraction_and_assignment_code/make_172_type_inputs.R	make_172_type_inputs.R	yes		
 ext:Extraction_and_assignment_code/assignment_input/ID172_catalog.tsv	external	ext	Extraction_and_assignment_code/assignment_input/ID172_catalog.tsv	ID172_catalog.tsv			not tracked in git
 ext:Extraction_and_assignment_code/assignment_input/ID172_signatures.tsv	external	ext	Extraction_and_assignment_code/assignment_input/ID172_signatures.tsv	ID172_signatures.tsv			not tracked in git
-ext:/public/data/Topography_analysis_2026/results0322/ID89/02_intersectBed/02.RepliStrand.intersect_res.txt	external	ext	/public/data/Topography_analysis_2026/results0322/ID89/02_intersectBed/02.RepliStrand.intersect_res.txt	02.RepliStrand.intersect_res.txt			
 ext:~/MEGA/important_mut_sig_data/partial-credit-for-indel-paper-2026-10-26/all.indel.ID83.partial.credit.1026.txt.gz	external	ext	~/MEGA/important_mut_sig_data/partial-credit-for-indel-paper-2026-10-26/all.indel.ID83.partial.credit.1026.txt.gz	all.indel.ID83.partial.credit.1026.txt.gz	yes	controlled access; not in any repo	from Mo 2026-10-26; located by find_partial_credit() in find_data.R
-ext:~/MEGA/important_mut_sig_data/partial-credit-for-indel-paper-2026-10-26/all.indel.ID89.partial.credit.1026.txt.gz	external	ext	~/MEGA/important_mut_sig_data/partial-credit-for-indel-paper-2026-10-26/all.indel.ID89.partial.credit.1026.txt.gz	all.indel.ID89.partial.credit.1026.txt.gz	yes	controlled access; not in any repo	from Mo 2026-10-26; located by find_partial_credit() in find_data.R
 ext:mSigAct_refit_output/	external	ext	mSigAct_refit_output/	mSigAct_refit_output/			merged 89- and 83-type assignments; not in repo
 code:Extraction_and_assignment_code/make_extraction_examples.R	script	code	Extraction_and_assignment_code/make_extraction_examples.R	make_extraction_examples.R	yes		
 ext:Extraction_and_assignment_code/example_input/example.89type.Bladder.txt	external	ext	Extraction_and_assignment_code/example_input/example.89type.Bladder.txt	example.89type.Bladder.txt			not tracked in git

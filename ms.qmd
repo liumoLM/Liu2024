@@ -701,37 +701,30 @@ signatures showed cancer-specific enrichment in replication timing,
 including C_ID8 (Repair of DNA double strand breaks by NHEJ) and ID_F
 (TOP1-mediated mutagenesis). For example, ID_F showed enriched
 mutations in late replication regions in bladder cancer, while in skin
-cancer it showed the opposite trend. For 89-type signatures, we
-conducted similar analysis without simulation data. The majority of
-signatures showed enrichment in late-replicating regions, which is
-consistent with what we observed [for]{.pink} 83-type signatures (Table
-S14). InsDel_L, the corresponding signature of ID_L, showed the same
-stomach cancer specific enrichment in early replication regions, which [strengthens the correspondence]{.pink} between 83-type and 89-type signatures.
-
-[Do we really need Table S14? It gives P values for the regression of indel counts on replication-timing decile, but there is no simulation. So, unlike Table S13, it does not test whether a trend differs from what the background mutation process would produce.]{.blue}
+cancer it showed the opposite trend.
 
 ## Demographic Associations with Sex and Age STEVE REVIEW
 
 To explore potential [sex]{.pink} biases in mutational processes, we
 systematically compared signature activities between males and females
 using two-sided Fisher’s exact tests. After
-Benjamini–Hochberg adjustment (q \< `r ms_num$s15$q_cutoff`), `r ms_num$s15$n_hits` signature–cancer type
-combinations were associated with sex, corresponding to `r ms_num$s15$n_hits_combined` associations
+Benjamini–Hochberg adjustment (q \< `r ms_num$s14$q_cutoff`), `r ms_num$s14$n_hits` signature–cancer type
+combinations were associated with sex, corresponding to `r ms_num$s14$n_hits_combined` associations
 when each 83-type signature and its 89-type counterpart are counted
-together (Figure S6A, Table S15). \<parallel
+together (Figure S6A, Table S14). \<parallel
 structure\>Male-enriched mutational processes predominated in lung
 and liver cancers. Specifically, lung cancer showed
-significant male association with InsDel3b (`r ms_num$s15$or_q("Lung", "InsDel3b")`) and
-C_ID3 (`r ms_num$s15$or_q("Lung", "C_ID3")`), signatures previously linked to tobacco
+significant male association with InsDel3b (`r ms_num$s14$or_q("Lung", "InsDel3b")`) and
+C_ID3 (`r ms_num$s14$or_q("Lung", "C_ID3")`), signatures previously linked to tobacco
 exposure, [consistent with higher smoking prevalence among men]{.yellow}. In liver cancer, a similar
-male predominance was observed for InsDel5a (`r ms_num$s15$or_q("Liver", "InsDel5a")`)
-and C_ID5 (`r ms_num$s15$or_q("Liver", "C_ID5")`; clock-like), and for InsDel8/C_ID8
-(`r ms_num$s15$or_q("Liver", "InsDel8")`; associated with DSB repair by NHEJ and
+male predominance was observed for InsDel5a (`r ms_num$s14$or_q("Liver", "InsDel5a")`)
+and C_ID5 (`r ms_num$s14$or_q("Liver", "C_ID5")`; clock-like), and for InsDel8/C_ID8
+(`r ms_num$s14$or_q("Liver", "InsDel8")`; associated with DSB repair by NHEJ and
 age). In contrast, female-enriched signatures were found in esophageal
-and pancreatic cancers: InsDel1a (`r ms_num$s15$or_q("Esophagus", "InsDel1a")`) and C_ID1
-(`r ms_num$s15$or_q("Esophagus", "C_ID1")`) in esophageal cancer, and InsDel12/C_ID12
-(`r ms_num$s15$or_q("Pancreas", "InsDel12")`) in pancreatic cancer. No additional
-signature–cancer type combinations reached a q-value below `r ms_num$s15$q_cutoff`.
+and pancreatic cancers: InsDel1a (`r ms_num$s14$or_q("Esophagus", "InsDel1a")`) and C_ID1
+(`r ms_num$s14$or_q("Esophagus", "C_ID1")`) in esophageal cancer, and InsDel12/C_ID12
+(`r ms_num$s14$or_q("Pancreas", "InsDel12")`) in pancreatic cancer. No additional
+signature–cancer type combinations reached a q-value below `r ms_num$s14$q_cutoff`.
 Collectively, these findings suggest that specific mutational
 processes and their underlying biological processes might be modulated by [sex]{.pink}, [shaping distinct patterns of cancer susceptibility and
 progression]{.blue}.
@@ -756,7 +749,7 @@ of C_ID1 and InsDel1a increased by
 `r ms_num$age_glm$pct_pair("C_ID1", "InsDel1a")`% per decade of age and those
 of C_ID5 and InsDel5a by `r ms_num$age_glm$pct_pair("C_ID5", "InsDel5a")`%,
 and older patients were more likely to have
-them (Table S16).]{.green} More specifically, C_ID5 and
+them (Table S15).]{.green} More specifically, C_ID5 and
 InsDel5a correlated with age in prostate, pancreas, liver, and kidney
 cancers, while C_ID1 and InsDel1a were age-associated in breast,
 prostate, and pancreas cancers. Other clock-like signatures
@@ -957,7 +950,7 @@ https://www.hartwigmedicalfoundation.nl/en/appyling-for-data/.
 Information such as cancer type, age, and sex
 assoicated with the Hartwig
 data were taken from Table S2 in
-@priestleyPancancerWholegenomeAnalyses2019. Table S17 in
+@priestleyPancancerWholegenomeAnalyses2019. Table S16 in
 this study present the aggregated metadata used herein.
 
 ## De novo Mutational signature extraction
@@ -1047,7 +1040,7 @@ SigProfilerAssignment may not fit well. We refit these tumors with
 mSigAct: (1) tumors with > 4,000 indels, and (2) tumors in which single-T
 insertions into poly-T tracts of 5 or more Ts plus single-T deletions from
 poly-T tracts of 6 or more Ts make up more than 50% of all indels (Table
-S17) and whose SigProfilerAssignment reconstruction had a cosine
+S16) and whose SigProfilerAssignment reconstruction had a cosine
 similarity < 0.9 to the 83-type or the 89-type spectrum. Both counts
 were taken from the spectra with repeat lengths capped at 9. For these
 `r ms_num$assign$n_msigact` tumors, which include

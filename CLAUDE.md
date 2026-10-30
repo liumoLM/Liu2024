@@ -13,11 +13,11 @@
     the column sums of `unified_indels_data/liu_et_al_83_spectra.tsv`.
 
 - **Sample metadata (cancer type, MSI status, etc.)**:
-  `sup_tables/sup_table_s17_sample_metadata.xlsx`
+  `sup_tables/sup_table_s16_sample_metadata.xlsx`
   - Key columns: `Patient`, `Major Cancer Type`, `MSI_status` (values `MSI` / `MSS`),
     `mutation_burden`, `cohort`, `Cancer Type`.
   - All 6975 Patient IDs match the column names in Table S11.
-  - Built by `build_sup_table_s17/build_sup_table_s17.R` in the code repo
+  - Built by `build_sup_table_s16/build_sup_table_s16.R` in the code repo
     from `sample_info.tsv` and `liu_et_al_83_spectra.tsv`.
 
 ## MSI-H and hypermutation definitions
@@ -25,7 +25,7 @@
 Decided on 2026-10-16 and 2026-10-17 (with Mo), and used everywhere in the
 paper and in `explore-attributions/`:
 
-- **MSI-H** is the MSIseq call: `MSIseq` in Table S17 (`MSI-H` /
+- **MSI-H** is the MSIseq call: `MSIseq` in Table S16 (`MSI-H` /
   `Non-MSI-H`), or `MSIseq_MSI.H` in `unified_indels_data/sample_info.tsv`
   (202 MSI-H tumors). Never use `MSI_status`, which holds the cohort calls
   from PCAWG and Hartwig clinical data (91 MSI). Those are not reliable.
@@ -34,10 +34,10 @@ paper and in `explore-attributions/`:
 - **Indel counts** always come from the spectra in `unified_indels_data`,
   which are clipped to repeat length R <= 9 (column sums of
   `liu_et_al_83_spectra.tsv`). Never use Table S11 column sums (which count
-  most indels twice) as indel counts. Since 2026-10-17, Table S17
+  most indels twice) as indel counts. Since 2026-10-17, Table S16
   `mutation_burden` and the poly-T ratio are computed from these spectra by
-  `build_sup_table_s17/build_sup_table_s17.R` in the code repo. Earlier
-  versions of S17 held larger counts from an older version of the data.
+  `build_sup_table_s16/build_sup_table_s16.R` in the code repo. Earlier
+  versions of S16 held larger counts from an older version of the data.
 
 Figure 4A is built with these rules by `build_fig4/all_cancer_types_enrichment.R`
 in the code repo. Tumors were refit with mSigAct if they had > 4,000 indels,
@@ -78,8 +78,8 @@ Since 2026-10-17, each figure and table in this repo has the same file name
 as its source in the code repo: number first, then a short description, all
 lower case with underscores. Examples: `main_figures/fig5.pdf` from
 `build_fig5/fig5.pdf`, `sup_figs/sup_fig_s4_replication_timing.pdf` from
-`build_fig_s4/`, and `sup_tables/sup_table_s17_sample_metadata.xlsx` from
-`build_sup_table_s17/`. A figure edited by hand comes from a source with a
+`build_fig_s4/`, and `sup_tables/sup_table_s16_sample_metadata.xlsx` from
+`build_sup_table_s16/`. A figure edited by hand comes from a source with a
 `_draft` suffix. Keep this rule for new or renumbered figures and tables, and
 rename in both repos. `sup_tables/` was `Sup Tables/` before that date.
 

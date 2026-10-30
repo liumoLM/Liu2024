@@ -20,7 +20,7 @@ OR_MIN  <- 5
 FDR_MAX <- 1e-3
 N_MIN   <- 25
 
-meta <- read_excel("sup_tables/sup_table_s17_sample_metadata.xlsx")
+meta <- read_excel("sup_tables/sup_table_s16_sample_metadata.xlsx")
 exp  <- read.delim(
   "sup_tables/sup_table_s11_83_89_signature_assignment.tsv",
   check.names = FALSE

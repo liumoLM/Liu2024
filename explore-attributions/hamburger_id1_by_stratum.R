@@ -33,7 +33,7 @@ HYPER_CUT <- 4000
 STRATUM_LEVELS <- c("MSS non-hypermutated", "MSI-H", "MSS hypermutated")
 
 meta <- as.data.frame(read_excel(
-  file.path(sup_dir, "sup_table_s17_sample_metadata.xlsx"),
+  file.path(sup_dir, "sup_table_s16_sample_metadata.xlsx"),
   sheet = "Sheet1"
 ))
 meta$major <- meta[["Major Cancer Type"]]

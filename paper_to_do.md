@@ -61,18 +61,18 @@ http://8.138.15.71/
   `liu_et_al_89_spectra.tsv` (found 2026-10-26). Decide whether to drop it
   from `sample_info.tsv` or find out why it has no spectrum.
 - Dig into the age and sex models in detail (the doc "Age and sex models
-  for Tables S15 and S16", https://claude.ai/artifact/X8iSQz1TiCAw89HgKkwHdM,
+  for Tables S15 and S16" (old numbers), https://claude.ai/artifact/X8iSQz1TiCAw89HgKkwHdM,
   exported as `age-and-sex-model.md`), and then review and rewrite the
   subsection "Demographic Associations with Sex and Age" in `ms.qmd` to
   match.
 - Presence thresholds differ: Figures 4A and S1 count a signature as
-  present above 5% of the tumor's indels, but Tables S15 and S16
+  present above 5% of the tumor's indels, but Tables S14 and S15
   (`presence_threshold <- 0.01` in `build_fig_s6/build_fig_s6_stats.R`) use
-  1%, and the S16 Spearman correlations use exposure > 0. Checked
-  2026-10-29 with exposures under 5% set to 0: all 10 S15 hits at q < 0.2
-  remain (plus Other / C_ID19), 39 of the 41 S16 by-cancer-type hits remain
+  1%, and the S15 Spearman correlations use exposure > 0. Checked
+  2026-10-29 with exposures under 5% set to 0: all 10 S14 hits at q < 0.2
+  remain (plus Other / C_ID19), 39 of the 41 S15 by-cancer-type hits remain
   (Colon C_ID4 / InsDel4 lost), and the age effects in the text are
-  unchanged. In the S16 cancer-type-adjusted models some FDR < 0.05 calls
+  unchanged. In the S15 cancer-type-adjusted models some FDR < 0.05 calls
   change (exposure 31 to 26, presence 17 to 15, burden-adjusted presence 16
   to 22), none cited in `ms.qmd`. Decide with the age and sex items whether
   to use 5% throughout.
@@ -82,7 +82,7 @@ http://8.138.15.71/
   the `sample_info.tsv` entry of the data repo README.
 - MSI status stated consistently (from `QUESTIONS_FOR_MO.md`, 2026-10-15).
   Following the decision to use only MSIseq: drop `MSI_status` from Table
-  S17 (as was done for Table S9; `build_sup_table_s17/build_sup_table_s17.R`
+  S16 (as was done for Table S9; `build_sup_table_s16/build_sup_table_s16.R`
   in the code repo), and cut the methods section "MSI/MSS status and
   high/low TMB status" in `ms.qmd`, which still describes the PCAWG and
   Hartwig cohort MSI calls (it is already marked "NEEDS DRASTIC CUTTING").
@@ -223,14 +223,14 @@ http://8.138.15.71/
   CPCT02340022T (13,340 vs 13,342). Open: confirm with Mo that he used
   mSigAct2 1.0.0 (github.com/Rozen-Lab/mSigAct2, branch v3.0.3-branch,
   commit b3e11fc) and mSigTools 1.0.8, then fix the methods (blue note).
-- Age and sex analyses (Tables S15 and S16, Figure S6), discussed in the
+- Age and sex analyses (Tables S14 and S15, Figure S6), discussed in the
   doc (see "Open: Steve"). Decide:
   - whether to use the joint models (age, sex, cohort, MSI-H, cancer type,
-    `build_fig_s6/age_sex_glm_prototype.R`) for Table S16, or keep the
+    `build_fig_s6/age_sex_glm_prototype.R`) for Table S15, or keep the
     age + cancer type models now in `build_fig_s6_stats.R`;
-  - whether to replace the Table S15 Fisher tests with per-type Firth
+  - whether to replace the Table S14 Fisher tests with per-type Firth
     logistic models adjusted for age, cohort and MSI-H
-    (`build_fig_s6/sex_glm_prototype.R`). The S15 associations at q < 0.2
+    (`build_fig_s6/sex_glm_prototype.R`). The S14 associations at q < 0.2
     all hold after adjustment;
   - what to do with sex and age associations in CNS, lymphoid and
     bone/soft tissue, which mix subtypes that differ in age, sex and
@@ -238,7 +238,7 @@ http://8.138.15.71/
     report with a caveat);
   - whether to follow up ID_N and InsDel_N_beta (strong age x cancer type
     interaction, exposure and presence in opposite directions);
-  - who writes the methods paragraph and the Table S16 legend.
+  - who writes the methods paragraph and the Table S15 legend.
 - MSIseq. Mini reran MSIseq on all 6,975 tumors (Mo's email "The new
   MSIseq result", 2026-10-23). The results, Mini's script
   (`run_MSIseq_overlap_6975.R`), the earlier 220-tumor script
@@ -248,7 +248,7 @@ http://8.138.15.71/
   and delete the folder). The new
   calls use a rule set by hand, S.ind > 0.4 and T.ind > 1.2: 204 MSI-H
   (202 before, 195 in both, 7 dropped, 9 added). Checked 2026-10-23: the
-  6,975 tumors are exactly those of Tables S11 and S17, and the indel count
+  6,975 tumors are exactly those of Tables S11 and S16, and the indel count
   per tumor behind T.ind (T.ind x 3,200) equals the cap-9 spectrum total
   for all of them, so the indel input matches the spectra. Steve emailed
   Mini and Mo (2026-10-23) asking whether `Hg19repeats.rda` is the MSIseq
@@ -261,7 +261,7 @@ http://8.138.15.71/
   `MSIseq.classify()`, how the two compare, and for
   `MSI_classified_overlap_6975.tsv`. Waiting for the answer. Then: adopt
   the new calls in `sample_info.tsv`, rebuild Figure 4A, Tables S9, S10,
-  and S17, update `ms_numbers.R` and `ms.qmd` (202 MSI-H, 200 of 202
+  and S16, update `ms_numbers.R` and `ms.qmd` (202 MSI-H, 200 of 202
   refit), the project CLAUDE.md, and the MSIseq methods (run on all
   tumors, the inputs, the classification rule, and Mo's request to drop
   the sentence on how the 4,000 cutoff was chosen). Also copy the script
@@ -297,8 +297,8 @@ http://8.138.15.71/
   routing?")
 
 - Redo the topography partial credit with the new assignments (needed for
-  Table S14, `all.indel.ID89.partial.credit.txt`). Mo sent version 1026 on
-  2026-10-26 (see the item on running ID89 r.01 to r.04 locally). Check
+  Tables S12 and S13, `all.indel.ID83.partial.credit.txt`). Mo sent version
+  1026 on 2026-10-26. Check
   that it uses the new assignments. Mo knows the new
   assignments are approved. Steve asked Mo (2026-10-23) whether Mini has the
   partial-credit information, how it is computed, and whether we have the
@@ -308,51 +308,7 @@ http://8.138.15.71/
   add_partial_credit.R` and `generate_partialcredit_match_file.R` in the
   code repo. Then Mini reruns r.01 to
   r.04 (the raw inputs are on the Huang-lab server), and we rerun r.05
-  onward (Tables S12 to S14, Figure 5, Figures S3 and S4).
-- Tentative decision (Steve, 2026-10-29): drop Table S14 and the 89-type
-  replication-timing sentences in `ms.qmd` (lines 704 to 709). The analysis
-  has no simulated control, so it cannot separate a signature's trend from
-  the general late-replication enrichment of indels. The alternatives were
-  to compare only the profiles of paired 83-type and 89-type signatures
-  (weak evidence, since the pairs are fitted to largely the same indels), or
-  to add 89-type simulations (SigProfilerSimulator keeps only the 83-type
-  spectrum, and the data are on the Huang-lab server). If adopted, Tables
-  S15 to S17 become S14 to S16 (rename in both repos and the manifests), and
-  the ID89 normalization question below no longer blocks submission.
-- Was the ID89 partial credit normalized? (Found 2026-10-29 running ID89
-  r.01 to r.04 and r.09 locally on the 1026 file.) The 1026 file differs
-  from what r.01 expects: no leading row-number column (r.01 drops column 1,
-  which would drop `Sample`), `region` instead of `dna.region`, 42 signature
-  columns (no InsDel15, InsDel16, or InsDel19c, as in the new assignments),
-  and raw values, not per-indel fractions (sums from 0.12 to 13,178 per
-  indel). The run used local copies adapted for this, with each row
-  normalized as `normalize.sh` does for ID83. Its r.04 matrix
-  (`tissue.rtGroup.Mutation_50cutoff.xlsx`) does not match Mini's: 16.1
-  million counts vs. 56.6 million, cell correlation 0.07. Mini's matrix
-  cannot come from normalized values: with fractions, at most one signature
-  per indel exceeds 0.5 (at most 18.5 million counts), but it has about 3 per
-  indel (InsDel2a alone 12.0 million). So the old Table S14 input seems to
-  have been raw partial credit cut at 0.5, while the methods in `ms.qmd`
-  (lines 1151, 1156, and 1202) say "probability greater than 0.5". Counting
-  raw 1026 values > 0.5 does not match Mini's matrix either (83.8 million,
-  ratios 0.17 to 439 by signature), partly because the assignments changed.
-  Ask Mo and Mini:
-  1. Was the old ID89 partial-credit file (the input to Table S14)
-     normalized per indel? `normalize.sh` exists only for ID83.
-  2. What are the values in the 1026 files (exposure times signature
-     probability, or something else)? They are not per-indel fractions.
-  3. Is "probability > 0.5", as in the methods, what was intended, and does
-     the ID83 pipeline (which normalizes) follow it?
-  The ID83 matrices from Mini (`ID83_topography_analysis_code/
-  04_create4InfMatrix/`) are consistent with normalized values: the
-  observed rtGroup and DNA.region matrices total 17.0 million counts (fewer
-  than the about 18.5 million indels), and the simulated ones 187 million
-  (about 10 simulations times that). So the problem seems limited to ID89.
-  If the old Table S14 came from unnormalized values, Table S14 and the
-  ID89 replication-timing results must be redone. The intermediate files of
-  the local run (about 28 GB, controlled access) are kept in
-  `~/MEGA/important_mut_sig_data/id89_topography_run_2026-10-29/`
-  for a rerun.
+  onward (Tables S12 and S13, Figure 5, Figures S3 and S4).
 - The topography code keeps indels in genes on both strands (114,297
   indels, 0.6%), although the methods say they were ignored. Mo is probably
   redoing the simulations and analysis with code that drops them, with
@@ -368,6 +324,21 @@ http://8.138.15.71/
   paper and the DOI) to https://indelsig.net and the GitHub README.
 
 ## Done
+
+- 2026-10-30: Table S14 (89-type replication timing) dropped, with the
+  89-type replication-timing sentences in `ms.qmd` and
+  `ID89_topography_analysis_code/` and `build_sup_table_s14/` in the code
+  repo. The analysis had no simulated control, so it could not separate a
+  signature's trend from the general late-replication enrichment of
+  indels. Tables S15 to S17 became S14 to S16 in both repos, the manifest,
+  `ms_numbers.R` (`ms_num$s15` is now `ms_num$s14`), `data_flow/`, the
+  project CLAUDE.md, and `explore-attributions/`. Table numbers in the Done
+  items below and in older notes are the old ones. The question whether the
+  ID89 partial credit was normalized (found 2026-10-29: the old r.04 matrix
+  had about 3 counts per indel, so it could not come from per-indel
+  fractions) no longer matters for the paper. The local ID89 run (28 GB,
+  controlled access) is in
+  `~/MEGA/important_mut_sig_data/id89_topography_run_2026-10-29/`.
 
 - 2026-10-29: Figure S1 dots. The mSigAct refits added 118 dots and removed
   12 (923 to 1,029), 84 of the added from 1 to 3 tumors. 102 of the 119

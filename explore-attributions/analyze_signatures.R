@@ -1,9 +1,9 @@
 # Analyses #1 (MSI vs MSS per major cancer type) and #2 (signature pairwise
-# co-occurrence) on Table S11 + Table S17.
+# co-occurrence) on Table S11 + Table S16.
 #
 # Inputs (same folder as this script):
 #   sup_table_s11_83_89_signature_assignment.tsv
-#   sup_table_s17_sample_metadata.xlsx
+#   sup_table_s16_sample_metadata.xlsx
 #
 # Outputs (same folder):
 #   analysis1_msi_vs_mss.csv       per-signature, per-Major-Cancer-Type MSI vs MSS Fisher test
@@ -40,7 +40,7 @@ MIN_GROUP_N <- 5  # min positives + negatives in each contingency cell row total
 # ---- Load data ----
 message("Loading metadata")
 meta <- as.data.frame(read_excel(
-  file.path(sup_dir, "sup_table_s17_sample_metadata.xlsx"),
+  file.path(sup_dir, "sup_table_s16_sample_metadata.xlsx"),
   sheet = "Sheet1"
 ))
 stopifnot(all(c("Patient", "Major Cancer Type", "MSIseq") %in% colnames(meta)))

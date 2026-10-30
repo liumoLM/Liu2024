@@ -23,7 +23,7 @@ sup_dir  <- file.path(this_dir, "..", "sup_tables")
 HYPER_CUT <- 4000
 
 meta <- as.data.frame(read_excel(
-  file.path(sup_dir, "sup_table_s17_sample_metadata.xlsx"),
+  file.path(sup_dir, "sup_table_s16_sample_metadata.xlsx"),
   sheet = "Sheet1"
 ))
 meta$major <- meta[["Major Cancer Type"]]

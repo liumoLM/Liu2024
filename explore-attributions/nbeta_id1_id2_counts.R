@@ -24,7 +24,7 @@ HYPER_CUT <- 4000
 PRESENCE_FRAC <- 0.01
 
 meta <- as.data.frame(read_excel(
-  file.path(sup_dir, "sup_table_s17_sample_metadata.xlsx"),
+  file.path(sup_dir, "sup_table_s16_sample_metadata.xlsx"),
   sheet = "Sheet1"
 ))
 meta$major <- meta[["Major Cancer Type"]]

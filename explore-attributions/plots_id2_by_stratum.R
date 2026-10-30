@@ -36,7 +36,7 @@ STRATUM_COLORS <- c("MSS non-hypermutated" = "#1f78b4",
                     "MSS hypermutated"     = "#ff7f00")
 
 meta <- as.data.frame(read_excel(
-  file.path(sup_dir, "sup_table_s17_sample_metadata.xlsx"),
+  file.path(sup_dir, "sup_table_s16_sample_metadata.xlsx"),
   sheet = "Sheet1"
 ))
 meta$major <- meta[["Major Cancer Type"]]

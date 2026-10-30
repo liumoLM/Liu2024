@@ -13,7 +13,7 @@
 #
 # Inputs:
 #   ../sup_tables/sup_table_s11_83_89_signature_assignment.tsv
-#   ../sup_tables/sup_table_s17_sample_metadata.xlsx
+#   ../sup_tables/sup_table_s16_sample_metadata.xlsx
 
 suppressPackageStartupMessages({
   library(readxl)
@@ -42,7 +42,7 @@ HYPER_CUT     <- 4000  # indels per sample (spectrum total)
 # ---- Load ----
 message("Loading metadata")
 meta <- as.data.frame(read_excel(
-  file.path(sup_dir, "sup_table_s17_sample_metadata.xlsx"),
+  file.path(sup_dir, "sup_table_s16_sample_metadata.xlsx"),
   sheet = "Sheet1"
 ))
 meta$major <- meta[["Major Cancer Type"]]

@@ -6,7 +6,7 @@
 #       Tab-separated matrix; first column is the signature name (e.g.
 #       "ID_K/InsDel_K"), remaining columns are bare sample IDs with mutation
 #       counts attributed to that signature.
-#   sup_table_s17_sample_metadata.xlsx
+#   sup_table_s16_sample_metadata.xlsx
 #       Sheet "Sheet1" with columns including "Patient", "Cancer Type", and
 #       "MSIseq" ("MSI-H"/"Non-MSI-H").
 #
@@ -25,7 +25,7 @@ library(scales)
 library(argparser)
 library(readxl)
 
-p <- arg_parser("Hamburger plots from sup_tables S10 + S17")
+p <- arg_parser("Hamburger plots from sup_tables S10 + S16")
 p <- add_argument(
   p,
   "--min-fraction",
@@ -57,14 +57,14 @@ assignment_file <- file.path(
 )
 metadata_file <- file.path(
   sup_dir,
-  "sup_table_s17_sample_metadata.xlsx"
+  "sup_table_s16_sample_metadata.xlsx"
 )
 output_file <- file.path(
   this_dir,
   sprintf("Table_S10_hamburger_plots_mf%s.pdf", args$min_fraction)
 )
 
-# Load sample metadata from S17
+# Load sample metadata from S16
 message("Loading metadata from: ", metadata_file)
 sample_info <- as.data.frame(read_excel(metadata_file, sheet = "Sheet1"))
 # Normalize column names we depend on
@@ -348,7 +348,7 @@ assignment_matrix <- read.delim(
   check.names = FALSE
 )
 
-# Prefix column names with "CancerType::" using the S17 lookup
+# Prefix column names with "CancerType::" using the S16 lookup
 ctype <- sample_info$Cancer_Type[
   match(colnames(assignment_matrix), sample_info$Patient)
 ]
