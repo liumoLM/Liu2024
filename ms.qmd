@@ -640,18 +640,17 @@ SBS mutational signatures
 In
 83-type signatures associated with defective endogenous mutational
 processes, enriched mutations on the untranscribed strand were
-observed for C_ID1 (slippage during DNA replication)
-[this contradicts a statment about id14 no slipage difference
-between untranscribed / transcribed strands]{.blue}
-and C_ID5
+observed for C_ID5
 (clock-like signature).
 Enrichment for mutations on the transcribed
 strand were observed for ID_F (topoisomerase-1 \[TOP1\] associated
 mutagenesis stemming from RNase H2 deficiency). 
-In addition, two
-signatures associated with defective MMR, C_ID7 and ID_K,
-had transcription strand asymmetries.
-[what are these, and what direction are these?]{.blue}
+In addition, ID_K was enriched on the transcribed strand.
+
+[Changed with the topography rerun of 2026-10-30 (Mini Huang): C_ID1 and
+C_ID7 no longer show transcription strand asymmetry, so they were removed
+from this paragraph. The notes below that discuss C_ID1 and C_ID7 refer to
+the earlier run.]{.blue}
 
 [Needs review: The statements in the paragraph above that mutations are "enriched on the transcribed strand" or "on the untranscribed strand" (C_ID13, C_ID1, C_ID5, ID_F) use the pyrimidine-strand shorthand of Otlu et al. 2023 (<https://doi.org/10.1016/j.celrep.2023.112930>) without saying so. The C_ID3/C_ID18 sentence has been rewritten in terms of adducted purines, and the C_ID14 sentence no longer states a direction. Also, "This is because UV damage occurs on cytosine rather than guanine" is not correct as written (UV damages adjacent pyrimidines, C or T) and garbles Otlu et al.'s "consistent with damage from ultraviolet light on cytosine". See the note in the Figure 5 legend.]{.blue}
 
@@ -675,7 +674,7 @@ link between POLE proofreading defects and leading-strand mutagenesis.
 the asymmetry means for the indels; is this 1bp T deletions from shorter
 stre]{.blue}
 
-[Note: Figure 5 (main_figures/fig5.pdf) is now a copy of build_fig5/fig5.pdf in the code repo. Its panels A to C use the topography pipeline's labels (build_fig5/assign_asymmetry_type.R), which also underlie Figure S3, including ID_K on the leading strand. This changed two signatures relative to the earlier hand-edited Figure 5. In panel B, ID_L is now Lagging (its only cancer type with P < 0.05 is Pancreas, lagging). In panel C, ID_B is now Mix (8 cancer types with P < 0.05 are intergenic and 1, Breast, is genic). Mini confirmed by email on 2026-10-07 that repli.strand = -1 is the lagging strand and that the pipeline's leading/lagging orientation (as in Figure S3B) is correct.]{.blue}
+[Note: Figure 5 (main_figures/fig5.pdf) is now a copy of build_fig5/fig5.pdf in the code repo. Its panels A to C use the topography pipeline's labels (build_fig5/assign_asymmetry_type.R), which also underlie Figure S3, including ID_K on the leading strand. This changed two signatures relative to the earlier hand-edited Figure 5. In panel B, ID_L is now Lagging (its only cancer type with P < 0.05 is Pancreas, lagging). In panel C, ID_B is now Mix (8 cancer types with P < 0.05 are intergenic and 1, Breast, is genic). Mini confirmed by email on 2026-10-07 that repli.strand = -1 is the lagging strand and that the pipeline's leading/lagging orientation (as in Figure S3B) is correct. Since 2026-10-30, panels A and C use Mini's rerun and her corrected summary rule (only cancer types with P < 0.05 and odds ratio > 1.1 count), and ID_B is Genic in panel C. Panel B still uses the earlier run, with the corrected rule, until Mini sends the new simulated replication-strand matrix.]{.blue}
 
 We also examined the mutation enrichment of 83-type signatures in
 genic and intergenic regions (Figure S3C). Most signatures showed
@@ -684,19 +683,30 @@ enrichment in genic regions (Figure [-@fig-topo]C). Among the `r ms_num$topo$reg
 signatures, [three were]{.pink} associated with defective endogenous
 mutational processes, including C_ID8 (repair of DNA double strand
 breaks by NHEJ), [C_ID17 (]{.pink}TOP2A K743N mediated mutagenesis) and ID_F
-(TOP1-mediated mutagenesis). Another 3 signatures with mutations
-enriched in genic regions were of unknown etiology (C_ID4, ID_E and
+(TOP1-mediated mutagenesis). Another 4 signatures with mutations
+enriched in genic regions were of unknown etiology (C_ID10, ID_B, ID_E and
 ID_L).
+
+[Changed with the topography rerun of 2026-10-30: C_ID10 and ID_B are now
+genic, and C_ID4 is now Mix. Confirm that C_ID10 and ID_B are of unknown
+etiology.]{.blue}
 
 The effect of DNA replication timing was also observed in many 83-type
 signatures (Figure [-@fig-topo]D, Figure S4, Table S13). Most
 signatures were consistently enriched in late-replicating regions
-across different cancer types, while only two signatures, C_ID10 and
-C_ID17 (TOP2A K743N mediated mutagenesis), showed enrichment in
-early-replicating regions. [Five signatures were unaffected by
-replication timing in the majority of cancers presenting them:]{.green} C_ID1 (Slippage during DNA replication), C_ID5
-(Clock-like signature), C_ID18 (Colibactin exposure), and two
-defective MMR signatures (C_ID7 and ID_K). Interestingly, several
+across different cancer types, while only two signatures, C_ID17
+(TOP2A K743N mediated mutagenesis) and ID_L, showed enrichment in
+early-replicating regions. [Two signatures were unaffected by
+replication timing in the majority of cancers presenting them:]{.green} C_ID1 (Slippage during DNA replication) and C_ID5
+(Clock-like signature).
+
+[Changed with the topography rerun of 2026-10-30: C_ID10 is no longer
+consistently early (it increases in 3 cancer types and decreases in 1), ID_L
+is now early (Stomach only), and C_ID7, C_ID18, and ID_K are no longer flat
+in most cancer types (C_ID7 increases in all 13, C_ID18 in 2 of 3, and ID_K
+is decreasing in 1 and flat in 1).]{.blue}
+
+Interestingly, several
 signatures showed cancer-specific enrichment in replication timing,
 including C_ID8 (Repair of DNA double strand breaks by NHEJ) and ID_F
 (TOP1-mediated mutagenesis). For example, ID_F showed enriched
@@ -1172,9 +1182,11 @@ simulated strand ratio, inverted when needed so that it is ≥ 1,
 together with the direction of the asymmetry. A cancer type was
 considered to show asymmetry for a signature if P \< 0.05. Figure
 [-@fig-topo] summarizes each signature over the cancer types with
-P \< 0.05: it is labeled with the shared direction if they all agree,
-as "Mix" if they do not, and is not shown if no cancer type has
-P \< 0.05 and an odds ratio ≥ 1.1. P values were not adjusted for
+P \< 0.05 and an odds ratio \> 1.1: it is labeled with the shared
+direction if they all agree, as "Mix" if they do not, and is not shown if
+there are no such cancer types. Circle sizes show the proportion of
+evaluated cancer types with P \< 0.05 and an odds ratio at or above each
+threshold. P values were not adjusted for
 multiple testing.]{.green}
 
 For example, for genic versus intergenic regions in one cancer type,
@@ -1504,7 +1516,7 @@ are the numbers of cancer types in which it increases, decreases, or is
 flat. Green indicates a signature that increases from early to late
 replication in every such cancer type (C_ID3). Yellow indicates one that
 decreases in every such cancer type (C_ID17). Purple indicates one that
-is flat in more than half of them (ID_K). Blue indicates inconsistent
+is flat in more than half of them (C_ID1). Blue indicates inconsistent
 trends (ID_F). The last two panels show ID_F in two single cancer types
 with opposite trends, bladder (increasing) and skin (decreasing).]{.green}
 

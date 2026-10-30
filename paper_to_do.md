@@ -306,11 +306,32 @@ http://8.138.15.71/
   code repo. Then Mini reruns r.01 to
   r.04 (the raw inputs are on the Huang-lab server), and we rerun r.05
   onward (Tables S12 and S13, Figure 5, Figures S3 and S4).
+  2026-10-30: Mini sent the rerun ("rerun topography results", 2026-10-30,
+  with `ID83-results.zip` holding the new r.04 to r.10 outputs, and the
+  updated plotting scripts `r.10_proportion_bubbleplot.R` and
+  `r.signature_summary.R`). Mini reports changed results: C_ID1 and C_ID7
+  no longer show transcription-strand enrichment, 7 signatures are
+  enriched in genic regions, and C_ID7, C_ID18, and ID_K are no longer flat
+  in replication timing. Done (2026-10-30) except replication strand: the
+  new r.04 matrices are in the code repo, r.05, r.06, and r.09 reproduce
+  Mini's outputs exactly from them, `build_fig5/assign_asymmetry_type.R`
+  uses Mini's corrected summary rule and reproduces her tables, Figures 5,
+  S3, and S4 and Tables S12 and S13 were rebuilt and copied here, and the
+  `ms.qmd` text was updated (blue notes mark the changes). Figure 5D now
+  shows C_ID1 instead of ID_K as the flat example, since ID_K is no longer
+  flat. Check: the etiologies of C_ID10 and ID_B, which are now genic (blue
+  note in `ms.qmd`). Waiting (2026-10-30): `ID83-results.zip` has the new
+  mutation matrix for replication strand but not the new simulated one
+  (`04_create4InfMatrix/repli.strand/tissue.repli.strand.Simulated_50cutoff.xlsx`).
+  Steve asked Mini for it. Until it arrives, the replication-strand results
+  (Figure 5B, Figure S3B, Table S12) stay at the old run; the other parts
+  of the topography use the rerun.
 - The topography code keeps indels in genes on both strands (114,297
   indels, 0.6%), although the methods say they were ignored. Mo is probably
   redoing the simulations and analysis with code that drops them, with
   Mini. Rerun the downstream topography tables and figures when that
-  arrives.
+  arrives. Waiting (2026-10-30): Steve assumes Mini's rerun of 2026-10-30
+  drops the indels in genes on both strands, and is checking with Mini.
 
 ## Open: Xueming
 
