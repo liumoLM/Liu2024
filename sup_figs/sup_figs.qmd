@@ -71,7 +71,9 @@ types**
 :::
 
 The size (radius) of each dot represents the proportion of genomes of
-the given cancer type with activity of the signature. A dot is omitted
+the given cancer type with activity of the signature. A genome counts as
+having activity of a signature only if the signature accounts for at
+least 5% of the genome's indels, as in Figure 4A. A dot is omitted
 when 10% or fewer of the genomes have activity of the signature and the
 mean is below 0.03 mutations per megabase. The color indicates the mean
 number of mutations per megabase attributed to the signature, among the
