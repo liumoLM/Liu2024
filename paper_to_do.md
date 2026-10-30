@@ -214,6 +214,12 @@ http://8.138.15.71/
   that, for all tumors, the 83-type exposures are the 89-type exposures
   summed over the 89-to-83 mapping (checked: exact for all 6,975 tumors in
   `liu_et_al_8?_assignment.tsv`).
+  Open: check that the selection step of `run_mSigAct_refit.R` (>= 4,000
+  indels, or poly-T ratio > 0.5 and SPA reconstruction cosine < 0.9)
+  selects exactly the 731 tumors in
+  `assignments_2026-10-19/mSigAct.reanalyzed.samples.txt`. This needs the
+  SigProfilerAssignment output, so rerun `run_SigProfilerAssignment.py`
+  first (about 20 minutes).
 - Age and sex analyses (Tables S14 and S15, Figure S6), discussed in the
   doc (see "Open: Steve"). Decide:
   - whether to use the joint models (age, sex, cohort, MSI-H, cancer type,
@@ -287,21 +293,6 @@ http://8.138.15.71/
 
 ## Open: Mo (and Mini)
 
-- Mo: update the assignment code for the assignments of 2026-10-19. The
-  code is in the code repo (`Extraction_and_assignment_code/
-  SigProfilerAssignment.py` and `mSigAct.R`, both on the 172-type catalog,
-  run on example data), but:
-  - the comments in both scripts and their README still give the old
-    routing rule (TMB >= 5,000, or Ins:1:T:5+ and Del:1:T:5+ >= 90%), not
-    the new one (> 4,000 indels, or poly-T ratio > 0.5 and reconstruction
-    cosine similarity < 0.9 in the 83-type or 89-type fit);
-  - there is no code for selecting the 731 tumors (`mSigAct.R` says "here
-    only shows an example");
-  - `SigProfilerAssignment.py` sets no random seed, which Mo thinks is why
-    the earlier assignments could not be reproduced.
-  (From `QUESTIONS_FOR_MO.md`, 2026-10-15: "Is there a list or code for the
-  routing?")
-
 - Redo the topography partial credit with the new assignments (needed for
   Tables S12 and S13, `all.indel.ID83.partial.credit.txt`). Mo sent version
   1026 on 2026-10-26. Check
@@ -331,6 +322,13 @@ http://8.138.15.71/
 
 ## Done
 
+- 2026-10-30: closed "Mo: update the assignment code for the assignments
+  of 2026-10-19". Its three points no longer apply: the scripts and README
+  in `Extraction_and_assignment_code/` give the new routing rule; the
+  selection of the 731 tumors is coded in `run_mSigAct_refit.R` (whether it
+  reproduces the list is the open part of the mSigAct item); and
+  `run_SigProfilerAssignment.py` reproduces the exposures of all 6,244
+  tumors that are not refit, although it sets no random seed.
 - 2026-10-30: closed (Table S14 dropped). Steve (2026-10-25): get the inputs
   for running the ID89 topography steps
   r.01 to r.04 locally, so we can test them, including Mini's corrected
