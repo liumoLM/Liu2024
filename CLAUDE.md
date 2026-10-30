@@ -14,8 +14,9 @@
 
 - **Sample metadata (cancer type, MSI status, etc.)**:
   `sup_tables/sup_table_s16_sample_metadata.xlsx`
-  - Key columns: `Patient`, `Major Cancer Type`, `MSI_status` (values `MSI` / `MSS`),
-    `mutation_burden`, `cohort`, `Cancer Type`.
+  - Key columns: `Patient`, `Major Cancer Type`, `MSIseq` (values `MSI-H` /
+    `Non-MSI-H`), `mutation_burden`, `cohort`, `Cancer Type`. `MSI_status`
+    (the cohort calls) was dropped on 2026-10-30.
   - All 6975 Patient IDs match the column names in Table S11.
   - Built by `build_sup_table_s16/build_sup_table_s16.R` in the code repo
     from `sample_info.tsv` and `liu_et_al_83_spectra.tsv`.

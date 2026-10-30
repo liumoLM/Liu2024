@@ -81,9 +81,10 @@ http://8.138.15.71/
   data availability statement and for the header of `build_all_meta.R` and
   the `sample_info.tsv` entry of the data repo README.
 - MSI status stated consistently (from `QUESTIONS_FOR_MO.md`, 2026-10-15).
-  Following the decision to use only MSIseq: drop `MSI_status` from Table
-  S16 (as was done for Table S9; `build_sup_table_s16/build_sup_table_s16.R`
-  in the code repo), and cut the methods section "MSI/MSS status and
+  Following the decision to use only MSIseq: done (2026-10-30), `MSI_status`
+  dropped from Table S16 (as was done for Table S9). The exploratory scripts
+  `explore-attributions/reproduce_fig5_panelC_{original,Mo}.R` read
+  `MSI_status` from Table S16 and no longer run. Still to do: cut the methods section "MSI/MSS status and
   high/low TMB status" in `ms.qmd`, which still describes the PCAWG and
   Hartwig cohort MSI calls (it is already marked "NEEDS DRASTIC CUTTING").
 - Check the Figure S1 legend, then review all supplementary figure legends.
