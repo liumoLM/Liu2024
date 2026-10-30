@@ -130,11 +130,10 @@ http://8.138.15.71/
     6,243 of the 6,244 tumors not refit with mSigAct match Mo's
     assignments (`liu_et_al_89_assignment.tsv`) exactly. CPCT02010349T (144 indels,
     cosine 0.47) is InsDel5a in the rerun and InsDel19a in Mo's assignments.
-    On Mo's advice the rerun's values were adopted on 2026-10-26. Open:
-    `mSigAct.R` refits all tumors and does not merge results. The code that
-    merged the refits is not in the code repo (the selection rule
-    reproduces the 731 tumors exactly).
-    See the two items of 2026-10-25 under "Open: Steve with Mo".
+    On Mo's advice the rerun's values were adopted on 2026-10-26. The
+    selection rule reproduces the 731 tumors exactly. Fixed (2026-10-30):
+    `mSigAct.R` was replaced by `run_mSigAct_refit.R`, which selects,
+    refits, and merges.
   - Fixed (2026-10-24): the data repo had a copy of
     `make_connection_table.R` that sourced a `code/` folder that no longer
     exists. Deleted. The data repo README now points to the code repo's
@@ -144,8 +143,8 @@ http://8.138.15.71/
     220-tumor script, which cannot run (undefined objects, a `source()` path
     from `/`, inputs not in the repo) and which nothing reads. Moved to
     `msiseq/likely_dead_msiseq_code/prev-run-MSIseq.R` with a header, and
-    `msiseq/README.md` added. The script behind the adopted calls goes in
-    `msiseq/` after the MSIseq item under "Open: Steve with Mo" is settled.
+    `msiseq/README.md` added. Fixed (2026-10-30): the script behind the
+    adopted calls is `msiseq/call_msi_h.R`.
   - Fixed (2026-10-24): three topography scripts stopped with errors or
     pointed at the wrong data. `r.03_mergeInf_simulation.R` (ID83) ended in a
     shell command, now commented out. The ID89 `r.09_barplot.R` now ends
@@ -201,25 +200,6 @@ http://8.138.15.71/
 
 ## Open: Steve with Mo
 
-- mSigAct refit (added 2026-10-25, spot checked 2026-10-26). Mo's code
-  (`mSigAct_for_rerun.R`, from his email of 2026-10-26) is cleaned up
-  as `Extraction_and_assignment_code/run_mSigAct_refit.R` in the code repo,
-  replacing `mSigAct.R`. It refits only the 89-type part of the spectrum and
-  doubles the exposures. Run on 16 of the 731 refit tumors, it reproduced
-  all their exposures in `liu_et_al_8?_assignment.tsv`, except InsDel1b of
-  CPCT02340022T (13,340 vs 13,342). Mo confirmed (2026-10-30) that he used
-  mSigAct2 1.0.0 (github.com/Rozen-Lab/mSigAct2, branch v3.0.3-branch,
-  commit b3e11fc) and mSigTools 1.0.8. Done (2026-10-30): the methods give
-  these versions and say that mSigAct refit only the 89-type spectrum and
-  that, for all tumors, the 83-type exposures are the 89-type exposures
-  summed over the 89-to-83 mapping (checked: exact for all 6,975 tumors in
-  `liu_et_al_8?_assignment.tsv`).
-  Open: check that the selection step of `run_mSigAct_refit.R` (>= 4,000
-  indels, or poly-T ratio > 0.5 and SPA reconstruction cosine < 0.9)
-  selects exactly the 731 tumors in
-  `assignments_2026-10-19/mSigAct.reanalyzed.samples.txt`. This needs the
-  SigProfilerAssignment output, so rerun `run_SigProfilerAssignment.py`
-  first (about 20 minutes).
 - Age and sex analyses (Tables S14 and S15, Figure S6), discussed in the
   doc (see "Open: Steve"). Decide:
   - whether to use the joint models (age, sex, cohort, MSI-H, cancer type,
@@ -343,6 +323,21 @@ http://8.138.15.71/
 
 ## Done
 
+- 2026-10-30: closed. mSigAct refit (added 2026-10-25, spot checked 2026-10-26). Mo's code
+  (`mSigAct_for_rerun.R`, from his email of 2026-10-26) is cleaned up
+  as `Extraction_and_assignment_code/run_mSigAct_refit.R` in the code repo,
+  replacing `mSigAct.R`. It refits only the 89-type part of the spectrum and
+  doubles the exposures. Run on 16 of the 731 refit tumors, it reproduced
+  all their exposures in `liu_et_al_8?_assignment.tsv`, except InsDel1b of
+  CPCT02340022T (13,340 vs 13,342). Mo confirmed (2026-10-30) that he used
+  mSigAct2 1.0.0 (github.com/Rozen-Lab/mSigAct2, branch v3.0.3-branch,
+  commit b3e11fc) and mSigTools 1.0.8. Done (2026-10-30): the methods give
+  these versions and say that mSigAct refit only the 89-type spectrum and
+  that, for all tumors, the 83-type exposures are the 89-type exposures
+  summed over the 89-to-83 mapping (checked: exact for all 6,975 tumors in
+  `liu_et_al_8?_assignment.tsv`).
+  The selection rule reproduces the 731 tumors exactly (checked
+  2026-10-26, recorded under the data_flow item).
 - 2026-10-30: closed "Mo: update the assignment code for the assignments
   of 2026-10-19". Its three points no longer apply: the scripts and README
   in `Extraction_and_assignment_code/` give the new routing rule; the
