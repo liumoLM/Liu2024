@@ -1229,7 +1229,8 @@ MSIseq to predict the MSI status of all tumors.[{.mark}]
 It must give the MSIseq version (1.0.0), the inputs (SBS and indel VCFs of
 all 6,975 tumors, indels capped at repeat length 9, `uniform.seq.len` =
 3,200), and the classification rule with its justification. The current
-calls use S.ind > 0.4 and T.ind > 1.2 (204 MSI-H), set by hand. MSIseq's
+calls use S.ind > 0.4 and T.ind > 1.2 (204 MSI-H), applied by
+`msiseq/call_msi_h.R` in the code repo (from Mo, 2026-10-30). MSIseq's
 own classifier, `MSIseq.classify()`, is the single split S.ind > 0.394737
 (274 MSI-H), so the added T.ind > 1.2 drops 70 borderline tumors. See the
 MSIseq item in `paper_to_do.md`.]{.blue}

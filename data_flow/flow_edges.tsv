@@ -671,3 +671,6 @@ code:Extraction_and_assignment_code/make_extraction_examples.R	ext:Extraction_an
 ext:Extraction_and_assignment_code/example_input/example.89type.Bladder.txt	code:Extraction_and_assignment_code/run_SigProfilerExtractor.py	reads	
 code:Extraction_and_assignment_code/run_SigProfilerExtractor.py	ext:Extraction_and_assignment_code/example_input/example.89type.Bladder/	writes	
 ext:Extraction_and_assignment_code/example_input/mSigHdp.example.89type.catalog.tsv	code:Extraction_and_assignment_code/mSigHdp.R	reads	
+code:find_data.R	code:msiseq/call_msi_h.R	reads	source
+data:new-mini-msi-calls/mutationNum_overlap_6975.tsv	code:msiseq/call_msi_h.R	reads	argparser default --in-file find_data()
+code:msiseq/call_msi_h.R	code:msiseq/msi_h_calls.tsv	writes	argparser default --out

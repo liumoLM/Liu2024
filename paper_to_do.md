@@ -260,13 +260,19 @@ http://8.138.15.71/
   set through `find_data.R`, and add it to `data_flow/`.
   Found 2026-10-29: no code applies the S.ind > 0.4 and T.ind > 1.2 rule.
   Mini's script calls `MSIseq.classify()`, and the rule column was added by
-  hand. `MSIseq.classify()` has no threshold argument. Its built-in
+  hand. Done (2026-10-30): Mo sent the code that applies the rule. It is
+  `msiseq/call_msi_h.R` in the code repo, which reads
+  `new-mini-msi-calls/mutationNum_overlap_6975.tsv` through `find_data()`,
+  writes `msiseq/msi_h_calls.tsv`, and reproduces the hand-added column
+  exactly (204 MSI-H; 195 in both, 7 dropped, 9 added vs. `sample_info.tsv`;
+  197 of the 204 are among the 731 mSigAct refits). It is in `data_flow/`.
+  Still open: why T.ind > 1.2 was added and how 1.2 was chosen. `MSIseq.classify()` has no threshold argument. Its built-in
   classifier (MSIseq 1.0.0) is the single split S.ind > 0.394737, which gives
   274 MSI-H on our tumors. The rule's 204 are a subset of these, so the added
   T.ind > 1.2 drops 70 borderline tumors. To ask Mo at the meeting of
   2026-10-29 (`questions_for_mo_2026-10-29.md`). Once decided, the methods
   and the code repo's `msiseq/README.md` must give the rule and its
-  justification, and the rule must be applied in code, not by hand. TO DO
+  justification. TO DO
   stubs are in both (blue note in the `ms.qmd` section "MSI/MSS status and
   high/low TMB status").
 
