@@ -1035,7 +1035,12 @@ study.
 To leverage the resolution of both the 83-type and 89-type mutational
 signatures, we constructed a unified 172-type reference set and
 applied SigProfilerAssignment (v0.2.3) to decompose the 172-type spectra of all
-tumors. Two groups of tumors often have very sparse spectra, which
+tumors. Each 172-type spectrum is the tumor's 83-type spectrum joined to its
+89-type spectrum. Each signature in the 172-type reference set is an 89-type
+signature joined to the 83-type signature it corresponds to, so each tumor
+receives one exposure per 89-type signature. The 83-type exposure of a tumor
+is the sum of the exposures of the 89-type signatures that map to that
+83-type signature. Two groups of tumors often have very sparse spectra, which
 SigProfilerAssignment may not fit well. We refit these tumors with
 mSigAct: (1) tumors with > 4,000 indels, and (2) tumors in which single-T
 insertions into poly-T tracts of 5 or more Ts plus single-T deletions from
@@ -1048,24 +1053,17 @@ were taken from the spectra with repeat lengths capped at 9. For these
 tumors, mSigAct estimated likelihoods under a multinomial
 distribution. This was performed in a two-step computational
 framework. First, we applied the find_best_reconstruction_QP function
-from the mSigTools R package (v1.0.7), which performs fast signature
+from the mSigTools R package (v1.0.8,
+<https://github.com/Rozen-Lab/mSigTools>), which performs fast signature
 attribution via quadratic programming optimization. Second, we refined
 these initial estimates using the PresenceAttributeSigActivity
-function from the mSigAct R package. Final signature assignments were
+function from the mSigAct2 R package (v1.0.0,
+<https://github.com/Rozen-Lab/mSigAct2>). Final signature assignments were
 obtained by integrating results from SigProfilerAssignment for the
 other `r ms_num$assign$n_spa_only` tumors and mSigAct for these
-`r ms_num$assign$n_msigact` tumors.
-
-[Note (2026-10-26): Mo's mSigAct code, cleaned up as
-`Extraction_and_assignment_code/run_mSigAct_refit.R` in the code repo,
-reproduces the assignments of 16 spot-checked refit tumors. It shows that
-mSigAct refit only the 89-type spectrum with the 89-type signatures, and the
-83-type exposures were obtained by summing the 89-type exposures through the
-89-to-83 signature mapping. The text above should say so. The package was
-mSigAct2 1.0.0 (https://github.com/Rozen-Lab/mSigAct2, branch v3.0.3-branch),
-not "the mSigAct R package", and the spot check used mSigTools 1.0.8, not
-v1.0.7 (mSigAct2 requires 1.0.8 or later). Steve is confirming the versions
-with Mo.]{.blue}
+`r ms_num$assign$n_msigact` tumors. For the tumors refit with mSigAct,
+only the 89-type part of the spectrum was refit, with the 89-type
+signatures, and the 83-type exposures were obtained by the same summation.
 
 [Note on Table S11 totals: Since the assignments of 2026-10-19 (adopted 2026-10-22), the column sum of Table S11 is twice the number of indels in the tumor's clipped 89-type spectrum for all 6,975 tumors (within 3% for 9 tumors), including the tumors refit with mSigAct, because the 83-type and 89-type exposures are both counted. Table S11 column sums must not be used as indel counts. With the earlier assignments, 503 tumors had single-counted sums.]{.blue}
 

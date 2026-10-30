@@ -207,9 +207,13 @@ http://8.138.15.71/
   replacing `mSigAct.R`. It refits only the 89-type part of the spectrum and
   doubles the exposures. Run on 16 of the 731 refit tumors, it reproduced
   all their exposures in `liu_et_al_8?_assignment.tsv`, except InsDel1b of
-  CPCT02340022T (13,340 vs 13,342). Open: confirm with Mo that he used
+  CPCT02340022T (13,340 vs 13,342). Mo confirmed (2026-10-30) that he used
   mSigAct2 1.0.0 (github.com/Rozen-Lab/mSigAct2, branch v3.0.3-branch,
-  commit b3e11fc) and mSigTools 1.0.8, then fix the methods (blue note).
+  commit b3e11fc) and mSigTools 1.0.8. Done (2026-10-30): the methods give
+  these versions and say that mSigAct refit only the 89-type spectrum and
+  that, for all tumors, the 83-type exposures are the 89-type exposures
+  summed over the 89-to-83 mapping (checked: exact for all 6,975 tumors in
+  `liu_et_al_8?_assignment.tsv`).
 - Age and sex analyses (Tables S14 and S15, Figure S6), discussed in the
   doc (see "Open: Steve"). Decide:
   - whether to use the joint models (age, sex, cohort, MSI-H, cancer type,
