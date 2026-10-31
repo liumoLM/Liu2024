@@ -124,8 +124,12 @@ http://8.138.15.71/
   data repository, or only to IDs named in the text? (Nothing public
   explains how to obtain the pseudonyms, checked 2026-10-31.) For comparison, Koh et al. 2025 (Nature Genetics,
   https://doi.org/10.1038/s41588-025-02152-y) gave only the Hartwig
-  request-form URL, did not acknowledge Hartwig or the CPCT, and listed no
-  Hartwig sample IDs in their supplementary tables (checked 2026-10-31).
+  request-form URL and did not acknowledge Hartwig or the CPCT, but their
+  Supplementary Table 17 lists 847 Hartwig samples by pseudonymous IDs of
+  the form HMF003787A (patient HMF003787, sample A), not CPCT-style IDs
+  (checked 2026-10-31). So Hartwig issues pseudonymous IDs with (at least
+  newer) data releases. Ask Hartwig whether the HMF IDs are the
+  pseudonyms meant by clause 4.4 and for the mapping from our IDs.
 - MSI status stated consistently (from `QUESTIONS_FOR_MO.md`, 2026-10-15).
   Following the decision to use only MSIseq: done (2026-10-30), `MSI_status`
   dropped from Table S16 (as was done for Table S9). The exploratory scripts
