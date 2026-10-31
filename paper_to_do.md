@@ -87,7 +87,21 @@ http://8.138.15.71/
 - Review Mini's methods.
 - Get the Hartwig data download date or version (release) number, for the
   data availability statement and for the header of `build_all_meta.R` and
-  the `sample_info.tsv` entry of the data repo README.
+  the `sample_info.tsv` entry of the data repo README. Found 2026-10-31: Hartwig
+  has no version numbers (the database grows continuously, and each data
+  request gets its own snapshot). The `##fileDate` headers of the 4,233
+  Hartwig VCFs in `~/MEGA/important_mut_sig_data/fmh-unfiltered_vcfs/` run
+  from 2017-09-17 to 2020-04-27, now stated in the `ms.qmd` data sources
+  (the pipeline run folders in the headers go back to 2016-07-04). Their
+  local timestamps (March to May 2020) predate data request DR-244
+  (requested 13 October 2021, license signed September 2022, PDFs in
+  `~/Downloads`), so the data probably came under an earlier request. Ask
+  Arnoud Boot which data request and download date. Also check the DR-244
+  license: clause 8.2 requires notifying Hartwig before publication, 8.3
+  acknowledging the contributing centers per Hartwig's publication policy
+  (Annex IV, not in the PDF), and 4.1, 11.1, and 12 limit the license to
+  two years from signing, after which the data must be deleted except for
+  one copy kept to verify and reproduce the project.
 - MSI status stated consistently (from `QUESTIONS_FOR_MO.md`, 2026-10-15).
   Following the decision to use only MSIseq: done (2026-10-30), `MSI_status`
   dropped from Table S16 (as was done for Table S9). The exploratory scripts

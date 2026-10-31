@@ -954,9 +954,11 @@ obtained from the ICGC data portal
 retired. The data were downloaded on 9 May, 2024). 
 Hartwig Medical
 Foundation (Hartwig) data
-can be requested at 
-at
+can be requested at
 https://www.hartwigmedicalfoundation.nl/en/appyling-for-data/.
+The Hartwig somatic variant calls used here were processed by Hartwig
+between 2017-09-17 and 2020-04-27 (the `##fileDate` dates in the headers
+of the VCF files).
 Information such as cancer type, age, and sex
 assoicated with the Hartwig
 data were taken from Table S2 in
