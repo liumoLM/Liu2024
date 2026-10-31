@@ -217,7 +217,19 @@ http://8.138.15.71/
   - whether to follow up ID_N and InsDel_N_beta (strong age x cancer type
     interaction, exposure and presence in opposite directions);
   - who writes the methods paragraph and the Table S15 legend.
-- MSIseq. Mini reran MSIseq on all 6,975 tumors (Mo's email "The new
+## Open: Mo (and Mini)
+
+## Open: Xueming
+
+- In about a week (around 2026-10-29), once the browser is final: ask
+  Xueming to tag a new GitHub release of XmWU123/indelsig (for example
+  V1.1.0), so that Zenodo archives the current app under the same concept
+  DOI (10.5281/zenodo.20092288), and to add a "How to cite" line (this
+  paper and the DOI) to https://indelsig.net and the GitHub README.
+
+## Done
+
+- 2026-10-31: closed. MSIseq. Mini reran MSIseq on all 6,975 tumors (Mo's email "The new
   MSIseq result", 2026-10-23). The results, Mini's script
   (`run_MSIseq_overlap_6975.R`), the earlier 220-tumor script
   (`prev-run-MSIseq.R`), and the emails are in
@@ -274,10 +286,7 @@ http://8.138.15.71/
   justification. TO DO
   stubs are in both (blue note in the `ms.qmd` section "MSI/MSS status and
   high/low TMB status").
-
-## Open: Mo (and Mini)
-
-- Redo the topography partial credit with the new assignments (needed for
+- 2026-10-31: closed. Redo the topography partial credit with the new assignments (needed for
   Tables S12 and S13, `all.indel.ID83.partial.credit.txt`). Mo sent version
   1026 on 2026-10-26. Check
   that it uses the new assignments. Mo knows the new
@@ -310,16 +319,6 @@ http://8.138.15.71/
   S12 were rebuilt. Still 12 of 26 signatures show replication strand
   asymmetry, but the set changed (blue note in `ms.qmd`). ID_K is still on
   the leading strand.
-## Open: Xueming
-
-- In about a week (around 2026-10-29), once the browser is final: ask
-  Xueming to tag a new GitHub release of XmWU123/indelsig (for example
-  V1.1.0), so that Zenodo archives the current app under the same concept
-  DOI (10.5281/zenodo.20092288), and to add a "How to cite" line (this
-  paper and the DOI) to https://indelsig.net and the GitHub README.
-
-## Done
-
 - 2026-10-31: closed. Mini confirmed that the topography rerun of
   2026-10-30 excluded indels in regions with genes on both strands from the
   transcription-strand analysis, as the methods say ("Indels in
