@@ -1240,25 +1240,36 @@ MSIseq to predict the MSI status of all tumors.[{.mark}]
 MSIseq (v1.0.0) metrics were computed with `Compute.input.variables()`
 on the SBSs and indels of all 6,975 tumors (`uniform.seq.len` = 3,200
 Mb), where S.ind is the number of indels in simple sequence repeats per
-Mb and T.ind is the total number of indels per Mb. We first called tumors
-MSI-H when S.ind \> 0.4 (more than about 1,280 indels in simple repeats).
-Inspection of the spectra of tumors near this threshold revealed likely
-false positives: their indels in simple repeats were mostly single-T
-insertions and deletions in long poly-T tracts (InsDel_N_beta and
-InsDel1a), their total indel burden was low, and they showed no SBS
-signatures typical of mismatch repair deficiency. We therefore
-additionally required T.ind \> 1.2 (more than about 3,840 indels), which
-gave `r ms_num$assign$n_msi_h` MSI-H tumors.
+Mb and T.ind is the total number of indels per Mb. MSIseq's classifier
+(`MSIseq.classify()`), which calls a tumor MSI-H when S.ind is greater
+than about 0.39, called `r ms_num$msiseq$n_classify` tumors MSI-H.
+Inspection of the SBS96 and ID89 spectra of these tumors revealed likely
+false positives near this threshold. They had low total indel burden,
+their indels in simple repeats were mostly single-T insertions and
+deletions in long poly-T tracts (InsDel_N_beta and InsDel1a), and they
+showed none of the SBS signatures typical of mismatch repair deficiency
+(SBS6, SBS14, SBS15, SBS20, SBS21, SBS26, and SBS44). We therefore called
+a tumor MSI-H only if S.ind \> 0.4 (more than
+`r ms_num$msiseq$s_ind_count` indels in simple repeats) and T.ind \> 1.2
+(more than `r ms_num$msiseq$t_ind_count` indels). The T.ind threshold was
+chosen to exclude as many of the likely false positives as possible. This
+gave `r ms_num$msiseq$n_rule` MSI-H tumors. Most of the other
+`r ms_num$msiseq$n_removed` tumors called MSI-H by `MSIseq.classify()` had
+fairly flat SBS96 and ID89 spectra, and a few showed signatures of tobacco
+smoking, UV exposure, or APOBEC activity.
 
-[Confirm the wording of this paragraph with Mo (2026-10-30), in
-particular: which SBS signatures he checked in the suspected false
-positives, and how 1.2 was chosen. The rule is applied by
-`msiseq/call_msi_h.R` in the code repo. The characterization of the tumors
-near the threshold is from a check of 2026-10-30, not from Mo's spot
-checks: S.ind \> 0.4 alone gives 271 MSI-H, and T.ind \> 1.2 removes 67 of
-them (T.ind 0.69 to 1.20). InsDel_N_beta is the largest signature in 53 of
-the 67, InsDel_N_beta plus InsDel1a make up a median of 76% of their
-indels, and 29 are colon and 27 esophagus tumors.]{.blue}
+[Confirmed by Mo (email of 2026-10-31): the SBS signatures checked, the
+choice of 1.2, and that the poly-T description matches the many
+InsDel_N_beta indels he saw in the ID89 spectra of the false positives (it
+comes from our check of 2026-10-30, not from his spot checks). Mo gave the
+`MSIseq.classify()` cutoff as S.ind > 0.3895, which gives 277 tumors on
+these data. The built-in classifier of MSIseq 1.0.0 is S.ind > 0.394737,
+which gives the 274 he reported, so the text says "about 0.39". Mo's SBS96
+and ID89 spectra of the 70 tumors are in
+`unified_indels_data/new-mini-msi-calls/`. Mo noted that one of the 70,
+SP123975, looks MSI-H in both spectra. It is kept as Non-MSI-H, and the
+paper does not mention it (Steve, 2026-10-31). See `msiseq/README.md` in
+the code repo.]{.blue}
 
 ## Extended sequence context analysis
 
