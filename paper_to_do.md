@@ -293,7 +293,7 @@ http://8.138.15.71/
   `r.signature_summary.R`). Mini reports changed results: C_ID1 and C_ID7
   no longer show transcription-strand enrichment, 7 signatures are
   enriched in genic regions, and C_ID7, C_ID18, and ID_K are no longer flat
-  in replication timing. Done (2026-10-30) except replication strand: the
+  in replication timing. Done (2026-10-30, replication strand 2026-10-31): the
   new r.04 matrices are in the code repo, r.05, r.06, and r.09 reproduce
   Mini's outputs exactly from them, `build_fig5/assign_asymmetry_type.R`
   uses Mini's corrected summary rule and reproduces her tables, Figures 5,
@@ -301,19 +301,12 @@ http://8.138.15.71/
   `ms.qmd` text was updated (blue notes mark the changes). Figure 5D now
   shows C_ID1 instead of ID_K as the flat example, since ID_K is no longer
   flat. Check: the etiologies of C_ID10 and ID_B, which are now genic (blue
-  note in `ms.qmd`). Waiting (2026-10-30): `ID83-results.zip` has the new
-  mutation matrix for replication strand but not the new simulated one
-  (`04_create4InfMatrix/repli.strand/tissue.repli.strand.Simulated_50cutoff.xlsx`).
-  Steve asked Mini for it. Until it arrives, the replication-strand results
-  (Figure 5B, Figure S3B, Table S12) stay at the old run; the other parts
-  of the topography use the rerun.
-- The topography code keeps indels in genes on both strands (114,297
-  indels, 0.6%), although the methods say they were ignored. Mo is probably
-  redoing the simulations and analysis with code that drops them, with
-  Mini. Rerun the downstream topography tables and figures when that
-  arrives. Waiting (2026-10-30): Steve assumes Mini's rerun of 2026-10-30
-  drops the indels in genes on both strands, and is checking with Mini.
-
+  note in `ms.qmd`). Done (2026-10-31): Mini sent the simulated
+  replication-strand matrix. With it, r.05 and r.06 reproduce her
+  replication-strand outputs exactly, and Figure 5B, Figure S3B, and Table
+  S12 were rebuilt. Still 12 of 26 signatures show replication strand
+  asymmetry, but the set changed (blue note in `ms.qmd`). ID_K is still on
+  the leading strand.
 ## Open: Xueming
 
 - In about a week (around 2026-10-29), once the browser is final: ask
@@ -324,6 +317,14 @@ http://8.138.15.71/
 
 ## Done
 
+- 2026-10-31: closed. Mini confirmed that the topography rerun of
+  2026-10-30 excluded indels in regions with genes on both strands from the
+  transcription-strand analysis, as the methods say ("Indels in
+  bidirectionally transcribed regions were ignored"). The earlier code kept
+  them (114,297 indels, 0.6%). The scripts in the code repo's
+  `ID83_topography_analysis_code/` are the earlier versions, so they do not
+  show this step. Get Mini's updated scripts with the rest of the ID83
+  topography questions (paths and columns, under "Open: Steve").
 - 2026-10-30: closed. mSigAct refit (added 2026-10-25, spot checked 2026-10-26). Mo's code
   (`mSigAct_for_rerun.R`, from his email of 2026-10-26) is cleaned up
   as `Extraction_and_assignment_code/run_mSigAct_refit.R` in the code repo,
