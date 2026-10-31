@@ -89,6 +89,8 @@ http://8.138.15.71/
   Hartwig cohort MSI calls (it is already marked "NEEDS DRASTIC CUTTING").
 - Check the Figure S1 legend, then review all supplementary figure legends.
 - Review the STAR Methods for the topography analysis.
+- Confirm that C_ID10 and ID_B, now enriched in genic regions after the
+  topography rerun, are of unknown etiology (blue note in `ms.qmd`).
 - Add the STAR Methods "Resource availability" section (lead contact,
   materials availability, data and code availability), listing the code
   repo, the data repo, and the browser DOI.
