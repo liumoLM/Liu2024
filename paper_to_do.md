@@ -91,6 +91,37 @@ http://8.138.15.71/
   (Annex IV, not in the PDF), and 4.1, 11.1, and 12 limit the license to
   two years from signing, after which the data must be deleted except for
   one copy kept to verify and reproduce the project.
+  Hartwig publication policy (V3.4, 1 September 2026,
+  https://www.hartwigmedicalfoundation.nl/wp-content/uploads/2026/09/Publication-Policy-1-September-2026.pdf),
+  which applies at the time of publication (license clause 8.3):
+  - 4.2, data/methods section: "All underlying data used in this study that
+    falls under access control is available from Hartwig Medical Database
+    [DOI:] approved by the independent data access board of Hartwig Medical
+    Foundation and shared under DAR-XX [DAR specific DOI:XX]. The clinical
+    and genomic data stored in the Hartwig Medical Database are collected
+    with consent for research and data linkage with the Netherlands Cancer
+    Registry (NCR)." Both DOIs cited as references.
+  - 4.2, acknowledgments: "We acknowledge, Hartwig Medical Foundation, Dutch
+    hospitals, the Center of Personalized Cancer Treatment, the Netherlands
+    Cancer Institute (Antoni van Leeuwenhoek hospital) and Netherlands
+    Comprehensive Cancer Organisation (IKNL) for data collection and
+    sharing."
+  - 4.3: contact the Hartwig Principal Investigator early and send the
+    manuscript at least 2 weeks before submission or bioRxiv posting.
+  - 4.4: Hartwig IDs in a publication must be Hartwig pseudonyms (H000001
+    for molecular data, D000001 for clinical data). The paper uses
+    CPCT/DRUP/WIDE IDs in Tables S9, S11, and S16, in the text (for example
+    CPCT02340014T, CPCT02010349T), and in the data repo.
+  - 3.1 and 3.2: no Hartwig data in original or raw form in a publication.
+    Ask Hartwig whether per-tumor spectra in the public data repo are
+    allowed.
+  - 6.1: send Hartwig a copy within 1 month of publication.
+  To get from Hartwig or Arnoud: the Hartwig Medical Database DOI, the data
+  request number and DOI our data came under, and the ID-to-pseudonym
+  mapping. For comparison, Koh et al. 2025 (Nature Genetics,
+  https://doi.org/10.1038/s41588-025-02152-y) gave only the Hartwig
+  request-form URL, did not acknowledge Hartwig or the CPCT, and listed no
+  Hartwig sample IDs in their supplementary tables (checked 2026-10-31).
 - MSI status stated consistently (from `QUESTIONS_FOR_MO.md`, 2026-10-15).
   Following the decision to use only MSIseq: done (2026-10-30), `MSI_status`
   dropped from Table S16 (as was done for Table S9). The exploratory scripts
