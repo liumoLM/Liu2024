@@ -240,4 +240,6 @@ rate). Only signatures with FDR \< 0.2 are shown.
 **(B)** Age association of 83-type and 89-type indel signatures across
 cancer types. Color shade indicates the Spearman correlation
 coefficient (ρ), and dot size corresponds to the significance level
-(−log₁₀FDR). Only signatures with FDR \< 0.05 and ρ \> 0.1 are shown.
+(−log₁₀FDR). Only signatures with FDR \< 0.05 and ρ \> 0.1 are shown. In both
+panels, a signature counts as active in a tumor only if it accounts for
+at least 5% of the tumor's indels, as in Figures 4A and S1.

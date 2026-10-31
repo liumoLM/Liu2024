@@ -733,7 +733,9 @@ and C_ID5 (`r ms_num$s14$or_q("Liver", "C_ID5")`; clock-like), and for InsDel8/C
 age). In contrast, female-enriched signatures were found in esophageal
 and pancreatic cancers: InsDel1a (`r ms_num$s14$or_q("Esophagus", "InsDel1a")`) and C_ID1
 (`r ms_num$s14$or_q("Esophagus", "C_ID1")`) in esophageal cancer, and InsDel12/C_ID12
-(`r ms_num$s14$or_q("Pancreas", "InsDel12")`) in pancreatic cancer. No additional
+(`r ms_num$s14$or_q("Pancreas", "InsDel12")`) in pancreatic cancer. C_ID19 was
+also more common in males in the heterogeneous "Other" group
+(`r ms_num$s14$or_q("Other", "C_ID19")`). No additional
 signature–cancer type combinations reached a q-value below `r ms_num$s14$q_cutoff`.
 Collectively, these findings suggest that specific mutational
 processes and their underlying biological processes might be modulated by [sex]{.pink}, [shaping distinct patterns of cancer susceptibility and
@@ -1076,6 +1078,12 @@ other `r ms_num$assign$n_spa_only` tumors and mSigAct for these
 `r ms_num$assign$n_msigact` tumors. For the tumors refit with mSigAct,
 only the 89-type part of the spectrum was refit, with the 89-type
 signatures, and the 83-type exposures were obtained by the same summation.
+
+In the analyses of signature activity across tumors (Figures 4A, S1, and
+S6, and Tables S14 and S15), a signature was considered active (present)
+in a tumor only if it accounted for at least 5% of the tumor's indels.
+Smaller exposures were set to 0, because signature assignment is unstable
+for signatures that explain only a small part of a spectrum.
 
 [Note on Table S11 totals: Since the assignments of 2026-10-19 (adopted 2026-10-22), the column sum of Table S11 is twice the number of indels in the tumor's clipped 89-type spectrum for all 6,975 tumors (within 3% for 9 tumors), including the tumors refit with mSigAct, because the 83-type and 89-type exposures are both counted. Table S11 column sums must not be used as indel counts. With the earlier assignments, 503 tumors had single-counted sums.]{.blue}
 

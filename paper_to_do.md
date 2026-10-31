@@ -73,17 +73,6 @@ http://8.138.15.71/
   exported as `age-and-sex-model.md`), and then review and rewrite the
   subsection "Demographic Associations with Sex and Age" in `ms.qmd` to
   match.
-- Presence thresholds differ: Figures 4A and S1 count a signature as
-  present above 5% of the tumor's indels, but Tables S14 and S15
-  (`presence_threshold <- 0.01` in `build_fig_s6/build_fig_s6_stats.R`) use
-  1%, and the S15 Spearman correlations use exposure > 0. Checked
-  2026-10-29 with exposures under 5% set to 0: all 10 S14 hits at q < 0.2
-  remain (plus Other / C_ID19), 39 of the 41 S15 by-cancer-type hits remain
-  (Colon C_ID4 / InsDel4 lost), and the age effects in the text are
-  unchanged. In the S15 cancer-type-adjusted models some FDR < 0.05 calls
-  change (exposure 31 to 26, presence 17 to 15, burden-adjusted presence 16
-  to 22), none cited in `ms.qmd`. Decide with the age and sex items whether
-  to use 5% throughout.
 - Review Mini's methods.
 - Get the Hartwig data download date or version (release) number, for the
   data availability statement and for the header of `build_all_meta.R` and
@@ -253,6 +242,20 @@ http://8.138.15.71/
 
 ## Done
 
+- 2026-10-31: one presence threshold. A signature is active in a tumor if
+  it accounts for at least 5% of the tumor's indels, in Figures 4A, S1, and
+  S6 and Tables S14 and S15. `build_fig_s6/build_fig_s6_stats.R` changed
+  from more than 1% (and any exposure > 0 for the Spearman correlations) to
+  setting exposures under 5% to 0 when it reads the assignments, and Figure
+  4A from > 5% to >= 5% (one exposure is exactly 5%, InsDel6 in
+  CPCT02010478T, and its dot changed imperceptibly). Results, as in the
+  check of 2026-10-29: sex hits at q < 0.2 go from 10 to 11 (C_ID19 in
+  "Other", male, now in the text), Colon C_ID4 / InsDel4 drop out of the age
+  correlations, and the FDR < 0.05 counts of the cancer-type-adjusted age
+  models change (exposure 31 to 26, presence 17 to 15, burden-adjusted
+  presence 16 to 22). None of the age results in the text changed. The
+  methods (signature assignment section) and the Figure S6 legend now state
+  the 5% rule. Figures 4 and S6 and Tables S14 and S15 were rebuilt.
 - 2026-10-31: closed. MSIseq. Mini reran MSIseq on all 6,975 tumors (Mo's email "The new
   MSIseq result", 2026-10-23). The results, Mini's script
   (`run_MSIseq_overlap_6975.R`), the earlier 220-tumor script
