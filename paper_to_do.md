@@ -118,7 +118,11 @@ http://8.138.15.71/
   - 6.1: send Hartwig a copy within 1 month of publication.
   To get from Hartwig or Arnoud: the Hartwig Medical Database DOI, the data
   request number and DOI our data came under, and the ID-to-pseudonym
-  mapping. For comparison, Koh et al. 2025 (Nature Genetics,
+  mapping. Questions for Hartwig: (1) Will Hartwig provide a mapping
+  from our CPCT/DRUP/WIDE sample IDs to Hartwig pseudonyms for this data
+  request? (2) Does clause 4.4 apply to supplementary tables and a public
+  data repository, or only to IDs named in the text? (Nothing public
+  explains how to obtain the pseudonyms, checked 2026-10-31.) For comparison, Koh et al. 2025 (Nature Genetics,
   https://doi.org/10.1038/s41588-025-02152-y) gave only the Hartwig
   request-form URL, did not acknowledge Hartwig or the CPCT, and listed no
   Hartwig sample IDs in their supplementary tables (checked 2026-10-31).
