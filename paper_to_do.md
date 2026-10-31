@@ -59,7 +59,15 @@ http://8.138.15.71/
 - `sample_info.tsv` in the data repo has CPCT02220078T (Hartwig, Bladder),
   which has no spectrum in `liu_et_al_83_spectra.tsv` or
   `liu_et_al_89_spectra.tsv` (found 2026-10-26). Decide whether to drop it
-  from `sample_info.tsv` or find out why it has no spectrum.
+  from `sample_info.tsv` or find out why it has no spectrum. Found 2026-10-31: its
+  Hartwig VCFs are in `~/MEGA/important_mut_sig_data/fmh-unfiltered_vcfs/`
+  (199 PASS indels in `CPCT02220078T.annotated.indel.vcf.gz`), like those of
+  its neighbors CPCT02220071T to CPCT02220079T, which are all in the
+  spectra. In the data repo it is only in `sample_info.tsv` (since the first
+  commit), and it is not in the partial-credit files. In the code repo it
+  was in Mo's earlier `build_fig_s1/all.meta.txt` (as
+  `Other::CPCT02220078T`). Waiting (2026-10-31): Steve asked Mo why it has
+  no spectrum.
 - Dig into the age and sex models in detail (the doc "Age and sex models
   for Tables S15 and S16" (old numbers), https://claude.ai/artifact/X8iSQz1TiCAw89HgKkwHdM,
   exported as `age-and-sex-model.md`), and then review and rewrite the
