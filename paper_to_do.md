@@ -330,8 +330,12 @@ http://8.138.15.71/
   pages, and the overview table were re-rendered on 2026-11-05 (all 695
   plots regenerated). The bundle for the site is
   `~/MEGA/important_mut_sig_data/hartwig_hmf_ids/for_xueming_2026-11-05/`
-  (259 MB, no Hartwig IDs). Xueming does not get the ID mapping. To do:
-  send Xueming the bundle (draft, updated 2026-11-05:
+  (259 MB, no Hartwig IDs). Xueming does not get the ID mapping. Xueming
+  gets all of it from the code repo (commit 9cd8859 onward:
+  `vignette/separate_pages/`, `vignette/prot_table_1.csv`, and
+  `vignette/connection_table.tsv` from `write_site_connection_table.R`),
+  except the 109 MB combined HTML, which needs a link. To do: push the code
+  repo, and send Xueming the message (draft, updated 2026-11-05:
   `message_to_xueming_pseudonyms_2026-10-31.md`), and ask Xueming to swap in
   the files, to search the site for leftover Hartwig IDs, to create a new
   version of the indel-signature-browser repository with the new
