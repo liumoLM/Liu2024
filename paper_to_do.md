@@ -114,6 +114,13 @@ http://8.138.15.71/
     they are joined with data repo tables. Superseded files with Hartwig
     internal IDs were deleted from all three repos (they remain in the git
     history). Still to do: make the history-free version of the data repo.
+  - Decide whether we need
+    `new-mini-msi-calls/msiseq_classify_msi_h_rule_non_msi_h_ID89.pdf` and
+    `..._SBS96.pdf` (Mo's spectra of the 70 tumors that `MSIseq.classify()`
+    calls MSI-H but the rule does not). They are the only files at the data
+    repo's HEAD with Hartwig internal IDs (in 62 page titles). If we need
+    them, ask Mo to regenerate them with HMF IDs (the SBS96 spectra are not
+    in our repos). If not, delete them.
 
 - Hartwig internal IDs in our own outputs (2026-10-31). Done 2026-11-05: the
   vignette was re-rendered with HMF IDs (see "Open: Xueming"), and
