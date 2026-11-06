@@ -51,10 +51,61 @@ http://8.138.15.71/
     any other `likely_dead_*` folder the same way.
   - Fixes made later in the working repo must be copied to the release repo
     again (rerun `git archive` and commit the differences).
-  - Decide whether the data repo `unified_indels_data` needs the same
-    treatment.
+  - The data repo `unified_indels_data` gets the same treatment (decided
+    2026-11-05), see "Open: Steve".
 
 ## Open: Steve
+
+- Finish the email to Xueming (`message_to_xueming_pseudonyms_2026-10-31.md`)
+  after checking what is currently on Zenodo for the browser (concept DOI
+  10.5281/zenodo.20092288, v1.0.0 record 10.5281/zenodo.20092289, and any
+  later versions) and for the vignette (concept record 18451842). Fill in
+  the `<LINK>` for the 109 MB combined HTML, and push the code repo first.
+  Points to add (2026-11-05): `XmWU123/indelsig` is public now, with
+  Hartwig IDs in its files and history, so ask Xueming to make it private
+  right away. For the history-free copy, check with
+  `git -C indelsig grep -n -E 'CPCT|DRUP|WIDE|ACTN|CORE' HEAD`, then
+  `git -C indelsig archive --prefix=indelsig-new/ HEAD | tar -x`,
+  `git init -b main`, one commit. Rename the old repo to `indelsig-old`
+  (`gh repo rename`, then make it private) and create the new one as
+  `XmWU123/indelsig`, so existing links point to it. The Zenodo GitHub
+  integration follows the repository, not its name, so the new repo would
+  get a new concept DOI. Ask Zenodo support whether its releases can be
+  added to the existing concept DOI, which the paper cites.
+
+- Data repo (`indelsig/unified_indels_data`, private, no forks, no
+  releases, not on Zenodo, checked 2026-11-05): replace the Hartwig sample
+  IDs with HMF sample IDs, then make a new version of the repo from a
+  `git archive` of `HEAD` with no history (as for the code repo, see
+  "Before submission"), because the old history keeps the Hartwig IDs.
+  - Files with Hartwig IDs (2026-11-05): `sample_info.tsv` (4,233),
+    `new-mini-msi-calls/mutationNum_overlap_6975.tsv` (4,197),
+    `assignments_2026-10-19/assignment.high.similarity.samples.for.figureS1.txt`
+    (4,161), `assignments_2026-10-19/mSigAct.reanalyzed.samples.txt` (396),
+    the column names of `liu_et_al_{83,89,476}_spectra.tsv` and
+    `liu_et_al_{83,89}_assignment.tsv`, `connection_table.tsv` (34),
+    `external_data/Degasperi_2022/high_quality_samples.txt` (4,168),
+    `external_data/Degasperi_2022/degasperi_to_liu_sample_id.tsv` (3,365),
+    `README.md`, and `linking_tumors/README.md`.
+  - `external_data/Degasperi_2022/`: Degasperi et al.'s published
+    `RefSig_SBS_Exposures_v2.03.tsv` already uses HMF IDs.
+    `degasperi_to_liu_sample_id.tsv` (Mo, 2026-07-21) is our crosswalk from
+    their HMF IDs to our IDs. It agrees with our mapping for all 3,365
+    Hartwig tumors, and it becomes redundant and should not be released.
+    `high_quality_samples.txt` is ours and gets converted. Both are read
+    only by `build_fig4/fig4_indel_sbs_clustering.R`.
+  - Decide: extend the mapping from the 4,197 tumors with spectra to all
+    4,233 in `sample_info.tsv` (`metadata.tsv` covers them), and what to use
+    for DRUP01080030T and WIDE01010634T (T0604 and T2166?).
+  - Code that reads files keyed by Hartwig IDs will then need the private
+    mapping: the VCFs and partial-credit files in `~/MEGA`,
+    `find_annotated_vcfs()`, `build_fig6/make_fig6_logo_counts.R`,
+    `build_fig6/Plot signatures and motifs.qmd`,
+    `ID83_topography_analysis_code/r.01_createBed.R`, and
+    `Extraction_and_assignment_code/run_mSigAct_refit.R`. The vignette's
+    `pseudonymize()` becomes unnecessary. Rerun the outputs that show
+    sample IDs (Tables S9, S11, and S16, Table 1, the vignette) and fix the
+    IDs in `ms.qmd`.
 
 - Hartwig IDs in our own outputs (2026-10-31). Done 2026-11-05: the
   vignette was re-rendered with HMF sample IDs (see "Open: Xueming"), and
