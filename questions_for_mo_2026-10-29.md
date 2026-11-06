@@ -44,7 +44,7 @@ most of the 70 tumors.
   mSigAct refits?
 - Stomach InsDel1a rose more than tenfold (0.13 to 1.60 mean mutations/Mb)
   in the same 14 tumors. Why? (Answered 2026-10-29, no need to ask: one
-  hypermutated tumor, CPCT02450014T, where InsDel1a replaced InsDel_D in
+  hypermutated tumor, HMF002760A, where InsDel1a replaced InsDel_D in
   the mSigAct refit. The new fit is better, and Steve kept it.)
 
 ## 4. Methods details
