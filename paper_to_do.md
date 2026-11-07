@@ -330,22 +330,22 @@ http://8.138.15.71/
     Mini, which uses the `results0322/ID89/` folders that
     `r.03_mergeInf.R` reads. Only `01.rtGroup.bed` comes from the ID83
     results.
-  - Open (2026-10-24), waiting on Mini: the ID83 topography steps
-    `normalize.sh` to r.04 ran on the Huang-lab server and disagree on input
-    paths, `results/` vs `results0322/`, and columns (`ID.class` vs
-    `COSMIC_83`, `ID_O`/`ID_P`). Documented in "Known inconsistencies" in
-    `ID83_topography_analysis_code/README.md`, script headers, and
-    `data_flow/`. The outputs of Mini's rerun of 2026-10-30 are now in the
-    code repo (r.04 matrices, and the simulated replication-strand matrix
-    of 2026-10-31), but the scripts there are still the earlier versions.
-    They do not exclude indels in regions with genes on both strands, which
-    the rerun did, and `add_partial_credit.R` selects `ID_O`/`ID_P`, which
-    r.01 does not write. They cannot be rerun locally to check, because
-    the simulated mutations (`all_simulated_with_annotation.txt`), the
-    strand reference, and `all.meta.0528.rds` are only on the Huang-lab
-    server. 2026-11-05: Steve asked Mini for the exact `normalize.sh` and
-    r.01 to r.04 scripts that made the 2026-10-30 rerun. Replace the repo
-    copies with them and update the README.
+  - Fixed (2026-11-06): the ID83 topography steps `normalize.sh` to r.04
+    disagreed on input paths, `results/` vs `results0322/`, and columns
+    (`ID.class` vs `COSMIC_83`, `ID_O`/`ID_P`), and did not exclude indels
+    in regions with genes on both strands, which the rerun of 2026-10-30
+    did. On 2026-11-05 Steve asked Mini for the exact scripts of that
+    rerun. Mini sent them on 2026-11-06 (`ID83-scripts.zip` in the code
+    repo's `not_for_release/`): `normalize.sh`, r.01 to r.04,
+    `generate_partialcredit.R`, `add_partial_credit.R`, and the new
+    `append_bothstrand.R`, which adds the ICAMS `bothstrand` flag to the
+    simulated indels. They replaced the repo copies, with only the header
+    comment changed (and the annotation-bed paths in r.02). The README of
+    `ID83_topography_analysis_code/` now has a "Data needed to run" section
+    in place of "Known inconsistencies", and `data_flow/` was updated. They
+    still cannot be rerun locally, because their four external inputs are
+    not in any repo. The open questions about those inputs are under
+    "Open: Mo (and Mini)".
   - Fixed (2026-10-24): Figures 5, S3, and S4 and Tables S12 to S14 read
     hand copies of topography outputs (`build_fig5/09_*.xlsx`,
     `build_fig_s4/09_*.xlsx`, `build_sup_table_s14/trend_89.xlsx`,
@@ -384,6 +384,30 @@ http://8.138.15.71/
 ## Open: Steve with Mo
 
 ## Open: Mo (and Mini)
+
+- Per-indel signature probabilities (added 2026-11-06). The ID83 topography
+  analysis starts from Mo's `all.indel.ID83.partial.credit.1026.txt.gz`,
+  but no script in the code repo makes it, and the methods only say that
+  signature probabilities were assigned "to each individual indel
+  mutation" (`ms.qmd`, "Detecting strand asymmetries across cancer
+  types"). Ask Mo for (1) the script that made the 1026 file and its
+  inputs (annotated VCFs, which exposures, which signature profiles),
+  (2) one or two methods sentences on how a probability is computed (for
+  example, exposure(t, s) × profile(s, c) divided by the sum over all
+  signatures, for an indel of class c in tumor t), and (3) whether the
+  83-type probabilities are the 89-type ones summed over the 89-to-83
+  mapping. Add the script to the code repo, and the sentences to the
+  methods. In the same email, ask Mo about the other topography inputs
+  that are not in the code repo. He gave the SigProfilerSimulator command
+  on 2026-10-07 (see Done, topography item 2), but not (4) the input
+  folder he passed to it (which VCFs), (5) the seed (SigProfilerSimulator
+  uses its default seed file unless one is given), (6) the script that
+  turned its output into `all_simulated_with_annotation.txt`, annotated
+  with ICAMS, or (7) the script that made the strand reference for the
+  real indels, `single.indel.aggregate.strand.added.matrix.txt`.
+- Ask Mini (added 2026-11-06) where `all.meta.0528.rds` (read by both
+  ID83 `r.03` scripts for the sample ID mapping and cancer type) came
+  from, and whether Table S16 can replace it.
 
 ## Open: Xueming
 
@@ -538,8 +562,8 @@ http://8.138.15.71/
   bidirectionally transcribed regions were ignored"). The earlier code kept
   them (114,297 indels, 0.6%). The scripts in the code repo's
   `ID83_topography_analysis_code/` are the earlier versions, so they do not
-  show this step. Get Mini's updated scripts with the rest of the ID83
-  topography questions (paths and columns, under "Open: Steve").
+  show this step. Done (2026-11-06): Mini's updated scripts, with the
+  bothstrand step in r.04 and the new `append_bothstrand.R`, replaced them.
 - 2026-10-30: closed. mSigAct refit (added 2026-10-25, spot checked 2026-10-26). Mo's code
   (`mSigAct_for_rerun.R`, from his email of 2026-10-26) is cleaned up
   as `Extraction_and_assignment_code/run_mSigAct_refit.R` in the code repo,

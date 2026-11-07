@@ -23,8 +23,8 @@ Each id names the repo and the path in it:
 - `data:` a file in the data repo, for example `data:liu_et_al_83_assignment.tsv`
 - `code:` a file in the code repo, for example `code:build_fig4/fig4.pdf`
 - `paper:` a file in this repo, for example `paper:main_figures/fig4.pdf`
-- `ext:` anything outside the three repos, such as files on the Huang-lab
-  server (`/public/data/...`) or local VCF folders (`~/MEGA/...`)
+- `ext:` anything outside the three repos, such as files of the original
+  topography run (`/public/data/...`) or local VCF folders (`~/MEGA/...`)
 
 `flow_nodes.tsv` columns:
 
