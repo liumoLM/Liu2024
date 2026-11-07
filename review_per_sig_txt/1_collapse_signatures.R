@@ -1,0 +1,6 @@
+setwd("~/github/Liu2026_code_and_data")
+suppressPackageStartupMessages({source(here::here("vignette","vhelpers.R")); source(here::here("vignette","collapse_476_to_89.R"))})
+s83 <- read_finalized("83_signatures"); s89 <- read_finalized("89_signatures"); s476 <- read_finalized("476_signatures")
+m89 <- t476_to_89(s476)
+m83 <- suppressMessages(collapse_all_476_to_83_matrix(s476))
+saveRDS(list(s83=s83,s89=s89,s476=s476,m89=m89,m83=m83), "~/github/0Liu2024/review_per_sig_txt/sigs.rds")

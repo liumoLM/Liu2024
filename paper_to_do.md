@@ -480,8 +480,11 @@ http://8.138.15.71/
   extraction, the vignette will show which signature
   `WES::TCGA-EW-A2FV-01A-11D-A17D-09` has, and the source of their data
   is cited in Alexandrov et al. 2020
-  (`alexandrovRepertoireMutationalSignatures2020`). To do: a sentence on
-  the exomes in the data sources and extraction methods of `ms.qmd`.
+  (`alexandrovRepertoireMutationalSignatures2020`). Done (2026-11-07): a
+  sentence in "Data sources" of `ms.qmd`, citing the TCGA MC3 calls
+  (Ellrott et al. 2018, https://doi.org/10.1016/j.cels.2018.03.002), which
+  the Reporting Summary of Alexandrov et al. 2020 names as its exome
+  source.
   Draft email with questions 1 to 7:
   `message_to_mo_topography_methods_2026-11-06.md` (deleted 2026-11-07,
   in the git history). Sent 2026-11-07,
