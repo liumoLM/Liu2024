@@ -67,7 +67,8 @@ http://8.138.15.71/
   1. `C_ID1.md`: InsDel1d does not exist (only 1a to 1c). It says InsDel1b
      has "~8% T insertions in long poly-T, a feature C_ID1 lacks", but C_ID1
      is 56% INS:T:1:5+. InsDel1b differs by T deletions: DEL:T:1:5+ 13% vs
-     9%, and 89-type Del(T):R(5,7) 10% vs 1.5% in InsDel1a.
+     9%, and 89-type Del(T):R(5,7) 10% vs 1.5% in InsDel1a. DONE
+     2026-11-07: rewritten in the data repo.
   2. `C_ID2.md`: both "absent from C_ID2" are wrong. C_ID2 has 12%
      INS:T:1:5+ (collapsed InsDel2b 15.5%) and DEL:T:1:3 and 1:4 at 1.5% and
      3.3% (InsDel2b 4.1% and 11.8%).
