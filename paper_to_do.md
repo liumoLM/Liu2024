@@ -474,14 +474,23 @@ http://8.138.15.71/
   turned its output into `all_simulated_with_annotation.txt`, annotated
   with ICAMS, or (7) the script that made the strand reference for the
   real indels, `single.indel.aggregate.strand.added.matrix.txt`.
-  Also ask Mo about (8) the 3 TCGA whole exomes (`WES::TCGA-...`), which
-  have spectra and are in Table S16 since 2026-11-06 but have no
-  assignments and are not mentioned in `ms.qmd`: where their indel calls
-  came from, whether they were used in signature extraction, and which
-  signature is the one that only `WES::TCGA-EW-A2FV-01A-11D-A17D-09` has
-  (data repo README). The data sources and extraction methods need a
-  sentence on them. Draft email with questions 1 to 8:
-  `message_to_mo_topography_methods_2026-11-06.md`.
+  The 3 TCGA whole exomes (`WES::TCGA-...`), which have spectra and are
+  in Table S16 since 2026-11-06 but have no assignments, are no longer a
+  question for Mo. Steve (2026-11-07): they were not used in signature
+  extraction, the vignette will show which signature
+  `WES::TCGA-EW-A2FV-01A-11D-A17D-09` has, and the source of their data
+  is cited in Alexandrov et al. 2020
+  (`alexandrovRepertoireMutationalSignatures2020`). To do: a sentence on
+  the exomes in the data sources and extraction methods of `ms.qmd`.
+  Draft email with questions 1 to 7:
+  `message_to_mo_topography_methods_2026-11-06.md` (deleted 2026-11-07,
+  in the git history). Sent 2026-11-07,
+  edited by Steve and renumbered: 1 to 3 as in the draft, 4.1 (input
+  VCFs of the simulation), 4.2 (seed, default or not), 4.3 (simulated
+  VCFs annotated with ICAMS or mSigSpectra?), 4.4 (the script that made
+  `all_simulated_with_annotation.txt`), and 5 (the script that made the
+  strand reference, and whether Mo or Mini made it). Waiting for Mo's
+  answer.
 - Topography inputs keyed by HMF IDs, and a record of them (added
   2026-11-06). The ID83 topography inputs name Hartwig tumors by Hartwig
   internal IDs (`CPCT...`, `DRUP...`, `WIDE...`), which cannot be
@@ -495,7 +504,14 @@ http://8.138.15.71/
      side, to keep in `~/MEGA/important_mut_sig_data/` as a record:
      `all_simulated_with_annotation.txt` (and its `.with_bothstrand`
      version), `single.indel.aggregate.strand.added.matrix.txt`, and
-     `all.meta.0528.rds` (draft: `message_to_mini_topography_inputs_2026-11-06.md`).
+     `all.meta.0528.rds` (draft: `message_to_mini_topography_inputs_2026-11-06.md`, deleted
+     2026-11-07, in the git history).
+     Sent 2026-11-06: Steve asked Mini for `all_simulated_with_annotation.txt`
+     and `all_simulated_with_annotation.with_bothstrand.txt` with the
+     summary and log files that `append_bothstrand.R` wrote next to it,
+     `single.indel.aggregate.strand.added.matrix.txt`, and
+     `all.meta.0528.rds`, as password-protected .zip files. Waiting for
+     the files.
   2. Write a script that rewrites the `Sample` column of an input from
      Hartwig internal IDs to HMF IDs (T0604 and T2166 keep their
      pseudonyms) and writes a new copy. Run it on the two partial-credit
