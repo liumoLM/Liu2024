@@ -57,7 +57,76 @@ http://8.138.15.71/
 
 ## Open: Steve
 
-- Finish the email to Xueming (`message_to_xueming_pseudonyms_2026-10-31.md`)
+- Review, one by one, the findings on the per-signature notes in the data
+  repo (`unified_indels_data/per_sig_txt/*.md`, shown on the vignette
+  pages), checked on 2026-11-06 against the current signatures. Percentages
+  are proportions of the signature. "Collapsed" means the 476-type signature
+  converted to 83 types by `collapse_476_to_83` (the plain mapping through
+  `ID476_ID89_mapping.txt` gives the same numbers). Scripts:
+  `review_per_sig_txt/` (see its README). Clear errors:
+  1. `C_ID1.md`: InsDel1d does not exist (only 1a to 1c). It says InsDel1b
+     has "~8% T insertions in long poly-T, a feature C_ID1 lacks", but C_ID1
+     is 56% INS:T:1:5+. InsDel1b differs by T deletions: DEL:T:1:5+ 13% vs
+     9%, and 89-type Del(T):R(5,7) 10% vs 1.5% in InsDel1a.
+  2. `C_ID2.md`: both "absent from C_ID2" are wrong. C_ID2 has 12%
+     INS:T:1:5+ (collapsed InsDel2b 15.5%) and DEL:T:1:3 and 1:4 at 1.5% and
+     3.3% (InsDel2b 4.1% and 11.8%).
+  3. `C_ID5.md`: InsDel5b has fewer long poly-T T deletions than InsDel5a
+     (89-type R(5,7) plus R(8,): 5.1% vs 7.3%). Its extra is T insertions
+     (14.7% vs 2.2% in 89-type, INS:T:1:5+ collapsed 13.8% vs 1.2%). The note
+     leaves out InsDel5c, which also maps to C_ID5.
+  4. `C_ID19.md`: InsDel19a has 7.3% long poly-T T insertions, not 15%, and
+     C_ID19 has 3.2%, so they are not absent. The other "absent" features are
+     only less common (single-C deletions 6.3% in C_ID19 vs 13.2%). InsDel19b's
+     "small proportion of T deletions" is 1.4% vs 1.0%, essentially none.
+  5. `InsDel1a.md` and `InsDel_D.md`: the cosine similarities are now 0.852
+     (89-type) and 0.918 (476-type), not 0.91 and 0.95. The two files give
+     different reasons. InsDel_D.md's reasons hold up (117 of 325 tumors with
+     InsDel_D are MSI-H vs 47 of 3,795 for InsDel1a; insertions of 2 or more
+     bases 16% vs 5.7%). InsDel1a.md's microhomology reason does not (0.5% vs
+     0.3%).
+  6. `ID_D.md`: "75%" is wrong. INS:T:1:5+ is 62% of collapsed InsDel_D. It
+     reaches 78% only with the 15% T deletions added.
+  7. `InsDel_N_alpha.md` and `InsDel_N_beta.md`: alpha's deletion mode is 7
+     T's (13.1%, then 6 T's 12.1%), not 5 (10.3%). Beta's insertion mode is
+     8 (9.1%), not "~7" (7.8%).
+  8. `InsDel13.md` and `InsDel_C.md`: "insertion of isolated Ts in InsDel13
+     but not InsDel_C" is not supported (476-type R0 3.6% vs 3.9%, R1 1.5%
+     vs 0.4%. 89-type Ins(T):R(0,4) 7.6% vs 10.6%, more in InsDel_C).
+
+  Overstated or incomplete:
+  9. `InsDel_A_beta.md`: "high correlation" with SBS2 and SBS13 is Spearman
+     0.139 and 0.154 (`build_fig4/fig4b_sbs_id_correlations.tsv`). SBS2
+     correlates more with C_ID1 (0.191) and InsDel1a (0.174). TCA→TA and
+     TCT→TT together are 30% of the signature, which is a stretch for
+     "primarily".
+  10. `ID_K.md`: mentions only T insertions. ID_K also dropped long poly-T
+      deletions, the larger share (collapsed InsDel_K DEL:T:1:5+ 27.5% vs
+      1.6% in ID_K. INS:T:1:4 plus 1:5+ 22.8% vs 5.2%).
+  11. `C_ID9.md`: the "large proportion" of long poly-T T deletions is 9.7%.
+      Our 476-type extraction collapsed to 89 types has 3.5% long poly-T T
+      insertions (Koh InD9b 9.0%). ID9 does not lack indels longer than 1
+      base: 6.1% of ID9 vs 21.5% of C_ID9.
+  12. `ID_M.md`: ">30%" is correct (39% in 89-type, 34% collapsed), but ID_M
+      keeps 12.6%, so they were not fully excluded. "Isolated as C_ID2" not
+      checked.
+  13. `InsDel_F.md`: "ID4/C_ID4" treats them as equivalent, but Table 1 has no
+      COSMIC match for C_ID4 (cosine to ID4 0.874). The 476-type classes
+      cannot tell CTCT from TTTT, and InsDel4's 2-base deletions are mostly at
+      two-base repeat units, not T runs, which argues against "TTTT". The
+      Reijns et al. 2022 citation needs a URL and DOI and was not checked.
+  14. `InsDel15.md`: the InsDel15 signature is not exactly that tumor's
+      current spectrum (largest per-type difference 1.1%, cosine 0.99998).
+      InsDel16 is exact. Minor.
+
+  Hold up: C_ID3 (right direction, small differences), ID_C, ID_J (94 of the
+  98 MSI-H tumors with ID_J also have C_ID7), ID_N (0.53 × C_ID1 + 0.59 ×
+  C_ID2, cosine 0.999, found in both SigProfiler and mSigHdp runs), InsDel11,
+  InsDel16, InsDel_A_alpha. After fixing, re-render the vignette pages and
+  send them to Xueming.
+
+- Finish the email to Xueming (`message_to_xueming_pseudonyms_2026-10-31.md`,
+  deleted 2026-11-06, in the git history before that date)
   after checking what is currently on Zenodo for the browser (concept DOI
   10.5281/zenodo.20092288, v1.0.0 record 10.5281/zenodo.20092289, and any
   later versions) and for the vignette (concept record 18451842). Fill in
@@ -405,9 +474,38 @@ http://8.138.15.71/
   turned its output into `all_simulated_with_annotation.txt`, annotated
   with ICAMS, or (7) the script that made the strand reference for the
   real indels, `single.indel.aggregate.strand.added.matrix.txt`.
-- Ask Mini (added 2026-11-06) where `all.meta.0528.rds` (read by both
-  ID83 `r.03` scripts for the sample ID mapping and cancer type) came
-  from, and whether Table S16 can replace it.
+  Also ask Mo about (8) the 3 TCGA whole exomes (`WES::TCGA-...`), which
+  have spectra and are in Table S16 since 2026-11-06 but have no
+  assignments and are not mentioned in `ms.qmd`: where their indel calls
+  came from, whether they were used in signature extraction, and which
+  signature is the one that only `WES::TCGA-EW-A2FV-01A-11D-A17D-09` has
+  (data repo README). The data sources and extraction methods need a
+  sentence on them. Draft email with questions 1 to 8:
+  `message_to_mo_topography_methods_2026-11-06.md`.
+- Topography inputs keyed by HMF IDs, and a record of them (added
+  2026-11-06). The ID83 topography inputs name Hartwig tumors by Hartwig
+  internal IDs (`CPCT...`, `DRUP...`, `WIDE...`), which cannot be
+  published, and the two `r.03` scripts get cancer types from
+  `all.meta.0528.rds` (Mo's sample table of about 2026-05-28, with
+  Hartwig internal IDs and outdated MSI calls and indel counts). Found
+  2026-11-06: all 6,975 samples of the 1026 partial-credit file map to
+  Table S16 through `hartwig_hmf_ids.tsv`, and the cancer types of
+  `all.meta.0528.rds` agree with Table S16 for all 6,975 tumors.
+  1. Ask Mini for copies of the topography inputs that are only on her
+     side, to keep in `~/MEGA/important_mut_sig_data/` as a record:
+     `all_simulated_with_annotation.txt` (and its `.with_bothstrand`
+     version), `single.indel.aggregate.strand.added.matrix.txt`, and
+     `all.meta.0528.rds` (draft: `message_to_mini_topography_inputs_2026-11-06.md`).
+  2. Write a script that rewrites the `Sample` column of an input from
+     Hartwig internal IDs to HMF IDs (T0604 and T2166 keep their
+     pseudonyms) and writes a new copy. Run it on the two partial-credit
+     files and on Mini's files once they arrive.
+  3. Change both `r.03` scripts to read cancer type from Table S16
+     instead of `all.meta.0528.rds`, and update the README's "Data needed
+     to run" and `data_flow/`.
+  4. With all inputs local, rerun `normalize.sh` to r.04 on the HMF-ID
+     inputs and check that the r.04 matrices match those of the rerun of
+     2026-10-30.
 
 ## Open: Xueming
 
@@ -436,7 +534,8 @@ http://8.138.15.71/
   `vignette/connection_table.tsv`) to copy `connection_table.tsv` from the
   data repo instead (he has access to it). To do: push the code
   repo, and send Xueming the message (draft, updated 2026-11-05:
-  `message_to_xueming_pseudonyms_2026-10-31.md`), and ask Xueming to swap in
+  `message_to_xueming_pseudonyms_2026-10-31.md`, deleted 2026-11-06, in
+  the git history), and ask Xueming to swap in
   the files, to search the site for leftover Hartwig internal IDs, to create a new
   version of the indel-signature-browser repository with the new
   identifiers and no history, and to delete the old repository or make it
