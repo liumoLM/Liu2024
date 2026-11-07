@@ -17,7 +17,10 @@
   - Key columns: `Patient`, `Major Cancer Type`, `MSIseq` (values `MSI-H` /
     `Non-MSI-H`), `mutation_burden`, `cohort`, `Cancer Type`. `MSI_status`
     (the cohort calls) was dropped on 2026-10-30.
-  - All 6975 Patient IDs match the column names in Table S11.
+  - 6978 rows since 2026-11-06: the 6975 Patient IDs that are the column
+    names in Table S11, plus 3 TCGA whole exomes (`WES::TCGA-...`, cohort
+    `TCGA (whole exome)`, MSIseq NA), which have spectra but no signature
+    assignments. Filter them out when joining with Table S11.
   - Built by `build_sup_table_s16/build_sup_table_s16.R` in the code repo
     from `sample_info.tsv` and `liu_et_al_83_spectra.tsv`.
 

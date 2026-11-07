@@ -94,20 +94,17 @@ regenerates.
      Illustrator. Its panel A colors (-log10 FDR) are from the old table,
      but the difference is barely visible.
 
-5. **Figure S1.** Mo Liu added `build_fig_s1/build_all_meta.R` and
+5. **Figure S1.** Mo Liu added
    `build_fig_s1/build_assignment_high_similarity_samples.R` on 2026-10-16.
-   Re-run on 2026-10-16, both reproduce the checked-in `all.meta.txt` and
-   `assignment.high.similarity.samples.txt`. `build_all_meta.R` had a
-   hard-coded `D:/` path and wrote CRLF line endings. After fixing both, its
-   output is byte-identical to `all.meta.txt`.
+   Re-run on 2026-10-16, it reproduces the checked-in
+   `assignment.high.similarity.samples.txt`.
    Duplicated data sources:
    - `all.meta.txt` repeated the data repo's `sample_info.tsv` (age, sex,
      cancer type, and cohort agree for all 7,013 of its tumors). On
      2026-10-16, `Signature Assignment.qmd` was changed to read the cancer
      types from `sample_info.tsv`, which gives identical plot data, and
-     `all.meta.txt` was removed. `build_all_meta.R` was moved to the data
-     repo as a record of how `sample_info.tsv` was assembled, and its inputs
-     were deleted from `build_fig_s1/`.
+     `all.meta.txt` and the inputs used to make it were removed from
+     `build_fig_s1/`.
    - On 2026-10-22, `Signature Assignment.qmd` and its one-page plot were
      deleted. `build_fig_s1/make_figure_s1_layout.R` now draws S1a and S1b
      directly, replacing the Illustrator assembly, with one color per bin

@@ -162,7 +162,7 @@ Method: each of the 204 cancer-type × signature groups tested in Table S15 is r
 
 ### Subtypes behind the CNS, lymphoid and bone/soft tissue associations
 
-The subtypes explain all three new associations, so none of them should be treated as real. Subtypes come from the PCAWG histology codes (`all.meta.txt`, from `build_all_meta.R` in the data repo) and the HMF `cancerSubtype` (`HMF_metadata.tsv`, controlled access, not in any repo).
+The subtypes explain all three new associations, so none of them should be treated as real. Subtypes come from the PCAWG histology codes (`primaryTumorlocation` in Mo's sample table `all.meta.txt`, which is no longer in any repo) and the HMF `cancerSubtype` (`HMF_metadata.tsv`, controlled access, not in any repo).
 
 **CNS, C\_ID19.** C\_ID19 is in 55 of 63 HMF glioblastomas but none of 41 PCAWG glioblastomas, which have the same median age (60) and a similar sex ratio. So in CNS it marks the HMF cohort, possibly prior treatment. CNS also mixes pediatric tumors that are sex-balanced with adult glioblastomas that are male-skewed. The apparent sex effect after adjustment comes from that mixture.
 

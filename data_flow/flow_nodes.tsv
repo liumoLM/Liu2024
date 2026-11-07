@@ -212,7 +212,7 @@ code:vignette/vignette.tex	code repo file	code	vignette/vignette.tex	vignette.te
 code:vignette/vignette.toc	code repo file	code	vignette/vignette.toc	vignette.toc	yes	nothing reads it	
 data:ID476_ID89_mapping.txt	data repo file	data	ID476_ID89_mapping.txt	ID476_ID89_mapping.txt	yes		
 data:assignments_2026-10-19/mSigAct.reanalyzed.samples.txt	data repo file	data	assignments_2026-10-19/mSigAct.reanalyzed.samples.txt	mSigAct.reanalyzed.samples.txt	yes		
-data:build_all_meta.R	script	data	build_all_meta.R	build_all_meta.R	yes		
+data:not_for_release/build_all_meta.R	script	data	not_for_release/build_all_meta.R	build_all_meta.R	yes		documentation only, not in the release
 data:connection_table.tsv	data repo file	data	connection_table.tsv	connection_table.tsv	yes		
 data:external_data/COSMIC_v3.6_ID_GRCh37.txt	data repo file	data	external_data/COSMIC_v3.6_ID_GRCh37.txt	COSMIC_v3.6_ID_GRCh37.txt	yes		
 data:external_data/Degasperi_2022/RefSig_SBS_Exposures_v2.03.tsv	data repo file	data	external_data/Degasperi_2022/RefSig_SBS_Exposures_v2.03.tsv	RefSig_SBS_Exposures_v2.03.tsv	yes		

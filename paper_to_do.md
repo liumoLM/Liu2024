@@ -184,8 +184,8 @@ http://8.138.15.71/
     and Age" in `ms.qmd` to match.
 - Review Mini's methods.
 - Get the Hartwig data download date or version (release) number, for the
-  data availability statement and for the header of `build_all_meta.R` and
-  the `sample_info.tsv` entry of the data repo README. Found 2026-10-31: Hartwig
+  data availability statement and for the `sample_info.tsv` entry of the
+  data repo README. Found 2026-10-31: Hartwig
   has no version numbers (the database grows continuously, and each data
   request gets its own snapshot). The `##fileDate` headers of the 4,233
   Hartwig VCFs in `~/MEGA/important_mut_sig_data/fmh-unfiltered_vcfs/` run
@@ -841,8 +841,7 @@ list are in the sections above.
 6. Closed (2026-10-18): Figure 4A MSS-hyper threshold (see "Done").
 7. Closed (2026-10-17): Figures S1 and S6, and Tables S15 and S16.
    - Figure S1 reproduces. It reads `sample_info.tsv` and the assignment
-     tables from the data repo, and `build_all_meta.R` moved to the data
-     repo as a record of how `sample_info.tsv` was assembled.
+     tables from the data repo.
    - `HMF_metadata.tsv` (controlled-access Hartwig clinical data) was
      removed from the code repo and its git history, and the repo was
      force-pushed. Mo, Mini, and Xueming were emailed to reset their clones.

@@ -430,12 +430,12 @@ code:msiseq/likely_dead_msiseq_code/prev-run-MSIseq.R	ext:MSIseq/mutationNum.txt
 code:msiseq/likely_dead_msiseq_code/prev-run-MSIseq.R	ext:MSIseq/Classify.txt	writes	uncertain: main loop uses undefined SNV_insert_dat / indel83_intersect_dat, so it cannot run as written; final MSIseq calls are in data:sample_info.tsv (MSIseq_MSI.H), and data:new-mini-msi-calls/ has a later run_MSIseq_overlap_6975.R
 code:msiseq/likely_dead_msiseq_code/prev-run-MSIseq.R	ext:MSIseq/mutationNum.xlsx	writes	uncertain: main loop uses undefined SNV_insert_dat / indel83_intersect_dat, so it cannot run as written; final MSIseq calls are in data:sample_info.tsv (MSIseq_MSI.H), and data:new-mini-msi-calls/ has a later run_MSIseq_overlap_6975.R
 code:msiseq/likely_dead_msiseq_code/prev-run-MSIseq.R	ext:MSIseq/MSI_classified_res.xlsx	writes	uncertain: main loop uses undefined SNV_insert_dat / indel83_intersect_dat, so it cannot run as written; final MSIseq calls are in data:sample_info.tsv (MSIseq_MSI.H), and data:new-mini-msi-calls/ has a later run_MSIseq_overlap_6975.R
-ext:PCAWG7.sample.id.txt	data:build_all_meta.R	reads	PCAWG7 package; inputs were in code repo build_fig_s1/ at commit 82973f3
-ext:PCAWG.sample.sheet.txt	data:build_all_meta.R	reads	PCAWG7 package; in code repo build_fig_s1/ at commit 82973f3
-ext:donor.all_projects.tsv.gz	data:build_all_meta.R	reads	ICGC donor table; in code repo build_fig_s1/ at commit 82973f3
-ext:HMF_metadata.tsv	data:build_all_meta.R	reads	controlled-access Hartwig clinical data
-ext:Priestley.TableS2.xlsx	data:build_all_meta.R	reads	Priestley et al. 2019 Table S2 (https://doi.org/10.1038/s41586-019-1689-y); found by list.files pattern
-data:build_all_meta.R	ext:all.meta.txt	writes	out_dir (default .); not in data repo; agrees with columns of data:sample_info.tsv per header
+ext:PCAWG7.sample.id.txt	data:not_for_release/build_all_meta.R	reads	PCAWG7 package; inputs were in code repo build_fig_s1/ at commit 82973f3
+ext:PCAWG.sample.sheet.txt	data:not_for_release/build_all_meta.R	reads	PCAWG7 package; in code repo build_fig_s1/ at commit 82973f3
+ext:donor.all_projects.tsv.gz	data:not_for_release/build_all_meta.R	reads	ICGC donor table; in code repo build_fig_s1/ at commit 82973f3
+ext:HMF_metadata.tsv	data:not_for_release/build_all_meta.R	reads	controlled-access Hartwig clinical data
+ext:Priestley.TableS2.xlsx	data:not_for_release/build_all_meta.R	reads	Priestley et al. 2019 Table S2 (https://doi.org/10.1038/s41586-019-1689-y); found by list.files pattern
+data:not_for_release/build_all_meta.R	ext:all.meta.txt	writes	out_dir (default .); not in data repo; agrees with columns of data:sample_info.tsv per header
 code:vignette/ppar.R	code:vignette/vignette.qmd	reads	source
 code:vignette/vhelpers.R	code:vignette/vignette.qmd	reads	source
 code:vignette/collapse_476_to_89.R	code:vignette/vignette.qmd	reads	source

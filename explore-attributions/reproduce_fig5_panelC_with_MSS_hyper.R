@@ -24,6 +24,8 @@ suppressPackageStartupMessages({
 setwd("/home/steve/github/0Liu2024")
 
 meta <- read_excel("sup_tables/sup_table_s16_sample_metadata.xlsx")
+# Table S16 also has 3 TCGA whole exomes, which have no signature assignments.
+meta <- meta[meta$cohort != "TCGA (whole exome)", ]
 exp  <- read.delim(
   "sup_tables/sup_table_s11_83_89_signature_assignment.tsv",
   check.names = FALSE
