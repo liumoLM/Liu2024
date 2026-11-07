@@ -443,7 +443,7 @@ code:vignette/onesig.qmd	code:vignette/vignette.qmd	reads	knitr child template, 
 code:vignette/table_1_col_name_mapping.R	code:vignette/vignette.qmd	reads	source, inside create_overview_table() (vhelpers.R), path relative to cwd vignette/
 code:vignette/styles.css	code:vignette/vignette.qmd	reads	html css
 code:vignette/preamble.tex	code:vignette/vignette.qmd	reads	pdf include-in-header
-data:connection_table.tsv	code:vignette/vignette.qmd	reads	"read_finalized(""connection_table""), InsDel_J exemplars overridden in code"
+data:connection_table.tsv	code:vignette/vignette.qmd	reads	"read_finalized(""connection_table"")"
 data:liu_et_al_83_spectra.tsv	code:vignette/vignette.qmd	reads	read_finalized
 data:liu_et_al_83_signatures.tsv	code:vignette/vignette.qmd	reads	read_finalized (also re-read inside collapse_476_to_83)
 data:liu_et_al_89_signatures.tsv	code:vignette/vignette.qmd	reads	read_finalized
@@ -512,7 +512,7 @@ data:liu_et_al_476_signatures.tsv	code:vignette/make_connection_table.R	reads	re
 data:liu_et_al_83_spectra.tsv	code:vignette/make_connection_table.R	reads	via find_top_n_match_names()
 data:liu_et_al_89_spectra.tsv	code:vignette/make_connection_table.R	reads	via find_top_n_match_names()
 data:liu_et_al_476_spectra.tsv	code:vignette/make_connection_table.R	reads	via find_top_n_match_names()
-code:vignette/make_connection_table.R	data:connection_table.tsv	writes	write.table; overwrites the data-repo file; reproduces it exactly (checked 2026-10-24)
+code:vignette/make_connection_table.R	data:connection_table.tsv	writes	write.table; overwrites the data-repo file; InsDel_J linking tumor set by hand (manual_linking_tumors, 2026-11-06)
 code:vignette/make_connection_table.R	code:vignette/assign_for_residual.md	writes	side effect of sourcing vhelpers.R (file.remove)
 code:vignette/figure/parallel_plots/*.png	code:vignette/onesig.qmd	reads	image links from plot_paths, embedded by parent render
 data:per_sig_txt/*.md	code:vignette/onesig.qmd	reads	find_sig_txt() for 89-type and 83-type IDs, optional

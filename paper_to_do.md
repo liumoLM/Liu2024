@@ -403,7 +403,14 @@ http://8.138.15.71/
   gets all of it from the code repo (commit 9cd8859 onward:
   `vignette/separate_pages/`, `vignette/prot_table_1.csv`, and
   `vignette/connection_table.tsv` from `write_site_connection_table.R`),
-  except the 109 MB combined HTML, which needs a link. To do: push the code
+  except the 109 MB combined HTML, which needs a link. Since 2026-11-06 the
+  code repo no longer has `vignette/connection_table.tsv` or
+  `write_site_connection_table.R`. The data repo's `connection_table.tsv` is
+  the only copy, and it now holds the hand-chosen InsDel_J linking tumor
+  (HMF001880A) that the vignette used to set in code. To do: tell Xueming
+  (the message of 2026-11-05, already sent, points him to
+  `vignette/connection_table.tsv`) to copy `connection_table.tsv` from the
+  data repo instead (he has access to it). To do: push the code
   repo, and send Xueming the message (draft, updated 2026-11-05:
   `message_to_xueming_pseudonyms_2026-10-31.md`), and ask Xueming to swap in
   the files, to search the site for leftover Hartwig internal IDs, to create a new
