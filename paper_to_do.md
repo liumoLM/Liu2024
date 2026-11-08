@@ -127,23 +127,20 @@ http://8.138.15.71/
   InsDel16, InsDel_A_alpha. After fixing, re-render the vignette pages and
   send them to Xueming.
 
-- Finish the email to Xueming (`message_to_xueming_pseudonyms_2026-10-31.md`,
-  deleted 2026-11-06, in the git history before that date)
-  after checking what is currently on Zenodo for the browser (concept DOI
-  10.5281/zenodo.20092288, v1.0.0 record 10.5281/zenodo.20092289, and any
-  later versions) and for the vignette (concept record 18451842). Fill in
-  the `<LINK>` for the 109 MB combined HTML, and push the code repo first.
-  Points to add (2026-11-05): `XmWU123/indelsig` is public now, with
-  Hartwig internal IDs in its files and history, so ask Xueming to make it private
-  right away. For the history-free copy, check with
-  `git -C indelsig grep -n -E 'CPCT|DRUP|WIDE|ACTN|CORE' HEAD`, then
-  `git -C indelsig archive --prefix=indelsig-new/ HEAD | tar -x`,
-  `git init -b main`, one commit. Rename the old repo to `indelsig-old`
-  (`gh repo rename`, then make it private) and create the new one as
-  `XmWU123/indelsig`, so existing links point to it. The Zenodo GitHub
-  integration follows the repository, not its name, so the new repo would
-  get a new concept DOI. Ask Zenodo support whether its releases can be
-  added to the existing concept DOI, which the paper cites.
+- Wait for Xueming's reply to the emails of 2026-11-06
+  (`message_to_xueming_pseudonyms_2026-10-31.md`, deleted 2026-11-06, in
+  the git history before that date, and the follow-up saying to take
+  `connection_table.tsv` from the data repo). He was asked to:
+  - make `XmWU123/indelsig` private,
+  - copy in the new files and check for Hartwig internal IDs,
+  - make the history-free public repo `XmWU123/indelsig-browser` and serve
+    indelsig.net from it,
+  - make a new version of the Zenodo record (concept DOI
+    10.5281/zenodo.20092288) from it,
+  - ask Zenodo support to remove the files of v1.0.0
+    (10.5281/zenodo.20092289).
+
+  When he replies, check each step.
 
 - Data repo (`indelsig/unified_indels_data`, private, no forks, no
   releases, not on Zenodo, checked 2026-11-05): replace the Hartwig internal
