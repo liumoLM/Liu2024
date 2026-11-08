@@ -495,8 +495,30 @@ http://8.138.15.71/
   VCFs of the simulation), 4.2 (seed, default or not), 4.3 (simulated
   VCFs annotated with ICAMS or mSigSpectra?), 4.4 (the script that made
   `all_simulated_with_annotation.txt`), and 5 (the script that made the
-  strand reference, and whether Mo or Mini made it). Waiting for Mo's
-  answer.
+  strand reference, and whether Mo or Mini made it). Mo answered on
+  2026-11-08 ("Re: organizing topography code"):
+  1. Script: `partial.credit.ID83.R` (attached). Inputs:
+     `all.indel.with.annotation.txt.gz` (Google Drive link) and the
+     signatures and exposures in `unified_indels_data`. As sent it does not
+     run (`temp` is defined only in a commented-out line) and does not write
+     the 1026 file. To do: add it to the code repo with those fixed, and
+     download `all.indel.with.annotation.txt.gz` to
+     `~/MEGA/important_mut_sig_data/`.
+  2. Mo computed partial exposures, exposure(t, s) × profile(s, c), not
+     normalized across signatures, and Mini's `normalize.sh` normalized
+     them. To do: write the methods sentences from this.
+  3. From the 83-type class, exposures and profiles (not summed from 89).
+  4.1 All 6,975 VCFs. 4.2 Default seed. 4.3 ICAMS,
+     `simulated_vcf_ICAMS_code.R` (attached), run per simulated file in
+     parallel. 4.4 Not answered: the script reads
+     `all.simulated.vcfs/*.annotated.txt.gz`, so it is not clear what made
+     those files or what concatenated them into
+     `all_simulated_with_annotation.txt`, and the script writes nothing.
+     To do: ask Mo.
+  5. Mini made it. Mini sent `add_strand_bias.R` on 2026-11-07. To do: ask
+     Mini which file was its input, and add the script to the code repo.
+  Both new scripts and their inputs are in `data_flow/` as `ext:` nodes
+  (2026-11-08).
 - Topography inputs keyed by HMF IDs, and a record of them (added
   2026-11-06). The ID83 topography inputs name Hartwig tumors by Hartwig
   internal IDs (`CPCT...`, `DRUP...`, `WIDE...`), which cannot be
@@ -516,8 +538,20 @@ http://8.138.15.71/
      and `all_simulated_with_annotation.with_bothstrand.txt` with the
      summary and log files that `append_bothstrand.R` wrote next to it,
      `single.indel.aggregate.strand.added.matrix.txt`, and
-     `all.meta.0528.rds`, as password-protected .zip files. Waiting for
-     the files.
+     `all.meta.0528.rds`, as password-protected .zip files. Done
+     (2026-11-08): Mini sent `simulation_and_reference_data.zip` (Google
+     Drive, 2026-11-07, 7.4 GB), extracted to
+     `~/MEGA/important_mut_sig_data/simulation_and_reference_data/` (7
+     files, 56 GB, sizes match the zip). The SHA-256 of both simulated
+     files match `source_sha256` and `output_sha256` in the summary JSON,
+     so the local copies are exactly the server files that
+     `append_bothstrand.R` read and wrote. The summary JSON reports 215,858,283
+     simulated indels, 3,059,565 with `bothstrand` TRUE. The strand
+     reference dates from 2025-06-07 and carries per-indel probabilities
+     of older signature names (C_ID*, H_ID*). All these files use Hartwig
+     internal IDs. `simulation_and_reference_data-for-indel-paper-2026-11/`
+     next to it is an earlier, partial extraction (3 files) and can be
+     deleted.
   2. Write a script that rewrites the `Sample` column of an input from
      Hartwig internal IDs to HMF IDs (T0604 and T2166 keep their
      pseudonyms) and writes a new copy. Run it on the two partial-credit

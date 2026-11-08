@@ -677,3 +677,23 @@ code:find_data.R	code:msiseq/call_msi_h.R	reads	source
 data:new-mini-msi-calls/mutationNum_overlap_6975.tsv	code:msiseq/call_msi_h.R	reads	argparser default --in-file find_data()
 code:msiseq/call_msi_h.R	code:msiseq/msi_h_calls.tsv	writes	argparser default --out
 code:msiseq/msi_h_calls.tsv	data:sample_info.tsv	copied	MSIseq_MSI.H for the 6,975 tumors (2026-10-30)
+ext:/public/data/Topography_analysis_2026/simulation_data/all_simulated_with_annotation.txt	ext:~/MEGA/important_mut_sig_data/simulation_and_reference_data/all_simulated_with_annotation.txt	copied	Mini, 2026-11-07
+ext:/public/data/Topography_analysis_2026/simulation_data/all_simulated_with_annotation.with_bothstrand.txt	ext:~/MEGA/important_mut_sig_data/simulation_and_reference_data/all_simulated_with_annotation.with_bothstrand.txt	copied	Mini, 2026-11-07
+ext:/public/data/Topography_analysis_2026/simulation_data/all_simulated_with_annotation.with_bothstrand.txt.summary.json	ext:~/MEGA/important_mut_sig_data/simulation_and_reference_data/all_simulated_with_annotation.with_bothstrand.txt.summary.json	copied	Mini, 2026-11-07
+ext:/public/data/Topography_analysis_2026/simulation_data/all_simulated_with_annotation.with_bothstrand.txt.warnings.log	ext:~/MEGA/important_mut_sig_data/simulation_and_reference_data/all_simulated_with_annotation.with_bothstrand.txt.warnings.log	copied	Mini, 2026-11-07
+ext:/public/data/Topography_analysis_2026/simulation_data/all_simulated_with_annotation.with_bothstrand.txt.discarded.tsv	ext:~/MEGA/important_mut_sig_data/simulation_and_reference_data/all_simulated_with_annotation.with_bothstrand.txt.discarded.tsv	copied	Mini, 2026-11-07
+ext:/public/data/Topography_analysis/reference/single.indel.aggregate.strand.added.matrix.txt	ext:~/MEGA/important_mut_sig_data/simulation_and_reference_data/single.indel.aggregate.strand.added.matrix.txt	copied	Mini, 2026-11-07
+ext:/public/data/Topography_analysis/mutation_data/all.meta.0528.rds	ext:~/MEGA/important_mut_sig_data/simulation_and_reference_data/all.meta.0528.rds	copied	Mini, 2026-11-07
+code:ID83_topography_analysis_code/append_bothstrand.R	ext:/public/data/Topography_analysis_2026/simulation_data/all_simulated_with_annotation.with_bothstrand.txt.summary.json	writes	written next to the output
+code:ID83_topography_analysis_code/append_bothstrand.R	ext:/public/data/Topography_analysis_2026/simulation_data/all_simulated_with_annotation.with_bothstrand.txt.warnings.log	writes	written next to the output
+code:ID83_topography_analysis_code/append_bothstrand.R	ext:/public/data/Topography_analysis_2026/simulation_data/all_simulated_with_annotation.with_bothstrand.txt.discarded.tsv	writes	written next to the output
+ext:all.indel.with.annotation.txt.gz (Mo, Google Drive link)	ext:partial.credit.ID83.R (Mo, email 2026-11-08)	reads	
+data:liu_et_al_83_assignment.tsv	ext:partial.credit.ID83.R (Mo, email 2026-11-08)	reads	per Mo, exposures from unified_indels_data
+data:liu_et_al_83_signatures.tsv	ext:partial.credit.ID83.R (Mo, email 2026-11-08)	reads	per Mo, signature profiles from unified_indels_data
+ext:partial.credit.ID83.R (Mo, email 2026-11-08)	ext:/public/data/Topography_analysis_2026/20261026_partial_credit/all.indel.ID83.partial.credit.1026.txt.gz	writes	per Mo; the script as sent builds the table but has no write step
+ext:VCFs of all 6,975 tumors (SigProfilerSimulator input)	ext:SigProfilerSimulator 1.2.2 (Mo, default seed)	reads	
+ext:SigProfilerSimulator 1.2.2 (Mo, default seed)	ext:/transfer/LiuMo_data/all.simulated.vcfs/*.annotated.txt.gz	writes	simulated VCFs; the annotation step to *.annotated.txt.gz is not documented
+ext:/transfer/LiuMo_data/all.simulated.vcfs/*.annotated.txt.gz	ext:simulated_vcf_ICAMS_code.R (Mo, email 2026-11-08)	reads	
+ext:simulated_vcf_ICAMS_code.R (Mo, email 2026-11-08)	ext:/public/data/Topography_analysis_2026/simulation_data/all_simulated_with_annotation.txt	writes	per Mo; the script as sent writes nothing, and the concatenation step is not shown
+ext:real indel table with ID.class (input of add_strand_bias.R)	ext:add_strand_bias.R (Mini, email 2026-11-07)	reads	
+ext:add_strand_bias.R (Mini, email 2026-11-07)	ext:/public/data/Topography_analysis/reference/single.indel.aggregate.strand.added.matrix.txt	writes	Strand column

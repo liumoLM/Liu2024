@@ -15,6 +15,14 @@ which file, across the data repo (`unified_indels_data`), the code repo
   find a node by path, highlight the lineage (upstream, downstream, or both)
   of the selection, hide everything else and lay out what is left, and show
   or hide each kind of node. Instructions are on the page.
+- `topography_flow.html`: the same viewer for the ID83 topography analysis
+  only (added 2026-11-08), the nodes upstream and downstream of the topography
+  scripts and server files. Build it from the repository root with
+  ```
+  Rscript data_flow/build_flow_viewer.R --focus 'topography_analysis_code|/public/data/Topography|simulation_and_reference_data' --title 'Liu et al. 2026: topography analysis flow' --out data_flow/topography_flow.html
+  ```
+  `--focus` takes a regular expression on node ids and keeps the matching
+  nodes and their lineage. The ID89 topography scripts are not in the TSVs.
 
 ## Node ids
 
@@ -64,6 +72,12 @@ come from `main_figures_manifest.tsv`, `sup_figures_manifest.tsv`, and
 example the topography step 05 and 06 tables once copied into
 `build_fig_s3/`) were added as `copied`
 edges.
+
+On 2026-11-08 the topography inputs were added from the emails of Mo
+(2026-11-08, `partial.credit.ID83.R`, `simulated_vcf_ICAMS_code.R`) and
+Mini (2026-11-07, `add_strand_bias.R`, and the local copies of the server
+files in `~/MEGA/important_mut_sig_data/simulation_and_reference_data/`).
+These scripts are not yet in any repo, so they are `ext:` nodes.
 
 When a script changes what it reads or writes, edit the two TSVs and rerun
 `build_flow_viewer.R`. The viewer leaves out `code:find_data.R`, which most

@@ -9,7 +9,13 @@
 ## Usage, from the repository root:
 ##   Rscript data_flow/build_flow_viewer.R
 ##
-## Writes data_flow/data_and_analysis_flow.html. The page draws the graph
+## Writes data_flow/data_and_analysis_flow.html. With --focus, writes a
+## subgraph instead: the nodes whose id matches the regular expression,
+## plus everything upstream and downstream of them. For the topography
+## subgraph:
+##   Rscript data_flow/build_flow_viewer.R --focus 'topography_analysis_code|/public/data/Topography' \
+##     --title 'Topography analysis' --out data_flow/topography_flow.html
+## The page draws the graph
 ## with Cytoscape.js and its dagre layout, loaded from cdnjs and jsdelivr, so
 ## it needs an internet connection.
 ## The viewer's controls are described on the page itself.
@@ -25,6 +31,16 @@ parser <- add_argument(
   help = "HTML file to write",
   default = here::here("data_flow", "data_and_analysis_flow.html")
 )
+parser <- add_argument(
+  parser, "--focus",
+  help = "regular expression; keep only matching nodes and their lineage",
+  default = NA_character_
+)
+parser <- add_argument(
+  parser, "--title",
+  help = "page heading",
+  default = "Liu et al. 2026: data and analysis flow"
+)
 args <- parse_args(parser)
 
 nodes <- read.delim(here::here("data_flow", "flow_nodes.tsv"),
@@ -39,6 +55,23 @@ stopifnot(!anyDuplicated(nodes$id),
 hidden <- "code:find_data.R"
 nodes <- nodes %>% dplyr::filter(!id %in% hidden)
 edges <- edges %>% dplyr::filter(!from %in% hidden, !to %in% hidden)
+
+## ---- Optional subgraph --------------------------------------------------------
+## Keep the nodes that match --focus and all nodes upstream or downstream of
+## them. Inputs of a downstream script that are not themselves in that
+## lineage are left out.
+if (!is.na(args$focus)) {
+  g_all <- igraph::graph_from_data_frame(edges[, c("from", "to")],
+                                         vertices = nodes$id)
+  seeds <- nodes$id[grepl(args$focus, nodes$id)]
+  if (length(seeds) == 0) stop("No node id matches --focus ", args$focus)
+  keep <- unique(unlist(lapply(seeds, function(s) {
+    c(names(igraph::subcomponent(g_all, s, mode = "in")),
+      names(igraph::subcomponent(g_all, s, mode = "out")))
+  })))
+  nodes <- nodes %>% dplyr::filter(id %in% keep)
+  edges <- edges %>% dplyr::filter(from %in% keep, to %in% keep)
+}
 
 ## ---- Initial layout ---------------------------------------------------------
 ## Sugiyama layers (igraph), left to right, packed densely: within each layer
@@ -120,7 +153,7 @@ template <- r"--(<!doctype html>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Data and analysis flow</title>
+<title>__TITLE__</title>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/cytoscape/3.30.2/cytoscape.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/dagre/0.8.5/dagre.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/cytoscape-dagre@2.5.0/cytoscape-dagre.min.js"></script>
@@ -151,7 +184,7 @@ template <- r"--(<!doctype html>
 <body>
 <div id="app">
 <header>
-  <h1>Liu et al. 2026: data and analysis flow</h1>
+  <h1>__TITLE__</h1>
   <input type="search" id="search" list="ids" placeholder="Find a file or script (type part of a path)">
   <datalist id="ids"></datalist>
   <button id="btn-lineage" title="Highlight everything upstream and downstream of the selected nodes">Lineage of selection</button>
@@ -313,5 +346,6 @@ document.getElementById("btn-reset").onclick = () => {
 )--"
 
 html <- sub("__ELEMENTS__", elements_json, template, fixed = TRUE)
+html <- gsub("__TITLE__", args$title, html, fixed = TRUE)
 writeLines(html, args$out, useBytes = TRUE)
 message("Wrote ", args$out, " (", nrow(nodes), " nodes, ", nrow(edges), " edges)")
