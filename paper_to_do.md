@@ -76,7 +76,10 @@ http://8.138.15.71/
   3. `C_ID5.md`: InsDel5b has fewer long poly-T T deletions than InsDel5a
      (89-type R(5,7) plus R(8,): 5.1% vs 7.3%). Its extra is T insertions
      (14.7% vs 2.2% in 89-type, INS:T:1:5+ collapsed 13.8% vs 1.2%). The note
-     leaves out InsDel5c, which also maps to C_ID5.
+     leaves out InsDel5c, which also maps to C_ID5. DONE 2026-11-07:
+     rewritten in the data repo, and "WARNING:" dropped. Drop it from
+     C_ID3, ID_C, ID_D, ID_K, and ID_M too (the callout box sets the note
+     apart, and the code ignores it).
   4. `C_ID19.md`: InsDel19a has 7.3% long poly-T T insertions, not 15%, and
      C_ID19 has 3.2%, so they are not absent. The other "absent" features are
      only less common (single-C deletions 6.3% in C_ID19 vs 13.2%). InsDel19b's
