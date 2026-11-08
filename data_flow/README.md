@@ -19,7 +19,7 @@ which file, across the data repo (`unified_indels_data`), the code repo
   only (added 2026-11-08), the nodes upstream and downstream of the topography
   scripts and server files. Build it from the repository root with
   ```
-  Rscript data_flow/build_flow_viewer.R --focus 'topography_analysis_code|/public/data/Topography|simulation_and_reference_data' --title 'Liu et al. 2026: topography analysis flow' --out data_flow/topography_flow.html
+  Rscript data_flow/build_flow_viewer.R --focus 'topography_analysis_code|/public/data/Topography|simulation_and_reference_data|simulated_vcf_ICAMS_code' --title 'Liu et al. 2026: topography analysis flow' --out data_flow/topography_flow.html
   ```
   `--focus` takes a regular expression on node ids and keeps the matching
   nodes and their lineage. The ID89 topography scripts are not in the TSVs.

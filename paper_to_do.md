@@ -508,13 +508,17 @@ http://8.138.15.71/
      normalized across signatures, and Mini's `normalize.sh` normalized
      them. To do: write the methods sentences from this.
   3. From the 83-type class, exposures and profiles (not summed from 89).
-  4.1 All 6,975 VCFs. 4.2 Default seed. 4.3 ICAMS,
-     `simulated_vcf_ICAMS_code.R` (attached), run per simulated file in
-     parallel. 4.4 Not answered: the script reads
-     `all.simulated.vcfs/*.annotated.txt.gz`, so it is not clear what made
-     those files or what concatenated them into
-     `all_simulated_with_annotation.txt`, and the script writes nothing.
-     To do: ask Mo.
+  4.1 All 6,975 VCFs. 4.2 Default seed. 4.3 ICAMS. The columns of
+     `all_simulated_with_annotation.txt` confirm it: `matGenClass` and
+     `type_4` come from the SigProfiler matrix generator, and `ID.class`
+     and `trans.*` from ICAMS. But the attached
+     `simulated_vcf_ICAMS_code.R` is not that step. It reads
+     `all.simulated.vcfs/*.annotated.txt.gz`, which are already annotated,
+     reruns ICAMS only to get the `bothstrand` flag (the job of
+     `append_bothstrand.R`), and writes nothing. 4.4 Not answered. To do:
+     ask Mo for the script that annotated the simulated VCFs with ICAMS
+     into `*.annotated.txt.gz`, and for the step that concatenated them
+     into `all_simulated_with_annotation.txt`.
   5. Mini made it. Mini sent `add_strand_bias.R` on 2026-11-07. To do: ask
      Mini which file was its input, and add the script to the code repo.
   Both new scripts and their inputs are in `data_flow/` as `ext:` nodes

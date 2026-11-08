@@ -692,8 +692,11 @@ data:liu_et_al_83_assignment.tsv	ext:partial.credit.ID83.R (Mo, email 2026-11-08
 data:liu_et_al_83_signatures.tsv	ext:partial.credit.ID83.R (Mo, email 2026-11-08)	reads	per Mo, signature profiles from unified_indels_data
 ext:partial.credit.ID83.R (Mo, email 2026-11-08)	ext:/public/data/Topography_analysis_2026/20261026_partial_credit/all.indel.ID83.partial.credit.1026.txt.gz	writes	per Mo; the script as sent builds the table but has no write step
 ext:VCFs of all 6,975 tumors (SigProfilerSimulator input)	ext:SigProfilerSimulator 1.2.2 (Mo, default seed)	reads	
-ext:SigProfilerSimulator 1.2.2 (Mo, default seed)	ext:/transfer/LiuMo_data/all.simulated.vcfs/*.annotated.txt.gz	writes	simulated VCFs; the annotation step to *.annotated.txt.gz is not documented
 ext:/transfer/LiuMo_data/all.simulated.vcfs/*.annotated.txt.gz	ext:simulated_vcf_ICAMS_code.R (Mo, email 2026-11-08)	reads	
-ext:simulated_vcf_ICAMS_code.R (Mo, email 2026-11-08)	ext:/public/data/Topography_analysis_2026/simulation_data/all_simulated_with_annotation.txt	writes	per Mo; the script as sent writes nothing, and the concatenation step is not shown
 ext:real indel table with ID.class (input of add_strand_bias.R)	ext:add_strand_bias.R (Mini, email 2026-11-07)	reads	
 ext:add_strand_bias.R (Mini, email 2026-11-07)	ext:/public/data/Topography_analysis/reference/single.indel.aggregate.strand.added.matrix.txt	writes	Strand column
+ext:SigProfilerSimulator 1.2.2 (Mo, default seed)	ext:simulated indel VCFs (SigProfilerSimulator output)	writes	
+ext:simulated indel VCFs (SigProfilerSimulator output)	ext:ICAMS annotation of simulated VCFs (Mo, script not sent)	reads	
+ext:ICAMS annotation of simulated VCFs (Mo, script not sent)	ext:/transfer/LiuMo_data/all.simulated.vcfs/*.annotated.txt.gz	writes	
+ext:/transfer/LiuMo_data/all.simulated.vcfs/*.annotated.txt.gz	ext:concatenation of *.annotated.txt.gz (not documented)	reads	
+ext:concatenation of *.annotated.txt.gz (not documented)	ext:/public/data/Topography_analysis_2026/simulation_data/all_simulated_with_annotation.txt	writes	
