@@ -57,7 +57,8 @@ http://8.138.15.71/
 
 ## Open: Steve
 
-- Review, one by one, the findings on the per-signature notes in the data
+- (Items 1 to 3 done 2026-11-07. Continue with item 4 on 2026-11-08.)
+  Review, one by one, the findings on the per-signature notes in the data
   repo (`unified_indels_data/per_sig_txt/*.md`, shown on the vignette
   pages), checked on 2026-11-06 against the current signatures. Percentages
   are proportions of the signature. "Collapsed" means the 476-type signature
