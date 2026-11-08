@@ -71,7 +71,8 @@ http://8.138.15.71/
      2026-11-07: rewritten in the data repo.
   2. `C_ID2.md`: both "absent from C_ID2" are wrong. C_ID2 has 12%
      INS:T:1:5+ (collapsed InsDel2b 15.5%) and DEL:T:1:3 and 1:4 at 1.5% and
-     3.3% (InsDel2b 4.1% and 11.8%).
+     3.3% (InsDel2b 4.1% and 11.8%). DONE 2026-11-07: rewritten in the
+     data repo.
   3. `C_ID5.md`: InsDel5b has fewer long poly-T T deletions than InsDel5a
      (89-type R(5,7) plus R(8,): 5.1% vs 7.3%). Its extra is T insertions
      (14.7% vs 2.2% in 89-type, INS:T:1:5+ collapsed 13.8% vs 1.2%). The note
