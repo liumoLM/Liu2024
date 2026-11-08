@@ -124,6 +124,10 @@ for (m in packed[-1]) {
 }
 
 ## ---- Elements as Cytoscape.js JSON -----------------------------------------
+## A red border marks a problem (missing, no writer, never read, likely
+## dead). A dashed border marks controlled-access data, which is expected
+## to be absent from the repos and is not a problem.
+problem_flags <- "missing|no script writes|nothing reads|likely dead"
 cy_nodes <- lapply(seq_len(nrow(nodes)), function(i) {
   n <- nodes[i, ]
   list(
@@ -132,7 +136,11 @@ cy_nodes <- lapply(seq_len(nrow(nodes)), function(i) {
       path = n$path, exists = n$exists, flags = n$flags, note = n$note
     )),
     position = list(x = coords[n$id, 1], y = coords[n$id, 2]),
-    classes = paste(gsub(" ", "-", n$kind), if (!is.na(n$flags)) "flagged")
+    classes = paste(
+      gsub(" ", "-", n$kind),
+      if (!is.na(n$flags) && grepl(problem_flags, n$flags)) "flagged",
+      if (!is.na(n$flags) && grepl("controlled", n$flags)) "controlled"
+    )
   )
 })
 cy_edges <- lapply(seq_len(nrow(edges)), function(i) {
@@ -208,6 +216,7 @@ template <- r"--(<!doctype html>
   <div class="legend-row"><svg width="40" height="10"><line x1="0" y1="5" x2="40" y2="5" stroke="#c0392b" stroke-width="2" stroke-dasharray="6 4"/></svg> edited by hand</div>
   <div class="legend-row"><svg width="40" height="10"><line x1="0" y1="5" x2="40" y2="5" stroke="#7d3c98" stroke-width="2" stroke-dasharray="2 3"/></svg> code adapted from</div>
   <div class="legend-row"><span class="sw" style="border:3px solid #c0392b;background:#fff"></span> flagged: missing, no writer, or never read</div>
+  <div class="legend-row"><span class="sw" style="border:3px dashed #2c5aa0;background:#fff"></span> controlled access</div>
   <h2>How to use</h2>
   <ul id="help" class="muted">
     <li>Scroll to zoom, drag the background to pan.</li>
@@ -236,7 +245,8 @@ const style = [
   ...KINDS.map(([k, cls, fill, border, shape]) => ({ selector: "node." + cls,
       style: { "background-color": fill, "border-color": border, "shape": shape } })),
   { selector: "node.external", style: { "height": 26, "text-max-width": 150 } },
-  { selector: "node.flagged", style: { "border-color": "#c0392b", "border-width": 3 } },
+  { selector: "node.controlled", style: { "border-color": "#2c5aa0", "border-width": 3, "border-style": "dashed" } },
+  { selector: "node.flagged", style: { "border-color": "#c0392b", "border-width": 3, "border-style": "solid" } },
   { selector: "edge", style: { "width": 1.2, "line-color": "#b8c1c7", "target-arrow-color": "#b8c1c7",
       "target-arrow-shape": "triangle", "arrow-scale": 0.8, "curve-style": "bezier" } },
   { selector: "edge.copied", style: { "line-style": "dashed", "line-color": "#1f63b5", "target-arrow-color": "#1f63b5" } },

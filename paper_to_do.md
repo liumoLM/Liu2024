@@ -501,9 +501,14 @@ http://8.138.15.71/
      `all.indel.with.annotation.txt.gz` (Google Drive link) and the
      signatures and exposures in `unified_indels_data`. As sent it does not
      run (`temp` is defined only in a commented-out line) and does not write
-     the 1026 file. To do: add it to the code repo with those fixed, and
-     download `all.indel.with.annotation.txt.gz` to
-     `~/MEGA/important_mut_sig_data/`.
+     the 1026 file. To do: add it to the code repo with those fixed. Done
+     (2026-11-08): `all.indel.with.annotation.txt.gz` downloaded to
+     `~/MEGA/important_mut_sig_data/more-indel-paper-info/` (223 MB,
+     18,477,937 indels, gzip header date 2026-10-16). Its per-tumor indel
+     counts equal the column sums of `liu_et_al_83_spectra.tsv` for all
+     6,975 tumors (T0604 and T2166 matched through `hartwig_hmf_ids.tsv`).
+     It uses Hartwig internal IDs. It is also the indel input of Mini's
+     `run_MSIseq_overlap_6975.R`. No record says how it was made.
   2. Mo computed partial exposures, exposure(t, s) × profile(s, c), not
      normalized across signatures, and Mini's `normalize.sh` normalized
      them. To do: write the methods sentences from this.
