@@ -323,13 +323,11 @@ code:ID83_topography_analysis_code/r.02.intersect_no_loop.sh	ext:/public/data/To
 code:ID83_topography_analysis_code/r.02.intersect_no_loop.sh	ext:/public/data/Topography_analysis_2026/results1018/ID83/02_intersectBed/04.RepliStrand.simulated.intersect_res.txt	writes	bedtools intersectBed
 ext:/public/data/Topography_analysis_2026/results1018/ID83/02_intersectBed/01.RelicateTime.TransStrand.DNA_Region.intersect_res.txt	code:ID83_topography_analysis_code/r.03_mergeInf.R	reads	relative ../02_intersectBed/
 ext:/public/data/Topography_analysis_2026/results1018/ID83/02_intersectBed/02.RepliStrand.intersect_res.txt	code:ID83_topography_analysis_code/r.03_mergeInf.R	reads	relative ../02_intersectBed/
-ext:/public/data/Topography_analysis/mutation_data/all.meta.0528.rds	code:ID83_topography_analysis_code/r.03_mergeInf.R	reads	sample to tissue metadata
 ext:/public/data/Topography_analysis/reference/single.indel.aggregate.strand.added.matrix.txt	code:ID83_topography_analysis_code/r.03_mergeInf.R	reads	Strand info per indel
 code:ID83_topography_analysis_code/r.03_mergeInf.R	ext:/public/data/Topography_analysis_2026/results1018/ID83/03_mergeInf/01.allInf.single.indel.txt	writes	relative 03_mergeInf/
 code:ID83_topography_analysis_code/r.03_mergeInf.R	ext:/public/data/Topography_analysis_2026/results1018/ID83/03_mergeInf/01.allInf.single.indel.Rds	writes	relative 03_mergeInf/
 ext:/public/data/Topography_analysis_2026/results1018/ID83/02_intersectBed/03.RelicateTime.simulated.intersect_res.txt	code:ID83_topography_analysis_code/r.03_mergeInf_simulation.R	reads	relative ../02_intersectBed/
 ext:/public/data/Topography_analysis_2026/results1018/ID83/02_intersectBed/04.RepliStrand.simulated.intersect_res.txt	code:ID83_topography_analysis_code/r.03_mergeInf_simulation.R	reads	relative ../02_intersectBed/
-ext:/public/data/Topography_analysis/mutation_data/all.meta.0528.rds	code:ID83_topography_analysis_code/r.03_mergeInf_simulation.R	reads	
 code:ID83_topography_analysis_code/r.03_mergeInf_simulation.R	ext:/public/data/Topography_analysis_2026/results1018/ID83/03_mergeInf/02.allInf.simulated.txt	writes	relative 03_mergeInf/
 code:ID83_topography_analysis_code/r.03_mergeInf_simulation.R	ext:/public/data/Topography_analysis_2026/results1018/ID83/03_mergeInf/02.allInf.simulated.Rds	writes	relative 03_mergeInf/
 ext:/public/data/Topography_analysis_2026/results1018/ID83/03_mergeInf/01.allInf.single.indel.txt	code:ID83_topography_analysis_code/r.04_create4InfMatrix.R	reads	relative ../03_mergeInf/, indels with bothstrand TRUE are left out of the transcription-strand counts
@@ -694,3 +692,5 @@ ext:all.simulated.vcfs/*.annotated.txt.gz	ext:concatenation of *.annotated.txt.g
 ext:concatenation of *.annotated.txt.gz (not yet in the code repo)	ext:/public/data/Topography_analysis_2026/simulation_data/all_simulated_with_annotation.txt	writes	
 ext:annotated indel VCFs of the 6,975 tumors	ext:combining the annotated indel VCFs (not yet in the code repo)	reads	
 ext:combining the annotated indel VCFs (not yet in the code repo)	ext:/public/data/Topography_analysis_2026/all.indel.with.annotation.txt.gz	writes	
+code:build_sup_table_s16/sup_table_s16_sample_metadata.xlsx	code:ID83_topography_analysis_code/r.03_mergeInf.R	reads	cancer type ("Major Cancer Type") of each tumor
+code:build_sup_table_s16/sup_table_s16_sample_metadata.xlsx	code:ID83_topography_analysis_code/r.03_mergeInf_simulation.R	reads	cancer type ("Major Cancer Type") of each tumor

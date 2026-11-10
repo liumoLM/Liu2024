@@ -564,10 +564,24 @@ http://8.138.15.71/
   2. Write a script that rewrites the `Sample` column of an input from
      Hartwig internal IDs to HMF IDs (T0604 and T2166 keep their
      pseudonyms) and writes a new copy. Run it on the two partial-credit
-     files and on Mini's files once they arrive.
-  3. Change both `r.03` scripts to read cancer type from Table S16
-     instead of `all.meta.0528.rds`, and update the README's "Data needed
-     to run" and `data_flow/`.
+     files and on Mini's files once they arrive. Done (2026-11-08): the
+     code repo's `not_for_release/rewrite_to_hmf_ids.R` (awk, streaming;
+     keeps prefixes such as `Uterus::` and suffixes such as `_12`; stops
+     on an unmapped ID). Copies are written to
+     `~/MEGA/important_mut_sig_data/topography_inputs_hmf_ids/`: the two
+     partial-credit files, `all.indel.with.annotation.txt.gz`,
+     `single.indel.aggregate.strand.added.matrix.txt`, and
+     `all_simulated_with_annotation.with_bothstrand.txt` (columns
+     `sample.simu` and `Sample`). Not rewritten:
+     `all_simulated_with_annotation.txt`, which only `append_bothstrand.R`
+     reads, and `all.meta.0528.rds`, which is no longer read. Checked:
+     row counts equal the inputs, no ID was unmapped, no Hartwig internal
+     ID is left anywhere in the five copies, and all 6,975 sample IDs of
+     the ID83 partial-credit copy are in Table S16.
+  3. Done (2026-11-08): both `r.03` scripts read cancer type from Table
+     S16 ("Major Cancer Type") instead of `all.meta.0528.rds`, which agree
+     for all 6,975 tumors. The README's "Data needed to run" and
+     `data_flow/` were updated.
   4. With all inputs local, rerun `normalize.sh` to r.04 on the HMF-ID
      inputs and check that the r.04 matrices match those of the rerun of
      2026-10-30.
