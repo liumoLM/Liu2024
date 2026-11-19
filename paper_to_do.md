@@ -7,53 +7,7 @@
 http://8.138.15.71/
 
 
-# To do (updated 2026-10-23)
-
-## Before submission and before posting on bioRxiv
-
-- Release the code as a new GitHub repo, not `Liu2026_code_and_data` itself
-  (decided 2026-10-24). The working repo's git history still holds
-  controlled-access per-variant data
-  (`build_fig6/ID4_IDF_linking_tumor_indel_annotated_vcf.txt`, untracked
-  since 2026-10-24), so the working repo stays private and keeps its history
-  for internal use.
-  - Make the new repo from the tracked files only, with no history:
-    ```
-    git -C ~/github/Liu2026_code_and_data archive --prefix=Liu2026_release/ HEAD | tar -x -C ~/github
-    git -C ~/github/Liu2026_release init && git -C ~/github/Liu2026_release add -A && git -C ~/github/Liu2026_release commit -m "Initial release"
-    ```
-  - Use `git archive`, not a copy of the folder without `.git`: it copies only
-    tracked files (278 MB of the folder's 5.5 GB on 2026-10-24), and leaves
-    out untracked and ignored files, such as the old Figure 6 file, scratch
-    output, and renders. The repo has no Git LFS files, so no LFS pointer
-    files are copied.
-  - Not a shallow clone: it keeps the old commit IDs, can be deepened with
-    `git fetch --unshallow`, and GitHub often refuses a push from a shallow
-    clone to a new remote ("shallow update not allowed"). It gives one
-    commit anyway.
-  - Before making it, check `git ls-files` in the working repo for anything
-    else controlled access, because every tracked file is copied.
-  - Before running `git archive`, replace Steve's local paths
-    (`~/MEGA/important_mut_sig_data/...`) in `local_dir` in
-    `find_annotated_vcfs()` and `find_partial_credit()` in `find_data.R`
-    with placeholders, such as
-    `"path/to/hartwig/annotated/vcfs"`. Also check
-    the other scripts that hard-code `~/MEGA` paths (`rg -l MEGA` in the
-    code repo, for example in `build_sup_table_s9/` and
-    `build_sup_table_s1/`).
-  - Leave out `ID89_topography_analysis_code/likely_dead_ID89_topography_code/`
-    (plots from the ID89 r.09 that the paper does not use, moved there on
-    2026-10-24). The code repo's `.gitattributes` marks it `export-ignore`,
-    so `git archive` already skips it. The same holds for
-    `msiseq/likely_dead_msiseq_code/` (the old MSIseq script, moved there on
-    2026-10-24). (`build_sup_table_s1/likely_dead_sup_table_s1_files/` was
-    deleted on 2026-11-06.) Check that they are absent from the release
-    repo, and treat
-    any other `likely_dead_*` folder the same way.
-  - Fixes made later in the working repo must be copied to the release repo
-    again (rerun `git archive` and commit the differences).
-  - The data repo `unified_indels_data` gets the same treatment (decided
-    2026-11-05), see "Open: Steve".
+# To do (updated 2026-11-19)
 
 ## Open: Steve
 
@@ -147,11 +101,19 @@ http://8.138.15.71/
   not be deleted, so do not check that step. When he replies, check the
   other steps.
 
+  Checked 2026-11-19: `XmWU123/indelsig` is private, and
+  https://github.com/XmWU123/indelsig-browser is public (8 commits, last
+  pushed 2026-11-11, no forks). On 2026-11-19 Steve emailed Xueming again
+  to replace the Hartwig internal IDs with HMF IDs on the site. When he
+  replies, search the site and `XmWU123/indelsig-browser` (including its 8
+  commits) for Hartwig internal IDs, and check that indelsig.net is served
+  from it.
+
 - Data repo (`indelsig/unified_indels_data`, private, no forks, no
   releases, not on Zenodo, checked 2026-11-05): replace the Hartwig internal
   IDs with HMF IDs, then make a new version of the repo from a
-  `git archive` of `HEAD` with no history (as for the code repo, see
-  "Before submission"), because the old history keeps the Hartwig internal IDs.
+  `git archive` of `HEAD` with no history (see "Do just before
+  submission"), because the old history keeps the Hartwig internal IDs.
   - Files with Hartwig internal IDs (2026-11-05): `sample_info.tsv` (4,233),
     `new-mini-msi-calls/mutationNum_overlap_6975.tsv` (4,197),
     `assignments_2026-10-19/assignment.high.similarity.samples.for.figureS1.txt`
@@ -186,7 +148,8 @@ http://8.138.15.71/
     with inputs named by Hartwig internal IDs and need no change unless
     they are joined with data repo tables. Superseded files with Hartwig
     internal IDs were deleted from all three repos (they remain in the git
-    history). Still to do: make the history-free version of the data repo.
+    history). The history-free version of the data repo is under "Do just
+    before submission".
   - Decide whether we need
     `new-mini-msi-calls/msiseq_classify_msi_h_rule_non_msi_h_ID89.pdf` and
     `..._SBS96.pdf` (Mo's spectra of the 70 tumors that `MSIseq.classify()`
@@ -538,10 +501,66 @@ http://8.138.15.71/
   version of the indel-signature-browser repository with the new
   identifiers and no history, and to delete the old repository or make it
   private. Also ask Xueming to check forks.
-- In about a week (around 2026-10-29), once the browser is final: ask
-  Xueming to tag a new GitHub release of XmWU123/indelsig (for example
-  V1.1.0), so that Zenodo archives the current app under the same concept
-  DOI (10.5281/zenodo.20092288), and to add a "How to cite" line (this
+
+## Do just before submission and before posting on bioRxiv
+
+- Steve: release the code as a new GitHub repo, not `Liu2026_code_and_data` itself
+  (decided 2026-10-24). The working repo's git history still holds
+  controlled-access per-variant data
+  (`build_fig6/ID4_IDF_linking_tumor_indel_annotated_vcf.txt`, untracked
+  since 2026-10-24), so the working repo stays private and keeps its history
+  for internal use.
+  - Make the new repo from the tracked files only, with no history:
+    ```
+    git -C ~/github/Liu2026_code_and_data archive --prefix=Liu2026_release/ HEAD | tar -x -C ~/github
+    git -C ~/github/Liu2026_release init && git -C ~/github/Liu2026_release add -A && git -C ~/github/Liu2026_release commit -m "Initial release"
+    ```
+  - Use `git archive`, not a copy of the folder without `.git`: it copies only
+    tracked files (278 MB of the folder's 5.5 GB on 2026-10-24), and leaves
+    out untracked and ignored files, such as the old Figure 6 file, scratch
+    output, and renders. The repo has no Git LFS files, so no LFS pointer
+    files are copied.
+  - Not a shallow clone: it keeps the old commit IDs, can be deepened with
+    `git fetch --unshallow`, and GitHub often refuses a push from a shallow
+    clone to a new remote ("shallow update not allowed"). It gives one
+    commit anyway.
+  - Before making it, check `git ls-files` in the working repo for anything
+    else controlled access, because every tracked file is copied.
+  - Before running `git archive`, replace Steve's local paths
+    (`~/MEGA/important_mut_sig_data/...`) in `local_dir` in
+    `find_annotated_vcfs()` and `find_partial_credit()` in `find_data.R`
+    with placeholders, such as
+    `"path/to/hartwig/annotated/vcfs"`. Also check
+    the other scripts that hard-code `~/MEGA` paths (`rg -l MEGA` in the
+    code repo, for example in `build_sup_table_s9/` and
+    `build_sup_table_s1/`).
+  - Leave out `ID89_topography_analysis_code/likely_dead_ID89_topography_code/`
+    (plots from the ID89 r.09 that the paper does not use, moved there on
+    2026-10-24). The code repo's `.gitattributes` marks it `export-ignore`,
+    so `git archive` already skips it. The same holds for
+    `msiseq/likely_dead_msiseq_code/` (the old MSIseq script, moved there on
+    2026-10-24). (`build_sup_table_s1/likely_dead_sup_table_s1_files/` was
+    deleted on 2026-11-06.) Check that they are absent from the release
+    repo, and treat
+    any other `likely_dead_*` folder the same way.
+  - Fixes made later in the working repo must be copied to the release repo
+    again (rerun `git archive` and commit the differences).
+  - The data repo `unified_indels_data` gets the same treatment (decided
+    2026-11-05), see the next item.
+
+- Steve: make the history-free version of the data repo
+  `indelsig/unified_indels_data`, from a `git archive` of `HEAD` as for the
+  code repo, because the old history keeps the Hartwig internal IDs. First
+  settle the two MSIseq PDFs (see the data repo item under "Open: Steve").
+
+- Xueming: make the history-free public browser repo
+  `XmWU123/indelsig-browser` from the final browser, or bring it up to the
+  final version if he already made it after the emails of 2026-11-06, and
+  serve indelsig.net from it.
+
+- Xueming: once the browser is final, tag a new GitHub release (for
+  example V1.1.0), so that Zenodo archives the current app under the same
+  concept DOI (10.5281/zenodo.20092288), and add a "How to cite" line (this
   paper and the DOI) to https://indelsig.net and the GitHub README.
 
 ## Done
