@@ -11,6 +11,184 @@ http://8.138.15.71/
 
 ## Open: Steve
 
+### I. Age and sex analyses
+
+- Age and sex analyses (Tables S14 and S15, Figure S6). Steve takes point
+  (decided 2026-11-05). Merged from the earlier "Open: Steve" item on the
+  models and the "Open: Steve with Mo" decisions.
+  - Dig into the age and sex models in detail (the doc "Age and sex models
+    for Tables S15 and S16" (old numbers, now Tables S14 and S15),
+    https://claude.ai/artifact/X8iSQz1TiCAw89HgKkwHdM, exported as
+    `age-and-sex-model.md`).
+  - Decide whether to use the joint models (age, sex, cohort, MSI-H, cancer
+    type, `build_fig_s6/age_sex_glm_prototype.R`) for Table S15, or keep
+    the age + cancer type models now in `build_fig_s6_stats.R`.
+  - Decide whether to replace the Table S14 Fisher tests with per-type
+    Firth logistic models adjusted for age, cohort and MSI-H
+    (`build_fig_s6/sex_glm_prototype.R`). The S14 associations at q < 0.2
+    all hold after adjustment.
+  - Decide what to do with sex and age associations in CNS, lymphoid and
+    bone/soft tissue, which mix subtypes that differ in age, sex and
+    signature frequency (drop them, adjust for subtype where known, or
+    report with a caveat).
+  - Decide whether to follow up ID_N and InsDel_N_beta or leave them out of
+    the text. In the joint models, their exposure rises with age (1.08 and
+    1.07 fold per decade, FDR 2e-5 and 5e-5), and the exposure effect
+    survives adjustment for MSI-H. But their presence falls with age (odds
+    ratio 0.90 and 0.89 per decade, FDR 6e-3 and 4e-3). So older tumors are
+    less likely to have them, but have more of them when they do. In the
+    age + cancer type model, ID_N also has a strong age x cancer type
+    interaction (p = 3e-19), so its age effect differs between cancer
+    types. A follow-up would estimate the age effect per cancer type from
+    the interaction model before any claim in the text. These numbers are
+    from `age-and-sex-model.md`, which used a 1% presence threshold, not
+    the 5% rule adopted on 2026-10-31, so recheck them.
+  - Write the methods paragraph and the Table S14 and S15 legends once the
+    analysis is settled.
+  - Review and rewrite the subsection "Demographic Associations with Sex
+    and Age" in `ms.qmd` to match.
+
+### II. Clean up the topography code and documentation
+
+- Correct the topography part of the data flow graph in `data_flow/`, or
+  remove it (added 2026-11-19).
+- Review the STAR Methods for the topography analysis.
+- Per-indel signature probabilities (added 2026-11-06). The ID83 topography
+  analysis starts from Mo's `all.indel.ID83.partial.credit.1026.txt.gz`,
+  but no script in the code repo makes it, and the methods only say that
+  signature probabilities were assigned "to each individual indel
+  mutation" (`ms.qmd`, "Detecting strand asymmetries across cancer
+  types"). Ask Mo for (1) the script that made the 1026 file and its
+  inputs (annotated VCFs, which exposures, which signature profiles),
+  (2) one or two methods sentences on how a probability is computed (for
+  example, exposure(t, s) × profile(s, c) divided by the sum over all
+  signatures, for an indel of class c in tumor t), and (3) whether the
+  83-type probabilities are the 89-type ones summed over the 89-to-83
+  mapping. Add the script to the code repo, and the sentences to the
+  methods. In the same email, ask Mo about the other topography inputs
+  that are not in the code repo. He gave the SigProfilerSimulator command
+  on 2026-10-07 (see Done, topography item 2), but not (4) the input
+  folder he passed to it (which VCFs), (5) the seed (SigProfilerSimulator
+  uses its default seed file unless one is given), (6) the script that
+  turned its output into `all_simulated_with_annotation.txt`, annotated
+  with ICAMS, or (7) the script that made the strand reference for the
+  real indels, `single.indel.aggregate.strand.added.matrix.txt`.
+  The 3 TCGA whole exomes (`WES::TCGA-...`), which have spectra and are
+  in Table S16 since 2026-11-06 but have no assignments, are no longer a
+  question for Mo. Steve (2026-11-07): they were not used in signature
+  extraction, the vignette will show which signature
+  `WES::TCGA-EW-A2FV-01A-11D-A17D-09` has, and the source of their data
+  is cited in Alexandrov et al. 2020
+  (`alexandrovRepertoireMutationalSignatures2020`). Done (2026-11-07): a
+  sentence in "Data sources" of `ms.qmd`, citing the TCGA MC3 calls
+  (Ellrott et al. 2018, https://doi.org/10.1016/j.cels.2018.03.002), which
+  the Reporting Summary of Alexandrov et al. 2020 names as its exome
+  source.
+  Draft email with questions 1 to 7:
+  `message_to_mo_topography_methods_2026-11-06.md` (deleted 2026-11-07,
+  in the git history). Sent 2026-11-07,
+  edited by Steve and renumbered: 1 to 3 as in the draft, 4.1 (input
+  VCFs of the simulation), 4.2 (seed, default or not), 4.3 (simulated
+  VCFs annotated with ICAMS or mSigSpectra?), 4.4 (the script that made
+  `all_simulated_with_annotation.txt`), and 5 (the script that made the
+  strand reference, and whether Mo or Mini made it). Mo answered on
+  2026-11-08 ("Re: organizing topography code"):
+  1. Script: `partial.credit.ID83.R` (attached). Inputs:
+     `all.indel.with.annotation.txt.gz` (Google Drive link) and the
+     signatures and exposures in `unified_indels_data`. As sent it does not
+     run (`temp` is defined only in a commented-out line) and does not write
+     the 1026 file. To do: add it to the code repo with those fixed. Done
+     (2026-11-08): `all.indel.with.annotation.txt.gz` downloaded to
+     `~/MEGA/important_mut_sig_data/more-indel-paper-info/` (223 MB,
+     18,477,937 indels, gzip header date 2026-10-16). Its per-tumor indel
+     counts equal the column sums of `liu_et_al_83_spectra.tsv` for all
+     6,975 tumors (T0604 and T2166 matched through `hartwig_hmf_ids.tsv`).
+     It uses Hartwig internal IDs. It is also the indel input of Mini's
+     `run_MSIseq_overlap_6975.R`. No record says how it was made.
+  2. Mo computed partial exposures, exposure(t, s) × profile(s, c), not
+     normalized across signatures, and Mini's `normalize.sh` normalized
+     them. To do: write the methods sentences from this.
+  3. From the 83-type class, exposures and profiles (not summed from 89).
+  4.1 All 6,975 VCFs. 4.2 Default seed. 4.3 ICAMS. The columns of
+     `all_simulated_with_annotation.txt` confirm it: `matGenClass` and
+     `type_4` come from the SigProfiler matrix generator, and `ID.class`
+     and `trans.*` from ICAMS. But the attached
+     `simulated_vcf_ICAMS_code.R` is not that step. It reads
+     `all.simulated.vcfs/*.annotated.txt.gz`, which are already annotated,
+     reruns ICAMS only to get the `bothstrand` flag (the job of
+     `append_bothstrand.R`), and writes nothing. 4.4 Not answered. To do:
+     ask Mo for the script that annotated the simulated VCFs with ICAMS
+     into `*.annotated.txt.gz`, and for the step that concatenated them
+     into `all_simulated_with_annotation.txt`.
+  5. Mini made it. Mini sent `add_strand_bias.R` on 2026-11-07. To do: ask
+     Mini which file was its input, and add the script to the code repo.
+  Both new scripts and their inputs are in `data_flow/` as `ext:` nodes
+  (2026-11-08).
+
+- Topography inputs keyed by HMF IDs, and a record of them (added
+  2026-11-06). The ID83 topography inputs name Hartwig tumors by Hartwig
+  internal IDs (`CPCT...`, `DRUP...`, `WIDE...`), which cannot be
+  published, and the two `r.03` scripts get cancer types from
+  `all.meta.0528.rds` (Mo's sample table of about 2026-05-28, with
+  Hartwig internal IDs and outdated MSI calls and indel counts). Found
+  2026-11-06: all 6,975 samples of the 1026 partial-credit file map to
+  Table S16 through `hartwig_hmf_ids.tsv`, and the cancer types of
+  `all.meta.0528.rds` agree with Table S16 for all 6,975 tumors.
+  1. Ask Mini for copies of the topography inputs that are only on her
+     side, to keep in `~/MEGA/important_mut_sig_data/` as a record:
+     `all_simulated_with_annotation.txt` (and its `.with_bothstrand`
+     version), `single.indel.aggregate.strand.added.matrix.txt`, and
+     `all.meta.0528.rds` (draft: `message_to_mini_topography_inputs_2026-11-06.md`, deleted
+     2026-11-07, in the git history).
+     Sent 2026-11-06: Steve asked Mini for `all_simulated_with_annotation.txt`
+     and `all_simulated_with_annotation.with_bothstrand.txt` with the
+     summary and log files that `append_bothstrand.R` wrote next to it,
+     `single.indel.aggregate.strand.added.matrix.txt`, and
+     `all.meta.0528.rds`, as password-protected .zip files. Done
+     (2026-11-08): Mini sent `simulation_and_reference_data.zip` (Google
+     Drive, 2026-11-07, 7.4 GB), extracted to
+     `~/MEGA/important_mut_sig_data/simulation_and_reference_data/` (7
+     files, 56 GB, sizes match the zip). The SHA-256 of both simulated
+     files match `source_sha256` and `output_sha256` in the summary JSON,
+     so the local copies are exactly the server files that
+     `append_bothstrand.R` read and wrote. The summary JSON reports 215,858,283
+     simulated indels, 3,059,565 with `bothstrand` TRUE. The strand
+     reference dates from 2025-06-07 and carries per-indel probabilities
+     of older signature names (C_ID*, H_ID*). All these files use Hartwig
+     internal IDs. `simulation_and_reference_data-for-indel-paper-2026-11/`
+     next to it was an earlier, partial extraction (3 files, identical to
+     copies in the full folder). Deleted 2026-11-19.
+  2. Write a script that rewrites the `Sample` column of an input from
+     Hartwig internal IDs to HMF IDs (T0604 and T2166 keep their
+     pseudonyms) and writes a new copy. Run it on the two partial-credit
+     files and on Mini's files once they arrive. Done (2026-11-08): the
+     code repo's `not_for_release/rewrite_to_hmf_ids.R` (awk, streaming;
+     keeps prefixes such as `Uterus::` and suffixes such as `_12`; stops
+     on an unmapped ID). Copies are written to
+     `~/MEGA/important_mut_sig_data/topography_inputs_hmf_ids/`: the two
+     partial-credit files, `all.indel.with.annotation.txt.gz`,
+     `single.indel.aggregate.strand.added.matrix.txt`, and
+     `all_simulated_with_annotation.with_bothstrand.txt` (columns
+     `sample.simu` and `Sample`). Not rewritten:
+     `all_simulated_with_annotation.txt`, which only `append_bothstrand.R`
+     reads, and `all.meta.0528.rds`, which is no longer read. Checked:
+     row counts equal the inputs, no ID was unmapped, no Hartwig internal
+     ID is left anywhere in the five copies, and all 6,975 sample IDs of
+     the ID83 partial-credit copy are in Table S16.
+  3. Done (2026-11-08): both `r.03` scripts read cancer type from Table
+     S16 ("Major Cancer Type") instead of `all.meta.0528.rds`, which agree
+     for all 6,975 tumors. The README's "Data needed to run" and
+     `data_flow/` were updated.
+  4. With all inputs local, rerun `normalize.sh` to r.04 on the HMF-ID
+     inputs and check that the r.04 matrices match those of the rerun of
+     2026-10-30.
+
+### Other
+
+- Freeze panes in all the supplementary tables, so that the column
+  headers, and the row headers where needed, stay visible (added
+  2026-11-19). Do it in the build scripts in the code repo (for example
+  `openxlsx::freezePane()`), so the frozen panes survive rebuilds.
 - (Items 1 to 3 done 2026-11-07. Continue with item 4 on 2026-11-08.)
   Review, one by one, the findings on the per-signature notes in the data
   repo (`unified_indels_data/per_sig_txt/*.md`, shown on the vignette
@@ -170,40 +348,6 @@ http://8.138.15.71/
   was in Mo's earlier `build_fig_s1/all.meta.txt` (as
   `Other::HMF004200A`). Waiting (2026-10-31): Steve asked Mo why it has
   no spectrum.
-- Age and sex analyses (Tables S14 and S15, Figure S6). Steve takes point
-  (decided 2026-11-05). Merged from the earlier "Open: Steve" item on the
-  models and the "Open: Steve with Mo" decisions.
-  - Dig into the age and sex models in detail (the doc "Age and sex models
-    for Tables S15 and S16" (old numbers, now Tables S14 and S15),
-    https://claude.ai/artifact/X8iSQz1TiCAw89HgKkwHdM, exported as
-    `age-and-sex-model.md`).
-  - Decide whether to use the joint models (age, sex, cohort, MSI-H, cancer
-    type, `build_fig_s6/age_sex_glm_prototype.R`) for Table S15, or keep
-    the age + cancer type models now in `build_fig_s6_stats.R`.
-  - Decide whether to replace the Table S14 Fisher tests with per-type
-    Firth logistic models adjusted for age, cohort and MSI-H
-    (`build_fig_s6/sex_glm_prototype.R`). The S14 associations at q < 0.2
-    all hold after adjustment.
-  - Decide what to do with sex and age associations in CNS, lymphoid and
-    bone/soft tissue, which mix subtypes that differ in age, sex and
-    signature frequency (drop them, adjust for subtype where known, or
-    report with a caveat).
-  - Decide whether to follow up ID_N and InsDel_N_beta or leave them out of
-    the text. In the joint models, their exposure rises with age (1.08 and
-    1.07 fold per decade, FDR 2e-5 and 5e-5), and the exposure effect
-    survives adjustment for MSI-H. But their presence falls with age (odds
-    ratio 0.90 and 0.89 per decade, FDR 6e-3 and 4e-3). So older tumors are
-    less likely to have them, but have more of them when they do. In the
-    age + cancer type model, ID_N also has a strong age x cancer type
-    interaction (p = 3e-19), so its age effect differs between cancer
-    types. A follow-up would estimate the age effect per cancer type from
-    the interaction model before any claim in the text. These numbers are
-    from `age-and-sex-model.md`, which used a 1% presence threshold, not
-    the 5% rule adopted on 2026-10-31, so recheck them.
-  - Write the methods paragraph and the Table S14 and S15 legends once the
-    analysis is settled.
-  - Review and rewrite the subsection "Demographic Associations with Sex
-    and Age" in `ms.qmd` to match.
 - Review Mini's methods.
 - MSI status stated consistently (from `QUESTIONS_FOR_MO.md`, 2026-10-15).
   Following the decision to use only MSIseq: done (2026-10-30), `MSI_status`
@@ -213,7 +357,6 @@ http://8.138.15.71/
   high/low TMB status" in `ms.qmd`, which still describes the PCAWG and
   Hartwig cohort MSI calls (it is already marked "NEEDS DRASTIC CUTTING").
 - Check the Figure S1 legend, then review all supplementary figure legends.
-- Review the STAR Methods for the topography analysis.
 - Confirm that C_ID10 and ID_B, now enriched in genic regions after the
   topography rerun, are of unknown etiology (blue note in `ms.qmd`).
 - Add the STAR Methods "Resource availability" section (lead contact,
@@ -339,134 +482,7 @@ http://8.138.15.71/
 
 ## Open: Mo (and Mini)
 
-- Per-indel signature probabilities (added 2026-11-06). The ID83 topography
-  analysis starts from Mo's `all.indel.ID83.partial.credit.1026.txt.gz`,
-  but no script in the code repo makes it, and the methods only say that
-  signature probabilities were assigned "to each individual indel
-  mutation" (`ms.qmd`, "Detecting strand asymmetries across cancer
-  types"). Ask Mo for (1) the script that made the 1026 file and its
-  inputs (annotated VCFs, which exposures, which signature profiles),
-  (2) one or two methods sentences on how a probability is computed (for
-  example, exposure(t, s) × profile(s, c) divided by the sum over all
-  signatures, for an indel of class c in tumor t), and (3) whether the
-  83-type probabilities are the 89-type ones summed over the 89-to-83
-  mapping. Add the script to the code repo, and the sentences to the
-  methods. In the same email, ask Mo about the other topography inputs
-  that are not in the code repo. He gave the SigProfilerSimulator command
-  on 2026-10-07 (see Done, topography item 2), but not (4) the input
-  folder he passed to it (which VCFs), (5) the seed (SigProfilerSimulator
-  uses its default seed file unless one is given), (6) the script that
-  turned its output into `all_simulated_with_annotation.txt`, annotated
-  with ICAMS, or (7) the script that made the strand reference for the
-  real indels, `single.indel.aggregate.strand.added.matrix.txt`.
-  The 3 TCGA whole exomes (`WES::TCGA-...`), which have spectra and are
-  in Table S16 since 2026-11-06 but have no assignments, are no longer a
-  question for Mo. Steve (2026-11-07): they were not used in signature
-  extraction, the vignette will show which signature
-  `WES::TCGA-EW-A2FV-01A-11D-A17D-09` has, and the source of their data
-  is cited in Alexandrov et al. 2020
-  (`alexandrovRepertoireMutationalSignatures2020`). Done (2026-11-07): a
-  sentence in "Data sources" of `ms.qmd`, citing the TCGA MC3 calls
-  (Ellrott et al. 2018, https://doi.org/10.1016/j.cels.2018.03.002), which
-  the Reporting Summary of Alexandrov et al. 2020 names as its exome
-  source.
-  Draft email with questions 1 to 7:
-  `message_to_mo_topography_methods_2026-11-06.md` (deleted 2026-11-07,
-  in the git history). Sent 2026-11-07,
-  edited by Steve and renumbered: 1 to 3 as in the draft, 4.1 (input
-  VCFs of the simulation), 4.2 (seed, default or not), 4.3 (simulated
-  VCFs annotated with ICAMS or mSigSpectra?), 4.4 (the script that made
-  `all_simulated_with_annotation.txt`), and 5 (the script that made the
-  strand reference, and whether Mo or Mini made it). Mo answered on
-  2026-11-08 ("Re: organizing topography code"):
-  1. Script: `partial.credit.ID83.R` (attached). Inputs:
-     `all.indel.with.annotation.txt.gz` (Google Drive link) and the
-     signatures and exposures in `unified_indels_data`. As sent it does not
-     run (`temp` is defined only in a commented-out line) and does not write
-     the 1026 file. To do: add it to the code repo with those fixed. Done
-     (2026-11-08): `all.indel.with.annotation.txt.gz` downloaded to
-     `~/MEGA/important_mut_sig_data/more-indel-paper-info/` (223 MB,
-     18,477,937 indels, gzip header date 2026-10-16). Its per-tumor indel
-     counts equal the column sums of `liu_et_al_83_spectra.tsv` for all
-     6,975 tumors (T0604 and T2166 matched through `hartwig_hmf_ids.tsv`).
-     It uses Hartwig internal IDs. It is also the indel input of Mini's
-     `run_MSIseq_overlap_6975.R`. No record says how it was made.
-  2. Mo computed partial exposures, exposure(t, s) × profile(s, c), not
-     normalized across signatures, and Mini's `normalize.sh` normalized
-     them. To do: write the methods sentences from this.
-  3. From the 83-type class, exposures and profiles (not summed from 89).
-  4.1 All 6,975 VCFs. 4.2 Default seed. 4.3 ICAMS. The columns of
-     `all_simulated_with_annotation.txt` confirm it: `matGenClass` and
-     `type_4` come from the SigProfiler matrix generator, and `ID.class`
-     and `trans.*` from ICAMS. But the attached
-     `simulated_vcf_ICAMS_code.R` is not that step. It reads
-     `all.simulated.vcfs/*.annotated.txt.gz`, which are already annotated,
-     reruns ICAMS only to get the `bothstrand` flag (the job of
-     `append_bothstrand.R`), and writes nothing. 4.4 Not answered. To do:
-     ask Mo for the script that annotated the simulated VCFs with ICAMS
-     into `*.annotated.txt.gz`, and for the step that concatenated them
-     into `all_simulated_with_annotation.txt`.
-  5. Mini made it. Mini sent `add_strand_bias.R` on 2026-11-07. To do: ask
-     Mini which file was its input, and add the script to the code repo.
-  Both new scripts and their inputs are in `data_flow/` as `ext:` nodes
-  (2026-11-08).
-- Topography inputs keyed by HMF IDs, and a record of them (added
-  2026-11-06). The ID83 topography inputs name Hartwig tumors by Hartwig
-  internal IDs (`CPCT...`, `DRUP...`, `WIDE...`), which cannot be
-  published, and the two `r.03` scripts get cancer types from
-  `all.meta.0528.rds` (Mo's sample table of about 2026-05-28, with
-  Hartwig internal IDs and outdated MSI calls and indel counts). Found
-  2026-11-06: all 6,975 samples of the 1026 partial-credit file map to
-  Table S16 through `hartwig_hmf_ids.tsv`, and the cancer types of
-  `all.meta.0528.rds` agree with Table S16 for all 6,975 tumors.
-  1. Ask Mini for copies of the topography inputs that are only on her
-     side, to keep in `~/MEGA/important_mut_sig_data/` as a record:
-     `all_simulated_with_annotation.txt` (and its `.with_bothstrand`
-     version), `single.indel.aggregate.strand.added.matrix.txt`, and
-     `all.meta.0528.rds` (draft: `message_to_mini_topography_inputs_2026-11-06.md`, deleted
-     2026-11-07, in the git history).
-     Sent 2026-11-06: Steve asked Mini for `all_simulated_with_annotation.txt`
-     and `all_simulated_with_annotation.with_bothstrand.txt` with the
-     summary and log files that `append_bothstrand.R` wrote next to it,
-     `single.indel.aggregate.strand.added.matrix.txt`, and
-     `all.meta.0528.rds`, as password-protected .zip files. Done
-     (2026-11-08): Mini sent `simulation_and_reference_data.zip` (Google
-     Drive, 2026-11-07, 7.4 GB), extracted to
-     `~/MEGA/important_mut_sig_data/simulation_and_reference_data/` (7
-     files, 56 GB, sizes match the zip). The SHA-256 of both simulated
-     files match `source_sha256` and `output_sha256` in the summary JSON,
-     so the local copies are exactly the server files that
-     `append_bothstrand.R` read and wrote. The summary JSON reports 215,858,283
-     simulated indels, 3,059,565 with `bothstrand` TRUE. The strand
-     reference dates from 2025-06-07 and carries per-indel probabilities
-     of older signature names (C_ID*, H_ID*). All these files use Hartwig
-     internal IDs. `simulation_and_reference_data-for-indel-paper-2026-11/`
-     next to it is an earlier, partial extraction (3 files) and can be
-     deleted.
-  2. Write a script that rewrites the `Sample` column of an input from
-     Hartwig internal IDs to HMF IDs (T0604 and T2166 keep their
-     pseudonyms) and writes a new copy. Run it on the two partial-credit
-     files and on Mini's files once they arrive. Done (2026-11-08): the
-     code repo's `not_for_release/rewrite_to_hmf_ids.R` (awk, streaming;
-     keeps prefixes such as `Uterus::` and suffixes such as `_12`; stops
-     on an unmapped ID). Copies are written to
-     `~/MEGA/important_mut_sig_data/topography_inputs_hmf_ids/`: the two
-     partial-credit files, `all.indel.with.annotation.txt.gz`,
-     `single.indel.aggregate.strand.added.matrix.txt`, and
-     `all_simulated_with_annotation.with_bothstrand.txt` (columns
-     `sample.simu` and `Sample`). Not rewritten:
-     `all_simulated_with_annotation.txt`, which only `append_bothstrand.R`
-     reads, and `all.meta.0528.rds`, which is no longer read. Checked:
-     row counts equal the inputs, no ID was unmapped, no Hartwig internal
-     ID is left anywhere in the five copies, and all 6,975 sample IDs of
-     the ID83 partial-credit copy are in Table S16.
-  3. Done (2026-11-08): both `r.03` scripts read cancer type from Table
-     S16 ("Major Cancer Type") instead of `all.meta.0528.rds`, which agree
-     for all 6,975 tumors. The README's "Data needed to run" and
-     `data_flow/` were updated.
-  4. With all inputs local, rerun `normalize.sh` to r.04 on the HMF-ID
-     inputs and check that the r.04 matrices match those of the rerun of
-     2026-10-30.
+(The topography items moved to "Open: Steve", II, on 2026-11-19.)
 
 ## Open: Xueming
 
@@ -552,6 +568,14 @@ http://8.138.15.71/
   `indelsig/unified_indels_data`, from a `git archive` of `HEAD` as for the
   code repo, because the old history keeps the Hartwig internal IDs. First
   settle the two MSIseq PDFs (see the data repo item under "Open: Steve").
+  Also consider removing, before the public copy, the cancer type labels
+  of the 21 Hartwig tumors that are not in Martinez-Jimenez et al. 2023
+  (`Finest_Cancer_Type`, and `Cancer_Subtype` where it comes from the same
+  source, in `sample_info.tsv`). `build_cancer_types/build_cancer_types.R`
+  takes them from Mo's Hartwig clinical metadata
+  (`~/MEGA/important_mut_sig_data/metadata-from-mo-nov-2026/metadata.tsv`),
+  which may be controlled access (added 2026-11-19). The labels of all
+  other Hartwig tumors are public in the Martinez-Jimenez supplement.
 
 - Xueming: make the history-free public browser repo
   `XmWU123/indelsig-browser` from the final browser, or bring it up to the
