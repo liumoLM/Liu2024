@@ -149,8 +149,9 @@ replication strands, and DNA regions across cancer types**
 row represents an 83-type signature, and each column represents a
 cancer type. Red and dark blue circles indicate enrichment on the
 transcribed and untranscribed strands, respectively. Significance of
-enrichment is shown as stars (Fisher's exact test, \* p \< 0.05, \*\*
-p \< 0.01, \*\*\* p \< 0.001). Color intensities and circle sizes
+enrichment is shown as stars (Fisher's exact test, Benjamini-Hochberg
+false discovery rate computed over all cancer types and signatures tested
+for the feature, \* FDR \< 0.05, \*\* FDR \< 0.01, \*\*\* FDR \< 0.001). Color intensities and circle sizes
 represent the odds ratio between the ratio of real mutations and the
 ratio of simulated mutations (see Methods). Panels B and C are on the
 next two pages.

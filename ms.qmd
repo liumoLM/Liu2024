@@ -676,20 +676,35 @@ stre]{.blue}
 
 [Note: Figure 5 (main_figures/fig5.pdf) is now a copy of build_fig5/fig5.pdf in the code repo. Its panels A to C use the topography pipeline's labels (build_fig5/assign_asymmetry_type.R), which also underlie Figure S3, including ID_K on the leading strand. This changed two signatures relative to the earlier hand-edited Figure 5. In panel B, ID_L is now Lagging (its only cancer type with P < 0.05 is Pancreas, lagging). In panel C, ID_B is now Mix (8 cancer types with P < 0.05 are intergenic and 1, Breast, is genic). Mini confirmed by email on 2026-10-07 that repli.strand = -1 is the lagging strand and that the pipeline's leading/lagging orientation (as in Figure S3B) is correct. Since 2026-10-30, panels A and C use Mini's rerun and her corrected summary rule (only cancer types with P < 0.05 and odds ratio > 1.1 count), and ID_B is Genic in panel C. Since 2026-10-31, panel B also uses the rerun (Mini sent the simulated replication-strand matrix). In panel B, ID_L is now Leading, ID_D and ID_N are Mix, C_ID9, ID_B, and ID_G are Lagging, and C_ID2, C_ID5, and C_ID8 no longer show replication strand asymmetry.]{.blue}
 
+[Since 2026-11-23, Figure 5 panels A to C, Figure S3 and Table S12 use the
+Benjamini-Hochberg FDR in place of the unadjusted P value, computed for each
+feature over all cancer types and signatures (r.05_FisherTest.R and
+build_fig5/assign_asymmetry_type.R in the code repo). With the reviewed
+cancer types (branch subtype-analyses), this changed five signatures. In
+panel A, ID_D is no longer Transcribed. In panel B, ID_B is no longer
+Lagging and ID_D is no longer Mix. In panel C, C_ID4 is now Genic and
+C_ID19 Intergenic (both were Mix). Raw P \< 0.05 / FDR \< 0.05 tests:
+327 / 279 genic vs intergenic, 123 / 72 replication strand, 111 / 51
+transcription strand, of 1,152 per feature.]{.blue}
+
 We also examined the mutation enrichment of 83-type signatures in
 genic and intergenic regions (Figure S3C). Most signatures showed
 mutation bias towards intergenic regions, while `r ms_num$topo$region_n_genic` signatures showed
 enrichment in genic regions (Figure [-@fig-topo]C). Among the `r ms_num$topo$region_n_genic`
-signatures, [three were]{.pink} associated with defective endogenous
-mutational processes, including C_ID8 (repair of DNA double strand
-breaks by NHEJ), [C_ID17 (]{.pink}TOP2A K743N mediated mutagenesis) and ID_F
-(TOP1-mediated mutagenesis). Another 4 signatures with mutations
-enriched in genic regions were of unknown etiology (C_ID10, ID_B, ID_E and
+signatures, two were associated with defective endogenous
+mutational processes, C_ID8 (repair of DNA double strand
+breaks by NHEJ) and ID_F
+(TOP1-mediated mutagenesis). C_ID4, which corresponds to ID4, was also
+enriched in genic regions. The other 3 signatures with mutations
+enriched in genic regions were of unknown etiology (ID_B, ID_E and
 ID_L).
 
-[Changed with the topography rerun of 2026-10-30: C_ID10 and ID_B are now
-genic, and C_ID4 is now Mix. Confirm that C_ID10 and ID_B are of unknown
-etiology.]{.blue}
+[Changed with the topography rerun of 2026-10-30: C_ID10 and ID_B were then
+genic, and C_ID4 was Mix. Changed with the reviewed cancer types
+(branch subtype-analyses, 2026-11): C_ID10 and C_ID17 are no longer genic.
+Changed with the FDR of 2026-11-23: C_ID4 is now Genic (it was Mix).
+Confirm that ID_B is of unknown etiology, and decide how to describe
+C_ID4.]{.blue}
 
 The effect of DNA replication timing was also observed in many 83-type
 signatures (Figure [-@fig-topo]D, Figure S4, Table S13). Most
@@ -1190,19 +1205,20 @@ indels and the strand ratio of simulated somatic indels.
 
 [We tested each cancer type and signature for asymmetry with Fisher's
 exact test on the 2×2 table of real and simulated indel counts (Table
-S12 reports the P values and the conditional maximum-likelihood odds
-ratios from this test). For Figure [-@fig-topo] and Figure S3, the
+S12 reports the P values, their Benjamini-Hochberg false discovery
+rates (FDRs), and the conditional maximum-likelihood odds ratios from
+this test). The FDR was computed separately for each feature, over all
+cancer types and signatures tested for that feature. For Figure [-@fig-topo] and Figure S3, the
 magnitude of asymmetry is the ratio of the real strand ratio to the
 simulated strand ratio, inverted when needed so that it is ≥ 1,
 together with the direction of the asymmetry. A cancer type was
-considered to show asymmetry for a signature if P \< 0.05. Figure
+considered to show asymmetry for a signature if FDR \< 0.05. Figure
 [-@fig-topo] summarizes each signature over the cancer types with
-P \< 0.05 and an odds ratio \> 1.1: it is labeled with the shared
+FDR \< 0.05 and an odds ratio \> 1.1: it is labeled with the shared
 direction if they all agree, as "Mix" if they do not, and is not shown if
 there are no such cancer types. Circle sizes show the proportion of
-evaluated cancer types with P \< 0.05 and an odds ratio at or above each
-threshold. P values were not adjusted for
-multiple testing.]{.green}
+evaluated cancer types with FDR \< 0.05 and an odds ratio at or above each
+threshold.]{.green}
 
 For example, for genic versus intergenic regions in one cancer type,
 the 2×2 table holds the numbers of real and of simulated indels
@@ -1511,8 +1527,8 @@ timing and DNA regions.**
 **(A)** Transcription strand asymmetries of 83-type signatures. Each
 row represents one 83-type signature, where n reflects the number of
 cancer types in which the signature was found. Signatures consistently
-enriched on the transcribed and untranscribed strands with p values
-\< 0.05 (Fisher’s exact test) are shown in circles with red and dark
+enriched on the transcribed and untranscribed strands with
+Benjamini-Hochberg FDR \< 0.05 (Fisher’s exact test, see Methods) are shown in circles with red and dark
 blue colors, respectively. Grey colors indicate inconsistent
 enrichments in different cancer types. Columns display the odds ratio
 between the ratio of real mutations and the ratio of simulated
