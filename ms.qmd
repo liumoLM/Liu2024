@@ -779,14 +779,26 @@ of C_ID1 and InsDel1a increased by
 `r ms_num$age_glm$pct_pair("C_ID1", "InsDel1a")`% per decade of age and those
 of C_ID5 and InsDel5a by `r ms_num$age_glm$pct_pair("C_ID5", "InsDel5a")`%,
 and older patients were more likely to have
-them (Table S15).]{.green} More specifically, C_ID5 and
-InsDel5a correlated with age in prostate, pancreas, liver, and kidney
-cancers, while C_ID1 and InsDel1a were age-associated in breast,
-prostate, and pancreas cancers. Other clock-like signatures
-demonstrated pronounced tissue specificity[. For]{.pink} example, InsDel9
-showed a more attenuated relationship between age and mutational
-accumulation in prostate cancer, while InsDel10 displayed clear
-clock-like properties in pancreatic cancers.
+them (Table S15).]{.green} More specifically, [C_ID5 and
+InsDel5a correlated with age in prostate cancer, liver cancer, and clear
+cell renal cell carcinoma, while C_ID1 and InsDel1a were age-associated
+in prostate cancer and medulloblastoma, and C_ID1 also in breast
+cancer. Other clock-like signatures demonstrated pronounced tissue
+specificity. For example, C_ID9 and InsDel9 correlated with age in
+prostate cancer and glioblastoma, while C_ID10 and InsDel10 correlated
+with age only in medulloblastoma.]{.yellow}
+
+[Rewritten 2026-11-23 for Steve's review (highlighted), from
+build_fig_s6/correlation.between.age.and.signature.activity.txt with the
+reviewed cancer types and the Benjamini-Hochberg FDR over all 715 tests
+(FDR \< 0.05). Before, the FDR was computed within each cancer type. Lost:
+pancreas (now split into Pancreatic_adenocarcinoma and Pancreatic_NET,
+neither significant), breast InsDel1a (FDR 0.053), and InsDel10 in
+pancreas. The earlier text said InsDel9 had an attenuated relationship
+with age in prostate cancer, but its ρ there is 0.54, among the
+strongest. Medulloblastoma has 9 significant correlations. It occurs in
+children and adults, so these may reflect differences between the two
+age groups rather than accumulation with age.]{.blue}
 
 ::: {.callout-note title="Reviewer note"}
 [Problem: "Robust" needs the correlation strengths or a q threshold in the text. Proposed: Give rho and q for these four signatures, or write "showed significant age association (q < X)".]{.blue}
