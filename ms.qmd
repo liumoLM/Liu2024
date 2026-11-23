@@ -694,8 +694,12 @@ enrichment in genic regions (Figure [-@fig-topo]C). Among the `r ms_num$topo$reg
 signatures, two were associated with defective endogenous
 mutational processes, C_ID8 (repair of DNA double strand
 breaks by NHEJ) and ID_F
-(TOP1-mediated mutagenesis). C_ID4, which corresponds to ID4, was also
-enriched in genic regions. The other 3 signatures with mutations
+(TOP1-mediated mutagenesis). [C_ID4, which corresponds to ID4, was also
+enriched in genic regions. ID4 was previously attributed to TOP1-mediated
+mutagenesis [@reijnsSignaturesTOP1Transcriptionassociated2022], although
+ID_F corresponds better to RNase H2 deficiency (see *The new indel
+classifications reveal a more specific signature of RNase H2
+deficiency*).]{.yellow} The other 3 signatures with mutations
 enriched in genic regions were of unknown etiology (ID_B, ID_E and
 ID_L).
 
@@ -703,7 +707,7 @@ ID_L).
 genic, and C_ID4 was Mix. Changed with the reviewed cancer types
 (branch subtype-analyses, 2026-11): C_ID10 and C_ID17 are no longer genic.
 Changed with the FDR of 2026-11-23: C_ID4 is now Genic (it was Mix).
-Decide how to describe C_ID4.]{.blue}
+The C_ID4 sentences (highlighted) are for Steve's review.]{.blue}
 
 The effect of DNA replication timing was also observed in many 83-type
 signatures (Figure [-@fig-topo]D, Figure S4, Table S13). Most
