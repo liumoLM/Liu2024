@@ -100,6 +100,11 @@ http://8.138.15.71/
      signatures and exposures in `unified_indels_data`. As sent it does not
      run (`temp` is defined only in a commented-out line) and does not write
      the 1026 file. To do: add it to the code repo with those fixed. Done
+     (2026-11-23): `ID83_topography_analysis_code/partial.credit.ID83.R`,
+     fixed, and adding `trans.strand` (gene strand from ICAMS
+     `trans.ranges.GRCh37`). It reproduces the 1026 file: same rows and
+     order, text columns identical, numbers within 0.4% (rounding in
+     `liu_et_al_83_signatures.tsv`), 2 of 591 million calls differ. Done
      (2026-11-08): `all.indel.with.annotation.txt.gz` downloaded to
      `~/MEGA/important_mut_sig_data/more-indel-paper-info/` (223 MB,
      18,477,937 indels, gzip header date 2026-10-16). Its per-tumor indel
