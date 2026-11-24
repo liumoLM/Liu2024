@@ -181,7 +181,11 @@ http://8.138.15.71/
      `data_flow/` were updated.
   4. With all inputs local, rerun `normalize.sh` to r.04 on the HMF-ID
      inputs and check that the r.04 matrices match those of the rerun of
-     2026-10-30.
+     2026-10-30. Done (2026-11-19): `normalize.sh` (now parallel) and the
+     streamed replacement for r.01 to r.04 (`streaming/` in
+     `ID83_topography_analysis_code/`) reproduce all 8 50cutoff r.04 tables
+     of 2026-10-30 exactly, every cell. Documented in that folder's
+     README (2026-11-23), where the streamed route is now the one to run.
 
 ### Other
 
@@ -749,7 +753,9 @@ http://8.138.15.71/
   had about 3 counts per indel, so it could not come from per-indel
   fractions) no longer matters for the paper. The local ID89 run (28 GB,
   controlled access) is in
-  `~/MEGA/important_mut_sig_data/id89_topography_run_2026-10-29/`.
+  `~/MEGA/important_mut_sig_data/id89_topography_run_2026-10-29/`. Its
+  `ID89/01_createBed/` (18 GB, the r.01 reformatting of the ID89 partial
+  credit, which is kept) was deleted on 2026-11-19, leaving 11 GB.
 
 - 2026-10-29: Figure S1 dots. The mSigAct refits added 118 dots and removed
   12 (923 to 1,029), 84 of the added from 1 to 3 tumors. 102 of the 119
