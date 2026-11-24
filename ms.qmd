@@ -1194,7 +1194,14 @@ region.
 ## Detecting strand asymmetries across cancer types
 
 Strand asymmetry analyses were based on the assignment of signature
-probabilities to each individual indel mutation. Only indels with
+probabilities to each individual indel mutation. [For an indel of 83-type
+class *c* in tumor *t*, the probability that it was due to 83-type
+signature *s* was
+exposure(*t*, *s*) × profile(*s*, *c*) / Σ~*s*′~ exposure(*t*, *s*′) × profile(*s*′, *c*),
+where exposure(*t*, *s*) is the number of indels in tumor *t* attributed
+to signature *s* (Table S11), profile(*s*, *c*) is the proportion of the
+indels of signature *s* that are in class *c* (Table S2), and the sum is
+over all 83-type signatures.]{.yellow} Only indels with
 probability greater than 0.5 of being due to a given indel signature
 were retained. For each indel signature and for all cancer types
 having this mutational signature, we retrieved the number of indels on
