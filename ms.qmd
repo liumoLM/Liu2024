@@ -790,8 +790,9 @@ with age only in medulloblastoma.]{.yellow}
 
 [Rewritten 2026-11-23 for Steve's review (highlighted), from
 build_fig_s6/correlation.between.age.and.signature.activity.txt with the
-reviewed cancer types and the Benjamini-Hochberg FDR over all 715 tests
-(FDR \< 0.05). Before, the FDR was computed within each cancer type. Lost:
+reviewed cancer types and the Benjamini-Hochberg FDR over all tests of
+each classification scheme (FDR \< 0.05). Before, the FDR was computed
+within each cancer type. Lost:
 pancreas (now split into Pancreatic_adenocarcinoma and Pancreatic_NET,
 neither significant), breast InsDel1a (FDR 0.053), and InsDel10 in
 pancreas. The earlier text said InsDel9 had an attenuated relationship
