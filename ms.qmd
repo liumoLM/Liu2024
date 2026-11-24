@@ -76,7 +76,7 @@ if (nrow(main_figure_problems) > 0) {
 ## Summary
 
 We present a unified repertoire of indel mutational signatures in
-6,975 tumors across 36 cancer types. Small insertions and deletions
+6,975 tumors [of `r ms_num$types$n_major` major cancer types]{.yellow}. Small insertions and deletions
 ("indels") are an important under-studied class of mutations. Koh,
 Nanda, and colleagues recently introduced two richer indel
 classifications, with 89 and 476 indel types. We identified signatures
@@ -250,7 +250,7 @@ source code is archived at Zenodo [@wuIndelSignatureBrowser2026]<!-- -->[.]{.pin
 ## Repertoire of indel signatures based on de novo signature discovery
 
 We identified indel signatures in all three classifications from a
-total of 6,975 cancer genomes encompassing 36 cancer types using a
+total of 6,975 cancer genomes [of `r ms_num$types$n_major` major cancer types]{.yellow} using a
 method based on hierarchical Dirichlet processes
 [@liuMSigHdpHierarchicalDirichlet2023], and a method based on
 non-negative matrix factorization
@@ -739,22 +739,29 @@ using two-sided Fisher’s exact tests. After
 Benjamini–Hochberg adjustment (q \< `r ms_num$s14$q_cutoff`), `r ms_num$s14$n_hits` signature–cancer type
 combinations were associated with sex, corresponding to `r ms_num$s14$n_hits_combined` associations
 when each 83-type signature and its 89-type counterpart are counted
-together (Figure S6A, Table S14). \<parallel
-structure\>Male-enriched mutational processes predominated in lung
-and liver cancers. Specifically, lung cancer showed
-significant male association with InsDel3b (`r ms_num$s14$or_q("Lung", "InsDel3b")`) and
-C_ID3 (`r ms_num$s14$or_q("Lung", "C_ID3")`), signatures previously linked to tobacco
-exposure, [consistent with higher smoking prevalence among men]{.yellow}. In liver cancer, a similar
-male predominance was observed for InsDel5a (`r ms_num$s14$or_q("Liver", "InsDel5a")`)
-and C_ID5 (`r ms_num$s14$or_q("Liver", "C_ID5")`; clock-like), and for InsDel8/C_ID8
-(`r ms_num$s14$or_q("Liver", "InsDel8")`; associated with DSB repair by NHEJ and
-age). In contrast, female-enriched signatures were found in esophageal
-and pancreatic cancers: InsDel1a (`r ms_num$s14$or_q("Esophagus", "InsDel1a")`) and C_ID1
-(`r ms_num$s14$or_q("Esophagus", "C_ID1")`) in esophageal cancer, and InsDel12/C_ID12
-(`r ms_num$s14$or_q("Pancreas", "InsDel12")`) in pancreatic cancer. C_ID19 was
-also more common in males in the heterogeneous "Other" group
-(`r ms_num$s14$or_q("Other", "C_ID19")`). No additional
+together (Figure S6A, Table S14). [Male-enriched signatures were found in
+liver cancer: InsDel5a (`r ms_num$s14$or_q("Liver", "InsDel5a")`) and
+C_ID5 (`r ms_num$s14$or_q("Liver", "C_ID5")`; clock-like), and InsDel8
+and C_ID8 (`r ms_num$s14$or_q("Liver", "InsDel8")`; associated with DSB
+repair by NHEJ and age). Female-enriched signatures were found in
+pancreatic adenocarcinoma, InsDel12 and C_ID12
+(`r ms_num$s14$or_q("Pancreatic_adenocarcinoma", "InsDel12")`), in
+esophageal cancer, InsDel1a
+(`r ms_num$s14$or_q("Esophagus", "InsDel1a")`) and C_ID1
+(`r ms_num$s14$or_q("Esophagus", "C_ID1")`), and in B-cell non-Hodgkin
+lymphoma, InsDel9 and C_ID9
+(`r ms_num$s14$or_q("B_cell_NHL", "InsDel9")`). Odds ratios are female
+versus male.]{.yellow} No additional
 signature–cancer type combinations reached a q-value below `r ms_num$s14$q_cutoff`.
+
+[Rewritten 2026-11-23 for Steve's review (highlighted), with the reviewed
+cancer types (Figure S6 shows the cancer types with at least 45 tumors).
+Lost: lung cancer InsDel3b and C_ID3 (lung is now split into subtypes,
+and neither lung adenocarcinoma nor lung squamous cell carcinoma reaches
+q \< 0.2), and C_ID19 in "Other", which is no longer analyzed as a cancer
+type. New: InsDel9 and C_ID9 in B-cell non-Hodgkin lymphoma. Pancreas is
+now pancreatic adenocarcinoma. The sentence on smoking prevalence among
+men was dropped with the lung result.]{.blue}
 Collectively, these findings suggest that specific mutational
 processes and their underlying biological processes might be modulated by [sex]{.pink}, [shaping distinct patterns of cancer susceptibility and
 progression]{.blue}.
@@ -817,7 +824,7 @@ processes.]{.blue}
 # Discussion
 
 In this study, we analyzed somatic indels in 6,975 whole-genome tumor
-samples spanning 36 cancer types and established a comprehensive
+samples [of `r ms_num$types$n_major` major cancer types]{.yellow} and established a comprehensive
 repertoire of indel mutational signatures across the 83-type, 89-type,
 and 476-type classification systems. By combining de novo signature
 discovery with systematic cross-classification mapping, we show that
@@ -1002,6 +1009,30 @@ mutation calls from the TCGA MC3 whole-exome data set
 [@ellrottScalableOpenScience2018] as used in
 @alexandrovRepertoireMutationalSignatures2020. They were not used in
 signature extraction and were not assigned signatures.
+
+[Each tumor has a major cancer type and, for `r ms_num$types$n_split` of
+the major types, a subtype (Table S16). For PCAWG tumors they come from
+the PCAWG histology (`histology_abbreviation`), and for Hartwig tumors from
+the Hartwig metadata published by
+@martinezjimenezPancancerWholegenomeComparison2023, or, for the few
+Hartwig tumors not in those tables, from the Hartwig clinical metadata.
+Compared with the cancer types of the source data sets,
+`r ms_num$types$n_moved` tumors were moved to the major type that their
+histology indicates (for example, pancreatic neuroendocrine tumors to
+pancreas), and mesothelioma, thyroid, anal, and cervical cancers and
+small-intestine neuroendocrine tumors became major types of their own.
+The analyses by cancer type (Figures 4A, [-@fig-topo], S1, S3, S4, and
+S6) use the subtype where there is one, for example glioblastoma
+and medulloblastoma instead of CNS, or lung adenocarcinoma and lung
+squamous cell carcinoma instead of lung. They leave out
+`r ms_num$types$n_mixed` groups that mix tumor types, such as "Other" and
+sarcomas not otherwise specified, and cancer types with few tumors.
+Figures 4A, [-@fig-topo], S1, S3, and S4 show the
+`r ms_num$types$n_shown_17` cancer types with at least 17 tumors with
+high-similarity signature assignments (Figure S1), and Figure S6 the
+`r ms_num$types$n_shown_45` with at least 45. The code is
+`build_cancer_types/build_cancer_types.R` in the code
+repository.]{.yellow}
 
 ## De novo Mutational signature extraction
 
