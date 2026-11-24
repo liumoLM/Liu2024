@@ -694,20 +694,20 @@ enrichment in genic regions (Figure [-@fig-topo]C). Among the `r ms_num$topo$reg
 signatures, two were associated with defective endogenous
 mutational processes, C_ID8 (repair of DNA double strand
 breaks by NHEJ) and ID_F
-(TOP1-mediated mutagenesis). [C_ID4, which corresponds to ID4, was also
-enriched in genic regions. ID4 was previously attributed to TOP1-mediated
-mutagenesis [@reijnsSignaturesTOP1Transcriptionassociated2022], although
-ID_F corresponds better to RNase H2 deficiency (see *The new indel
-classifications reveal a more specific signature of RNase H2
-deficiency*).]{.yellow} The other 3 signatures with mutations
-enriched in genic regions were of unknown etiology (ID_B, ID_E and
-ID_L).
+(TOP1-mediated mutagenesis). [The other 2 signatures with mutations
+enriched in genic regions were of unknown etiology (ID_E and
+ID_L).]{.yellow}
 
 [Changed with the topography rerun of 2026-10-30: C_ID10 and ID_B were then
 genic, and C_ID4 was Mix. Changed with the reviewed cancer types
 (branch subtype-analyses, 2026-11): C_ID10 and C_ID17 are no longer genic.
-Changed with the FDR of 2026-11-23: C_ID4 is now Genic (it was Mix).
-The C_ID4 sentences (highlighted) are for Steve's review.]{.blue}
+Changed with the FDR of 2026-11-23: C_ID4 became Genic (it was Mix).
+Changed with the computed Strand of 2026-11-23 (all 6,975 tumors, and
+indels with several rows in the old strand reference counted once):
+C_ID4 and ID_B are now Mix, so the C_ID4 sentences were removed. In the
+transcription strand panel, C_ID1, C_ID6, and ID_B no longer show
+asymmetry. No signature named in the transcription strand paragraph
+changed.]{.blue}
 
 The effect of DNA replication timing was also observed in many 83-type
 signatures (Figure [-@fig-topo]D, Figure S4, Table S13). Most
@@ -728,29 +728,28 @@ Interestingly, several
 signatures showed cancer-specific enrichment in replication timing,
 including C_ID8 (Repair of DNA double strand breaks by NHEJ) and ID_F
 (TOP1-mediated mutagenesis). For example, ID_F showed enriched
-mutations in late replication regions in bladder cancer, while in skin
-cancer it showed the opposite trend.
+mutations in late replication regions in [urothelial bladder
+carcinoma]{.yellow}, while in [cutaneous melanoma]{.yellow} it showed the
+opposite trend.
 
 ## Demographic Associations with Sex and Age STEVE REVIEW
 
 To explore potential [sex]{.pink} biases in mutational processes, we
-systematically compared signature activities between males and females
-using two-sided Fisher’s exact tests. After
+[tested, within each cancer type, whether the presence of each signature
+differed between women and men, with logistic regression adjusted for age,
+cohort, and MSI-H status (Methods).]{.yellow} After
 Benjamini–Hochberg adjustment (q \< `r ms_num$s14$q_cutoff`), `r ms_num$s14$n_hits` signature–cancer type
 combinations were associated with sex, corresponding to `r ms_num$s14$n_hits_combined` associations
 when each 83-type signature and its 89-type counterpart are counted
 together (Figure S6A, Table S14). [Male-enriched signatures were found in
-liver cancer: InsDel5a (`r ms_num$s14$or_q("Liver", "InsDel5a")`) and
-C_ID5 (`r ms_num$s14$or_q("Liver", "C_ID5")`; clock-like), and InsDel8
-and C_ID8 (`r ms_num$s14$or_q("Liver", "InsDel8")`; associated with DSB
-repair by NHEJ and age). Female-enriched signatures were found in
-pancreatic adenocarcinoma, InsDel12 and C_ID12
-(`r ms_num$s14$or_q("Pancreatic_adenocarcinoma", "InsDel12")`), in
+liver cancer: InsDel5a (`r ms_num$s14$or_q("Liver", "InsDel5a")`;
+clock-like) and InsDel8 (`r ms_num$s14$or_q("Liver", "InsDel8")`;
+associated with DSB repair by NHEJ and age). Female-enriched signatures
+were found in pancreatic adenocarcinoma, InsDel12 and C_ID12
+(`r ms_num$s14$or_q("Pancreatic_adenocarcinoma", "InsDel12")`), and in
 esophageal cancer, InsDel1a
 (`r ms_num$s14$or_q("Esophagus", "InsDel1a")`) and C_ID1
-(`r ms_num$s14$or_q("Esophagus", "C_ID1")`), and in B-cell non-Hodgkin
-lymphoma, InsDel9 and C_ID9
-(`r ms_num$s14$or_q("B_cell_NHL", "InsDel9")`). Odds ratios are female
+(`r ms_num$s14$or_q("Esophagus", "C_ID1")`). Odds ratios are female
 versus male.]{.yellow} No additional
 signature–cancer type combinations reached a q-value below `r ms_num$s14$q_cutoff`.
 
@@ -759,9 +758,13 @@ cancer types (Figure S6 shows the cancer types with at least 45 tumors).
 Lost: lung cancer InsDel3b and C_ID3 (lung is now split into subtypes,
 and neither lung adenocarcinoma nor lung squamous cell carcinoma reaches
 q \< 0.2), and C_ID19 in "Other", which is no longer analyzed as a cancer
-type. New: InsDel9 and C_ID9 in B-cell non-Hodgkin lymphoma. Pancreas is
-now pancreatic adenocarcinoma. The sentence on smoking prevalence among
-men was dropped with the lung result.]{.blue}
+type. Pancreas is now pancreatic adenocarcinoma. The sentence on smoking
+prevalence among men was dropped with the lung result. Since 2026-11-23
+the tests are Firth logistic regressions adjusted for age, cohort, and
+MSI-H, instead of Fisher's exact tests (which Table S14 still reports).
+With the adjustment, C_ID5 and C_ID8 in liver cancer (FDR 0.22) and
+InsDel9 and C_ID9 in B-cell non-Hodgkin lymphoma (FDR 0.46 to 0.49) are no
+longer below 0.2.]{.blue}
 Collectively, these findings suggest that specific mutational
 processes and their underlying biological processes might be modulated by [sex]{.pink}, [shaping distinct patterns of cancer susceptibility and
 progression]{.blue}.
@@ -777,23 +780,41 @@ age-association part earlier.
 :::
 
 To characterize the "clock-like" behavior of these signatures, we
-examined correlations between signature activity and patient age at
-diagnosis using Spearman correlation analyses (Figure S6B). We found
-that C_ID1, InsDel1a, C_ID5, and InsDel5a [showed robust,
-age-associated "clock-like" mutagenesis]{.blue} in multiple cancer types.
-[Across all cancer types, with cancer type as a covariate, the exposures
-of C_ID1 and InsDel1a increased by
-`r ms_num$age_glm$pct_pair("C_ID1", "InsDel1a")`% per decade of age and those
-of C_ID5 and InsDel5a by `r ms_num$age_glm$pct_pair("C_ID5", "InsDel5a")`%,
-and older patients were more likely to have
-them (Table S15).]{.green} More specifically, [C_ID5 and
+[modeled each signature's exposure as a function of patient age at
+diagnosis, with cancer type as a covariate (Methods). Across all cancer
+types, the exposures of C_ID1 and InsDel1a increased by
+`r ms_num$age_glm$pct_pair("C_ID1", "InsDel1a")`% per decade of age and
+those of C_ID5 and InsDel5a by
+`r ms_num$age_glm$pct_pair("C_ID5", "InsDel5a")`%, and older patients were
+more likely to have them (Table S15). For
+`r ms_num$age_glm$n_interaction` of the
+`r ms_num$age_glm$n_tested_interaction` signatures tested, the age effect
+differed between cancer types (FDR \< 0.05). The clearest case was C_ID1
+(FDR `r ms_num$age_glm$fdr_interaction("C_ID1")`), whose exposure
+increased with age in prostate cancer
+(`r ms_num$age_glm$fold_in("C_ID1", "Prostate")`) and breast cancer
+(`r ms_num$age_glm$fold_in("C_ID1", "Breast")`), but decreased in
+glioblastoma (`r ms_num$age_glm$fold_in("C_ID1", "Glioblastoma")`) and
+colorectal cancer (`r ms_num$age_glm$fold_in("C_ID1", "Colorectal")`).
+C_ID5 increased with age in prostate cancer
+(`r ms_num$age_glm$fold_in("C_ID5", "Prostate")`), liver cancer
+(`r ms_num$age_glm$fold_in("C_ID5", "Liver")`), and clear cell renal cell
+carcinoma (`r ms_num$age_glm$fold_in("C_ID5", "Clear_cell_RCC")`).
+Spearman correlations within each cancer type (Figure S6B) showed the same
+pattern.]{.yellow} More specifically, [C_ID5 and
 InsDel5a correlated with age in prostate cancer, liver cancer, and clear
 cell renal cell carcinoma, while C_ID1 and InsDel1a were age-associated
 in prostate cancer and medulloblastoma, and C_ID1 also in breast
 cancer. Other clock-like signatures demonstrated pronounced tissue
 specificity. For example, C_ID9 and InsDel9 correlated with age in
 prostate cancer and glioblastoma, while C_ID10 and InsDel10 correlated
-with age only in medulloblastoma.]{.yellow}
+with age only in medulloblastoma.]{.yellow} [Medulloblastoma had
+`r ms_num$medullo$n_sig_age` of the significant correlations. Of the
+`r ms_num$medullo$n_known_age` medulloblastomas with known age,
+`r ms_num$medullo$n_pediatric` (`r ms_num$medullo$pct_pediatric`%) were
+from patients younger than 18, so its correlations may reflect
+differences between pediatric and adult medulloblastomas rather than the
+accumulation of mutations with age.]{.yellow}
 
 [Rewritten 2026-11-23 for Steve's review (highlighted), from
 build_fig_s6/correlation.between.age.and.signature.activity.txt with the
@@ -804,9 +825,10 @@ pancreas (now split into Pancreatic_adenocarcinoma and Pancreatic_NET,
 neither significant), breast InsDel1a (FDR 0.053), and InsDel10 in
 pancreas. The earlier text said InsDel9 had an attenuated relationship
 with age in prostate cancer, but its ρ there is 0.54, among the
-strongest. Medulloblastoma has 9 significant correlations. It occurs in
-children and adults, so these may reflect differences between the two
-age groups rather than accumulation with age.]{.blue}
+strongest. Since 2026-11-23 the primary age analysis is the regression
+model with cancer type as a covariate, and the per-cancer-type effects
+from its interaction model. The Spearman correlations of Figure S6B are
+descriptive.]{.blue}
 
 ::: {.callout-note title="Reviewer note"}
 [Problem: "Robust" needs the correlation strengths or a q threshold in the text. Proposed: Give rho and q for these four signatures, or write "showed significant age association (q < X)".]{.blue}
@@ -1310,6 +1332,56 @@ neither slope was significant, or the cancer type had fewer than 500
 real indels for the signature, no trend was assigned ("None" in Table
 S13). "Increasing" means increasing from early to late replicating
 regions.]{.green}
+
+## Associations with sex and age
+
+[In these analyses a signature *s* was present in tumor *i*
+($Y_{is} = 1$) if it accounted for at least 5% of the tumor's assigned
+indels. The cancer types were those with at least 45 tumors with
+high-similarity signature assignments (see Data sources), and tests were
+Benjamini–Hochberg adjusted separately for the 83-type and the 89-type
+signatures.
+
+*Sex.* For each cancer type and signature in which the signature was
+present in more than 20 and absent in more than 20 tumors, leaving out
+sex-specific cancer types, we fit the logistic regression
+$$
+\operatorname{logit} \Pr(Y_{is} = 1) = \beta_0 + \beta_{\text{sex}} \, \text{female}_i + \beta_{\text{age}} \, a_i + \beta_{\text{cohort}} \, \text{Hartwig}_i + \beta_{\text{MSI}} \, \text{MSI-H}_i ,
+$$
+where $a_i$ is age at diagnosis in decades and the other terms are
+indicators. Because a signature can be present in few tumors of one sex,
+we used Firth's penalized likelihood, which gives finite, less biased
+estimates in small samples and under separation
+[@firthBiasReductionMaximum1993; @heinzeSolutionProblemSeparation2002],
+as implemented in the R package logistf. We report the odds ratio
+$e^{\beta_{\text{sex}}}$ (female versus male) and its profile penalized
+likelihood ratio test. Table S14 also gives Fisher's exact test on the
+presence-by-sex table of each cancer type and signature, without
+adjustment.
+
+*Age.* For each signature, among the tumors in which it was present, in
+cancer types with at least 3 such tumors, we fit the negative binomial
+regression
+$$
+\log \operatorname{E}[x_{is}] = \alpha_{k(i)} + \beta \, a_i ,
+$$
+where $x_{is}$ is the number of indels of tumor *i* attributed to *s* and
+$\alpha_{k(i)}$ is the intercept of the tumor's cancer type. $e^{\beta}$ is
+the fold change in exposure per decade of age, tested with a likelihood
+ratio test against the model without age. To test whether the age effect
+differs between cancer types, we compared this model with
+$$
+\log \operatorname{E}[x_{is}] = \alpha_{k(i)} + \beta_{k(i)} \, a_i ,
+$$
+which has one age slope per cancer type, by a likelihood ratio test, and
+report $e^{\beta_k}$ with Wald 95% confidence intervals (Table S15). In
+addition, logistic regression of presence on age, with cancer type as a
+covariate, with and without $\log_{10}$ of the tumor's total number of
+indels as a covariate, tested whether older patients were more likely to
+have the signature. These models were fit when at least 30 tumors had the
+signature. Figure S6B shows, as a descriptive view, the Spearman
+correlation between exposure and age among the tumors of each cancer type
+in which the signature was present.]{.yellow}
 
 ## MSI/MSS status and high/low TMB status
 

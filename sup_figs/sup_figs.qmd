@@ -23,6 +23,7 @@ format:
       - footskip=0.5in
     include-in-header:
       text: |
+        \usepackage{luacolor}
         \usepackage{lua-ul}
         \setcapindent{0pt}
         \setlength{\intextsep}{0pt}
@@ -40,6 +41,9 @@ format:
 ```{r}
 #| label: setup
 #| include: false
+# Numbers quoted inline in the legends come from the code repository, via
+# the list ms_num.
+source("~/github/Liu2026_code_and_data/ms_numbers.R")
 # Warn at render time if any figure in sup_figs/ is older than one of its
 # source plots in the code repository (mapping in sup_figures_manifest.tsv).
 # The figures shown below are the cropped copies in sup_figs/cropped/, made
@@ -232,14 +236,18 @@ features are nearly absent in wild-type RPE1 control clones.
 :::
 
 **(A)** Sex association of 83-type and 89-type indel signatures. Bar
-height represents the log₂ odds ratio (log₂OR), with positive values
+height represents the log₂ odds ratio (log₂OR) [of the signature's
+presence, female versus male, from Firth logistic regression adjusted for
+age, cohort, and MSI-H status (Methods)]{.yellow}, with positive values
 indicating enrichment in females (red) and negative values indicating
 enrichment in males (blue). Color shade indicates the significance
 level (−log₁₀FDR, where FDR is the Benjamini-Hochberg false discovery
 rate). Only signatures with FDR \< 0.2 are shown.
 
 **(B)** Age association of 83-type and 89-type indel signatures across
-cancer types. Color shade indicates the Spearman correlation
+cancer types[, a descriptive view. The age effects estimated with cancer
+type as a covariate, overall and in each cancer type, are in Table S15
+(Methods)]{.yellow}. Color shade indicates the Spearman correlation
 coefficient (ρ), and dot size corresponds to the significance level
 (−log₁₀FDR, where FDR is the Benjamini-Hochberg false discovery rate
 computed over all cancer types and signatures tested, separately for the
@@ -247,3 +255,6 @@ computed over all cancer types and signatures tested, separately for the
 with FDR \< 0.05 and ρ \> 0.1 are shown. In both
 panels, a signature counts as active in a tumor only if it accounts for
 at least 5% of the tumor's indels, as in Figures 4A and S1.
+[`r ms_num$medullo$pct_pediatric`% of the medulloblastomas with known age
+were from patients younger than 18, so their age correlations may reflect
+differences between pediatric and adult medulloblastomas.]{.yellow}

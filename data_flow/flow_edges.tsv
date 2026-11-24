@@ -697,7 +697,6 @@ code:not_for_release/rewrite_to_hmf_ids.R	ext:~/MEGA/important_mut_sig_data/topo
 ext:~/MEGA/important_mut_sig_data/topography_inputs_hmf_ids/all.indel.ID83.partial.credit.1026.txt.gz	code:ID83_topography_analysis_code/normalize.sh	reads	local run of 2026-11-19
 code:ID83_topography_analysis_code/normalize.sh	ext:~/topography_rerun_2026-11/all.indel.ID83.normalized.txt	writes	local run of 2026-11-19, 10 jobs
 ext:~/topography_rerun_2026-11/all.indel.ID83.normalized.txt	code:ID83_topography_analysis_code/streaming/run_streaming_counts.sh	reads	
-ext:~/MEGA/important_mut_sig_data/topography_inputs_hmf_ids/single.indel.aggregate.strand.added.matrix.txt	code:ID83_topography_analysis_code/streaming/run_streaming_counts.sh	reads	Strand of each real indel
 ext:~/MEGA/important_mut_sig_data/topography_inputs_hmf_ids/all_simulated_with_annotation.with_bothstrand.txt	code:ID83_topography_analysis_code/streaming/run_streaming_counts.sh	reads	simulated indels with the bothstrand flag
 code:ID83_topography_analysis_code/01_createBed/01.rtGroup.bed	code:ID83_topography_analysis_code/streaming/run_streaming_counts.sh	reads	replication-timing group
 code:ID83_topography_analysis_code/reference/ENCODE/repli_strand_info_new.bed	code:ID83_topography_analysis_code/streaming/run_streaming_counts.sh	reads	replication strand
@@ -732,3 +731,6 @@ ext:~/MEGA/important_mut_sig_data/topography_inputs_hmf_ids/all.indel.with.annot
 code:not_for_release/rewrite_to_hmf_ids.R	ext:~/MEGA/important_mut_sig_data/topography_inputs_hmf_ids/all.indel.with.annotation.txt.gz	writes	
 ext:/public/data/Topography_analysis_2026/all.indel.with.annotation.txt.gz	ext:~/MEGA/important_mut_sig_data/more-indel-paper-info/all.indel.with.annotation.txt.gz	copied	
 ext:~/MEGA/important_mut_sig_data/more-indel-paper-info/all.indel.with.annotation.txt.gz	code:not_for_release/rewrite_to_hmf_ids.R	reads	
+code:build_fig_s6/build_fig_s6_stats.R	code:build_fig_s6/age.glm.by.cancer.type.txt	writes	
+code:build_fig_s6/age.glm.by.cancer.type.txt	code:build_sup_table_s15/build_sup_table_s15.R	reads	sheet Age effect by cancer type
+code:build_fig_s6/age.glm.by.cancer.type.txt	code:ms_numbers.R	reads	
