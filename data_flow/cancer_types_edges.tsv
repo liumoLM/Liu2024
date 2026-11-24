@@ -1,0 +1,5 @@
+from	to	relation	note
+ext:~/MEGA/important_mut_sig_data/ICGC-Pan-Can-PCAWG7-2016-08-12-rawdata/clinical-etc/pcawg_specimen_histology_May2016_v2.csv	code:build_cancer_types/build_cancer_types.R	reads	
+ext:~/MEGA/important_mut_sig_data/metadata-from-mo-nov-2026/metadata.tsv	code:build_cancer_types/build_cancer_types.R	reads	fallback for 21 Hartwig tumors
+ext:~/MEGA/important_mut_sig_data/metadata-from-mo-nov-2026/41586_2023_6054_MOESM5_ESM (1).xlsx	code:build_cancer_types/build_cancer_types.R	reads	sheets hartwig_metadata, hartwig_lung_metadata, hartwig_kidney_metadata, hartwig_ovary_metadata
+code:build_cancer_types/build_cancer_types.R	data:sample_info.tsv	writes	reads Cancer_Type_initial from sample_info.tsv and rewrites the four cancer type columns in place

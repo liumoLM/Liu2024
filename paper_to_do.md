@@ -51,7 +51,9 @@ http://8.138.15.71/
 ### II. Clean up the topography code and documentation
 
 - Correct the topography part of the data flow graph in `data_flow/`, or
-  remove it (added 2026-11-19).
+  remove it (added 2026-11-19). Done (2026-11-23): the TSVs have the
+  streamed route, and the cancer types are in their own TSVs. The viewer
+  was dropped, because no layout made the graph readable.
 - Review the STAR Methods for the topography analysis.
 - Per-indel signature probabilities (added 2026-11-06). The ID83 topography
   analysis starts from Mo's `all.indel.ID83.partial.credit.1026.txt.gz`,

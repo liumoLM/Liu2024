@@ -7,22 +7,16 @@ which file, across the data repo (`unified_indels_data`), the code repo
 
 - `flow_nodes.tsv`: one row per file or script.
 - `flow_edges.tsv`: one row per connection.
-- `build_flow_viewer.R`: builds `data_and_analysis_flow.html` from the two
-  TSVs. Run `Rscript data_flow/build_flow_viewer.R` from the repository root.
-- `data_and_analysis_flow.html`: the interactive viewer, built on
-  Cytoscape.js (loaded from a CDN, so it needs an internet connection). Drag
-  nodes to move them, Shift-drag a box to select nodes and zoom to them,
-  find a node by path, highlight the lineage (upstream, downstream, or both)
-  of the selection, hide everything else and lay out what is left, and show
-  or hide each kind of node. Instructions are on the page.
-- `topography_flow.html`: the same viewer for the ID83 topography analysis
-  only (added 2026-11-08), the nodes upstream and downstream of the topography
-  scripts and server files. Build it from the repository root with
-  ```
-  Rscript data_flow/build_flow_viewer.R --focus 'topography_analysis_code|/public/data/Topography' --title 'Liu et al. 2026: topography analysis flow' --out data_flow/topography_flow.html
-  ```
-  `--focus` takes a regular expression on node ids and keeps the matching
-  nodes and their lineage. The ID89 topography scripts are not in the TSVs.
+- `cancer_types_nodes.tsv`, `cancer_types_edges.tsv`: how the cancer type
+  columns of the data repo's `sample_info.tsv` are made
+  (`build_cancer_types/build_cancer_types.R` in the code repo and its three
+  sources), kept apart since 2026-11-23. The main graph starts from
+  `sample_info.tsv` with its finished cancer types.
+
+The ID89 topography scripts are not in the TSVs. An interactive viewer of
+the TSVs (`build_flow_viewer.R` and its HTML pages) was dropped on
+2026-11-23, because no layout made the graph readable. It is in the git
+history.
 
 ## Node ids
 
@@ -40,7 +34,7 @@ Each id names the repo and the path in it:
 | --- | --- |
 | `id` | as above |
 | `kind` | `script`, `data repo file`, `code repo file`, `paper file`, or `external` |
-| `repo`, `path`, `label` | the parts of the id, and the file name shown in the viewer |
+| `repo`, `path`, `label` | the parts of the id, and the file name |
 | `exists` | `yes` or `no` on disk when the TSVs were made; blank for `ext:` |
 | `flags` | `missing on disk`, `no script writes it`, `nothing reads it` |
 | `note` | for example "made by hand" |
@@ -82,6 +76,14 @@ The graph is a draft of the end-user documentation. Node and edge notes
 describe what a file holds or what a script does. Who sent a file, and
 when, belongs in `paper_to_do.md`, not in the TSVs.
 
-When a script changes what it reads or writes, edit the two TSVs and rerun
-`build_flow_viewer.R`. The viewer leaves out `code:find_data.R`, which most
-scripts source only to locate the data repo.
+On 2026-11-23 the streamed route of the topography analysis was added
+(`ID83_topography_analysis_code/streaming/`, see that folder's README,
+"How to run"): `rewrite_to_hmf_ids.R` and the copies keyed by HMF IDs,
+the local run of `normalize.sh`, `run_streaming_counts.sh` and its awk
+scripts and outputs, and `counts_to_matrices.R`, which now writes the r.04
+tables in the code repo. The edges from `r.04_create4InfMatrix.R` to those
+tables were removed, because they no longer come from it. Also added:
+`cancer_subtypes.R` with the scripts that source it. The making of the
+cancer types (`build_cancer_types.R`) is in the two cancer type TSVs.
+
+When a script changes what it reads or writes, edit the TSVs.

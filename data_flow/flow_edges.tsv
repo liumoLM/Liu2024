@@ -332,14 +332,6 @@ code:ID83_topography_analysis_code/r.03_mergeInf_simulation.R	ext:/public/data/T
 code:ID83_topography_analysis_code/r.03_mergeInf_simulation.R	ext:/public/data/Topography_analysis_2026/results1018/ID83/03_mergeInf/02.allInf.simulated.Rds	writes	relative 03_mergeInf/
 ext:/public/data/Topography_analysis_2026/results1018/ID83/03_mergeInf/01.allInf.single.indel.txt	code:ID83_topography_analysis_code/r.04_create4InfMatrix.R	reads	relative ../03_mergeInf/, indels with bothstrand TRUE are left out of the transcription-strand counts
 ext:/public/data/Topography_analysis_2026/results1018/ID83/03_mergeInf/02.allInf.simulated.txt	code:ID83_topography_analysis_code/r.04_create4InfMatrix.R	reads	relative ../03_mergeInf/, indels with bothstrand TRUE are left out of the transcription-strand counts
-code:ID83_topography_analysis_code/r.04_create4InfMatrix.R	code:ID83_topography_analysis_code/04_create4InfMatrix/DNA.region/tissue.DNA.region.Mutation_50cutoff.xlsx	writes	copies in code repo
-code:ID83_topography_analysis_code/r.04_create4InfMatrix.R	code:ID83_topography_analysis_code/04_create4InfMatrix/DNA.region/tissue.DNA.region.Simulated_50cutoff.xlsx	writes	copies in code repo
-code:ID83_topography_analysis_code/r.04_create4InfMatrix.R	code:ID83_topography_analysis_code/04_create4InfMatrix/rtGroup/tissue.rtGroup.Mutation_50cutoff.xlsx	writes	copies in code repo from the rerun of 2026-10-30
-code:ID83_topography_analysis_code/r.04_create4InfMatrix.R	code:ID83_topography_analysis_code/04_create4InfMatrix/rtGroup/tissue.rtGroup.Simulated_50cutoff.xlsx	writes	copies in code repo from the rerun of 2026-10-30
-code:ID83_topography_analysis_code/r.04_create4InfMatrix.R	code:ID83_topography_analysis_code/04_create4InfMatrix/repli.strand/tissue.repli.strand.Mutation_50cutoff.xlsx	writes	copies in code repo
-code:ID83_topography_analysis_code/r.04_create4InfMatrix.R	code:ID83_topography_analysis_code/04_create4InfMatrix/repli.strand/tissue.repli.strand.Simulated_50cutoff.xlsx	writes	copies in code repo
-code:ID83_topography_analysis_code/r.04_create4InfMatrix.R	code:ID83_topography_analysis_code/04_create4InfMatrix/trans.strand/tissue.trans.strand.Mutation_50cutoff.xlsx	writes	copies in code repo
-code:ID83_topography_analysis_code/r.04_create4InfMatrix.R	code:ID83_topography_analysis_code/04_create4InfMatrix/trans.strand/tissue.trans.strand.Simulated_50cutoff.xlsx	writes	copies in code repo
 code:ID83_topography_analysis_code/r.04_create4InfMatrix.R	ext:/public/data/Topography_analysis_2026/results1018/ID83/04_create4InfMatrix/DNA.region/tissue.DNA.region.Mutation_50cutoff.Rds	writes	server only
 code:ID83_topography_analysis_code/r.04_create4InfMatrix.R	ext:/public/data/Topography_analysis_2026/results1018/ID83/04_create4InfMatrix/DNA.region/tissue.DNA.region.Simulated_50cutoff.Rds	writes	server only
 code:ID83_topography_analysis_code/r.04_create4InfMatrix.R	ext:/public/data/Topography_analysis_2026/results1018/ID83/04_create4InfMatrix/rtGroup/tissue.rtGroup.Mutation_50cutoff.Rds	writes	server only
@@ -694,3 +686,45 @@ ext:annotated indel VCFs of the 6,975 tumors	ext:combining the annotated indel V
 ext:combining the annotated indel VCFs (not yet in the code repo)	ext:/public/data/Topography_analysis_2026/all.indel.with.annotation.txt.gz	writes	
 code:build_sup_table_s16/sup_table_s16_sample_metadata.xlsx	code:ID83_topography_analysis_code/r.03_mergeInf.R	reads	cancer type ("Major Cancer Type") of each tumor
 code:build_sup_table_s16/sup_table_s16_sample_metadata.xlsx	code:ID83_topography_analysis_code/r.03_mergeInf_simulation.R	reads	cancer type ("Major Cancer Type") of each tumor
+ext:~/MEGA/important_mut_sig_data/partial-credit-for-indel-paper-2026-10-26/all.indel.ID83.partial.credit.1026.txt.gz	code:not_for_release/rewrite_to_hmf_ids.R	reads	
+ext:/public/data/Topography_analysis/reference/single.indel.aggregate.strand.added.matrix.txt	ext:~/MEGA/important_mut_sig_data/simulation_and_reference_data/single.indel.aggregate.strand.added.matrix.txt	copied	
+ext:~/MEGA/important_mut_sig_data/simulation_and_reference_data/single.indel.aggregate.strand.added.matrix.txt	code:not_for_release/rewrite_to_hmf_ids.R	reads	
+ext:/public/data/Topography_analysis_2026/simulation_data/all_simulated_with_annotation.with_bothstrand.txt	ext:~/MEGA/important_mut_sig_data/simulation_and_reference_data/all_simulated_with_annotation.with_bothstrand.txt	copied	
+ext:~/MEGA/important_mut_sig_data/simulation_and_reference_data/all_simulated_with_annotation.with_bothstrand.txt	code:not_for_release/rewrite_to_hmf_ids.R	reads	
+code:not_for_release/rewrite_to_hmf_ids.R	ext:~/MEGA/important_mut_sig_data/topography_inputs_hmf_ids/all.indel.ID83.partial.credit.1026.txt.gz	writes	
+code:not_for_release/rewrite_to_hmf_ids.R	ext:~/MEGA/important_mut_sig_data/topography_inputs_hmf_ids/single.indel.aggregate.strand.added.matrix.txt	writes	
+code:not_for_release/rewrite_to_hmf_ids.R	ext:~/MEGA/important_mut_sig_data/topography_inputs_hmf_ids/all_simulated_with_annotation.with_bothstrand.txt	writes	
+ext:~/MEGA/important_mut_sig_data/topography_inputs_hmf_ids/all.indel.ID83.partial.credit.1026.txt.gz	code:ID83_topography_analysis_code/normalize.sh	reads	local run of 2026-11-19
+code:ID83_topography_analysis_code/normalize.sh	ext:~/topography_rerun_2026-11/all.indel.ID83.normalized.txt	writes	local run of 2026-11-19, 10 jobs
+ext:~/topography_rerun_2026-11/all.indel.ID83.normalized.txt	code:ID83_topography_analysis_code/streaming/run_streaming_counts.sh	reads	
+ext:~/MEGA/important_mut_sig_data/topography_inputs_hmf_ids/single.indel.aggregate.strand.added.matrix.txt	code:ID83_topography_analysis_code/streaming/run_streaming_counts.sh	reads	Strand of each real indel
+ext:~/MEGA/important_mut_sig_data/topography_inputs_hmf_ids/all_simulated_with_annotation.with_bothstrand.txt	code:ID83_topography_analysis_code/streaming/run_streaming_counts.sh	reads	simulated indels with the bothstrand flag
+code:ID83_topography_analysis_code/01_createBed/01.rtGroup.bed	code:ID83_topography_analysis_code/streaming/run_streaming_counts.sh	reads	replication-timing group
+code:ID83_topography_analysis_code/reference/ENCODE/repli_strand_info_new.bed	code:ID83_topography_analysis_code/streaming/run_streaming_counts.sh	reads	replication strand
+code:ID83_topography_analysis_code/streaming/sig_order.txt	code:ID83_topography_analysis_code/streaming/run_streaming_counts.sh	reads	
+code:ID83_topography_analysis_code/streaming/real_bed.awk	code:ID83_topography_analysis_code/streaming/run_streaming_counts.sh	reads	run by it
+code:ID83_topography_analysis_code/streaming/sim_router.awk	code:ID83_topography_analysis_code/streaming/run_streaming_counts.sh	reads	run by it
+code:ID83_topography_analysis_code/streaming/pick_hit.awk	code:ID83_topography_analysis_code/streaming/run_streaming_counts.sh	reads	run by it
+code:ID83_topography_analysis_code/streaming/aggregate.awk	code:ID83_topography_analysis_code/streaming/run_streaming_counts.sh	reads	run by it
+code:ID83_topography_analysis_code/streaming/run_streaming_counts.sh	ext:~/topography_rerun_2026-11/streaming_counts/real_counts.tsv	writes	
+code:ID83_topography_analysis_code/streaming/run_streaming_counts.sh	ext:~/topography_rerun_2026-11/streaming_counts/simulated_counts.tsv	writes	
+code:ID83_topography_analysis_code/streaming/run_streaming_counts.sh	ext:~/topography_rerun_2026-11/streaming_counts/real_calls_lookup.tsv	writes	
+ext:~/topography_rerun_2026-11/streaming_counts/real_counts.tsv	code:ID83_topography_analysis_code/streaming/counts_to_matrices.R	reads	
+ext:~/topography_rerun_2026-11/streaming_counts/simulated_counts.tsv	code:ID83_topography_analysis_code/streaming/counts_to_matrices.R	reads	
+code:ID83_topography_analysis_code/streaming/sig_order.txt	code:ID83_topography_analysis_code/streaming/counts_to_matrices.R	reads	
+data:sample_info.tsv	code:ID83_topography_analysis_code/streaming/counts_to_matrices.R	reads	Cancer_Subtype, with --min-tumors 17
+code:build_fig_s1/assignment.high.similarity.samples.txt	code:ID83_topography_analysis_code/streaming/counts_to_matrices.R	reads	high-similarity tumors, for the --min-tumors cutoff
+code:cancer_subtypes.R	code:ID83_topography_analysis_code/streaming/counts_to_matrices.R	reads	source
+code:ID83_topography_analysis_code/streaming/counts_to_matrices.R	code:ID83_topography_analysis_code/04_create4InfMatrix/DNA.region/tissue.DNA.region.Mutation_50cutoff.xlsx	writes	--min-tumors 17 (36 cancer types)
+code:ID83_topography_analysis_code/streaming/counts_to_matrices.R	code:ID83_topography_analysis_code/04_create4InfMatrix/DNA.region/tissue.DNA.region.Simulated_50cutoff.xlsx	writes	--min-tumors 17 (36 cancer types)
+code:ID83_topography_analysis_code/streaming/counts_to_matrices.R	code:ID83_topography_analysis_code/04_create4InfMatrix/repli.strand/tissue.repli.strand.Mutation_50cutoff.xlsx	writes	--min-tumors 17 (36 cancer types)
+code:ID83_topography_analysis_code/streaming/counts_to_matrices.R	code:ID83_topography_analysis_code/04_create4InfMatrix/repli.strand/tissue.repli.strand.Simulated_50cutoff.xlsx	writes	--min-tumors 17 (36 cancer types)
+code:ID83_topography_analysis_code/streaming/counts_to_matrices.R	code:ID83_topography_analysis_code/04_create4InfMatrix/rtGroup/tissue.rtGroup.Mutation_50cutoff.xlsx	writes	--min-tumors 17 (36 cancer types)
+code:ID83_topography_analysis_code/streaming/counts_to_matrices.R	code:ID83_topography_analysis_code/04_create4InfMatrix/rtGroup/tissue.rtGroup.Simulated_50cutoff.xlsx	writes	--min-tumors 17 (36 cancer types)
+code:ID83_topography_analysis_code/streaming/counts_to_matrices.R	code:ID83_topography_analysis_code/04_create4InfMatrix/trans.strand/tissue.trans.strand.Mutation_50cutoff.xlsx	writes	--min-tumors 17 (36 cancer types)
+code:ID83_topography_analysis_code/streaming/counts_to_matrices.R	code:ID83_topography_analysis_code/04_create4InfMatrix/trans.strand/tissue.trans.strand.Simulated_50cutoff.xlsx	writes	--min-tumors 17 (36 cancer types)
+code:cancer_subtypes.R	code:build_fig_s1/make_figure_s1_layout.R	reads	source
+code:cancer_subtypes.R	code:build_fig4/all_cancer_types_enrichment.R	reads	source
+code:cancer_subtypes.R	code:build_fig_s6/build_fig_s6_stats.R	reads	source
+code:cancer_subtypes.R	code:build_fig_s6/sex_glm_prototype.R	reads	source
+code:cancer_subtypes.R	code:build_fig_s6/age_sex_glm_prototype.R	reads	source
