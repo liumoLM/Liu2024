@@ -1444,12 +1444,12 @@ function of seqLogo R package (version 1.71.0)
 # Funding
 
 The work was supported by the Young Scientists Fund of the National
-Natural Science Foundation of China (Grant No. 32500546), Natural
+Natural Science Foundation of China (Grant No. 32500546), International Collaboration Fund for Creative Research Teams (ICFCRT) of NSFC 
+(Grant No. W2641011), Natural
 Science Foundation of Guangdong Province, China (Grant No.
 2026A1515010445), International Science and Technology Innovation
 Cooperation between Governments for National Key R&D Program Projects
-(2023YFE0107700), Guangzhou Municipal Science and Technology Bureau
-(2025A04J4304), Shenzhen Science and Technology Innovation Program
+(2023YFE0107700), Shenzhen Science and Technology Innovation Program
 (JCYJ20250604174809012).
 
 # Author contributions
