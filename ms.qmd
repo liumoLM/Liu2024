@@ -707,7 +707,10 @@ indels with several rows in the old strand reference counted once):
 C_ID4 and ID_B are now Mix, so the C_ID4 sentences were removed. In the
 transcription strand panel, C_ID1, C_ID6, and ID_B no longer show
 asymmetry. No signature named in the transcription strand paragraph
-changed.]{.blue}
+changed. With the strand rule of 2026-11-24 (the same rule for real and
+simulated indels, microhomology deletions included), no class in Figure 5
+changed. Tests with FDR \< 0.05: transcription strand 50 (unchanged),
+replication strand 79 (was 75).]{.blue}
 
 The effect of DNA replication timing was also observed in many 83-type
 signatures (Figure [-@fig-topo]D, Figure S4, Table S13). Most
@@ -1202,7 +1205,9 @@ genome and further annotated in regard to the pyrimidine base(s) of
 the insertion/deletion. Thus, indels with only C or T bases were
 annotated as + strand mutations; indels with only A or G bases were
 annotated as – strand mutations. The remaining indels were not
-included in the analysis. [For example, deletion of a T from a
+included in the analysis. [This rule was applied to all indels, including
+microhomology deletions, and in the same way to the real and the
+simulated indels.]{.yellow} [For example, deletion of a T from a
 poly-T/poly-A tract was assigned to the strand carrying the T's, and
 deletion of a C from a poly-C/poly-G tract was assigned to the strand
 carrying the C's.]{.blue} Next, + strand indels in protein coding
@@ -1211,7 +1216,7 @@ gene was on the + strand of the genome, or else transcribed
 (template)]{.blue}. The logic was inverted for – strand indels.
 Indels in bidirectionally transcribed regions were ignored.
 
-[Note: The previous text said "+ strand indels ... were further subclassified as transcribed (template) if the gene's sense strand was on the + strand of the genome, or else untranscribed (sense)". That is the reverse of the code. In ID83_topography_analysis_code, r.03_mergeInf.R computes new.trans.strand = trans.strand × Strand, where trans.strand is the gene's strand and Strand is the pyrimidine strand (+, -, or Q for mixed), and r.06_comupteOddsRatio.R labels +1 as UnTranscribed and -1 as Transcribed. So a C/T indel on the + strand in a + strand gene is on the sense (untranscribed) strand, which is the standard convention. The code that computes the Strand column (`single.indel.aggregate.strand.added.matrix.txt`) is not in the code repo (asked Mo, 2026-11-07). Mo (2026-10-08) says the Strand column is computed by SigProfilerSimulator (`mutational_simulator.py`, lines 1134-1151): an indel of more than 1 bp is + if the inserted or deleted sequence has only C and T, - if only G and A, and Q otherwise, and a 1-bp indel is + for C or T and - for G or A. So only the inserted or deleted bases are examined, not the repeat unit, which matches the "only C or T bases" rule above. Since the topography rerun of 2026-10-30, indels in genes on both strands are left out of the transcription-strand analysis (`append_bothstrand.R` and `r.04_create4InfMatrix.R` in ID83_topography_analysis_code, Mini 2026-10-31), as the text says. The earlier run kept them (114,297 indels). SigProfilerTopography uses the same strand rule (checked 2026-10-17). It takes the strand from SigProfilerMatrixGenerator (`MutationMatrixGenerator.py`, lines 1427-1443 and 1789-1799 at commit e67c5c4), which puts indels with only C and T on the + strand, indels with only G and A on the - strand, and gives mixed indels strand 0 (Q), which SigProfilerTopography excludes (`ReplicationStrandBiasAnalysis.py`, lines 389-396 at commit bff7a86).]{.blue}
+[Note: The previous text said "+ strand indels ... were further subclassified as transcribed (template) if the gene's sense strand was on the + strand of the genome, or else untranscribed (sense)". That is the reverse of the code. In ID83_topography_analysis_code, r.03_mergeInf.R computes new.trans.strand = trans.strand × Strand, where trans.strand is the gene's strand and Strand is the pyrimidine strand (+, -, or Q for mixed), and r.06_comupteOddsRatio.R labels +1 as UnTranscribed and -1 as Transcribed. So a C/T indel on the + strand in a + strand gene is on the sense (untranscribed) strand, which is the standard convention. Since 2026-11-24, Strand is computed in the code repo (`streaming/real_bed.awk` and `streaming/sim_router.awk` in ID83_topography_analysis_code) from the inserted or deleted bases: + if only C and T, - if only G and A, and Q if mixed. The earlier runs read the strand of the real indels from `single.indel.aggregate.strand.added.matrix.txt` (Mini's `add_strand_bias.R`, not in the code repo). That file follows the same rule except that it makes every microhomology deletion Q, for no recorded reason. Now microhomology deletions get a strand like other indels: 143,388 of the 911,572 real ones have only C/T or only G/A deleted. This is 17.7% of the indels called for ID_F and 12.7% for C_ID4, and under 7% for every other signature. Shifting a microhomology deletion within its microhomology only rotates the deleted sequence, so its strand does not depend on how it is placed. The old file also lacked 810 tumors and had several rows for 199,286 indels. The earlier runs took the strand of the simulated indels from the Strand column of the simulated file (from SigProfilerSimulator, Mo 2026-10-08). Outside microhomology deletions, that column disagreed with the rule for 6.1 million of the 216 million simulated indels: 2.8 million had the opposite strand, and 3.3 million with mixed bases had a strand. Since the topography rerun of 2026-10-30, indels in genes on both strands are left out of the transcription-strand analysis (`append_bothstrand.R` and `r.04_create4InfMatrix.R` in ID83_topography_analysis_code, Mini 2026-10-31), as the text says. The earlier run kept them (114,297 indels). SigProfilerTopography uses the same strand rule (checked 2026-10-17). It takes the strand from SigProfilerMatrixGenerator (`MutationMatrixGenerator.py`, lines 1427-1443 and 1789-1799 at commit e67c5c4), which puts indels with only C and T on the + strand, indels with only G and A on the - strand, and gives mixed indels strand 0 (Q), which SigProfilerTopography excludes (`ReplicationStrandBiasAnalysis.py`, lines 389-396 at commit bff7a86).]{.blue}
 
 ## Annotating somatic indels as genic or intergenic
 
