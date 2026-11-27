@@ -55,6 +55,15 @@ http://8.138.15.71/
   streamed route, and the cancer types are in their own TSVs. The viewer
   was dropped, because no layout made the graph readable.
 - Review the STAR Methods for the topography analysis.
+- Strand of microhomology deletions (added 2026-11-27). Mini's
+  `single.indel.aggregate.strand.added.matrix.txt` made every real
+  microhomology deletion Q (left out of the transcription-strand and
+  replication-strand tests), but the simulated file gave most of those
+  with only C/T or only G/A deleted a strand. Since 2026-11-24 the code
+  repo uses one rule for both, with microhomology deletions included
+  (9a2ddb2). No class in Figure 5 changed. Waiting: Steve emailed Mini
+  asking whether there was a reason to leave them out and whether she
+  has concerns about including them.
 - Per-indel signature probabilities (added 2026-11-06). The ID83 topography
   analysis starts from Mo's `all.indel.ID83.partial.credit.1026.txt.gz`,
   but no script in the code repo makes it, and the methods only say that
